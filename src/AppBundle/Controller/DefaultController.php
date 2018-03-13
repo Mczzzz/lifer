@@ -18,4 +18,25 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
+
+
+    /**
+     * @Route("/data", name="data")
+     * @Method("POST")
+     */
+    public function data()
+    {
+        $tmpDir = $this->getParameter('tmpDir');
+
+        $file = $request->files->get('jpg')->getClientOriginalName();
+
+        $path_parts = pathinfo($file);
+
+
+        $request->files->get('jpg')->move($tmpDir,$idFile.".zip");
+
+
+    }       
+
+
 }
