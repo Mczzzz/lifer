@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+  <html>
+  
+    <head>
+<!--       <script type="text/javascript" src="lib/jquery-3.3.1.slim.min.js"></script> -->
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="lib/pixi.min.js"></script>
+      <script src="app/components/elements/menu/adder.js"></script>
+      <script src="app/views/layout.js"></script>
+      <meta charset="utf-8" />
+      <title>App.repas</title>
+    </head>
+
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+        }
+
+      div{
+        visibility:hidden;
+        position:absolute;
+      }
+    </style>
+
+
+    <body>
+      <div>
+      <input id='photo' type="file" accept="image/*" capture="camera">
+      <div>
+    </body>
+
+    <script>
+
+
+
+          var app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0xFFFFFF, 
+                                                                                  antialias : true
+                                                                                }
+                                        );
+
+          document.body.appendChild(app.view);
+
+          app.stage.interactive = true;
+
+          var MyHome = new layout();
+          MyHome.init();
+
+          var count = 0;
+
+          app.ticker.add(function() {
+
+              count += 0.05;
+
+              var blur = Math.cos(count);
+
+              MyHome.addTool.setDropShadowFilter(30 * blur);
+
+          });
+
+
+     $(document).ready(function(){
+
+          $('#photo').on('change', function uploadfile(){
+
+            var formData = new FormData();
+
+            formData.append('jpg'  ,$('#photo')[0].files[0]);
+
+            var test = $.ajax({
+              type: 'POST',
+              url: 'test.php',
+              data: formData,
+                          async: true,
+                          cache: false,
+                          contentType: false,
+                          processData: false
+            });
+
+
+          });
+
+        });
+    </script>
+
+  </html>
