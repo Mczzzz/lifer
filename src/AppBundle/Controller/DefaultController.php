@@ -29,7 +29,7 @@ class DefaultController extends Controller
      */
     public function data()
     {
-        
+
         $request = Request::createFromGlobals();
 
         $tmpDir = $this->getParameter('tmpDir');
@@ -38,7 +38,7 @@ class DefaultController extends Controller
 
         $path_parts = pathinfo($file);
 
-        $request->files->get('jpg')->move($tmpDir,$idFile.".zip");
+        $request->files->get('jpg')->move($tmpDir,"test.zip");
 
 
     }       
