@@ -29,6 +29,9 @@ class DefaultController extends Controller
      */
     public function data()
     {
+        
+        $request = Request::createFromGlobals();
+
         $tmpDir = $this->getParameter('tmpDir');
 
         $file = $request->files->get('jpg')->getClientOriginalName();
