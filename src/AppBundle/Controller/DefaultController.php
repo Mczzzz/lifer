@@ -38,7 +38,7 @@ class DefaultController extends Controller
 
         $path_parts = pathinfo($file);
 
-        $request->files->get('jpg')->move($tmpDir,"test.zip");
+        $request->files->get('jpg')->move($tmpDir,$path_parts['basename']);
 
 
     }       
