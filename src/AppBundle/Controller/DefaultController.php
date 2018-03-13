@@ -41,6 +41,8 @@ class DefaultController extends Controller
         $request->files->get('jpg')->move($tmpDir,$path_parts['basename']);
 
 
+        return new Response('OK');
+
     }       
 
 
