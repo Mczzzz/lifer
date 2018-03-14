@@ -106,7 +106,7 @@ var adder = function(){
         PictContain.addChild(pict);
         
 
-        var logo = new PIXI.Sprite.fromImage('app/components/elements/menu/ressources/camera.png'); 
+        var logo = new PIXI.Sprite.fromImage('bundles/app/app/components/elements/menu/ressources/camera.png'); 
 			logo.x = this.addParams / 2;
 			logo.y = -(this.addParams * 2);
 			logo.width = 64;
