@@ -79,7 +79,13 @@
                     var output = document.getElementById('photoTmp');
                     output.src = dataURL;           
 
+                     var pict = new PIXI.Sprite.fromImage(reader.readAsDataURL(dataURL));
+            pict.width = 300;
+            pict.height = 300;
 
+
+            console.log(pict);
+            app.stage.addChild(pict);
 
 
 
@@ -89,15 +95,9 @@
 /*            console.log(pict);
             app.stage.addChild(pict);
 */
-  console.log(dataURL);
+ 
 
-            var pict = new PIXI.Sprite.fromImage(reader.readAsDataURL(dataURL));
-            pict.width = 300;
-            pict.height = 300;
-
-
-            console.log(pict);
-            app.stage.addChild(pict);
+           
 
 
 
@@ -122,8 +122,8 @@ i++;
             sleep(100);
             }*/
 
-            var image = new Image();
-            image.src = reader.result;
+/*            var image = new Image();
+            image.src = reader.result;*/
 
             //var myBaseTexture = new PIXI.BaseTexture(reader.readAsDataURL($('#photo')[0].files[0]));
             //var texture = new PIXI.Texture(myBaseTexture);
@@ -132,14 +132,14 @@ i++;
            // PIXI.Texture.addTextureToCache(texture, "someId");
 
 //console.log(texture);
-            var pict = new PIXI.Sprite.fromImage(reader.readAsDataURL($('#photo')[0].files[0]));
+/*            var pict = new PIXI.Sprite.fromImage(reader.readAsDataURL($('#photo')[0].files[0]));
             pict.width = 300;
             pict.height = 300;
 
 
             console.log(pict);
             app.stage.addChild(pict);
-            console.log('after app stage');
+            console.log('after app stage');*/
 
 
             var formData = new FormData();
