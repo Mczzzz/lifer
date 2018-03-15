@@ -81,7 +81,10 @@
 
             var pict = new PIXI.Sprite.fromImage(reader.result);
 
+            console.log(pict);
             app.stage.addChild(pict);
+            console.log('after app stage');
+
 
             var formData = new FormData();
 
