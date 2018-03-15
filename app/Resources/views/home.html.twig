@@ -78,9 +78,11 @@
                   reader.readAsDataURL($('#photo')[0].files[0]);
 
             console.log(reader);
+            console.log()
 
             var pict = new PIXI.Sprite.fromImage(reader.result);
-
+            pict.width = 300;
+            pict.height = 300; 
             console.log(pict);
             app.stage.addChild(pict);
             console.log('after app stage');
