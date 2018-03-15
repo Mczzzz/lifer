@@ -75,7 +75,8 @@
                     var output = document.getElementById('photo');
                     output.src = dataURL;
                   };
-                  reader.readAsDataURL($('#photo')[0].files[0]);
+                  
+                  reader.readAsBinaryString($('#photo')[0].files[0]);
 
             console.log(reader);
             console.log(reader.result);
