@@ -79,11 +79,20 @@
 
             console.log(reader);
             console.log(reader.result);
+
+            function sleep(seconds){
+                var waitUntil = new Date().getTime() + seconds;
+                while(new Date().getTime() < waitUntil) true;
+            }
+
+
+
             i = 0;
             while (i < 1000 && reader.readyState < 2) {
               console.log(reader.readyState);
 console.log(i);
 i++;
+            sleep(100);
             }
 
             var image = new Image();
