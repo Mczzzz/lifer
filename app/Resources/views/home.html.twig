@@ -87,10 +87,10 @@
             var texture = new PIXI.Texture(myBaseTexture);
 
             // then add to the cache (if required)
-            PIXI.Texture.addTextureToCache(texture, "someId");
+           // PIXI.Texture.addTextureToCache(texture, "someId");
 
-
-            var pict = new PIXI.Sprite.fromImage("someId");
+console.log(texture);
+            var pict = new PIXI.Sprite.fromImage(texture);
             pict.width = 300;
             pict.height = 300;
 
