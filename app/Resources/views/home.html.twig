@@ -83,7 +83,14 @@
             var image = new Image();
             image.src = reader.result;
 
-            var pict = new PIXI.Sprite.fromImage(image);
+            var myBaseTexture = new PIXI.BaseTexture(image);
+            var texture = new PIXI.Texture(myBaseTectute);
+
+            // then add to the cache (if required)
+            PIXI.Texture.addTextureToCache(texture, "someId");
+
+
+            var pict = new PIXI.Sprite.fromImage("someId");
             pict.width = 300;
             pict.height = 300;
 
