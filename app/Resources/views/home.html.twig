@@ -79,7 +79,7 @@
                     var output = document.getElementById('photoTmp');
                     output.src = dataURL;           
 
-                     var pict = new PIXI.Sprite.fromImage(reader.readAsDataURL(dataURL));
+                     var pict = new PIXI.Sprite.fromImage(dataURL);
             pict.width = 300;
             pict.height = 300;
 
