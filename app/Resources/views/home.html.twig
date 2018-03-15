@@ -28,6 +28,8 @@
     <body>
       <div>
       <input id='photo' type="file" accept="image/*" capture="camera">
+      <img id='photoTmp' src="" height="200" alt="Aperçu de l’image...">
+
       <div>
     </body>
 
@@ -68,18 +70,20 @@
 
                  // var input = event.target;
 
+                 var dataURL = '';
                   var reader = new FileReader();
 
-                  reader.onload = function(){
-                    var dataURL = reader.result;
+                  reader.onloadend = function(){
+                      dataURL = reader.result;
                     var output = document.getElementById('photo');
                     output.src = dataURL;
                   };
-                  
-                  reader.readAsBinaryString($('#photo')[0].files[0]);
+
+                  reader.readAsDataURL(file);($('#photo')[0].files[0]);
 
             console.log(reader);
             console.log(reader.result);
+            $('#photoTmp').attr('src',reader.result);
 
             function sleep(seconds){
                 var waitUntil = new Date().getTime() + seconds;
@@ -89,7 +93,7 @@
 
 
             i = 0;
-            while (i < 1000 && reader.readyState < 2) {
+            while (i < 100 && reader.readyState < 2) {
               console.log(reader.readyState);
 console.log(i);
 i++;
@@ -99,7 +103,7 @@ i++;
             var image = new Image();
             image.src = reader.result;
 
-            var myBaseTexture = new PIXI.BaseTexture(image);
+            var myBaseTexture = new PIXI.BaseTexture(reader.readAsDataURL($('#photo')[0].files[0]));
             var texture = new PIXI.Texture(myBaseTexture);
 
             // then add to the cache (if required)
