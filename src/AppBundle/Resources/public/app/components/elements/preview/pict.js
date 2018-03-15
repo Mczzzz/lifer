@@ -4,8 +4,6 @@ var previewPict = function(){
 
 	this.draw = function(){
 
-		console.log(this.img);
-
 		var pict = new PIXI.Sprite.fromImage(this.img); 
 
 		return pict;

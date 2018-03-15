@@ -65,9 +65,20 @@
           $('#photo').on('change', function uploadfile(){
 
 
-          var preview = new previewPict();
 
-          app.stage.addChild(preview.draw());
+                 // var input = event.target;
+
+                  var reader = new FileReader();
+
+                  reader.onload = function(){
+                    var dataURL = reader.result;
+                    var output = document.getElementById('photo');
+                    output.src = dataURL;
+                  };
+                  reader.readAsDataURL($('#photo')[0].files[0]);
+
+            console.log(output);
+
 
 
             var formData = new FormData();
