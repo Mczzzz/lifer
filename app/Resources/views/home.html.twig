@@ -74,6 +74,7 @@
                   var reader = new FileReader();
 
                   reader.onloadend = function(){
+                    console.log(reader.result);
                       dataURL = reader.result;
                     var output = document.getElementById('photoTmp');
                     output.src = dataURL;           
