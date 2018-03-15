@@ -6,6 +6,7 @@
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script src="{{ asset('bundles/app/lib/pixi.min.js') }}"></script>
       <script src="{{ asset('bundles/app/app/components/elements/menu/adder.js') }}"></script>
+      <script src="{{ asset('bundles/app/app/components/elements/preview/pict.js') }}"></script>
       <script src="{{ asset('bundles/app/app/views/layout.js') }}"></script>
       <meta charset="utf-8" />
       <title>App.repas</title>
@@ -34,7 +35,7 @@
 
 
 
-          var app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0xFFFFFF, 
+          app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0xFFFFFF, 
                                                                                   antialias : true
                                                                                 }
                                         );
@@ -62,6 +63,12 @@
      $(document).ready(function(){
 
           $('#photo').on('change', function uploadfile(){
+
+
+          var preview = new previewPict();
+
+          app.stage.addChild(preview.draw());
+
 
             var formData = new FormData();
 
