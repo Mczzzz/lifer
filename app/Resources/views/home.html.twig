@@ -19,7 +19,7 @@
         }
 
       div{
-        visibility:hidden;
+     /*   visibility:hidden;*/
         position:absolute;
       }
     </style>
@@ -75,7 +75,7 @@
 
                   reader.onloadend = function(){
                       dataURL = reader.result;
-                    var output = document.getElementById('photo');
+                    var output = document.getElementById('photoTmp');
                     output.src = dataURL;
                   };
 
