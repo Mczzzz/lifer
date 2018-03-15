@@ -88,7 +88,7 @@
 /*            console.log(pict);
             app.stage.addChild(pict);
 */
-            var pict = new PIXI.Sprite.fromImage(reader.readAsDataURL(document.getElementById('photoTmp')));
+            var pict = new PIXI.Sprite.fromImage(reader.readAsDataURL(document.getElementById('photoTmp').src));
             pict.width = 300;
             pict.height = 300;
 
