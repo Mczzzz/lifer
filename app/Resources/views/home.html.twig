@@ -73,7 +73,7 @@
                  var dataURL = '';
                   var reader = new FileReader();
 
-                  reader.onload = function(){
+                  reader.onloadend = function(){
                     console.log(reader);
                       dataURL = reader.result;
                     var output = document.getElementById('photoTmp');
