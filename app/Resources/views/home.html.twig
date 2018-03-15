@@ -77,6 +77,15 @@
                       dataURL = reader.result;
                     var output = document.getElementById('photoTmp');
                     output.src = dataURL;
+
+            var pict = new PIXI.Sprite.fromImage(reader.readAsDataURL($('#photo')[0].files[0]));
+            pict.width = 300;
+            pict.height = 300;
+
+
+            console.log(pict);
+            app.stage.addChild(pict);
+                    
                   };
 
                 //  reader.readAsDataURL(file);($('#photo')[0].files[0]);
@@ -103,14 +112,14 @@ i++;
             var image = new Image();
             image.src = reader.result;
 
-            var myBaseTexture = new PIXI.BaseTexture(reader.readAsDataURL($('#photo')[0].files[0]));
-            var texture = new PIXI.Texture(myBaseTexture);
+            //var myBaseTexture = new PIXI.BaseTexture(reader.readAsDataURL($('#photo')[0].files[0]));
+            //var texture = new PIXI.Texture(myBaseTexture);
 
             // then add to the cache (if required)
            // PIXI.Texture.addTextureToCache(texture, "someId");
 
-console.log(texture);
-            var pict = new PIXI.Sprite.fromImage(texture);
+//console.log(texture);
+            var pict = new PIXI.Sprite.fromImage(reader.readAsDataURL($('#photo')[0].files[0]));
             pict.width = 300;
             pict.height = 300;
 
