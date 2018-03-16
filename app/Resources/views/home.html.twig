@@ -37,7 +37,7 @@
 
 
 
-          app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0xFFFFFF, 
+          app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, 
                                                                                   antialias : true
                                                                                 }
                                         );
@@ -78,14 +78,29 @@
                       dataURL = reader.result;
                    // var output = document.getElementById('photoTmp');
                   //  output.src = dataURL;           
+                  var card = new PIXI.Container();
+
+                  var backgroundCard = new PIXI.Graphics();
+                  backgroundCard.beginFill(0xFFFFFF);
+                  backgroundCard.lineStyle(0);
+                  backgroundCard.drawRect(50, 50, window.innerWidth - 100, window.innerHeight - 100);
+                  backgroundCard.endFill();
+
+                  backgroundCard.interactive = true;
+
+                  card.addChild(backgroundCard);
+
 
                      var pict = new PIXI.Sprite.fromImage(dataURL);
-            pict.width = 300;
-            pict.height = 300;
+            pict.width = window.innerWidth - 120;
+            pict.height = window.innerWidth - 120;
+            pict.x = 60;
+            pict.y = 60;
            // pict.rotation = 1.5708;
 
             console.log(pict);
-            app.stage.addChild(pict);
+            card.addChild(pict);
+            app.stage.addChild(card);
 
 
 
