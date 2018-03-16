@@ -38,10 +38,7 @@
       <img id='photoTmp' src="" height="200" alt="Aperçu de l’image...">
 
       <div>
-      <div id="divText">
-      <textarea id='textInput' row="3" cols="50" ></textarea>
 
-      <div>
 
     </body>
 
@@ -110,10 +107,13 @@
             pict.y = 60;
             //pict.anchor.set(0.5);
             //pict.rotation = 1.5705;
+           
 
             console.log(pict);
             card.addChild(pict);
             app.stage.addChild(card);
+
+             $('body').append('<div id="divText"><textarea id='textInput' row="3" cols="50" ></textarea><div>');
 
             $("#divText").show();
 
