@@ -18,19 +18,31 @@
           padding: 0;
         }
 
-      div{
+      #divPhoto{
         visibility:hidden;
         position:absolute;
+      }
+
+      #divText{
+        visibility:hidden;
+        position:absolute;
+        left: 60px;
+        top: 800px;
       }
     </style>
 
 
     <body>
-      <div>
+      <div id="divPhoto">
       <input id='photo' type="file" accept="image/*" capture="camera">
       <img id='photoTmp' src="" height="200" alt="Aperçu de l’image...">
 
       <div>
+      <div id="divText">
+      <textarea id='textInput' row="3" cols="50" ></textarea>
+
+      <div>
+
     </body>
 
     <script>
@@ -102,7 +114,7 @@
             card.addChild(pict);
             app.stage.addChild(card);
 
-
+$( "#divText" ).show();
 
                   };
 
