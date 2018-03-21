@@ -20,3 +20,16 @@
 
     <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
 </form>
+
+<script>
+    //démarrage de l'app
+    app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, 
+                                                                                  antialias : true
+                                                                      });
+
+    document.body.appendChild(app.view);
+
+    app.stage.interactive = true;
+
+
+</script>
