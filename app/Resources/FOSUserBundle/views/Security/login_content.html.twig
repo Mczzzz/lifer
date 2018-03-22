@@ -43,7 +43,9 @@
     $(document).ready(function(){
         console.log(window.innerHeight / 2);
         console.log(window.innerWidth / 2);
-        $('#username').css({top: window.innerHeight / 2, left: window.innerWidth / 2});
+        var usernameTop = (window.innerHeight / 2) + "px";
+        var usernameLeft = (window.innerWidth / 2) + "px";
+        $('#username').css({top: usernameTop, left: usernameLeft});
     });
 
 
