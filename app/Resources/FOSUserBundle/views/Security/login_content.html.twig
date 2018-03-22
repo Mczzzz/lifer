@@ -37,8 +37,11 @@
 
     //add background image
     $pict = new PIXI.Sprite.fromImage('bundles/app/app/pict/background/bk1.jpeg');
-
+    $pict.scale.set(1.5,1.5);
     app.stage.addChild($pict);
+
+    $('#username').css({top: innerHeight / 2, left : innerWidth / 2})
+
 
 
 </script>
