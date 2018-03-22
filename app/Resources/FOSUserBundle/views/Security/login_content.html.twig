@@ -40,8 +40,11 @@
     $pict.scale.set(1.5,1.5);
     app.stage.addChild($pict);
 
-    $('#username').css({top: window.innerHeight / 2, left: window.innerWidth / 2});
-
+    $(document).ready(function(){
+        console.log(window.innerHeight / 2);
+        console.log(window.innerWidth / 2);
+        $('#username').css({top: window.innerHeight / 2, left: window.innerWidth / 2});
+    }
 
 
 </script>
