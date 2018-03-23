@@ -48,7 +48,7 @@
         //FilmFilter = new PIXI.filters.OldFilmFilter({sepia:0.8},Math.random());
         //FilmFilter.noise = Math.random();
        // if(iterator == 3){
-            FilmFilter = new PIXI.filters.GodrayFilter({ parallel: 0, gain: 0.6, lacunarity: 2, angle: 30, center: [0, -50], time: delta += delta /1000});
+            FilmFilter = new PIXI.filters.GodrayFilter({ parallel: 0, gain: 0.6, lacunarity: 2, angle: 30, center: [0, -50], time: new Date().getTime() / 1000});
             pict.filters = [FilmFilter];
          //   iterator = 0;
        // }
