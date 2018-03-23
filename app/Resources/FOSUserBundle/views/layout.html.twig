@@ -13,7 +13,7 @@
 
             #username{
                 position:absolute;
-                font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+                
                 border: 2px solid rgba(255, 255, 255, 0.5);
                   font-size: 1.75em;
                   padding: .25em .5em .3125em;
@@ -43,38 +43,42 @@
             }
 
 
-::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-  text-shadow: 0 0 .125em transparent;
-  -webkit-transition: all .25s;
-  transition: all .25s;
-}
+            input {
+              font-family: "Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
+            }
 
-input:focus::-webkit-input-placeholder {
-  opacity: .5;
-}
+            ::-webkit-input-placeholder {
+              color: rgba(255, 255, 255, 0.5);
+              text-shadow: 0 0 .125em transparent;
+              -webkit-transition: all .25s;
+              transition: all .25s;
+            }
 
-::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-  text-shadow: 0 0 .125em transparent;
-  -webkit-transition: all .25s;
-  transition: all .25s;
-}
+            input:focus::-webkit-input-placeholder {
+              opacity: .5;
+            }
 
-input:focus::-moz-placeholder {
-  opacity: .5;
-}
+            ::-moz-placeholder {
+              color: rgba(255, 255, 255, 0.5);
+              text-shadow: 0 0 .125em transparent;
+              -webkit-transition: all .25s;
+              transition: all .25s;
+            }
 
-:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.5);
-  text-shadow: 0 0 .125em transparent;
-  -webkit-transition: all .25s;
-  transition: all .25s;
-}
+            input:focus::-moz-placeholder {
+              opacity: .5;
+            }
 
-input:focus:-ms-input-placeholder {
-  opacity: .5;
-}
+            :-ms-input-placeholder {
+              color: rgba(255, 255, 255, 0.5);
+              text-shadow: 0 0 .125em transparent;
+              -webkit-transition: all .25s;
+              transition: all .25s;
+            }
+
+            input:focus:-ms-input-placeholder {
+              opacity: .5;
+            }
 
 
 
