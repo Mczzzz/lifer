@@ -40,6 +40,16 @@
     pict.scale.set(1.5,1.5);
     app.stage.addChild(pict);
 
+/*    FilmFilter = new PIXI.filters.OldFilmFilter({sepia:0.3},Math.random());*/
+
+    app.ticker.add(function(delta){
+    
+        FilmFilter = new PIXI.filters.OldFilmFilter({sepia:0.8},Math.random());
+        //FilmFilter.noise = Math.random();
+        pict.filters = [FilmFilter];
+
+    });
+
 
     var lifer = new PIXI.Text("Lifer",{fontFamily : 'Berkshire Swash', fontSize: 300,fill : 0xFFFFFF, align : 'center'});
         lifer.x = (window.innerWidth / 2) - lifer.width / 2;
