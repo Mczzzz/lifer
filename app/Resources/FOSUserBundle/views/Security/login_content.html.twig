@@ -25,10 +25,11 @@
 </form>
 
 <script>
+
     $(document).ready(function(){
     //démarrage de l'app
     app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, 
-                                                                                  anti
+                                                                        antialias : true});
     document.body.appendChild(app.view);
 
     app.stage.interactive = true;
@@ -64,7 +65,7 @@
 
      app.stage.addChild(lifer);    
 
-
+    
 
         var usernameTop = (window.innerHeight / 2);
         var usernameLeft = (window.innerWidth / 2);
