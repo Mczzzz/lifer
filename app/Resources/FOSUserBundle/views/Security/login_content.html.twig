@@ -41,14 +41,17 @@
     app.stage.addChild(pict);
 
 /*    FilmFilter = new PIXI.filters.OldFilmFilter({sepia:0.3},Math.random());*/
-    
+    itearator = 3;
     app.ticker.add(function(delta){
     console.log(delta);
         //FilmFilter = new PIXI.filters.OldFilmFilter({sepia:0.8},Math.random());
         //FilmFilter.noise = Math.random();
-        FilmFilter = new PIXI.filters.GodrayFilter({ parallel: 0, gain: 0.6, lacunarity: 2.8, angle: 30, center: [0, -629], time: Math.random()});
-        pict.filters = [FilmFilter];
-
+        if(iterator == 3){
+            FilmFilter = new PIXI.filters.GodrayFilter({ parallel: 0, gain: 0.49, lacunarity: 2, angle: 30, center: [0, -629], time: Math.random()});
+            pict.filters = [FilmFilter];
+            iterator = iterator + 1;
+        }
+        iterator
     });
 
 
