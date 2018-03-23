@@ -36,16 +36,16 @@
 
 
     //add background image
-    pict = new PIXI.Sprite.fromImage('bundles/app/app/pict/background/bk2.jpg');
+    pict = new PIXI.Sprite.fromImage('bundles/app/app/pict/background/bk1.jpeg');
     pict.scale.set(1.5,1.5);
     app.stage.addChild(pict);
 
 
-    var Lifer = new PIXI.Text("Lifer",{fontFamily : 'Berkshire Swash', fontSize: 50,fill : 0xFFFFFF, align : 'center'});
-        Lifer.x = window.innerWidth - Lifer.width / 2;
-        Lifer.y = window.innerHeight * 0.25;
+    var lifer = new PIXI.Text("Lifer",{fontFamily : 'Berkshire Swash', fontSize: 50,fill : 0xFFFFFF, align : 'center'});
+        lifer.x = window.innerWidth - lifer.width / 2;
+        lifer.y = window.innerHeight * 0.25;
 
-     app.stage.addChild(Lifer);    
+     app.stage.addChild(lifer);    
 
     $(document).ready(function(){
 
