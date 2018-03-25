@@ -28,7 +28,7 @@
 
     $(document).ready(function(){
     //démarrage de l'app
-    app = new PIX    app.ticker.add(function(delta){
+/*        app.ticker.add(function(delta){
     
     //console.log(new Date().getTime());
         //FilmFilter = new PIXI.filters.OldFilmFilter({sepia:0.8},Math.random());
@@ -41,7 +41,9 @@
          //   iterator = 0; 
        // }
         //iterator = iterator + 1;
-    });I.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, 
+    });*/
+
+    app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, 
                                                                         antialias : true});
     document.body.appendChild(app.view);
 
