@@ -10,11 +10,11 @@
     {% endif %}
     <div class="username">
        <!--  <label for="username">{{ 'security.login.username'|trans }}</label> -->
-        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" placeholder="Username" />
+        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" placeholder="User" />
     </div>
     <div class="password">
       <!--   <label for="password">{{ 'security.login.password'|trans }}</label> -->
-        <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+        <input type="password" id="password" name="_password" required="required" autocomplete="current-password" placeholder="Pass" />
     </div>
 
 <!--         <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
@@ -28,7 +28,20 @@
 
     $(document).ready(function(){
     //démarrage de l'app
-    app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, 
+    app = new PIX    app.ticker.add(function(delta){
+    
+    //console.log(new Date().getTime());
+        //FilmFilter = new PIXI.filters.OldFilmFilter({sepia:0.8},Math.random());
+        //FilmFilter.noise = Math.random();
+       // if(iterator == 3){
+        iterator += delta / 1000;
+        //console.log(iterator);
+            FilmFilter = new PIXI.filters.GodrayFilter({ parallel: 0, gain: 0.6, lacunarity: 2, angle: 30, center: [0, -50], time: iterator * 8});
+            pict.filters = [FilmFilter];
+         //   iterator = 0; 
+       // }
+        //iterator = iterator + 1;
+    });I.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, 
                                                                         antialias : true});
     document.body.appendChild(app.view);
 
@@ -46,20 +59,7 @@
     FilmFilter = new PIXI.filters.GodrayFilter({ parallel: 0, gain: 0.6, lacunarity: 2, angle: 30, center: [0, -50], time: iterator * 8});
             pict.filters = [FilmFilter];
             
-/*    app.ticker.add(function(delta){
-    
-    //console.log(new Date().getTime());
-        //FilmFilter = new PIXI.filters.OldFilmFilter({sepia:0.8},Math.random());
-        //FilmFilter.noise = Math.random();
-       // if(iterator == 3){
-        iterator += delta / 1000;
-        //console.log(iterator);
-            FilmFilter = new PIXI.filters.GodrayFilter({ parallel: 0, gain: 0.6, lacunarity: 2, angle: 30, center: [0, -50], time: iterator * 8});
-            pict.filters = [FilmFilter];
-         //   iterator = 0; 
-       // }
-        //iterator = iterator + 1;
-    });*/
+/**/
 
 
     var lifer = new PIXI.Text("Lifer",{fontFamily : 'Berkshire Swash', fontSize: 300,fill : 0xFFFFFF, align : 'center'});
@@ -73,10 +73,11 @@
         var usernameTop = (window.innerHeight / 2);
         var passwordTop = (window.innerHeight / 2) + 100;
         var usernameLeft = (window.innerWidth / 2);
-        var usernameWidth = $('#username').width() / 2;
+        var passwordWidth = (window.innerWidth / 2) - ($('#password').width() / 2);
         console.log(usernameWidth);
         $('#username').css({  top: usernameTop});
         $('#password').css({  top: passwordTop});
+        $('#password').css({  left: passwordWidth});
         //$('#username').focus();
     });
 
