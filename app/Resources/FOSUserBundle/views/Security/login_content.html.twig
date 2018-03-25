@@ -43,7 +43,10 @@
 /*    FilmFilter = new PIXI.filters.OldFilmFilter({sepia:0.3},Math.random());*/
     //iterator = 3;
     iterator = 0;
-    app.ticker.add(function(delta){
+    FilmFilter = new PIXI.filters.GodrayFilter({ parallel: 0, gain: 0.6, lacunarity: 2, angle: 30, center: [0, -50], time: iterator * 8});
+            pict.filters = [FilmFilter];
+            
+/*    app.ticker.add(function(delta){
     
     //console.log(new Date().getTime());
         //FilmFilter = new PIXI.filters.OldFilmFilter({sepia:0.8},Math.random());
@@ -56,7 +59,7 @@
          //   iterator = 0; 
        // }
         //iterator = iterator + 1;
-    });
+    });*/
 
 
     var lifer = new PIXI.Text("Lifer",{fontFamily : 'Berkshire Swash', fontSize: 300,fill : 0xFFFFFF, align : 'center'});
