@@ -145,7 +145,7 @@
 
               card.addChild(pict);
              // alert(ratio);
-             $('body').append('<div id="divText"><textarea id="textInput" ></textarea><div>');
+             $('body').append('<div id="divText"><textarea id="textInput">Ceci est un text par default</textarea><div>');
             // $('#divText').show();
              $('#divText').css({top: pict.height + 70, left : 60});
 
@@ -239,7 +239,7 @@ i++;
             var formData = new FormData();
 
             formData.append('jpg'  ,$('#photo')[0].files[0]);
-
+            formData.append('text'  ,$('#textInput').val());
             var test = $.ajax({
               type: 'POST',
               url: 'data',
