@@ -10,6 +10,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use AppBundle\Entity\Node;
+
 class NodeController extends Controller
 {
 
@@ -25,12 +27,25 @@ class NodeController extends Controller
         // is it an Ajax request?
         $isAjax = $request->isXmlHttpRequest();
 
+        //users infos
         $user = $this->getUser();
 
-        var_dump($user);
-        die();
+
+        // j'enregistre en base ma note
+        $entityManager = $this->getDoctrine()->getManager();
+        $node = new Node('now');
+        $node->setIdCreator($this->getUser()->getId());
+        $node->setTsCreation(new \DateTime());
+
+        // tells Doctrine you want to (eventually) save the Product (no queries yet)
+        $entityManager->persist($node);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $entityManager->flush();
 
 
+
+/*
         $request = Request::createFromGlobals();
 
         $tmpDir = $this->getParameter('tmpDir');
@@ -41,7 +56,7 @@ class NodeController extends Controller
 
         $request->files->get('jpg')->move($tmpDir,$path_parts['basename']);
 
-
+*/
         return new Response('OK');
 
     }       
