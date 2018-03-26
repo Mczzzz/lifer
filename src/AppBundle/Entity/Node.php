@@ -72,6 +72,15 @@ class Node
 
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="text", type="text", nullable=true)
+     */
+    private $text;
+
+
+
+    /**
      * Get id
      *
      * @return int
@@ -248,5 +257,35 @@ class Node
     {
         return $this->status;
     }
+
+
+
+    /**
+     * Set text
+     *
+     * @param text $text
+     *
+     * @return Node
+     */
+    public function setText($text)
+    {
+        $this->text = $text;
+
+        return $this;
+    }
+
+    /**
+     * Get text
+     *
+     * @return text
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
+
+
+
+
 }
 
