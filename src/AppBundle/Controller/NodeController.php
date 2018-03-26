@@ -31,12 +31,16 @@ class NodeController extends Controller
         $user = $this->getUser();
 
 
+        //interception de la requete
+        $request = Request::createFromGlobals();
+        $text = $request->request->get('text');
+
         // j'enregistre en base ma note
         $entityManager = $this->getDoctrine()->getManager();
         $node = new Node('now');
         $node->setIdCreator($this->getUser()->getId());
         $node->setTsCreation(new \DateTime());
-        $node->setText('blablabla');
+        $node->setText($text);
         $node->setStatus(100);
 
         // tells Doctrine you want to (eventually) save the Product (no queries yet)
