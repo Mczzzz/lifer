@@ -16,7 +16,7 @@ class NodeController extends Controller
 
     /**
      * @Route("/api/node", name="api_node")
-     * @Method("POST")
+     * @Method("GET")
      */
 
     public function NodeManager(Request $request)
