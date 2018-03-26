@@ -36,6 +36,7 @@ class NodeController extends Controller
         $node = new Node('now');
         $node->setIdCreator($this->getUser()->getId());
         $node->setTsCreation(new \DateTime());
+        $node->setText('blablabla');
         $node->setStatus(100);
 
         // tells Doctrine you want to (eventually) save the Product (no queries yet)
