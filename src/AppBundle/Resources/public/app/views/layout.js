@@ -5,7 +5,7 @@ var layout = function(){
 
 	this.init = function(){
 
-		app.stage.addChild(this.addTool.init());
+		LiferApp.stage.addChild(this.addTool.init());
 
 	}
 
