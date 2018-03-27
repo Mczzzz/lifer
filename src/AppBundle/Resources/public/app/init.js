@@ -1,3 +1,5 @@
+import * as MyImport from 'views/layout.js';
+
 class Lifer {
 
 	constructor(){
@@ -12,7 +14,7 @@ class Lifer {
 
 
     start(){
-    	import { Loader, ModuleNamespace } from 'views/layout.js';
+
 
 
     }
