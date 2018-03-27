@@ -12,7 +12,7 @@ class Lifer {
 
 
     start(){
-    	import * from 'views/layout';
+    	import * as monModule from 'views/layout';
 
 
     }
