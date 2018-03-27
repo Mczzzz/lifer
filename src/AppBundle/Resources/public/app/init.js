@@ -2,10 +2,7 @@ class Lifer {
 
 	constructor(){
 
-		this.app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, 
-                                                                                  antialias : true
-                                                                                }
-                                        );
+		this.app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, antialias : true });
 
         document.body.appendChild(this.app.view);
 
@@ -14,5 +11,10 @@ class Lifer {
     }
 
 
+    start(){
+    	import * from 'views/layout';
+
+
+    }
 
 }
