@@ -1,4 +1,4 @@
-import * as MyImport from 'views/layout.js';
+import layout from 'views/layout.js';
 
 class Lifer {
 
