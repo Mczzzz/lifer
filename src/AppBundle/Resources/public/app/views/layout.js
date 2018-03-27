@@ -1,4 +1,4 @@
-var layout = function(){
+var layout = function(LiferApp){
 
 	this.addTool = new adder();
 
