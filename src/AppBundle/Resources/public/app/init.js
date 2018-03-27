@@ -12,7 +12,7 @@ class Lifer {
 
 
     start(){
-    	import * as monModule from 'views/layout';
+    	import alias from 'views/layout';
 
 
     }
