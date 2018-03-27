@@ -12,7 +12,7 @@ class Lifer {
 
 
     start(){
-    	import alias from 'views/layout';
+    	import { Loader, ModuleNamespace } from 'views/layout.js';
 
 
     }
