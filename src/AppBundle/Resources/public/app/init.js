@@ -2,14 +2,14 @@ class Lifer {
 
 	constructor(){
 
-		app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, 
+		this.app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, 
                                                                                   antialias : true
                                                                                 }
                                         );
 
-        document.body.appendChild(app.view);
+        document.body.appendChild(this.app.view);
 
-        app.stage.interactive = true;
+        this.app.stage.interactive = true;
 
     }
 
