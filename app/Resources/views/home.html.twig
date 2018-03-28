@@ -2,13 +2,11 @@
   <html>
   
     <head>
-<!--       <script type="text/javascript" src="lib/jquery-3.3.1.slim.min.js"></script> -->
+<!--       <script type="text/javascript" src="lib/jquery-3.3.1.slim.min.js"></script>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script src="{{ asset('bundles/app/lib/pixi.min.js') }}"></script>
-      <script src="{{ asset('bundles/app/app/init.js') }}"></script>
-      <script src="{{ asset('bundles/app/app/components/elements/menu/adder.js') }}"></script>
-      <script src="{{ asset('bundles/app/app/components/elements/preview/pict.js') }}"></script>
-      <script src="{{ asset('bundles/app/app/views/layout.js') }}"></script>
+      <script src="{{ asset('bundles/app/lib/pixi.min.js') }}"></script> -->
+      <script src="{{ asset('build/app.js') }}"></script>
+
 
       <meta charset="utf-8" />
       <title>App.repas</title>
@@ -21,7 +19,7 @@
           padding: 0;
         }
 
-      #divPhoto{
+/*      #divPhoto{
        visibility:hidden;
         position:absolute;
       }
@@ -30,236 +28,22 @@
     
         position:absolute;
     
-      }
+      }*/
     </style>
 
 
     <body>
-      <div id="divPhoto">
+<!--       <div id="divPhoto">
       <input id='photo' type="file" accept="image/*" capture="camera">
       <img id='photoTmp' src=""  alt="Aperçu de l’image...">
 
-      <div>
+      <div> -->
 
 
     </body>
 
     <script>
-
-
-/*
-          app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, 
-                                                                                  antialias : true
-                                                                                }
-                                        );
-
-          document.body.appendChild(app.view);
-
-          app.stage.interactive = true;
-*/
-          const LiferApp = new Lifer();
-          
-          LiferApp.start();
-
-          var MyHome = new layout(LiferApp);
-          MyHome.init();
-
-          var count = 0;
-
-          app.ticker.add(function() {
-
-              count += 0.05;
-
-              var blur = Math.cos(count);
-
-              MyHome.addTool.setDropShadowFilter(30 * blur);
-
-        
-
-          });
-
-
-     $(document).ready(function(){
-
-          $('#photo').on('change', function uploadfile(){
-
-            console.log('on passe');
-
-                 // var input = event.target;
-
-                 var dataURL = '';
-                  var reader = new FileReader();
-
-                  reader.onloadend = function(){
-//                    console.log(reader);
-                      dataURL = reader.result;
-/*                   var output = document.getElementById('photoTmp');
-                    output.src = dataURL;           
-                    console.log(output.clientWidth);
-                    console.log(output.clientHeight);
-                    console.log(output.naturalWidth);
-                    console.log(output.naturalHeight);*/
-
-                  var card = new PIXI.Container();
-
-                  var backgroundCard = new PIXI.Graphics();
-                  backgroundCard.beginFill(0xFFFFFF);
-                  backgroundCard.lineStyle(0);
-                  backgroundCard.drawRect(50, 50, window.innerWidth - 100, window.innerHeight - 100);
-                  backgroundCard.endFill();
-
-                  backgroundCard.interactive = true;
-
-                  card.addChild(backgroundCard);
-
-
-            app.stage.addChild(card);         
-
-            var i = new Image();
-    
-            i.onload = function(){
-           //  alert( i.width+", "+i.height );
-  //           console.log( i.width+", "+i.height );
-             var pict = new PIXI.Sprite.fromImage(dataURL);
-             pict.interactive = true;
-             pict.width = window.innerWidth - 120;
-             ratio = i.height / i.width;
-
-             
-               pict.height = pict.width * ratio;
-              diffsize =  pict.height - pict.width;
-
-              pict.anchor.set(0.5,0.5);
-              pict.x = 60 + pict.width / 2;
-              pict.y = 60 + pict.height / 2;
-              console.log(pict.width);
-              console.log(pict.height);
-              pict.rotation = Math.PI * 2 * 0.25;
-              pict.height = window.innerWidth - 120;
-              pict.width = pict.height / ratio;
-              pict.y -= diffsize - 25;
-             // pict.pivot.set(pict.width, pict.height);
-              
-              //pict.rotation = 1.5702;
-             // pict.rotation = 0.5;
-             //console.log(pict);
-
-             pict.on('tap', (event) => {
-              console.log('in tap');
-              pict.rotation += Math.PI * 2 * 0.25;
-              });
-
-              card.addChild(pict);
-             // alert(ratio);
-             $('body').append('<div id="divText"><textarea id="textInput">Ceci est un text par default</textarea><div>');
-            // $('#divText').show();
-             $('#divText').css({top: pict.height + 70, left : 60});
-
-             $('#textInput').css({width: pict.width+"px", height: pict.height+"px"});
-             console.log($('#textInput').val());
-            };
-
-            i.src = dataURL;
-            
-            //console.log(i);
-            //console.log(i.ratio);
-//            console.log('before sleep');
-            //sleep(1000);
-        //    console.log(ratio);
-/*            pict.width = window.innerWidth - 120;
-            pict.height = pict.width * ratio;
-            pict.x = 60;
-            pict.y = 60;*/
-            //pict.anchor.set(0.5);
-            //pict.rotation = 1.5705;
-/*            console.log(pict.getBounds());
-           console.log(pict.width);
-           console.log(pict.height);
-           console.log(pict.getBounds());*/
-
-  //          console.log(pict);
-           
-            
-
-             
-
-       //     $("#divText").show();
-
-
-         //   app.stage.addChild(pict);
-
-                  };
-
-                 // reader.readAsDataURL($);
-
-//            console.log(pict);
-            
-
- 
-
-           
-
-
-
-                 reader.readAsDataURL($('#photo')[0].files[0]);
-
-            //console.log(reader);
-            //console.log(reader.result);
-            $('#photoTmp').attr('src',reader.result);
-
-            function sleep(seconds){
-                var waitUntil = new Date().getTime() + seconds;
-                while(new Date().getTime() < waitUntil) true;
-            }
-
-
-
-/*            i = 0;
-            while (i < 100 && reader.readyState < 2) {
-              console.log(reader.readyState);
-console.log(i);
-i++;
-            sleep(100);
-            }*/
-
-/*            var image = new Image();
-            image.src = reader.result;*/
-
-            //var myBaseTexture = new PIXI.BaseTexture(reader.readAsDataURL($('#photo')[0].files[0]));
-            //var texture = new PIXI.Texture(myBaseTexture);
-
-            // then add to the cache (if required)
-           // PIXI.Texture.addTextureToCache(texture, "someId");
-
-//console.log(texture);
-/*            var pict = new PIXI.Sprite.fromImage(reader.readAsDataURL($('#photo')[0].files[0]));
-            pict.width = 300;
-            pict.height = 300;
-
-
-            console.log(pict);
-            app.stage.addChild(pict);
-            console.log('after app stage');*/
-
-
-            var formData = new FormData();
-
-            formData.append('jpg'  ,$('#photo')[0].files[0]);
-            formData.append('text'  ,$('#textInput').val());
-            var test = $.ajax({
-              type: 'POST',
-              url: 'api/node',
-              data: formData,
-                          async: true,
-                          cache: false,
-                          contentType: false,
-                          processData: false
-            });
-
-
-          });
-
-        });
+/**/
     </script>
 
   </html>
