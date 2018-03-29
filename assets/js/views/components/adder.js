@@ -8,6 +8,8 @@ export default class Adder {
 
 		this.rayonButton = rayonButton;
 
+		this.initHmlElements();
+
 		this.drawShadow();
 		this.drawCircle();
 		this.drawPlus();
@@ -15,6 +17,18 @@ export default class Adder {
 		this.addEventTap();
 
 		return this.container;
+
+	}
+
+
+	initHmlElements(){
+		//<input id='photo' type="file" accept="image/*" capture="camera">
+		const inputFile = document.createElement("INPUT");
+		inputFile.setAttribute("type", "file");
+		inputFile.setAttribute("accept", "image/*");
+		inputFile.setAttribute("capture", "camera");
+		inputFile.setAttribute("id", "photo");
+		document.body.appendChild(this.app.view);
 
 	}
 
@@ -74,7 +88,8 @@ export default class Adder {
 
 		this.container.on('tap', (event) => {
 		  
-		  alert('test Event tap');
+		  //alert('test Event tap');
+		  $('#photo').click();
 
 		});
 
