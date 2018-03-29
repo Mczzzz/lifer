@@ -15,7 +15,7 @@ export default class Frame {
 
 		
 		
-		window.addEventListener('changeFrame', () => this.watch());
+		window.addEventListener('changeFrame', (e) => this.watch(e));
 
 		//load all frame
 /*		for (const arrValue of this.frame) {
@@ -26,9 +26,9 @@ export default class Frame {
 	}
 
 
-	watch(){
+	watch(e){
 
-		console.log('changeFrame - ok');
+		console.log('changeFrame - ok' + e);
 		//this.node =
 
 

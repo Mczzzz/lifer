@@ -53,7 +53,8 @@ export default class Adder {
                 this.dataURL = reader.result;
 
                 console.log('before trigger')
-                let event = new Event('changeFrame');
+                //let event = new Event('changeFrame');
+                let event = new CustomEvent('changeFrame', 'node123');
                 window.dispatchEvent(event);
  
             };
