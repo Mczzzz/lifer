@@ -7,10 +7,12 @@ export default class Frame {
 	constructor(){
 
 //		this.frame = ['main','node'];
+/*        let proxy = new Proxy(this, this.watch);
 
+        window.addEventListener('scroll', proxy);*/
 
 		//add event.listener
-		window.addEventListener('tap', () => this.watch());
+		window.addEventListener('touchstart', () => this.watch());
 
 		//load all frame
 /*		for (const arrValue of this.frame) {
