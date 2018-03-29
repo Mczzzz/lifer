@@ -52,7 +52,8 @@ export default class Adder {
 
                 this.dataURL = reader.result;
 
-                $(window).trigger('changeFrame');
+                console.log('before trigger')
+                window.dispatchEvent('changeFrame');
  
             };
 
