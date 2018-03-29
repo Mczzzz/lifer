@@ -28,7 +28,7 @@ export default class Adder {
 		inputFile.setAttribute("accept", "image/*");
 		inputFile.setAttribute("capture", "camera");
 		inputFile.setAttribute("id", "photo");
-		document.body.appendChild(this.app.view);
+		document.body.appendChild(inputFile);
 
 	}
 
