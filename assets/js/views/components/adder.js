@@ -6,7 +6,7 @@ export default class Adder {
 		this.container = new PIXI.Container();
 
 		this.drawShadow();
-		this.addButton();
+		this.drawCircle();
 
 		return this.container;
 
