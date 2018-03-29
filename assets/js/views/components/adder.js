@@ -54,7 +54,7 @@ export default class Adder {
                 console.log(this.dataURL);
             };
 
-			reader.readAsDataURL($('#photo')[0].files[0]);
+		this.photo = reader.readAsDataURL($('#photo')[0].files[0]);
 
 		});
 
