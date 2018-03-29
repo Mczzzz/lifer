@@ -28,7 +28,7 @@ export default class Frame {
 
 	watch(e){
 
-		console.log('changeFrame - ok' + e.frame);
+		console.log('changeFrame - ok' + e);
 		//this.node =
 
 
