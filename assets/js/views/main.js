@@ -15,7 +15,7 @@ export default class Main {
 
 	render(){
 
-		this.vue = new hHeader();
+		this.vue = new Header();
 
 	}
 
