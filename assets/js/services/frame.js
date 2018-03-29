@@ -12,7 +12,7 @@ export default class Frame {
         window.addEventListener('scroll', proxy);*/
 
 		//add event.listener
-		window.addEventListener('touchstart', () => this.watch());
+		window.addEventListener('changeFrame', () => this.watch());
 
 		//load all frame
 /*		for (const arrValue of this.frame) {
@@ -25,7 +25,7 @@ export default class Frame {
 
 	watch(){
 
-		alert('in watch');
+		console.log('changeFrame - ok');
 		//this.node =
 
 

@@ -51,10 +51,12 @@ export default class Adder {
             reader.onloadend = function(){
 
                 this.dataURL = reader.result;
-                console.log(this.dataURL);
+
+                window.trigger('changeframe');
+ 
             };
 
-		this.photo = reader.readAsDataURL($('#photo')[0].files[0]);
+			reader.readAsDataURL($('#photo')[0].files[0]);
 
 		});
 
