@@ -17,13 +17,11 @@ export default class Main {
 	render(){
 
 		this.vue = new Header();
-
 		this.attach(this.vue);
-		//this.app.stage.addChild(this.vue);
 
-/*		this.adder = new Adder();
-
-		this.app.stage.addChild(this.vue);*/
+		this.adder = new Adder();
+		this.attach(this.adder);
+		
 	}
 
 
