@@ -17,6 +17,8 @@ export default class Main {
 
 		this.vue = new Header();
 
+		this.app.stage.addChild(this.vue);
+
 	}
 
 

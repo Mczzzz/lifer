@@ -13,7 +13,7 @@ export default class Header {
 
         this.backgroundCard.interactive = true;
 
-        this.app.stage.addChild(this.backgroundCard);
+        return this.backgroundCard;
      
 
 
