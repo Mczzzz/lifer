@@ -19,9 +19,10 @@ export default class Main {
 		this.vue = new Header();
 		this.attach(this.vue);
 
-		this.adder = new Adder();
+		const rayonButton = 30;
+		this.adder = new Adder(rayonButton);
 		this.adder.x = 20;
-		this.adder.y = window.innerHeight - 50;
+		this.adder.y = window.innerHeight - rayonButton -20;
 		this.attach(this.adder);
 
 	}

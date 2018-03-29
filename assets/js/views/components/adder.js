@@ -1,9 +1,11 @@
 export default class Adder {
 	
 
-	constructor(){
+	constructor(rayonButton){
 
 		this.container = new PIXI.Container();
+
+		this.rayonButton = rayonButton;
 
 		this.drawShadow();
 		this.drawCircle();
@@ -13,27 +15,12 @@ export default class Adder {
 	}
 
 
-
-	addButton(){
-
-		this.add = new PIXI.Graphics();
-	    this.add.beginFill(0xFF0000);
-	    this.add.lineStyle(2,0x999999);
-	    this.add.drawCircle(0, 0, 30);
-	    this.add.endFill();
-
-	    this.spriteButton = new PIXI.Sprite(this.add.generateCanvasTexture());
-
-
-	}
-
-
 	drawCircle(){
 
 		this.add = new PIXI.Graphics();
 	    this.add.beginFill(0xFF0000);
 	    this.add.lineStyle(2,0x999999);
-	    this.add.drawCircle(0, 0, 30);
+	    this.add.drawCircle(0, 0, this.rayonButton);
 	    this.add.endFill();
 
 	    this.spriteButton = new PIXI.Sprite(this.add.generateCanvasTexture());
@@ -50,7 +37,7 @@ export default class Adder {
 		this.addShadow = new PIXI.Graphics();
 	    this.addShadow.beginFill(0xFFFFFF);
 	    this.addShadow.lineStyle(0);
-	    this.addShadow.drawCircle(0, 0, 60);
+	    this.addShadow.drawCircle(0, 0, this.rayonButton);
 	    this.addShadow.endFill();
 
 	    this.spriteShadow = new PIXI.Sprite(this.addShadow.generateCanvasTexture());
@@ -58,7 +45,7 @@ export default class Adder {
 	    this.spriteShadow.y = 2;
 
 	    this.dropShadowFilter = new PIXI.filters.BlurFilter();
-       	this.dropShadowFilter.blur = 30;
+       	this.dropShadowFilter.blur = 15;
 		this.spriteShadow.filters = [this.dropShadowFilter];
 
 		this.container.addChild(this.spriteShadow);
