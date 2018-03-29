@@ -9,6 +9,7 @@ export default class Adder {
 
 		this.drawShadow();
 		this.drawCircle();
+		this.drawPlus();
 
 		return this.container;
 
