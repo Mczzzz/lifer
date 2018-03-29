@@ -6,12 +6,26 @@ export default class Frame {
 
 	constructor(){
 
-		this.frame = ['main','node'];
+//		this.frame = ['main','node'];
+
+
+		//add event.listener
+		window.addEventListener('tap', () => this.watch());
 
 		//load all frame
-		for (const arrValue of this.frame) {
+/*		for (const arrValue of this.frame) {
 		  console.log(arrValue); // 'hello', 'world'
-		}
+		}*/
+
+
+	}
+
+
+	watch(){
+
+		alert('in watch');
+		//this.node =
+
 
 
 	}
