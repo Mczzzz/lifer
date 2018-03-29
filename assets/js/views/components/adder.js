@@ -51,11 +51,17 @@ export default class Adder {
 		this.container.addChild(this.spriteShadow);
 
 
-
-
-
-
 	}
 
+
+	drawPlus(){
+
+		this.plus = new PIXI.Text("+",{fontFamily : 'Arial', fontSize: 50,fill : 0xFFFFFF, align : 'center'});
+        this.plus.x = this.rayonButton / 2 + this.plus.width / 2;
+        this.plus.y = this.rayonButton / 2
+
+        this.container.addChild(this.plus);
+
+	}
 
 }
