@@ -18,8 +18,8 @@ export default class Adder {
 
 		this.add = new PIXI.Graphics();
 	    this.add.beginFill(0xFF0000);
-	    this.add.lineStyle(3,0x999999);
-	    this.add.drawCircle(0, 0, 60);
+	    this.add.lineStyle(2,0x999999);
+	    this.add.drawCircle(0, 0, 30);
 	    this.add.endFill();
 
 	    this.spriteButton = new PIXI.Sprite(this.add.generateCanvasTexture());
@@ -32,8 +32,8 @@ export default class Adder {
 
 		this.add = new PIXI.Graphics();
 	    this.add.beginFill(0xFF0000);
-	    this.add.lineStyle(3,0x999999);
-	    this.add.drawCircle(0, 0, 60);
+	    this.add.lineStyle(2,0x999999);
+	    this.add.drawCircle(0, 0, 30);
 	    this.add.endFill();
 
 	    this.spriteButton = new PIXI.Sprite(this.add.generateCanvasTexture());

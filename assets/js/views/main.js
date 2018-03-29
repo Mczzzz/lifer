@@ -20,8 +20,10 @@ export default class Main {
 		this.attach(this.vue);
 
 		this.adder = new Adder();
+		this.adder.x = 20;
+		this.adder.y = window.innerHeight - 50;
 		this.attach(this.adder);
-		
+
 	}
 
 
