@@ -13,7 +13,7 @@ export default class Frame {
 
 		//add event.listener
 
-		let event = new Event('changeFrame');
+		
 		
 		window.addEventListener('changeFrame', () => this.watch());
 
