@@ -23,6 +23,14 @@ export default class Adder {
 
 	initHmlElements(){
 		//<input id='photo' type="file" accept="image/*" capture="camera">
+		this.createHtmlElement();
+		this.bindOnChangeHtmlElement();
+
+	}
+
+
+	createHtmlElement(){
+
 		const inputFile = document.createElement("INPUT");
 		inputFile.setAttribute("type", "file");
 		inputFile.setAttribute("accept", "image/*");
@@ -31,6 +39,29 @@ export default class Adder {
 		document.body.appendChild(inputFile);
 
 	}
+
+	bindOnChangeHtmlElement(){
+
+
+		$('#photo').on('change', function camFile(){
+
+
+			this.reader = new FileReader();
+
+            this.reader.onloadend = function(){
+
+                this.dataURL = this.reader.result;
+                console.log(this.dataURL);
+            };
+
+			this.reader.readAsDataURL($('#photo')[0].files[0]);
+
+		});
+
+
+	}
+
+
 
 
 	drawCircle(){
