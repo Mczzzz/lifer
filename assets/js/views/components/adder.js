@@ -11,6 +11,7 @@ export default class Adder {
 		this.drawShadow();
 		this.drawCircle();
 		this.drawPlus();
+
 		this.addEventTap();
 
 		return this.container;
@@ -60,8 +61,8 @@ export default class Adder {
 	drawPlus(){
 
 		this.plus = new PIXI.Text("+",{fontFamily : 'Arial', fontSize: 25,fill : 0xFFFFFF, align : 'center'});
-        this.plus.x = this.rayonButton / 2;
-        this.plus.y = this.rayonButton / 2 - this.plus.width / 2;
+        this.plus.x = this.rayonButton / 2 + this.plus.width / 2;
+        this.plus.y = this.rayonButton / 2  + this.plus.height / 2;
 
         this.container.addChild(this.plus);
 
