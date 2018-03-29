@@ -53,7 +53,7 @@ export default class Adder {
 	    this.addShadow.drawCircle(0, 0, 60);
 	    this.addShadow.endFill();
 
-	    this.spriteShadow = new PIXI.Sprite(addShadow.generateCanvasTexture());
+	    this.spriteShadow = new PIXI.Sprite(this.addShadow.generateCanvasTexture());
 	    this.spriteShadow.x = 2;
 	    this.spriteShadow.y = 2;
 
