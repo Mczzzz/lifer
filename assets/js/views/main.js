@@ -1,4 +1,5 @@
 import Header from './components/header.js';
+import Adder from './components/adder.js';
 
 export default class Main {
 
@@ -17,10 +18,20 @@ export default class Main {
 
 		this.vue = new Header();
 
-		this.app.stage.addChild(this.vue);
+		this.attach(this.vue);
+		//this.app.stage.addChild(this.vue);
 
+/*		this.adder = new Adder();
+
+		this.app.stage.addChild(this.vue);*/
 	}
 
+
+	attach(components){
+
+		this.app.stage.addChild(components);
+
+	}
 
 
 }
