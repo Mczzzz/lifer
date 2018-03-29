@@ -46,15 +46,15 @@ export default class Adder {
 		$('#photo').on('change', function camFile(){
 
 
-			this.reader = new FileReader();
+			const reader = new FileReader();
 
-            this.reader.onloadend = function(){
+            reader.onloadend = function(){
 
-                this.dataURL = this.reader.result;
+                this.dataURL = reader.result;
                 console.log(this.dataURL);
             };
 
-			this.reader.readAsDataURL($('#photo')[0].files[0]);
+			reader.readAsDataURL($('#photo')[0].files[0]);
 
 		});
 
