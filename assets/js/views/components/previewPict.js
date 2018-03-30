@@ -107,6 +107,7 @@ export default class PreviewPict {
 		this.loader.add('photo', this.data);
 
 		this.loader.load((loader, resources) => {
+			console.log(resources.photo.texture);
      		this.photo = new PIXI.extras.TilingSprite(resources.photo.texture);
 		});
 
