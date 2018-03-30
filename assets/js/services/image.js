@@ -5,6 +5,7 @@ export default class Image{
 
 	constructor(data){
 
+	console.log("construct Image");
 		let img = new Image();
 
 		let MyPict;

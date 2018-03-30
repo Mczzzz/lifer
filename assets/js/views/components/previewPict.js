@@ -6,13 +6,15 @@ export default class PreviewPict {
 
 	constructor(data){
 
+		console.log("construct Preview Pict");
 		this.data = data;
 
 		this.declareContainer();
-
+		console.log("construct Preview Pict 2");
 		let image = new SvcImage(this.data);
+		console.log("construct Preview Pict 3");
 		this.getRatio = image.ImgRatio();
-		
+
 		//loader
 
 		//algo de changement d'orientation
