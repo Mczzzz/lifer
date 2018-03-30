@@ -4,13 +4,17 @@ import Adder from './components/adder.js';
 export default class Node {
 
 
-	constructor(){
+	constructor(e){
 
 		this.container = new PIXI.Container();
 		this.container.interactive = true;
 		console.log('in node constructor');
 
+
+
 		this.drawBkground();
+
+		this.data = e.detail.data;
 
 		return this.container;
 
@@ -31,6 +35,13 @@ export default class Node {
 
 	}
 
+	addImage(){
+
+		this.pict = new PIXI.Sprite.fromImage(this.data);
+
+		this.container.addChild(this.pict);
+
+	}
 
 
 }

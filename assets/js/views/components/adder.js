@@ -55,7 +55,7 @@ export default class Adder {
 
                 console.log('before trigger')
                 //let event = new Event('changeFrame');
-                let event = new CustomEvent('changeFrame', {'detail' : 'node'});
+                let event = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node', 'data' : this.dataURL}});
                 window.dispatchEvent(event);
  
             };

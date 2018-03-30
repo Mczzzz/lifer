@@ -16,7 +16,7 @@ export default class Frame {
 
 		this.render();
 		
-		window.addEventListener('changeFrame', (e) => this[e.detail]());
+		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
 
 
 
@@ -32,10 +32,10 @@ export default class Frame {
 
 
 
-	node(){
+	node(e){
 
 		console.log('in frame node');
-		let nodeFrame = new Node();
+		let nodeFrame = new Node(e);
 		this.attach(nodeFrame);
 
 	}
