@@ -38,7 +38,7 @@ export default class PreviewPict {
 		this.loader.add('photo', this.data);
 
 		this.loader.load((loader, resources) => {
-     		this.photo = new PIXI.extras.TilingSprite(resources.photo.texture, this.cWidth, this.cHeight);
+     		this.photo = new PIXI.extras.TilingSprite(resources.photo.texture);
      		this.realSizeX = resources.photo.texture.baseTexture.realWidth;
      		this.realSizeY = resources.photo.texture.baseTexture.realHeight;
 		});
@@ -81,14 +81,20 @@ export default class PreviewPict {
 		//je calcul la taille de height avec le width max
 		//si superieur au height Max
 		//je recalcul width avec height max
+			this.photo.tileScale.x = 0.2; 
+			this.photo.tileScale.y = 0.2;
+
+
 		let HeightMax = this.cWidth / this.ratio;
+
+
 
 		if(HeightMax > this.cHeight){
 
 			this.photo.height = this.cHeight;
 			this.photo.width =  this.cHeight * this.ratio;
-			this.photo.scale.set(0.2,0.2); 
-
+			this.photo.tileScale.x = 0.2; 
+			this.photo.tileScale.Y = 0.2;
 		}else{
 
 			this.photo.width = this.cWidth;
