@@ -52,8 +52,9 @@ export default class Node {
 
 	addElements(){
 
+		console.log('node/addelement/beforeBackground');
 		this.addBackground();
-
+		console.log('node/addelement/beforeaddPreviewPict');
 		this.addPreviewPict();
 
 	}
