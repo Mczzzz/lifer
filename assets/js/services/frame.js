@@ -8,9 +8,13 @@ export default class Frame {
 
 
 
+
 		this.app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, antialias : true });  // Add the view to the DOM 		
 
 		document.body.appendChild(this.app.view);  // ex, add display objects 
+
+
+		const Templates = []
 
 
 		this.render();
@@ -80,9 +84,9 @@ export default class Frame {
 		console.log(e.detail);
 		//let that = this;
 		let that = e.detail;
-		var fn = Reflect.field(this, that);
-        Reflect.callMethod(this, fn, []);
-
+/*		var fn = Reflect.field(this, that);
+        Reflect.callMethod(this, fn, []);*/
+        console.log(this);
 		//this.that();
 		console.log('in watch - after node');
 		//eval(e.detail);
