@@ -16,7 +16,19 @@ export default class Frame {
 		this.render();
 		
 
-		window.addEventListener('changeFrame', (e) => this.watch(e));
+		var that = this;
+
+        var elements = document.getElementsByClassName('call-method');
+
+        for(var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener('changeFrame', function() {
+                that[this.dataset.method](this);
+            });
+        }
+
+
+
+		//window.addEventListener('changeFrame', (e) => this.watch(e));
 
 
 //		this.frame = ['main','node'];
