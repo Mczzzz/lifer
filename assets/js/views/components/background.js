@@ -8,8 +8,9 @@ export default class Background {
 
 		this.declareContainer();
 
-		return this.addRect( color , liStyle, x , y , width , height);
+		this.addRect( color , liStyle, x , y , width , height);
 
+		return this.container;
 	}
 
 
