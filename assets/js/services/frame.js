@@ -86,7 +86,7 @@ export default class Frame {
 		let that = e.detail;
 /*		var fn = Reflect.field(this, that);
         Reflect.callMethod(this, fn, []);*/
-        eval(this[that]);
+        eval("this["+that+"]()");
 		//this.that();
 		console.log('in watch - after node');
 		//eval(e.detail);
