@@ -11,6 +11,7 @@ export default class Node {
 		console.log('in node constructor');
 
 		this.drawBkground();
+
 		return this.container;
 
 	}
@@ -20,9 +21,9 @@ export default class Node {
 	drawBkground(){
 
 		this.backgroundCard = new PIXI.Graphics();
-        this.backgroundCard.beginFill(0xFFFFFF);
+        this.backgroundCard.beginFill(0xFF99FF);
         this.backgroundCard.lineStyle(0);
-        this.backgroundCard.drawRect(50, 50, window.innerWidth - 100, window.innerHeight - 100);
+        this.backgroundCard.drawRect(10, 10, window.innerWidth - 20, window.innerHeight - 20);
         this.backgroundCard.endFill();
 
         this.container.addChild(this.backgroundCard);
