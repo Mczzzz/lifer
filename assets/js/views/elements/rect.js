@@ -5,7 +5,7 @@ export default class Rect {
 
 
 
-		let element = drwRect(color , liStyle, x , y , width , height);
+		let element = this.drwRect(color , liStyle, x , y , width , height);
 
 		return element;
 	}
