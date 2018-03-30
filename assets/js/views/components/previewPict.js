@@ -81,8 +81,7 @@ export default class PreviewPict {
 		//je calcul la taille de height avec le width max
 		//si superieur au height Max
 		//je recalcul width avec height max
-			this.photo.tileScale.x = 0.2; 
-			this.photo.tileScale.y = 0.2;
+
 
 
 		let HeightMax = this.cWidth / this.ratio;
@@ -103,6 +102,12 @@ export default class PreviewPict {
 
 
 		}
+
+
+			this.photo.tileScale.x = this.photo.width / this.realSizeX ; 
+			this.photo.tileScale.y = this.photo.height / this.realSizeY;
+
+
 
 
 
