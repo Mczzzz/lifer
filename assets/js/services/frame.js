@@ -33,7 +33,7 @@ export default class Frame {
 */
 
 
-		window.addEventListener('changeFrame', (e) => this.watch(e));
+		window.addEventListener('changeFrame', (e) => this[e.detail]());
 
 
 //		this.frame = ['main','node'];
@@ -77,28 +77,11 @@ export default class Frame {
 	}
 
 
-
-
 	watch(e){
 		console.log('in watch');
 		console.log(e.detail);
 
-		this[e.detail]();
-/*		switch(e.detail) { 
-		   case 'node': { 
-		   	console.log('in switch node');
-		      this.node(); 
-		      break; 
-		   } 
-		   case 'constant_expr2': { 
-		      //statements;
-		      break; 
-		   } 
-		   default: { 
-		      //statements; 
-		      break; 
-		   } 
-		}*/
+		// this[e.detail]();
 
 		console.log('in watch - after node');
 		//eval(e.detail);
