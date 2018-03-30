@@ -6,14 +6,14 @@ export default class Background {
 	constructor( color , liStyle, x , y , width , height ){
 
 
-		this.declarecontainer();
+		this.declareContainer();
 
 		this.addRect( color , liStyle, x , y , width , height);
 
 	}
 
 
-	declarecontainer(){
+	declareContainer(){
 
 		this.container = new PIXI.Container();
 		this.container.interactive = true;
@@ -26,6 +26,7 @@ export default class Background {
 
 	addRect(color , liStyle, x , y , width , height){
 
+	console.log('background.js addRect');
 		let rect = new Rect(color , liStyle, x , y , width , height);
 		this.attach(rect);
 

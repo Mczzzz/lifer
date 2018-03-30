@@ -64,6 +64,7 @@ export default class Node {
 
 		// color , lineStyle, x,y, width, height
 		let background = new Bkg(0xFF99FF,0,0,0,this.width,this.height);
+		console.log('before Attach Background To container');
         this.attach(background);
 
 
