@@ -8,7 +8,7 @@ export default class Node {
 
 		this.container = new PIXI.Container();
 		this.container.interactive = true;
-
+		console.log('in node constructor');
 
 		return this.container;
 
