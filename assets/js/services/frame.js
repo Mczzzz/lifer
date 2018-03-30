@@ -82,14 +82,9 @@ export default class Frame {
 	watch(e){
 		console.log('in watch');
 		console.log(e.detail);
-		//let that = this;
-		//let that = e.detail;
-/*		var fn = Reflect.field(this, that);
-        Reflect.callMethod(this, fn, []);*/
-        //eval("this."+that+"()");
-		//this.that();
 
-		switch(e.detail) { 
+		this[e.detail]();
+/*		switch(e.detail) { 
 		   case 'node': { 
 		   	console.log('in switch node');
 		      this.node(); 
@@ -103,7 +98,7 @@ export default class Frame {
 		      //statements; 
 		      break; 
 		   } 
-		}
+		}*/
 
 		console.log('in watch - after node');
 		//eval(e.detail);
