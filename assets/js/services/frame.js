@@ -65,8 +65,8 @@ export default class Frame {
 	watch(e){
 		console.log('in watch');
 		console.log(e.detail);
-		let that = this;
-		that[e.detail](this);
+		//let that = this;
+		this.constructor[e.detail]();
 		console.log('in watch - after node');
 		//eval(e.detail);
 		//this.node =
