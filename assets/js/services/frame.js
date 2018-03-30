@@ -35,10 +35,19 @@ export default class Frame {
 	}
 
 
-render(){
+	render(){
 
 		let homeFrame = new Home();
 		this.attach(homeFrame);
+
+	}
+
+
+
+	node(){
+
+		let nodeFrame = new Node();
+		this.attach(nodeFrame);
 
 	}
 
@@ -54,7 +63,8 @@ render(){
 
 	watch(e){
 
-		console.log(e.detail);
+		this[e.detail]();
+		//eval(e.detail);
 		//this.node =
 
 
