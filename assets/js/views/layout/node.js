@@ -1,49 +1,86 @@
-/*import Header from './components/header.js';
-import Adder from './components/adder.js';
-*/
+import Bkg from '../components/background.js';
+
 export default class Node {
 
 
 	constructor(e){
 
-		this.container = new PIXI.Container();
-		this.container.interactive = true;
-		this.container.x = 10;
-		this.container.y = 10;
-		this.width = window.innerWidth - 20;
-		this.height = window.innerHeight - 20;
-		console.log('in node constructor');
 
 
-		this.drawBkground();
-
+		//getData Image
+		//TODO : a bouger car doit être asynchrone
 		this.data = e.detail.data;
 
-		this.addImage();
+		this.declarecontainer();
+
+		this.fixeSize();
+
+		this.fixePosition();
+
+		this.addElements();
 
 		return this.container;
 
 	}
 
 
+	declarecontainer(){
 
-	drawBkground(){
+		this.container = new PIXI.Container();
+		this.container.interactive = true;
 
-		this.backgroundCard = new PIXI.Graphics();
-        this.backgroundCard.beginFill(0xFF99FF);
-        this.backgroundCard.lineStyle(0);
-        this.backgroundCard.drawRect(0, 0, this.width, this.height);
-        this.backgroundCard.endFill();
+	}
 
-        this.container.addChild(this.backgroundCard);
+
+	fixeSize(){
+
+		this.width = window.innerWidth - 20;
+		this.height = window.innerHeight - 20;
+
+	}
+
+
+
+	fixePosition(){
+
+		this.container.x = 10;
+		this.container.y = 10;
+
+	}
+
+
+	addElements(){
+
+		this.drawBkground();
+
+		this.addImage();
+
+	}
+
+
+	addBackground(){
+
+		// color , lineStyle, x,y, width, height
+		let background = new Bkg(0xFF99FF,0,0,0,this.width,this.height);
+        this.attach(background);
 
 
 	}
+
+
+	attach(components){
+
+		this.container.addChild(components);
+
+	}
+
+
 
 	addImage(){
 
 		//trop moche à revoir car un load double de l'image
 		let i = new Image();
+
 		i.onload = function(){
 
             let ratio = i.height / i.width;
@@ -73,7 +110,7 @@ export default class Node {
             this.pict.on('tap', (event) => {
 
              	this.pict.rotation += Math.PI * 2 * 0.25;
-             	
+
             });
 
 
