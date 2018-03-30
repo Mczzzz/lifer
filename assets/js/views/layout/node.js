@@ -8,8 +8,11 @@ export default class Node {
 
 		this.container = new PIXI.Container();
 		this.container.interactive = true;
+		this.container.x = 10;
+		this.container.y = 10;
+		this.container.width = window.innerWidth - 20;
+		this.container.height = window.innerHeight - 20;
 		console.log('in node constructor');
-
 
 
 		this.drawBkground();
@@ -17,7 +20,7 @@ export default class Node {
 		this.data = e.detail.data;
 
 		this.addImage();
-		
+
 		return this.container;
 
 	}
@@ -29,7 +32,7 @@ export default class Node {
 		this.backgroundCard = new PIXI.Graphics();
         this.backgroundCard.beginFill(0xFF99FF);
         this.backgroundCard.lineStyle(0);
-        this.backgroundCard.drawRect(10, 10, window.innerWidth - 20, window.innerHeight - 20);
+        this.backgroundCard.drawRect(0, 0, this.container.width, this.container.height);
         this.backgroundCard.endFill();
 
         this.container.addChild(this.backgroundCard);
@@ -40,6 +43,9 @@ export default class Node {
 	addImage(){
 
 		this.pict = new PIXI.Sprite.fromImage(this.data);
+		this.pict.width = this.container.height - 5;
+		this.pict.x = 2.5;
+		this.pict.y = 2.5;
 
 		this.container.addChild(this.pict);
 
