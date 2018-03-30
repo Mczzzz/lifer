@@ -1,7 +1,7 @@
-/*import Header from './components/header.js';
-import Adder from './components/adder.js';
-*/
-export default class Node {
+import Header from '../components/header.js';
+import Adder from '../components/adder.js';
+
+export default class Home {
 
 
 	constructor(){
@@ -9,10 +9,35 @@ export default class Node {
 		this.container = new PIXI.Container();
 		this.container.interactive = true;
 
+		this.render();
 
 		return this.container;
 
 	}
+
+
+	render(){
+
+		this.vue = new Header();
+		this.attach(this.vue);
+
+		const rayonButton = 30;
+		this.adder = new Adder(rayonButton);
+		this.adder.x = 20;
+		this.adder.y = window.innerHeight - (rayonButton * 2 ) - 20;
+		this.attach(this.adder);
+
+
+	}
+		
+
+
+	attach(components){
+
+		this.container.addChild(components);
+
+	}
+
 
 
 

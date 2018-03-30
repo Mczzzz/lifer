@@ -1,10 +1,23 @@
-//import Main from './views/main.js';
+import Home from '../views/layout/home.js';
 import Node from '../views/layout/node.js';
 
 export default class Frame {
 
 
 	constructor(){
+
+
+
+		this.app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, antialias : true });  // Add the view to the DOM 		
+
+		document.body.appendChild(this.app.view);  // ex, add display objects 
+
+
+		this.render();
+		
+
+		window.addEventListener('changeFrame', (e) => this.watch(e));
+
 
 //		this.frame = ['main','node'];
 /*        let proxy = new Proxy(this, this.watch);
@@ -13,10 +26,6 @@ export default class Frame {
 
 		//add event.listener
 
-		
-		
-		window.addEventListener('changeFrame', (e) => this.watch(e));
-
 		//load all frame
 /*		for (const arrValue of this.frame) {
 		  console.log(arrValue); // 'hello', 'world'
@@ -24,6 +33,23 @@ export default class Frame {
 
 
 	}
+
+
+render(){
+
+		let homeFrame = new Home();
+		this.attach(homeFrame);
+
+	}
+
+
+	attach(layout){
+
+		this.app.stage.addChild(layout);
+
+	}
+
+
 
 
 	watch(e){
