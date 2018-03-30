@@ -38,7 +38,7 @@ export default class PreviewPict {
 		this.loader.add('photo', this.data);
 
 		this.loader.load((loader, resources) => {
-     		this.photo = new PIXI.extras.TilingSprite(resources.photo.texture);
+     		this.photo = new PIXI.extras.TilingSprite(resources.photo.texture, this.cWidth, this.cHeight);
      		this.realSizeX = resources.photo.texture.baseTexture.realWidth;
      		this.realSizeY = resources.photo.texture.baseTexture.realHeight;
 		});
@@ -72,8 +72,7 @@ export default class PreviewPict {
 	getRatio(){
 
 		this.ratio = this.realSizeX / this.realSizeY;
-		alert(this.realSizeX);
-		alert(this.realSizeY);
+
 	}
 
 
