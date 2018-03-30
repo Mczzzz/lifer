@@ -6,14 +6,22 @@ export default class PreviewPict {
 
 	constructor(data){
 
+		
+
 		console.log("construct Preview Pict");
 		this.data = data;
 
 		this.declareContainer();
-		console.log("construct Preview Pict 2");
-		let image = new SvcImage(this.data);
-		console.log("construct Preview Pict 3");
-		this.getRatio = image.ImgRatio();
+
+		this.loader();
+		
+		return this.container;
+
+
+		//console.log("construct Preview Pict 2");
+		//let image = new SvcImage(this.data);
+		//console.log("construct Preview Pict 3");
+		//this.getRatio = image.ImgRatio();
 
 		//loader
 
@@ -93,7 +101,21 @@ export default class PreviewPict {
 
 	}
 
+	loader(){
 
+		this.loader = PIXI.loader;
+		this.loader.add('photo', this.data);
+
+		this.loader.load((loader, resources) => {
+     		let photo = new PIXI.TilingSprite(resources.photo.texture);
+		});
+
+		this.loader.onComplete.add(() => {
+			this.attach(photo);
+		});
+
+
+	}
 
 
 	addBigImage(){
