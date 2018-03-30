@@ -14,7 +14,7 @@ export default class Frame {
 		document.body.appendChild(this.app.view);  // ex, add display objects 
 
 
-		const Templates = []
+		//const Templates = []
 
 
 		this.render();
@@ -83,11 +83,28 @@ export default class Frame {
 		console.log('in watch');
 		console.log(e.detail);
 		//let that = this;
-		let that = e.detail;
+		//let that = e.detail;
 /*		var fn = Reflect.field(this, that);
         Reflect.callMethod(this, fn, []);*/
-        eval("this."+that+"()");
+        //eval("this."+that+"()");
 		//this.that();
+
+		switch(e.detail) { 
+		   case node: { 
+		   	console.log('in switch node');
+		      this.node(); 
+		      break; 
+		   } 
+		   case constant_expr2: { 
+		      //statements;
+		      break; 
+		   } 
+		   default: { 
+		      //statements; 
+		      break; 
+		   } 
+		}
+
 		console.log('in watch - after node');
 		//eval(e.detail);
 		//this.node =
@@ -105,16 +122,6 @@ export default class Frame {
 
 	}
 
-
-
-
-	node(){
-
-	//	this.node =
-
-
-
-	}
 
 
 
