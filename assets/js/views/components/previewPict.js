@@ -4,89 +4,20 @@ export default class PreviewPict {
 
 
 
-	constructor(data){
+	constructor(data, cWidth, cHeight){
 
 		
 
 		console.log("construct Preview Pict");
 		this.data = data;
+		this.cWidth = cWidth;
+		this.cHeight = cHeight;
 
 		this.declareContainer();
 
 		this.loader();
 		
 		return this.container;
-
-
-		//console.log("construct Preview Pict 2");
-		//let image = new SvcImage(this.data);
-		//console.log("construct Preview Pict 3");
-		//this.getRatio = image.ImgRatio();
-
-		//loader
-
-		//algo de changement d'orientation
-
-		//attach event
-
-
-//trop moche à revoir car un load double de l'image
-/*		let i = new Image();
-
-		i.onload = function(){
-
-            let ratio = i.height / i.width;
-
-            this.pict = new PIXI.Sprite.fromImage(this.data);
-			pict.interactive = true;
-             
-            this.pict.height = this.pict.width * ratio;
-             
-            let diffsize =  this.pict.height - this.pict.width;
-
-            this.pict.anchor.set(0.5,0.5);
-
-     		this.pict.x = 2.5;
-			this.pict.y = 2.5;
-
-            this.pict.rotation = Math.PI * 2 * 0.25;
-            this.pict.height = window.innerWidth - 120;
-            this.pict.width = this.pict.height / ratio;
-            this.pict.y -= diffsize - 25;
-             // pict.pivot.set(pict.width, pict.height);
-              
-              //pict.rotation = 1.5702;
-             // pict.rotation = 0.5;
-             //console.log(pict);
-
-            this.pict.on('tap', (event) => {
-
-             	this.pict.rotation += Math.PI * 2 * 0.25;
-
-            });
-
-
-
-/*
-
-
-		console.log(this.pict.width + " / " + this.pict.height);
-		this.pict.width = this.width - 5;
-		this.pict.x = 2.5;
-		this.pict.y = 2.5;*/
-/*
-			this.container.addChild(this.pict);
-
-
-		};
-		i.src = this.data;
-
-
-
-	}
-*/
-
-
 
 
 
@@ -107,12 +38,17 @@ export default class PreviewPict {
 		this.loader.add('photo', this.data);
 
 		this.loader.load((loader, resources) => {
-			console.log(resources.photo.texture.baseTexture.realHeight);
-			console.log(resources.photo.texture.baseTexture.realWidth);
      		this.photo = new PIXI.extras.TilingSprite(resources.photo.texture);
+     		this.realSizeX = resources.photo.texture.baseTexture.realWidth;
+     		this.realSizeY = resources.photo.texture.baseTexture.realHeight;
 		});
 
 		this.loader.onComplete.add(() => {
+
+			this.getRatio();
+
+			this.getCalculSize();
+
 			this.attach(this.photo);
 		});
 
@@ -120,13 +56,36 @@ export default class PreviewPict {
 	}
 
 
-	addBigImage(){
+	getRatio(){
 
-
+		this.ratio = this.realSizeX / this.realSizeY;
 
 	}
 
 
+	getCalculSize(){
+
+		//je calcul la taille de height avec le width max
+		//si superieur au height Max
+		//je recalcul width avec height max
+		let HeightMax = this.cWidth / this.ratio;
+
+		if(HeightMax > this.cHeight){
+
+			this.photo.height = this.cHeight;
+			this.photo.width =  this.cHeight * ratio;
+
+		}else{
+
+			this.photo.width = this.cWidth;
+			this.photo.height = HeightMax;
+
+
+		}
+
+
+
+	}
 
 
 

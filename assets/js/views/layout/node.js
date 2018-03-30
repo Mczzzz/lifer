@@ -73,7 +73,7 @@ export default class Node {
 
 	addPreviewPict(){
 
-		let prevPict = new PPict(this.data);
+		let prevPict = new PPict(this.data, this.width - 5, 250);
 		this.attach(prevPict);
 		
 	}
