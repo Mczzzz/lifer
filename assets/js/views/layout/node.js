@@ -16,6 +16,8 @@ export default class Node {
 
 		this.data = e.detail.data;
 
+		this.addImage();
+		
 		return this.container;
 
 	}
