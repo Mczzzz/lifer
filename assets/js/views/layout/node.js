@@ -10,6 +10,7 @@ export default class Node {
 		this.container.interactive = true;
 		console.log('in node constructor');
 
+		this.drawBkground();
 		return this.container;
 
 	}

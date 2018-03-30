@@ -14,39 +14,10 @@ export default class Frame {
 		document.body.appendChild(this.app.view);  // ex, add display objects 
 
 
-		//const Templates = []
-
-
 		this.render();
 		
-
-/*		var that = this;
-
-        var elements = document.getElementsByClassName('call-method');
-
-        for(var i = 0; i < elements.length; i++) {
-            elements[i].addEventListener('changeFrame', function() {
-            	console.log('in');
-                that[this.dataset.method](this);
-            });
-        }
-*/
-
-
 		window.addEventListener('changeFrame', (e) => this[e.detail]());
 
-
-//		this.frame = ['main','node'];
-/*        let proxy = new Proxy(this, this.watch);
-
-        window.addEventListener('scroll', proxy);*/
-
-		//add event.listener
-
-		//load all frame
-/*		for (const arrValue of this.frame) {
-		  console.log(arrValue); // 'hello', 'world'
-		}*/
 
 
 	}
@@ -76,29 +47,6 @@ export default class Frame {
 
 	}
 
-
-	watch(e){
-		console.log('in watch');
-		console.log(e.detail);
-
-		// this[e.detail]();
-
-		console.log('in watch - after node');
-		//eval(e.detail);
-		//this.node =
-
-
-
-	}
-
-
-	main(){
-
-		//this.node =
-
-
-
-	}
 
 
 
