@@ -49,6 +49,8 @@ export default class PreviewPict {
 
 			this.getCalculSize();
 
+			this.addEventTap();
+
 			this.attach(this.photo);
 		});
 
@@ -56,10 +58,22 @@ export default class PreviewPict {
 	}
 
 
+	addEventTap(){
+
+		this.photo.on('tap', (event) => {
+
+              this.photo.rotation += Math.PI * 2 * 0.25;
+
+
+        });
+
+	}
+
 	getRatio(){
 
 		this.ratio = this.realSizeX / this.realSizeY;
-
+		alert(this.realSizeX);
+		alert(this.realSizeY);
 	}
 
 
@@ -74,11 +88,13 @@ export default class PreviewPict {
 
 			this.photo.height = this.cHeight;
 			this.photo.width =  this.cHeight * this.ratio;
+			this.photo.scale.set(0.2,0.2); 
 
 		}else{
 
 			this.photo.width = this.cWidth;
 			this.photo.height = HeightMax;
+			this.photo.scale.set(0.2,0.2); 
 
 
 		}
