@@ -90,12 +90,12 @@ export default class Frame {
 		//this.that();
 
 		switch(e.detail) { 
-		   case node: { 
+		   case 'node': { 
 		   	console.log('in switch node');
 		      this.node(); 
 		      break; 
 		   } 
-		   case constant_expr2: { 
+		   case 'constant_expr2': { 
 		      //statements;
 		      break; 
 		   } 
