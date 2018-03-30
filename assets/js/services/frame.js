@@ -16,19 +16,20 @@ export default class Frame {
 		this.render();
 		
 
-		var that = this;
+/*		var that = this;
 
         var elements = document.getElementsByClassName('call-method');
 
         for(var i = 0; i < elements.length; i++) {
             elements[i].addEventListener('changeFrame', function() {
+            	console.log('in');
                 that[this.dataset.method](this);
             });
         }
+*/
 
 
-
-		//window.addEventListener('changeFrame', (e) => this.watch(e));
+		window.addEventListener('changeFrame', (e) => this.watch(e));
 
 
 //		this.frame = ['main','node'];
@@ -78,7 +79,7 @@ export default class Frame {
 		console.log('in watch');
 		console.log(e.detail);
 		//let that = this;
-		this.constructor[e.detail]();
+		eval("this." + e.detail + "()");
 		console.log('in watch - after node');
 		//eval(e.detail);
 		//this.node =
