@@ -46,6 +46,7 @@ export default class Frame {
 
 	node(){
 
+		console.log('in frame node');
 		let nodeFrame = new Node();
 		this.attach(nodeFrame);
 
@@ -63,6 +64,7 @@ export default class Frame {
 
 	watch(e){
 		console.log('in watch');
+		console.log(e.detail);
 		this[e.detail]();
 		console.log('in watch - after node');
 		//eval(e.detail);
