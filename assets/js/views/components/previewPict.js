@@ -73,7 +73,7 @@ export default class PreviewPict {
 		if(HeightMax > this.cHeight){
 
 			this.photo.height = this.cHeight;
-			this.photo.width =  this.cHeight * ratio;
+			this.photo.width =  this.cHeight * this.ratio;
 
 		}else{
 
