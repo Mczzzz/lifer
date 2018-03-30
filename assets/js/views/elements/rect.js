@@ -5,13 +5,13 @@ export default class Rect {
 
 
 
-		let element = drawRect(color , liStyle, x , y , width , height);
+		let element = drwRect(color , liStyle, x , y , width , height);
 
 		return element;
 	}
 
 
-	drawRect(color , liStyle, x , y , width , height){
+	drwRect(color , liStyle, x , y , width , height){
 
 		let rect = new PIXI.Graphics();
         rect.beginFill(color);
