@@ -79,7 +79,8 @@ export default class Frame {
 		console.log('in watch');
 		console.log(e.detail);
 		//let that = this;
-		eval("this." + e.detail + "()");
+		let that = e.detail;
+		this.that();
 		console.log('in watch - after node');
 		//eval(e.detail);
 		//this.node =
