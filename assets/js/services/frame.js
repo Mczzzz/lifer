@@ -80,7 +80,10 @@ export default class Frame {
 		console.log(e.detail);
 		//let that = this;
 		let that = e.detail;
-		this.that();
+		var fn = Reflect.field(this, that);
+        Reflect.callMethod(this, fn, []);
+
+		//this.that();
 		console.log('in watch - after node');
 		//eval(e.detail);
 		//this.node =
