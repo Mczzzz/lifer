@@ -52,7 +52,7 @@ export default class Node {
 
 	addElements(){
 
-		this.drawBkground();
+		this.addBackground();
 
 		this.addPreviewPict();
 
