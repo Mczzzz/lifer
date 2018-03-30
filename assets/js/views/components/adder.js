@@ -36,7 +36,7 @@ export default class Adder {
 		inputFile.setAttribute("accept", "image/*");
 		inputFile.setAttribute("capture", "camera");
 		inputFile.setAttribute("id", "photo");
-		inputFile.setAttribute("style", "visibility: hidden;")
+		inputFile.setAttribute("style", "position:absolute;visibility: hidden;")
 		document.body.appendChild(inputFile);
 
 	}
