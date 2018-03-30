@@ -43,6 +43,7 @@ export default class Node {
 	addImage(){
 
 		this.pict = new PIXI.Sprite.fromImage(this.data);
+		console.log(this.pict.width + " / " + this.pict.height);
 		this.pict.width = this.width - 5;
 		this.pict.x = 2.5;
 		this.pict.y = 2.5;
