@@ -52,6 +52,8 @@ export default class PreviewPict {
 
 			this.getCalculSize();
 
+			this.MobileRotate();
+
 			this.addEventTap();
 
 			this.attach(this.photo);
@@ -64,11 +66,18 @@ export default class PreviewPict {
 	}
 
 
+	MobileRotate(){
+
+		this.photo.rotation += Math.PI * 2 * 0.25;
+
+	}
+
+
 	addEventTap(){
 
 		this.photo.on('tap', (event) => {
 
-              this.photo.rotation += Math.PI * 2 * 0.25;
+              this.MobileRotate();
 
               let witdth = this.photo.width;
               let height = this.photo.height;
