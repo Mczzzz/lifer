@@ -55,6 +55,9 @@ export default class PreviewPict {
 			this.addEventTap();
 
 			this.attach(this.photo);
+
+
+
 		});
 
 
@@ -106,7 +109,8 @@ export default class PreviewPict {
 
 		}
 
-
+			this.photo.x = this.cWidth / 2;
+			this.photo.y = this.cHeight / 2;
 			this.photo.tileScale.x = this.photo.width / this.realSizeX ; 
 			this.photo.tileScale.y = this.photo.height / this.realSizeY;
 
