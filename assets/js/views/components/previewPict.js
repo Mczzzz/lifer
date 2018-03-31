@@ -48,11 +48,12 @@ export default class PreviewPict {
 
 		this.loader.onComplete.add(() => {
 
+			this.MobileRotate();
+
 			this.getRatio();
 
 			this.getCalculSize();
 
-			this.MobileRotate();
 
 			this.addEventTap();
 
