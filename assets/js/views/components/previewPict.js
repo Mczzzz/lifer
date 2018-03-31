@@ -70,6 +70,13 @@ export default class PreviewPict {
 
               this.photo.rotation += Math.PI * 2 * 0.25;
 
+              let witdth = this.photo.width;
+              let height = this.photo.height;
+
+              this.photo.width  = height;
+              this.photo.height = width;
+              //this.getCalculsize();
+
 
         });
 
