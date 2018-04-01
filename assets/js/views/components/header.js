@@ -10,7 +10,7 @@ export default class Header {
 
         this.addElements();
 
-        return this.container();
+        return this.container;
 
 	}
 
