@@ -7,8 +7,7 @@
   },
   "dependencies": {
     "jquery": "^3.3.1",
-    "moment": "^2.22.0",
-    "npm": "^5.8.0",
+    "moment-es6": "^1.0.0",
     "pixi.js": "^4.7.1"
   }
 }
