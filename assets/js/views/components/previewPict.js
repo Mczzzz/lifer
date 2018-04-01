@@ -1,4 +1,4 @@
-import SvcImage from '../../services/image.js';
+//import SvcImage from '../../services/image.js';
 
 export default class PreviewPict {
 
@@ -22,6 +22,9 @@ export default class PreviewPict {
 
 
 	}
+
+
+	//addElement
 
 
 

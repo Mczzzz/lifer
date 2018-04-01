@@ -8,7 +8,7 @@ export default class Header {
         this.backgroundCard = new PIXI.Graphics();
         this.backgroundCard.beginFill(0xFF0000);
         this.backgroundCard.lineStyle(0);
-        this.backgroundCard.drawRect(0, 0, window.innerWidth , window.innerHeight * 0.1);
+        this.backgroundCard.drawRect(0, 0, window.innerWidth , 50);
         this.backgroundCard.endFill();
 
         this.backgroundCard.interactive = true;
