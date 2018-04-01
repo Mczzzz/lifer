@@ -1,24 +1,49 @@
+import Rect from '../elements/rect.js';
+
 export default class Header {
 	
 
 		constructor(){
 
-		this.card = new PIXI.Container();
+     	
+     	this.declareContainer();
 
-        this.backgroundCard = new PIXI.Graphics();
-        this.backgroundCard.beginFill(0xFF0000);
-        this.backgroundCard.lineStyle(0);
-        this.backgroundCard.drawRect(0, 0, window.innerWidth , 50);
-        this.backgroundCard.endFill();
+        this.addElements();
 
-        this.backgroundCard.interactive = true;
+        return this.container();
 
-        return this.backgroundCard;
-     
+	}
+
+
+	declareContainer(){
+
+		this.container = new PIXI.Container();
+		this.container.interactive = true;
+
+	}
+
+
+
+	addElements(){
+
+		let rect = new Rect(0xE8E8E8 , 0, 0 , 0 , window.innerWidth , 50);
+		this.attach(rect);
+
+
+
 
 
 	}
 
+
+
+
+
+	attach(components){
+
+		this.container.addChild(components);
+
+	}
 
 
 
