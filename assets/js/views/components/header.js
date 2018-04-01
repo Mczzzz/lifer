@@ -31,7 +31,7 @@ export default class Header {
 
 
 
-		let text = new PIXI.Text(moment().format('DDDD MMMM Do YYYY'),{fontFamily : 'Arial', fontSize: 8, fill : 0xff1010, align : 'center'});
+		let text = new PIXI.Text(new moment().format('DDDD MMMM Do YYYY'),{fontFamily : 'Arial', fontSize: 8, fill : 0xff1010, align : 'center'});
 		this.attach(text);
 	}
 
