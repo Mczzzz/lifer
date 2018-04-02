@@ -1,5 +1,6 @@
 import Bkg from '../components/background.js';
 import PPict from '../components/previewPict.js';
+import TextArea from '../components/textarea.js';
 
 export default class Node {
 
@@ -57,6 +58,9 @@ export default class Node {
 		console.log('node/addelement/beforeaddPreviewPict');
 		this.addPreviewPict();
 
+		this.addTextArea();
+
+
 	}
 
 
@@ -77,6 +81,16 @@ export default class Node {
 		this.attach(prevPict);
 		
 	}
+
+
+	addTextArea(){
+
+		Let tArea = new TextArea();
+		this.attach(tArea);
+
+	}
+	
+
 
 
 	attach(components){
