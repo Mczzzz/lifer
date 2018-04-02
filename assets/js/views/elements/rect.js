@@ -19,7 +19,7 @@ export default class Rect {
         rect.drawRect(x, y, width, height);
         rect.endFill();
 
-
+        console.log('on renvoi le rectangle');
 		return rect; 
 
 	}
