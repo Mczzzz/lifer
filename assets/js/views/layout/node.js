@@ -105,7 +105,8 @@ export default class Node {
 
 		let button = new Button(20,600, 50, 30);
 		button.on('tap', (event) => {
-			this.collector.send();
+			console.log('in tap button');
+			this.collector.save();
         });
 		this.attach(button.load());
 
