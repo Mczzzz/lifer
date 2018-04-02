@@ -7,6 +7,7 @@ export default class Header {
 
 		constructor(){
 
+		moment.locale('fr');
      	
      	this.declareContainer();
 
