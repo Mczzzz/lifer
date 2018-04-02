@@ -24,7 +24,7 @@ export default class Button extends UIContainer{
 		console.log(this.width);
 		console.log(this.height);
 		//let rect = new Rect(0xFF99FF, 0, this.container.x , this.container.y , this.width , this.height);
-		let rect = new Rect(0xFF99FF, 0, 0 , 0 , 100 , 100);
+		let rect = new Rect(0xFF99FF, 0, 0 , 0 , this.width , this.height);
 
 /*				let rect = new PIXI.Graphics();
         rect.beginFill(0xFF99FF);
