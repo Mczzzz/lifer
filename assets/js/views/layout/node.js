@@ -85,7 +85,7 @@ export default class Node {
 
 	addTextArea(){
 
-		Let tArea = new TextArea();
+		let tArea = new TextArea();
 		this.attach(tArea);
 
 	}
