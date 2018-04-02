@@ -3,6 +3,7 @@ import moment from 'moment-es6';
 import Main from './controller/main.js';
 
 //loader de Frame via custom Events
+moment(123456).fromNow();
 
 const LiferApp = new Main();
 
