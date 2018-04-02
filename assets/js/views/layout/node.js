@@ -56,7 +56,7 @@ export default class Node {
 
 		console.log('node/addelement/beforeBackground');
 		this.addBackground();
-		
+
 		console.log('node/addelement/beforeaddPreviewPict');
 		this.addPreviewPict();
 
@@ -101,6 +101,7 @@ export default class Node {
 
 		let button = new Button(20,500, 50, 30);
 		button.load();
+		console.log('node before attach');
 		this.attach(button);
 
 	}
