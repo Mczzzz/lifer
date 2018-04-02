@@ -11,7 +11,7 @@ export default class uiContainer{
 
 		this.fixePosition(x,y);
 
-		this.size(width , height);
+		//this.size(width , height);
 
 
 	}
@@ -24,7 +24,7 @@ export default class uiContainer{
 	declareContainer(){
 
 		this.container = new PIXI.Container();
-	//	this.container.interactive = true;
+		this.container.interactive = true;
 
 	}
 
