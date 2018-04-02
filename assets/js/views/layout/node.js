@@ -1,4 +1,4 @@
-import NodeCollection from '../../collection/NodeCollection.js';
+import NodeCollection from '../../collections/NodeCollection.js';
 import Bkg from '../components/background.js';
 import PPict from '../components/previewPict.js';
 import TextArea from '../components/textarea.js';
