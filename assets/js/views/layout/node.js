@@ -1,3 +1,4 @@
+import NodeCollection from '../../collection/NodeCollection.js';
 import Bkg from '../components/background.js';
 import PPict from '../components/previewPict.js';
 import TextArea from '../components/textarea.js';
@@ -8,11 +9,14 @@ export default class Node {
 
 	constructor(e){
 
-
-
 		//getData Image
 		//TODO : a bouger car doit être asynchrone
 		this.data = e.detail.data;
+
+		this.collector = new NodeCollection();
+		this.collector.setImage(this.data);
+
+		
 
 		this.declareContainer();
 
@@ -100,6 +104,9 @@ export default class Node {
 	addSaveButton(){
 
 		let button = new Button(20,600, 50, 30);
+		button.on('tap', (event) => {
+			this.collector.send();
+        });
 		this.attach(button.load());
 
 	}
