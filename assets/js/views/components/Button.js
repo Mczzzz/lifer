@@ -21,8 +21,8 @@ export default class Button extends UIContainer{
 		console.log('button add elements');
 		console.log(this.container.x);
 		console.log(this.container.y);
-		console.log(this.container.width);
-		console.log(this.container.height);
+		console.log(this.width);
+		console.log(this.height);
 		let rect = new Rect(0xFFFFFF, 0, this.container.x , this.container.y , this.width , this.height);
 		this.attach(rect);
 
