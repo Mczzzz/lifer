@@ -39,7 +39,7 @@ export default class uiContainer{
 	}
 
 
-	size(w , h){
+/*	size(w , h){
 		console.log('in sizer');
 		console.log('w:'+ w);
 		console.log('h:'+ h);
@@ -48,7 +48,7 @@ export default class uiContainer{
 		console.log(this.container.width);
 		console.log(this.container.height);
 
-	}
+	}*/
 
 
 
@@ -67,6 +67,7 @@ export default class uiContainer{
 		console.log(this.container.x);
 		console.log(this.container.y);
 		console.log('uicontainer before return');
+		
 		return this.container;
 
 
