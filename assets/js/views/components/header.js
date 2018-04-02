@@ -1,4 +1,6 @@
+import moment from 'moment-es6';
 import Rect from '../elements/rect.js';
+
 
 export default class Header {
 	
