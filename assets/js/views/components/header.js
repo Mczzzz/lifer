@@ -35,7 +35,7 @@ export default class Header {
 
 		console.log(moment(123).fromNow());
 
-		let text = new PIXI.Text(new Date(),{fontFamily : 'Arial', fontSize: 8, fill : 0xff1010, align : 'center'});
+		let text = new PIXI.Text(moment().format('LLLL'),{fontFamily : 'Arial', fontSize: 12, fill : 0xff1010, align : 'center'});
 		this.attach(text);
 
 
