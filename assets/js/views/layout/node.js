@@ -55,13 +55,13 @@ export default class Node {
 	addElements(){
 
 		console.log('node/addelement/beforeBackground');
-		this.addBackground();
+		//this.addBackground();
 
 		console.log('node/addelement/beforeaddPreviewPict');
-		this.addPreviewPict();
+		//this.addPreviewPict();
 
 		console.log('node/addelement/beforeaddTextArea');
-		this.addTextArea();
+		//this.addTextArea();
 
 		console.log('node/addelement/beforeaddSaveButton');
 		this.addSaveButton();
