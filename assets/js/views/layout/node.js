@@ -97,7 +97,7 @@ export default class Node {
 
 	addSaveButton(){
 
-		let button = new Button(x,y, wtidh, heigth);
+		let button = new Button(20,500, 50, 30);
 		this.attach(button);
 
 	}
