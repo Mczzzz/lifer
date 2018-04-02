@@ -56,12 +56,14 @@ export default class Node {
 
 		console.log('node/addelement/beforeBackground');
 		this.addBackground();
+		
 		console.log('node/addelement/beforeaddPreviewPict');
 		this.addPreviewPict();
 
+		console.log('node/addelement/beforeaddTextArea');
 		this.addTextArea();
 
-
+		console.log('node/addelement/beforeaddSaveButton');
 		this.addSaveButton();
 
 
