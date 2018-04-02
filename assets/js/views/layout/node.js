@@ -91,6 +91,15 @@ export default class Node {
 	}
 	
 
+	addSaveButton(){
+
+		let button = new Button(x,y, wtidh, heigth);
+		this.attach(button);
+
+	}
+
+
+
 
 
 	attach(components){
