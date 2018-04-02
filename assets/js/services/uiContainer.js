@@ -25,6 +25,8 @@ export default class uiContainer{
 
 		this.container = new PIXI.Container();
 		this.container.interactive = true;
+		//a mettre en param
+		this.container.buttonMode = true;
 
 	}
 
