@@ -1,6 +1,7 @@
 import Bkg from '../components/background.js';
 import PPict from '../components/previewPict.js';
 import TextArea from '../components/textarea.js';
+import Button from '../components/Button.js';
 
 export default class Node {
 
@@ -59,6 +60,9 @@ export default class Node {
 		this.addPreviewPict();
 
 		this.addTextArea();
+
+
+		this.addSaveButton();
 
 
 	}
