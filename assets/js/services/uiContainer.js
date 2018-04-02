@@ -40,9 +40,13 @@ export default class uiContainer{
 
 
 	size(w , h){
-
+		console.log('in sizer');
+		console.log('w:'+ w);
+		console.log('h:'+ h);
 		this.container.width = w;
 		this.container.height = h;
+		console.log(this.container.width);
+		console.log(this.container.height);
 
 	}
 
