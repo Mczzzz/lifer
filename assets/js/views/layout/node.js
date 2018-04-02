@@ -99,11 +99,7 @@ export default class Node {
 
 	addSaveButton(){
 
-		let button = new Button(20,600, 50, 30);
-		//button.load();
-		console.log('node before attach');
-
-
+		let button = new Button(0,0, 50, 30);
 		this.attach(button.load());
 
 	}
