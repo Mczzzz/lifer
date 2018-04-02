@@ -102,7 +102,7 @@ export default class Node {
 		let button = new Button(20,500, 50, 30);
 		button.load();
 		console.log('node before attach');
-		this.attach(button);
+		this.attach(button.load());
 
 	}
 
