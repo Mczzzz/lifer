@@ -84,8 +84,8 @@ export default class Node {
 
 
 	addTextArea(){
-
-		let tArea = new TextArea();
+		//x,y,width,height
+		let tArea = new TextArea(this.container.x, this.container.y + 250, this.width - 5, 300);
 		this.attach(tArea);
 
 	}
