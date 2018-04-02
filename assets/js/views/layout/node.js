@@ -99,10 +99,21 @@ export default class Node {
 
 	addSaveButton(){
 
-		let button = new Button(20,600, 50, 30);
+		//let button = new Button(20,600, 50, 30);
 		//button.load();
 		console.log('node before attach');
-		this.attach(button.load());
+
+		let rect = new PIXI.Graphics();
+        rect.beginFill(0xFF99FF);
+        rect.lineStyle(0);
+        rect.drawRect(0, 0, 100, 100);
+        rect.endFill();
+
+        //console.log('on renvoi le rectangle');
+		//return rect; 
+		this.attach(rect);
+
+		//this.attach(button.load());
 
 	}
 
