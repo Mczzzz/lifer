@@ -93,14 +93,14 @@ export default class Header  extends UIContainer{
 
 
 	this.loader = PIXI.loader;
-		this.loader.add('hamburger', 'assets/glyphs/ic_menu_black_18px.svg');
+		this.loader.add('hamburger', 'assets/glyphs/ic_menu_black_36px.svg');
 
 		this.loader.load((loader, resources) => {
      		this.hamburger = new PIXI.extras.TilingSprite(resources.hamburger.texture);
      		this.hamburger.interactive = true;
      		this.hamburger.anchor.set(0.5,0.5);
-     		this.hamburger.tileScale.x = 2; 
-			this.hamburger.tileScale.y = 2;
+/*     		this.hamburger.tileScale.x = 2; 
+			this.hamburger.tileScale.y = 2;*/
 			this.hamburger.x = window.innerWidth - 25;
 			this.hamburger.y = 25;
 			this.hamburger.width  = 36;
