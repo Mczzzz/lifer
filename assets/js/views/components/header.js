@@ -96,12 +96,14 @@ export default class Header  extends UIContainer{
 		this.loader.add('hamburger', 'assets/glyphs/ic_menu_black_18px.svg');
 
 		this.loader.load((loader, resources) => {
-     		this.hamburger = new PIXI.Sprite.fromImage(resources.hamburger.texture);
+     		this.hamburger = new PIXI.extras.TilingSprite(resources.hamburger.texture);
      		this.hamburger.interactive = true;
      		this.hamburger.anchor.set(0.5,0.5);
 
-/*     		this.realSizeX = resources.hamburger.texture.baseTexture.realWidth;
-     		this.realSizeY = resources.hamburger.texture.baseTexture.realHeight;*/
+     		this.realSizeX = resources.hamburger.texture.baseTexture.realWidth;
+     		this.realSizeY = resources.hamburger.texture.baseTexture.realHeight;
+     		console.log(this.realSizeX);
+     		console.log(this.realSizeY);
 		});
 
 		this.loader.onComplete.add(() => {
