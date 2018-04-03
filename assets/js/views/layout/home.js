@@ -20,7 +20,8 @@ export default class Home {
 
 		let header = new Header(0,0,window.innerWidth,50);
 		console.log(header);
-		this.attach(header.load());
+		let TheHeader = header.load();
+		this.attach(TheHeader);
 
 		const rayonButton = 30;
 		this.adder = new Adder(rayonButton);
