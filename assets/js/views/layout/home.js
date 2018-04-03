@@ -18,7 +18,7 @@ export default class Home {
 
 	render(){
 
-		this.vue = new Header();
+		this.vue = new Header(0,0,window.innerWidth,50);
 		this.attach(this.vue.load());
 
 		const rayonButton = 30;

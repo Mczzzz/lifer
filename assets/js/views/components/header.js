@@ -6,11 +6,14 @@ import Rect from '../elements/rect.js';
 export default class Header  extends UIContainer{
 	
 
-		constructor(){
+	constructor(x,y,w,h){
+	
+		console.log('header before super');
+		super(x,y,w,h);
 
 		moment.locale('fr');
      	
-     	super(); 
+     	 
 
 
 	}
