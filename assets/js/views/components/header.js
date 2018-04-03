@@ -20,17 +20,20 @@ export default class Header  extends UIContainer{
 
 	addElements(){
 
-		this.addShadowBackground();
-		this.addBackground();
+		this.addBkgd();
 
-		let text = new PIXI.Text(moment().format('dddd Do MMMM YYYY'),{fontFamily : 'Arial', fontSize: 12, fill : 0xff1010, align : 'center'});
-		text.x = 5;
-		text.y = 5;
-		this.attach(text);
+		this.addDate();
 
 
 	}
 
+
+	addBkgd(){
+
+		this.addShadowBackground();
+		this.addBackground();
+
+	}
 
 
 	addShadowBackground(){
@@ -55,6 +58,32 @@ export default class Header  extends UIContainer{
 
 
 
+	addDate(){
 
+		this.addLiteralDate();
+
+	}
+
+
+	addLiteralDate(){
+
+		let text = new PIXI.Text(moment().format('dddd Do MMMM YYYY'),{fontFamily : 'Arial', fontSize: 12, fill : 0xff1010, align : 'center'});
+		text.x = 5;
+		text.y = 10;
+		this.attach(text);
+
+	}
+
+
+
+	addWeekDate(){
+
+
+		let text = new PIXI.Text(moment().format('WW'),{fontFamily : 'Arial', fontSize: 12, fill : 0xff1010, align : 'center'});
+		text.x = 5;
+		text.y = 5;
+		this.attach(text);
+
+	}
 
 }
