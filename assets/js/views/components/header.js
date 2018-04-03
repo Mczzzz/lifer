@@ -102,7 +102,7 @@ export default class Header  extends UIContainer{
      		this.hamburger.tileScale.x = 2; 
 			this.hamburger.tileScale.Y = 2;
 			this.hamburger.x = window.innerWidth - 25;
-			this.hambuger.y = 25;
+			this.hamburger.y = 25;
 
      		this.realSizeX = resources.hamburger.texture.baseTexture.realWidth;
      		this.realSizeY = resources.hamburger.texture.baseTexture.realHeight;
