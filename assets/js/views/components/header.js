@@ -99,6 +99,10 @@ export default class Header  extends UIContainer{
      		this.hamburger = new PIXI.extras.TilingSprite(resources.hamburger.texture);
      		this.hamburger.interactive = true;
      		this.hamburger.anchor.set(0.5,0.5);
+     		this.hamburger.tileScale.x = 2; 
+			this.hamburger.tileScale.Y = 2;
+			this.hamburger.x = window.innerWidth - 25;
+			this.hambuger.y = 25;
 
      		this.realSizeX = resources.hamburger.texture.baseTexture.realWidth;
      		this.realSizeY = resources.hamburger.texture.baseTexture.realHeight;
