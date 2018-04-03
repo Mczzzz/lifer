@@ -103,12 +103,15 @@ export default class Node {
 
 	addSaveButton(){
 
-		let button = new Button(20,600, 50, 30);
+		let but = new Button(20,600, 50, 30);
+
+		let button = but.load();
+
 		button.on('tap', (event) => {
 			console.log('in tap button');
 			this.collector.save();
         });
-		this.attach(button.load());
+		this.attach(button);
 
 	}
 
