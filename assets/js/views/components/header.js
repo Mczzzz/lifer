@@ -35,13 +35,13 @@ export default class Header  extends UIContainer{
 
 	addShadowBackground(){
 
-		let rect = new Rect(0xFFFFFF , 0, 0 , 0 , window.innerWidth , 50);
+		let Srect = new Rect(0xFFFFFF , 0, 0 , 0 , window.innerWidth , 50);
 
-		let dropShadowFilter = new PIXI.filters.BlurFilter();
-	    dropShadowFilter.blur = 30;
+		//let dropShadowFilter = new PIXI.filters.BlurFilter();
+	    //dropShadowFilter.blur = 30;
 
-		rect.filters = [dropShadowFilter];
-		this.attach(rect);
+		//rect.filters = [dropShadowFilter];
+		this.attach(Srect);
 	}
 
 
