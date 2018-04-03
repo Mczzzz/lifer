@@ -18,6 +18,8 @@ export default class Header  extends UIContainer{
 
 	addElements(){
 
+		this.addShadowBackground();
+		this.addBackground();
 
 		let text = new PIXI.Text(moment().format('dddd Do MMMM YYYY'),{fontFamily : 'Arial', fontSize: 12, fill : 0xff1010, align : 'center'});
 		text.x = 5;
