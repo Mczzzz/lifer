@@ -9,7 +9,7 @@ export default class Frame {
 
 
 
-		this.app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0xD8D8D8, antialias : true });  // Add the view to the DOM 		
+		this.app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0xD8D8D8, antialias : false });  // Add the view to the DOM 		
 
 		document.body.appendChild(this.app.view);  // ex, add display objects 
 
