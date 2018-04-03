@@ -19,7 +19,7 @@ export default class Home {
 	render(){
 
 		this.vue = new Header();
-		this.attach(this.vue);
+		this.attach(this.vue.load());
 
 		const rayonButton = 30;
 		this.adder = new Adder(rayonButton);
