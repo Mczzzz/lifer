@@ -13,7 +13,6 @@ export default class Header  extends UIContainer{
 
 		moment.locale('fr');
      	
-     	 
 
 
 	}

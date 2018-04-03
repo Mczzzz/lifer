@@ -7,6 +7,9 @@ export default class uiContainer{
 
 		console.log('uicontainer constructor');
 
+		this.width = width;
+     	this.height = height; 
+
 		this.declareContainer();
 
 		this.fixePosition(x,y);
@@ -43,7 +46,6 @@ export default class uiContainer{
 
 	attach(components){
 
-	
 		this.container.addChild(components);
 
 	}
