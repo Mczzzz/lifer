@@ -70,7 +70,7 @@ export default class Header  extends UIContainer{
 
 		let text = new PIXI.Text(moment().format('dddd Do MMMM YYYY'),{fontFamily : 'Arial', fontSize: 12, fill : 0xff1010, align : 'center'});
 		text.x = 5;
-		text.y = 10;
+		text.y = 20;
 		this.attach(text);
 
 	}
@@ -80,7 +80,7 @@ export default class Header  extends UIContainer{
 	addWeekDate(){
 
 
-		let text = new PIXI.Text(moment().format('WW'),{fontFamily : 'Arial', fontSize: 12, fill : 0xff1010, align : 'center'});
+		let text = new PIXI.Text("Sem.:"+moment().format('WW'),{fontFamily : 'Arial', fontSize: 12, fill : 0xff1010, align : 'center'});
 		text.x = 5;
 		text.y = 5;
 		this.attach(text);
