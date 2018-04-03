@@ -24,6 +24,7 @@ export default class Header  extends UIContainer{
 
 		this.addDate();
 
+		this.addMenu();
 
 	}
 
@@ -80,10 +81,37 @@ export default class Header  extends UIContainer{
 	addWeekDate(){
 
 
-		let text = new PIXI.Text("Sem.:"+moment().format('WW'),{fontFamily : 'Arial', fontSize: 12, fill : 0xff1010, align : 'center'});
+		let text = new PIXI.Text("S: "+moment().format('WW'),{fontFamily : 'Arial', fontSize: 12, fill : 0xff1010, align : 'center'});
 		text.x = 5;
 		text.y = 5;
 		this.attach(text);
+
+	}
+
+
+	addMenu(){
+
+
+	this.loader = PIXI.loader;
+		this.loader.add('hamburger', 'assets/glyphs/ic_menu_black_18px.svg');
+
+		this.loader.load((loader, resources) => {
+     		this.hamburger = new PIXI.extras.TilingSprite(resources.hamburger.texture);
+     		this.hamburger.interactive = true;
+     		this.hamburger.anchor.set(0.5,0.5);
+
+/*     		this.realSizeX = resources.hamburger.texture.baseTexture.realWidth;
+     		this.realSizeY = resources.hamburger.texture.baseTexture.realHeight;*/
+		});
+
+		this.loader.onComplete.add(() => {
+
+			
+			this.attach(this.hamburger);
+
+
+
+		});
 
 	}
 
