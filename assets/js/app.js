@@ -12,6 +12,7 @@ navigator.geolocation.getCurrentPosition(function(location) {
 });
 console.log(window.innerWidth);
 console.log(window.innerHeight);
+console.log(window.devicePixelRatio);
 
 const LiferApp = new Main();
 
