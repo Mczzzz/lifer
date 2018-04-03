@@ -35,6 +35,8 @@ export default class Frame {
 	node(e){
 
 		console.log('in frame node');
+		console.log(MyDeviceWidth);
+		console.log(MyDeviceHeight);
 		let nodeFrame = new Node(e);
 		this.attach(nodeFrame);
 

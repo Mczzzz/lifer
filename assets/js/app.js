@@ -14,5 +14,8 @@ console.log(window.innerWidth);
 console.log(window.innerHeight);
 console.log(window.devicePixelRatio);
 
+
+const MyDeviceWidth  = window.innerWidth * window.devicePixelRatio;
+const MyDeviceHeight = window.innerHeight * window.devicePixelRatio;
 const LiferApp = new Main();
 
