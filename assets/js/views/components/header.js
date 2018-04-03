@@ -61,6 +61,7 @@ export default class Header  extends UIContainer{
 	addDate(){
 
 		this.addLiteralDate();
+		this.addWeekDate();
 
 	}
 
