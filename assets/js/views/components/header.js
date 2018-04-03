@@ -93,7 +93,7 @@ export default class Header  extends UIContainer{
 
 
 	this.loader = PIXI.loader;
-		this.loader.add('hamburger', 'assets/glyphs/ic_menu_black_36px.svg');
+		this.loader.add('hamburger', 'assets/glyphs/ic_menu_white_36px.svg');
 
 		this.loader.load((loader, resources) => {
      		this.hamburger = new PIXI.extras.TilingSprite(resources.hamburger.texture);
