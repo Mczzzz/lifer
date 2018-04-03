@@ -38,7 +38,7 @@ export default class Header  extends UIContainer{
 		let Srect = new Rect(0x000000 , 0, 0 , 0 , window.innerWidth , 60);
 
 		let dropShadowFilter = new PIXI.filters.BlurFilter();
-	    dropShadowFilter.blur = 3;
+	    dropShadowFilter.blur = 1;
 
 		Srect.filters = [dropShadowFilter];
 		this.attach(Srect);
