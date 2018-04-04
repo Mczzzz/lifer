@@ -51,7 +51,7 @@ export default class Header  extends UIContainer{
 
 	addBackground(){
 
-		let rect = new Rect(0xE8E8E8 , 0, 0 , 0 , window.innerWidth , 100);
+		let rect = new Rect(0x0040FF , 0, 0 , 0 , window.innerWidth , 100);
 		this.attach(rect);
 
 
@@ -70,7 +70,7 @@ export default class Header  extends UIContainer{
 	addLiteralDate(){
 
 		let text = new PIXI.Text(moment().format('dddd Do MMMM YYYY'),{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
-		text.x = 5;
+		text.x = window.innerWidth - text.width;
 		text.y = 20;
 		this.attach(text);
 
@@ -82,7 +82,7 @@ export default class Header  extends UIContainer{
 
 
 		let text = new PIXI.Text("S: "+ moment().format('WW'),{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
-		text.x = 5;
+		text.x = window.innerWidth - text.width;
 		text.y = 5;
 		this.attach(text);
 
@@ -101,7 +101,7 @@ export default class Header  extends UIContainer{
      		this.hamburger.anchor.set(0.5,0.5);
 /*     		this.hamburger.tileScale.x = 2; 
 			this.hamburger.tileScale.y = 2;*/
-			this.hamburger.tint = 0x999999;
+			this.hamburger.tint = 0xFFFFFF;
 			this.hamburger.x = 72;
 			this.hamburger.y = 50;
 			this.hamburger.width  = 72;
