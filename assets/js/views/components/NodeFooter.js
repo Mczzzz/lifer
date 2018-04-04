@@ -65,28 +65,29 @@ export default class NodeFooter  extends UIContainer{
 
 
 	this.loader = new PIXI.loaders.Loader();
-		this.loader.add('addNode', 'assets/glyphs/ad_node_black_72px.svg');
+		this.loader.add('addPhoto', 'assets/glyphs/ic_local_see_white_72px.svg');
+		this.loader.add('addPict', 'assets/glyphs/ic_gallery_white_72px.svg');
 
 		this.loader.load((loader, resources) => {
-     		this.addNode = new PIXI.extras.TilingSprite(resources.addNode.texture);
-     		this.addNode.interactive = true;
-     		this.addNode.anchor.set(0.5,0.5);
-/*     		this.addNode.tileScale.x = 2; 
-			this.addNode.tileScale.y = 2;*/
-			this.addNode.tint = 0xFFFFFF;
-			this.addNode.x = 72;
-			this.addNode.y = 50;
-			this.addNode.width  = 72;
-			this.addNode.height = 72;
+     		this.addPhoto = new PIXI.extras.TilingSprite(resources.addPhoto.texture);
+     		this.addPhoto.interactive = true;
+     		this.addPhoto.anchor.set(0.5,0.5);
+/*     		this.addPhoto.tileScale.x = 2; 
+			this.addPhoto.tileScale.y = 2;*/
+			this.addPhoto.tint = 0xFFFFFF;
+			this.addPhoto.x = 72;
+			this.addPhoto.y = 50;
+			this.addPhoto.width  = 72;
+			this.addPhoto.height = 72;
 
-			this.addNode.on('tap', (event) => {
-				let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
-                window.dispatchEvent(NodeEvent);
+			this.addPhoto.on('tap', (event) => {
+				/*let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
+                window.dispatchEvent(NodeEvent);*/
 			});
 
 
-     		this.realSizeX = resources.addNode.texture.baseTexture.realWidth;
-     		this.realSizeY = resources.addNode.texture.baseTexture.realHeight;
+     		this.realSizeX = resources.addPhoto.texture.baseTexture.realWidth;
+     		this.realSizeY = resources.addPhoto.texture.baseTexture.realHeight;
      		console.log(this.realSizeX);
      		console.log(this.realSizeY);
 		});
@@ -94,7 +95,7 @@ export default class NodeFooter  extends UIContainer{
 		this.loader.onComplete.add(() => {
 
 			
-			this.attach(this.addNode);
+			this.attach(this.addPhoto);
 
 
 
