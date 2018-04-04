@@ -58,7 +58,8 @@ export default class Node extends UIContainer{
 	addHeader(){
 
 		let NHeader = new NodeHeader(0xFF99FF,0,0,0,this.width,100);
-		this.attach(NHeader);
+		let TheNodeHeader = NHeader.load();
+		this.attach(TheNodeHeader);
 	}
 
 
