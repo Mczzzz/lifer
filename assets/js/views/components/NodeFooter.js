@@ -69,6 +69,8 @@ export default class NodeFooter  extends UIContainer{
 		this.loader.add('addPict', 'assets/glyphs/ic_gallery_white_72px.svg');
 
 		this.loader.load((loader, resources) => {
+
+
      		this.addPhoto = new PIXI.extras.TilingSprite(resources.addPhoto.texture);
      		this.addPhoto.interactive = true;
      		this.addPhoto.anchor.set(0.5,0.5);
@@ -85,6 +87,27 @@ export default class NodeFooter  extends UIContainer{
                 window.dispatchEvent(NodeEvent);*/
                  $('#photo').click();
 			});
+
+
+
+			this.addPict = new PIXI.extras.TilingSprite(resources.addPict.texture);
+     		this.addPict.interactive = true;
+     		this.addPict.anchor.set(0.5,0.5);
+/*     		this.addPict.tileScale.x = 2; 
+			this.addPict.tileScale.y = 2;*/
+			this.addPict.tint = 0xFFFFFF;
+			this.addPict.x = 144;
+			this.addPict.y = 50;
+			this.addPict.width  = 72;
+			this.addPict.height = 72;
+
+			this.addPict.on('tap', (event) => {
+				/*let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
+                window.dispatchEvent(NodeEvent);*/
+                 $('#photo').click();
+			});
+
+
 
 
      		this.realSizeX = resources.addPhoto.texture.baseTexture.realWidth;
@@ -106,7 +129,15 @@ export default class NodeFooter  extends UIContainer{
 			inputFile.setAttribute("style", "position:absolute;visibility: hidden;")
 			document.body.appendChild(inputFile);
 
+			this.attach(this.addPict);
 
+			const inputFilePict = document.createElement("INPUT");
+			inputFilePict.setAttribute("type", "file");
+			inputFilePict.setAttribute("accept", "image/*");
+			/*inputFilePict.setAttribute("capture", "camera");*/
+			inputFilePict.setAttribute("id", "photo");
+			inputFilePict.setAttribute("style", "position:absolute;visibility: hidden;")
+			document.body.appendChild(inputFilePict);
 
 		});
 
