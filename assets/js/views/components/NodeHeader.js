@@ -22,9 +22,9 @@ export default class NodeHeader  extends UIContainer{
 
 		this.addBkgd();
 
-		this.addDate();
+	
 
-		this.addMenu();
+		this.addClose();
 
 	}
 
@@ -59,56 +59,30 @@ export default class NodeHeader  extends UIContainer{
 
 
 
-	addDate(){
-
-		this.addLiteralDate();
-		this.addWeekDate();
-
-	}
-
-
-	addLiteralDate(){
-
-		let text = new PIXI.Text(moment().format('dddd Do MMMM YYYY'),{fontFamily : 'Arial', fontSize: 30, fill : 0xFFFFFF, align : 'center'});
-		text.x = window.innerWidth - text.width - 10;
-		text.y = 10;
-		this.attach(text);
-
-	}
-
-
-
-	addWeekDate(){
-
-
-		let text = new PIXI.Text("S: "+ moment().format('WW'),{fontFamily : 'Arial', fontSize: 24, fill : 0xFFFFFF, align : 'center'});
-		text.x = window.innerWidth - text.width - 10;
-		text.y = 40;
-		this.attach(text);
-
-	}
-
-
-	addMenu(){
+	addClose(){
 
 
 	this.loader = PIXI.loader;
-		this.loader.add('hamburger', 'assets/glyphs/ic_menu_white_36px.svg');
+		this.loader.add('close', 'assets/glyphs/ic_menu_white_36px.svg');
 
 		this.loader.load((loader, resources) => {
-     		this.hamburger = new PIXI.extras.TilingSprite(resources.hamburger.texture);
-     		this.hamburger.interactive = true;
-     		this.hamburger.anchor.set(0.5,0.5);
-/*     		this.hamburger.tileScale.x = 2; 
-			this.hamburger.tileScale.y = 2;*/
-			this.hamburger.tint = 0xFFFFFF;
-			this.hamburger.x = 72;
-			this.hamburger.y = 50;
-			this.hamburger.width  = 72;
-			this.hamburger.height = 72;
+     		this.close = new PIXI.extras.TilingSprite(resources.close.texture);
+     		this.close.interactive = true;
+     		this.close.anchor.set(0.5,0.5);
+/*     		this.close.tileScale.x = 2; 
+			this.close.tileScale.y = 2;*/
+			this.close.tint = 0xFFFFFF;
+			this.close.x = 72;
+			this.close.y = 50;
+			this.close.width  = 72;
+			this.close.height = 72;
 
-     		this.realSizeX = resources.hamburger.texture.baseTexture.realWidth;
-     		this.realSizeY = resources.hamburger.texture.baseTexture.realHeight;
+			this.close.on('tap', (event) => {
+				this.container.parent.removeChild(this.container);
+			});
+
+     		this.realSizeX = resources.close.texture.baseTexture.realWidth;
+     		this.realSizeY = resources.close.texture.baseTexture.realHeight;
      		console.log(this.realSizeX);
      		console.log(this.realSizeY);
 		});
@@ -116,7 +90,7 @@ export default class NodeHeader  extends UIContainer{
 		this.loader.onComplete.add(() => {
 
 			
-			this.attach(this.hamburger);
+			this.attach(this.close);
 
 
 
