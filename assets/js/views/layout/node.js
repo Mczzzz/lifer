@@ -66,7 +66,7 @@ export default class Node extends UIContainer{
 
 	addFooter(){
 
-		let NFooter = new NodeFooter(0,0,this.width,100);
+		let NFooter = new NodeFooter(0,this.height - 100,this.width,100);
 		let TheNodeFooter = NFooter.load();
 		this.attach(TheNodeFooter);
 	}
