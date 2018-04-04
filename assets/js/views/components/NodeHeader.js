@@ -22,8 +22,6 @@ export default class NodeHeader  extends UIContainer{
 
 		this.addBkgd();
 
-	
-
 		this.addClose();
 
 	}
@@ -61,8 +59,8 @@ export default class NodeHeader  extends UIContainer{
 
 	addClose(){
 
-
-	this.loader = PIXI.loader;
+		console.log('in add close');
+		this.loader = new PIXI.loaders.Loader();
 		this.loader.add('close', 'assets/glyphs/ic_menu_white_36px.svg');
 
 		this.loader.load((loader, resources) => {
