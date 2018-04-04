@@ -25,7 +25,7 @@ export default class Home {
 		this.attach(TheHeader);
 
 
-		let footer = new Footer(0,window.innerheight - 100,window.innerWidth,100)
+		let footer = new Footer(0,window.innerHeight - 100,window.innerWidth,100)
 		let TheFooter = footer.load();
 		this.attach(TheFooter);
 
