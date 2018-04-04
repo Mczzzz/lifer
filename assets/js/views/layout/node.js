@@ -8,7 +8,7 @@ import Button from '../components/Button.js';
 export default class Node extends UIContainer{
 
 
-	constructor(){
+	constructor(x,y,w,h){
 
 		super(x,y,w,h);
 		//getData Image
@@ -29,7 +29,7 @@ export default class Node extends UIContainer{
 		this.addBackground();
 
 		console.log('node/addelement/beforeaddPreviewPict');
-		this.addPreviewPict();
+		//this.addPreviewPict();
 
 		console.log('node/addelement/beforeaddTextArea');
 		this.addTextArea();
@@ -54,8 +54,8 @@ export default class Node extends UIContainer{
 
 	addPreviewPict(){
 
-		let prevPict = new PPict(this.data, this.width - 5, 250);
-		this.attach(prevPict);
+/*		let prevPict = new PPict(this.data, this.width - 5, 250);
+		this.attach(prevPict);*/
 		
 	}
 
