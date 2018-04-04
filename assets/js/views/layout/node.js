@@ -29,13 +29,15 @@ export default class Node extends UIContainer{
 		console.log('node/addelement/beforeBackground');
 		this.addBackground();
 
-		console.log('node/addelement/beforeaddPreviewPict');
+		this.addHeader();
+
+		//console.log('node/addelement/beforeaddPreviewPict');
 		//this.addPreviewPict();
 
-		console.log('node/addelement/beforeaddTextArea');
+		//console.log('node/addelement/beforeaddTextArea');
 		this.addTextArea();
 
-		console.log('node/addelement/beforeaddSaveButton');
+		//console.log('node/addelement/beforeaddSaveButton');
 		this.addSaveButton();
 
 
