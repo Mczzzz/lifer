@@ -32,12 +32,13 @@ export default class Frame {
 
 
 
-	node(e){
+	node(){
 
 		console.log('in frame node');
 	
-		let nodeFrame = new Node(e);
-		this.attach(nodeFrame);
+		let nodeFrame = new Node(0,0,window.innerWidth,window.innerHeight);
+		let TheNode = nodeFrame.load();
+		this.attach(TheNode);
 
 	}
 

@@ -1,59 +1,26 @@
 import NodeCollection from '../../collections/NodeCollection.js';
 import Bkg from '../components/background.js';
 import PPict from '../components/previewPict.js';
+import UIContainer from '../../services/uiContainer.js';
 import TextArea from '../components/textarea.js';
 import Button from '../components/Button.js';
 
-export default class Node {
+export default class Node extends UIContainer{
 
 
-	constructor(e){
+	constructor(){
 
+		super(x,y,w,h);
 		//getData Image
 		//TODO : a bouger car doit être asynchrone
-		this.data = e.detail.data;
+		//this.data = e.detail.data;
 
-		this.collector = new NodeCollection();
-		this.collector.setImage(this.data);
+/*		this.collector = new NodeCollection();
+		this.collector.setImage(this.data);*/
 
-		
-
-		this.declareContainer();
-
-		this.fixeSize();
-
-		this.fixePosition();
-
-		this.addElements();
-
-		return this.container;
 
 	}
 
-
-	declareContainer(){
-
-		this.container = new PIXI.Container();
-		this.container.interactive = true;
-
-	}
-
-
-	fixeSize(){
-
-		this.width = window.innerWidth - 20;
-		this.height = window.innerHeight - 20;
-
-	}
-
-
-
-	fixePosition(){
-
-		this.container.x = 10;
-		this.container.y = 10;
-
-	}
 
 
 	addElements(){
@@ -111,18 +78,8 @@ export default class Node {
 			console.log('in tap button');
 			this.collector.save();
         });
+        
 		this.attach(button);
-
-	}
-
-
-
-
-
-	attach(components){
-
-		console.log(components);
-		this.container.addChild(components);
 
 	}
 
