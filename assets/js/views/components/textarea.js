@@ -1,30 +1,19 @@
-export default class TextArea {
+import UIContainer from '../../services/uiContainer.js';
+export default class TextArea  extends UIContainer{
 
 
 	constructor(x , y , w , h ){
 
-		//add html textarea
-		//css position absolute + sous l'image
-
-		this.declareContainer();
-
-		this.container.x = x;
-		this.container.y = y;
-
-		this.drawTextArea(w, h);
-
-		return this.container;
+		super(x,y,w,h);
 
 	}
 
 
-	declareContainer(){
+	addElements(){
 
-		this.container = new PIXI.Container();
-		this.container.interactive = true;
+		drawTextArea(this.width, this.height);
 
 	}
-
 
 	drawTextArea(w, h){
 
@@ -39,7 +28,7 @@ export default class TextArea {
 		//tArea.setAttribute("type", "file");
 		tArea.setAttribute("id", "textarea");
 		tArea.setAttribute("placeholder", "Je rentre les infos ...");
-		tArea.setAttribute("style", "background: transparent;border: 0 none;width: "+ w +"px; height: "+ h +"px;");
+		tArea.setAttribute("style", "background: transparent;border: 0 none;width: "+ w +"px; height: "+ h +"px;font-size:medium");
 		$("#divText").append(tArea);
 
 
