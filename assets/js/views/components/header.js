@@ -69,9 +69,9 @@ export default class Header  extends UIContainer{
 
 	addLiteralDate(){
 
-		let text = new PIXI.Text(moment().format('dddd Do MMMM YYYY'),{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
+		let text = new PIXI.Text(moment().format('dddd Do MMMM YYYY'),{fontFamily : 'Arial', fontSize: 30, fill : 0xFFFFFF, align : 'center'});
 		text.x = window.innerWidth - text.width;
-		text.y = 20;
+		text.y = 10;
 		this.attach(text);
 
 	}
@@ -81,9 +81,9 @@ export default class Header  extends UIContainer{
 	addWeekDate(){
 
 
-		let text = new PIXI.Text("S: "+ moment().format('WW'),{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
+		let text = new PIXI.Text("S: "+ moment().format('WW'),{fontFamily : 'Arial', fontSize: 24, fill : 0xFFFFFF, align : 'center'});
 		text.x = window.innerWidth - text.width;
-		text.y = 5;
+		text.y = 40;
 		this.attach(text);
 
 	}
