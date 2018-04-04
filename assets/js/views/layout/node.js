@@ -1,7 +1,8 @@
 import NodeCollection from '../../collections/NodeCollection.js';
 import Bkg from '../components/background.js';
 import NodeHeader from '../components/NodeHeader.js';
-import PPict from '../components/previewPict.js';
+import NodeFooter from '../components/NodeFooter.js';
+/*import PPict from '../components/previewPict.js';*/
 import UIContainer from '../../services/uiContainer.js';
 import TextArea from '../components/textarea.js';
 import Button from '../components/Button.js';
@@ -31,6 +32,7 @@ export default class Node extends UIContainer{
 
 		this.addHeader();
 
+		this.addFooter();
 		//console.log('node/addelement/beforeaddPreviewPict');
 		//this.addPreviewPict();
 
@@ -61,6 +63,14 @@ export default class Node extends UIContainer{
 		let TheNodeHeader = NHeader.load();
 		this.attach(TheNodeHeader);
 	}
+
+	addFooter(){
+
+		let NFooter = new NodeFooter(0,0,this.width,100);
+		let TheNodeFooter = NFooter.load();
+		this.attach(TheNodeFooter);
+	}
+
 
 
 	addPreviewPict(){
