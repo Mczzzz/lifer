@@ -1,4 +1,8 @@
-<svg fill="#FFFFFF" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
-    <path d="M0 0h24v24H0z" fill="none"/>
-    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="27px" height="18px" viewBox="4.5 9 27 18" enable-background="new 4.5 9 27 18" xml:space="preserve">
+<path fill="none" d="M-36-36h72v72h-72V-36z"/>
+<path fill="#FFFFFF" d="M-27,18h54v-6h-54V18z M-27,3h54v-6h-54V3z M-27-18v6h54v-6H-27z"/>
 </svg>
