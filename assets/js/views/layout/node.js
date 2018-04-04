@@ -1,5 +1,6 @@
 import NodeCollection from '../../collections/NodeCollection.js';
 import Bkg from '../components/background.js';
+import NodeHeader from '../components/NodeHeader.js';
 import PPict from '../components/previewPict.js';
 import UIContainer from '../../services/uiContainer.js';
 import TextArea from '../components/textarea.js';
@@ -49,6 +50,13 @@ export default class Node extends UIContainer{
         this.attach(background);
 
 
+	}
+
+
+	addHeader(){
+
+		let NHeader = new NodeHeader(0xFF99FF,0,0,0,this.width,100):
+		this.attach(NHeader);
 	}
 
 
