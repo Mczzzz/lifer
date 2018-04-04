@@ -61,7 +61,7 @@ export default class NodeHeader  extends UIContainer{
 
 		console.log('in add close');
 		this.loader = new PIXI.loaders.Loader();
-		this.loader.add('close', 'assets/glyphs/ic_menu_white_36px.svg');
+		this.loader.add('close', 'assets/glyphs/ic_arrow_white_72px.svg');
 
 		this.loader.load((loader, resources) => {
      		this.close = new PIXI.extras.TilingSprite(resources.close.texture);
