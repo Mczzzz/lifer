@@ -39,7 +39,7 @@ export default class Header  extends UIContainer{
 
 	addShadowBackground(){
 
-		let Srect = new Rect(0x999999 , 0, 0 , 0 , window.innerWidth , 50);
+		let Srect = new Rect(0x999999 , 0, 0 , 0 , window.innerWidth , 100);
 
 		let dropShadowFilter = new PIXI.filters.BlurFilter();
 	    dropShadowFilter.blur = 2;
@@ -51,7 +51,7 @@ export default class Header  extends UIContainer{
 
 	addBackground(){
 
-		let rect = new Rect(0xE8E8E8 , 0, 0 , 0 , window.innerWidth , 50);
+		let rect = new Rect(0xE8E8E8 , 0, 0 , 0 , window.innerWidth , 100);
 		this.attach(rect);
 
 
@@ -69,7 +69,7 @@ export default class Header  extends UIContainer{
 
 	addLiteralDate(){
 
-		let text = new PIXI.Text(moment().format('dddd Do MMMM YYYY'),{fontFamily : 'Arial', fontSize: 12, fill : 0xff1010, align : 'center'});
+		let text = new PIXI.Text(moment().format('dddd Do MMMM YYYY'),{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
 		text.x = 5;
 		text.y = 20;
 		this.attach(text);
@@ -81,7 +81,7 @@ export default class Header  extends UIContainer{
 	addWeekDate(){
 
 
-		let text = new PIXI.Text("S: "+moment().format('WW'),{fontFamily : 'Arial', fontSize: 12, fill : 0xff1010, align : 'center'});
+		let text = new PIXI.Text("S: "+moment().format('WW'),{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
 		text.x = 5;
 		text.y = 5;
 		this.attach(text);
@@ -99,8 +99,8 @@ export default class Header  extends UIContainer{
      		this.hamburger = new PIXI.extras.TilingSprite(resources.hamburger.texture);
      		this.hamburger.interactive = true;
      		this.hamburger.anchor.set(0.5,0.5);
-/*     		this.hamburger.tileScale.x = 2; 
-			this.hamburger.tileScale.y = 2;*/
+     		this.hamburger.tileScale.x = 2; 
+			this.hamburger.tileScale.y = 2;
 			this.hamburger.tint = 0xFF99FF;
 			this.hamburger.x = window.innerWidth - 36;
 			this.hamburger.y = 25;
