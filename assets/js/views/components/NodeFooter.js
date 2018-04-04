@@ -96,7 +96,7 @@ export default class NodeFooter  extends UIContainer{
 /*     		this.addPict.tileScale.x = 2; 
 			this.addPict.tileScale.y = 2;*/
 			this.addPict.tint = 0xFFFFFF;
-			this.addPict.x = 144;
+			this.addPict.x = 172;
 			this.addPict.y = 50;
 			this.addPict.width  = 72;
 			this.addPict.height = 72;
