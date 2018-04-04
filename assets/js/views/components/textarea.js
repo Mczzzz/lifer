@@ -11,7 +11,7 @@ export default class TextArea  extends UIContainer{
 
 	addElements(){
 
-		drawTextArea(this.width, this.height);
+		this.drawTextArea(this.width, this.height);
 
 	}
 
