@@ -76,7 +76,7 @@ export default class NodeHeader  extends UIContainer{
 			this.close.height = 72;
 
 			this.close.on('tap', (event) => {
-				this.container.parent.removeChild(this.container);
+				this.container.parent.parent.removeChild(this.container.parent);
 			});
 
      		this.realSizeX = resources.close.texture.baseTexture.realWidth;
