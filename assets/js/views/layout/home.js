@@ -1,4 +1,5 @@
 import Header from '../components/header.js';
+import Footer from '../components/footer.js';
 import Adder from '../components/adder.js';
 
 export default class Home {
@@ -18,16 +19,21 @@ export default class Home {
 
 	render(){
 
-		let header = new Header(0,0,window.innerWidth,50);
-		console.log(header);
+		let header = new Header(0,0,window.innerWidth,100);
+		//console.log(header);
 		let TheHeader = header.load();
 		this.attach(TheHeader);
 
-		const rayonButton = 30;
+
+		let footer = new Footer(0,window.innerheight - 100,window.innerWidth,100)
+		let TheFooter = footer.load();
+		this.attach(TheFooter);
+
+/*		const rayonButton = 30;
 		this.adder = new Adder(rayonButton);
 		this.adder.x = 20;
 		this.adder.y = window.innerHeight - (rayonButton * 2 ) - 20;
-		this.attach(this.adder);
+		this.attach(this.adder);*/
 
 
 	}
