@@ -81,7 +81,7 @@ export default class Header  extends UIContainer{
 	addWeekDate(){
 
 
-		let text = new PIXI.Text("S: "+moment().format('WW'),{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
+		let text = new PIXI.Text("S: "+ moment().format('WW'),{fontFamily : 'Arial', fontSize: 24, fill : 0xff1010, align : 'center'});
 		text.x = 5;
 		text.y = 5;
 		this.attach(text);
@@ -101,8 +101,8 @@ export default class Header  extends UIContainer{
      		this.hamburger.anchor.set(0.5,0.5);
      		this.hamburger.tileScale.x = 2; 
 			this.hamburger.tileScale.y = 2;
-			this.hamburger.tint = 0xFF99FF;
-			this.hamburger.x = window.innerWidth - 72;
+			this.hamburger.tint = 0x999999;
+			this.hamburger.x = 72;
 			this.hamburger.y = 50;
 			this.hamburger.width  = 72;
 			this.hamburger.height = 72;
