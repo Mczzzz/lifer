@@ -80,9 +80,9 @@ export default class Footer  extends UIContainer{
 			this.addNode.height = 72;
 
 			this.addNode.on('tap', (event) => {
-			let event = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
-                window.dispatchEvent(event);
-		});
+				let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
+                window.dispatchEvent(NodeEvent);
+			});
 
 
      		this.realSizeX = resources.addNode.texture.baseTexture.realWidth;
