@@ -83,6 +83,7 @@ export default class NodeFooter  extends UIContainer{
 			this.addPhoto.on('tap', (event) => {
 				/*let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
                 window.dispatchEvent(NodeEvent);*/
+                 $('#photo').click();
 			});
 
 
@@ -96,6 +97,14 @@ export default class NodeFooter  extends UIContainer{
 
 			
 			this.attach(this.addPhoto);
+
+			const inputFile = document.createElement("INPUT");
+			inputFile.setAttribute("type", "file");
+			inputFile.setAttribute("accept", "image/*");
+			inputFile.setAttribute("capture", "camera");
+			inputFile.setAttribute("id", "photo");
+			inputFile.setAttribute("style", "position:absolute;visibility: hidden;")
+			document.body.appendChild(inputFile);
 
 
 
