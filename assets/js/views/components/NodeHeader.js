@@ -77,6 +77,7 @@ export default class NodeHeader  extends UIContainer{
 
 			this.close.on('tap', (event) => {
 				this.container.parent.parent.removeChild(this.container.parent);
+				$('#divText').remove();
 			});
 
      		this.realSizeX = resources.close.texture.baseTexture.realWidth;
