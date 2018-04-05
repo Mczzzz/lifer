@@ -102,8 +102,8 @@ class NodeController extends Controller
 
         foreach($list as $item){
 
-            $objResp->[$item.getId()] = new stdClass();
-            $objResp->[$item.getId()]->text = $item->getText();
+            $objResp->{$item.getId()} = new stdClass();
+            $objResp->{$item.getId()}->text = $item->getText();
 
         }
 
