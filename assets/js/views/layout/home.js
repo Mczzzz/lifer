@@ -54,5 +54,11 @@ export default class Home extends UIContainer{
 	}
 
 
+	addListNode(){
+
+		
+
+		
+	}
 
 }
