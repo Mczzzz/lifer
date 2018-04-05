@@ -98,12 +98,12 @@ class NodeController extends Controller
 
         $list = $entityManager->getRepository(Node::class)->findAll();
 
-        $objResp = new \stdClass();
+        $objResp = array();
 
         foreach($list as $item){
 
-            $objResp->{$item->getId()} = new \stdClass();
-            $objResp->{$item->getId()}->text = $item->getText();
+            $objResp[$item->getId()] = new \stdClass();
+            $objResp[$item->getId()]->text = $item->getText();
 
         }
 
