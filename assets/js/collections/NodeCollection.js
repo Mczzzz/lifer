@@ -39,7 +39,10 @@ export default class NodeCollection {
               cache: false,
               contentType: false,
               processData: false
-            });
+            }).done(function( data ) {
+            	console.log('in done POST');
+				this.getAll();
+    		});
 
 
 
