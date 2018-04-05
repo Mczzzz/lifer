@@ -58,8 +58,9 @@ export default class Home extends UIContainer{
 
 
 	addListNode(){
-
+console.log('on passe dans le addListNode 1');
 		this.collector = new NodeCollection();
+console.log('on passe dans le addListNode  2');
 
 		let MyList = this.collector.getAll();
 
