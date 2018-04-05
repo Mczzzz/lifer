@@ -11,6 +11,8 @@ export default class Home extends UIContainer{
 
 		super(x,y,w,h);
 
+		//this.container.name = 'Home';
+		console.log($(this).attr('class'));
 	}
 
 
