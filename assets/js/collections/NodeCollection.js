@@ -57,7 +57,12 @@ export default class NodeCollection {
               cache: false,
               contentType: false,
               processData: false
-         });
+         })
+			.done(function( data ) {
+    			return data;
+    		});
+
+
 
 
 	}
