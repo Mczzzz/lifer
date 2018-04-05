@@ -98,6 +98,8 @@ class NodeController extends Controller
 
         $list = $entityManager->getRepository(Node::class)->findAll();
 
+        var_dump(count($list));
+        die();
         foreach($list as $item){
 
 
