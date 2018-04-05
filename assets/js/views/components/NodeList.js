@@ -33,12 +33,12 @@ export default class NodeList extends UIContainer{
 	addElements(MyText){
 
 		console.log('on attach les élements')
-		let text = new PIXI.Text(MyText,{fontFamily : 'Arial', fontSize: 80, fill : 0x000000, align : 'center'});
+		let text = new PIXI.Text(MyText,{fontFamily : 'Arial', fontSize: 24, fill : 0x000000, align : 'center'});
 		text.x = 10;
 		text.y = this.size;
 		this.attach(text);
 
-		this.size = this.size + 105;	
+		this.size = this.size + 30;	
 		//console.log(this.size);	
 
 	}
