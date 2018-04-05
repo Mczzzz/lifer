@@ -13,7 +13,7 @@ export default class NodeList extends UIContainer{
 		this.height = height;
 
 		this.data = {};
-
+		this.size = 0;
 		//attach event on container
 		window.addEventListener('updateNodeList', (e) => this.updateList(e.detail));
 
@@ -22,9 +22,14 @@ export default class NodeList extends UIContainer{
 
 
 
-	addElements(){
+	addElements(MyText){
 
-		
+		let text = new PIXI.Text(MyText,{fontFamily : 'Arial', fontSize: 80, fill : 0x000000, align : 'center'});
+		text.x = 10;
+		text.y = this.size;
+		this.attach(text);
+
+		this.size++;		
 
 	}
 
@@ -34,20 +39,13 @@ export default class NodeList extends UIContainer{
 		//nettoyage de l'actuel
 
 		//relance de la construction
-		console.log('in update List');
-		console.log(data);
-		//console.log(JSON.parse(data));
-		//console.log(this.data);
-
-		//this.setData(data);
-
 		this.data = JSON.parse(data);
-		
-		console.log(this.data);
-		console.log(this.data.data);
-
+	
+		//distance en ligne
+		let size = 105;
 		for (var i = 0; i < this.data.data.length; i++) {
-  			console.log(this.data.data[i]);
+  			//console.log(this.data.data[i]);
+  			this.addElements(this.data.data.text);
 		}
 		
 
