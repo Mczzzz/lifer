@@ -69,8 +69,14 @@ export default class NodeFooter  extends UIContainer{
 
 		button.on('tap', (event) => {
 			console.log('in tap button');
+
+			//IHM
 			this.container.parent.parent.removeChild(this.container.parent);
 			$('#divText').remove();
+		
+			//DATA STORE
+
+			//REFRESH MAIN;
 		//	this.collector.save();
         });
         

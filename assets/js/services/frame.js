@@ -25,7 +25,7 @@ export default class Frame {
 
 	render(){
 
-		let homeFrame = new Home();
+		let homeFrame = new Home(0,0,window.innerWidth,window.innerHeight);
 		this.attach(homeFrame);
 
 	}

@@ -1,31 +1,30 @@
+import NodeCollection from '../../collections/NodeCollection.js';
+import UIContainer from '../../services/uiContainer.js';
 import Header from '../components/header.js';
 import Footer from '../components/footer.js';
 import Adder from '../components/adder.js';
 
-export default class Home {
+export default class Home extends UIContainer{
 
 
-	constructor(){
+	constructor(x,y,w,h){
 
-		this.container = new PIXI.Container();
-		this.container.interactive = true;
-
-		this.render();
-
-		return this.container;
+		super(x,y,w,h);
 
 	}
 
 
-	render(){
+	addElements(){
 
-		let header = new Header(0,0,window.innerWidth,100);
+		this.drawBkground();
+
+		let header = new Header(0,0,this.width,this.height);
 		//console.log(header);
 		let TheHeader = header.load();
 		this.attach(TheHeader);
 
 
-		let footer = new Footer(0,window.innerHeight - 100,window.innerWidth,100)
+		let footer = new Footer(0,this.height - 100,this.width,100);
 		let TheFooter = footer.load();
 		this.attach(TheFooter);
 
@@ -40,24 +39,16 @@ export default class Home {
 		
 
 
-	attach(components){
-
-		this.container.addChild(components);
-
-	}
-
-
-
 
 	drawBkground(){
 
-		this.backgroundCard = new PIXI.Graphics();
-        this.backgroundCard.beginFill(0xD8D8D8);
-        this.backgroundCard.lineStyle(0);
-        this.backgroundCard.drawRect(50, 50, window.innerWidth - 100, window.innerHeight - 100);
-        this.backgroundCard.endFill();
+		let backgroundCard = new PIXI.Graphics();
+        backgroundCard.beginFill(0xD8D8D8);
+        backgroundCard.lineStyle(0);
+        backgroundCard.drawRect(50, 50, window.innerWidth - 100, window.innerHeight - 100);
+        backgroundCard.endFill();
 
-        this.container.addChild(this.backgroundCard);
+        this.attach(backgroundCard);
 
 
 	}
