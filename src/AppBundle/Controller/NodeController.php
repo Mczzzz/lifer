@@ -17,7 +17,7 @@ class NodeController extends Controller
 
 
     /**
-     * @Route("/api/node", name="api_node")
+     * @Route("/api/node", name="api_node_post")
      * @Method("POST")
      */
 
@@ -75,7 +75,7 @@ class NodeController extends Controller
 
 
  /**
-     * @Route("/api/node", name="api_node")
+     * @Route("/api/node", name="api_node_get")
      * @Method("GET")
      */
 
