@@ -59,6 +59,7 @@ export default class NodeCollection {
               processData: false
          })
 			.done(function( data ) {
+				console.log('AJAX GET DONE');
     			return data;
     		});
 
