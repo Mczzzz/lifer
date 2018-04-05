@@ -35,6 +35,7 @@ export default class NodeList extends UIContainer{
 
 		//relance de la construction
 		console.log('in update List');
+		console.log(data);
 		//console.log(JSON.parse(data));
 		//console.log(this.data);
 
