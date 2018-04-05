@@ -49,7 +49,10 @@ class NodeController extends Controller
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
+
+
         $NodeId = $node->getId();
+
 
         $response = new \stdClass();
         $response->status = true;
@@ -66,7 +69,7 @@ class NodeController extends Controller
         $request->files->get('jpg')->move($tmpDir,$path_parts['basename']);
 
 */
-        return new Response($response);
+        return new Response(json_encode($response);
 
     }       
 
