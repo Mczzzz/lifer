@@ -96,7 +96,7 @@ class NodeController extends Controller
         // j'enregistre en base ma note
         $entityManager = $this->getDoctrine()->getManager();
 
-        $list = $entityManager->getRepository(Node::class)->findAll();
+        $list = $entityManager->getRepository(Node::class)->findBy(array('idCreator' => $user->getId()));
 
         $objResp = new \stdClass();
 
