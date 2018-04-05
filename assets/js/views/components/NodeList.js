@@ -40,7 +40,7 @@ export default class NodeList extends UIContainer{
 
 		this.setData(data);
 		
-		for (let OneNode of this.data){
+		for (let OneNode of this.data.data){
 
 			console.log(OneNode);
 
@@ -58,7 +58,7 @@ export default class NodeList extends UIContainer{
 
 	setData(data){
 
-		this.data = JSON.parse(data.data);
+		this.data = JSON.parse(data);
 	}
 
 
