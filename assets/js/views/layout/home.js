@@ -2,7 +2,8 @@ import NodeCollection from '../../collections/NodeCollection.js';
 import UIContainer from '../../services/uiContainer.js';
 import Header from '../components/header.js';
 import Footer from '../components/footer.js';
-import Adder from '../components/adder.js';
+import NodeList from '../components/NodeList.js';
+//import Adder from '../components/adder.js';
 
 export default class Home extends UIContainer{
 
@@ -58,13 +59,15 @@ export default class Home extends UIContainer{
 
 
 	addListNode(){
-console.log('on passe dans le addListNode 1');
+
 		this.collector = new NodeCollection();
-console.log('on passe dans le addListNode  2');
 
-		let MyList = this.collector.getAll();
+		//un trigger renvoi le resultat
+		this.collector.getAll();
 
-		console.log(MyList);
+		let MyNodeList = new NodeList(0,100,this.height - 200, this.width)
+		let TheMyNodeList = MyNodeList.load();
+		this.attach(TheMyNodeList);
 
 	}
 

@@ -9,9 +9,6 @@ export default class Button extends UIContainer{
 
 		super(x,y,width,height);
 
-		this.width = width;
-		this.height = height;
-
 
 	}
 

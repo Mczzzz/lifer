@@ -60,8 +60,8 @@ export default class NodeCollection {
          })
 			.done(function( data ) {
 				console.log('AJAX GET DONE');
-				console.log(data);
-    			return data;
+ 				let evUpdateNodeList = new CustomEvent('updateNodeList', {'detail' : data});
+                window.dispatchEvent(evUpdateNodeList);
     		});
 
 
