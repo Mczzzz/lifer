@@ -1,6 +1,7 @@
 import moment from 'moment-es6';
 import UIContainer from '../../services/uiContainer.js';
 import Rect from '../elements/rect.js';
+import Button from '../components/Button.js';
 
 
 export default class NodeFooter  extends UIContainer{
@@ -24,7 +25,9 @@ export default class NodeFooter  extends UIContainer{
 
 		//this.addDate();
 
-		this.addNode();
+		this.addNodePict();
+
+		this.addValid();
 
 	}
 
@@ -58,10 +61,27 @@ export default class NodeFooter  extends UIContainer{
 	}
 
 
+	addValid(){
+
+		let but = new Button((this.width / 2) - 150,0, 100, 300);
+
+		let button = but.load();
+
+		button.on('tap', (event) => {
+			console.log('in tap button');
+		//	this.collector.save();
+        });
+        
+		this.attach(button);
+
+	}
+
+
+	
 
 
 
-	addNode(){
+	addNodePict(){
 
 
 	this.loader = new PIXI.loaders.Loader();
