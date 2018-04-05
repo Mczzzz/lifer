@@ -83,7 +83,7 @@ export default class Node extends UIContainer{
 
 	addTextArea(){
 		//x,y,width,height
-		let tArea = new TextArea(25, 100, this.width - 50, 300);
+		let tArea = new TextArea(25, 110, this.width - 50, 300);
 		let TheTextArea = tArea.load();
 		this.attach(TheTextArea);
 
