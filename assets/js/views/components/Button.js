@@ -35,8 +35,8 @@ export default class Button extends UIContainer{
 
 	addText(){
 
-		let text = new PIXI.Text("OK",{fontFamily : 'Arial', fontSize: 80, fill : 0xFFFFFF, align : 'center'});
-		text.x = this.width - (text.width / 2);
+		let text = new PIXI.Text("OK",{fontFamily : 'Arial', fontSize: 80, fill : 0x000000, align : 'center'});
+		text.x = (this.width / 2) - (text.width / 2);
 		text.y = 10;
 		this.attach(text);
 	}
