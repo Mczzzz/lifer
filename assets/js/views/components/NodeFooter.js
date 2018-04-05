@@ -76,7 +76,7 @@ export default class NodeFooter  extends UIContainer{
 			NCollect.save();
 
 			//on recharge la liste mais à revoir
-			NCollect.getAll();
+			//NCollect.getAll();
 
 
 			//IHM
