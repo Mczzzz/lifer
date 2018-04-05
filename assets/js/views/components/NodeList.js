@@ -57,8 +57,8 @@ export default class NodeList extends UIContainer{
 		//distance en ligne
 		let size = 105;
 		for (let key in this.data.data) {
-  			console.log(this.data.data.key);
-  			this.addElements(this.data.data.key.text);
+  			console.log(key);
+  			//this.addElements(this.data.data.key.text);
 		}
 		console.log('on pass dans le load');
 		this.load();
