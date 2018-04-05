@@ -98,16 +98,18 @@ class NodeController extends Controller
 
         $list = $entityManager->getRepository(Node::class)->findAll();
 
-        var_dump(count($list));
-        die();
+        $objResp = new stdClass();
+
         foreach($list as $item){
 
-
+            $objResp->[$item.getId()] = new stdClass();
+            $objResp->[$item.getId()]->text = $item->getText();
 
         }
+
         $response = new \stdClass();
         $response->status = true;
-        $response->nb = count($list);
+        $response->data = $objResp;
 /*
         $request = Request::createFromGlobals();
 
@@ -120,7 +122,7 @@ class NodeController extends Controller
         $request->files->get('jpg')->move($tmpDir,$path_parts['basename']);
 
 */
-        return new Response($response);
+        return new Response(json_encode($response);
 
     }       
 
