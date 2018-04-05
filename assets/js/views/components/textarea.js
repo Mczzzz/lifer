@@ -31,7 +31,7 @@ export default class TextArea  extends UIContainer{
 		tArea.setAttribute("style", "background: transparent;outline: none;border: 0 none;width: "+ w +"px; height: "+ h +"px;font-size:30px");
 		$("#divText").append(tArea);
 
-		/*tArea.on('tap', (event) => {
+		tArea.on('tap', (event) => {
 			console.log('in tap TextArea');
 
 			if($(this).is(':focus')){
@@ -45,7 +45,7 @@ export default class TextArea  extends UIContainer{
 
 			//REFRESH MAIN;
 		//	this.collector.save();
-        });*/
+        });
 
 
 	}
