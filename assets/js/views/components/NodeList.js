@@ -38,8 +38,11 @@ export default class NodeList extends UIContainer{
 		//console.log(JSON.parse(data));
 		//console.log(this.data);
 
-		this.setData(data);
+		//this.setData(data);
+
+		this.data = JSON.parse(data);
 		
+		console.log(this.data);
 		for (let OneNode of this.data.data){
 
 			console.log(OneNode);
