@@ -32,7 +32,7 @@ export default class NodeList extends UIContainer{
 
 	addElements(MyText){
 
-		console.log('on attach les élements')
+		//console.log('on attach les élements')
 		let text = new PIXI.Text(MyText,{fontFamily : 'Arial', fontSize: 24, fill : 0x000000, align : 'center'});
 		text.x = 10;
 		text.y = this.size;
@@ -48,19 +48,15 @@ export default class NodeList extends UIContainer{
 
 		//nettoyage de l'actuel
 		this.size = 0;
+
 		//relance de la construction
 		this.data = JSON.parse(data);
-/*		console.log('afterParse');
-		console.log(this.data);
-		console.log(this.data.data);
-		console.log(this.data.data.count);*/
-		//distance en ligne
-		//let size = 105;
+
 		for (let key in this.data.data) {
   			//console.log(this.data.data[key].text);
   			this.addElements(this.data.data[key].text);
 		}
-		console.log('on pass dans le load');
+	//	console.log('on pass dans le load');
 		this.load();
 		//this.addElements();
 

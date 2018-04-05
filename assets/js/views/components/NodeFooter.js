@@ -1,4 +1,5 @@
 import moment from 'moment-es6';
+import NodeCollection from '../../collections/NodeCollection.js';
 import UIContainer from '../../services/uiContainer.js';
 import Rect from '../elements/rect.js';
 import Button from '../components/Button.js';
@@ -70,6 +71,9 @@ export default class NodeFooter  extends UIContainer{
 		button.on('tap', (event) => {
 			console.log('in tap button');
 
+			//on prends la data et on l'envoi au serveur
+			let NCollect = new NodeCollection();
+			NCollect.save();
 			//IHM
 			this.container.parent.parent.removeChild(this.container.parent);
 			$('#divText').remove();
