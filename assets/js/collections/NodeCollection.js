@@ -53,13 +53,14 @@ export default class NodeCollection {
 		let AjaxGetter = $.ajax({
               type: 'GET',
               url: this.api,
-              async: false,
+              async: true,
               cache: false,
               contentType: false,
               processData: false
          })
 			.done(function( data ) {
 				console.log('AJAX GET DONE');
+				console.log(data);
     			return data;
     		});
 
