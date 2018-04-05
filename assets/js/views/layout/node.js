@@ -5,7 +5,7 @@ import NodeFooter from '../components/NodeFooter.js';
 /*import PPict from '../components/previewPict.js';*/
 import UIContainer from '../../services/uiContainer.js';
 import TextArea from '../components/textarea.js';
-import Button from '../components/Button.js';
+
 
 export default class Node extends UIContainer{
 
@@ -40,7 +40,7 @@ export default class Node extends UIContainer{
 		this.addTextArea();
 
 		//console.log('node/addelement/beforeaddSaveButton');
-		this.addSaveButton();
+		//this.addSaveButton();
 
 
 	}
@@ -90,7 +90,7 @@ export default class Node extends UIContainer{
 	}
 	
 
-	addSaveButton(){
+/*	addSaveButton(){
 
 		let but = new Button(20,600, 50, 30);
 
@@ -103,7 +103,7 @@ export default class Node extends UIContainer{
         
 		this.attach(button);
 
-	}
+	}*/
 
 
 }
