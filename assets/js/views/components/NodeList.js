@@ -10,6 +10,8 @@ export default class NodeList extends UIContainer{
 
 		super(x,y,width,height);
 
+		this.container.name = 'NodeList';
+
 		this.width = width;
 		this.height = height;
 
@@ -30,6 +32,7 @@ export default class NodeList extends UIContainer{
 
 	addElements(MyText){
 
+		console.log('on attach les élements')
 		let text = new PIXI.Text(MyText,{fontFamily : 'Arial', fontSize: 80, fill : 0x000000, align : 'center'});
 		text.x = 10;
 		text.y = this.size;
@@ -53,7 +56,7 @@ export default class NodeList extends UIContainer{
   			//console.log(this.data.data[i]);
   			this.addElements(this.data.data.text);
 		}
-		
+		console.log('on pass dans le load');
 		this.load();
 		//this.addElements();
 
