@@ -24,6 +24,9 @@ export default class Home extends UIContainer{
 		this.attach(TheHeader);
 
 
+		this.addListNode();
+
+
 		let footer = new Footer(0,this.height - 100,this.width,100);
 		let TheFooter = footer.load();
 		this.attach(TheFooter);
@@ -56,9 +59,12 @@ export default class Home extends UIContainer{
 
 	addListNode(){
 
-		
+		this.collector = new NodeCollection();
 
-		
+		let MyList = this.collector.getAll();
+
+		console.log(MyList);
+
 	}
 
 }

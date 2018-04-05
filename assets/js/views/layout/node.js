@@ -17,8 +17,8 @@ export default class Node extends UIContainer{
 		//TODO : a bouger car doit être asynchrone
 		//this.data = e.detail.data;
 
-/*		this.collector = new NodeCollection();
-		this.collector.setImage(this.data);*/
+		//this.collector = new NodeCollection();
+		//this.collector.setImage(this.data);*/
 
 
 	}

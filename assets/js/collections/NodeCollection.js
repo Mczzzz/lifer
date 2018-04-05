@@ -48,7 +48,19 @@ export default class NodeCollection {
 	}
 
 
+	getAll(){
 
+		let AjaxGetter = $.ajax({
+              type: 'GET',
+              url: this.api,
+              async: true,
+              cache: false,
+              contentType: false,
+              processData: false
+         });
+
+
+	}
 
 
 
