@@ -44,16 +44,12 @@ export default class NodeList extends UIContainer{
 		this.data = JSON.parse(data);
 		
 		console.log(this.data);
-		for (let OneNode of this.data.data){
+		console.log(this.data.data);
 
-			console.log(OneNode);
-
-/*			this.addBkgd();
-
-			this.addText();*/
-
+		for (var i = 0; i < this.data.data.length; i++) {
+  			console.log(this.data.data[i]);
 		}
-
+		
 
 		//this.addElements();
 
