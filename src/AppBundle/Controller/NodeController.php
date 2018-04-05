@@ -69,7 +69,7 @@ class NodeController extends Controller
         $request->files->get('jpg')->move($tmpDir,$path_parts['basename']);
 
 */
-        return new Response(json_encode($response);
+        return new Response(json_encode($response));
 
     }       
 
