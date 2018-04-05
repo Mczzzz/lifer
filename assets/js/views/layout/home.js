@@ -1,4 +1,3 @@
-import NodeCollection from '../../collections/NodeCollection.js';
 import UIContainer from '../../services/uiContainer.js';
 import Header from '../components/header.js';
 import Footer from '../components/footer.js';
@@ -59,11 +58,6 @@ export default class Home extends UIContainer{
 
 
 	addListNode(){
-
-		this.collector = new NodeCollection();
-
-		//un trigger renvoi le resultat
-		this.collector.getAll();
 
 		let MyNodeList = new NodeList(0,100,this.height - 200, this.width)
 		let TheMyNodeList = MyNodeList.load();

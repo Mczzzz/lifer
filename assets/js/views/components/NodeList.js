@@ -1,3 +1,4 @@
+import NodeCollection from '../../collections/NodeCollection.js'
 import UIContainer from '../../services/uiContainer.js';
 import Rect from '../elements/rect.js';
 
@@ -16,6 +17,11 @@ export default class NodeList extends UIContainer{
 		this.size = 0;
 		//attach event on container
 		window.addEventListener('updateNodeList', (e) => this.updateList(e.detail));
+
+		this.collector = new NodeCollection();
+
+		//un trigger renvoi le resultat
+		this.collector.getAll();
 
 
 	}
