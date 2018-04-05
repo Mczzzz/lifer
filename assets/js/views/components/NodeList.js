@@ -46,6 +46,9 @@ export default class NodeList extends UIContainer{
 
 	updateList(data){
 
+		while (this.container.firstChild) {
+		    this.container.removeChild(this.container.firstChild);
+		}
 		//nettoyage de l'actuel
 		this.size = 0;
 
