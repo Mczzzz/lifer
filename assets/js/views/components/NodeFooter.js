@@ -74,6 +74,11 @@ export default class NodeFooter  extends UIContainer{
 			//on prends la data et on l'envoi au serveur
 			let NCollect = new NodeCollection();
 			NCollect.save();
+
+			//on recharge la liste mais à revoir
+			NCollect.getAll();
+
+
 			//IHM
 			this.container.parent.parent.removeChild(this.container.parent);
 			$('#divText').remove();

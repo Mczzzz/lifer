@@ -28,7 +28,7 @@ export default class NodeCollection {
 
 		let formData = new FormData();
 
-        formData.append('jpg'  ,this.image);
+        //formData.append('jpg'  ,this.image);
         formData.append('text'  ,$('#textarea').val());
 
         let AjaxSender = $.ajax({
