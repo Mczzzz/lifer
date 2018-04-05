@@ -48,7 +48,7 @@ export default class NodeList extends UIContainer{
   			this.addElements(this.data.data.text);
 		}
 		
-
+		this.load();
 		//this.addElements();
 
 	}
