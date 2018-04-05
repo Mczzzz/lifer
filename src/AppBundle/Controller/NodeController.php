@@ -38,7 +38,7 @@ class NodeController extends Controller
         // j'enregistre en base ma note
         $entityManager = $this->getDoctrine()->getManager();
         $node = new Node('now');
-        $node->setIdCreator($this->getUser()->getId());
+        $node->setIdCreator($user->getId());
         $node->setTsCreation(new \DateTime());
         $node->setText($text);
         $node->setStatus(100);
@@ -95,6 +95,7 @@ class NodeController extends Controller
 
         // j'enregistre en base ma note
         $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->clear();
 
         $list = $entityManager->getRepository(Node::class)->findBy(array('idCreator' => $user->getId()));
 
