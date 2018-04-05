@@ -15,7 +15,7 @@ export default class uiContainer{
 		this.fixePosition(x,y);
 
 		console.log(this.constructor.name);
-		console.log(this.parent.constructor.name);
+		console.log(Object.getPrototypeOf(instance));
 
 	}
 
