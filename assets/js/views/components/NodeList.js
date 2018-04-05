@@ -53,12 +53,12 @@ export default class NodeList extends UIContainer{
 		console.log('afterParse');
 		console.log(this.data);
 		console.log(this.data.data);
-		console.log(this.data.data.length);
+		console.log(this.data.data.count);
 		//distance en ligne
 		let size = 105;
-		for (var i = 0; i < this.data.data.length; i++) {
+		for (let key in this.data.data) {
   			console.log(this.data.data[i]);
-  			this.addElements(this.data.data[i].text);
+  			this.addElements(this.data.data.key.text);
 		}
 		console.log('on pass dans le load');
 		this.load();
