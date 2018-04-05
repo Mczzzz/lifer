@@ -33,9 +33,9 @@ export default class NodeList extends UIContainer{
 
 	addElements(MyText){
 
-		let NodeListButton = new NodeListButton(0, this.size, this.width - 50, 30);
-		let TheNodeListButton = NodeListButton.load();
-		this.attach(TheNodeListButton);
+		let NLButton = new NodeListButton(0, this.size, this.width - 50, 30,MyText);
+		let TheNLButton = NLButton.load();
+		this.attach(TheNListButton);
 		this.size = this.size + 30;	
 		//console.log(this.size);	
 
