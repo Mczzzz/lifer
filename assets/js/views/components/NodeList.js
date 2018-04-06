@@ -82,6 +82,7 @@ export default class NodeList extends UIContainer{
         .on('touchstart', (e) => this.onDragStart(e))
         .on('touchend', (e) => this.onDragEnd(e))
         .on('touchendoutside',(e) => this.onDragEnd(e))
+        .on('tap', (e) => this.onDragMove(e))
         .on('touchmove', (e) => this.onDragMove(e));
     }
 
@@ -177,7 +178,7 @@ export default class NodeList extends UIContainer{
 	        	}
 	        	
 	        	this.diff = newPosition.y;
-	        	
+
 	        	event.stopPropagation();
 	    	}
 
