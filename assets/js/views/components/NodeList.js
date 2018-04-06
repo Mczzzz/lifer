@@ -88,7 +88,7 @@ export default class NodeList extends UIContainer{
 	    console.log(this.data.global.x);
 	    this.container.x = this.data.global.x;
 	    this.container.alpha = 0.8;
-	    this.container.dragging = true;
+	    this.dragging = true;
 	}
 
 	onDragEnd()
@@ -109,7 +109,7 @@ export default class NodeList extends UIContainer{
 	    {
 	    	//console.log(this.parent);
 	        var newPosition = this.data.getLocalPosition(this.parent);
-	        this.container.x = newPosition.x;
+	        this.container.y = newPosition.y;
 	        //this.position.y = newPosition.y;
 	    }
 	}
