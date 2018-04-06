@@ -48,9 +48,9 @@ export default class Home extends UIContainer{
 	drawBkground(){
 
 		let backgroundCard = new PIXI.Graphics();
-        backgroundCard.beginFill(0x00b0ff);
+        backgroundCard.beginFill(0x00B0FF);
         backgroundCard.lineStyle(0);
-        backgroundCard.drawRect(0, 0, this.width, this.heigt);
+        backgroundCard.drawRect(0, 0, this.width, this.height);
         backgroundCard.endFill();
 
         this.attach(backgroundCard);
