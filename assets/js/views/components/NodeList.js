@@ -84,9 +84,9 @@ export default class NodeList extends UIContainer{
 	    // store a reference to the data
 	    // the reason for this is because of multitouch
 	    // we want to track the movement of this particular touch
-	    this.data = event.data;
+	    this.edata = event.data;
 	    console.log(this.data.global.x);
-	    this.container.x = this.data.global.x;
+	    this.container.x = this.edata.global.x;
 	    this.container.alpha = 0.8;
 	    this.dragging = true;
 	}
@@ -98,7 +98,7 @@ export default class NodeList extends UIContainer{
 	    this.dragging = false;
 
 	    // set the interaction data to null
-	    this.data = null;
+	    this.edata = null;
 	    // renderer.render(stage);
 	}
 
