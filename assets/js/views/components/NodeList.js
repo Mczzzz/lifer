@@ -23,7 +23,7 @@ export default class NodeList extends UIContainer{
 		//pour le drag
 		this.initPosition = 0;
 		this.diff = 0;
-		this.lastPos = x;
+		this.lastPos = y;
 
 
 		//attach event on container
@@ -140,10 +140,10 @@ export default class NodeList extends UIContainer{
 
 	        		this.lastPos = this.y;
 
-	        	}else if(this.container.y < ((this.y + this.width) - this.container.width)){
+	        	}else if(this.container.y < ((this.y + this.height) - this.container.height)){
 	        		console.log('else if');
 	        		//this.y = ((y + width) - this.width) + 1;
-	        		this.lastPos = (this.y + this.width) - this.container.width;
+	        		this.lastPos = (this.y + this.height) - this.container.height;
 	        	} else {
 	        		console.log('else');
 
@@ -151,8 +151,8 @@ export default class NodeList extends UIContainer{
 	        		//je met un rappot d'échelle
 	        		differentiel *= 2;
 
-	        		if(this.lastPos + differentiel <  (this.y + this.width) - this.container.width) {
-	        			let correctionDiff = (this.lastPos + differentiel) - ((this.y + this.width) - this.container.width);
+	        		if(this.lastPos + differentiel <  (this.y + this.height) - this.container.height) {
+	        			let correctionDiff = (this.lastPos + differentiel) - ((this.y + this.height) - this.container.height);
 	        			differentiel -= correctionDiff;
 	        		}else if(this.lastPos + differentiel > this.y ){
 	        			let correctionDiff = this.lastPos + differentiel - this.y;
@@ -163,7 +163,7 @@ export default class NodeList extends UIContainer{
 	        		this.lastPos = this.y;
 	        	}
 	        	
-	        	this.diff = newPosition.x;
+	        	this.diff = newPosition.y;
 
 
 	    	}
