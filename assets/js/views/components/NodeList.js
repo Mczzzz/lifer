@@ -67,26 +67,6 @@ export default class NodeList extends UIContainer{
 	}
 
 
-	setData(data){
-
-		console.log(data);
-		this.data = JSON.parse(data);
-	}
 
 
-	addBkgd(){
-
-		let rect = new Rect(0xFFFFFF, 0, 0 , 0 , this.width , 100);	
-		this.attach(rect);
-
-	}
-
-
-	addText(){
-
-		let text = new PIXI.Text("OK",{fontFamily : 'Arial', fontSize: 80, fill : 0x000000, align : 'center'});
-		text.x = (this.width / 2) - (text.width / 2);
-		text.y = 10;
-		this.attach(text);
-	}
 }
