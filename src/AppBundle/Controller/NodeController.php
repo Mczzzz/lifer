@@ -133,9 +133,10 @@ class NodeController extends Controller
 
 
     /**
-     * @Route("/api/node/{id}", name="api_node_get")
+     * @Route("/api/node/{id}", name="api_one_node_get")
      * @Method("GET")
      */
+
     public function getOneList(Request $request, id)
     {
 
@@ -148,7 +149,7 @@ class NodeController extends Controller
         $entityManager = $this->getDoctrine()->getManager();
 
 
-        $OneNode = $entityManager->getRepository(Node::class)->find(id);
+        $OneNode = $entityManager->getRepository(Node::class)->find($id);
 
 
         $response = new \stdClass();
