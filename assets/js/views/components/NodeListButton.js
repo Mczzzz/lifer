@@ -35,7 +35,7 @@ export default class NodeListButton extends UIContainer{
 
 		console.log('addBackground NodeListButton');
 		//color,line style, round , x , y , w, h, alpha
-		let RRect = new RoundedRect(0xFFFFFF, 0, 10, 0 , 10 , this.width , 80, 0.4);	
+		let RRect = new RoundedRect(0xFFFFFF, 0, 10, 0 , 10 , this.width , 80, 0);	
 		this.attach(RRect);
 
 	}
