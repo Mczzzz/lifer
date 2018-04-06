@@ -170,9 +170,10 @@ export default class NodeList extends UIContainer{
 	        			let correctionDiff = this.lastPos + differentiel - this.y;
 	        			differentiel -= correctionDiff;
 	        		}
+	        		console.log(this.lastPos);
 	        		console.log(differentiel);
-	        		this.container.y = this.lastPos - differentiel;
-	        		this.lastPos = this.y;
+	        		this.container.y = this.lastPos + differentiel;
+	        		this.lastPos = this.container.y;
 	        	}
 	        	
 	        	this.diff = newPosition.y;
