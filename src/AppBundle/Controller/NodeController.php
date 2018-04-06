@@ -133,6 +133,12 @@ class NodeController extends Controller
 
 
 
+    public function getOneList(Request $request)
+    {
+
+
+    }
+
 
 
 
