@@ -152,13 +152,15 @@ export default class NodeList extends UIContainer{
 	        		differentiel *= 2;
 
 	        		if(this.lastPos + differentiel <  (this.y + this.height) - this.container.height) {
+	        		console.log('--if');	
 	        			let correctionDiff = (this.lastPos + differentiel) - ((this.y + this.height) - this.container.height);
 	        			differentiel -= correctionDiff;
 	        		}else if(this.lastPos + differentiel > this.y ){
+	        		console.log('--else if');
 	        			let correctionDiff = this.lastPos + differentiel - this.y;
 	        			differentiel -= correctionDiff;
 	        		}
-
+	        		console.log(differentiel);
 	        		this.container.y = this.lastPos + differentiel;
 	        		this.lastPos = this.y;
 	        	}
