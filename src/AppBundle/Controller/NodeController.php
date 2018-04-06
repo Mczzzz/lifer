@@ -152,14 +152,11 @@ class NodeController extends Controller
         $OneNode = $entityManager->getRepository(Node::class)->find($id);
 
         $objResp = new \stdClass();
+         
+        $objResp->id  = $item->getId()
+        $objResp->text = $item->getText();
 
-        foreach($list as $item){
 
-           
-            $objResp->id  = $item->getId()
-            $objResp->text = $item->getText();
-
-        }
 
 
         $response = new \stdClass();
