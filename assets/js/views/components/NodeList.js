@@ -36,6 +36,8 @@ export default class NodeList extends UIContainer{
 
 		this.addEvents();
 
+		this.theMask();
+
 
 	}
 
@@ -48,6 +50,19 @@ export default class NodeList extends UIContainer{
 		this.attach(TheNLButton);
 		this.size = this.size + 100;	
 		//console.log(this.size);	
+
+	}
+
+	theMask(){
+
+		let thing = new PIXI.Graphics();
+		thing.beginFill(this.sliderParam.color,0.4);
+		thing.moveTo(this.x , this.y);
+    	thing.lineTo(this.width + this.x, this.y);
+    	thing.lineTo(this.width + this.x , this.y + this.height);
+    	thing.lineTo(this.x , this.y + this.height);
+		this.container.mask = thing;
+
 
 	}
 

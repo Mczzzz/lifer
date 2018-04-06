@@ -63,7 +63,9 @@ export default class Home extends UIContainer{
 
 	addListNode(){
 
-		let MyNodeList = new NodeList(15,100,(this.width / 2) - 30, (this.height - 200) / 2);
+		//rajouter le cadre de vision
+		//rajouter un hit area
+		let MyNodeList = new NodeList(15,100,(this.width / 2) - 30, (this.height - 200) / 2 );
 		let TheMyNodeList = MyNodeList.load();
 		this.attach(TheMyNodeList);
 
