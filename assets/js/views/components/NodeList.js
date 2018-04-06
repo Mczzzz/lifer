@@ -124,14 +124,18 @@ export default class NodeList extends UIContainer{
 
 	        let newPosition = this.edata.getLocalPosition(this.container.parent);
 
-	        if(this.initPosition == 0){
+	        console.log(newPosition);
 
+	        if(this.initPosition == 0){
+	        	console.log('PREMIERE PASSE');
+	      
 	        	this.container.x = this.lastPos;
+
 	        	this.diff = newPosition.x;
 	        	this.initPosition = 1;
 
 	    	}else{
-
+	    		console.log('AUTRES PASSE');
 	    		if(this.container.x > this.x ){
 
 	        		this.lastPos = this.x;
