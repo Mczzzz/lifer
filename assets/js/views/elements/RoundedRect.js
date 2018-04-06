@@ -5,7 +5,7 @@ export default class RoundedRect {
 
 
 
-		let element = this.drwRect(color , liStyle, x , y , width , height, alpha);
+		let element = this.drwRect(color , liStyle, x , y , width , height, round, alpha);
 
 		return element;
 	}
