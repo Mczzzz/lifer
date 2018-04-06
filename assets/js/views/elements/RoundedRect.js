@@ -13,6 +13,7 @@ export default class RoundedRect {
 
 	drwRect(color , liStyle, x , y , width , height, round, alpha){
 
+		console.log('RoundedRect !!!!!');
 		let rect = new PIXI.Graphics();
         rect.beginFill(color);
         rect.lineStyle(liStyle);
@@ -20,7 +21,7 @@ export default class RoundedRect {
         rect.endFill();
 
         rect.fillAlpha = alpha;
-        
+
         console.log('on renvoi le rectangle');
 		return rect; 
 
