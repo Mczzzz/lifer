@@ -71,10 +71,10 @@ export default class NodeList extends UIContainer{
 
 	addEvents(){
 		this.container
-        .on('touchstart', this.onDragStart())
-        .on('touchend', this.onDragEnd)
-        .on('touchendoutside',this.onDragEnd())
-        .on('touchmove', this.onDragMove());
+        .on('touchstart', (e) => this.onDragStart(e))
+        .on('touchend', (e) => this.onDragEnd(e))
+        .on('touchendoutside',(e) => this.onDragEnd(e))
+        .on('touchmove', (e) => this.onDragMove(e));
     }
 
 
@@ -86,9 +86,9 @@ export default class NodeList extends UIContainer{
 	    // we want to track the movement of this particular touch
 	    this.data = event.data;
 	    console.log(this.data.global.x);
-	    this.position.x = this.data.global.x;
-	    this.alpha = 0.8;
-	    this.dragging = true;
+	    this.container.x = this.data.global.x;
+	    this.container.alpha = 0.8;
+	    this.container.dragging = true;
 	}
 
 	onDragEnd()
@@ -99,7 +99,7 @@ export default class NodeList extends UIContainer{
 
 	    // set the interaction data to null
 	    this.data = null;
-	     renderer.render(stage);
+	    // renderer.render(stage);
 	}
 
 	onDragMove()
@@ -109,7 +109,7 @@ export default class NodeList extends UIContainer{
 	    {
 	    	//console.log(this.parent);
 	        var newPosition = this.data.getLocalPosition(this.parent);
-	        this.position.x = newPosition.x;
+	        this.container.x = newPosition.x;
 	        //this.position.y = newPosition.y;
 	    }
 	}
