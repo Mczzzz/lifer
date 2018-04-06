@@ -153,7 +153,7 @@ class NodeController extends Controller
 
         $objResp = new \stdClass();
          
-        $objResp->id  = $OneNode->getId()
+        $objResp->id  = $OneNode->getId();
         $objResp->text = $OneNode->getText();
 
 
