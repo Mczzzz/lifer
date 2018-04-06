@@ -99,7 +99,7 @@ export default class NodeList extends UIContainer{
 	    this.dragging = this.edata.getLocalPosition(this.container.parent);
 	}
 
-	onDragEnd()
+	onDragEnd(event)
 	{
 	    this.alpha = 1;
 
@@ -110,12 +110,12 @@ export default class NodeList extends UIContainer{
 	    // renderer.render(stage);
 	   	this.initPosition = 0;
 	    this.buttonMove = 0;
-
+	    event.stopPropagation();
 
 
 	}
 
-	onDragMove()
+	onDragMove(event)
 	{
 		console.log('mooooove');
 		console.log(this.container.height);
@@ -177,7 +177,7 @@ export default class NodeList extends UIContainer{
 	        	}
 	        	
 	        	this.diff = newPosition.y;
-
+	        	
 
 	    	}
 
