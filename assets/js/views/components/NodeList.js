@@ -118,6 +118,8 @@ export default class NodeList extends UIContainer{
 	onDragMove()
 	{
 		console.log('mooooove');
+		console.log(this.container.height);
+		console.log(this.height);
 	    if (this.dragging)
 	    {
 	    	console.log('in draggingMove');
