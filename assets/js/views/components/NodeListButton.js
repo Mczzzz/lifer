@@ -1,6 +1,6 @@
 import NodeCollection from '../../collections/NodeCollection.js'
 import UIContainer from '../../services/uiContainer.js';
-import Rect from '../elements/RoundedRect.js';
+import RoundedRect from '../elements/RoundedRect.js';
 
 export default class NodeListButton extends UIContainer{
 
