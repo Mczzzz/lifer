@@ -86,7 +86,7 @@ class NodeController extends Controller
     {
 
         // is it an Ajax request?
-        //$isAjax = $request->isXmlHttpRequest();
+        $isAjax = $request->isXmlHttpRequest();
 
         //users infos
         $user = $this->getUser();
@@ -98,7 +98,7 @@ class NodeController extends Controller
 
         // j'enregistre en base ma note
         $entityManager = $this->getDoctrine()->getManager();
-        $entityManager->clear();
+        //$entityManager->clear();
 
         $list = $entityManager->getRepository(Node::class)->findBy(array('idCreator' => $user->getId()));
 
@@ -132,10 +132,31 @@ class NodeController extends Controller
 
 
 
-
-    public function getOneList(Request $request)
+    /**
+     * @Route("/api/node/{id}", name="api_node_get")
+     * @Method("GET")
+     */
+    public function getOneList(Request $request, id)
     {
 
+
+        $isAjax = $request->isXmlHttpRequest();
+
+        
+        $user = $this->getUser();
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+
+        $OneNode = $entityManager->getRepository(Node::class)->find(id);
+
+
+        $response = new \stdClass();
+        $response->status = true;
+        $response->data = $OneNode;
+
+
+        return new Response(json_encode($response));
 
     }
 
