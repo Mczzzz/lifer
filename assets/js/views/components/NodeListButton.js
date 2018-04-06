@@ -1,6 +1,6 @@
 import NodeCollection from '../../collections/NodeCollection.js'
 import UIContainer from '../../services/uiContainer.js';
-import Rect from '../elements/rect.js';
+import Rect from '../elements/RoundedRect.js';
 
 export default class NodeListButton extends UIContainer{
 
@@ -34,8 +34,9 @@ export default class NodeListButton extends UIContainer{
 	addBkgd(){
 
 		console.log('addBackground NodeListButton');
-		let rect = new Rect(0xFFFFFF, 0, 0 , 10 , this.width , 80);	
-		this.attach(rect);
+		//color,line style, round , x , y , w, h, alpha
+		let RRect = new RoundedRect(0xFFFFFF, 0, 10, 0 , 10 , this.width , 80, 0.4);	
+		this.attach(RRect);
 
 	}
 
