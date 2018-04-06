@@ -31,9 +31,9 @@ export default class NodeList extends UIContainer{
 
 
 
-	addElements(MyText){
+	addElements(MyText, key){
 
-		let NLButton = new NodeListButton(0, this.size, this.width - 50, 30,MyText);
+		let NLButton = new NodeListButton(0, this.size, this.width - 50, 100,MyText, key);
 		let TheNLButton = NLButton.load();
 		this.attach(TheNLButton);
 		this.size = this.size + 30;	
@@ -44,7 +44,7 @@ export default class NodeList extends UIContainer{
 
 	updateList(data){
 
-console.log(this.container.childe);
+//console.log(this.container.childe);
 /*		while (this.container.firstChild) {
 		    this.container.removeChild(this.container.firstChild);
 		}*/
@@ -58,7 +58,7 @@ console.log(this.container.childe);
 
 		for (let key in this.data.data) {
   			//console.log(this.data.data[key].text);
-  			this.addElements(this.data.data[key].text);
+  			this.addElements(this.data.data[key].text, key);
 		}
 	//	console.log('on pass dans le load');
 		this.load();
