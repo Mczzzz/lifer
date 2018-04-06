@@ -137,7 +137,7 @@ class NodeController extends Controller
      * @Method("GET")
      */
 
-    public function getOneList(Request $request, id)
+    public function getOneList(Request $request, $id)
     {
 
 
