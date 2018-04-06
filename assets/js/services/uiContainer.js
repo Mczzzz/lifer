@@ -10,6 +10,9 @@ export default class uiContainer{
 		this.width = width;
      	this.height = height; 
 
+     	this.x = x;
+     	this.y = y;
+
 		this.declareContainer();
 
 		this.fixePosition(x,y);
