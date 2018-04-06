@@ -138,6 +138,7 @@ export default class NodeList extends UIContainer{
 
 	    	}else{
 	    		console.log('AUTRES PASSE');
+	    		console.log(this.container.y);
 	    		if(this.container.y > this.y ){
 	    			console.log('in if : this.container.y < this.y');
 	        		this.lastPos = this.y;
