@@ -178,7 +178,7 @@ export default class NodeList extends UIContainer{
 	        	
 	        	this.diff = newPosition.y;
 	        	
-
+	        	event.stopPropagation();
 	    	}
 
 
