@@ -23,7 +23,7 @@ export default class NodeList extends UIContainer{
 		//pour le drag
 		this.initPosition = 0;
 		this.diff = 0;
-		this.lastPos = 0;
+		this.lastPos = x;
 
 
 		//attach event on container
@@ -128,39 +128,39 @@ export default class NodeList extends UIContainer{
 
 	        if(this.initPosition == 0){
 	        	console.log('PREMIERE PASSE');
-	      
-	        	this.container.x = this.lastPos;
 
-	        	this.diff = newPosition.x;
+	        	this.container.y = this.lastPos;
+
+	        	this.diff = newPosition.y;
 	        	this.initPosition = 1;
 
 	    	}else{
 	    		console.log('AUTRES PASSE');
-	    		if(this.container.x > this.x ){
+	    		if(this.container.y > this.y ){
 
-	        		this.lastPos = this.x;
+	        		this.lastPos = this.y;
 
-	        	}else if(this.container.x < ((this.x + this.width) - this.container.width)){
+	        	}else if(this.container.y < ((this.y + this.width) - this.container.width)){
 	        		console.log('else if');
-	        		//this.x = ((x + width) - this.width) + 1;
-	        		this.lastPos = (this.x + this.width) - this.container.width;
+	        		//this.y = ((y + width) - this.width) + 1;
+	        		this.lastPos = (this.y + this.width) - this.container.width;
 	        	} else {
 	        		console.log('else');
 
-	        		let differentiel = this.newPosition.x - this.diff;
+	        		let differentiel = this.newPosition.y - this.diff;
 	        		//je met un rappot d'échelle
 	        		differentiel *= 2;
 
-	        		if(this.lastPos + differentiel <  (this.x + this.width) - this.container.width) {
-	        			let correctionDiff = (this.lastPos + differentiel) - ((this.x + this.width) - this.container.width);
+	        		if(this.lastPos + differentiel <  (this.y + this.width) - this.container.width) {
+	        			let correctionDiff = (this.lastPos + differentiel) - ((this.y + this.width) - this.container.width);
 	        			differentiel -= correctionDiff;
-	        		}else if(this.lastPos + differentiel > this.x ){
-	        			let correctionDiff = this.lastPos + differentiel - this.x;
+	        		}else if(this.lastPos + differentiel > this.y ){
+	        			let correctionDiff = this.lastPos + differentiel - this.y;
 	        			differentiel -= correctionDiff;
 	        		}
 
-	        		this.containerx = this.lastPos + differentiel;
-	        		this.lastPos = this.x;
+	        		this.containery = this.lastPos + differentiel;
+	        		this.lastPos = this.y;
 	        	}
 	        	
 	        	this.diff = newPosition.x;
