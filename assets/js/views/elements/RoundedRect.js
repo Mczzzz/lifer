@@ -19,7 +19,7 @@ export default class RoundedRect {
         rect.lineStyle(liStyle);
         rect.drawRoundedRect(x, y, width, height, round);
         rect.endFill();
-
+        console.log(alpha);
         rect.fillAlpha = alpha;
 
         console.log('on renvoi le rectangle');
