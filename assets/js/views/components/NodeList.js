@@ -147,7 +147,7 @@ export default class NodeList extends UIContainer{
 	        	} else {
 	        		console.log('else');
 
-	        		let differentiel = this.newPosition.y - this.diff;
+	        		let differentiel = newPosition.y - this.diff;
 	        		//je met un rappot d'échelle
 	        		differentiel *= 2;
 
