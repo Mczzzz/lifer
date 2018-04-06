@@ -28,6 +28,7 @@ export default class TextArea  extends UIContainer{
 		//tArea.setAttribute("type", "file");
 		tArea.setAttribute("id", "textarea");
 		tArea.setAttribute("placeholder", "Texte ...");
+		tArea.setAttribute("node_id", "");
 		tArea.setAttribute("style", "background: transparent;outline: none;border: 0 none;width: "+ w +"px; height: "+ h +"px;font-size:30px");
 		$("#divText").append(tArea);
 

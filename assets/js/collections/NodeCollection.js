@@ -31,6 +31,7 @@ export default class NodeCollection {
         //formData.append('jpg'  ,this.image);
         formData.append('text'  ,$('#textarea').val());
 
+        formData.append('id'  ,$('#textarea').attr('node_id'));
         let AjaxSender = $.ajax({
               type: 'POST',
               url: this.api,
@@ -84,6 +85,7 @@ export default class NodeCollection {
 				console.log('AJAX GET DONE');
 				let ret = JSON.parse(data);
 				$('#textarea').val(ret.data.text);
+				$('#textarea').attr('node_id',ret.data.id);
     		});
 
 

@@ -34,12 +34,22 @@ class NodeController extends Controller
         //interception de la requete
         $request = Request::createFromGlobals();
         $text = $request->request->get('text');
-
+        $id = $request->request->get('id');
         // j'enregistre en base ma note
         $entityManager = $this->getDoctrine()->getManager();
-        $node = new Node('now');
-        $node->setIdCreator($user->getId());
-        $node->setTsCreation(new \DateTime());
+
+
+        if($id != ""){
+
+            $node = $entityManager->getRepository(Node::class)->find($id);
+            $node->setTsLastUpdate(new \DateTime());
+        }else{
+            $node = new Node('now');
+            $node->setIdCreator($user->getId());
+            $node->setTsCreation(new \DateTime());
+        }
+
+
         $node->setText($text);
         $node->setStatus(100);
 
