@@ -138,7 +138,7 @@ export default class NodeList extends UIContainer{
 
 	    	}else{
 	    		console.log('AUTRES PASSE');
-	    		if(this.container.y > this.y ){
+	    		if(this.container.y < this.y ){
 
 	        		this.lastPos = this.y;
 
@@ -151,7 +151,7 @@ export default class NodeList extends UIContainer{
 
 	        		let differentiel = newPosition.y - this.diff;
 	        		//je met un rappot d'échelle
-	        		differentiel *= 2;
+	        		differentiel *= 1;
 
 	        		if(this.lastPos + differentiel <  (this.y + this.height) - this.container.height) {
 	        		console.log('--if');	
