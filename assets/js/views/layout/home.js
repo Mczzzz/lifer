@@ -61,7 +61,7 @@ export default class Home extends UIContainer{
 
 	addListNode(){
 
-		let MyNodeList = new NodeList(0,100,this.height - 200, this.width)
+		let MyNodeList = new NodeList(15,100,this.height - 200, this.width - 30)
 		let TheMyNodeList = MyNodeList.load();
 		this.attach(TheMyNodeList);
 
