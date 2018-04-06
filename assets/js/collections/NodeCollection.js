@@ -70,5 +70,25 @@ export default class NodeCollection {
 	}
 
 
+	getOneNode(id){
+
+		let AjaxGetter = $.ajax({
+              type: 'GET',
+              url: this.api + "/" + id,
+              async: true,
+              cache: false,
+              contentType: false,
+              processData: false
+         })
+			.done(function( data ) {
+				console.log('AJAX GET DONE');
+				let ret = JSON.parse(data);
+				$('#textarea').val(ret.data.text);
+    		});
+
+
+
+	}
+
 
 }
