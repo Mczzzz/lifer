@@ -26,6 +26,8 @@ export default class NodeList extends UIContainer{
 		//un trigger renvoi le resultat
 		this.collector.getAll();
 
+		this.addEvents();
+
 
 	}
 
@@ -63,9 +65,54 @@ export default class NodeList extends UIContainer{
 	//	console.log('on pass dans le load');
 		this.load();
 		//this.addElements();
+		
 
 	}
 
+	addEvents(){
+		this.container
+        .on('touchstart', this.onDragStart())
+        .on('touchend', this.onDragEnd)
+        .on('touchendoutside',this.onDragEnd())
+        .on('touchmove', this.onDragMove());
+    }
+
+
+
+	onDragStart(event)
+	{
+	    // store a reference to the data
+	    // the reason for this is because of multitouch
+	    // we want to track the movement of this particular touch
+	    this.data = event.data;
+	    console.log(this.data.global.x);
+	    this.position.x = this.data.global.x;
+	    this.alpha = 0.8;
+	    this.dragging = true;
+	}
+
+	onDragEnd()
+	{
+	    this.alpha = 1;
+
+	    this.dragging = false;
+
+	    // set the interaction data to null
+	    this.data = null;
+	     renderer.render(stage);
+	}
+
+	onDragMove()
+	{
+		console.log('mooooove');
+	    if (this.dragging)
+	    {
+	    	//console.log(this.parent);
+	        var newPosition = this.data.getLocalPosition(this.parent);
+	        this.position.x = newPosition.x;
+	        //this.position.y = newPosition.y;
+	    }
+	}
 
 
 

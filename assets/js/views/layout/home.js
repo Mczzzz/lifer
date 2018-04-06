@@ -20,13 +20,15 @@ export default class Home extends UIContainer{
 
 		this.drawBkground();
 
+		this.addListNode();
+
 		let header = new Header(0,0,this.width,this.height);
 		//console.log(header);
 		let TheHeader = header.load();
 		this.attach(TheHeader);
 
 
-		this.addListNode();
+		
 
 
 		let footer = new Footer(0,this.height - 100,this.width,100);
