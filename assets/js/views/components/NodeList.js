@@ -109,7 +109,7 @@ export default class NodeList extends UIContainer{
 	    {
 	    	console.log('in draggingMove');
 	    	//console.log(this.parent);
-	        var newPosition = this.data.getLocalPosition(this.parent);
+	        var newPosition = this.edata.getLocalPosition(this.container.parent);
 	        this.container.y = newPosition.y;
 	        //this.position.y = newPosition.y;
 	    }
