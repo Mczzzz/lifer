@@ -43,10 +43,10 @@ export default class NodeFooter  extends UIContainer{
 
 	addShadowBackground(){
 
-		let Srect = new Rect(0x999999 , 0, 0 , 0 , window.innerWidth , 100);
+		let Srect = new Rect(0xec407a , 0, 0 , 0 , window.innerWidth , 100);
 
 		let dropShadowFilter = new PIXI.filters.BlurFilter();
-	    dropShadowFilter.blur = 2;
+	    dropShadowFilter.blur = 8;
 
 		Srect.filters = [dropShadowFilter];
 		this.attach(Srect);
@@ -55,7 +55,7 @@ export default class NodeFooter  extends UIContainer{
 
 	addBackground(){
 
-		let rect = new Rect(0xFF99FF , 0, 0 , 0 , window.innerWidth , 100);
+		let rect = new Rect(0xb4004e , 0, 0 , 0 , window.innerWidth , 100);
 		this.attach(rect);
 
 

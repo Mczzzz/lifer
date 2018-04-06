@@ -49,7 +49,7 @@ export default class NodeHeader  extends UIContainer{
 
 	addBackground(){
 
-		let rect = new Rect(0xFF99FF , 0, 0 , 0 , window.innerWidth , 100);
+		let rect = new Rect(0xFec407a , 0, 0 , 0 , window.innerWidth , 100);
 		this.attach(rect);
 
 
