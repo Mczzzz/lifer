@@ -85,7 +85,7 @@ export default class NodeList extends UIContainer{
 	    // the reason for this is because of multitouch
 	    // we want to track the movement of this particular touch
 	    this.edata = event.data;
-	    console.log(this.data.global.x);
+	    console.log(this.edata.global.x);
 	    this.container.x = this.edata.global.x;
 	    this.container.alpha = 0.8;
 	    this.dragging = true;
@@ -107,6 +107,7 @@ export default class NodeList extends UIContainer{
 		console.log('mooooove');
 	    if (this.dragging)
 	    {
+	    	console.log('in draggingMove');
 	    	//console.log(this.parent);
 	        var newPosition = this.data.getLocalPosition(this.parent);
 	        this.container.y = newPosition.y;
