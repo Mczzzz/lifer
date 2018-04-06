@@ -39,10 +39,10 @@ export default class Header  extends UIContainer{
 
 	addShadowBackground(){
 
-		let Srect = new Rect(0x999999 , 0, 0 , 0 , window.innerWidth , 100);
+		let Srect = new Rect(0x69e2ff , 0, 0 , 0 , window.innerWidth , 100);
 
 		let dropShadowFilter = new PIXI.filters.BlurFilter();
-	    dropShadowFilter.blur = 2;
+	    dropShadowFilter.blur = 4;
 
 		Srect.filters = [dropShadowFilter];
 		this.attach(Srect);
@@ -51,7 +51,7 @@ export default class Header  extends UIContainer{
 
 	addBackground(){
 
-		let rect = new Rect(0x0040FF , 0, 0 , 0 , window.innerWidth , 100);
+		let rect = new Rect(0x0081cb , 0, 0 , 0 , window.innerWidth , 100);
 		this.attach(rect);
 
 

@@ -51,7 +51,7 @@ export default class Footer  extends UIContainer{
 
 	addBackground(){
 
-		let rect = new Rect(0x51FF00 , 0, 0 , 0 , window.innerWidth , 100);
+		let rect = new Rect(0x0081cb , 0, 0 , 0 , window.innerWidth , 100);
 		this.attach(rect);
 
 
