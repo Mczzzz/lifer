@@ -153,6 +153,13 @@ export default class NodeList extends UIContainer{
 	        		//je met un rappot d'échelle
 	        		differentiel *= 1;
 
+	        		console.log(differentiel);
+	        		console.log(this.lastPos);
+	        		console.log(this.y);
+	        		console.log(this.height);
+	        		console.log(this.container.height);
+	        		console.log(differentiel);
+
 	        		if(this.lastPos + differentiel <  (this.y + this.height) - this.container.height) {
 	        		console.log('--if');	
 	        			let correctionDiff = (this.lastPos + differentiel) - ((this.y + this.height) - this.container.height);
