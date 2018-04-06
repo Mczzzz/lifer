@@ -151,7 +151,8 @@ class NodeController extends Controller
 
         $OneNode = $entityManager->getRepository(Node::class)->find($id);
 
-
+        var_dump($OneNode);
+        die();
         $response = new \stdClass();
         $response->status = true;
         $response->data = $OneNode;
