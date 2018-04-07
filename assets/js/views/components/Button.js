@@ -24,7 +24,7 @@ export default class Button extends UIContainer{
 
 	addBkgd(){
 
-		let RRect = new RoundedRect(0xb4334e, 3, 20, 0 , 0 , this.width , this.height, 1);	
+		let RRect = new RoundedRect(0xb4334e, 3, 20, 0 , 20 , this.width , this.height - 40, 1);	
 		this.attach(RRect);
 
 	}
@@ -32,7 +32,7 @@ export default class Button extends UIContainer{
 
 	addText(){
 
-		let text = new PIXI.Text("OK",{fontFamily : 'Arial', fontSize: 50, fill : 0xb4004e, align : 'center'});
+		let text = new PIXI.Text("OK",{fontFamily : 'Arial', fontSize: 50, fill : 0x000000, align : 'center'});
 		text.x = (this.width / 2) - (text.width / 2);
 		text.y = 10;
 		this.attach(text);
