@@ -79,9 +79,9 @@ export default class Footer  extends UIContainer{
 			});
 
 
-     		this.addLinker = new Icon(180,50 ,resources.addLinker.texture, 0xFFFFFF);
+     		this.addLinker = new Icon(216,50 ,resources.addLinker.texture, 0xFFFFFF);
 
-     		this.addTrigger = new Icon(288,50 ,resources.addTrigger.texture, 0xFFFFFF);
+     		this.addTrigger = new Icon(360,50 ,resources.addTrigger.texture, 0xFFFFFF);
 /**/
 
 

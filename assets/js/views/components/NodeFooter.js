@@ -64,7 +64,7 @@ export default class NodeFooter  extends UIContainer{
 
 	addValid(){
 
-		let but = new Button((this.width / 2) - 150,0, 300, 100);
+		let but = new Button((this.width / 2) - 150,(this.height / 2), 300, 100);
 
 		let button = but.load();
 
@@ -102,8 +102,8 @@ export default class NodeFooter  extends UIContainer{
 
 
 	this.loader = new PIXI.loaders.Loader();
-		this.loader.add('addPhoto', 'assets/glyphs/ic_local_see_white_72px.svg');
-		this.loader.add('addPict', 'assets/glyphs/ic_gallery_white_72px.svg');
+		this.loader.add('addPhoto', 'assets/glyphs/photo.svg');
+		this.loader.add('addPict', 'assets/glyphs/gallery.svg');
 
 		this.loader.load((loader, resources) => {
 
@@ -133,7 +133,7 @@ export default class NodeFooter  extends UIContainer{
 /*     		this.addPict.tileScale.x = 2; 
 			this.addPict.tileScale.y = 2;*/
 			this.addPict.tint = 0xFFFFFF;
-			this.addPict.x = 172;
+			this.addPict.x = 216;
 			this.addPict.y = 50;
 			this.addPict.width  = 72;
 			this.addPict.height = 72;
