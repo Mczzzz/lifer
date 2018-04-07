@@ -66,7 +66,7 @@ export default class Footer  extends UIContainer{
 
 
 	this.loader = new PIXI.loaders.Loader();
-		this.loader.add('addNode', 'assets/glyphs/ad_node_black_72px.svg');
+		this.loader.add('addNode', 'assets/glyphs/node.svg');
 		this.loader.add('addLinker', 'assets/glyphs/link.svg');
 		this.loader.add('addTrigger', 'assets/glyphs/trigger.svg');
 
