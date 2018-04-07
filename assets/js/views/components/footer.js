@@ -1,6 +1,7 @@
 import moment from 'moment-es6';
 import UIContainer from '../../services/uiContainer.js';
 import Rect from '../elements/rect.js';
+import Icon from '../elements/Icon.js';
 
 
 export default class Footer  extends UIContainer{
@@ -66,18 +67,11 @@ export default class Footer  extends UIContainer{
 
 	this.loader = new PIXI.loaders.Loader();
 		this.loader.add('addNode', 'assets/glyphs/ad_node_black_72px.svg');
+		this.loader.add('addLinker', 'assets/glyphs/link.svg');
+		this.loader.add('addTrigger', 'assets/glyphs/trigger.svg');
 
 		this.loader.load((loader, resources) => {
-     		this.addNode = new PIXI.extras.TilingSprite(resources.addNode.texture);
-     		this.addNode.interactive = true;
-     		this.addNode.anchor.set(0.5,0.5);
-/*     		this.addNode.tileScale.x = 2; 
-			this.addNode.tileScale.y = 2;*/
-			this.addNode.tint = 0xFFFFFF;
-			this.addNode.x = 72;
-			this.addNode.y = 50;
-			this.addNode.width  = 72;
-			this.addNode.height = 72;
+     		this.addNode = new Icon(72,50 ,resources.addNode.texture, 0xFFFFFF);
 
 			this.addNode.on('tap', (event) => {
 				let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
@@ -85,16 +79,24 @@ export default class Footer  extends UIContainer{
 			});
 
 
-     		this.realSizeX = resources.addNode.texture.baseTexture.realWidth;
+     		this.addLinker = new Icon(180,50 ,resources.addLinker.texture, 0xFFFFFF);
+
+     		this.addTrigger = new Icon(288,50 ,resources.addTrigger.texture, 0xFFFFFF);
+/**/
+
+
+/*     		this.realSizeX = resources.addNode.texture.baseTexture.realWidth;
      		this.realSizeY = resources.addNode.texture.baseTexture.realHeight;
      		console.log(this.realSizeX);
-     		console.log(this.realSizeY);
+     		console.log(this.realSizeY);*/
 		});
 
 		this.loader.onComplete.add(() => {
 
 			
 			this.attach(this.addNode);
+			this.attach(this.addLinker);
+			this.attach(this.addTrigger);
 
 
 

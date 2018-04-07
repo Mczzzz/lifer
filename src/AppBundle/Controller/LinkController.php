@@ -10,18 +10,18 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use AppBundle\Entity\Node;
+use AppBundle\Entity\Link;
 
-class NodeController extends Controller
+class LinkController extends Controller
 {
 
 
     /**
-     * @Route("/api/node", name="api_node_post")
+     * @Route("/api/link", name="api_link_post")
      * @Method("POST")
      */
 
-    public function NodeManager(Request $request)
+    public function LinkManager(Request $request)
     {
 
         // is it an Ajax request?
@@ -41,32 +41,32 @@ class NodeController extends Controller
 
         if($id != ""){
 
-            $node = $entityManager->getRepository(Node::class)->find($id);
-            $node->setTsLastUpdate(new \DateTime());
+            $link = $entityManager->getRepository(Link::class)->find($id);
+            $link->setTsLastUpdate(new \DateTime());
         }else{
-            $node = new Node();
-            $node->setIdCreator($user->getId());
-            $node->setTsCreation(new \DateTime());
+            $link = new Link();
+            $link->setIdCreator($user->getId());
+            $link->setTsCreation(new \DateTime());
         }
 
 
-        $node->setText($text);
-        $node->setStatus(100);
+        $link->setName($text);
+        $link->setStatus(1);
 
         // tells Doctrine you want to (eventually) save the Product (no queries yet)
-        $entityManager->persist($node);
+        $entityManager->persist($link);
 
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
 
 
-        $NodeId = $node->getId();
+        $LinkId = $link->getId();
 
 
         $response = new \stdClass();
         $response->status = true;
-        $response->id = $NodeId;
+        $response->id = $LinkId;
 /*
         $request = Request::createFromGlobals();
 
@@ -88,11 +88,11 @@ class NodeController extends Controller
 
 
  /**
-     * @Route("/api/node", name="api_node_get")
+     * @Route("/api/link", name="api_link_get")
      * @Method("GET")
      */
 
-    public function NodeGetList(Request $request)
+    public function LinkGetList(Request $request)
     {
 
         // is it an Ajax request?
