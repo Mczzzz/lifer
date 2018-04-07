@@ -107,36 +107,17 @@ export default class NodeFooter  extends UIContainer{
 
 		this.loader.load((loader, resources) => {
 
+			this.addPhoto = new Icon(72,50 ,resources.addPhoto.texture, 0xFFFFFF);
 
-     		this.addPhoto = new PIXI.extras.TilingSprite(resources.addPhoto.texture);
-     		this.addPhoto.interactive = true;
-     		this.addPhoto.anchor.set(0.5,0.5);
-/*     		this.addPhoto.tileScale.x = 2; 
-			this.addPhoto.tileScale.y = 2;*/
-			this.addPhoto.tint = 0xFFFFFF;
-			this.addPhoto.x = 72;
-			this.addPhoto.y = 50;
-			this.addPhoto.width  = 72;
-			this.addPhoto.height = 72;
-
-			this.addPhoto.on('tap', (event) => {
+     		this.addPhoto.on('tap', (event) => {
 				/*let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
                 window.dispatchEvent(NodeEvent);*/
                  $('#photo').click();
 			});
 
 
+     		this.addPhoto = new Icon(216,50 ,resources.addPict.texture, 0xFFFFFF);
 
-			this.addPict = new PIXI.extras.TilingSprite(resources.addPict.texture);
-     		this.addPict.interactive = true;
-     		this.addPict.anchor.set(0.5,0.5);
-/*     		this.addPict.tileScale.x = 2; 
-			this.addPict.tileScale.y = 2;*/
-			this.addPict.tint = 0xFFFFFF;
-			this.addPict.x = 216;
-			this.addPict.y = 50;
-			this.addPict.width  = 72;
-			this.addPict.height = 72;
 
 			this.addPict.on('tap', (event) => {
 				/*let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});

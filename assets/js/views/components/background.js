@@ -27,7 +27,7 @@ export default class Background {
 
 	addRect(color , liStyle, x , y , width , height){
 
-	console.log('background.js addRect');
+	//console.log('background.js addRect');
 		let rect = new Rect(color , liStyle, x , y , width , height);
 		this.attach(rect);
 
