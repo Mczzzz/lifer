@@ -3,6 +3,7 @@ import NodeCollection from '../../collections/NodeCollection.js';
 import UIContainer from '../../services/uiContainer.js';
 import Rect from '../elements/rect.js';
 import Button from '../components/Button.js';
+import Icon from '../elements/Icon.js';
 
 
 export default class NodeFooter  extends UIContainer{
