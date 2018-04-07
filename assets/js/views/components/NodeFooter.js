@@ -65,7 +65,7 @@ export default class NodeFooter  extends UIContainer{
 
 	addValid(){
 
-		let but = new Button((this.width / 2) - 150,(this.height / 2), 300, 100);
+		let but = new Button((this.width / 2) - 150,10, 300, 80);
 
 		let button = but.load();
 
