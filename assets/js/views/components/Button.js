@@ -24,7 +24,7 @@ export default class Button extends UIContainer{
 
 	addBkgd(){
 
-		let RRect = new RoundedRect(0xb4334e, 3, 20, 0 , 20 , this.width , this.height - 40, 1);	
+		let RRect = new RoundedRect(0xb4334e, 10, 20, 0 , 0 , this.width , this.height, 1);	
 		this.attach(RRect);
 
 	}
