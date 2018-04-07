@@ -16,7 +16,7 @@ export default class RoundedRect {
 		console.log('RoundedRect !!!!!');
 		let rect = new PIXI.Graphics();
         rect.beginFill(color);
-        rect.lineStyle(liStyle);
+        rect.lineStyle(liStyle,0xFFFFFF,0.3);
         rect.drawRoundedRect(x, y, width, height, round);
         rect.endFill();
         console.log(alpha);
