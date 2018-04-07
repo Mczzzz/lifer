@@ -16,12 +16,25 @@ export default class Button extends UIContainer{
 
 	addElements(){
 
+		this.addShadow();
 		this.addBkgd();
 
 		this.addText();
 
 	}
 
+	addShadow(){
+
+		let RRectS = new RoundedRect(0xFFFFFF, 3, 20, 0 , 0 , this.width , this.height, 1);	
+		
+		let dropShadowFilter = new PIXI.filters.BlurFilter();
+	    dropShadowFilter.blur = 8;
+
+		RRectS.filters = [dropShadowFilter];
+
+		this.attach(RRectS);
+
+	}
 
 	addBkgd(){
 
