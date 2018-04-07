@@ -117,7 +117,7 @@ export default class NodeFooter  extends UIContainer{
 			});
 
 
-     		this.addPhoto = new Icon(216,50 ,resources.addPict.texture, 0xFFFFFF);
+     		this.addPict = new Icon(216,50 ,resources.addPict.texture, 0xFFFFFF);
 
 
 			this.addPict.on('tap', (event) => {
@@ -128,11 +128,11 @@ export default class NodeFooter  extends UIContainer{
 
 
 
-
+/*
      		this.realSizeX = resources.addPhoto.texture.baseTexture.realWidth;
      		this.realSizeY = resources.addPhoto.texture.baseTexture.realHeight;
      		console.log(this.realSizeX);
-     		console.log(this.realSizeY);
+     		console.log(this.realSizeY);*/
 		});
 
 		this.loader.onComplete.add(() => {
