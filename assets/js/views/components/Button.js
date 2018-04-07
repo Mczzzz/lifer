@@ -4,11 +4,12 @@ import RoundedRect from '../elements/RoundedRect.js';
 export default class Button extends UIContainer{
 
 
-	constructor(x,y,width,height){
+	constructor(x,y,width,height,text){
 
 
 		super(x,y,width,height);
 
+		this.text = text;
 
 	}
 
@@ -24,7 +25,7 @@ export default class Button extends UIContainer{
 
 	addBkgd(){
 
-		let RRect = new RoundedRect(0xb4004e, 10, 20, 0 , 0 , this.width , this.height, 1);	
+		let RRect = new RoundedRect(0xb4004e, 3, 20, 0 , 0 , this.width , this.height, 1);	
 		this.attach(RRect);
 
 	}
@@ -32,7 +33,7 @@ export default class Button extends UIContainer{
 
 	addText(){
 
-		let text = new PIXI.Text("OK",{fontFamily : 'Arial', fontSize: 50, fill : 0x000000, align : 'center'});
+		let text = new PIXI.Text(this.text,{fontFamily : 'Arial', fontSize: 50, fill : 0xFFFFFF, align : 'center'});
 		text.x = (this.width / 2) - (text.width / 2);
 		text.y = 10;
 		this.attach(text);
