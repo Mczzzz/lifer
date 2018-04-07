@@ -56,7 +56,7 @@ export default class NodeList extends UIContainer{
 	theMask(){
 
 		let thing = new PIXI.Graphics();
-		thing.beginFill(this.sliderParam.color,0.4);
+		thing.beginFill(0xFFFFFF,0.4);
 		thing.moveTo(this.x , this.y);
     	thing.lineTo(this.width + this.x, this.y);
     	thing.lineTo(this.width + this.x , this.y + this.height);
