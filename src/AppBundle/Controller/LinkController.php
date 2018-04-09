@@ -35,6 +35,7 @@ class LinkController extends Controller
         $request = Request::createFromGlobals();
         $text = $request->request->get('text');
         $id = $request->request->get('id');
+        $parent = $request->request->get('parent');
         // j'enregistre en base ma note
         $entityManager = $this->getDoctrine()->getManager();
 

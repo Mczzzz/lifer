@@ -1,5 +1,6 @@
 import Home from '../views/layout/home.js';
 import Node from '../views/layout/node.js';
+import Link from '../views/layout/link.js';
 
 export default class Frame {
 
@@ -40,6 +41,17 @@ export default class Frame {
 		let nodeFrame = new Node(0,0,window.innerWidth,window.innerHeight);
 		let TheNode = nodeFrame.load();
 		this.attach(TheNode);
+
+	}
+
+
+	link(){
+
+		console.log('in frame node');
+	
+		let linkFrame = new Node(0,0,window.innerWidth,window.innerHeight);
+		let MyLinks = linkFrame.load();
+		this.attach(MyLinks);
 
 	}
 
