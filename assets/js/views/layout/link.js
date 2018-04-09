@@ -49,7 +49,7 @@ export default class Link extends UIContainer{
 	addBackground(){
 
 		// color , lineStyle, x,y, width, height
-		let background = new Bkg(0xFF77A9,0,0,0,this.width,this.height);
+		let background = new Bkg(0xffb300,0,0,0,this.width,this.height);
 		console.log('before Attach Background To container');
         this.attach(background);
 
