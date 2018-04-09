@@ -46,7 +46,7 @@ export default class Icon extends UIContainer{
 
 		this.select = new PIXI.Graphics();
         this.select.beginFill(0xFF0000, 0);
-        this.select.lineStyle(2,0x999999);
+        this.select.lineStyle(10,0x999999,0);
 		this.select.drawCircle(0, 0, 40);
 		this.select.endFill()
 
@@ -61,7 +61,7 @@ export default class Icon extends UIContainer{
 			this.select.alpha = 1;
 
 		}else{
-			
+
 			this.select.alpha = 0;
 		}
 
