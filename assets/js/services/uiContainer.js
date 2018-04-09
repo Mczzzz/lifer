@@ -48,9 +48,10 @@ export default class uiContainer{
 
 	attach(components){
 
-		console.log(this.container);
+		//console.log(this.container);
+		console.log('beforeAttach');
 		this.container.addChild(components);
-
+		console.log('afterAttach');
 	}
 
 
