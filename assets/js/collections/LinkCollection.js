@@ -9,11 +9,11 @@ export default class LinkCollection {
 	}
 
 
-	setImage(data){
+/*	setImage(data){
 
 		this.image = data;
 
-	}
+	}*/
 
 
 	setText(){
@@ -25,7 +25,7 @@ export default class LinkCollection {
 
 	save(){
 
-
+/*
 		let formData = new FormData();
 
         //formData.append('jpg'  ,this.image);
@@ -43,7 +43,7 @@ export default class LinkCollection {
             }).done((e) => this.getAll());
 
 
-
+*/
 
 
 	}
@@ -61,8 +61,8 @@ export default class LinkCollection {
          })
 			.done(function( data ) {
 				console.log('AJAX GET DONE');
- 				let evUpdateNodeList = new CustomEvent('updateNodeList', {'detail' : data});
-                window.dispatchEvent(evUpdateNodeList);
+ 				let evUpdateLinkList = new CustomEvent('updateLinkList', {'detail' : data});
+                window.dispatchEvent(evUpdateLinkList);
     		});
 
 
@@ -73,7 +73,7 @@ export default class LinkCollection {
 
 	getOneNode(id){
 
-		let AjaxGetter = $.ajax({
+/*		let AjaxGetter = $.ajax({
               type: 'GET',
               url: this.api + "/" + id,
               async: true,
@@ -88,7 +88,7 @@ export default class LinkCollection {
 				$('#textarea').attr('node_id',ret.data.id);
     		});
 
-
+*/
 
 	}
 

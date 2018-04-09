@@ -75,6 +75,14 @@ export default class Link extends UIContainer{
 	}
 
 
+	loadLinkData(){
+
+		let MyData = new LinkCollection();
+
+
+	}
+
+
 
 	addLinkHearts(){
 

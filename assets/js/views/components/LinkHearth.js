@@ -4,6 +4,7 @@ import UIContainer from '../../services/uiContainer.js';
 import Rect from '../elements/rect.js';
 import Button from '../components/Button.js';
 import Icon from '../elements/Icon.js';
+import Linky from '../elements/Linky.js';
 
 
 export default class LinkHearth  extends UIContainer{
@@ -26,6 +27,8 @@ export default class LinkHearth  extends UIContainer{
 		//this.addBkgd();
 
 		this.addHearthPict();
+
+		this.drwLink();
 		//this.addDate();
 
 		//this.addLinkPict();
@@ -35,6 +38,13 @@ export default class LinkHearth  extends UIContainer{
 	}
 
 
+	drwLink(){
+
+		let MyLink = new Linky( 200,200,100,50);
+		let TMyLink = MyLink.load();
+		this.attach(TMyLink);
+
+	}
 
 
 
