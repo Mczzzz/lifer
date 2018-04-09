@@ -1,6 +1,7 @@
 import LinkCollection from '../../collections/LinkCollection.js';
 import Bkg from '../components/background.js';
 import LinkHeader from '../components/LinkHeader.js';
+import LinkHearth from '../components/LinkHearth.js';
 import LinkFooter from '../components/LinkFooter.js';
 /*import PPict from '../components/previewPict.js';*/
 import UIContainer from '../../services/uiContainer.js';
@@ -29,6 +30,8 @@ export default class Link extends UIContainer{
 
 		console.log('node/addelement/beforeBackground');
 		this.addBackground();
+
+		this.addLinkHearts();
 
 		this.addHeader();
 
@@ -71,6 +74,15 @@ export default class Link extends UIContainer{
 		this.attach(TheLinkFooter);
 	}
 
+
+
+	addLinkHearts(){
+
+		let NLinkHearth = new LinkHearth(0,this.height - 100,this.width,100);
+		let TheLinkHearth = NLinkHearth.load();
+		this.attach(TheLinkHearth);
+
+	}
 
 
 	addPreviewPict(){
