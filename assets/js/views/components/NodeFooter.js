@@ -108,17 +108,18 @@ export default class NodeFooter  extends UIContainer{
 
 		this.loader.load((loader, resources) => {
 
-			this.addPhoto = new Icon(72,50 ,resources.addPhoto.texture, 0xFFFFFF);
+			this.addPhoto = new Icon(72,50,72,72 ,resources.addPhoto.texture, 0xFFFFFF);
+			this.TheAddPhoto = this.addPhoto.load();
 
-     		this.addPhoto.on('tap', (event) => {
+     		this.TheAddPhoto.on('tap', (event) => {
 				/*let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
                 window.dispatchEvent(NodeEvent);*/
                  $('#photo').click();
 			});
 
 
-     		this.addPict = new Icon(216,50 ,resources.addPict.texture, 0xFFFFFF);
-
+     		this.addPict = new Icon(216,50,72,72 ,resources.addPict.texture, 0xFFFFFF);
+     		this.TheAddPict = this.addPict.load();
 
 			this.addPict.on('tap', (event) => {
 				/*let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
@@ -138,7 +139,7 @@ export default class NodeFooter  extends UIContainer{
 		this.loader.onComplete.add(() => {
 
 			
-			this.attach(this.addPhoto);
+			this.attach(this.TheAddPhoto);
 
 			const inputFile = document.createElement("INPUT");
 			inputFile.setAttribute("type", "file");
@@ -148,7 +149,7 @@ export default class NodeFooter  extends UIContainer{
 			inputFile.setAttribute("style", "position:absolute;visibility: hidden;")
 			document.body.appendChild(inputFile);
 
-			this.attach(this.addPict);
+			this.attach(this.TheAddPict);
 
 			const inputFilePict = document.createElement("INPUT");
 			inputFilePict.setAttribute("type", "file");
