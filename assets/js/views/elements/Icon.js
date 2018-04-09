@@ -32,10 +32,10 @@ export default class Icon extends UIContainer{
 /*     		addIcon.tileScale.x = 2; 
 		addIcon.tileScale.y = 2;*/
 		addIcon.tint = this.tint;
-		addIcon.x = this.x;
-		addIcon.y = this.y;
-		addIcon.width  = 72;
-		addIcon.height = 72;
+		addIcon.x = 0;
+		addIcon.y = 0;
+		addIcon.width  = this.width;
+		addIcon.height = this.height;
 		console.log('before attach drwPict Icon');
 		this.attach(addIcon);
 
