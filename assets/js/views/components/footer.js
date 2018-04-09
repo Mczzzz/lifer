@@ -81,6 +81,11 @@ export default class Footer  extends UIContainer{
 
      		this.addLinker = new Icon(216,50 ,resources.addLinker.texture, 0xFFFFFF);
 
+			this.addLinker.on('tap', (event) => {
+				let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'link'}});
+                window.dispatchEvent(LinkEvent);
+			});
+
      		this.addTrigger = new Icon(360,50 ,resources.addTrigger.texture, 0xFFFFFF);
 /**/
 
