@@ -1,6 +1,6 @@
 import LinkCollection from '../../collections/LinkCollection.js';
 import Bkg from '../components/background.js';
-import NodeHeader from '../components/NodeHeader.js';
+import LinkHeader from '../components/LinkHeader.js';
 import NodeFooter from '../components/NodeFooter.js';
 /*import PPict from '../components/previewPict.js';*/
 import UIContainer from '../../services/uiContainer.js';
