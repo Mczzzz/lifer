@@ -43,8 +43,8 @@ export default class Icon extends UIContainer{
 
 	drwSelect(){
 
-		let addSelect = new PIXI.Circle(x + 36, y + 36, 40 );
-
+		let addSelect = new PIXI.Circle(this.width / 2, this.height / 2, (this.width / 2) * 1.2 );
+		this.attach(addselect);
 
 	}
 

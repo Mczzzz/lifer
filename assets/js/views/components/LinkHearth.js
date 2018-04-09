@@ -46,7 +46,7 @@ export default class LinkHearth  extends UIContainer{
 		this.loader.load((loader, resources) => {
 
 			this.addFace = new Icon((this.width / 2) - 36, 100 ,resources.addFace.texture, 0x000000);
-
+			this.TheAddFace = this.addFace.load();
 				//on sélectionne par default
 				////on cree un element html qui va embarqué l'id selectionné
 				const inputFile = document.createElement("INPUT");
@@ -58,8 +58,9 @@ export default class LinkHearth  extends UIContainer{
 
 
 
-     		this.addFace.on('tap', (event) => {
+     		this.TheAddFace.on('tap', (event) => {
      			
+     			this.TheAddFace.drwSelect();
 
 			});
 
@@ -70,7 +71,7 @@ export default class LinkHearth  extends UIContainer{
 		this.loader.onComplete.add(() => {
 
 			
-			this.attach(this.addFace);
+			this.attach(this.TheAddFace);
 
 		});
 
