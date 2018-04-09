@@ -45,7 +45,7 @@ export default class LinkHearth  extends UIContainer{
 		
 		this.loader.load((loader, resources) => {
 
-			this.addFace = new Icon((this.width / 2) - 36, 100 ,resources.addFace.texture, 0x000000);
+			this.addFace = new Icon((this.width / 2) - 36, 100 ,72,72,resources.addFace.texture, 0x000000);
 			this.TheAddFace = this.addFace.load();
 				//on sélectionne par default
 				////on cree un element html qui va embarqué l'id selectionné

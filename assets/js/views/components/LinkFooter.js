@@ -106,7 +106,7 @@ this.loader = new PIXI.loaders.Loader();
 		
 		this.loader.load((loader, resources) => {
 
-			this.addLink = new Icon(72,50 ,resources.addLink.texture, 0xFFFFFF);
+			this.addLink = new Icon(72,50,72,72 ,resources.addLink.texture, 0xFFFFFF);
 
      		this.addLink.on('tap', (event) => {
 				/*let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
