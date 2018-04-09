@@ -1,7 +1,7 @@
 import LinkCollection from '../../collections/LinkCollection.js';
 import Bkg from '../components/background.js';
 import LinkHeader from '../components/LinkHeader.js';
-import NodeFooter from '../components/NodeFooter.js';
+import LinkFooter from '../components/LinkFooter.js';
 /*import PPict from '../components/previewPict.js';*/
 import UIContainer from '../../services/uiContainer.js';
 import TextArea from '../components/textarea.js';
@@ -32,7 +32,7 @@ export default class Link extends UIContainer{
 
 		this.addHeader();
 
-		//this.addFooter();
+		this.addFooter();
 		//console.log('node/addelement/beforeaddPreviewPict');
 		//this.addPreviewPict();
 
@@ -59,16 +59,16 @@ export default class Link extends UIContainer{
 
 	addHeader(){
 
-		let NLink = new LinkHeader(0,0,this.width,100);
-		let TheLinkHeader = NLink.load();
+		let NLinkHeader = new LinkHeader(0,0,this.width,100);
+		let TheLinkHeader = NLinkHeader.load();
 		this.attach(TheLinkHeader);
 	}
 
 	addFooter(){
 
-/*		let NFooter = new LinkFooter(0,this.height - 100,this.width,100);
-		let TheNodeFooter = NFooter.load();
-		this.attach(TheNodeFooter);*/
+		let NLinkFooter = new LinkFooter(0,this.height - 100,this.width,100);
+		let TheLinkFooter = NLinkFooter.load();
+		this.attach(TheLinkFooter);
 	}
 
 
