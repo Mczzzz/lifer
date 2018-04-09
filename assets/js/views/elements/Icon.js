@@ -17,6 +17,7 @@ export default class Icon extends UIContainer{
 
 		console.log('addElementIcon');
 
+		this.drwSelect();
 		this.drwPict();
 
 
@@ -43,17 +44,26 @@ export default class Icon extends UIContainer{
 
 	drwSelect(){
 
-		let add = new PIXI.Graphics();
-        add.beginFill(0xFF0000);
-        add.lineStyle(2,0x999999);
-		    add.drawCircle(0, 0, 40);
-		add.endFill()
+		this.select = new PIXI.Graphics();
+        this.select.beginFill(0xFF0000, 0);
+        this.select.lineStyle(2,0x999999);
+		this.select.drawCircle(0, 0, 40);
+		this.select.endFill()
 
-		this.attach(add);
+		this.attach(this.select);
 
 	}
 
-	rmSelect(){
+	ChgSelect(){
+
+		if(this.select.alpha == 0){
+
+			this.select.alpha = 1;
+
+		}else{
+			
+			this.select.alpha = 0;
+		}
 
 
 	}
