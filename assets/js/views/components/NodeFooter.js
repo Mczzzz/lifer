@@ -121,7 +121,7 @@ export default class NodeFooter  extends UIContainer{
      		this.addPict = new Icon(216,50,72,72 ,resources.addPict.texture, 0xFFFFFF);
      		this.TheAddPict = this.addPict.load();
 
-			this.addPict.on('tap', (event) => {
+			this.TheAddPict.on('tap', (event) => {
 				/*let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
                 window.dispatchEvent(NodeEvent);*/
                  $('#pict').click();
