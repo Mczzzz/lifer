@@ -71,7 +71,7 @@ export default class Footer  extends UIContainer{
 		this.loader.add('addTrigger', 'assets/glyphs/trigger.svg');
 
 		this.loader.load((loader, resources) => {
-     		this.ANode = new Icon(72,50 ,resources.addNode.texture, 0xFFFFFF);
+     		this.ANode = new Icon(72,50 ,72,72,resources.addNode.texture, 0xFFFFFF);
      		this.TheAddNode = this.ANode.load();
 
 			this.TheAddNode.on('tap', (event) => {
@@ -80,7 +80,7 @@ export default class Footer  extends UIContainer{
 			});
 
 
-     		this.ALinker = new Icon(216,50 ,resources.addLinker.texture, 0xFFFFFF);
+     		this.ALinker = new Icon(216,50 ,72,72,resources.addLinker.texture, 0xFFFFFF);
      		this.TheAddLinker = this.ALinker.load();
 			
 			this.TheAddLinker.on('tap', (event) => {
@@ -88,7 +88,7 @@ export default class Footer  extends UIContainer{
                 window.dispatchEvent(LinkEvent);
 			});
 
-     		this.ATrigger = new Icon(360,50 ,resources.addTrigger.texture, 0xFFFFFF);
+     		this.ATrigger = new Icon(360,50 ,72,72,resources.addTrigger.texture, 0xFFFFFF);
 /**/		this.TheAddTrigger = this.ATrigger.load();
 
 
