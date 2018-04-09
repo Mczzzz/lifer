@@ -65,7 +65,7 @@ export default class LinkHearth  extends UIContainer{
    	            add.beginFill(0xFF0000);
   	            add.lineStyle(2,0x999999);
   	   		    add.drawCircle(0, 0, 40);
- 				endFill();
+ 				add.endFill();
 
      			this.TheAddFace.addChild(add);
 
