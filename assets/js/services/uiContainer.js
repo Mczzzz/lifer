@@ -58,7 +58,7 @@ export default class uiContainer{
 
 		console.log('in load');
 		this.addElements();
-
+		console.log('before return');
 		return this.container;
 
 

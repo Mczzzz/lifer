@@ -36,7 +36,7 @@ export default class Icon extends UIContainer{
 		addIcon.y = this.y;
 		addIcon.width  = 72;
 		addIcon.height = 72;
-
+		console.log('before attach drwPict Icon');
 		this.attach(addIcon);
 
 	}
@@ -52,5 +52,8 @@ export default class Icon extends UIContainer{
 
 
 	}
+
+
+
 }
 
