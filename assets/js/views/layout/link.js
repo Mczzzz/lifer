@@ -30,14 +30,14 @@ export default class Link extends UIContainer{
 		console.log('node/addelement/beforeBackground');
 		this.addBackground();
 
-		this.addHeader();
+		//this.addHeader();
 
-		this.addFooter();
+		//this.addFooter();
 		//console.log('node/addelement/beforeaddPreviewPict');
 		//this.addPreviewPict();
 
 		//console.log('node/addelement/beforeaddTextArea');
-		this.addTextArea();
+		//this.addTextArea();
 
 		//console.log('node/addelement/beforeaddSaveButton');
 		//this.addSaveButton();
