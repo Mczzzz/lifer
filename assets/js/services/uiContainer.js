@@ -48,7 +48,7 @@ export default class uiContainer{
 
 	attach(components){
 
-		//console.log(components);
+		console.log(this.container);
 		this.container.addChild(components);
 
 	}
