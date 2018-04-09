@@ -47,7 +47,7 @@ export default class Frame {
 
 	link(){
 
-		console.log('in frame node');
+		console.log('in frame link');
 	
 		let linkFrame = new Node(0,0,window.innerWidth,window.innerHeight);
 		let MyLinks = linkFrame.load();
