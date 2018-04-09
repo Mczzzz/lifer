@@ -35,53 +35,32 @@ export default class LinkHearth  extends UIContainer{
 	}
 
 
-/*	addBkgd(){
-
-		this.addShadowBackground();
-		this.addBackground();
-
-	}
-
-
-	addShadowBackground(){
-
-		let Srect = new Rect(0xec407a , 0, 0 , 0 , window.innerWidth , 100);
-
-		let dropShadowFilter = new PIXI.filters.BlurFilter();
-	    dropShadowFilter.blur = 8;
-
-		Srect.filters = [dropShadowFilter];
-		this.attach(Srect);
-	}
-
-
-	addBackground(){
-
-		let rect = new Rect(0xffb300 , 0, 0 , 0 , window.innerWidth , 100);
-		this.attach(rect);
-
-
-	}*/
-
-
-
-	
 
 
 
 	addHearthPict(){
 
-this.loader = new PIXI.loaders.Loader();
+	this.loader = new PIXI.loaders.Loader();
 		this.loader.add('addFace', 'assets/glyphs/face.svg');
 		
 		this.loader.load((loader, resources) => {
 
 			this.addFace = new Icon((this.width / 2) - 36, 100 ,resources.addFace.texture, 0x000000);
 
+				//on sélectionne par default
+				////on cree un element html qui va embarqué l'id selectionné
+				const inputFile = document.createElement("INPUT");
+				inputFile.setAttribute("type", "text");
+				inputFile.setAttribute("value", 0);
+				inputFile.setAttribute("id", "SelectedLink");
+				inputFile.setAttribute("style", "position:absolute;visibility: hidden;")
+				document.body.appendChild(inputFile);
+
+
+
      		this.addFace.on('tap', (event) => {
-				/*let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
-                window.dispatchEvent(NodeEvent);*/
-              //   $('#photo').click();
+     			
+
 			});
 
 
