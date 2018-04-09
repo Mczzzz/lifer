@@ -78,7 +78,7 @@ export default class Link extends UIContainer{
 
 	addLinkHearts(){
 
-		let NLinkHearth = new LinkHearth(0,this.height - 100,this.width,100);
+		let NLinkHearth = new LinkHearth(0,100,this.width,this.height - 100);
 		let TheLinkHearth = NLinkHearth.load();
 		this.attach(TheLinkHearth);
 
