@@ -61,7 +61,7 @@ export default class LinkHearth  extends UIContainer{
      		this.TheAddFace.on('tap', (event) => {
      			
 
-     			this.TheAddFace.ChgSelect();
+     			this.addFace.ChgSelect();
 
 			});
 
