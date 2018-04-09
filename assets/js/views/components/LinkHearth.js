@@ -23,7 +23,7 @@ export default class LinkHearth  extends UIContainer{
 
 	addElements(){
 
-		this.addBkgd();
+		//this.addBkgd();
 
 		this.addHearthPict();
 		//this.addDate();
@@ -35,7 +35,7 @@ export default class LinkHearth  extends UIContainer{
 	}
 
 
-	addBkgd(){
+/*	addBkgd(){
 
 		this.addShadowBackground();
 		this.addBackground();
@@ -61,7 +61,7 @@ export default class LinkHearth  extends UIContainer{
 		this.attach(rect);
 
 
-	}
+	}*/
 
 
 
@@ -76,7 +76,7 @@ this.loader = new PIXI.loaders.Loader();
 		
 		this.loader.load((loader, resources) => {
 
-			this.addFace = new Icon(72,50 ,resources.addFace.texture, 0xFFFFFF);
+			this.addFace = new Icon(this.width / 2, 100 ,resources.addFace.texture, 0xFFFFFF);
 
      		this.addFace.on('tap', (event) => {
 				/*let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
