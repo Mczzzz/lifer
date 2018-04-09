@@ -45,13 +45,13 @@ export default class Icon extends UIContainer{
 	drwSelect(){
 
 		this.select = new PIXI.Graphics();
-        this.select.beginFill(0xFF0000);
-        this.select.lineStyle(10,0x999999);
+        this.select.beginFill(0xFF0000,0);
+        this.select.lineStyle(10,0xFF0000);
 		this.select.drawCircle(0, 0, 40);
 		this.select.endFill()
 
 		this.select.alpha = 0;
-		
+
 		this.attach(this.select);
 
 	}
