@@ -60,7 +60,8 @@ export default class LinkHearth  extends UIContainer{
 
      		this.TheAddFace.on('tap', (event) => {
      			
-     			this.addFace.drwSelect();
+     			let addSelect = new PIXI.Circle(this.width / 2, this.height / 2, (this.width / 2) * 1.2 );
+     			this.TheAddFace.addChild(addSelect);
 
 			});
 
