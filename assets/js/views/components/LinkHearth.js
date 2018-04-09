@@ -76,7 +76,7 @@ this.loader = new PIXI.loaders.Loader();
 		
 		this.loader.load((loader, resources) => {
 
-			this.addFace = new Icon(this.width / 2, 100 ,resources.addFace.texture, 0x000000);
+			this.addFace = new Icon((this.width / 2) - 36, 100 ,resources.addFace.texture, 0x000000);
 
      		this.addFace.on('tap', (event) => {
 				/*let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
