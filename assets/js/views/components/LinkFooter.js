@@ -107,8 +107,9 @@ this.loader = new PIXI.loaders.Loader();
 		this.loader.load((loader, resources) => {
 
 			this.addLink = new Icon(72,50,72,72 ,resources.addLink.texture, 0xFFFFFF);
+			this.theAddLink = this.addLink.load();
 
-     		this.addLink.on('tap', (event) => {
+     		this.theAddLink.on('tap', (event) => {
 				/*let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
                 window.dispatchEvent(NodeEvent);*/
               //   $('#photo').click();
@@ -121,7 +122,7 @@ this.loader = new PIXI.loaders.Loader();
 		this.loader.onComplete.add(() => {
 
 			
-			this.attach(this.addLink);
+			this.attach(this.theAddLink);
 
 		});
 
