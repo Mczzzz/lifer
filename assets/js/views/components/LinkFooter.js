@@ -27,7 +27,7 @@ export default class NodeFooter  extends UIContainer{
 
 		//this.addDate();
 
-		//this.addNodePict();
+		this.addLinkPict();
 
 		//this.addValid();
 
