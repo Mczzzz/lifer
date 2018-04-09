@@ -25,6 +25,7 @@ export default class LinkHearth  extends UIContainer{
 
 		this.addBkgd();
 
+		this.addHearthPict();
 		//this.addDate();
 
 		//this.addLinkPict();
@@ -68,7 +69,7 @@ export default class LinkHearth  extends UIContainer{
 
 
 
-	addLinkPict(){
+	addHearthPict(){
 
 this.loader = new PIXI.loaders.Loader();
 		this.loader.add('addFace', 'assets/glyphs/face.svg');
