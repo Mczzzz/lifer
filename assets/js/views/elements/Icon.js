@@ -15,7 +15,7 @@ export default class Icon extends UIContainer{
 
 	addElements(){
 
-
+		console.log('addElementIcon');
 
 		this.drwPict();
 
