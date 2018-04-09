@@ -30,7 +30,7 @@ export default class Link extends UIContainer{
 		console.log('node/addelement/beforeBackground');
 		this.addBackground();
 
-		//this.addHeader();
+		this.addHeader();
 
 		//this.addFooter();
 		//console.log('node/addelement/beforeaddPreviewPict');
@@ -49,7 +49,7 @@ export default class Link extends UIContainer{
 	addBackground(){
 
 		// color , lineStyle, x,y, width, height
-		let background = new Bkg(0xffb300,0,0,0,this.width,this.height);
+		let background = new Bkg(0xeeeeee,0,0,0,this.width,this.height);
 		console.log('before Attach Background To container');
         this.attach(background);
 
@@ -59,9 +59,9 @@ export default class Link extends UIContainer{
 
 	addHeader(){
 
-/*		let NHeader = new LinkHeader(0,0,this.width,100);
-		let TheNodeHeader = NHeader.load();
-		this.attach(TheNodeHeader);*/
+		let NLink = new LinkHeader(0,0,this.width,100);
+		let TheLinkHeader = NLink.load();
+		this.attach(TheLinkHeader);
 	}
 
 	addFooter(){
