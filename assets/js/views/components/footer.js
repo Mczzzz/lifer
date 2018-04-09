@@ -72,7 +72,7 @@ export default class Footer  extends UIContainer{
 
 		this.loader.load((loader, resources) => {
      		this.addNode = new Icon(72,50 ,resources.addNode.texture, 0xFFFFFF);
-     		let TheAddNode = this.addNode.load();
+     		this.TheAddNode = this.addNode.load();
 
 			this.TheAddNode.on('tap', (event) => {
 				let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'node'}});
@@ -81,14 +81,15 @@ export default class Footer  extends UIContainer{
 
 
      		this.addLinker = new Icon(216,50 ,resources.addLinker.texture, 0xFFFFFF);
-     		let TheAddLinker = this.addLinker.load();
+     		this.TheAddLinker = this.addLinker.load();
+			
 			this.TheAddLinker.on('tap', (event) => {
 				let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'link'}});
                 window.dispatchEvent(LinkEvent);
 			});
 
      		this.addTrigger = new Icon(360,50 ,resources.addTrigger.texture, 0xFFFFFF);
-/**/		let TheAddTrigger = this.addTrigger.load();
+/**/		this.TheAddTrigger = this.addTrigger.load();
 
 
 /*     		this.realSizeX = resources.addNode.texture.baseTexture.realWidth;
