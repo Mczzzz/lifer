@@ -42,7 +42,7 @@ export default class LinkHearth  extends UIContainer{
 
 		let MyLink = new Linky( 200,200,100,50);
 		this.TMyLink = MyLink.load();
-		this.attach(TMyLink);
+		this.attach(this.TMyLink);
 		this.TMyLink
         .on('pointerdown', (e) => this.onDragStart(e))
         .on('pointerup', (e) => this.onDragEnd(e))
