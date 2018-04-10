@@ -44,10 +44,10 @@ export default class LinkHearth  extends UIContainer{
 		this.TMyLink = MyLink.load();
 		this.attach(this.TMyLink);
 		this.TMyLink
-        .on('pointerdown', (e) => this.onDragStart(e))
-        .on('pointerup', (e) => this.onDragEnd(e))
-        .on('pointerupoutside', (e) => this.onDragEnd(e))
-        .on('pointermove', (e) => this.onDragMove(e));
+        .on('touchstart', (e) => this.onDragStart(e))
+        .on('touchend', (e) => this.onDragEnd(e))
+      //  .on('pointerupoutside', (e) => this.onDragEnd(e))
+        .on('touchmove', (e) => this.onDragMove(e));
 
 		
 
