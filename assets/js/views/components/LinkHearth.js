@@ -18,7 +18,6 @@ export default class LinkHearth  extends UIContainer{
 		moment.locale('fr');
      	
 
-
 	}
 
 
@@ -109,6 +108,22 @@ export default class LinkHearth  extends UIContainer{
 
 			this.addFace = new Icon((this.width / 2) - 36, 100 ,72,72,resources.addFace.texture, 0x000000);
 			this.TheAddFace = this.addFace.load();
+
+
+			this.select = new PIXI.Graphics();
+        	this.select.beginFill(0x0000FF,0);
+        	this.select.lineStyle(100,0x0000FF);
+			this.select.drawCircle(0, 0, 150);
+			this.select.endFill()
+
+			//this.select.alpha = 0;
+
+			this.attach(this.select);
+
+
+
+
+
 				//on sélectionne par default
 				////on cree un element html qui va embarqué l'id selectionné
 				const inputFile = document.createElement("INPUT");
