@@ -113,7 +113,7 @@ export default class LinkHearth  extends UIContainer{
 			this.select = new PIXI.Graphics();
         	this.select.beginFill(0x0000FF,0);
         	this.select.lineStyle(100,0x0000FF);
-			this.select.drawCircle((this.width / 2) - 36, 200, 150);
+			this.select.drawCircle((this.width / 2) - 36, 200, 100);
 			this.select.endFill()
 
 			//this.select.alpha = 0;
