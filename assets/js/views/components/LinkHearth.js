@@ -40,7 +40,8 @@ export default class LinkHearth  extends UIContainer{
 
 	drwLink(){
 
-		let MyLink = new Linky( 200,200,100,50);
+		let MyLink = new Linky( 0,0,100,50);
+		MyLink.anchor.set(0,5);
 		this.TMyLink = MyLink.load();
 		this.attach(this.TMyLink);
 		this.TMyLink
