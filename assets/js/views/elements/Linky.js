@@ -50,7 +50,7 @@ export default class Linky extends UIContainer{
         rect.lineStyle(2,0xFFFFFF,0.3);
         rect.drawRoundedRect(0, 0, this.width, this.height, 10);
         rect.endFill();
-   		rect.anchor.set(0.5);
+   		//.anchor.set(0.5);
    		rect.position.x = this.x;
    		rect.position.y = this.y
 		this.attach(rect);
