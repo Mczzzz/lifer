@@ -73,7 +73,7 @@ export default class LinkHearth  extends UIContainer{
 
 	onDragMove() {
 	    if (this.dragging) {
-	        var newPosition = this.data.getLocalPosition(this.TMyLink.parent);
+	        var newPosition = this.data.getLocalPosition(this.container);
 	        this.TMyLink.x = newPosition.x;
 	        this.TMyLink.y = newPosition.y;
 	    }
