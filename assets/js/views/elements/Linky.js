@@ -18,6 +18,7 @@ export default class Linky extends UIContainer{
 	//	console.log('addElementIcon');
 
 		this.drwSelect();
+		this.drwSelect2();
 /*		this.drwRext();
 		this.drwText();*/
 
@@ -56,6 +57,22 @@ export default class Linky extends UIContainer{
 		this.attach(rect);
 
 	}
+
+	drwSelect2(){
+
+
+		let rect = new PIXI.Graphics();
+        rect.beginFill(0x999999);
+        rect.lineStyle(2,0xFFFFFF,0.3);
+        rect.drawRoundedRect(0, 0, this.width, this.height, 10);
+        rect.endFill();
+   		//.anchor.set(0.5);
+   		rect.position.x = this.x + 200;
+   		rect.position.y = this.y + 200;
+		this.attach(rect);
+
+	}
+
 
 	ChgSelect(){
 
