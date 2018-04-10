@@ -41,8 +41,9 @@ export default class LinkHearth  extends UIContainer{
 	drwLink(){
 
 		let MyLink = new Linky( 0,0,100,50);
-		MyLink.anchor.set(0,5);
+
 		this.TMyLink = MyLink.load();
+		this.TMyLink.anchor.set(0,5);
 		this.attach(this.TMyLink);
 		this.TMyLink
         .on('touchstart', (e) => this.onDragStart(e))
