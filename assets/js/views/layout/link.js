@@ -20,6 +20,7 @@ export default class Link extends UIContainer{
 
 		//this.collector = new NodeCollection();
 		//this.collector.setImage(this.data);*/
+		window.addEventListener('updateLinkList', (e) => this.updateList(e.detail));
 
 
 	}
