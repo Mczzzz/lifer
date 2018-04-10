@@ -42,9 +42,58 @@ export default class LinkHearth  extends UIContainer{
 
 		let MyLink = new Linky( 200,200,100,50);
 		let TMyLink = MyLink.load();
+		TMyLink
+        .on('pointerdown', (e) => this.onDragStart(e))
+        .on('pointerup', (e) => this.onDragEnd(e))
+        .on('pointerupoutside', (e) => this.onDragEnd(e))
+        .on('pointermove', (e) => this.onDragMove(e));
+
 		this.attach(TMyLink);
 
+
+
 	}
+
+   onDragStart(event) {
+	    // store a reference to the data
+	    // the reason for this is because of multitouch
+	    // we want to track the movement of this particular touch
+	    this.data = event.data;
+	    this.alpha = 0.5;
+	    this.dragging = true;
+	}
+
+	onDragEnd() {
+	    this.alpha = 1;
+	    this.dragging = false;
+	    // set the interaction data to null
+	    this.data = null;
+	}
+
+	onDragMove() {
+	    if (this.dragging) {
+	        var newPosition = this.data.getLocalPosition(this.parent);
+	        this.x = newPosition.x;
+	        this.y = newPosition.y;
+	    }
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
