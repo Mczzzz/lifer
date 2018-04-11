@@ -72,7 +72,7 @@ export default class Linky extends UIContainer{
 		this.attach(rect);*/
 
 		let graphics = new PIXI.Graphics();
-		graphics.lineStyle(2, 0xFF00FF, 1);
+		graphics.lineStyle(150, 0xFF00FF, 1);
 		graphics.arc(200, 200, 100, 0, Math.PI);
 		this.attach(graphics);
 
