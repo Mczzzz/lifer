@@ -104,12 +104,12 @@ export default class LinkHearth  extends UIContainer{
 
 				let graphics = new PIXI.Graphics();
 		graphics.lineStyle(150, 0xFF00FF, 1);
-		graphics.arc(this.width / 2, 200, 100, 0.1, Math.PI - 0.1);
+		graphics.arc(this.width / 2, 200, 100, 0, Math.PI);
 		this.attach(graphics);
 
 		let graphics2 = new PIXI.Graphics();
 		graphics.lineStyle(150, 0x00FF00, 1);
-		graphics.arc(this.width / 2, 200, 100, Math.PI + 0.1, 0 - 0.1);
+		graphics.arc(this.width / 2, 200, 100, Math.PI, 0);
 		this.attach(graphics);
 
 
@@ -128,8 +128,8 @@ export default class LinkHearth  extends UIContainer{
 
 			this.select = new PIXI.Graphics();
         	this.select.beginFill(0x0000FF,0);
-        	this.select.lineStyle(5,0x0000FF);
-			this.select.drawCircle((this.width / 2), 200, 100);
+        	this.select.lineStyle(3,0x0000FF);
+			this.select.drawCircle((this.width / 2), 200, 150);
 			this.select.endFill()
 
 			//this.select.alpha = 0;
