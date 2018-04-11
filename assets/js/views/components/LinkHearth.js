@@ -101,6 +101,22 @@ export default class LinkHearth  extends UIContainer{
 
 	addHearthPict(){
 
+
+				let graphics = new PIXI.Graphics();
+		graphics.lineStyle(150, 0xFF00FF, 1);
+		graphics.arc(this.width / 2, 200, 100, 0.1, Math.PI - 0.1);
+		this.attach(graphics);
+
+		let graphics2 = new PIXI.Graphics();
+		graphics.lineStyle(150, 0x00FF00, 1);
+		graphics.arc(this.width / 2, 200, 100, Math.PI + 0.1, 0 - 0.1);
+		this.attach(graphics);
+
+
+
+
+
+
 	this.loader = new PIXI.loaders.Loader();
 		this.loader.add('addFace', 'assets/glyphs/face.svg');
 		
