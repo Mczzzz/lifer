@@ -122,14 +122,14 @@ export default class LinkHearth  extends UIContainer{
 		
 		this.loader.load((loader, resources) => {
 
-			this.addFace = new Icon((this.width / 2) - 36, 200 ,72,72,resources.addFace.texture, 0x000000);
+			this.addFace = new Icon((this.width / 2), 200 ,72,72,resources.addFace.texture, 0x000000);
 			this.TheAddFace = this.addFace.load();
 
 
 			this.select = new PIXI.Graphics();
         	this.select.beginFill(0x0000FF,0);
-        	this.select.lineStyle(100,0x0000FF);
-			this.select.drawCircle((this.width / 2) - 36, 200, 100);
+        	this.select.lineStyle(5,0x0000FF);
+			this.select.drawCircle((this.width / 2), 200, 100);
 			this.select.endFill()
 
 			//this.select.alpha = 0;
