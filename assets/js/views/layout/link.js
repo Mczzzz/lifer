@@ -91,8 +91,8 @@ export default class Link extends UIContainer{
 		let TheLinkHearth = NLinkHearth.load();
 
 		TheLinkHearth.on('tap', (event) => {
-			
-				app.ticker.add(function() {
+
+				this.app.ticker.add(function() {
 	    			TheLinkHearth.rotation += 0.01;
 				});
 
