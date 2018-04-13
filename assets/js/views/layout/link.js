@@ -90,6 +90,7 @@ export default class Link extends UIContainer{
 		let NLinkHearth = new LinkHearth(0,100,this.width,this.height - 100);
 		let TheLinkHearth = NLinkHearth.load();
 
+		TheLinkHearth.pivot = (200,100);
 		const ticker = new PIXI.ticker.Ticker();
 		ticker.stop();
 
