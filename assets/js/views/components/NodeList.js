@@ -109,7 +109,7 @@ export default class NodeList extends UIContainer{
 	    // the reason for this is because of multitouch
 	    // we want to track the movement of this particular touch
 	    this.edata = event.data;
-	    console.log(this.edata.global.x);
+//	    console.log(this.edata.global.x);
 	    //this.container.x = this.edata.global.x;
 	    this.container.alpha = 0.8;
 	    this.dragging = this.edata.getLocalPosition(this.container.parent);
@@ -133,19 +133,19 @@ export default class NodeList extends UIContainer{
 
 	onDragMove(event)
 	{
-		console.log('mooooove');
-		console.log(this.container.height);
-		console.log(this.height);
+//		console.log('mooooove');
+//		console.log(this.container.height);
+//		console.log(this.height);
 	    if (this.dragging)
 	    {
-	    	console.log('in draggingMove');
+//	    	console.log('in draggingMove');
 
 	        let newPosition = this.edata.getLocalPosition(this.container.parent);
 
-	        console.log(newPosition);
+//	        console.log(newPosition);
 
 	        if(this.initPosition == 0){
-	        	console.log('PREMIERE PASSE');
+//	        	console.log('PREMIERE PASSE');
 
 	        	this.container.y = this.lastPos;
 
@@ -153,41 +153,41 @@ export default class NodeList extends UIContainer{
 	        	this.initPosition = 1;
 
 	    	}else{
-	    		console.log('AUTRES PASSE');
-	    		console.log(this.container.y);
+//	    		console.log('AUTRES PASSE');
+//	    		console.log(this.container.y);
 	    		if(this.container.y > this.y ){
-	    			console.log('in if : this.container.y < this.y');
+//	    			console.log('in if : this.container.y < this.y');
 	        		this.lastPos = this.y;
 
 	        	}else if(this.container.y < ((this.y + this.height) - this.container.height)){
-	        		console.log('else if');
+//	        		console.log('else if');
 	        		//this.y = ((y + width) - this.width) + 1;
 	        		this.lastPos = (this.y + this.height) - this.container.height;
 	        	} else {
-	        		console.log('else');
+//	        		console.log('else');
 
 	        		let differentiel = newPosition.y - this.diff;
 	        		//je met un rappot d'échelle
 	        		differentiel *= 1;
 
-	        		console.log(differentiel);
+/*	        		console.log(differentiel);
 	        		console.log(this.lastPos);
 	        		console.log(this.y);
 	        		console.log(this.height);
 	        		console.log(this.container.height);
-	        		console.log(differentiel);
+	        		console.log(differentiel);*/
 
 	        		if(this.lastPos + differentiel <  (this.y + this.height) - this.container.height) {
-	        		console.log('--if');	
+//	        		console.log('--if');	
 	        			let correctionDiff = (this.lastPos + differentiel) - ((this.y + this.height) - this.container.height);
 	        			differentiel -= correctionDiff;
 	        		}else if(this.lastPos + differentiel > this.y ){
-	        		console.log('--else if');
+//	        		console.log('--else if');
 	        			let correctionDiff = this.lastPos + differentiel - this.y;
 	        			differentiel -= correctionDiff;
 	        		}
-	        		console.log(this.lastPos);
-	        		console.log(differentiel);
+//	        		console.log(this.lastPos);
+//	        		console.log(differentiel);
 	        		this.container.y = this.lastPos + differentiel;
 	        		this.lastPos = this.container.y;
 	        	}

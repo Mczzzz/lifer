@@ -60,7 +60,7 @@ export default class NodeCollection {
               processData: false
          })
 			.done(function( data ) {
-				console.log('AJAX GET DONE');
+//				console.log('AJAX GET DONE');
  				let evUpdateNodeList = new CustomEvent('updateNodeList', {'detail' : data});
                 window.dispatchEvent(evUpdateNodeList);
     		});
@@ -82,7 +82,7 @@ export default class NodeCollection {
               processData: false
          })
 			.done(function( data ) {
-				console.log('AJAX GET DONE');
+//				console.log('AJAX GET DONE');
 				let ret = JSON.parse(data);
 				$('#textarea').val(ret.data.text);
 				$('#textarea').attr('node_id',ret.data.id);

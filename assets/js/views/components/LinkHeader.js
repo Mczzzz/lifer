@@ -8,7 +8,7 @@ export default class LinkHeader  extends UIContainer{
 
 	constructor(x,y,w,h){
 	
-		console.log('header before super');
+//		console.log('header before super');
 		super(x,y,w,h);
 
 		moment.locale('fr');
@@ -59,7 +59,7 @@ export default class LinkHeader  extends UIContainer{
 
 	addClose(){
 
-		console.log('in add close');
+//		console.log('in add close');
 		this.loader = new PIXI.loaders.Loader();
 		this.loader.add('close', 'assets/glyphs/ic_arrow_white_72px.svg');
 
