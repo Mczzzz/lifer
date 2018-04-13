@@ -101,20 +101,51 @@ export default class LinkHearth  extends UIContainer{
 
 	addHearthPict(){
 
+		let ProPersoContainer = new PIXI.Container();
 
-				let graphics = new PIXI.Graphics();
+		ProPersoContainer.interactive = true;
+
+		let graphics = new PIXI.Graphics();
 		graphics.lineStyle(150, 0xFF00FF, 1);
 		graphics.arc(this.width / 2, 200, 100, 0, Math.PI);
-		this.attach(graphics);
+		//this.attach(graphics);
+
+		ProPersoContainer.addChild(graphics);
 
 		let graphics2 = new PIXI.Graphics();
-		graphics.lineStyle(150, 0x00FF00, 1);
-		graphics.arc(this.width / 2, 200, 100, Math.PI, 0);
-		this.attach(graphics);
+		graphics2.lineStyle(150, 0x00FF00, 1);
+		graphics2.arc(this.width / 2, 200, 100, Math.PI, 0);
+		//this.attach(graphics2);
+
+		ProPersoContainer.addChild(graphics2);
+
+
+		
+		const ticker = new PIXI.ticker.Ticker();
+		ticker.stop();
+
+
+		ProPersoContainer.on('tap', (event) => {
+
+
+			ticker.add((deltaTime) => {
+			  ProPersoContainer.rotation += 0.05;
+			  if(ProPersoContainer.rotation >= Math.PI * 2){
+			  	ticker.stop();
+			  }
+			});
+			ticker.start();
 
 
 
 
+
+			});
+
+
+
+
+		this.attach(ProPersoContainer);
 
 
 	this.loader = new PIXI.loaders.Loader();

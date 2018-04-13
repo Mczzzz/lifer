@@ -5,7 +5,7 @@ export default class uiContainer{
 
 	constructor(x,y,width,height){
 
-		console.log('uicontainer constructor');
+//		console.log('uicontainer constructor');
 
 		this.width = width;
      	this.height = height; 
@@ -49,17 +49,17 @@ export default class uiContainer{
 	attach(components){
 
 		//console.log(this.container);
-		console.log('beforeAttach');
+//		console.log('beforeAttach');
 		this.container.addChild(components);
-		console.log('afterAttach');
+//		console.log('afterAttach');
 	}
 
 
 	load(){
 
-		console.log('in load');
+//		console.log('in load');
 		this.addElements();
-		console.log('before return');
+//		console.log('before return');
 		return this.container;
 
 
