@@ -98,8 +98,8 @@ export default class Link extends UIContainer{
 
 
 			ticker.add((deltaTime) => {
-			  TheLinkHearth.rotation += 0.01;
-			  if(TheLinkHearth.rotation >= 1){
+			  TheLinkHearth.rotation += 0.05;
+			  if(TheLinkHearth.rotation >= Math.PI){
 			  	ticker.stop();
 			  }
 			});
