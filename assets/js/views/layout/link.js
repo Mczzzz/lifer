@@ -90,11 +90,21 @@ export default class Link extends UIContainer{
 		let NLinkHearth = new LinkHearth(0,100,this.width,this.height - 100);
 		let TheLinkHearth = NLinkHearth.load();
 
+		const ticker = new PIXI.ticker.Ticker();
+		ticker.stop();
+
+
 		TheLinkHearth.on('tap', (event) => {
 
-				this.app.ticker.add(function() {
-	    			TheLinkHearth.rotation += 0.01;
-				});
+
+			ticker.add((deltaTime) => {
+			  TheLinkHearth.rotation += 0.01;
+			  if(TheLinkHearth.rotation >= 1){
+			  	ticker.stop();
+			  }
+			});
+			ticker.start();
+
 
 
 
