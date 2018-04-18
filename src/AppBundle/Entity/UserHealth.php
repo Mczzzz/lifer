@@ -7,10 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Node
  *
- * @ORM\Table(name="node")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\NodeRepository")
+ * @ORM\Table(name="user_health")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserHealthRepository")
  */
-class Node
+class UserHealth
 {
     /**
      * @var int
@@ -24,9 +24,9 @@ class Node
     /**
      * @var int
      *
-     * @ORM\Column(name="id_creator", type="integer")
+     * @ORM\Column(name="id_user", type="integer")
      */
-    private $idCreator;
+    private $idUser;
 
     /**
      * @var \DateTime
