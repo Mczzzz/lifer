@@ -58,6 +58,13 @@ class Area
 
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="idCreator", type="integer")
+     */
+    private $idCreator;
+
+    /**
      * Get id
      *
      * @return int
@@ -186,5 +193,35 @@ class Area
     {
         return $this->addressCity;
     }
+
+
+    /**
+     * Set idCreator
+     *
+     * @param integer $idCreator
+     *
+     * @return Humans
+     */
+    public function setIdCreator($idCreator)
+    {
+        $this->idCreator = $idCreator;
+
+        return $this;
+    }
+
+    /**
+     * Get idCreator
+     *
+     * @return int
+     */
+    public function getIdCreator()
+    {
+        return $this->idCreator;
+    }
+
+
+
+
+
 }
 
