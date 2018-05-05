@@ -31,4 +31,4 @@ services:
 
     # add more services, or override services that need manual wiring
     AppBundle\Service\Human:
-        arguments: [@doctrine.orm.entity_manager]
+        arguments: ['@doctrine.orm.entity_manager']
