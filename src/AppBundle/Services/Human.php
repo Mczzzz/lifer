@@ -28,7 +28,7 @@ class Human {
 
         $this->Human->infos = $MyHuman;
 
-        return true
+        return true;
     }
 
 
