@@ -11,13 +11,15 @@ class Human {
 
     //protected $container;
     protected $entityManager;
+    protected $Me;
 
     protected $Human;
 
  	//public function __construct(ContainerInterface $container, EntityManager $entityManager) {
-    public function __construct($entityManager) {
+    public function __construct($entityManager,$user) {
 
         $this->entityManager = $entityManager;
+        $this->Me = $user;
     }
 
 
@@ -25,7 +27,8 @@ class Human {
 
 	public function infos(){
 
-
+        var_dump($this->Me);
+        die();
         //$this->container = $container;
         //$this->entityManager = $entityManager;
         $id = 3; 
