@@ -10,6 +10,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use AppBundle\Service\Human;
+
 class DefaultController extends Controller
 {
 
@@ -58,12 +60,12 @@ class DefaultController extends Controller
      * @Route("/human/{id}", name="human_id")
      * @Method("GET")
      */
-    public function human($id)
+    public function human(Human $Moi,$id)
     {
 
        
-        $MyHuman = $this->container->get("human");
-        var_dump($MyHuman->info());
+        $MyHuman = $Moi->infos();
+        var_dump($MyHuman);
 
 
         return new Response('OK');
