@@ -54,6 +54,23 @@ class DefaultController extends Controller
 
 
 
+    /**
+     * @Route("/human/{id}", name="human_id")
+     * @Method("GET")
+     */
+    public function human($id)
+    {
+
+       
+        $MyHuman = $this->container->get("human");
+        var_dump($MyHuman->info());
+
+
+        return new Response('OK');
+
+    }  
+
+
 
 
 }
