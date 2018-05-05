@@ -14,8 +14,9 @@ class Human {
     protected $Human;
 
  	//public function __construct(ContainerInterface $container, EntityManager $entityManager) {
-    public function __construct() {
+    public function __construct(EntityManager $entityManager) {
 
+        $this->entityManager = $entityManager;
     }
 
 
@@ -25,7 +26,7 @@ class Human {
 
 
         //$this->container = $container;
-        $this->entityManager = $entityManager;
+        //$this->entityManager = $entityManager;
         $id = 3; 
         //je load mon humain
         $HumanRepo = $entityManager->getRepository(Humans::class);
