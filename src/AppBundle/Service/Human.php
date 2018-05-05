@@ -15,7 +15,7 @@ class Human {
     protected $Human;
 
  	//public function __construct(ContainerInterface $container, EntityManager $entityManager) {
-    public function __construct(EntityManager $entityManager) {
+    public function __construct($entityManager) {
 
         $this->entityManager = $entityManager;
     }
