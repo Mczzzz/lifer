@@ -3,7 +3,8 @@
 namespace AppBundle\Service;
 
 //use Symfony\Component\DependencyInjection\ContainerInterface;
-use Doctrine\ORM\EntityManager;
+//use Doctrine\ORM\EntityManager;
+use AppBundle\Entity\Humans;
 
 class Human {
 
