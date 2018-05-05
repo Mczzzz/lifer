@@ -20,14 +20,32 @@ class Human {
 
         $this->entityManager = $entityManager;
         $this->Me = $user;
+
+        //start MyInfos
+
     }
 
+    protected function MyContextObject(){
+
+        $MyObjectsRepo = $this->entityManager->getRepository(Objects::class);
+        $MyObjectCollection = $MyObjectsRepo->findBy(array('usufruct' => $this->Me->getToken()->getUser()));
+
+    }
+
+/*
+    //A voir comment je met en place
+
+    protected function MyContextTree(){
+
+        $MyTreeRepo = $this->entityManager->getRepository(ObjectsTree::class);
+
+    }*/
 
 
 
 	public function infos(){
 
-        var_dump($this->Me);
+        var_dump($this->Me->getToken()->getUser());
         die();
         //$this->container = $container;
         //$this->entityManager = $entityManager;
