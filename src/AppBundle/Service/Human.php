@@ -19,7 +19,7 @@ class Human {
     public function __construct($entityManager,$user) {
 
         $this->entityManager = $entityManager;
-        $this->Me = $user;
+        $this->Me = $user->getToken()->getUser();
 
         //start MyInfos
 
@@ -28,7 +28,9 @@ class Human {
     protected function MyContextObject(){
 
         $MyObjectsRepo = $this->entityManager->getRepository(Objects::class);
-        $MyObjectCollection = $MyObjectsRepo->findBy(array('usufruct' => $this->Me->getToken()->getUser()));
+        $MyObjectCollection = $MyObjectsRepo->findBy(array('usufruct' => $this->Me->getId()));
+        var_dump($MyObjectCollection);
+        die();
 
     }
 
@@ -45,8 +47,8 @@ class Human {
 
 	public function infos(){
 
-        var_dump($this->Me->getToken()->getUser());
-        die();
+        $this->MyContextObject();
+        //die();
         //$this->container = $container;
         //$this->entityManager = $entityManager;
         $id = 3; 
