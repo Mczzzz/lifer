@@ -1,7 +1,0 @@
-parameters:
-    human.class: AppBundle\Services\Human
-
-services:
-    human:
-        class: "%human.class%"
-        arguments: [@doctrine.orm.entity_manager]
