@@ -29,7 +29,7 @@ class Human {
         //$this->entityManager = $entityManager;
         $id = 3; 
         //je load mon humain
-        $HumanRepo = $entityManager->getRepository(Humans::class);
+        $HumanRepo = $this->entityManager->getRepository(Humans::class);
         $MyHuman = $HumanRepo->find($id);
 
         if(!$MyHuman) return false;
