@@ -14,12 +14,21 @@ class Human {
     protected $Human;
 
  	//public function __construct(ContainerInterface $container, EntityManager $entityManager) {
-    public function __construct( EntityManager $entityManager) {
+    public function __construct() {
+
+    }
+
+
+
+
+	protected function info(){
+
+
         //$this->container = $container;
         $this->entityManager = $entityManager;
         $id = 3; 
         //je load mon humain
-       	$HumanRepo = $entityManager->getRepository(Humans::class);
+        $HumanRepo = $entityManager->getRepository(Humans::class);
         $MyHuman = $HumanRepo->find($id);
 
         if(!$MyHuman) return false;
@@ -29,12 +38,7 @@ class Human {
         $this->Human->infos = $MyHuman;
 
         return true;
-    }
 
-
-
-
-	protected function info(){
 
 		return $this->Human;
 	}
