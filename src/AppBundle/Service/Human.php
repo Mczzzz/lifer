@@ -35,7 +35,7 @@ class Human {
 
         if(!$MyHuman) return false;
        
-        $this->Human = new stdClass();
+        $this->Human = new \stdClass();
 
         $this->Human->infos = $MyHuman;
 
