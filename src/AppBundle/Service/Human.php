@@ -21,7 +21,7 @@ class Human {
 
 
 
-	protected function info(){
+	protected function infos(){
 
 
         //$this->container = $container;
