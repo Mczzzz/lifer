@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="users_tree")
  * 
  */
-class Users_tree
+class UsersTree
 {
     /**
      * @var int
