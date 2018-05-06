@@ -67,7 +67,7 @@ class Human {
     }
 
 
-    Protected function MyInternal
+    //Protected function MyInternal
 
 
     protected function MyContextObject(){
