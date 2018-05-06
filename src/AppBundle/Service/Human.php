@@ -7,7 +7,7 @@ namespace AppBundle\Service;
 use AppBundle\Entity\Humans;
 use AppBundle\Entity\Objects;
 
-use AppBundle\Entity\Users_tree;
+use AppBundle\Entity\UsersTree;
 
 use AppBundle\Entity\Helpers\PeriodInfos;
 
