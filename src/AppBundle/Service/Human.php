@@ -24,7 +24,7 @@ class Human {
         $this->Me->User = $user->getToken()->getUser();
 
         //calcul de mon age :
-        var dump($this->Me->User->getBirthDate());
+        var_dump($this->Me->User->getBirthDate());
         die();
         //start MyInfos
         //Quand somme nous
