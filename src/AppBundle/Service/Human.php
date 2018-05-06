@@ -7,6 +7,8 @@ namespace AppBundle\Service;
 use AppBundle\Entity\Humans;
 use AppBundle\Entity\Objects;
 
+use AppBundle\Entity\Users_tree;
+
 use AppBundle\Entity\Helpers\PeriodInfos;
 
 class Human {
@@ -25,6 +27,13 @@ class Human {
         $this->Me = new \stdClass();
         $this->Me->User = $user->getToken()->getUser(); //on ajoute les infos immuables (sexe)
 
+
+        //je load mon arbre
+        $MyTreeRepo = $this->entityManager->getRepository(Users_tree::class);
+        $MyTree = $MyTreeRepo->findBy(array('user_id' => $this->Me->getId()), array('parent' => 'ASC'));
+        var_dump($MyTree);
+        die();
+
         //Ajout du container des infos evoluantes (Age, poids, taille,sexe);
         $this->Me->RelativesInfos = new \stdClass();
 
@@ -36,12 +45,14 @@ class Human {
         $interval = date_diff($this->Me->User->getBirthDate(), $ndt);
         var_dump($interval->format('%R%a days'));
         var_dump($interval->format('%y Year %m Month %d Day %h Hours %i Minute %s Seconds'));
-        die();
+        //die();
         $this->Me->RelativesInfos->Old = new \stdClass();
 
         $this->Me->Old = (new \DateTime('now'));
         var_dump($this->Me->User->getBirthDate());
         die();
+
+
         //start MyInfos
         //Quand somme nous
         //calcul de mon Age
@@ -54,6 +65,10 @@ class Human {
                                 //Saint Fargeau ponthierry
                                     //40 avenue Albert beaufils
     }
+
+
+    Protected function MyInternal
+
 
     protected function MyContextObject(){
 
