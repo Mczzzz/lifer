@@ -7,6 +7,8 @@ namespace AppBundle\Service;
 use AppBundle\Entity\Humans;
 use AppBundle\Entity\Objects;
 
+use AppBundle\Entity\Helpers\PeriodInfos;
+
 class Human {
 
 
@@ -35,6 +37,8 @@ class Human {
         var_dump($interval->format('%R%a days'));
         var_dump($interval->format('%y Year %m Month %d Day %h Hours %i Minute %s Seconds'));
         die();
+        $this->Me->RelativesInfos->Old = new \stdClass();
+
         $this->Me->Old = (new \DateTime('now'));
         var_dump($this->Me->User->getBirthDate());
         die();
