@@ -99,29 +99,7 @@ class Humans_tree
     }
 
    
-    /**
-     * Set object
-     *
-     * @param integer $object
-     *
-     * @return Objects_infos
-     */
-    public function setObject($object)
-    {
-        $this->object = $object;
 
-        return $this;
-    }
-
-    /**
-     * Get object
-     *
-     * @return integer
-     */
-    public function getObject()
-    {
-        return $this->object;
-    }
 
 
 
@@ -204,5 +182,25 @@ class Humans_tree
 
 
 
+
+    /**
+     * @return int
+     */
+    public function getHumanId()
+    {
+        return $this->humanId;
+    }
+
+    /**
+     * @param int $humanId
+     *
+     * @return self
+     */
+    public function setHumanId($humanId)
+    {
+        $this->humanId = $humanId;
+
+        return $this;
+    }
 }
 
