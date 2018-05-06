@@ -7,10 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Objects_infos
  *
- * @ORM\Table(name="humans_tree")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\Humans_treeRepository")
+ * @ORM\Table(name="users_tree")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\Users_treeRepository")
  */
-class Humans_tree
+class Users_tree
 {
     /**
      * @var int
