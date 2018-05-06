@@ -21,9 +21,20 @@ class Human {
 
         $this->entityManager = $entityManager;
         $this->Me = new \stdClass();
-        $this->Me->User = $user->getToken()->getUser();
+        $this->Me->User = $user->getToken()->getUser(); //on ajoute les infos immuables (sexe)
+
+        //Ajout du container des infos evoluantes (Age, poids, taille,sexe);
+        $this->Me->RelativesInfos = new \stdClass();
+
+
 
         //calcul de mon age :
+        $ndt = new \Datetime('now');
+
+        $interval = date_diff($this->Me->User->getBirthDate(), $ndt);
+        var_dump($interval->format('%R%a days'));
+        die();
+        $this->Me->Old = (new \DateTime('now'))
         var_dump($this->Me->User->getBirthDate());
         die();
         //start MyInfos
