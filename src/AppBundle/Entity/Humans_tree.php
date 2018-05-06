@@ -24,9 +24,9 @@ class Humans_tree
     /**
      * @var int
      *
-     * @ORM\Column(name="human_id", type="integer", nullable=false)
+     * @ORM\Column(name="user_id", type="integer", nullable=false)
      */
-    private $humanId;
+    private $userId;
 
 
     /**
@@ -182,23 +182,22 @@ class Humans_tree
 
 
 
-
     /**
      * @return int
      */
-    public function getHumanId()
+    public function getUserId()
     {
-        return $this->humanId;
+        return $this->userId;
     }
 
     /**
-     * @param int $humanId
+     * @param int $userId
      *
      * @return self
      */
-    public function setHumanId($humanId)
+    public function setUserId($userId)
     {
-        $this->humanId = $humanId;
+        $this->userId = $userId;
 
         return $this;
     }
