@@ -24,9 +24,9 @@ class Humans_tree
     /**
      * @var int
      *
-     * @ORM\Column(name="object", type="integer", nullable=false)
+     * @ORM\Column(name="human_id", type="integer", nullable=false)
      */
-    private $object;
+    private $humanId;
 
 
     /**
