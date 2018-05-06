@@ -24,4 +24,35 @@ class User extends BaseUser
         parent::__construct();
         // your own logic
     }
+
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="birth_date", type="datetimetz")
+     */
+    private $birthDate;
+
+
+
+    /**
+     * @return \DateTime
+     */
+    public function getBirthDate()
+    {
+        return $this->birthDate;
+    }
+
+    /**
+     * @param \DateTime $birthDate
+     *
+     * @return self
+     */
+    public function setBirthDate(\DateTime $birthDate)
+    {
+        $this->birthDate = $birthDate;
+
+        return $this;
+    }
+
 }
