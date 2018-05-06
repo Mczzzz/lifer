@@ -33,6 +33,7 @@ class Human {
 
         $interval = date_diff($this->Me->User->getBirthDate(), $ndt);
         var_dump($interval->format('%R%a days'));
+        var_dump($interval->format('%y Year %m Month %d Day %h Hours %i Minute %s Seconds'));
         die();
         $this->Me->Old = (new \DateTime('now'));
         var_dump($this->Me->User->getBirthDate());
