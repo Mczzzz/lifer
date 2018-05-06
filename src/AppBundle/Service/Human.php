@@ -20,10 +20,23 @@ class Human {
     public function __construct($entityManager,$user) {
 
         $this->entityManager = $entityManager;
-        $this->Me = $user->getToken()->getUser();
+        $this->Me = new \stdClass();
+        $this->Me->User = $user->getToken()->getUser();
 
+        //calcul de mon age :
+        var dump($this->Me->User->getBirthDate());
+        die();
         //start MyInfos
-
+        //Quand somme nous
+        //calcul de mon Age
+        //recuperation de ma localisation
+            //Terre
+                //Europe
+                    //France
+                        //Region
+                            //Seine et Marne
+                                //Saint Fargeau ponthierry
+                                    //40 avenue Albert beaufils
     }
 
     protected function MyContextObject(){
