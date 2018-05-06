@@ -29,7 +29,7 @@ class Human {
 
 
         //je load mon arbre
-        $MyTreeRepo = $this->entityManager->getRepository(Users_tree::class);
+        $MyTreeRepo = $this->entityManager->getRepository(UsersTree::class);
         $MyTree = $MyTreeRepo->findBy(array('user_id' => $this->Me->getId()), array('parent' => 'ASC'));
         var_dump($MyTree);
         die();
