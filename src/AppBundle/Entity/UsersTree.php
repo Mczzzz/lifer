@@ -21,12 +21,7 @@ class UsersTree
      */
     private $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="genre", type="string", columnDefinition="enum('USER', 'OBJECT')")
-     */
-    private $genre;
+
 
 
     /**
