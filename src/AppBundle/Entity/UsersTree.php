@@ -22,6 +22,13 @@ class UsersTree
     private $id;
 
     /**
+     * @var enum
+     *
+     * @ORM\Column(name="type", type="string", columnDefinition="enum('USER', 'OBJECT')")
+     */
+    private $type;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="user_id", type="integer", nullable=false)
@@ -198,6 +205,26 @@ class UsersTree
     public function setUserId($userId)
     {
         $this->userId = $userId;
+
+        return $this;
+    }
+
+    /**
+     * @return enum
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param enum $type
+     *
+     * @return self
+     */
+    public function setType(enum $type)
+    {
+        $this->type = $type;
 
         return $this;
     }
