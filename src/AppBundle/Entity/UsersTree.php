@@ -128,7 +128,7 @@ class UsersTree
      *
      * @return self
      */
-    public function setType(enum $type)
+    public function setType($type)
     {
         $this->type = $type;
 
