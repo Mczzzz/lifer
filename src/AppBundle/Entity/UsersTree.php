@@ -22,7 +22,7 @@ class UsersTree
     private $id;
 
     /**
-     * @var enum
+     * @var int
      *
      * @ORM\Column(name="type", type="string", columnDefinition="enum('USER', 'OBJECT')")
      */
