@@ -22,6 +22,12 @@ class Trees
     private $id;
 
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", columnDefinition="enum('USER', 'OBJECT')")
+     */
+    private $type;
 
 
     /**
@@ -59,9 +65,9 @@ class Trees
     /**
      * @var int
      *
-     * @ORM\Column(name="user_id", type="integer", nullable=false)
+     * @ORM\Column(name="type_id", type="integer", nullable=false)
      */
-    private $userId;
+    private $typeId;
 
 
     /**
