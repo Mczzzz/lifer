@@ -28,6 +28,39 @@ class UsersTree
      */
     private $type;
 
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="internal_id", type="integer", nullable=false)
+     */
+    private $internalId;
+
+
+   /**
+     * @var int
+     *
+     * @ORM\Column(name="left_id", type="integer", nullable=false)
+     */
+    private $leftId;
+
+
+   /**
+     * @var int
+     *
+     * @ORM\Column(name="right_id", type="integer", nullable=false)
+     */
+    private $rightId;
+
+
+   /**
+     * @var int
+     *
+     * @ORM\Column(name="level", type="integer", nullable=false)
+     */
+    private $level;
+
+
     /**
      * @var int
      *
@@ -55,9 +88,9 @@ class UsersTree
     /**
      * @var int
      *
-     * @ORM\Column(name="parent", type="integer", nullable=true)
+     * @ORM\Column(name="parentId", type="integer", nullable=true)
      */
-    private $parent;
+    private $parentId;
 
 
     /**
@@ -81,113 +114,106 @@ class UsersTree
         return $this->id;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Objects_infos
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
    
-
-
-
+    /**
+     * @return enum
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
 
     /**
-     * Set update
+     * @param enum $type
      *
-     * @param datetime $update
-     *
-     * @return Updates_infos
+     * @return self
      */
-    public function setUpdate($update)
+    public function setType(enum $type)
     {
-        $this->update = $update;
+        $this->type = $type;
 
         return $this;
     }
 
     /**
-     * Get update
-     *
-     * @return datetime
-     */
-    public function getUpdate()
-    {
-        return $this->update;
-    }
-
-
-
-    /**
-     * Set parent
-     *
-     * @param integer $parent
-     *
-     * @return Parents_infos
-     */
-    public function setParent($parent)
-    {
-        $this->parent = $parent;
-
-        return $this;
-    }
-
-    /**
-     * Get parent
-     *
-     * @return integer
-     */
-    public function getParent()
-    {
-        return $this->parent;
-    }
-
-
-    /**
-     * Set creator
-     *
-     * @param integer $creator
-     *
-     * @return Objects
-     */
-    public function setCreator($creator)
-    {
-        $this->creator = $creator;
-
-        return $this;
-    }
-
-    /**
-     * Get creator
-     *
      * @return int
      */
-    public function getCreator()
+    public function getInternalId()
     {
-        return $this->creator;
+        return $this->internalId;
     }
 
+    /**
+     * @param int $internalId
+     *
+     * @return self
+     */
+    public function setInternalId($internalId)
+    {
+        $this->internalId = $internalId;
 
+        return $this;
+    }
 
+    /**
+     * @return int
+     */
+    public function getLeftId()
+    {
+        return $this->leftId;
+    }
 
+    /**
+     * @param int $leftId
+     *
+     * @return self
+     */
+    public function setLeftId($leftId)
+    {
+        $this->leftId = $leftId;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getRightId()
+    {
+        return $this->rightId;
+    }
+
+    /**
+     * @param int $rightId
+     *
+     * @return self
+     */
+    public function setRightId($rightId)
+    {
+        $this->rightId = $rightId;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLevel()
+    {
+        return $this->level;
+    }
+
+    /**
+     * @param int $level
+     *
+     * @return self
+     */
+    public function setLevel($level)
+    {
+        $this->level = $level;
+
+        return $this;
+    }
 
     /**
      * @return int
@@ -210,21 +236,81 @@ class UsersTree
     }
 
     /**
-     * @return enum
+     * @return string
      */
-    public function getType()
+    public function getName()
     {
-        return $this->type;
+        return $this->name;
     }
 
     /**
-     * @param enum $type
+     * @param string $name
      *
      * @return self
      */
-    public function setType(enum $type)
+    public function setName($name)
     {
-        $this->type = $type;
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return datetime
+     */
+    public function getUpdate()
+    {
+        return $this->update;
+    }
+
+    /**
+     * @param datetime $update
+     *
+     * @return self
+     */
+    public function setUpdate(datetime $update)
+    {
+        $this->update = $update;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getParentId()
+    {
+        return $this->parentId;
+    }
+
+    /**
+     * @param int $parentId
+     *
+     * @return self
+     */
+    public function setParentId($parentId)
+    {
+        $this->parentId = $parentId;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCreator()
+    {
+        return $this->creator;
+    }
+
+    /**
+     * @param int $creator
+     *
+     * @return self
+     */
+    public function setCreator($creator)
+    {
+        $this->creator = $creator;
 
         return $this;
     }
