@@ -36,7 +36,7 @@ class Human {
         //TODO : Les arbres de base (humain en fonction des container plus consequant pays ... sont à ajouter)
         if($MyTreeResult){
 
-            $Mytree = new \sdtClass();
+            $Mytree = new \stdClass();
 
             foreach($MyTreeResult as $MyNode){
 
