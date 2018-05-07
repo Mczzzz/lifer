@@ -30,7 +30,24 @@ class Human {
 
         //je load mon arbre
         $MyTreeRepo = $this->entityManager->getRepository(UsersTree::class);
-        $MyTree = $MyTreeRepo->findBy(array('userId' => $this->Me->User->getId()), array('parent' => 'ASC'));
+        $MyTreeResult = $MyTreeRepo->findBy(array('userId' => $this->Me->User->getId()), array('parent' => 'ASC'));
+
+        //je le met en forme et je l'insert dans mon objet Me
+        //TODO : Les arbres de base (humain en fonction des container plus consequant pays ... sont à ajouter)
+        if($MyTreeResult){
+
+            $Mytree = new \sdtClass();
+
+            foreach($MyTreeResult as $MyNode){
+
+                var_dump($MyNode->getParent());
+                die();
+
+            }
+
+
+        }
+
         var_dump($MyTree);
         die();
 
