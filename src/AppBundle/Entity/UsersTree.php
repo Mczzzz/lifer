@@ -22,7 +22,7 @@ class UsersTree
     private $id;
 
     /**
-     * @var int
+     * @var enum
      *
      * @ORM\Column(name="type", type="string", columnDefinition="enum('USER', 'OBJECT')")
      */
@@ -116,7 +116,7 @@ class UsersTree
 
    
     /**
-     * @return enum
+     * @return string
      */
     public function getType()
     {
@@ -124,7 +124,7 @@ class UsersTree
     }
 
     /**
-     * @param enum $type
+     * @param string $type
      *
      * @return self
      */
