@@ -22,36 +22,7 @@ class Trees
     private $id;
 
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="type", type="string", columnDefinition="enum('USER', 'OBJECT')")
-     */
-    private $type;
 
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="internal_id", type="integer", nullable=false)
-     */
-    private $internalId;
-
-
-   /**
-     * @var int
-     *
-     * @ORM\Column(name="left_id", type="integer", nullable=false)
-     */
-    private $leftId;
-
-
-   /**
-     * @var int
-     *
-     * @ORM\Column(name="right_id", type="integer", nullable=false)
-     */
-    private $rightId;
 
 
    /**
@@ -62,20 +33,7 @@ class Trees
     private $level;
 
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="type_id", type="integer", nullable=false)
-     */
-    private $typeId;
 
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="Name", type="string", length=255)
-     */
-    private $name;
 
 
     /**
@@ -86,28 +44,95 @@ class Trees
     private $update;
 
 
-    /**
+   /**
      * @var int
      *
-     * @ORM\Column(name="parentId", type="integer", nullable=true)
+     * @ORM\Column(name="object_id", type="integer", nullable=false)
      */
-    private $parentId;
+    private $objectId;
 
 
-    /**
+
+   /**
      * @var int
      *
-     * @ORM\Column(name="creator", type="integer", nullable=false)
+     * @ORM\Column(name="asc_top", type="integer", nullable=true)
      */
-    private $creator;
+    private $ascTop;
 
-    
+   /**
+     * @var int
+     *
+     * @ORM\Column(name="asc2", type="integer", nullable=true)
+     */
+    private $asc2;
+
+   /**
+     * @var int
+     *
+     * @ORM\Column(name="asc3", type="integer", nullable=true)
+     */
+    private $asc3;
+
+   /**
+     * @var int
+     *
+     * @ORM\Column(name="asc4", type="integer", nullable=true)
+     */
+    private $asc4;
+
+   /**
+     * @var int
+     *
+     * @ORM\Column(name="asc5", type="integer", nullable=true)
+     */
+    private $asc5;
+
+   /**
+     * @var int
+     *
+     * @ORM\Column(name="asc6", type="integer", nullable=true)
+     */
+    private $asc6;
+
+   /**
+     * @var int
+     *
+     * @ORM\Column(name="asc7", type="integer", nullable=true)
+     */
+    private $asc7;
+
+   /**
+     * @var int
+     *
+     * @ORM\Column(name="asc8", type="integer", nullable=true)
+     */
+    private $asc8;
+
+
+
+   /**
+     * @var int
+     *
+     * @ORM\Column(name="asc9", type="integer", nullable=true)
+     */
+    private $asc9;
+
+
+   /**
+     * @var int
+     *
+     * @ORM\Column(name="asc10", type="integer", nullable=true)
+     */
+    private $asc10;
+
+
+
+
 
 
 
     /**
-     * Get id
-     *
      * @return int
      */
     public function getId()
@@ -115,65 +140,14 @@ class Trees
         return $this->id;
     }
 
-   
-
-
     /**
-     * @return int
-     */
-    public function getInternalId()
-    {
-        return $this->internalId;
-    }
-
-    /**
-     * @param int $internalId
+     * @param int $id
      *
      * @return self
      */
-    public function setInternalId($internalId)
+    public function setId($id)
     {
-        $this->internalId = $internalId;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getLeftId()
-    {
-        return $this->leftId;
-    }
-
-    /**
-     * @param int $leftId
-     *
-     * @return self
-     */
-    public function setLeftId($leftId)
-    {
-        $this->leftId = $leftId;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getRightId()
-    {
-        return $this->rightId;
-    }
-
-    /**
-     * @param int $rightId
-     *
-     * @return self
-     */
-    public function setRightId($rightId)
-    {
-        $this->rightId = $rightId;
+        $this->id = $id;
 
         return $this;
     }
@@ -194,46 +168,6 @@ class Trees
     public function setLevel($level)
     {
         $this->level = $level;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getUserId()
-    {
-        return $this->userId;
-    }
-
-    /**
-     * @param int $userId
-     *
-     * @return self
-     */
-    public function setUserId($userId)
-    {
-        $this->userId = $userId;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
 
         return $this;
     }
@@ -261,19 +195,19 @@ class Trees
     /**
      * @return int
      */
-    public function getParentId()
+    public function getObjectId()
     {
-        return $this->parentId;
+        return $this->objectId;
     }
 
     /**
-     * @param int $parentId
+     * @param int $objectId
      *
      * @return self
      */
-    public function setParentId($parentId)
+    public function setObjectId($objectId)
     {
-        $this->parentId = $parentId;
+        $this->objectId = $objectId;
 
         return $this;
     }
@@ -281,19 +215,199 @@ class Trees
     /**
      * @return int
      */
-    public function getCreator()
+    public function getAscTop()
     {
-        return $this->creator;
+        return $this->ascTop;
     }
 
     /**
-     * @param int $creator
+     * @param int $ascTop
      *
      * @return self
      */
-    public function setCreator($creator)
+    public function setAscTop($ascTop)
     {
-        $this->creator = $creator;
+        $this->ascTop = $ascTop;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAsc2()
+    {
+        return $this->asc2;
+    }
+
+    /**
+     * @param int $asc2
+     *
+     * @return self
+     */
+    public function setAsc2($asc2)
+    {
+        $this->asc2 = $asc2;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAsc3()
+    {
+        return $this->asc3;
+    }
+
+    /**
+     * @param int $asc3
+     *
+     * @return self
+     */
+    public function setAsc3($asc3)
+    {
+        $this->asc3 = $asc3;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAsc4()
+    {
+        return $this->asc4;
+    }
+
+    /**
+     * @param int $asc4
+     *
+     * @return self
+     */
+    public function setAsc4($asc4)
+    {
+        $this->asc4 = $asc4;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAsc5()
+    {
+        return $this->asc5;
+    }
+
+    /**
+     * @param int $asc5
+     *
+     * @return self
+     */
+    public function setAsc5($asc5)
+    {
+        $this->asc5 = $asc5;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAsc6()
+    {
+        return $this->asc6;
+    }
+
+    /**
+     * @param int $asc6
+     *
+     * @return self
+     */
+    public function setAsc6($asc6)
+    {
+        $this->asc6 = $asc6;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAsc7()
+    {
+        return $this->asc7;
+    }
+
+    /**
+     * @param int $asc7
+     *
+     * @return self
+     */
+    public function setAsc7($asc7)
+    {
+        $this->asc7 = $asc7;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAsc8()
+    {
+        return $this->asc8;
+    }
+
+    /**
+     * @param int $asc8
+     *
+     * @return self
+     */
+    public function setAsc8($asc8)
+    {
+        $this->asc8 = $asc8;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAsc9()
+    {
+        return $this->asc9;
+    }
+
+    /**
+     * @param int $asc9
+     *
+     * @return self
+     */
+    public function setAsc9($asc9)
+    {
+        $this->asc9 = $asc9;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAsc10()
+    {
+        return $this->asc10;
+    }
+
+    /**
+     * @param int $asc10
+     *
+     * @return self
+     */
+    public function setAsc10($asc10)
+    {
+        $this->asc10 = $asc10;
 
         return $this;
     }
