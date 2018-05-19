@@ -64,7 +64,6 @@ class Objects
      * @var int
      *
      * @ORM\Column(name="ContainerIn", type="integer", nullable=true)
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Objects")
      */
     private $containerIn;
 
@@ -72,7 +71,8 @@ class Objects
     /**
      * @var int
      *
-     * @ORM\Column(name="creator", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="objects") 
+     * @ORM\JoinColumn(name="creator", referencedColumnName="id")
      */
     private $creator;
 
