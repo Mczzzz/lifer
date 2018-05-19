@@ -185,7 +185,7 @@ class Trees
      *
      * @return self
      */
-    public function setUpdate(datetime $update)
+    public function setUpdate($update)
     {
         $this->update = $update;
 
