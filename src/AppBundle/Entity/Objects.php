@@ -64,6 +64,7 @@ class Objects
      * @var int
      *
      * @ORM\Column(name="ContainerIn", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Objects")
      */
     private $containerIn;
 
