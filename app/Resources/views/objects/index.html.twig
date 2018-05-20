@@ -22,11 +22,11 @@
             <tr>
                 <td><a href="{{ path('objects_show', { 'id': object.id }) }}">{{ object.id }}</a></td>
                 <td>{{ object.name }}</td>
-                <td>{{ object.owner }}</td>
-                <td>{{ object.usufruct }}</td>
+                <td>{{ object.owner.firstName }}</td>
+                <td>{{ object.usufruct.firstName }}</td>
                 <td>{{ object.localisation }}</td>
-                <td>{{ object.containerStore }}</td>
-                <td>{{ object.containerIn }}</td>
+                <td>{{ object.containerStore.Name }}</td>
+                <td>{{ object.containerIn.Name }}</td>
                 <td>{{ object.creator }}</td>
                 <td>
                     <ul>

@@ -31,7 +31,8 @@ class Objects
     /**
      * @var int
      *
-     * @ORM\Column(name="owner", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Humans")
+     * @ORM\JoinColumn(name="owner", referencedColumnName="id")
      */
     private $owner;
 
@@ -39,7 +40,8 @@ class Objects
     /**
      * @var int
      *
-     * @ORM\Column(name="usufruct", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Humans", inversedBy="objects")
+     * @ORM\JoinColumn(name="usufruct", referencedColumnName="id")
      */
     private $usufruct;
 
@@ -56,14 +58,16 @@ class Objects
     /**
      * @var int
      *
-     * @ORM\Column(name="ContainerStore", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Objects", inversedBy="objects")
+     * @ORM\JoinColumn(name="containerStore", referencedColumnName="id")
      */
     private $containerStore;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="ContainerIn", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Objects", inversedBy="objects")
+     * @ORM\JoinColumn(name="containerIn", referencedColumnName="id")
      */
     private $containerIn;
 
