@@ -39,7 +39,7 @@ class ObjectsController extends Controller
      */
     public function newAction(Request $request)
     {
-        $object = new Objects();
+        $object = new Object();
         $form = $this->createForm('AppBundle\Form\ObjectsType', $object);
         $form->handleRequest($request);
 

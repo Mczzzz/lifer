@@ -13,7 +13,7 @@ class ObjectsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('owner')->add('usufruct')->add('localisation')->add('containerStore')->add('containerIn')->add('creator');
+        $builder->add('name')->add('localisation')->add('owner')->add('usufruct')->add('containerStore')->add('containerIn')->add('creator');
     }/**
      * {@inheritdoc}
      */
