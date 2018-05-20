@@ -6,6 +6,9 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use AppBundle\Entity\Humans;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
 class ObjectsType extends AbstractType
 {
     /**
@@ -13,7 +16,12 @@ class ObjectsType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('owner')->add('usufruct')->add('localisation')->add('containerStore')->add('containerIn')->add('creator');
+        $builder->add('name')
+        ->add('owner', EntityType::class, array(
+            'class' => Humans::class,
+            'choice_label' => 'firstName',
+        ))
+        ->add('usufruct')->add('localisation')->add('containerStore')->add('containerIn')->add('creator');
     }/**
      * {@inheritdoc}
      */
