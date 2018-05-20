@@ -20,8 +20,8 @@ class ObjectsType extends AbstractType
         ->add('owner', EntityType::class, array(
             'class' => Humans::class,
             'choice_label' => 'firstName',
-        ))
-        ->add('usufruct')->add('localisation')->add('containerStore')->add('containerIn')->add('creator');
+        ));
+        //  ->add('usufruct')->add('localisation')->add('containerStore')->add('containerIn')->add('creator');
     }/**
      * {@inheritdoc}
      */
