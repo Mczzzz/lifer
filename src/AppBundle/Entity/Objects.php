@@ -81,6 +81,12 @@ class Objects
     private $creator;
 
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="public", type="integer", nullable=true)
+     */
+    private $public;
 
 
 
@@ -271,6 +277,24 @@ class Objects
 
 
 
+    /**
+     * @return int
+     */
+    public function getPublic()
+    {
+        return $this->public;
+    }
 
+    /**
+     * @param int $public
+     *
+     * @return self
+     */
+    public function setPublic($public)
+    {
+        $this->public = $public;
+
+        return $this;
+    }
 }
 
