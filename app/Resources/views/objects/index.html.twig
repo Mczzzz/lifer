@@ -8,12 +8,7 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
-                <th>Owner</th>
-                <th>Usufruct</th>
                 <th>Localisation</th>
-                <th>Containerstore</th>
-                <th>Containerin</th>
-                <th>Creator</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -22,12 +17,7 @@
             <tr>
                 <td><a href="{{ path('objects_show', { 'id': object.id }) }}">{{ object.id }}</a></td>
                 <td>{{ object.name }}</td>
-                <td>{{ object.owner.firstName }}</td>
-                <td>{{ object.usufruct.firstName }}</td>
                 <td>{{ object.localisation }}</td>
-                <td>{{ object.containerStore.Name }}</td>
-                <td>{{ object.containerIn.Name }}</td>
-                <td>{{ object.creator }}</td>
                 <td>
                     <ul>
                         <li>
