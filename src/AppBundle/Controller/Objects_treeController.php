@@ -45,6 +45,8 @@ class Objects_treeController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $ndt = new \Datetime('now');
+            $objects_tree->setUpdate($ndt);
             $em->persist($objects_tree);
             $em->flush();
 
