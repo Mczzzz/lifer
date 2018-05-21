@@ -2,10 +2,15 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Objects_tree;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+use AppBundle\Entity\Objects_tree;
 
 /**
  * Objects_tree controller.
@@ -136,4 +141,21 @@ class Objects_treeController extends Controller
             ->getForm()
         ;
     }
+
+
+    //TODO get structure tree of an object
+    //send json
+
+    /**
+     * @Route("/get-tree/{id}", name="get-tree_id")
+     * @Method("GET")
+     */
+    public function getObjectTree($id)
+    {
+
+       
+
+        return new Response('OK');
+
+    }  
 }
