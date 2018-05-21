@@ -24,7 +24,11 @@ class Objects_treeType extends AbstractType
                     'class' => Objects::class,
                     'choice_label' => 'Name',
                 ))
-                ->add('parent')
+                ->add('parent', EntityType::class, array(
+                    'class' => Objects_tree::class,
+                    'choice_label' => 'name',
+                    'required' => false,
+                ))
                 ->add('creator', EntityType::class, array(
                     'class' => User::class,
                     'choice_label' => 'username',
