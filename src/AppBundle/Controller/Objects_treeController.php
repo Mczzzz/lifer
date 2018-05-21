@@ -47,6 +47,7 @@ class Objects_treeController extends Controller
             $em = $this->getDoctrine()->getManager();
             $ndt = new \Datetime('now');
             $objects_tree->setUpdate($ndt);
+            $objects_tree->setCreator($this->getUser()->getId());
             $em->persist($objects_tree);
             $em->flush();
 

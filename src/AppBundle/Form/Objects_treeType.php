@@ -7,7 +7,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Doctrine\ORM\EntityRepository;
 
-use AppBundle\Entity\User;
 use AppBundle\Entity\Objects;
 use AppBundle\Entity\Objects_tree;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -29,10 +28,7 @@ class Objects_treeType extends AbstractType
                     'choice_label' => 'name',
                     'required' => false,
                 ))
-                ->add('creator', EntityType::class, array(
-                    'class' => User::class,
-                    'choice_label' => 'username',
-                ));
+            );
     }/**
      * {@inheritdoc}
      */
