@@ -41,7 +41,7 @@ class Objects_tree
     /**
      * @var datetime
      *
-     * @ORM\Column(name="update", type="datetime")
+     * @ORM\Column(name="update_ts", type="datetime")
      */
     private $update;
 
