@@ -22,6 +22,7 @@ class Objects_treeType extends AbstractType
                 ->add('object', EntityType::class, array(
                     'class' => Objects::class,
                     'choice_label' => 'Name',
+                    'placeholder' => 'Selectionnez un objet',
                 ))
                 ->add('parent', EntityType::class, array(
                     'class' => Objects_tree::class,
