@@ -24,16 +24,7 @@ class Objects_treeType extends AbstractType
                     'class' => Objects::class,
                     'choice_label' => 'Name',
                 ))
-                ->add('parent', EntityType::class, array(
-                    'class' => Objects_tree::class,
-                    'choice_label' => 'name',
-                    'required' => false,
-                    'query_builder' => function (EntityRepository $er) {
-                    return $er->createQueryBuilder('u')
-                            ->where('u.creator = 3')
-                            ->orderBy('u.name', 'ASC');
-    },
-                ))
+                ->add('parent')
                 ->add('creator', EntityType::class, array(
                     'class' => User::class,
                     'choice_label' => 'username',
