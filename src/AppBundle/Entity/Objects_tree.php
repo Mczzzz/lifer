@@ -24,7 +24,8 @@ class Objects_tree
     /**
      * @var int
      *
-     * @ORM\Column(name="object", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Objects", inversedBy="objects")
+     * @ORM\JoinColumn(name="object", referencedColumnName="id")
      */
     private $object;
 
@@ -48,7 +49,8 @@ class Objects_tree
     /**
      * @var int
      *
-     * @ORM\Column(name="parent", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Objects_tree", inversedBy="objects_tree")
+     * @ORM\JoinColumn(name="parent", referencedColumnName="id")
      */
     private $parent;
 
@@ -56,7 +58,8 @@ class Objects_tree
     /**
      * @var int
      *
-     * @ORM\Column(name="creator", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="objects_tree") 
+     * @ORM\JoinColumn(name="creator", referencedColumnName="id")
      */
     private $creator;
 
