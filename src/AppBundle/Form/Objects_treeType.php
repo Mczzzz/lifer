@@ -8,6 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use AppBundle\Entity\User;
 use AppBundle\Entity\Objects;
+use AppBundle\Entity\Objects_tree;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class Objects_treeType extends AbstractType
@@ -28,8 +29,8 @@ class Objects_treeType extends AbstractType
                     'choice_label' => 'Name',
                 ))
                 ->add('creator', EntityType::class, array(
-                    'class' => User::class,
-                    'choice_label' => 'username',
+                    'class' => Objects_tree::class,
+                    'choice_label' => 'name',
                 ));
     }/**
      * {@inheritdoc}
