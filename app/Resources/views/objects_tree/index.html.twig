@@ -17,7 +17,7 @@
             <tr>
                 <td><a href="{{ path('objects_tree_show', { 'id': objects_tree.id }) }}">{{ objects_tree.id }}</a></td>
                 <td>{{ objects_tree.name }}</td>
-                <td>{{ objects_tree.update }}</td>
+                <td>{{ objects_tree.update|date('Y-m-d H:i:s') }}</td>
                 <td>
                     <ul>
                         <li>
