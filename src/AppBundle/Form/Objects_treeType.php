@@ -31,7 +31,7 @@ class Objects_treeType extends AbstractType
                     'query_builder' => function (EntityRepository $er) {
                     return $er->createQueryBuilder('u')
                             ->where('u.creator = 3')
-                            ->orderBy('u.username', 'ASC');
+                            ->orderBy('u.name', 'ASC');
     },
                 ))
                 ->add('creator', EntityType::class, array(
