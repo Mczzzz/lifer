@@ -82,11 +82,19 @@ class Objects
 
 
     /**
-     * @var int
+     * @var boolean
      *
-     * @ORM\Column(name="public", type="integer", nullable=true)
+     * @ORM\Column(name="public", type="boolean", nullable=true)
      */
     private $public;
+
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="topPerso", type="boolean", nullable=true)
+     */
+    private $topPerso;
 
 
 
@@ -277,22 +285,46 @@ class Objects
 
 
 
+
     /**
-     * @return int
+     * @return boolean
      */
-    public function getPublic()
+    public function isPublic()
     {
         return $this->public;
     }
 
     /**
-     * @param int $public
+     * @param boolean $public
      *
      * @return self
      */
     public function setPublic($public)
     {
         $this->public = $public;
+
+        return $this;
+    }
+
+
+
+
+    /**
+     * @return boolean
+     */
+    public function isTopPerso()
+    {
+        return $this->topPerso;
+    }
+
+    /**
+     * @param boolean $topPerso
+     *
+     * @return self
+     */
+    public function setTopPerso($topPerso)
+    {
+        $this->topPerso = $topPerso;
 
         return $this;
     }
