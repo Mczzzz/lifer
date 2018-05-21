@@ -19,7 +19,6 @@ class Objects_treeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name')
-                ->add('update')
                 ->add('object', EntityType::class, array(
                     'class' => Objects::class,
                     'choice_label' => 'Name',
