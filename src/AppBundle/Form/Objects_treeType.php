@@ -27,8 +27,7 @@ class Objects_treeType extends AbstractType
                     'class' => Objects_tree::class,
                     'choice_label' => 'name',
                     'required' => false,
-                ))
-            );
+                ));
     }/**
      * {@inheritdoc}
      */
