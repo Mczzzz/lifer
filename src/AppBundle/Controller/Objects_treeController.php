@@ -152,9 +152,10 @@ class Objects_treeController extends Controller
      */
     public function getObjectTree($id)
     {
-
-       
-
+         $entityManager = $this->getDoctrine()->getManager();
+         $ObjTree = $entityManager->getRepository(Objects_tree::class)->findBy(array('object'=> $id));
+         var_dump($ObjTree);
+         die();
         return new Response('OK');
 
     }  
