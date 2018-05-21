@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Doctrine\ORM\EntityRepository;
 
 use AppBundle\Entity\User;
 use AppBundle\Entity\Objects;
@@ -27,6 +28,11 @@ class Objects_treeType extends AbstractType
                     'class' => Objects_tree::class,
                     'choice_label' => 'name',
                     'required' => false,
+                    'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('u')
+                            ->where('u.creator = 3')
+                            ->orderBy('u.username', 'ASC');
+    },
                 ))
                 ->add('creator', EntityType::class, array(
                     'class' => User::class,
