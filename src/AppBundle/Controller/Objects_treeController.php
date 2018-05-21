@@ -153,9 +153,18 @@ class Objects_treeController extends Controller
     public function getObjectTree($id)
     {
          $entityManager = $this->getDoctrine()->getManager();
-         $ObjTree = $entityManager->getRepository(Objects_tree::class)->findBy(array('object'=> $id));
-         var_dump($ObjTree);
+         $ObjTree = $entityManager->getRepository(Objects_tree::class)->findBy(array('object'=> $id),array('parent' => 'ASC'));
+
+         $result = array();
+         foreach($ObjTree as $Tree){
+            array_push($result,$Tree->getName());
+         }
+
+         var_dump($result);
          die();
+         //Il faut ordonner les parents et y assigner les enfants
+         //faire un retour json
+
         return new Response('OK');
 
     }  
