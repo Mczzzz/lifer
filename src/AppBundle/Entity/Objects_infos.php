@@ -24,7 +24,8 @@ class Objects_infos
     /**
      * @var int
      *
-     * @ORM\Column(name="object", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Objects", inversedBy="objects")
+     * @ORM\JoinColumn(name="object", referencedColumnName="id")
      */
     private $object;
 
@@ -87,9 +88,19 @@ class Objects_infos
     /**
      * @var int
      *
-     * @ORM\Column(name="creator", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="objects_infos") 
+     * @ORM\JoinColumn(name="creator", referencedColumnName="id")
      */
     private $creator;
+
+
+    /**
+     * @var int
+     *
+     * @ORM\ManyToOne(targetEntity="Objects_tree", inversedBy="objects_infos")
+     * @ORM\JoinColumn(name="leaf", referencedColumnName="id")
+     */
+    private $leaf;
 
 
 
@@ -241,6 +252,31 @@ class Objects_infos
     public function setCreator($creator)
     {
         $this->creator = $creator;
+
+        return $this;
+    }
+
+
+
+
+
+
+    /**
+     * @return int
+     */
+    public function getLeaf()
+    {
+        return $this->leaf;
+    }
+
+    /**
+     * @param int $leaf
+     *
+     * @return self
+     */
+    public function setLeaf($leaf)
+    {
+        $this->leaf = $leaf;
 
         return $this;
     }
