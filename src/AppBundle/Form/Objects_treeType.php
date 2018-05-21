@@ -8,7 +8,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use AppBundle\Entity\User;
 use AppBundle\Entity\Objects;
-use AppBundle\Entity\Objects;
+use AppBundle\Entity\Objects_tree;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class Objects_treeType extends AbstractType
