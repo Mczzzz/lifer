@@ -154,20 +154,39 @@ class Objects_treeController extends Controller
     {
          $entityManager = $this->getDoctrine()->getManager();
          $ObjTree = $entityManager->getRepository(Objects_tree::class)->findBy(array('object'=> $id),array('parent' => 'ASC'));
-
          $result = new \stdClass();
-
-         foreach($ObjTree as $Tree){
-
+	 $archiLevel = array();
+	 $objectArray =array();
+	 $i = 0;
+	 foreach($ObjTree as $Tree){
+	    $objectArray[$Tree->getId()]= $i;	 
             if($Tree->getParent() == null){
-                $result->{$Tree->getId()} = new \stdClass();
-                $result->{$Tree->getId()}->Name = $Tree->getName(); 
-            } 
-           // array_push($result,$Tree->getName());
-         }
+	        $archiLevel[$Tree->getId()] = 0;	   
+	    }else{
+		 //   var_dump($Tree->getParent()); 
+		 //  die(); 
+               if(array_key_exists($Tree->getParent()->getId(), $archiLevel)){    
+		    $archiLevel[$Tree->getId()] = $archiLevel[$Tree->getParent()->getId()] + 1;
+	       
+	       } 
 
-         var_dump($result);
-         die();
+	    }
+    	  $i++;	    
+	 }
+	 asort($archiLevel);
+	 var_dump($archiLevel);
+	 var_dump($objectArray);
+	
+	 $arrayText = array();
+	 foreach($archiLevel as $key=>$value){
+
+          $arrayText[$ObjTree[$objectArray[$key]]->getName()] = 0;
+	    
+         
+	 }
+	 var_dump($arrayText);
+	 die();
+	 //recupe aussi l'id de son parent
          //Il faut ordonner les parents et y assigner les enfants
          //faire un retour json
 
