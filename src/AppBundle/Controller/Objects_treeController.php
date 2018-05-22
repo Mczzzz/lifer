@@ -155,9 +155,15 @@ class Objects_treeController extends Controller
          $entityManager = $this->getDoctrine()->getManager();
          $ObjTree = $entityManager->getRepository(Objects_tree::class)->findBy(array('object'=> $id),array('parent' => 'ASC'));
 
-         $result = array();
+         $result = new \stdClass();
+
          foreach($ObjTree as $Tree){
-            array_push($result,$Tree->getName());
+
+            if($Tree->getParent() == null){
+                $result->{$Tree->getId()} = new \stdClass();
+                $result->{$Tree->getId()}->Name = $Tree->getName(); 
+            } 
+           // array_push($result,$Tree->getName());
          }
 
          var_dump($result);
