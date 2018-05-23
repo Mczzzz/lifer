@@ -200,28 +200,22 @@ class Objects_treeController extends Controller
             $i = 0;
             foreach($ObjectStruct[$NodeId]['Parents'] as $parent){
 
-                if(is_int($parent)){
 
-                    $ObjectStruct[$parent]['Childs'] = array($NodeId => $ObjectStruct[$NodeId]);
-
-                }else{
-                    var_dump($parent);
-                    die();
                 if($i == 0){
 
-                    $ObjectStruct[$parent[$i]]['Childs'] = array($NodeId => $ObjectStruct[$NodeId]);
+                    $ObjectStruct[$parent]['Childs'] = array($NodeId => $ObjectStruct[$NodeId]);
                 
                 }else{
                 
-                    $ObjectStruct[$parent[$i]]['Childs'] = array($NodeId => $lastParent);
+                    $ObjectStruct[$parent]['Childs'] = array($NodeId => $lastParent);
                 
                 }
                 
 
-                $lastParent = $ObjectStruct[$parent[$i]];
+                $lastParent = $ObjectStruct[$parent];
                 $i++;
 
-                }
+                
             }
             
             
