@@ -213,7 +213,7 @@ class Objects_treeController extends Controller
     	  $i++;	    */
 	 }
 
-        var_dump($ObjectStruct);
+        print_r(json_encode($ObjectStruct);
         die();
 	/* asort($archiLevel);
 	 var_dump($archiLevel);
