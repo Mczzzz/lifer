@@ -199,7 +199,7 @@ class Objects_treeController extends Controller
 
             //var_dump($ObjectStruct[$NodeId]['Parents']);
             //die();
-            array_push($ObjectStructFinal[$ObjectStruct[$NodeId]['Parents']]['Childs'],$ObjectStruct[$NodeId]);
+            array_push($ObjectStructFinal[$ObjectStruct[$NodeId]['Parents']]['Childs'],'test');
 
         }
 
