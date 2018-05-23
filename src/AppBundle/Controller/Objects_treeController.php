@@ -207,12 +207,12 @@ class Objects_treeController extends Controller
                 
                 }else{
                 
-                    $ObjectStruct[$parent]['Childs'] = array($NodeId => $lastParent);
+                    $ObjectStruct[$parent]['Childs'] = array($lastParentId => $lastParent);
                 
                 }
                 
-
-                $lastParent = $ObjectStruct[$parent];
+                $lastParentId = $parent;
+                $lastParent   = $ObjectStruct[$parent];
                 $i++;
 
                 
