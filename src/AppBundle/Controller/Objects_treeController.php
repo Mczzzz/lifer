@@ -197,18 +197,21 @@ class Objects_treeController extends Controller
         if(count($ObjectStruct[$NodeId]['Parents']) > 0){
 
 
-
-           
             $i = 0;
             foreach($ObjectStruct[$NodeId]['Parents'] as $parent){
 
-                var_dump($parent);
-                die();
-                print_r("NodeId: ".$NodeId."<br>");
-                print_r("Parent: ".$parent[$i]."<br>");
+                if(is_int($parent)){
+
+                    $ObjectStruct[$parent]['Childs'] = array($NodeId => $ObjectStruct[$NodeId]);
+
+                }else{
+
+
                 $ObjectStruct[$parent[$i]]['Childs'] = array($NodeId => $ObjectStruct[$NodeId]);
 
-            $i++;
+                $i++;
+
+                }
             }
             
             
