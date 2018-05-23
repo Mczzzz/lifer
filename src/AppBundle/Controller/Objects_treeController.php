@@ -157,17 +157,17 @@ class Objects_treeController extends Controller
          $result = new \stdClass();
 	 $archiLevel = array();
 	 $objectArray =array();
+	 $objectParent=array();
 	 $i = 0;
 	 foreach($ObjTree as $Tree){
 	    $objectArray[$Tree->getId()]= $i;	 
             if($Tree->getParent() == null){
 	        $archiLevel[$Tree->getId()] = 0;	   
+		$objectParent[$Tree->getId()] = 0;
 	    }else{
-		 //   var_dump($Tree->getParent()); 
-		 //  die(); 
                if(array_key_exists($Tree->getParent()->getId(), $archiLevel)){    
 		    $archiLevel[$Tree->getId()] = $archiLevel[$Tree->getParent()->getId()] + 1;
-	       
+	      $objectParent[$Tree->getId()]= $Tree->getParent()->getId(); 
 	       } 
 
 	    }
@@ -180,11 +180,13 @@ class Objects_treeController extends Controller
 	 $arrayText = array();
 	 foreach($archiLevel as $key=>$value){
 
-          $arrayText[$ObjTree[$objectArray[$key]]->getName()] = 0;
+		 $arrayText[$ObjTree[$objectArray[$key]]->getName()] = array();
+
 	    
          
 	 }
 	 var_dump($arrayText);
+	 var_dump($objectParent);
 	 die();
 	 //recupe aussi l'id de son parent
          //Il faut ordonner les parents et y assigner les enfants
