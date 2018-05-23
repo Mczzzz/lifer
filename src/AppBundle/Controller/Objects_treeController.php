@@ -176,7 +176,7 @@ class Objects_treeController extends Controller
 
             $parent = $Tree->getParent();
 
-            do{
+            while ($parent->getParent() != null){
 
 
             array_push($ObjectStruct[$Tree->getId()]['Parents'],$parent->getId());
@@ -188,7 +188,8 @@ class Objects_treeController extends Controller
                 break;
             } 
 
-            }while($parent->getParent() != null);
+            }
+
 
 
 
