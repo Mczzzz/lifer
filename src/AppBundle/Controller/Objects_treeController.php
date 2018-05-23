@@ -155,11 +155,51 @@ class Objects_treeController extends Controller
          $entityManager = $this->getDoctrine()->getManager();
          $ObjTree = $entityManager->getRepository(Objects_tree::class)->findBy(array('object'=> $id),array('parent' => 'ASC'));
          $result = new \stdClass();
-	 $archiLevel = array();
-	 $objectArray =array();
-	 $objectParent=array();
-	 $i = 0;
+
+     $ObjectStruct = array();
+
 	 foreach($ObjTree as $Tree){
+
+        $ObjectStruct[$Tree->getId()] = array();
+        $ObjectStruct[$Tree->getId()]['Name']  = $Tree->getName();
+        
+        $ObjectStruct[$Tree->getId()]['Childs'] = array();
+        $ObjectStruct[$Tree->getId()]['Parents'] = array(); 
+
+        //je retrouve tous mes parents
+        //j'en deduis mon level
+        if($Tree->getParent() == null){
+
+        $ObjectStruct[$Tree->getId()]['Level'] = 0; 
+
+        }else{
+
+            $parent = $Tree->getParent();
+
+            do{
+
+
+            array_push($ObjectStruct[$Tree->getId()]['Parents'],$parent->getId());
+
+            if($parent->getParent() != null){
+
+                $parent = $parent->getParent();
+            }else{
+                break;
+            } 
+
+            }while($parent->getParent() != null);
+
+
+
+
+        }
+
+
+        var_dump($ObjectStruct);
+        die();
+
+/*
 	    $objectArray[$Tree->getId()]= $i;	 
             if($Tree->getParent() == null){
 	        $archiLevel[$Tree->getId()] = 0;	   
@@ -171,9 +211,9 @@ class Objects_treeController extends Controller
 	       } 
 
 	    }
-    	  $i++;	    
+    	  $i++;	    */
 	 }
-	 asort($archiLevel);
+	/* asort($archiLevel);
 	 var_dump($archiLevel);
 	 var_dump($objectArray);
 	
@@ -187,7 +227,7 @@ class Objects_treeController extends Controller
 	 }
 	 var_dump($arrayText);
 	 var_dump($objectParent);
-	 die();
+	 die();*/
 	 //recupe aussi l'id de son parent
          //Il faut ordonner les parents et y assigner les enfants
          //faire un retour json
@@ -195,4 +235,7 @@ class Objects_treeController extends Controller
         return new Response('OK');
 
     }  
+
+
+    
 }
