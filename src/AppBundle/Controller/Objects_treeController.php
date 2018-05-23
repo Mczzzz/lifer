@@ -189,6 +189,7 @@ class Objects_treeController extends Controller
 
 	 }
 
+     print_r(json_encode($ObjectStruct));
 
      //nesting
      foreach ($ObjectStruct as $NodeId => $NodeValue){
