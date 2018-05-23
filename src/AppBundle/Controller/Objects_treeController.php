@@ -188,43 +188,24 @@ class Objects_treeController extends Controller
         }
 
 
-
-
-/*
-	    $objectArray[$Tree->getId()]= $i;	 
-            if($Tree->getParent() == null){
-	        $archiLevel[$Tree->getId()] = 0;	   
-		$objectParent[$Tree->getId()] = 0;
-	    }else{
-               if(array_key_exists($Tree->getParent()->getId(), $archiLevel)){    
-		    $archiLevel[$Tree->getId()] = $archiLevel[$Tree->getParent()->getId()] + 1;
-	      $objectParent[$Tree->getId()]= $Tree->getParent()->getId(); 
-	       } 
-
-	    }
-    	  $i++;	    */
 	 }
+
+
+     foreach ($ObjectStruct as $NodeId => $NodeValue){
+
+
+        if(count($NodeId['Parents'] > 0){
+
+            array_push($ObjectStruct[$NodeId['Parents'][0]]['Childs'],$ObjectStruct[$NodeId]);
+
+        }
+
+
+
+     }
 
         print_r(json_encode($ObjectStruct));
         die();
-	/* asort($archiLevel);
-	 var_dump($archiLevel);
-	 var_dump($objectArray);
-	
-	 $arrayText = array();
-	 foreach($archiLevel as $key=>$value){
-
-		 $arrayText[$ObjTree[$objectArray[$key]]->getName()] = array();
-
-	    
-         
-	 }
-	 var_dump($arrayText);
-	 var_dump($objectParent);
-	 die();*/
-	 //recupe aussi l'id de son parent
-         //Il faut ordonner les parents et y assigner les enfants
-         //faire un retour json
 
         return new Response('OK');
 
