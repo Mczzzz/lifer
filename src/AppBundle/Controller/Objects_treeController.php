@@ -183,7 +183,7 @@ class Objects_treeController extends Controller
                 $parent = $parent->getParent();
            
             }
-
+                array_push($ObjectStruct[$Tree->getId()]['Level'],count($ObjectStruct[$Tree->getId()]['Parent']) + 1);
 
         }
 
