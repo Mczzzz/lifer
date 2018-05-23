@@ -205,7 +205,8 @@ class Objects_treeController extends Controller
                     $ObjectStruct[$parent]['Childs'] = array($NodeId => $ObjectStruct[$NodeId]);
 
                 }else{
-
+                    var_dump($parent);
+                    die();
                 if($i == 0){
 
                     $ObjectStruct[$parent[$i]]['Childs'] = array($NodeId => $ObjectStruct[$NodeId]);
