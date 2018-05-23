@@ -194,16 +194,12 @@ class Objects_treeController extends Controller
      foreach ($ObjectStruct as $NodeId => $NodeValue){
 
 
-        if(count($ObjectStruct[$NodeId]['Parents']) == 1){
+        if(count($ObjectStruct[$NodeId]['Parents']) > 0){
 
-            var_dump($ObjectStruct[$NodeId]['Parents']);
-            die();
-            $ObjectStruct[$ObjectStruct[$NodeId]['Parents']]['Childs'] = array($NodeId => $ObjectStruct[$NodeId]);
+        
 
-        }elseif(count($ObjectStruct[$NodeId]['Parents']) > 1){
-
-             $i = 0;
-
+            if()
+            $i = 0;
             foreach($ObjectStruct[$NodeId]['Parents'] as $parent){
 
                 var_dump($parent);
@@ -212,21 +208,15 @@ class Objects_treeController extends Controller
                 print_r("Parent: ".$parent[$i]."<br>");
                 $ObjectStruct[$parent[$i]]['Childs'] = array($NodeId => $ObjectStruct[$NodeId]);
 
-                $i++;
+            $i++;
             }
-
-
+            
+            
         }
 
-            
-           
-            
-            
-        
 
 
-
-    }
+     }
 
      //cleaning
         print_r(json_encode($ObjectStruct));
