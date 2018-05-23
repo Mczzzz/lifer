@@ -225,9 +225,8 @@ class Objects_treeController extends Controller
      //cleaning
      foreach ($ObjectStruct as $NodeId => $NodeValue){
 
-        if($ObjectStruct[$NodeId]['Level'] > 0){
-            unset $ObjectStruct[$NodeId];
-        } 
+        if($ObjectStruct[$NodeId]['Level'] > 0) unset($ObjectStruct[$NodeId]);
+
 
      }
 
