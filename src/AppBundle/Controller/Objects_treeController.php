@@ -189,7 +189,6 @@ class Objects_treeController extends Controller
 
 	 }
 
-     print_r(json_encode($ObjectStruct));
 
      //nesting
      foreach ($ObjectStruct as $NodeId => $NodeValue){
@@ -200,6 +199,8 @@ class Objects_treeController extends Controller
             $i = 0;
             foreach($ObjectStruct[$NodeId]['Parents'] as $parent){
 
+                var_dump($NodeId."<br>");
+                var_dump($parent[$i]."<br>");
                 $ObjectStruct[$parent[$i]]['Childs'] = array($NodeId => $ObjectStruct[$NodeId]);
 
             $i++;
