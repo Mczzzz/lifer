@@ -196,9 +196,9 @@ class Objects_treeController extends Controller
 
         if(count($ObjectStruct[$NodeId]['Parents']) > 0){
 
-        
 
-            if()
+
+           
             $i = 0;
             foreach($ObjectStruct[$NodeId]['Parents'] as $parent){
 
