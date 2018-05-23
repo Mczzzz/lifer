@@ -197,10 +197,8 @@ class Objects_treeController extends Controller
 
         if(count($ObjectStruct[$NodeId]['Parents']) > 0){
 
-            //var_dump($ObjectStruct[$NodeId]['Parents']);
-            //die();
             array_push($ObjectStruct[$ObjectStruct[$NodeId]['Parents'][0]]['Childs'],$ObjectStruct[$NodeId]);
-
+            unset($ObjectStruct[$NodeId]);
         }
 
 
