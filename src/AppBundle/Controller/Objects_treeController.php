@@ -160,14 +160,13 @@ class Objects_treeController extends Controller
 
 	 foreach($ObjTree as $Tree){
 
+        //create Parsing
         $ObjectStruct[$Tree->getId()] = array();
         $ObjectStruct[$Tree->getId()]['Name']  = $Tree->getName();
         
         $ObjectStruct[$Tree->getId()]['Childs'] = array();
         $ObjectStruct[$Tree->getId()]['Parents'] = array(); 
 
-        //je retrouve tous mes parents
-        //j'en deduis mon level
         if($Tree->getParent() == null){
 
         $ObjectStruct[$Tree->getId()]['Level'] = 0; 
@@ -191,20 +190,28 @@ class Objects_treeController extends Controller
 	 }
 
 
-
+     //nesting
      foreach ($ObjectStruct as $NodeId => $NodeValue){
 
 
         if(count($ObjectStruct[$NodeId]['Parents']) > 0){
 
-            $ObjectStruct[$ObjectStruct[$NodeId]['Parents'][0]]['Childs'] = array($NodeId => $ObjectStruct[$NodeId]);
-            //unset($ObjectStruct[$NodeId]);
+            $i = 0;
+            foreach($ObjectStruct[$NodeId]['Parents'] as $parent){
+
+                $ObjectStruct[$parent[$i]]['Childs'] = array($NodeId => $ObjectStruct[$NodeId]);
+
+            $i++;
+            }
+            
+            
         }
 
 
 
      }
 
+     //cleaning
         print_r(json_encode($ObjectStruct));
         die();
 
