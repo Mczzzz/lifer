@@ -190,6 +190,7 @@ class Objects_treeController extends Controller
 
 	 }
 
+     $ObjectStructFinal = $ObjectStruct;
 
      foreach ($ObjectStruct as $NodeId => $NodeValue){
 
@@ -198,7 +199,7 @@ class Objects_treeController extends Controller
 
             //var_dump($ObjectStruct[$NodeId]['Parents']);
             //die();
-            array_push($ObjectStruct[$ObjectStruct[$NodeId]['Parents']]['Childs'],$ObjectStruct[$NodeId]);
+            array_push($ObjectStructFinal[$ObjectStruct[$NodeId]['Parents']]['Childs'],$ObjectStruct[$NodeId]);
 
         }
 
@@ -206,7 +207,7 @@ class Objects_treeController extends Controller
 
      }
 
-        print_r(json_encode($ObjectStruct));
+        print_r(json_encode($ObjectStructFinal));
         die();
 
         return new Response('OK');
