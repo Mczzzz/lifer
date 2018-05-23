@@ -196,8 +196,7 @@ class Objects_treeController extends Controller
         }
 
 
-        var_dump($ObjectStruct);
-        die();
+
 
 /*
 	    $objectArray[$Tree->getId()]= $i;	 
@@ -213,6 +212,9 @@ class Objects_treeController extends Controller
 	    }
     	  $i++;	    */
 	 }
+
+        var_dump($ObjectStruct);
+        die();
 	/* asort($archiLevel);
 	 var_dump($archiLevel);
 	 var_dump($objectArray);
