@@ -104,6 +104,16 @@ class Objects_infos
 
 
 
+  
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
     /**
      * @param int $id
      *
@@ -114,6 +124,14 @@ class Objects_infos
         $this->id = $id;
 
         return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getObject()
+    {
+        return $this->object;
     }
 
     /**
@@ -128,7 +146,25 @@ class Objects_infos
         return $this;
     }
 
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 
+    /**
+     * @param string $name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
 
     /**
      * @return string
@@ -163,7 +199,7 @@ class Objects_infos
      *
      * @return self
      */
-    public function setValueDatetime( $value_datetime)
+    public function setValueDatetime(datetime $value_datetime)
     {
         $this->value_datetime = $value_datetime;
 
@@ -203,7 +239,7 @@ class Objects_infos
      *
      * @return self
      */
-    public function setValueDecimal( $value_decimal)
+    public function setValueDecimal(decimal $value_decimal)
     {
         $this->value_decimal = $value_decimal;
 
@@ -211,15 +247,31 @@ class Objects_infos
     }
 
     /**
-     * @param integer $update
+     * @return datetime
+     */
+    public function getUpdate()
+    {
+        return $this->update;
+    }
+
+    /**
+     * @param datetime $update
      *
      * @return self
      */
-    public function setUpdate( $update)
+    public function setUpdate(datetime $update)
     {
         $this->update = $update;
 
         return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOrder()
+    {
+        return $this->order;
     }
 
     /**
@@ -235,6 +287,14 @@ class Objects_infos
     }
 
     /**
+     * @return int
+     */
+    public function getCreator()
+    {
+        return $this->creator;
+    }
+
+    /**
      * @param int $creator
      *
      * @return self
@@ -245,11 +305,6 @@ class Objects_infos
 
         return $this;
     }
-
-
-
-
-
 
     /**
      * @return int
@@ -267,26 +322,6 @@ class Objects_infos
     public function setLeaf($leaf)
     {
         $this->leaf = $leaf;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
 
         return $this;
     }
