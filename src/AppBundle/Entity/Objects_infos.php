@@ -128,17 +128,7 @@ class Objects_infos
         return $this;
     }
 
-    /**
-     * @param string $name
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
 
-        return $this;
-    }
 
     /**
      * @return string
@@ -277,6 +267,26 @@ class Objects_infos
     public function setLeaf($leaf)
     {
         $this->leaf = $leaf;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
 
         return $this;
     }
