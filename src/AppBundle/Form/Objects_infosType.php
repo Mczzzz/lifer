@@ -13,7 +13,7 @@ class Objects_infosType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name')->add('value_text')->add('value_datetime')->add('value_integer')->add('value_decimal')->add('update')->add('order')->add('object')->add('creator')->add('leaf');
+        $builder->add('Name')->add('value_text')->add('value_datetime')->add('value_integer')->add('value_decimal')->add('update')->add('order')->add('object')->add('creator')->add('leaf');
     }/**
      * {@inheritdoc}
      */
