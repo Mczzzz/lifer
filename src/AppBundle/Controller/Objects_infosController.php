@@ -39,7 +39,7 @@ class Objects_infosController extends Controller
      */
     public function newAction(Request $request)
     {
-        $objects_info = new Objects_info();
+        $objects_info = new Objects_infos();
         $form = $this->createForm('AppBundle\Form\Objects_infosType', $objects_info);
         $form->handleRequest($request);
 
