@@ -199,7 +199,7 @@ class Objects_infos
      *
      * @return self
      */
-    public function setValueDatetime(datetime $value_datetime)
+    public function setValueDatetime($value_datetime)
     {
         $this->value_datetime = $value_datetime;
 
@@ -239,7 +239,7 @@ class Objects_infos
      *
      * @return self
      */
-    public function setValueDecimal(decimal $value_decimal)
+    public function setValueDecimal( $value_decimal)
     {
         $this->value_decimal = $value_decimal;
 
@@ -259,7 +259,7 @@ class Objects_infos
      *
      * @return self
      */
-    public function setUpdate(datetime $update)
+    public function setUpdate($update)
     {
         $this->update = $update;
 
