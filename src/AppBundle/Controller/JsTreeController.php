@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use AppBundle\Service\Human;
+use AppBundle\Entity\Objects;
 
 class JsTreeController extends Controller
 {
@@ -27,24 +27,29 @@ class JsTreeController extends Controller
 
 
     /**
-     * @Route("/children/{id}", name="children")
+     * @Route("/children", name="children")
      */
     public function getChildrenAction(Request $request)
     {
 
+        $em = $this->getDoctrine()->getManager();
+
+        $objects = $em->getRepository('AppBundle:Objects')->findAll();
+
+
         $test = array();
-        $res = new \stdClass();
-        $res->id = "a1";
-        $res->parent = '#';
-        $res->text = "coucou";
-        
-        array_push($test,$res);
-        $res = new \stdClass();
-        $res->id = "a2";
-        $res->parent = "a1";
-        $res->text = "guigui";
-        
-        array_push($test,$res);
+
+        foreach($objects as $object){
+
+            $res = new \stdClass();
+            $res->id = $object->getId();
+            $res->parent = ($object->getId() != 2)? $object->getId() : "#";
+            $res->text = $object->getName();
+            
+            array_push($test,$res);
+
+        }
+
         return new response(json_encode($test));
 
     }
