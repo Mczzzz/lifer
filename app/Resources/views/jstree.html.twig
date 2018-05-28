@@ -30,6 +30,16 @@
       $(function () {
 
 
+         $('#jstree_demo_div').jstree({
+          'core' : {
+            'check_callback' : true
+        },
+        "plugins" : [ "dnd" ],
+        "plugins" : [ "search" ],
+        "plugins" : [ "types" ]
+
+      });
+
         treeJSON = "";
 
         $.get( "children", function( data ) {
@@ -41,16 +51,8 @@
         });
 
 
-/*
-         $('#jstree_demo_div').jstree({
-          'core' : {
-            'check_callback' : true
-        },
-        "plugins" : [ "dnd" ],
-        "plugins" : [ "search" ],
-        "plugins" : [ "types" ]
 
-      }); */
+
 
       });
 
