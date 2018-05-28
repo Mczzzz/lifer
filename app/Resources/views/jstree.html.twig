@@ -33,10 +33,14 @@
           'core' : {
                 'data' : {
 
-                    'url' : '/children/data.json',
-                    'data' : function (node) {
-                        return { 'id' : node.id };
-                    }
+                    'url' : function (node) {
+      return node.id === '#' ?
+        'ajax_roots.json' :
+        'ajax_children.json';
+    },
+    'data' : function (node) {
+      return { 'id' : node.id };
+    }
                 },
                 "plugins" : [ "dnd" ],
                 "check_callback" : true
