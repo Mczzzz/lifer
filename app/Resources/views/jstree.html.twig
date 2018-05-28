@@ -11,10 +11,10 @@
     </head>
 
     <style>
-      * {
+/*      * {
           margin: 0;
           padding: 0;
-        }
+        }*/
 
     </style>
 
@@ -32,13 +32,11 @@
 
          $('#jstree_demo_div').jstree({
           'core' : {
-            'check_callback' : true
-        },
-        "plugins" : [ "dnd" ],
-        "plugins" : [ "search" ],
-        "plugins" : [ "types" ]
+            "check_callback" : true
+          },
+        "plugins" : [ "dnd", "search" , "types" ]
 
-      });
+         });
 
         treeJSON = "";
 
@@ -47,8 +45,6 @@
           $('#jstree_demo_div').jstree(true).settings.core.check_callback = true;
           $('#jstree_demo_div').jstree(true).settings.core.data = treeJSON;
           $('#jstree_demo_div').jstree(true).refresh();
-          
-
         });
 
 
