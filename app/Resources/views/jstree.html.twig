@@ -46,7 +46,12 @@
               'data' : function (obj, callback) {
                   callback.call(this, treeJSON);
               }
-        }}); 
+        },
+        "plugins" : [ "dnd" ],
+        "plugins" : [ "search" ],
+        "plugins" : [ "types" ]
+
+      }); 
 
       });
 
