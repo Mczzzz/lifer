@@ -33,7 +33,6 @@ class JsTreeController extends Controller
     {
 
         $test = array();
-        array_push($test, 'toto');
         $res = new \stdClass();
         $res->id = "a1";
         $res->parent = '#';
