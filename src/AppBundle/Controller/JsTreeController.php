@@ -118,8 +118,8 @@ class JsTreeController extends Controller
         $object = new Objects();
         $object->setName($node);
 
-        $object->setOwner($human->getId());
-        $object->setUsufruct($human->getId());
+        $object->setOwner($human);
+        $object->setUsufruct($human);
         $object->setContainerStore($parent);
         $object->setContainerIn($parent);
         $object->setCreator($user);
