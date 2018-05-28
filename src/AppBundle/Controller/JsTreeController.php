@@ -32,11 +32,14 @@ class JsTreeController extends Controller
     public function getChildrenAction(Request $request)
     {
 
+        $test = array();
+        array_push($test, 'toto');
         $res = new \stdClass();
         $res->id = 1;
         $res->text = "coucou";
         $res->parent = '#';
-        return new response(json_encode($res));
+        array_push($test,$res);
+        return new response(json_encode($test));
 
     }
 
