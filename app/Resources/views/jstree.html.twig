@@ -71,6 +71,9 @@
         })
 
 
+        $('#jstree_demo_div').on('create_node.jstree', function(e, data) {
+            console.log('hi', data);
+        });
 
 
 
