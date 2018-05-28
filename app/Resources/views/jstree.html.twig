@@ -33,12 +33,10 @@
           'core' : {
                 'data' : {
 
-                    'url' : function (node) {
-      return '/children/12';
-    },
-    'data' : function (node) {
-      return { 'id' : node.id };
-    }
+                    'url' : '/children/12',
+                    'data' : function (node) {
+                        return { 'id' : node.id };
+                    }
                 },
                 "plugins" : [ "dnd" ],
                 "check_callback" : true
