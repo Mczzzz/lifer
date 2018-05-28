@@ -43,14 +43,18 @@
         // listen for events
         .on('dnd_start.vakata', function (e, data) {
             console.log('Dragged');
-            console.log(data);
-            console.log(e);
         })
         .on('dnd_stop.vakata', function (e, data) {
             console.log('Dropped');
-            console.log(data);
-            console.log(e);
+              ref = $('#jstree_demo_div').jstree(true);
+              parents = ref.get_node(data.element).parent;
+              console.log(parents);
         })
+
+
+
+
+
 
 
         treeJSON = "";
