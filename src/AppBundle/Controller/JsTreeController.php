@@ -85,4 +85,24 @@ class JsTreeController extends Controller
         return new Response("c ok trop de la boulette");
 
     }
+
+
+    /**
+     * @Route("/node/add", name="node_add")
+     * @Method("POST")
+     */
+    public function nodeAddAction(Request $request)
+    {
+
+        $request = Request::createFromGlobals();
+        $node = $request->request->get('node');
+        $parent = $request->request->get('parent');        
+
+
+//user
+
+
+    }
+
+
 }

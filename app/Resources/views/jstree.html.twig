@@ -73,6 +73,24 @@
 
         $('#jstree_demo_div').on('create_node.jstree', function(e, data) {
             console.log('hi', data);
+
+        let formData = new FormData();
+
+            //formData.append('jpg'  ,this.image);
+            formData.append('node'  ,data.node.text);
+
+        formData.append('parent'  ,data.parent);
+        let AjaxSender = $.ajax({
+              type: 'POST',
+              url: 'node/add',
+              data: formData,
+              async: true,
+              cache: false,
+              contentType: false,
+              processData: false
+            });
+
+
         });
 
 
@@ -86,7 +104,7 @@
           $('#jstree_demo_div').jstree(true).settings.core.check_callback = true;
           $('#jstree_demo_div').jstree(true).settings.core.data = treeJSON;
           $('#jstree_demo_div').jstree(true).refresh();
-          $('#jstree_demo_div').jstree("open_all");
+         // $('#jstree_demo_div').jstree("open_all");
         });
 
 
