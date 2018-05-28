@@ -50,6 +50,24 @@
               parents = ref.get_node(data.element).parent;
               console.log(ref.get_node(data.element));
               console.log(parents);
+        
+            let formData = new FormData();
+
+            //formData.append('jpg'  ,this.image);
+            formData.append('node'  ,ref.get_node(data.element).id);
+
+        formData.append('parent'  ,ref.get_node(data.element).parent);
+        let AjaxSender = $.ajax({
+              type: 'POST',
+              url: 'dnd',
+              data: formData,
+              async: true,
+              cache: false,
+              contentType: false,
+              processData: false
+            });
+
+
         })
 
 

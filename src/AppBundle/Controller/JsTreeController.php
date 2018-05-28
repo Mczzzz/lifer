@@ -54,4 +54,35 @@ class JsTreeController extends Controller
 
     }
 
+
+    /**
+     * @Route("/dnd", name="dnd")
+     * @Method("POST")
+     */
+    public function MoveAction(Request $request)
+    {
+        $request = Request::createFromGlobals();
+        $node = $request->request->get('node');
+        $parent = $request->request->get('parent');
+
+        $em = $this->getDoctrine()->getManager();
+
+        $object = $em->getRepository('AppBundle:Objects')->find($node);
+
+        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+
+
+        $parent = $em->getRepository('AppBundle:Objects')->find($parent);
+        if(!$parent) return new Response("Pas de parents truc chelou");
+
+        $object->setParent($parent);
+
+        $em->persist($object);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $em->flush();
+
+        return new Response("c ok trop de la boulette");
+
+    }
 }
