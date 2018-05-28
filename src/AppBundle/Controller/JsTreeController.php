@@ -43,7 +43,7 @@ class JsTreeController extends Controller
 
             $res = new \stdClass();
             $res->id = $object->getId();
-            $res->parent = ($object->getContainerIn()->getId() != 2)? $object->getContainerIn()->getId() : "#";
+            $res->parent = ($object->getContainerIn()->getId() == 2 && $object->->getId() == 2)?  "#" : $object->getContainerIn()->getId() ;
             $res->text = $object->getName();
             
             array_push($test,$res);
