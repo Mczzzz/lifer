@@ -36,13 +36,14 @@
           treeJSON = JSON.parse(data);
           $('#jstree_demo_div').jstree(true).settings.core.data = treeJSON;
           $('#jstree_demo_div').jstree(true).refresh();
-          $('#jstree_demo_div').jstree(true).settings.core.check_callback = true;
+
         });
 
 
 
          $('#jstree_demo_div').jstree({
           'core' : {
+            'check_callback' : true
         },
         "plugins" : [ "dnd" ],
         "plugins" : [ "search" ],
