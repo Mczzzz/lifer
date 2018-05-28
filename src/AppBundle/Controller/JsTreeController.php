@@ -35,14 +35,16 @@ class JsTreeController extends Controller
         $test = array();
         array_push($test, 'toto');
         $res = new \stdClass();
-        $res->id = "1";
-        $res->text = "coucou";
+        $res->id = "a1";
         $res->parent = '#';
+        $res->text = "coucou";
+        
         array_push($test,$res);
         $res = new \stdClass();
-        $res->id = "2";
+        $res->id = "a2";
+        $res->parent = "a1";
         $res->text = "guigui";
-        $res->parent = "1";
+        
         array_push($test,$res);
         return new response(json_encode($test));
 
