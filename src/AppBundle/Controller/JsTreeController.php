@@ -27,7 +27,7 @@ class JsTreeController extends Controller
 
 
     /**
-     * @Route("/get/children", name="get_children")
+     * @Route("/children/{id}", name="children")
      */
     public function getChildrenAction(Request $request)
     {
