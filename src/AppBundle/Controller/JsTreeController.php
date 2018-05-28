@@ -75,7 +75,7 @@ class JsTreeController extends Controller
         $parent = $em->getRepository('AppBundle:Objects')->find($parent);
         if(!$parent) return new Response("Pas de parents truc chelou");
 
-        $object->setParent($parent);
+        $object->setContainerIn($parent);
 
         $em->persist($object);
 
