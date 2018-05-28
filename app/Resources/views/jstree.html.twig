@@ -29,18 +29,21 @@
     <script>
       $(function () {
 
-       $('#jstree_demo_div').jstree({
-        'core' : {
-              'data' : {
+         $('#jstree_demo_div').jstree({
+          'core' : {
+                'data' : {
 
-                  'url' : '/get/children/',
-                  'data' : function (node) {
-                      return { 'id' : node.id };
-                  }
-              },
-              "plugins" : [ "dnd" ]
-        }
-      }); 
+                    'url' : '/get/children/',
+                    'data' : function (node) {
+                        return { 'id' : node.id };
+                    }
+                },
+                "plugins" : [ "dnd" ],
+                "check_callback" : true
+          }
+        }); 
+
+      });
 
 
 
