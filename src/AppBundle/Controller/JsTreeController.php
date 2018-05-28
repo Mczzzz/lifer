@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 use AppBundle\Entity\Objects;
+use AppBundle\Entity\Humans;
 
 class JsTreeController extends Controller
 {
@@ -75,6 +76,8 @@ class JsTreeController extends Controller
         $parent = $em->getRepository('AppBundle:Objects')->find($parent);
         if(!$parent) return new Response("Pas de parents truc chelou");
 
+
+
         $object->setContainerIn($parent);
 
         $em->persist($object);
@@ -98,8 +101,35 @@ class JsTreeController extends Controller
         $node = $request->request->get('node');
         $parent = $request->request->get('parent');        
 
+        $user = $this->getUser();
 
-//user
+         $em = $this->getDoctrine()->getManager();
+
+
+        $parent = $em->getRepository('AppBundle:Objects')->find($parent);
+        if(!$parent) return new Response("Pas de parents truc chelou");
+
+       $human = $em->getRepository('AppBundle:Humans')->findOneBy(array('idLifer' => $user->getId()));
+        if(!$human) return new Response("Pas d'humain truc chelou");
+
+         
+
+
+        $object = new Objects();
+        $object->setName($node);
+
+        $object->setOwner($human->getId());
+        $object->setUsufruct($human->getId());
+        $object->setContainerStore($parent);
+        $object->setContainerIn($parent);
+        $object->setCreator($user);
+
+        $em->persist($object);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $em->flush();
+
+        return new Response($object->getId());
 
 
     }
