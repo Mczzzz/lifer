@@ -38,6 +38,21 @@
 
          });
 
+    
+        $('#jstree_demo_div')
+        // listen for events
+        .on('dnd_start.vakata', function (e, data) {
+            console.log('Dragged');
+            console.log(data);
+            console.log(e);
+        })
+        .on('dnd_stop.vakata', function (e, data) {
+            console.log('Dropped');
+            console.log(data);
+            console.log(e);
+        })
+
+
         treeJSON = "";
 
         $.get( "children", function( data ) {
