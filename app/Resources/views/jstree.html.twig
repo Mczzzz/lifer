@@ -34,9 +34,7 @@
                 'data' : {
 
                     'url' : function (node) {
-      return node.id === '#' ?
-        'ajax_roots.json' :
-        'ajax_children.json';
+      return '/children/';
     },
     'data' : function (node) {
       return { 'id' : node.id };
