@@ -135,4 +135,43 @@ class JsTreeController extends Controller
     }
 
 
+    /**
+     * @Route("/node/rename", name="node_rename")
+     * @Method("POST")
+     */
+    public function nodeRenameAction(Request $request)
+    {
+
+
+        $request = Request::createFromGlobals();
+        $node = $request->request->get('node');
+        $name = $request->request->get('name');        
+
+        //$user = $this->getUser();
+
+         $em = $this->getDoctrine()->getManager();
+
+
+         $object = $em->getRepository('AppBundle:Objects')->find($node);
+
+        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+         
+        $object->setName($name);
+
+        $em->persist($object);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $em->flush();
+
+        return new Response('OK');
+
+
+
+
+
+
+    }
+
+
+
 }
