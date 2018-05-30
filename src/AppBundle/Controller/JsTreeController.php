@@ -207,9 +207,9 @@ class JsTreeController extends Controller
 
             foreach($childs as $child){
 
-                $child->setContainerIn = $parent;
-
-                if($child->getContainerStore->getId() == $node ) $child->setContainerStore = $parent;
+                $child->setContainerIn($parent);
+                die()
+                if($child->getContainerStore()->getId() == $node ) $child->setContainerStore($parent);
                 $em->persist($child);
             }
 
@@ -224,7 +224,7 @@ class JsTreeController extends Controller
 
             foreach($childs as $child){
 
-                $child->setContainerStore = $parent;
+                $child->setContainerStore($parent);
                 $em->persist($child);
             }
 
