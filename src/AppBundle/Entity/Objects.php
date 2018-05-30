@@ -97,6 +97,14 @@ class Objects
     private $topPerso;
 
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=100, nullable=true)
+     */
+    private $type;
+
+
 
     /**
      * Get id
@@ -325,6 +333,26 @@ class Objects
     public function setTopPerso($topPerso)
     {
         $this->topPerso = $topPerso;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
 
         return $this;
     }

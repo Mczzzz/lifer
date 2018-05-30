@@ -46,7 +46,7 @@ class JsTreeController extends Controller
             $res->id = $object->getId();
             $res->parent = ($object->getContainerIn()->getId() == 2 && $object->getId() == 2)?  "#" : $object->getContainerIn()->getId() ;
             $res->text = $object->getName();
-            $res->type = "default";
+            $res->type = (strlen($object->getType()) > 0) $object->getType() : "default";
             
             array_push($test,$res);
 
