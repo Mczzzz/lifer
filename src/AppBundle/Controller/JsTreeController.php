@@ -279,9 +279,10 @@ class JsTreeController extends Controller
 
 
        var_dump(strpos($parentId,'root_'));
-        die();
+
 
          if($parentId != '#' && strpos($parentId,'root_') !== false){
+                    die('here');
             $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
             if(!$parent) return new Response("Pas de parents truc chelou");       
          }
