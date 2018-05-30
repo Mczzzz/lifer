@@ -350,8 +350,10 @@ class JsTreeController extends Controller
         $object_tree->setObject($objet);
 
         if($parentId != '#'){
+        
             $object_tree->setParent($parent);
         }
+
         $object_tree->setCreator($user);
 
         $em->persist($object_tree);

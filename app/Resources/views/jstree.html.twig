@@ -167,6 +167,7 @@
          $('#jstree_demo_div').on('select_node.jstree', function(e, data) {
 
             console.log('selection object');
+
              $('#jstree_object_tree').jstree({
               'core' : {
                 "check_callback" : true
@@ -203,6 +204,63 @@
 
 
          });
+
+
+
+
+
+
+        $('#jstree_object_tree').on('create_node.jstree', function(e, data) {
+            console.log('hi', data);
+
+        let formData = new FormData();
+
+            //formData.append('jpg'  ,this.image);
+            formData.append('nodeText'  ,data.node.text);
+            formData.append('object'  ,data.node.id);
+        formData.append('parent'  ,data.parent);
+        let AjaxSender = $.ajax({
+              type: 'POST',
+              url: 'object/tree/add',
+              data: formData,
+              async: true,
+              cache: false,
+              contentType: false,
+              processData: false,
+               success: function(d){
+                 $('#jstree_object_tree').jstree(true).set_id(data.node, d);
+              }
+            });
+
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         $('#jstree_demo_div').on('create_node.jstree', function(e, data) {
