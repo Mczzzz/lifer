@@ -167,33 +167,33 @@
          $('#jstree_demo_div').on('select_node.jstree', function(e, data) {
 
 
-         $('#jstree_object_tree').jstree({
-          'core' : {
-            "check_callback" : true
+             $('#jstree_object_tree').jstree({
+              'core' : {
+                "check_callback" : true
+                          },
+                              "types" : {
+                      "default" : {
+                        "icon" : "glyphicon glyphicon-tree-deciduous"
                       },
-                          "types" : {
-                  "default" : {
-                    "icon" : "glyphicon glyphicon-tree-deciduous"
-                  },
 
-                  "car" : {
-                    "icon" : "fa fa-car"
-                  },
-                  "kitchen" : {
-                    "icon" : "glyphicon glyphicon-apple"
-                  },
-                  "home" : {
-                    "icon" : "glyphicon glyphicon-home"
-                  }
-                },
-               "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
+                      "car" : {
+                        "icon" : "fa fa-car"
+                      },
+                      "kitchen" : {
+                        "icon" : "glyphicon glyphicon-apple"
+                      },
+                      "home" : {
+                        "icon" : "glyphicon glyphicon-home"
+                      }
+                    },
+                   "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
+
+             });
+
+
+
 
          });
-
-
-
-
-         }
 
 
         $('#jstree_demo_div').on('create_node.jstree', function(e, data) {
