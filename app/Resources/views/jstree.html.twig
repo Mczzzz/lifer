@@ -213,6 +213,8 @@
         $('#jstree_object_tree').on('create_node.jstree', function(e, data) {
             console.log('hi', data);
 
+            console.log(data.get_top_selected());
+
         let formData = new FormData();
 
             //formData.append('jpg'  ,this.image);
