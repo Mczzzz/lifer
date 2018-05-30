@@ -63,6 +63,13 @@ class Objects_tree
      */
     private $creator;
 
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=100, nullable=true)
+     */
+    private $type;
     
 
 
@@ -207,5 +214,25 @@ class Objects_tree
 
 
 
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
 }
 
