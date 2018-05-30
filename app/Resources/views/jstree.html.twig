@@ -193,7 +193,7 @@
 
                treeJSONObject = "";
 
-                $.get( "children", function( data ) {
+                $.get( "object/tree/"+data.node.id, function( data ) {
                   treeJSONObject = JSON.parse(data);
                   $('#jstree_object_tree').jstree(true).settings.core.check_callback = true;
                   $('#jstree_object_tree').jstree(true).settings.core.data = treeJSONObject;

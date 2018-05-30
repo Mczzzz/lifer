@@ -250,4 +250,62 @@ class JsTreeController extends Controller
 
 
 
+
+
+
+
+
+
+
+    /**
+     * @Route("/object/tree/{id}", name="children")
+     */
+    public function getTreeAction(Request $request, $id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $objet = $em->getRepository('AppBundle:Objects')->find($id);
+        if(!$objet) return new Response("Pas d'objet ya un truc chelou");
+
+
+        $objects_tree = $em->getRepository('AppBundle:Objects_tree')->findBy(array('object' => $objet->getId()));
+
+
+        $test = array();
+
+        $res = new \stdClass();
+            $res->id = 0;
+            $res->parent = "#";
+            $res->text = $objet->getName();
+            $res->type = (strlen($objet->getType()) > 0)? $objet->getType() : "default";
+            
+            array_push($test,$res);
+
+
+        foreach($objects_tree as $object){
+
+            $res = new \stdClass();
+            $res->id = $object->getId();
+            $res->parent = ($object->getContainerIn()->getId() == 2 && $object->getId() == 2)?  "#" : $object->getContainerIn()->getId() ;
+            $res->text = $object->getName();
+            $res->type = (strlen($object->getType()) > 0)? $object->getType() : "default";
+            
+            array_push($test,$res);
+
+        }
+
+        return new response(json_encode($test));
+
+    }
+
+
+
+
+
+
+
+
+
+
 }
