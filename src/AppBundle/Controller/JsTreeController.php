@@ -258,7 +258,7 @@ class JsTreeController extends Controller
 
 
     /**
-     * @Route("/object/tree/{id}", name="children")
+     * @Route("/object/tree/{id}", name="object_tree")
      */
     public function getTreeAction(Request $request, $id)
     {
