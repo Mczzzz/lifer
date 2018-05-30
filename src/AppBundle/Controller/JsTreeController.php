@@ -200,7 +200,7 @@ class JsTreeController extends Controller
         if(!$parent) return new Response("Pas de parents truc chelou");
 
         //on va chercher les enfants accrochés pour les remettre au parent direct
-        $childs = $em->getRepository('AppBundle:Objects')->findBy(array('ContainerIn' => $node));
+        $childs = $em->getRepository('AppBundle:Objects')->findBy(array('containerIn' => $node));
          
         if($childs){
 
@@ -217,7 +217,7 @@ class JsTreeController extends Controller
 
 
         //on verifie s'il y a aussi des containerStore seulement
-        $childs = $em->getRepository('AppBundle:Objects')->findBy(array('ContainerStore' => $node));
+        $childs = $em->getRepository('AppBundle:Objects')->findBy(array('containerStore' => $node));
          
         if($childs){
 
