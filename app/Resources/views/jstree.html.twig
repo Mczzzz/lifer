@@ -28,6 +28,7 @@
     <body>
       <div><input type="text" id="plugins4_q" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;"></div>
         <div id="jstree_demo_div"></div>
+        <div id="jstree_object_tree"></div>
     </body>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
@@ -36,26 +37,38 @@
       $(function () {
 
 
+
+
+
+
+
+
+
+
+
+
+
+
          $('#jstree_demo_div').jstree({
           'core' : {
             "check_callback" : true
-          },
-              "types" : {
-      "default" : {
-        "icon" : "glyphicon glyphicon-tree-deciduous"
-      },
+                      },
+                          "types" : {
+                  "default" : {
+                    "icon" : "glyphicon glyphicon-tree-deciduous"
+                  },
 
-      "car" : {
-        "icon" : "fa fa-car"
-      },
-      "kitchen" : {
-        "icon" : "ionicons ion-cube"
-      },
-      "home" : {
-        "icon" : "glyphicon glyphicon-home"
-      }
-    },
-        "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
+                  "car" : {
+                    "icon" : "fa fa-car"
+                  },
+                  "kitchen" : {
+                    "icon" : "glyphicon glyphicon-apple"
+                  },
+                  "home" : {
+                    "icon" : "glyphicon glyphicon-home"
+                  }
+                },
+               "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
 
          });
 
@@ -149,6 +162,38 @@
 
 
          });
+
+
+         $('#jstree_demo_div').on('select_node.jstree', function(e, data) {
+
+
+         $('#jstree_object_tree').jstree({
+          'core' : {
+            "check_callback" : true
+                      },
+                          "types" : {
+                  "default" : {
+                    "icon" : "glyphicon glyphicon-tree-deciduous"
+                  },
+
+                  "car" : {
+                    "icon" : "fa fa-car"
+                  },
+                  "kitchen" : {
+                    "icon" : "glyphicon glyphicon-apple"
+                  },
+                  "home" : {
+                    "icon" : "glyphicon glyphicon-home"
+                  }
+                },
+               "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
+
+         });
+
+
+
+
+         }
 
 
         $('#jstree_demo_div').on('create_node.jstree', function(e, data) {
