@@ -41,7 +41,7 @@ class Objects_tree
     /**
      * @var datetime
      *
-     * @ORM\Column(name="update_ts", type="datetime")
+     * @ORM\Column(name="update_ts", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP", nullable=true)
      */
     private $update;
 
