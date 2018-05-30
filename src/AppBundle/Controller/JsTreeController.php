@@ -277,10 +277,10 @@ class JsTreeController extends Controller
         if(!$objet) return new Response("Pas d'objet ya un truc chelou dans le tree");
 
 
-        var_dump(strpos($parentId,'root_'));
-        die();
+/*        var_dump(strpos($parentId,'root_'));
+        die();*/
 
-         if($parentId != '#' && strpos($parentId,'root_') !== FALSE){
+         if($parentId != '#' && strpos($parentId,'root_') != 0){
             $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
             if(!$parent) return new Response("Pas de parents truc chelou");       
          }
