@@ -273,13 +273,13 @@ class JsTreeController extends Controller
 
          $em = $this->getDoctrine()->getManager();
 
-        $objet = $em->getRepository('AppBundle:Objects')->find($objectId);
+        $objet = $em->getRepository('AppBundle:Objects')->find(str_replace('root_', '', $objectId));
         if(!$objet) return new Response("Pas d'objet ya un truc chelou dans le tree");
 
 
 
 
-         if($parentId != '#'){
+         if($parentId != '#' && strpos($parentId,'root_') !== FALSE){
             $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
             if(!$parent) return new Response("Pas de parents truc chelou");       
          }
@@ -295,7 +295,7 @@ class JsTreeController extends Controller
 
         $object_tree->setObject($objet);
 
-        if($parentId != '#'){
+        if($parentId != '#' && strpos($parentId,'root_') !== FALSE){
         
             $object_tree->setParent($parent);
         }
@@ -338,7 +338,7 @@ class JsTreeController extends Controller
         $test = array();
 
         $res = new \stdClass();
-            $res->id = $objet->getId();
+            $res->id = "root_".$objet->getId();
             $res->parent = "#";
             $res->text = $objet->getName();
             $res->type = (strlen($objet->getType()) > 0)? $objet->getType() : "default";
