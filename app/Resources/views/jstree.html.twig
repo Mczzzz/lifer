@@ -194,7 +194,7 @@
 
                treeJSONObject = "";
 
-                $.get( "object/tree/"+data.node.id, function( data ) {
+                $.get( "object/tree/get/"+data.node.id, function( data ) {
                   treeJSONObject = JSON.parse(data);
                   $('#jstree_object_tree').jstree(true).settings.core.check_callback = true;
                   $('#jstree_object_tree').jstree(true).settings.core.data = treeJSONObject;
@@ -218,8 +218,8 @@
         let formData = new FormData();
 
             //formData.append('jpg'  ,this.image);
-            formData.append('nodeText'  ,data.node.text);
-            formData.append('object'  , data.node.parents[data.node.parents.length -2]);
+            formData.append('nodeText' ,data.node.text);
+            formData.append('object' , data.node.parents[data.node.parents.length -2]);
         formData.append('parent'  ,data.parent);
         let AjaxSender = $.ajax({
               type: 'POST',
