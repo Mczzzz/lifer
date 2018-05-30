@@ -213,13 +213,13 @@
         $('#jstree_object_tree').on('create_node.jstree', function(e, data) {
             console.log('hi', data);
 
-            console.log($('#jstree_object_tree').jstree(true).get_top_selected('full'));
+            console.log($('#jstree_object_tree').jstree(true).get_top_selected('full')[0]);
 
         let formData = new FormData();
 
             //formData.append('jpg'  ,this.image);
             formData.append('nodeText'  ,data.node.text);
-            formData.append('object'  ,data.node.id);
+            formData.append('object'  ,$('#jstree_object_tree').jstree(true).get_top_selected('full')[0]);
         formData.append('parent'  ,data.parent);
         let AjaxSender = $.ajax({
               type: 'POST',
