@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 use AppBundle\Entity\Objects;
+use AppBundle\Entity\Objects_tree;
 use AppBundle\Entity\Humans;
 
 class JsTreeController extends Controller
