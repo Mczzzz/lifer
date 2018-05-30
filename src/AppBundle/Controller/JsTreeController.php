@@ -328,7 +328,7 @@ class JsTreeController extends Controller
          $em = $this->getDoctrine()->getManager();
 
         $objet = $em->getRepository('AppBundle:Objects')->find($objectId);
-        if(!$objet) return new Response("Pas d'objet ya un truc chelou");
+        if(!$objet) return new Response("Pas d'objet ya un truc chelou dans le tree");
 
 
 
