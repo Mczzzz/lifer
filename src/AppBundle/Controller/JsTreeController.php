@@ -298,7 +298,8 @@ class JsTreeController extends Controller
         $object_tree->setObject($objet);
 
         if($parentId != '#' && strpos($parentId,'root_') !== false){
-        
+        var_dump('on y passe dans le setparent');
+        die();
             $object_tree->setParent($parent);
         }
 
