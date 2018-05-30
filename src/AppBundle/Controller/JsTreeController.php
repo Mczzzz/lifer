@@ -174,4 +174,79 @@ class JsTreeController extends Controller
 
 
 
+
+
+ /**
+     * @Route("/node/delete", name="node_delete")
+     * @Method("POST")
+     */
+    public function nodeDeleteAction(Request $request)
+    {
+
+
+        $request = Request::createFromGlobals();
+        $node = $request->request->get('node');
+        $parent = $request->request->get('parent');        
+
+        //$user = $this->getUser();
+
+         $em = $this->getDoctrine()->getManager();
+
+
+         $object = $em->getRepository('AppBundle:Objects')->find($node);
+        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+
+        $parent = $em->getRepository('AppBundle:Objects')->find($parent);
+        if(!$parent) return new Response("Pas de parents truc chelou");
+
+        //on va chercher les enfants accrochés pour les remettre au parent direct
+        $childs = $em->getRepository('AppBundle:Objects')->findBy(array('ContainerIn' => $node));
+         
+        if($childs){
+
+            foreach($childs as $child){
+
+                $child->setContainerIn = $parent;
+
+                if($child->getContainerStore->getId() == $node ) $child->setContainerStore = $parent;
+                $em->persist($child);
+            }
+
+            $em->flush();
+        }
+
+
+        //on verifie s'il y a aussi des containerStore seulement
+        $childs = $em->getRepository('AppBundle:Objects')->findBy(array('ContainerStore' => $node));
+         
+        if($childs){
+
+            foreach($childs as $child){
+
+                $child->setContainerStore = $parent;
+                $em->persist($child);
+            }
+
+            $em->flush();
+        }
+
+
+        //maintenant on peut detruire la node sans se prendre de probleme de clef etrangere
+
+        $em->remove($object);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $em->flush();
+
+        return new Response('OK');
+
+
+
+
+
+
+    }
+
+
+
 }
