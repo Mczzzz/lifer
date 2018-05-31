@@ -54,7 +54,7 @@ class UnityController extends Controller
  /**
      * Lists all object entities.
      *
-     * @Route("/unities="unities", name="unities")
+     * @Route("/unities", name="unities")
      * @Method("GET")
      */
     public function getAllUnitiesAction()
