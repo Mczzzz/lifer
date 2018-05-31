@@ -148,6 +148,27 @@ class Objects_infosController extends Controller
     public function infosAddAction(Request $request)
     {
 
+        $request = Request::createFromGlobals();
+        $name = $request->request->get('name');
+        $file = $request->request->get('file');
+        $text = $request->request->get('text');
+        $float = $request->request->get('float');
+        $floatTypeId = $request->request->get('floatTypeValueId');
+
+        $objectId = $request->request->get('objectId');
+
+        $em = $this->getDoctrine()->getManager();
+
+        $objInfos = new Objects_infos();
+        $objInfos->setName($name);
+
+
+        $em->persist($objInfos);
+        $em->flush();
+
+        /*$object = $em->getRepository('AppBundle:Objects')->find($node);
+
+        if(!$object) return new Response("Pas d'objet ya un truc chelou");*/
 
         return new Response('on passe dans le infos Add');
 
