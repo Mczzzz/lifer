@@ -59,7 +59,7 @@ class JsTreeController extends Controller
 
 
     /**
-     * @Route("/dnd", name="dnd")
+     * @Route("/node/dnd", name="node_dnd")
      * @Method("POST")
      */
     public function MoveAction(Request $request)
