@@ -80,7 +80,16 @@
         })
         .on('dnd_stop.vakata', function (e, data) {
             console.log('Dropped');
-              ref = $('#jstree_demo_div').jstree(true);
+              ref = $(ActiveDiv).jstree(true);
+
+              if(ActiveDiv == '#jstree_demo_div'){
+                var url = 'node/dnd'
+              }else if (ActiveDiv == '#jstree_object_tree'){
+                var url = 'object/tree/dnd'
+
+              }
+
+
 
               console.log(e);
               console.log(data);
@@ -93,7 +102,7 @@
 
             let AjaxSender = $.ajax({
                   type: 'POST',
-                  url: 'node/dnd',
+                  url: url,
                   data: formData,
                   async: true,
                   cache: false,
@@ -240,6 +249,7 @@
 
          $('#jstree_demo_div').on('select_node.jstree', function(e, data) {
 
+            ActiveDiv = '#jstree_demo_div';
             console.log('selection object');
 
              $('#jstree_object_tree').jstree({
@@ -281,7 +291,10 @@
          });
 
 
+      $('#jstree_object_tree').on('select_node.jstree', function(e, data) {
 
+                  ActiveDiv = '#jstree_object_tree';
+      });
 
 
 
