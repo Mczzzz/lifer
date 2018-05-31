@@ -30,10 +30,10 @@
         <div id="jstree_demo_div"></div>
         <div id="jstree_object_tree"></div>
         <div id="action">
-        <button name="button">Infos</button>
+        <button id="bInfos" name="button">Infos</button>
         <button name="button">Evènements</button>
         </div>
-        <div id="infos"></div>
+        <div id="infos">coucou</div>
         <div id="evenement"></div>
     </body>
 
@@ -51,6 +51,10 @@
 
 
 
+      $('#bInfos').on('click', function(e, data) {
+
+                $('#infos').show();
+      });
 
 
 
