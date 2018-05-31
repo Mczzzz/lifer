@@ -64,11 +64,15 @@
 
       $('#action').hide();
       $('#infos').hide();
-
+      $('#unities').hide();
 
       $.get( "unity/type", function( data ) {
                            unityType = JSON.parse(data);
                            console.log(unityType);
+                              $('#unityType').append($('<option>', {
+                                  value: 0,
+                                  text: 'Choisir un type' 
+                                }));
                             for (var k in unityType){
                                 $('#unityType').append($('<option>', {
                                   value: k,
@@ -89,6 +93,7 @@
         $('#unityType').on('change', function(e, data) {
 
                 console.log('ca change');
+                $('#unities').show();
                 console.log($('#unityType').val());
                 $('#unities').empty();
                 for (var k in unityUnities[$('#unityType').val()]){
