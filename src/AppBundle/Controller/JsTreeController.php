@@ -417,7 +417,7 @@ class JsTreeController extends Controller
 
         $request = Request::createFromGlobals();
         $node = $request->request->get('node');
-        $parent = $request->request->get('parent');        
+        $parentId = $request->request->get('parent');        
 
         //$user = $this->getUser();
 
@@ -427,8 +427,8 @@ class JsTreeController extends Controller
          $object = $em->getRepository('AppBundle:Objects_tree')->find($node);
         if(!$object) return new Response("Pas d'objet ya un truc chelou");
 
-        if(is_bool(strpos($parent,'root_'))){
-            $parent = $em->getRepository('AppBundle:Objects_tree')->find($parent);
+        if(is_bool(strpos($parentId,'root_'))){
+            $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
             if(!$parent) return new Response("Pas de parents truc chelou");
         }
 
@@ -439,7 +439,7 @@ class JsTreeController extends Controller
 
             foreach($childs as $child){
 
-                if(is_bool(strpos($parent,'root_'))){
+                if(is_bool(strpos($parentId,'root_'))){
                     $child->setParent($parent);
                     $em->persist($child);
                 }
