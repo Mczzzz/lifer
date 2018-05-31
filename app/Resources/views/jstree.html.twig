@@ -67,13 +67,14 @@
       $.get( "unity/type", function( data ) {
                            unityType = JSON.parse(data);
                            console.log(unityType);
-for (var k in unityType){
-   $('#unityType').append($('<option>', {
+                            for (var k in unityType){
+                                $('#unityType').append($('<option>', {
                                   value: k,
                                   text: unityType[k]
-                             }));
-}
+                                }));
+                            }
                            
+
 
                              
                           });
@@ -82,6 +83,11 @@ for (var k in unityType){
                            unityUnities = JSON.parse(data);
                            console.log(unityUnities);
                           });
+
+        $('#unityType').on('change', function(e, data) {
+
+                console.log('ca change');
+      });
 
 
 
