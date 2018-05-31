@@ -145,7 +145,7 @@ class Objects_infosController extends Controller
      * @Route("/add", name="objects_infos_add")
      * @Method("POST")
      */
-    public function infosAddAction(Request $request, Objects $object)
+    public function infosAddAction(Request $request)
     {
 
 
