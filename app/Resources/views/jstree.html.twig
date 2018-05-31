@@ -91,7 +91,7 @@
                 $('#unities').empty();
                 for (var k in unityUnities[$('#unityType').val()]){
                   $('#unities').append($('<option>', {
-                    title : unityUnities[$('#unityType').val()][k]['tooltip']
+                    title : unityUnities[$('#unityType').val()][k]['tooltip'],
                     value: k,
                     text: unityUnities[$('#unityType').val()][k]['symbol']
                   }));
