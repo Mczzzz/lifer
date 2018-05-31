@@ -214,7 +214,7 @@
               contentType: false,
               processData: false,
                success: function(d){
-                          $.get( "children", function( data ) {
+                          $.get( "object/tree/get/"+data.node.id, function( data ) {
                             treeJSON = JSON.parse(data);
                             $('#jstree_object_tree').jstree(true).settings.core.check_callback = true;
                             $('#jstree_object_tree').jstree(true).settings.core.data = treeJSON;

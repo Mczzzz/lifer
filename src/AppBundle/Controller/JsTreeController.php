@@ -427,8 +427,10 @@ class JsTreeController extends Controller
          $object = $em->getRepository('AppBundle:Objects_tree')->find($node);
         if(!$object) return new Response("Pas d'objet ya un truc chelou");
 
-        $parent = $em->getRepository('AppBundle:Objects_tree')->find($parent);
-        if(!$parent) return new Response("Pas de parents truc chelou");
+        if(is_bool(strpos($parent,'root_'))){
+            $parent = $em->getRepository('AppBundle:Objects_tree')->find($parent);
+            if(!$parent) return new Response("Pas de parents truc chelou");
+        }
 
         //on va chercher les enfants accrochés pour les remettre au parent direct
         $childs = $em->getRepository('AppBundle:Objects_tree')->findBy(array('parent' => $node));
@@ -437,9 +439,11 @@ class JsTreeController extends Controller
 
             foreach($childs as $child){
 
-                $child->setParent($parent);
-     
-                $em->persist($child);
+                if(is_bool(strpos($parent,'root_'))){
+                    $child->setParent($parent);
+                    $em->persist($child);
+                }
+
             }
 
             $em->flush();
