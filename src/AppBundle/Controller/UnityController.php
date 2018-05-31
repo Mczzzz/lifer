@@ -57,7 +57,7 @@ class UnityController extends Controller
      * @Route("/unities="unities" name="unities")
      * @Method("GET")
      */
-    public function getAllUnityTypeAction()
+    public function getAllUnitiesAction()
     {
         $em = $this->getDoctrine()->getManager();
 
