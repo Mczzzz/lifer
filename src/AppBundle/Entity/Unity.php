@@ -44,6 +44,16 @@ class Unity
 
 
     /**
+     * @var int
+     *
+     * @ORM\ManyToOne(targetEntity="UnityType", inversedBy="unity")
+     * @ORM\JoinColumn(name="unityType", referencedColumnName="id")
+     */
+    private $unityType;
+
+
+
+    /**
      * Get id
      *
      * @return int
@@ -123,6 +133,30 @@ class Unity
     public function getCountry()
     {
         return $this->country;
+    }
+
+
+
+
+
+    /**
+     * @return int
+     */
+    public function getUnityType()
+    {
+        return $this->unityType;
+    }
+
+    /**
+     * @param int $unityType
+     *
+     * @return self
+     */
+    public function setUnityType($unityType)
+    {
+        $this->unityType = $unityType;
+
+        return $this;
     }
 }
 
