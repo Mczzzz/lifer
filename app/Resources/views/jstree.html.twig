@@ -82,20 +82,19 @@
         })
         .on('dnd_stop.vakata', function (e, data) {
             console.log('Dropped');
-            console.log(ActiveDiv);
-              ref = $(ActiveDiv).jstree(true);
+            var MyFrag = $(data.data.origin.element[0]);
+             console.log(MyFrag.filter("div").attr('id'));
+           
+              ref = $('#'+MyFrag.filter("div").attr('id')).jstree(true);
 
-              if(ActiveDiv == '#jstree_demo_div'){
+              if(MyFrag.filter("div").attr('id') == 'jstree_demo_div'){
                 var url = 'node/dnd'
-              }else if (ActiveDiv == '#jstree_object_tree'){
+              }else if (MyFrag.filter("div").attr('id') == 'jstree_object_tree'){
                 var url = 'object/tree/dnd'
 
               }
-              console.log(data.data.origin.element[0]);
-              var MyFrag = $(data.data.origin.element[0]);
-               console.log(MyFrag);
-             // console.log(e);
-              console.log(MyFrag.filter("div").attr('id'));
+             // console.log(data.data.origin.element[0]);
+
         
             let formData = new FormData();
 
