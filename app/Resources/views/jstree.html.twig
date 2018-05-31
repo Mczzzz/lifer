@@ -80,6 +80,7 @@
         })
         .on('dnd_stop.vakata', function (e, data) {
             console.log('Dropped');
+            console.log(ActiveDiv);
               ref = $(ActiveDiv).jstree(true);
 
               if(ActiveDiv == '#jstree_demo_div'){
