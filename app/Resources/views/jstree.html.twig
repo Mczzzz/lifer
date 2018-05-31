@@ -82,6 +82,8 @@
         })
         .on('dnd_stop.vakata', function (e, data) {
             console.log('Dropped');
+
+            //Pour savoir quel jstree a lancée l'event
             var MyFrag = $(data.data.origin.element[0]);
              console.log(MyFrag.filter("div").attr('id'));
            
