@@ -119,7 +119,10 @@
 
             //formData.append('jpg'  ,this.image);
             formData.append('name'  ,$('#infosName').val());
-         
+            formData.append('file'  ,$('#InfosPhoto').val());
+            formData.append('text'  ,$('#InfosText').val());
+            formData.append('float'  ,$('#InfosValeur').val());
+            formData.append('floatTypeValueId'  ,$('#unities').val());
 
             let AjaxSender = $.ajax({
                   type: 'POST',
