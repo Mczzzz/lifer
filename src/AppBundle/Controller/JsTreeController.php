@@ -95,7 +95,7 @@ class JsTreeController extends Controller
 
 
     /**
-     * @Route("/object/tree/dnd", name="node_dnd")
+     * @Route("/object/tree/dnd", name="object_tree_dnd")
      * @Method("POST")
      */
     public function objectTreeMoveAction(Request $request)
@@ -118,7 +118,7 @@ class JsTreeController extends Controller
 
         if(is_bool(strpos($parentId,'root_'))){
                $object->setParent($parent);
-               
+
             }else{
                  $object->setParent(null);
            }
