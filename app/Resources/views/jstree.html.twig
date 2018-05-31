@@ -63,6 +63,16 @@
       $('#infos').hide();
 
 
+        $.get( "/unity/type", function( data ) {
+                           unityType = JSON.parse(data);
+                           console.log(unityType);
+                          });
+
+        $.get( "/unity/unities", function( data ) {
+                           unityUnities = JSON.parse(data);
+                           console.log(unityUnities);
+                          });
+
 
 
       $('#bInfos').on('click', function(e, data) {
