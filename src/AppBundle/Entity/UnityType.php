@@ -22,6 +22,16 @@ class UnityType
     private $id;
 
 
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+
     /**
      * Get id
      *
@@ -30,6 +40,29 @@ class UnityType
     public function getId()
     {
         return $this->id;
+    }
+
+
+    
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
     }
 }
 
