@@ -280,7 +280,7 @@ class JsTreeController extends Controller
 
 
 
-         if($parentId != '#' && strpos($parentId,'root_') !== false){
+         if($parentId != '#' && strpos($parentId,'root_') != false){
                  
             $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
             if(!$parent) return new Response("Pas de parents truc chelou");       
