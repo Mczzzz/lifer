@@ -81,8 +81,9 @@
         .on('dnd_stop.vakata', function (e, data) {
             console.log('Dropped');
               ref = $('#jstree_demo_div').jstree(true);
-              parents = ref.get_node(data.nodes[0]).parent;
+              parents = ref.get_node(data.element).parent;
                console.log(data);
+               console.log(data.nodes);
                console.log(e);
               console.log(ref.get_parent(data.obj));
               console.log(ref.get_node(data.element));
