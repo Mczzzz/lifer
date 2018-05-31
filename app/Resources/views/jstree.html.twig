@@ -113,7 +113,24 @@
       });
 
 
+      $('#infosValid').on('click', function(e, data) {
 
+            let formData = new FormData();
+
+            //formData.append('jpg'  ,this.image);
+            formData.append('name'  ,$('#infosName').val());
+         
+
+            let AjaxSender = $.ajax({
+                  type: 'POST',
+                  url: 'object/infos/add',
+                  data: formData,
+                  async: true,
+                  cache: false,
+                  contentType: false,
+                  processData: false
+            });
+      });
 
 
 
