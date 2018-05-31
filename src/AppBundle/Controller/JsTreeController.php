@@ -281,7 +281,7 @@ class JsTreeController extends Controller
 
 
          if(is_bool(strpos($parentId,'root_'))){
-                 
+                 var_dump('in first bool');
             $parent = $em->getRepository('AppBundle:Objects_tree')->find(str_replace('root_', '', $parentId));
             if(!$parent) return new Response("Pas de parents truc chelou");       
          }
@@ -298,7 +298,7 @@ class JsTreeController extends Controller
         $object_tree->setObject($objet);
 
         if(is_bool(strpos($parentId,'root_'))){
-
+                var_dump('in second bool');
             $object_tree->setParent($parent);
         }
 
