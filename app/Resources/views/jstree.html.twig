@@ -92,10 +92,10 @@
 
               }
 
+              let MyFrag = $.parseHTML(data.data.origin.element[0]);
 
-
-              console.log(e);
-              console.log(data.data.origin.element[0].find("div").attr('id'));
+             // console.log(e);
+              console.log(MyFrag.find("div").attr('id'));
         
             let formData = new FormData();
 
