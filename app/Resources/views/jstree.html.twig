@@ -42,7 +42,8 @@
           <input id="InfosPhoto" type="file" accept="image/*"  capture="camera" placeholder="titre info">
           <textarea id="InfosText" rows="4" cols="50" placeholder="Ton Texte"></textarea>
           <input id="InfosValeur" type="number" step="any"  placeholder="1000">
-
+          <select id="unityType"></select>
+          <select id="unities"></select>
 
 
         </div>
@@ -66,6 +67,15 @@
       $.get( "unity/type", function( data ) {
                            unityType = JSON.parse(data);
                            console.log(unityType);
+                            unityType.forEach(function(element) {
+                              console.log(element);
+                                $('#unityType').append($('<option>', {
+                                  value: 1,
+                                  text: 'My option'
+                             }));
+                            });
+
+                             
                           });
 
       $.get( "unity/unities", function( data ) {
