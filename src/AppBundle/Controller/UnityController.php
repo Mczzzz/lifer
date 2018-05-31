@@ -51,5 +51,29 @@ class UnityController extends Controller
 
 
 
+ /**
+     * Lists all object entities.
+     *
+     * @Route("/unities="unities" name="unities")
+     * @Method("GET")
+     */
+    public function getAllUnityTypeAction()
+    {
+        $em = $this->getDoctrine()->getManager();
 
+        $Unities = $em->getRepository('AppBundle:Unity')->findAll();
+
+		if(!$Unities) return new Response("Pas d'Unities ya un truc chelou");
+
+		$res = array();
+
+		foreach($Unities as $Unity){
+
+			$res[$Unity->getId()] = $Unity->getName();
+
+		}
+
+		return new response(json_encode($res));
+
+	}
 }
