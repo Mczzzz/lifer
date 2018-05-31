@@ -67,13 +67,13 @@
       $.get( "unity/type", function( data ) {
                            unityType = JSON.parse(data);
                            console.log(unityType);
-                            unityType.each(function(element) {
-                              console.log(element);
-                                $('#unityType').append($('<option>', {
-                                  value: 1,
-                                  text: 'My option'
+for (var k in unityType){
+   $('#unityType').append($('<option>', {
+                                  value: k,
+                                  text: unityType[k]
                              }));
-                            });
+}
+                           
 
                              
                           });
