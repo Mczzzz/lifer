@@ -81,32 +81,29 @@
         .on('dnd_stop.vakata', function (e, data) {
             console.log('Dropped');
               ref = $('#jstree_demo_div').jstree(true);
-              parents = ref.get_node(data.element).parent;
-               console.log(data);
-               console.log(data.data.nodes[0]);
-               console.log(e);
-              console.log(ref.get_parent(data.obj));
-              console.log(ref.get_node(data.element));
-              console.log(parents);
+
+
         
             let formData = new FormData();
 
             //formData.append('jpg'  ,this.image);
-            formData.append('node'  ,ref.get_node(data.element).id);
+            formData.append('node'  ,ref.get_node(data.data.nodes[0]).id);
+            formData.append('parent'  ,ref.get_node(data.data.nodes[0]).parent);
 
-        formData.append('parent'  ,ref.get_node(data.element).parent);
-        let AjaxSender = $.ajax({
-              type: 'POST',
-              url: 'dnd',
-              data: formData,
-              async: true,
-              cache: false,
-              contentType: false,
-              processData: false
+            let AjaxSender = $.ajax({
+                  type: 'POST',
+                  url: 'dnd',
+                  data: formData,
+                  async: true,
+                  cache: false,
+                  contentType: false,
+                  processData: false
             });
 
 
         })
+
+        
 
          $('#jstree_demo_div').on('rename_node.jstree', function(e, data) {
             console.log('remane');
