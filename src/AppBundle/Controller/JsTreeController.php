@@ -281,7 +281,7 @@ class JsTreeController extends Controller
 
 
          if(is_bool(strpos($parentId,'root_'))){
-                 var_dump('in first bool');
+              
             $parent = $em->getRepository('AppBundle:Objects_tree')->find(str_replace('root_', '', $parentId));
             if(!$parent) return new Response("Pas de parents truc chelou");       
          }
@@ -298,7 +298,7 @@ class JsTreeController extends Controller
         $object_tree->setObject($objet);
 
         if(is_bool(strpos($parentId,'root_'))){
-                var_dump('in second bool');
+              
             $object_tree->setParent($parent);
         }
 
@@ -366,7 +366,42 @@ class JsTreeController extends Controller
 
 
 
+    /**
+     * @Route("/object/tree/rename", name="object_tree_rename")
+     * @Method("POST")
+     */
+    public function ObjectTreeRenameAction(Request $request)
+    {
 
+
+        $request = Request::createFromGlobals();
+        $node = $request->request->get('node');
+        $name = $request->request->get('name');        
+
+        //$user = $this->getUser();
+
+         $em = $this->getDoctrine()->getManager();
+
+
+         $object = $em->getRepository('AppBundle:Objects_tree')->find($node);
+
+        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+         
+        $object->setName($name);
+
+        $em->persist($object);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $em->flush();
+
+        return new Response('OK');
+
+
+
+
+
+
+    }
 
 
 

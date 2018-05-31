@@ -128,6 +128,36 @@
          });
         
 
+
+         $('#jstree_object_tree').on('rename_node.jstree', function(e, data) {
+            console.log('remane');
+                    let formData = new FormData();
+
+            //formData.append('jpg'  ,this.image);
+            formData.append('node'  ,data.node.id);
+
+        formData.append('name'  ,data.node.text);
+        let AjaxSender = $.ajax({
+              type: 'POST',
+              url: 'object/tree/rename',
+              data: formData,
+              async: true,
+              cache: false,
+              contentType: false,
+              processData: false,
+               success: function(d){
+                
+              }
+            });
+
+         });
+
+
+
+
+
+
+
          $('#jstree_demo_div').on('delete_node.jstree', function(e, data) {
 
           console.log('remane');
