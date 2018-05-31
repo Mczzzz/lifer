@@ -69,7 +69,7 @@ class UnityController extends Controller
 
 		foreach($Unities as $Unity){
 
-			$res[$Unity->getId()] = $Unity->getSymbol();
+			$res[$Unity->getUnityType()->getId()][$Unity->getId()] = $Unity->getSymbol();
 
 		}
 
