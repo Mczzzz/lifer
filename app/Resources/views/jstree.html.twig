@@ -67,7 +67,7 @@
       $.get( "unity/type", function( data ) {
                            unityType = JSON.parse(data);
                            console.log(unityType);
-                            unityType.forEach(function(element) {
+                            unityType.each(function(element) {
                               console.log(element);
                                 $('#unityType').append($('<option>', {
                                   value: 1,
