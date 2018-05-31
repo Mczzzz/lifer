@@ -5,7 +5,9 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Objects_infos;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Objects_info controller.
@@ -133,4 +135,24 @@ class Objects_infosController extends Controller
             ->getForm()
         ;
     }
+
+
+
+
+            /**
+     * Deletes a object entity.
+     *
+     * @Route("/add", name="objects_infos_add")
+     * @Method("POST")
+     */
+    public function infosAddAction(Request $request, Objects $object)
+    {
+
+
+        return new Response('on passe dans le infos Add');
+
+    }
+
+
+
 }
