@@ -98,7 +98,7 @@ class JsTreeController extends Controller
      * @Route("/object/tree/dnd", name="node_dnd")
      * @Method("POST")
      */
-    public function MoveAction(Request $request)
+    public function objectTreeMoveAction(Request $request)
     {
         $request = Request::createFromGlobals();
         $node = $request->request->get('node');
