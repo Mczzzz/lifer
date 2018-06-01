@@ -72,7 +72,7 @@ class Objects_infos
     /**
      * @var datetime
      *
-     * @ORM\Column(name="update", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+     * @ORM\Column(name="ts_update", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
      */
     private $update;
 
@@ -80,7 +80,7 @@ class Objects_infos
     /**
      * @var int
      *
-     * @ORM\Column(name="order", type="integer", nullable=true)
+     * @ORM\Column(name="my_order", type="integer", nullable=true)
      */
     private $order;
 
