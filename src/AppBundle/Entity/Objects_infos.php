@@ -37,38 +37,7 @@ class Objects_infos
      */
     private $name;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="value_text", type="text", nullable=true)
-     */
-    private $value_text;
-
-    /**
-     * @var datetime
-     *
-     * @ORM\Column(name="value_datetime", type="datetime", nullable=true)
-     */
-    private $value_datetime;
-
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="value_integer", type="integer", nullable=true)
-     */
-    private $value_integer;
-
-
-    /**
-     * @var decimal
-     *
-     * @ORM\Column(name="value_decimal", type="decimal", precision=13, scale=3, nullable=true)
-     */
-    private $value_decimal;
-
-
-
+  
     /**
      * @var datetime
      *
@@ -166,85 +135,6 @@ class Objects_infos
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getValueText()
-    {
-        return $this->value_text;
-    }
-
-    /**
-     * @param string $value_text
-     *
-     * @return self
-     */
-    public function setValueText($value_text)
-    {
-        $this->value_text = $value_text;
-
-        return $this;
-    }
-
-    /**
-     * @return datetime
-     */
-    public function getValueDatetime()
-    {
-        return $this->value_datetime;
-    }
-
-    /**
-     * @param datetime $value_datetime
-     *
-     * @return self
-     */
-    public function setValueDatetime($value_datetime)
-    {
-        $this->value_datetime = $value_datetime;
-
-        return $this;
-    }
-
-    /**
-     * @return integer
-     */
-    public function getValueInteger()
-    {
-        return $this->value_integer;
-    }
-
-    /**
-     * @param integer $value_integer
-     *
-     * @return self
-     */
-    public function setValueInteger($value_integer)
-    {
-        $this->value_integer = $value_integer;
-
-        return $this;
-    }
-
-    /**
-     * @return decimal
-     */
-    public function getValueDecimal()
-    {
-        return $this->value_decimal;
-    }
-
-    /**
-     * @param decimal $value_decimal
-     *
-     * @return self
-     */
-    public function setValueDecimal( $value_decimal)
-    {
-        $this->value_decimal = $value_decimal;
-
-        return $this;
-    }
 
     /**
      * @return datetime
