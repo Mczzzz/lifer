@@ -80,7 +80,7 @@ class Objects_infos
     /**
      * @var int
      *
-     * @ORM\Column(name="order", type="integer", nullable=false)
+     * @ORM\Column(name="order", type="integer", nullable=true)
      */
     private $order;
 
