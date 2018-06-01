@@ -155,12 +155,14 @@ class Objects_infosController extends Controller
         $float = $request->request->get('float');
         $floatTypeId = $request->request->get('floatTypeValueId');
 
+
         $objectId = $request->request->get('objectId');
 
         $em = $this->getDoctrine()->getManager();
 
         $objInfos = new Objects_infos();
         $objInfos->setName($name);
+        $objInfos->setCreator( $this->getUser());
 
 
         $em->persist($objInfos);
