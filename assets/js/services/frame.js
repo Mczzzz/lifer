@@ -8,7 +8,7 @@ export default class Frame {
 
 		
 
-		document.body.appendChild('<div id=toto></div>');  // ex, add display objects 
+		document.body.innerHTML('<div id=toto></div>');  // ex, add display objects 
 
 
 	/*	this.render();
