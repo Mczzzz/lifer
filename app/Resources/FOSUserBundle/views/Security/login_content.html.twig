@@ -27,48 +27,7 @@
 <script>
 
     $(document).ready(function(){
-    //démarrage de l'app
-/*        app.ticker.add(function(delta){
-    
-    //console.log(new Date().getTime());
-        //FilmFilter = new PIXI.filters.OldFilmFilter({sepia:0.8},Math.random());
-        //FilmFilter.noise = Math.random();
-       // if(iterator == 3){
-        iterator += delta / 1000;
-        //console.log(iterator);
-            FilmFilter = new PIXI.filters.GodrayFilter({ parallel: 0, gain: 0.6, lacunarity: 2, angle: 30, center: [0, -50], time: iterator * 8});
-            pict.filters = [FilmFilter];
-         //   iterator = 0; 
-       // }
-        //iterator = iterator + 1;
-    });*/
 
-    app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0x000000, 
-                                                                        antialias : true});
-    document.body.appendChild(app.view);
-
-    app.stage.interactive = true;
-
-
-    //add background image
-    pict = new PIXI.Sprite.fromImage('bundles/app/pict/background/bk1.jpeg');
-    pict.scale.set(1.5,1.5);
-    app.stage.addChild(pict);
-
-/*    FilmFilter = new PIXI.filters.OldFilmFilter({sepia:0.3},Math.random());*/
-    //iterator = 3;
-    iterator = 0;
-    FilmFilter = new PIXI.filters.GodrayFilter({ parallel: 0, gain: 0.6, lacunarity: 2, angle: 30, center: [0, -50], time: iterator * 8});
-            pict.filters = [FilmFilter];
-            
-/**/
-
-
-    var lifer = new PIXI.Text("Lifer",{fontFamily : 'Berkshire Swash', fontSize: 300,fill : 0xFFFFFF, align : 'center'});
-        lifer.x = (window.innerWidth / 2) - lifer.width / 2;
-        lifer.y = window.innerHeight * 0.15;
-
-     app.stage.addChild(lifer);    
 
     
 
