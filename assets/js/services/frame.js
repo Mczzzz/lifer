@@ -6,9 +6,13 @@ export default class Frame {
 	constructor(){
 
 
-		
+/*		let str = '<p>Just some <span>text</span> here</p>';
 
-		document.body.innerHTML('<div id=toto></div>');  // ex, add display objects 
+		let temp = document.createElement('div');
+
+		temp.innerHTML()*/
+
+		document.body.innerHTML = '<div id=toto></div>';  // ex, add display objects 
 
 
 	/*	this.render();
