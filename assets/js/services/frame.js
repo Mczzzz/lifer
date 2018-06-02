@@ -1,6 +1,4 @@
-import Home from '../views/layout/home.js';
-import Node from '../views/layout/node.js';
-import Link from '../views/layout/link.js';
+//import Home from '../views/layout/home.js';
 
 export default class Frame {
 
@@ -8,17 +6,15 @@ export default class Frame {
 	constructor(){
 
 
+		
+
+		document.body.appendChild('<div id=toto></div>');  // ex, add display objects 
 
 
-		this.app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0xD8D8D8, antialias : true });  // Add the view to the DOM 		
-
-		document.body.appendChild(this.app.view);  // ex, add display objects 
-
-
-		this.render();
+	/*	this.render();
 		
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
-
+*/
 
 
 	}
