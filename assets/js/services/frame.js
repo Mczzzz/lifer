@@ -12,7 +12,7 @@ export default class Frame {
 
 		temp.innerHTML()*/
 
-		document.body.innerHTML = '<div id=toto></div>';  // ex, add display objects 
+		//document.body.innerHTML = 'str';  // ex, add display objects 
 
 
 	/*	this.render();
