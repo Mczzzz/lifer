@@ -3,7 +3,7 @@ import Footer from '../components/footer.js';
 import NodeList from '../components/NodeList.js';
 //import Adder from '../components/adder.js';
 
-export default class Home extends UIContainer{
+export default class Home{
 
 
 	constructor(x,y,w,h){
@@ -12,20 +12,15 @@ export default class Home extends UIContainer{
 
 		//this.container.name = 'Home';
 		//console.log($(this).attr('class'));
-				let header = new Header(0,0,this.width,this.height);
 
-		document.body.innerHTML = header;
-
+		this.addElements();
 
 	}
 
 
 	addElements(){
 
-		this.drawBkground();
-
-		
-		let header = new Header(0,0,this.width,this.height);
+				let header = new Header(0,0,100,100);
 
 		document.body.innerHTML = header;
 

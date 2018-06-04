@@ -19,7 +19,7 @@ export default class Frame {
 		
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
 */
-let homeFrame = new Home(0,0,window.innerWidth,window.innerHeight);
+	let homeFrame = new Home(0,0,window.innerWidth,window.innerHeight);
 
 
 	}
