@@ -10,6 +10,7 @@ export default class Header{
 		console.log('header before super');
 		moment.locale('fr');
      	let res = this.addTags();
+     	console.log(res);
 		return res;
 
 
