@@ -42,15 +42,7 @@
 
     <body class="loaded">
 
-         <!-- Loader  -->     
-        <div id="loader-wrapper">
-          <div id="loader"></div>
-          <div class="loader-section section-left"></div>
-          <div class="loader-section section-right"></div>
-        </div>
-
-
-<header id="header" class="page-topbar">
+    <header id="header" class="page-topbar">
       <!-- start header nav-->
       <div class="navbar-fixed">
         <nav class="navbar-color gradient-45deg-purple-deep-orange gradient-shadow">
@@ -206,6 +198,12 @@
                 });
             });
 
+
+            $('input').on('keypress', (event)=> {
+                    if(event.which === 13){
+                       alert("c'est good");
+                    }
+            });
 
         </script>
     </body>
