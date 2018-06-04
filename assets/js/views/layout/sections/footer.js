@@ -8,7 +8,7 @@ export default class Footer{
 
 	addTags(){
 
-	return	`<footer class="page-footer gradient-45deg-purple-deep-orange">
+	return	`<footer class="page-footer footer-fixed gradient-45deg-purple-deep-orange">
 		      <div class="footer-copyright">
 		        <div class="container">
 		          <input />
