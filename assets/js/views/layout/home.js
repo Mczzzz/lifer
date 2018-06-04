@@ -22,6 +22,7 @@ export default class Home{
 
 				let header = new Header(0,0,100,100);
 
+				console.log(header);
 		document.body.innerHTML = header;
 
 
