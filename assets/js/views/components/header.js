@@ -2,7 +2,7 @@ import moment from 'moment-es6';
 import UIContainer from '../../services/uiContainer.js';
 
 
-export default class Header  extends UIContainer{
+export default class Header{
 	
 
 	constructor(x,y,w,h){
