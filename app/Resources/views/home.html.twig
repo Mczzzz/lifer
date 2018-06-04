@@ -99,7 +99,7 @@
                           </a>
                         </li>
                         <li>
-                          <a href="cards-extended.html" class="btn-floating green" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;">
+                          <a href="#" id="add-object" class="btn-floating green" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;">
                             <i class="material-icons">widgets</i>
                           </a>
                         </li>
@@ -177,6 +177,34 @@
 
         <script type="text/javascript" src="bundles/app/lib/js/materialize.min.js"></script>
 
+
+        <script type="text/javascript">
+          
+            $('#add-object').click(function() {
+              swal({
+                  title: "An input!",
+                  text: 'Write something interesting:',
+                  type: 'input',
+                  showCancelButton: true,
+                  closeOnConfirm: false,
+                  animation: "slide-from-top",
+                  inputPlaceholder: "Write something",
+                },
+                function(inputValue) {
+                  if (inputValue === false) return false;
+
+                  if (inputValue === "") {
+                    swal.showInputError("You need to write something!");
+                    return false;
+                  }
+
+                  swal("Nice!", 'You wrote: ' + inputValue, "success");
+
+                });
+            });
+
+
+        </script>
     </body>
 
   </html>
