@@ -41,7 +41,7 @@ export default class Home{
 		          <!--start container-->
 		          <div class="container">
 		            <div class="section">
-		            	${addJstreeHTMLElement}
+		            	${this.jsTreeTest()}
 		              <div class="divider"></div>
 		            </div>
 		          
