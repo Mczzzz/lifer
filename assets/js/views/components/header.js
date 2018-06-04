@@ -21,14 +21,14 @@ export default class Header{
 
 		console.log('on passe dans le haeder');
 
-	return	'<header id="header" class="page-topbar">';
-/*				<div class="navbar-fixed">
+	return	`<header id="header" class="page-topbar">';
+				<div class="navbar-fixed">
 					<nav class="navbar-color gradient-45deg-purple-deep-orange gradient-shadow">
 						<div class="nav-wrapper">
 						</div>
 	        		</nav>
 	      		</div>
-	    	</header>';*/
+	    	</header>`;
 
 
 	}
