@@ -59,20 +59,18 @@ export default class Home{
 
 	floatingHTML(){
 
-		return`
-<!-- Floating Action Button -->
-		            <div class="fixed-action-btn " style="bottom: 50px; left: 19px; width: 60px">
+		return`<div class="fixed-action-btn " style="bottom: 50px; left: 19px; width: 60px">
 		              <a class="btn-floating btn-large gradient-45deg-light-blue-cyan gradient-shadow">
 		                <i class="material-icons">add</i>
 		              </a>
 		              <ul>
 		                <li>
-		                  <a href="css-helpers.html" class="btn-floating blue">
-		                    <i class="material-icons">help_outline</i>
+		                  <a href="" class="btn-floating blue">
+		                    <i class="material-icons">face</i>
 		                  </a>
 		                </li>
 		                <li>
-		                  <a href="cards-extended.html" class="btn-floating green">
+		                  <a href="" class="btn-floating green">
 		                    <i class="material-icons">widgets</i>
 		                  </a>
 		                </li>
@@ -81,14 +79,8 @@ export default class Home{
 		                    <i class="material-icons">today</i>
 		                  </a>
 		                </li>
-		                <li>
-		                  <a href="app-email.html" class="btn-floating red">
-		                    <i class="material-icons">mail_outline</i>
-		                  </a>
-		                </li>
 		              </ul>
-		            </div>
-		            <!-- Floating Action Button -->`;
+		            </div>`;
 
 	}
 
