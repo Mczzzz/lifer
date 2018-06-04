@@ -6,6 +6,7 @@ export default class Frame {
 	constructor(){
 
 	let homeFrame = new Home();
+	document.body.innerHTML(homeFrame);
 
 	}
 

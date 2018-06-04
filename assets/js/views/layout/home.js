@@ -3,32 +3,31 @@ import Header from './sections/header.js';
 export default class Home{
 
 
-	constructor(){
+	getHTMLPage(){
 
-		
+		let page = this.headerHTML();
 
-		//this.container.name = 'Home';
-		//console.log($(this).attr('class'));
+		page += this.footerHTML();
 
-		this.addElements();
-
+		return page;
 	}
 
 
-	addElements(){
+	headerHTML(){
 
 				let header = new Header();
 
-				let getHeaderHTMLFragment = header.addTags();
-				document.body.innerHTML = getHeaderHTMLFragment;
-
-
-		
-
-
+				return header.addTags();
 	}
 		
 
 
+
+	footerHTML(){
+
+				let footer = new Footer();
+
+				return footer.addTags();
+	}
 
 }
