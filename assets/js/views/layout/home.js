@@ -22,8 +22,8 @@ export default class Home{
 
 				let header = new Header(0,0,100,100);
 
-				console.log(header.addTags());
-				document.body.innerHTML = header.addTags();
+				let toto = header.addTags();
+				document.body.innerHTML = toto;
 
 
 		
