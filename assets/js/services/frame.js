@@ -1,4 +1,4 @@
-//import Home from '../views/layout/home.js';
+import Home from '../views/layout/home.js';
 
 export default class Frame {
 
@@ -19,6 +19,7 @@ export default class Frame {
 		
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
 */
+let homeFrame = new Home(0,0,window.innerWidth,window.innerHeight);
 
 
 	}
