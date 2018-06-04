@@ -1,4 +1,3 @@
-import UIContainer from '../../services/uiContainer.js';
 import Header from '../components/header.js';
 import Footer from '../components/footer.js';
 import NodeList from '../components/NodeList.js';
@@ -9,10 +8,15 @@ export default class Home extends UIContainer{
 
 	constructor(x,y,w,h){
 
-		super(x,y,w,h);
+		
 
 		//this.container.name = 'Home';
 		//console.log($(this).attr('class'));
+				let header = new Header(0,0,this.width,this.height);
+
+		document.body.innerHTML = header;
+
+
 	}
 
 
@@ -20,21 +24,19 @@ export default class Home extends UIContainer{
 
 		this.drawBkground();
 
-		this.addListNode();
-
+		
 		let header = new Header(0,0,this.width,this.height);
-		//console.log(header);
-		let TheHeader = header.load();
-		this.attach(TheHeader);
+
+		document.body.innerHTML = header;
 
 
 		
 
-
+/*
 		let footer = new Footer(0,this.height - 100,this.width,100);
 		let TheFooter = footer.load();
 		this.attach(TheFooter);
-
+*/
 /*		const rayonButton = 30;
 		this.adder = new Adder(rayonButton);
 		this.adder.x = 20;
@@ -49,26 +51,10 @@ export default class Home extends UIContainer{
 
 	drawBkground(){
 
-		let backgroundCard = new PIXI.Graphics();
-        backgroundCard.beginFill(0x00B0FF);
-        backgroundCard.lineStyle(0);
-        backgroundCard.drawRect(0, 0, this.width, this.height);
-        backgroundCard.endFill();
-
-        this.attach(backgroundCard);
 
 
 	}
 
 
-	addListNode(){
-
-		//rajouter le cadre de vision
-		//rajouter un hit area
-		let MyNodeList = new NodeList(15,100,(this.width / 2) - 30, (this.height - 200) / 2 );
-		let TheMyNodeList = MyNodeList.load();
-		this.attach(TheMyNodeList);
-
-	}
 
 }
