@@ -1,4 +1,5 @@
 import Header from './sections/header.js';
+import Footer from './sections/footer.js';
 
 export default class Home{
 
