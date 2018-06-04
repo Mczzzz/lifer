@@ -61,7 +61,7 @@ export default class Home{
 
 		return`
 <!-- Floating Action Button -->
-		            <div class="fixed-action-btn " style="bottom: 50px; left: 19px;">
+		            <div class="fixed-action-btn " style="bottom: 50px; left: 19px; width: 60px">
 		              <a class="btn-floating btn-large gradient-45deg-light-blue-cyan gradient-shadow">
 		                <i class="material-icons">add</i>
 		              </a>
