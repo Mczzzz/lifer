@@ -30,6 +30,7 @@ export default class Home{
 
 	bodyHTML(){
 
+		let addJstreeHTMLElement = this.jsTreeTest();
 		return `
 			<div id="main">
 		      <!-- START WRAPPER -->
@@ -40,7 +41,7 @@ export default class Home{
 		          <!--start container-->
 		          <div class="container">
 		            <div class="section">
-
+		            	${addJstreeHTMLElement}
 		              <div class="divider"></div>
 		            </div>
 		          
@@ -54,6 +55,13 @@ export default class Home{
 
 
 	}
+
+
+	jsTreeTest(){
+
+		return `<div id="jstree_demo_div"></div>`;
+	}
+
 
 
 
