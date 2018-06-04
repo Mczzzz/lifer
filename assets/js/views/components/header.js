@@ -18,7 +18,7 @@ export default class Header{
 
 	addTags(){
 
-
+		console.log('on passe dans le haeder');
 
 	return	`<header id="header" class="page-topbar">
 				<div class="navbar-fixed">
