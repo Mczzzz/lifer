@@ -211,7 +211,7 @@ export default class Objects{
       	
 /*      	$('#add_infos').show();
       	$('#InfosPhoto').show();*/
-      		$('#InfosPhoto').click();
+      		$('#InfosPhoto').focus();
       		console.log('in touchstart after click');
                
       });
