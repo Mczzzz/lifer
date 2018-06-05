@@ -5464,7 +5464,8 @@ button.btn-floating {
 }
 
 .fixed-action-btn.horizontal.ltr-lifer ul {
-  padding-left: 64px;
+  padding-left: 84px;
+  bottom : -23px;
   text-align: left;
   right: 100px;
   top: -50%;
