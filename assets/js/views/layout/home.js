@@ -101,12 +101,12 @@ export default class Home{
 		              </a>
 		              <ul>
 		                <li>
-		                  <a href="" class="btn-floating blue">
+		                  <a href=""  class="btn-floating blue">
 		                    <i class="material-icons">face</i>
 		                  </a>
 		                </li>
 		                <li>
-		                  <a href="" class="btn-floating green">
+		                  <a href="" id="menu-obj"class="btn-floating green">
 		                    <i class="material-icons">widgets</i>
 		                  </a>
 		                </li>

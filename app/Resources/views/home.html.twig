@@ -63,16 +63,29 @@
 
         <script type="text/javascript">
           
-          $(document).ready(function()
-{
+          $(document).ready(function(){
 
 
-    $('#nestable3').nestable();
-
-});
+             $('#nestable3').nestable();
 
 
-          
+
+             $('#menu-obj').on('tap', (event) => {
+              let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'objects'}});
+                       window.dispatchEvent(LinkEvent);
+               });
+
+
+          });
+
+
+
+
+
+
+
+
+
             $('#add-object').click(function() {
               swal({
                   title: "An input!",

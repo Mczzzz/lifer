@@ -1,4 +1,5 @@
 import Home from '../views/layout/home.js';
+import Objects from '../views/layout/objects.js';
 
 export default class Frame {
 
@@ -7,6 +8,10 @@ export default class Frame {
 
 	
 		this.Home();
+
+
+		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
+
 
 
 	}
@@ -22,7 +27,14 @@ export default class Frame {
 	}
 
 
+	Objects(){
 
+		let objects = new Objects();
+		let res = objects.getHTMLPage();
+		document.body.innerHTML = res;
+
+
+	}
 
 
 
