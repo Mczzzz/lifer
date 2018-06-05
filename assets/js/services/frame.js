@@ -29,6 +29,8 @@ export default class Frame {
 
 	Objects(){
 
+		$( "#script-dom-ready" ).remove();
+
 		let objects = new Objects();
 		let res = objects.getHTMLPage();
 		document.body.innerHTML += res;
