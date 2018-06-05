@@ -401,8 +401,12 @@ export default class Objects{
 
          $('#jstree_demo_div').on('select_node.jstree', function(e, data) {
 
-         	//creation
+         	//creation du breadcrumb
          	console.log(data.node);
+         	 for (let k in data.node.parents){
+				console.log($('#jstree_object_tree').jstree(true).get_node(data.node.parents[k]).text);
+            }
+
 
             let ActiveDiv = '#jstree_demo_div';
             console.log('selection object');
