@@ -93,7 +93,7 @@ export default class Objects{
 
 
 
-						        <input type="file" id="file">
+						        <input id="file" type="file" >
 
 
 						        <br />
