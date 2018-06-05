@@ -458,6 +458,7 @@ export default class Objects{
       $('#jstree_object_tree').on('select_node.jstree', function(e, data) {
 
                 $('#action').show();
+                $('#jstree_demo_div').hide();
       });
 
 
