@@ -93,7 +93,7 @@ export default class Objects{
 
 
 
-						        <input id="Myfile" type="file" >
+						        <input class="Myfile" type="file" >
 
 
 						        <br />
@@ -213,7 +213,7 @@ export default class Objects{
       	
 /*      	$('#add_infos').show();
       	$('#InfosPhoto').show();*/
-      		$("#Myfile").trigger( "click" );
+      		$(".Myfile").trigger( "click" );
       		//document.getElementById("file").click();
       		console.log('in touchstart after click');
                
