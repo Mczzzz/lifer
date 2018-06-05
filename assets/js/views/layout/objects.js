@@ -64,8 +64,8 @@ export default class Objects{
 			                      </a>
 			                      <ul>
 			                        <li>
-			                          <a class="btn-floating red">
-			                            <i id="launch_cam" class="large material-icons">camera_alt</i>
+			                          <a id="launch_cam" class="btn-floating red">
+			                            <i class="large material-icons">camera_alt</i>
 			                          </a>
 			                        </li>
 			                        <li>
@@ -207,7 +207,7 @@ export default class Objects{
 
 
       $('#launch_cam').on('touchstart', function(e, data) {
-
+      	console.log('in touchstart launch cam');
       		$('#InfosPhoto').focus();
                
       });
