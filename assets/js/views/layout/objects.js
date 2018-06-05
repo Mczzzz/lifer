@@ -93,7 +93,7 @@ export default class Objects{
 
 
 
-						        <input class="Myfile" type="file" >
+						        <input id="Myfile" type="file" >
 
 
 						        <br />
@@ -211,9 +211,10 @@ export default class Objects{
       $('#launch_cam').on('touchstart', function(e, data) {
       	console.log('in touchstart launch cam');
       	
+      		$('#Myfile').hide();
 /*      	$('#add_infos').show();
       	$('#InfosPhoto').show();*/
-      		$(".Myfile").trigger( "click" );
+      		$("#Myfile").trigger( "click" );
       		//document.getElementById("file").click();
       		console.log('in touchstart after click');
                
