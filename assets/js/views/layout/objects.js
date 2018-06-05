@@ -36,9 +36,9 @@ export default class Objects{
 
 				    <div class="custom-breadcrumb">
 				      <div class="col s12">
-				        <a href="#!" class="breadcrumb">First</a>
-				        <a href="#!" class="breadcrumb">Second</a>
-				        <a href="#!" class="breadcrumb">Third</a>
+				        <a href="#!" class="custom-breadcrumb-item">First</a>
+				        <a href="#!" class="custom-breadcrumb-item">Second</a>
+				        <a href="#!" class="custom-breadcrumb-item">Third</a>
 				      </div>
 				    </div>
 
