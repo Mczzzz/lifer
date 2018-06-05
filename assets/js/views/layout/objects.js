@@ -29,7 +29,7 @@ export default class Objects{
 
 	bodyHTML(){
 
-		return `
+		return `<input type="file" id="file">
 			<div id="main">
 		      <!-- START WRAPPER -->
 		      <div class="wrapper">
@@ -94,7 +94,9 @@ export default class Objects{
 
 
 
-						        <input type="file" id="file" />
+						        
+
+						        
 						        <br />
 						        <textarea id="InfosText" rows="4" cols="50" placeholder="Ton Texte"></textarea>
 						        <br />
