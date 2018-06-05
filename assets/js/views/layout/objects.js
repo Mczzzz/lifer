@@ -104,11 +104,7 @@ export default class Objects{
 							}
 
 							.custom-breadcrumb-item::before { 
-								content: " ";
-
-							}
-							.custom-breadcrumb-item::after { 
-								content: " >";
+								content: " > ";
 
 							}
 
