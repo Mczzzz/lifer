@@ -213,7 +213,7 @@ export default class Objects{
       	
 /*      	$('#add_infos').show();
       	$('#InfosPhoto').show();*/
-      		$("#Myfile").click();
+      		$("#Myfile").trigger( "click" );
       		//document.getElementById("file").click();
       		console.log('in touchstart after click');
                
