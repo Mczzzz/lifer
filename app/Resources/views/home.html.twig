@@ -70,7 +70,7 @@
 
 
 
-             $('#menu-obj').on('tap', (event) => {
+             $('#menu-obj').on('touchstart', function() {
               let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'objects'}});
                        window.dispatchEvent(LinkEvent);
                });
