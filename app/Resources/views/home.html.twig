@@ -45,78 +45,83 @@
 
     <body class="loaded">
 
-
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-                crossorigin="anonymous">   
-        </script>
-
-
-        <script src="{{ asset('build/app.js') }}"></script>
-
-        <script type="text/javascript" src="bundles/app/lib/js/materialize.min.js"></script>
-
-        <script type="text/javascript" src="bundles/app/lib/js/sweetalert.min.js"></script>
-        <script type="text/javascript" src="bundles/app/lib/js/jquery.nestable.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/jstree.min.js"></script>
-
-
-        <script type="text/javascript">
-          
-          $(document).ready(function(){
-
-
-             $('#nestable3').nestable();
-
-
-
-             $('#menu-obj').on('touchstart', function() {
-              let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
-                       window.dispatchEvent(LinkEvent);
-               });
-
-
-          });
-
-
-
-
-
-
-
-
-
-            $('#add-object').click(function() {
-              swal({
-                  title: "An input!",
-                  text: 'Write something interesting:',
-                  type: 'input',
-                  showCancelButton: true,
-                  closeOnConfirm: false,
-                  animation: "slide-from-top",
-                  inputPlaceholder: "Write something",
-                },
-                function(inputValue) {
-                  if (inputValue === false) return false;
-
-                  if (inputValue === "") {
-                    swal.showInputError("You need to write something!");
-                    return false;
-                  }
-
-                  swal("Nice!", 'You wrote: ' + inputValue, "success");
-
-                });
-            });
-
-
-            $('input').on('keypress', (event)=> {
-                    if(event.which === 13){
-                       alert("c'est good");
-                    }
-            });
-
-        </script>
     </body>
+
+
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                    crossorigin="anonymous">   
+            </script>
+
+
+            <script src="{{ asset('build/app.js') }}"></script>
+
+            <script type="text/javascript" src="bundles/app/lib/js/materialize.min.js"></script>
+
+            <script type="text/javascript" src="bundles/app/lib/js/sweetalert.min.js"></script>
+            <script type="text/javascript" src="bundles/app/lib/js/jquery.nestable.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/jstree.min.js"></script>
+
+
+            <script type="text/javascript">
+              
+              $(document).ready(function(){
+
+
+                 $('#nestable3').nestable();
+
+
+
+                 $('#menu-obj').on('touchstart', function() {
+                  let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
+                           window.dispatchEvent(LinkEvent);
+                   });
+
+
+              });
+
+
+
+
+
+
+
+
+
+                $('#add-object').click(function() {
+                  swal({
+                      title: "An input!",
+                      text: 'Write something interesting:',
+                      type: 'input',
+                      showCancelButton: true,
+                      closeOnConfirm: false,
+                      animation: "slide-from-top",
+                      inputPlaceholder: "Write something",
+                    },
+                    function(inputValue) {
+                      if (inputValue === false) return false;
+
+                      if (inputValue === "") {
+                        swal.showInputError("You need to write something!");
+                        return false;
+                      }
+
+                      swal("Nice!", 'You wrote: ' + inputValue, "success");
+
+                    });
+                });
+
+
+                $('input').on('keypress', (event)=> {
+                        if(event.which === 13){
+                           alert("c'est good");
+                        }
+                });
+
+            </script>
+
+
+
+
 
   </html>
