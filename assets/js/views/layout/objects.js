@@ -156,6 +156,7 @@ export default class Objects{
 
 /*		$('#add_infos').hide();
 		$('#InfosPhoto').hide();*/
+		$('#file').click();
 		$('#action').hide();
 	    $('#infos').hide();
 	    $('#unities').hide();
