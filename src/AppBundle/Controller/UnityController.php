@@ -61,7 +61,7 @@ class UnityController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
-
+        ini_set('error_reporting', E_ALL);
         $Unities = $em->getRepository('AppBundle:Unity')->findAll();
         die('coucou3');
         var_dump($Unities);
