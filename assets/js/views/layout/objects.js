@@ -60,28 +60,28 @@ export default class Objects{
 				          <br />
 
 							<div style="position: relative;">
-							                    <div class="fixed-action-btn horizontal" style="position: absolute; display: inline-block; right: 19px;">
+							                    <div class="fixed-action-btn horizontal" style="position: absolute; display: inline-block; left: 19px;">
 							                      <a class="btn-floating btn-large">
 							                        <i class="material-icons">add</i>
 							                      </a>
 							                      <ul>
 							                        <li>
-							                          <a class="btn-floating red" style="transform: scaleY(0.4) scaleX(0.4) translateY(0px) translateX(40px); opacity: 0;">
+							                          <a class="btn-floating red">
 							                            <i class="large material-icons">insert_chart</i>
 							                          </a>
 							                        </li>
 							                        <li>
-							                          <a class="btn-floating yellow darken-1" style="transform: scaleY(0.4) scaleX(0.4) translateY(0px) translateX(40px); opacity: 0;">
+							                          <a class="btn-floating yellow darken-1">
 							                            <i class="large material-icons">format_quote</i>
 							                          </a>
 							                        </li>
 							                        <li>
-							                          <a class="btn-floating green" style="transform: scaleY(0.4) scaleX(0.4) translateY(0px) translateX(40px); opacity: 0;">
+							                          <a class="btn-floating green">
 							                            <i class="large material-icons">publish</i>
 							                          </a>
 							                        </li>
 							                        <li>
-							                          <a class="btn-floating blue" style="transform: scaleY(0.4) scaleX(0.4) translateY(0px) translateX(40px); opacity: 0;">
+							                          <a class="btn-floating blue">
 							                            <i class="large material-icons">attach_file</i>
 							                          </a>
 							                        </li>
