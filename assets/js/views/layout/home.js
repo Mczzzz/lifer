@@ -132,7 +132,7 @@ export default class Home{
 
 	scriptHTML(){
 
-		return `<script id="" type="text/javascript">
+		return `<script type="text/javascript">
               
               $(document).ready(function(){
 
