@@ -132,10 +132,8 @@ export default class Home{
 
 	scriptHTML(){
 
-		return `<script id="" type="text/javascript">
+		return `<script  type="text/javascript">
               
-             
-
 
                  $('#nestable3').nestable();
 
@@ -147,7 +145,7 @@ export default class Home{
                    });
 
 
-             
+
 
           </script>`;
 
