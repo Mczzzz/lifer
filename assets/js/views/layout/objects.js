@@ -67,7 +67,7 @@ export default class Objects{
 							                      <ul>
 							                        <li>
 							                          <a class="btn-floating red">
-							                            <i class="large material-icons">insert_chart</i>
+							                            <i class="large material-icons">camera_alt</i>
 							                          </a>
 							                        </li>
 							                        <li>
