@@ -5444,6 +5444,10 @@ button.btn-floating {
   z-index: 997;
 }
 
+.fixed-action-btn.horizontal.ltr-lifer {
+  bottom: -23px !important;
+}
+
 .fixed-action-btn.active ul {
   visibility: visible;
 }
@@ -5452,9 +5456,7 @@ button.btn-floating {
   padding: 0 0 0 15px;
 }
 
-.fixed-action-btn.horizontal.ltr-lifer {
-  padding: -23px 0 0 0 !important;
-}
+
 
 
 .fixed-action-btn.horizontal ul {
