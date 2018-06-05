@@ -5453,7 +5453,7 @@ button.btn-floating {
 }
 
 .fixed-action-btn.horizontal.ltr-lifer {
-  padding: -23px 0 0 0;
+  padding: -23px 0 0 0 !important;
 }
 
 
