@@ -130,26 +130,14 @@ export default class Home{
 	}
 
 
-	scriptHTML(){
+	activeJs(){
 
-		return `<script type="text/javascript">
-              
-              $(document).ready(function(){
+	    $('#nestable3').nestable();
 
-
-                 $('#nestable3').nestable();
-
-
-
-                 $('#menu-obj').on('touchstart', function() {
-                  let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
-                           window.dispatchEvent(LinkEvent);
-                   });
-
-
-              });
-
-          </script>`;
+	    $('#menu-obj').on('touchstart', function() {
+	      let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
+	               window.dispatchEvent(LinkEvent);
+	    });
 
 	}
 
