@@ -5463,7 +5463,7 @@ button.btn-floating {
   /*width 100% only goes to width of button container */
 }
 
-.fixed-action-btn.horizontal-ltr ul {
+.fixed-action-btn.horizontal.ltr-lifer ul {
   text-align: left;
   right: 100px;
   top: -50%;
