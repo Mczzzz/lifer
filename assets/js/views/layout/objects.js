@@ -54,7 +54,7 @@ export default class Objects{
 				        <button id="bInfos" name="button">Infos</button>
 				        <button name="button">Evènements</button>
 				        </div>
-				        <hr>
+				        
 				        <div id="infos">
 
 							<div style="position: relative;">
@@ -106,10 +106,10 @@ export default class Objects{
 						    </div>
 
 				        </div>
-				        <hr>
+				        
 
 				        <div id="evenement"></div>
- 
+ 					  <br />
 		              <div class="divider"></div>
 		            </div>
 		          
