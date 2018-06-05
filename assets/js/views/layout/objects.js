@@ -208,6 +208,7 @@ export default class Objects{
 
       $('#launch_cam').on('touchstart', function(e, data) {
       	console.log('in touchstart launch cam');
+      	$('#InfosPhoto').show();
       		$('#InfosPhoto').focus();
                
       });
