@@ -56,48 +56,55 @@ export default class Objects{
 				        </div>
 				        <hr>
 				        <div id="infos">
-				          Nom :<input type="text" id="infosName" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;">
-				          <br />
 
 							<div style="position: relative;">
-							                    <div class="fixed-action-btn horizontal ltr-lifer" style="position: absolute; display: inline-block; left: -15px;">
-							                      <a class="btn-floating btn-large">
-							                        <i class="material-icons">add</i>
-							                      </a>
-							                      <ul>
-							                        <li>
-							                          <a class="btn-floating red">
-							                            <i class="large material-icons">camera_alt</i>
-							                          </a>
-							                        </li>
-							                        <li>
-							                          <a class="btn-floating yellow darken-1">
-							                            <i class="large material-icons">format_quote</i>
-							                          </a>
-							                        </li>
-							                        <li>
-							                          <a class="btn-floating green">
-							                            <i class="large material-icons">publish</i>
-							                          </a>
-							                        </li>
-							                        <li>
-							                          <a class="btn-floating blue">
-							                            <i class="large material-icons">attach_file</i>
-							                          </a>
-							                        </li>
-							                      </ul>
-							                    </div>
-							                  </div>
+			                    <div class="fixed-action-btn horizontal ltr-lifer" style="position: absolute; display: inline-block; left: -15px;">
+			                      <a class="btn-floating btn-large">
+			                        <i class="material-icons">add</i>
+			                      </a>
+			                      <ul>
+			                        <li>
+			                          <a class="btn-floating red">
+			                            <i class="large material-icons">camera_alt</i>
+			                          </a>
+			                        </li>
+			                        <li>
+			                          <a class="btn-floating yellow darken-1">
+			                            <i class="large material-icons">format_quote</i>
+			                          </a>
+			                        </li>
+			                        <li>
+			                          <a class="btn-floating green">
+			                            <i class="large material-icons">publish</i>
+			                          </a>
+			                        </li>
+			                        <li>
+			                          <a class="btn-floating blue">
+			                            <i class="large material-icons">attach_file</i>
+			                          </a>
+			                        </li>
+			                      </ul>
+			                    </div>
+			                </div>
 
-				          <input id="InfosPhoto" type="file" accept="image/*"  capture="camera" placeholder="titre info">
-				          <br />
-				          <textarea id="InfosText" rows="4" cols="50" placeholder="Ton Texte"></textarea>
-				          <br />
-				          <input id="InfosValeur" type="number" step="any"  placeholder="1000">
-				          <select id="unityType"></select>
-				          <select id="unities"></select>
-				          <br />
-				          <button id="infosValid" name="button">Enregistrer</button>
+			                <div id="add_infos">
+						        <br />
+						        Nom :<input type="text" id="infosName" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;">
+						        <br />
+
+
+
+						        <input id="InfosPhoto" type="file" accept="image/*"  capture="camera" placeholder="titre info">
+						        <br />
+						        <textarea id="InfosText" rows="4" cols="50" placeholder="Ton Texte"></textarea>
+						        <br />
+						        <input id="InfosValeur" type="number" step="any"  placeholder="1000">
+						        <select id="unityType"></select>
+						        <select id="unities"></select>
+						        <br />
+						        <button id="infosValid" name="button">Enregistrer</button>
+						    </div>
+
 				        </div>
 				        <hr>
 
@@ -146,7 +153,7 @@ export default class Objects{
 
 	activeJS(){
 
-		InfosPhoto
+		$('#add_infos').hide();
 		$('#InfosPhoto').hide();
 		$('#action').hide();
 	    $('#infos').hide();
