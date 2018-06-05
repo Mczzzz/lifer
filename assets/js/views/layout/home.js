@@ -1,3 +1,4 @@
+import jstree from 'jstree';
 import Header from './sections/header.js';
 import Footer from './sections/footer.js';
 
