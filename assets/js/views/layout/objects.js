@@ -94,7 +94,15 @@ export default class Objects{
 	}
 
 
-	activeJs(){
+	activeCSS(){
+
+		var css = document.createElement("style");
+			css.type = "text/css";
+			css.innerHTML = ".custom-breadcrumb-item { color: red }";
+			document.body.appendChild(css);
+	}
+
+	activeJS(){
 
 		$('#action').hide();
 	    $('#infos').hide();

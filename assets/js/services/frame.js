@@ -35,7 +35,8 @@ export default class Frame {
 		let objects = new Objects();
 		let res = objects.getHTMLPage();
 		document.body.innerHTML = res;
-		objects.activeJs();
+		objects.activeCSS();
+		objects.activeJS();
 
 
 	}
