@@ -131,7 +131,7 @@ export default class Home{
 
 	activeJs(){
 
-	    $('#nestable3').nestable();
+	    //$('#nestable3').nestable();
 
 	    $('#menu-obj').on('touchstart', function() {
 	      let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
