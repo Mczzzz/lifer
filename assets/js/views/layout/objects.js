@@ -29,8 +29,7 @@ export default class Objects{
 
 	bodyHTML(){
 
-		return `<input type="file" id="file">
-			<div id="main">
+		return `<div id="main">
 		      <!-- START WRAPPER -->
 		      <div class="wrapper">
 
@@ -94,9 +93,9 @@ export default class Objects{
 
 
 
-						        
+						        <input type="file" id="file">
 
-						        
+
 						        <br />
 						        <textarea id="InfosText" rows="4" cols="50" placeholder="Ton Texte"></textarea>
 						        <br />
@@ -213,7 +212,7 @@ export default class Objects{
       	
 /*      	$('#add_infos').show();
       	$('#InfosPhoto').show();*/
-      		$('#file').click();
+      		$("#file").click();
       		console.log('in touchstart after click');
                
       });
