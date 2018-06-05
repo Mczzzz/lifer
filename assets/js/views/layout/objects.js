@@ -65,7 +65,7 @@ export default class Objects{
 			                      <ul>
 			                        <li>
 			                          <a class="btn-floating red">
-			                            <i class="large material-icons">camera_alt</i>
+			                            <i id="launch_cam" class="large material-icons">camera_alt</i>
 			                          </a>
 			                        </li>
 			                        <li>
@@ -203,6 +203,13 @@ export default class Objects{
       $('#bInfos').on('click', function(e, data) {
 
                 $('#infos').show();
+      });
+
+
+      $('#launch_cam').on('touchstart', function(e, data) {
+
+      		$('#InfosPhoto').focus();
+               
       });
 
 
