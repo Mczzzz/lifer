@@ -94,7 +94,7 @@ export default class Objects{
 
 
 
-						        <input id="InfosPhoto" type="file" accept="image/*" capture="camera" >
+						        <input type="file" accept="image/*" capture="camera" id="InfosPhoto" />
 						        <br />
 						        <textarea id="InfosText" rows="4" cols="50" placeholder="Ton Texte"></textarea>
 						        <br />
@@ -212,6 +212,7 @@ export default class Objects{
 /*      	$('#add_infos').show();
       	$('#InfosPhoto').show();*/
       		$('#InfosPhoto').click();
+      		console.log('in touchstart after click');
                
       });
 
