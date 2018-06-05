@@ -15,6 +15,8 @@ export default class Home{
 
 		page += this.footerHTML();
 
+		page += this.scriptHTML();
+
 		return page;
 	}
 
@@ -95,7 +97,7 @@ export default class Home{
 
 	floatingHTML(){
 
-		return`<div class="fixed-action-btn " style="bottom: 19px; left: 19px; width: 60px">
+		return `<div class="fixed-action-btn " style="bottom: 19px; left: 19px; width: 60px">
 		              <a class="btn-floating btn-large gradient-45deg-light-blue-cyan gradient-shadow">
 		                <i class="material-icons">add</i>
 		              </a>
@@ -125,6 +127,30 @@ export default class Home{
 				let footer = new Footer();
 
 				return footer.addTags();
+	}
+
+
+	scriptHTML(){
+
+		return `<script id="" type="text/javascript">
+              
+              $(document).ready(function(){
+
+
+                 $('#nestable3').nestable();
+
+
+
+                 $('#menu-obj').on('touchstart', function() {
+                  let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
+                           window.dispatchEvent(LinkEvent);
+                   });
+
+
+              });
+
+          </script>`;
+
 	}
 
 }

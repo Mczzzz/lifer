@@ -8,7 +8,7 @@ export default class Frame {
 
 	
 		this.Home();
-
+		//this.active = "";
 
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
 
@@ -20,6 +20,7 @@ export default class Frame {
 
 	Home(){
 
+		//this.active = "Home";
 		let home = new Home();
 		let res = home.getHTMLPage();
 		document.body.innerHTML = res;
@@ -29,8 +30,7 @@ export default class Frame {
 
 	Objects(){
 
-		$( "#script-dom-ready" ).remove();
-
+		//on recharge le body
 		let objects = new Objects();
 		let res = objects.getHTMLPage();
 		document.body.innerHTML += res;

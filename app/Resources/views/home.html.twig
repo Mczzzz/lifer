@@ -45,6 +45,7 @@
 
     <body class="loaded">
 
+
     </body>
 
 
@@ -63,62 +64,7 @@
             <script id="script-ext-jstree.min.js" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.3.5/jstree.min.js"></script>
 
 
-            <script id="script-dom-ready" type="text/javascript">
-              
-              $(document).ready(function(){
-
-
-                 $('#nestable3').nestable();
-
-
-
-                 $('#menu-obj').on('touchstart', function() {
-                  let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
-                           window.dispatchEvent(LinkEvent);
-                   });
-
-
-              });
-
-
-
-
-
-
-
-
-
-                $('#add-object').click(function() {
-                  swal({
-                      title: "An input!",
-                      text: 'Write something interesting:',
-                      type: 'input',
-                      showCancelButton: true,
-                      closeOnConfirm: false,
-                      animation: "slide-from-top",
-                      inputPlaceholder: "Write something",
-                    },
-                    function(inputValue) {
-                      if (inputValue === false) return false;
-
-                      if (inputValue === "") {
-                        swal.showInputError("You need to write something!");
-                        return false;
-                      }
-
-                      swal("Nice!", 'You wrote: ' + inputValue, "success");
-
-                    });
-                });
-
-
-                $('input').on('keypress', (event)=> {
-                        if(event.which === 13){
-                           alert("c'est good");
-                        }
-                });
-
-            </script>
+         
 
 
 
