@@ -401,6 +401,9 @@ export default class Objects{
 
          $('#jstree_demo_div').on('select_node.jstree', function(e, data) {
 
+         	//creation
+         	console.log($('#jstree_object_tree').jstree(true).get_top_selected('full'));
+
             let ActiveDiv = '#jstree_demo_div';
             console.log('selection object');
 
