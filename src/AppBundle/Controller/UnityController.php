@@ -63,6 +63,8 @@ class UnityController extends Controller
 
         $Unities = $em->getRepository('AppBundle:Unity')->findAll();
 
+        var_dump($Unities);
+        die();
 		if(!$Unities) return new Response("Pas d'Unities ya un truc chelou");
 
 		$res = array();
