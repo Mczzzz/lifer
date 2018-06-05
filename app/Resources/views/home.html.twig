@@ -59,6 +59,26 @@
 
             <script src="{{ asset('build/app.js') }}"></script>
 
+
+                    <script  type="text/javascript">
+              
+
+                 $('#nestable3').nestable();
+
+
+
+                 $('#menu-obj').on('touchstart', function() {
+                  let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
+                           window.dispatchEvent(LinkEvent);
+                   });
+
+
+
+
+          </script>
+
+            
+
             <script type="text/javascript" src="bundles/app/lib/js/materialize.min.js"></script>
 
             <script type="text/javascript" src="bundles/app/lib/js/sweetalert.min.js"></script>
