@@ -60,7 +60,7 @@ export default class Objects{
 				          <br />
 
 							<div style="position: relative;">
-							                    <div class="fixed-action-btn horizontal" style="position: absolute; display: inline-block; left: 19px;">
+							                    <div class="fixed-action-btn horizontal-ltr" style="position: absolute; display: inline-block; left: 19px;">
 							                      <a class="btn-floating btn-large">
 							                        <i class="material-icons">add</i>
 							                      </a>
