@@ -106,7 +106,7 @@ export default class Home{
 		                  </a>
 		                </li>
 		                <li>
-		                  <a href="" id="menu-obj"class="btn-floating green">
+		                  <a href="#" id="menu-obj"class="btn-floating green">
 		                    <i class="material-icons">widgets</i>
 		                  </a>
 		                </li>
