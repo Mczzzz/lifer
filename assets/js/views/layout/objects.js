@@ -108,7 +108,7 @@ export default class Objects{
 
 							}
 							.custom-breadcrumb-item::after { 
-								content: ">";
+								content: " >";
 
 							}
 
