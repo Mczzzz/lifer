@@ -59,9 +59,9 @@ class UnityController extends Controller
      */
     public function getAllUnitiesAction()
     {
-        die('coucou');
-        $em = $this->getDoctrine()->getManager();
 
+        $em = $this->getDoctrine()->getManager();
+        die('coucou2');
         $Unities = $em->getRepository('AppBundle:Unity')->findAll();
 
         var_dump($Unities);
