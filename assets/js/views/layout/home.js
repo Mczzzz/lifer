@@ -133,7 +133,7 @@ export default class Home{
 
 	    //$('#nestable3').nestable();
 
-	    $('#menu-obj').on('touchstart', function() {
+	    $('#menu-obj').on('tap', function() {
 	      let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
 	               window.dispatchEvent(LinkEvent);
 	    });
