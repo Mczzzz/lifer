@@ -36,6 +36,7 @@ export default class Home{
 			<div id="main">
 		      <!-- START WRAPPER -->
 		      <div class="wrapper">
+
 		        <!-- START CONTENT -->
 		        <section id="content">
 
@@ -108,9 +109,9 @@ export default class Home{
 		                  </a>
 		                </li>
 		                <li>
-		                  <div id="menu-obj"class="btn-floating green">
+		                  <a href="#!" id="menu-obj"class="btn-floating green">
 		                    <i class="material-icons">widgets</i>
-		                  </div>
+		                  </a>
 		                </li>
 		                <li>
 		                  <a href="app-calendar.html" class="btn-floating amber">
