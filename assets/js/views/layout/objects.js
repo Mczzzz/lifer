@@ -404,7 +404,7 @@ export default class Objects{
          	//creation du breadcrumb
          	console.log(data.node);
          	 for (let k in data.node.parents){
-				console.log($('#jstree_object_tree').jstree(true).get_node(data.node.parents[k]).text);
+				console.log($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text);
             }
 
 
