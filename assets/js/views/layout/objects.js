@@ -35,10 +35,7 @@ export default class Objects{
 		      <div class="wrapper">
 
 				    <div class="custom-breadcrumb">
-				      <div class="col s12">
-				        <a href="#!" class="custom-breadcrumb-item">First</a>
-				        <a href="#!" class="custom-breadcrumb-item">Second</a>
-				        <a href="#!" class="custom-breadcrumb-item">Third</a>
+				      <div id="breadcrumb"class="col s12">
 				      </div>
 				    </div>
 
@@ -404,7 +401,10 @@ export default class Objects{
          	//creation du breadcrumb
          	console.log(data.node);
          	 for (let k in data.node.parents){
-				console.log($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text);
+				//console.log($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text);
+				$('#breadcrumb').append('<a href="#!" class="custom-breadcrumb-item">'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text+'</a>');
+				
+
             }
 
 
