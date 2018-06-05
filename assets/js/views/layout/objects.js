@@ -91,10 +91,6 @@ export default class Objects{
 
 				          <input id="InfosPhoto" type="file" accept="image/*"  capture="camera" placeholder="titre info">
 				          <br />
-				          <button name="button">+ Text /lien</button>
-				          <button name="button">+ Photo/video/fichier</button>
-				          <button name="button">+ Valeur</button>
-				          <br />
 				          <textarea id="InfosText" rows="4" cols="50" placeholder="Ton Texte"></textarea>
 				          <br />
 				          <input id="InfosValeur" type="number" step="any"  placeholder="1000">
@@ -150,6 +146,8 @@ export default class Objects{
 
 	activeJS(){
 
+		InfosPhoto
+		$('#InfosPhoto').hide();
 		$('#action').hide();
 	    $('#infos').hide();
 	    $('#unities').hide();
