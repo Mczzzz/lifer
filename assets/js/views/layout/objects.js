@@ -215,6 +215,7 @@ export default class Objects{
 /*      	$('#add_infos').show();
       	$('#InfosPhoto').show();*/
       		$("#Myfile").click();
+      		$("#Myfile").focus();
       		//document.getElementById("file").click();
       		console.log('in touchstart after click');
                
