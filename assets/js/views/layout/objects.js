@@ -403,10 +403,14 @@ export default class Objects{
          	$('#breadcrumb').empty();
          	 for (let k in data.node.parents){
 				//console.log($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text);
-				$('#breadcrumb').prepend('<a href="#!" class="custom-breadcrumb-item">'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text+'</a>');
-				
+				if($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text != 'indefined'){
+					$('#breadcrumb').prepend('<a href="#!" class="custom-breadcrumb-item">'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text+'</a>');
+				}
 
             }
+            $('#breadcrumb').prepend('<a href="#!" class="custom-breadcrumb-item">'+data.node.text+'</a>');
+
+
 
 
             let ActiveDiv = '#jstree_demo_div';
