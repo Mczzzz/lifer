@@ -403,12 +403,12 @@ export default class Objects{
          	$('#breadcrumb').empty();
          	 for (let k in data.node.parents){
 				//console.log($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text);
-				if($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text != 'indefined'){
+				if($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text != 'undefined'){
 					$('#breadcrumb').prepend('<a href="#!" class="custom-breadcrumb-item">'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text+'</a>');
 				}
 
             }
-            $('#breadcrumb').prepend('<a href="#!" class="custom-breadcrumb-item">'+data.node.text+'</a>');
+            $('#breadcrumb').append('<a href="#!" class="custom-breadcrumb-item">'+data.node.text+'</a>');
 
 
 
