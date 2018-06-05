@@ -94,7 +94,7 @@ export default class Objects{
 
 
 
-						        <input id="InfosPhoto" type="file" accept="image/*"  capture="camera" placeholder="titre info">
+						        <input id="InfosPhoto" type="file" accept="image/*;capture=camera" placeholder="titre info">
 						        <br />
 						        <textarea id="InfosText" rows="4" cols="50" placeholder="Ton Texte"></textarea>
 						        <br />
