@@ -96,9 +96,19 @@ export default class Objects{
 
 	activeCSS(){
 
-		var css = document.createElement("style");
+		let css = document.createElement("style");
 			css.type = "text/css";
-			css.innerHTML = ".custom-breadcrumb-item { color: red }";
+			css.innerHTML = `.custom-breadcrumb-item { 
+								color: red;
+
+							}
+
+							.custom-breadcrumb-item::after { 
+								content: ">";
+
+							}
+
+							`;
 			document.body.appendChild(css);
 	}
 
