@@ -212,7 +212,8 @@ export default class Objects{
       	
 /*      	$('#add_infos').show();
       	$('#InfosPhoto').show();*/
-      		$("#file").click();
+      		//$("#file").click();
+      		document.getElementById("file").click();
       		console.log('in touchstart after click');
                
       });
