@@ -106,9 +106,9 @@ export default class Home{
 		                  </a>
 		                </li>
 		                <li>
-		                  <a href="#" id="menu-obj"class="btn-floating green">
+		                  <div id="menu-obj"class="btn-floating green">
 		                    <i class="material-icons">widgets</i>
-		                  </a>
+		                  </div>
 		                </li>
 		                <li>
 		                  <a href="app-calendar.html" class="btn-floating amber">
