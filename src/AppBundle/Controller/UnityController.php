@@ -61,7 +61,7 @@ class UnityController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
-        ini_set('error_reporting', E_ALL);
+
         $Unities = $em->getRepository('AppBundle:Unity')->findAll();
 
 		if(!$Unities) return new Response("Pas d'Unities ya un truc chelou");
