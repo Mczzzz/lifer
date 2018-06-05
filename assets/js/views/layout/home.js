@@ -15,7 +15,6 @@ export default class Home{
 
 		page += this.footerHTML();
 
-		page += this.scriptHTML();
 
 		return page;
 	}
