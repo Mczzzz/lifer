@@ -60,6 +60,7 @@ export default class Objects{
 				          <br />
 
 				          <div class="fixed-action-btn horizontal" style="position: absolute; display: inline-block; left: 19px;">
+				          
 							  <a class="btn-floating btn-large red">
 							    <i class="mdi-social-notifications-none"></i>
 							  </a>
@@ -74,7 +75,7 @@ export default class Objects{
 							  </li>
 							</ul>
 							</div>
-							
+
 				          <input id="InfosPhoto" type="file" accept="image/*"  capture="camera" placeholder="titre info">
 				          <br />
 				          <button name="button">+ Text /lien</button>
