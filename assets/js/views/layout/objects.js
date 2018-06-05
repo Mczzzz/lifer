@@ -87,31 +87,31 @@ export default class Objects{
 
 	activeJs(){
 
-		      $('#action').hide();
-      $('#infos').hide();
-      $('#unities').hide();
+		$('#action').hide();
+	    $('#infos').hide();
+	    $('#unities').hide();
 
-      $.get( "unity/type", function( data ) {
-                           unityType = JSON.parse(data);
-                           console.log(unityType);
-                              $('#unityType').append($('<option>', {
-                                  value: 0,
-                                  text: 'Choisir un type' 
-                                }));
-                            for (var k in unityType){
-                                $('#unityType').append($('<option>', {
-                                  value: k,
-                                  text: unityType[k]
-                                }));
-                            }
-                           
+	    $.get( "unity/type", function( data ) {
+            let unityType = JSON.parse(data);
+            console.log(unityType);
+              $('#unityType').append($('<option>', {
+                  value: 0,
+                  text: 'Choisir un type' 
+                }));
+            for (var k in unityType){
+                $('#unityType').append($('<option>', {
+                  value: k,
+                  text: unityType[k]
+                }));
+            }
+           
 
 
-                             
-                          });
+	                             
+	    });
 
       $.get( "unity/unities", function( data ) {
-                           unityUnities = JSON.parse(data);
+                           let unityUnities = JSON.parse(data);
                            console.log(unityUnities);
                           });
 
@@ -197,7 +197,7 @@ export default class Objects{
             console.log('Dropped');
 
             //Pour savoir quel jstree a lancée l'event
-            var MyFrag = $(data.data.origin.element[0]);
+            let MyFrag = $(data.data.origin.element[0]);
              console.log(MyFrag.filter("div").attr('id'));
            
               ref = $('#'+MyFrag.filter("div").attr('id')).jstree(true);
@@ -366,7 +366,7 @@ export default class Objects{
 
          $('#jstree_demo_div').on('select_node.jstree', function(e, data) {
 
-            ActiveDiv = '#jstree_demo_div';
+            let ActiveDiv = '#jstree_demo_div';
             console.log('selection object');
 
              $('#jstree_object_tree').jstree({
@@ -393,7 +393,7 @@ export default class Objects{
              });
 
 
-               treeJSONObject = "";
+               let treeJSONObject = "";
 
                 $.get( "object/tree/get/"+data.node.id, function( data ) {
                   treeJSONObject = JSON.parse(data);
@@ -499,7 +499,7 @@ export default class Objects{
 
 
 
-        treeJSON = "";
+        let treeJSON = "";
 
         $.get( "children", function( data ) {
           treeJSON = JSON.parse(data);
@@ -510,7 +510,7 @@ export default class Objects{
         });
 
 
-          var to = false;
+          let to = false;
           $('#plugins4_q').keyup(function () {
             if(to) { clearTimeout(to); }
             to = setTimeout(function () {
