@@ -59,22 +59,35 @@ export default class Objects{
 				          Nom :<input type="text" id="infosName" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;">
 				          <br />
 
-				          <div class="fixed-action-btn horizontal" style="position: absolute; display: inline-block; left: 19px;">
-				          
-							  <a class="btn-floating btn-large red">
-							    <i class="mdi-social-notifications-none"></i>
-							  </a>
-							  <ul>
-							  <li><a class="btn-floating red"><i class="large mdi-editor-insert-chart"></i></a>
-							  </li>
-							  <li><a class="btn-floating yellow darken-1"><i class="large mdi-editor-format-quote"></i></a>
-							  </li>
-							  <li><a class="btn-floating green"><i class="large mdi-editor-publish"></i></a>
-							  </li>
-							  <li><a class="btn-floating blue"><i class="large mdi-editor-attach-file"></i></a>
-							  </li>
-							</ul>
-							</div>
+							<div style="position: relative;">
+							                    <div class="fixed-action-btn horizontal" style="position: absolute; display: inline-block; right: 19px;">
+							                      <a class="btn-floating btn-large">
+							                        <i class="material-icons">add</i>
+							                      </a>
+							                      <ul>
+							                        <li>
+							                          <a class="btn-floating red" style="transform: scaleY(0.4) scaleX(0.4) translateY(0px) translateX(40px); opacity: 0;">
+							                            <i class="large material-icons">insert_chart</i>
+							                          </a>
+							                        </li>
+							                        <li>
+							                          <a class="btn-floating yellow darken-1" style="transform: scaleY(0.4) scaleX(0.4) translateY(0px) translateX(40px); opacity: 0;">
+							                            <i class="large material-icons">format_quote</i>
+							                          </a>
+							                        </li>
+							                        <li>
+							                          <a class="btn-floating green" style="transform: scaleY(0.4) scaleX(0.4) translateY(0px) translateX(40px); opacity: 0;">
+							                            <i class="large material-icons">publish</i>
+							                          </a>
+							                        </li>
+							                        <li>
+							                          <a class="btn-floating blue" style="transform: scaleY(0.4) scaleX(0.4) translateY(0px) translateX(40px); opacity: 0;">
+							                            <i class="large material-icons">attach_file</i>
+							                          </a>
+							                        </li>
+							                      </ul>
+							                    </div>
+							                  </div>
 
 				          <input id="InfosPhoto" type="file" accept="image/*"  capture="camera" placeholder="titre info">
 				          <br />
