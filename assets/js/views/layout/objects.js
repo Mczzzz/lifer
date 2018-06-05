@@ -98,7 +98,15 @@ export default class Objects{
 
 		let css = document.createElement("style");
 			css.type = "text/css";
-			css.innerHTML = `.custom-breadcrumb-item { 
+			css.innerHTML = `
+
+							.custom-breadcrumb {
+							    padding-left: 20px;
+							    padding-top: 5px;
+							}
+
+
+							.custom-breadcrumb-item { 
 								color: red;
 
 							}
