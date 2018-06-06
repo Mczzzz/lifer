@@ -459,6 +459,7 @@ export default class Objects{
 				//console.log($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text);
 				if($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text !== undefined){
 					$('#breadcrumb').prepend('<a href="#!" id=bc_'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).id+' class="custom-breadcrumb-item">'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text+'</a>');
+					
 					$('#bc_'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).id).click(function(){
 						$('#jstree_demo_div').show();
 						$('#jstree_demo_div').jstree(true).close_all();
@@ -471,8 +472,16 @@ export default class Objects{
 				}
 
             }
-            $('#breadcrumb').append('<a href="#!" class="custom-breadcrumb-item">'+data.node.text+'</a>');
+            $('#breadcrumb').append('<a href="#!" id=bc_'+data.node.id+'class="custom-breadcrumb-item">'+data.node.text+'</a>');
+            	$('#bc_'+data.node.id).click(function(){
+						$('#jstree_demo_div').show();
+						$('#jstree_demo_div').jstree(true).close_all();
+						console.log("la node que l'on veut ouvrir");
+						console.log(data.node);
+						$('#jstree_demo_div').jstree(true).open_node(data.node);
 
+
+					});
 
 
 
