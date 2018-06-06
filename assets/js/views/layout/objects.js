@@ -451,6 +451,7 @@ export default class Objects{
          $('#jstree_demo_div').on('select_node.jstree', function(e, data) {
 
          	$('#jstree_object_tree').show();
+         	$('#jstree_demo_div').hide();
          	//creation du breadcrumb
          	
          	$('#breadcrumb').empty();
