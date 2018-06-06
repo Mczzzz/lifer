@@ -459,7 +459,7 @@ export default class Objects{
 					$('#breadcrumb').prepend('<a href="#!" id=bc_'+data.node.parents[k].id+' class="custom-breadcrumb-item">'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text+'</a>');
 					$('#bc_'+data.node.parents[k].id).click(function(){
 						$('#jstree_demo_div').show();
-						$('#jstree_object_tree').jstree(true).select_node(data.node.parents[k].id);
+						$('#jstree_object_tree').jstree(true).open_node(data.node.parents[k].id);
 
 
 					});
