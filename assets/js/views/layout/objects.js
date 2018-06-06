@@ -93,7 +93,7 @@ export default class Objects{
 
 
 
-						        <input id="Myfile" type="file" >
+						        <input id="Myfile" type="file" accept="image/*" capture="camera">
 
 
 						        <br />
