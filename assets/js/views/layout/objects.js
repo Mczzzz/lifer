@@ -472,7 +472,7 @@ export default class Objects{
 				}
 
             }
-            $('#breadcrumb').append('<a href="#!" id=bc_'+data.node.id+'" class="custom-breadcrumb-item">'+data.node.text+'</a>');
+            $('#breadcrumb').append('<a href="#!" id="bc_'+data.node.id+'" class="custom-breadcrumb-item">'+data.node.text+'</a>');
             	$('#bc_'+data.node.id).click(function(){
 						$('#jstree_demo_div').show();
 						$('#jstree_demo_div').jstree(true).close_all();
