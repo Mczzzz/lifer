@@ -208,14 +208,14 @@ export default class Objects{
       });
 
 
-      $('#launch_cam').on('touchstart', function(e, data) {
+      $('#launch_cam').on('click', function(e, data) {
       	console.log('in touchstart launch cam');
       	
       		//$('#Myfile').hide();
 /*      	$('#add_infos').show();
       	$('#InfosPhoto').show();*/
       		$("#Myfile").click();
-      		$("#Myfile").focus();
+
       		//document.getElementById("file").click();
       		console.log('in touchstart after click');
                
