@@ -45,10 +45,11 @@ export default class Objects{
 		          <div class="container">
 		            <div class="section">
 		            	<div><input type="text" id="plugins4_q" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;"></div>
+				        
 				        <div id="jstree_demo_div"></div>
-				        <hr>
+				        
 				        <div id="jstree_object_tree"></div>
-				        <hr>
+				        
 		        
 				        <div id="infos">
 
@@ -432,6 +433,7 @@ export default class Objects{
 
          $('#jstree_demo_div').on('select_node.jstree', function(e, data) {
 
+         	$('#plugins4_q').hide();
          	$('#infos').show();
          	$('#jstree_object_tree').show();
          	$('#jstree_demo_div').hide();
@@ -451,6 +453,8 @@ export default class Objects{
 						$('#jstree_demo_div').jstree(true).close_all();
 						$('#jstree_demo_div').jstree(true)._open_to($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]));
 						$('#jstree_demo_div').jstree(true).open_node($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]));
+						$('#plugins4_q').show();
+						
 
 
 					});
@@ -464,6 +468,7 @@ export default class Objects{
 						$('#jstree_demo_div').jstree(true).close_all();
 						$('#jstree_demo_div').jstree(true)._open_to(data.node);
 						$('#jstree_demo_div').jstree(true).open_node(data.node);
+						$('#plugins4_q').show();
 					});
             //fin de creation breadcrumb
 
