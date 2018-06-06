@@ -44,6 +44,7 @@ export default class Home{
 		          <div class="container">
 		            <div class="section">
 		            	<input id="Myfile" type="file" >
+		            	<button type="button" onClick="$("#Myfile").click();" >Click Me!</button>
 		              <div class="divider"></div>
 		            </div>
 		          
