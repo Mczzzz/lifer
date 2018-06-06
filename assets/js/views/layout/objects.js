@@ -456,7 +456,13 @@ export default class Objects{
          	 for (let k in data.node.parents){
 				//console.log($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text);
 				if($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text !== undefined){
-					$('#breadcrumb').prepend('<a href="#!" class="custom-breadcrumb-item">'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text+'</a>');
+					$('#breadcrumb').prepend('<a href="#!" id=bc_'+data.node.parents[k].id+' class="custom-breadcrumb-item">'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text+'</a>');
+					$('#bc_'+data.node.parents[k].id).click(function(){
+						$('#jstree_demo_div').show();
+						$('#jstree_object_tree').jstree(true).select_node(data.node.parents[k].id);
+
+
+					});
 				}
 
             }
