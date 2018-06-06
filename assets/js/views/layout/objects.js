@@ -450,8 +450,9 @@ export default class Objects{
 
          $('#jstree_demo_div').on('select_node.jstree', function(e, data) {
 
+         	$('#jstree_object_tree').show();
          	//creation du breadcrumb
-         	console.log(data.node);
+         	
          	$('#breadcrumb').empty();
          	 for (let k in data.node.parents){
 
@@ -464,8 +465,6 @@ export default class Objects{
 						$('#jstree_demo_div').show();
 						$('#jstree_object_tree').hide();
 						$('#jstree_demo_div').jstree(true).close_all();
-						console.log("la node que l'on veut ouvrir");
-						console.log($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]));
 						$('#jstree_demo_div').jstree(true)._open_to($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]));
 
 
@@ -476,19 +475,15 @@ export default class Objects{
             $('#breadcrumb').append('<a href="#!" id="bc_'+data.node.id+'" class="custom-breadcrumb-item">'+data.node.text+'</a>');
             	$('#bc_'+data.node.id).click(function(){
 						$('#jstree_demo_div').show();
-						$('#jstree_demo_div').jstree(true).close_all();
-						console.log("la node que l'on veut ouvrir");
-						console.log(data.node);
-						$('#jstree_demo_div').jstree(true)._open_to(data.node);
 						$('#jstree_object_tree').hide();
-
-
+						$('#jstree_demo_div').jstree(true).close_all();
+						$('#jstree_demo_div').jstree(true)._open_to(data.node);
 					});
-
+            //fin de creation breadcrumb
 
 
             let ActiveDiv = '#jstree_demo_div';
-            console.log('selection object');
+  
 
              $('#jstree_object_tree').jstree({
               'core' : {
