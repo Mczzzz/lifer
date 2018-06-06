@@ -462,6 +462,7 @@ export default class Objects{
 					
 					$('#bc_'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).id).click(function(){
 						$('#jstree_demo_div').show();
+						$('#jstree_object_tree').hide();
 						$('#jstree_demo_div').jstree(true).close_all();
 						console.log("la node que l'on veut ouvrir");
 						console.log($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]));
@@ -479,6 +480,7 @@ export default class Objects{
 						console.log("la node que l'on veut ouvrir");
 						console.log(data.node);
 						$('#jstree_demo_div').jstree(true)._open_to(data.node);
+						$('#jstree_object_tree').hide();
 
 
 					});
