@@ -53,7 +53,7 @@ export default class Objects{
 				        <div id="infos">
 
 							<div>
-			                    <div class="fixed-action-btn horizontal ltr-lifer" style="position: absolute; display: inline-block;">
+			                    <div class="fixed-action-btn horizontal ltr-lifer" style="position: absolute; display: inline-block; left: 0px;">
 			                      <a class="btn-floating btn-large">
 			                        <i class="material-icons">add</i>
 			                      </a>
