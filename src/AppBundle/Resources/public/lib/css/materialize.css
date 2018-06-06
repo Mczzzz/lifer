@@ -5444,9 +5444,6 @@ button.btn-floating {
   z-index: 997;
 }
 
-.fixed-action-btn.horizontal.ltr-lifer {
-  bottom: -23px !important;
-}
 
 .fixed-action-btn.active ul {
   visibility: visible;
