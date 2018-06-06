@@ -102,10 +102,10 @@ export default class Home{
 
 	    //$('#nestable3').nestable();
 
-	    $('#menu-obj').on('touchstart', function() {
-	    
-	       let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
-	       window.dispatchEvent(LinkEvent);
+	    $('#menu-obj').on('click', function() {
+	    $("#Myfile").click();
+/*	       let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
+	       window.dispatchEvent(LinkEvent);*/
 	    });
 
 
