@@ -75,7 +75,12 @@ export default class Objects{
 			                        </li>
 			                        <li>
 			                          <a class="btn-floating blue">
-			                            <i class="large material-icons">attach_file</i>
+			                            <i class="large material-icons">insert_link</i>
+			                          </a>
+			                        </li>
+			                        <li>
+			                          <a class="btn-floating blue">
+			                            <i class="large material-icons">looks_one</i>
 			                          </a>
 			                        </li>
 			                      </ul>
