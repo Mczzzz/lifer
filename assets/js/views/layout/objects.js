@@ -70,7 +70,7 @@ export default class Objects{
 			                        </li>
 			                        <li>
 			                          <a class="btn-floating green">
-			                            <i class="large material-icons">publish</i>
+			                            <i class="large material-icons">date_range</i>
 			                          </a>
 			                        </li>
 			                        <li>
