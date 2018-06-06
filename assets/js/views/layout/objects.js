@@ -454,11 +454,12 @@ export default class Objects{
          	console.log(data.node);
          	$('#breadcrumb').empty();
          	 for (let k in data.node.parents){
+
+
 				//console.log($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text);
-				console.log()
 				if($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text !== undefined){
 					$('#breadcrumb').prepend('<a href="#!" id=bc_'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).id+' class="custom-breadcrumb-item">'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text+'</a>');
-					$('#bc_'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k])).click(function(){
+					$('#bc_'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).id).click(function(){
 						$('#jstree_demo_div').show();
 						$('#jstree_object_tree').jstree(true).open_node($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).id);
 
