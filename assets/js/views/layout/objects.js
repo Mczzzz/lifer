@@ -49,11 +49,7 @@ export default class Objects{
 				        <hr>
 				        <div id="jstree_object_tree"></div>
 				        <hr>
-				        <div id="action">
-				        <button id="bInfos" name="button">Infos</button>
-				        <button name="button">Evènements</button>
-				        </div>
-				        
+		        
 				        <div id="infos">
 
 							<div style="position: relative;">
@@ -202,10 +198,6 @@ export default class Objects{
 
 
 
-      $('#bInfos').on('click', function(e, data) {
-
-                $('#infos').show();
-      });
 
 
       $('#launch_cam').on('click', function(e, data) {
@@ -450,6 +442,7 @@ export default class Objects{
 
          $('#jstree_demo_div').on('select_node.jstree', function(e, data) {
 
+         	$('#infos').show();
          	$('#jstree_object_tree').show();
          	$('#jstree_demo_div').hide();
          	//creation du breadcrumb
