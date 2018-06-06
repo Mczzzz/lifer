@@ -463,6 +463,7 @@ export default class Objects{
 					$('#bc_'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).id).click(function(){
 						$('#jstree_demo_div').show();
 						$('#jstree_demo_div').jstree(true).close_all();
+						$('#jstree_demo_div').jstree(true).open_all();
 						console.log("la node que l'on veut ouvrir");
 						console.log($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]));
 						$('#jstree_demo_div').jstree(true).open_node($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]));
