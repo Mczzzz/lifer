@@ -467,6 +467,7 @@ export default class Objects{
 						$('#jstree_object_tree').hide();
 						$('#jstree_demo_div').jstree(true).close_all();
 						$('#jstree_demo_div').jstree(true)._open_to($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]));
+						$('#jstree_demo_div').jstree(true).open_node($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]));
 
 
 					});
@@ -479,6 +480,7 @@ export default class Objects{
 						$('#jstree_object_tree').hide();
 						$('#jstree_demo_div').jstree(true).close_all();
 						$('#jstree_demo_div').jstree(true)._open_to(data.node);
+						$('#jstree_demo_div').jstree(true).open_node(data.node);
 					});
             //fin de creation breadcrumb
 
