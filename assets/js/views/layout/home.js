@@ -44,7 +44,7 @@ export default class Home{
 		          <div class="container">
 		            <div class="section">
 		            	<input id="Myfile" type="file" >
-		            	<button type="button" onClick="$("#Myfile").click();" >Click Me!</button>
+		            	<button type="button" id="button_test" >Click Me!</button>
 		              <div class="divider"></div>
 		            </div>
 		          
@@ -103,6 +103,13 @@ export default class Home{
 	    //$('#nestable3').nestable();
 
 	    $('#menu-obj').on('touchstart', function() {
+	    
+	       let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
+	       window.dispatchEvent(LinkEvent);
+	    });
+
+
+	    $('#button_test').on('touchstart', function() {
 	    	$("#Myfile").click();
 /*	       let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
 	       window.dispatchEvent(LinkEvent);*/
