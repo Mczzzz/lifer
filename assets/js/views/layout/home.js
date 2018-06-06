@@ -109,7 +109,7 @@ export default class Home{
 	    });
 
 
-	    $('#button_test').on('touchstart', function() {
+	    $('#button_test').on('click', function() {
 	    	$("#Myfile").click();
 /*	       let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
 	       window.dispatchEvent(LinkEvent);*/
