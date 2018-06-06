@@ -88,23 +88,8 @@ export default class Objects{
 			                </div>
 
 			                <div id="add_infos">
-						        <br />
-						        Nom :<input type="text" id="infosName" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;">
-						        <br />
-
-
-
+						     
 						        <input id="Myfile" type="file" accept="image/*" capture="camera">
-
-
-						        <br />
-						        <textarea id="InfosText" rows="4" cols="50" placeholder="Ton Texte"></textarea>
-						        <br />
-						        <input id="InfosValeur" type="number" step="any"  placeholder="1000">
-						        <select id="unityType"></select>
-						        <select id="unities"></select>
-						        <br />
-						        <button id="infosValid" name="button">Enregistrer</button>
 						    </div>
 
 				        </div>
@@ -157,7 +142,7 @@ export default class Objects{
 
 /*		$('#add_infos').hide();
 		$('#InfosPhoto').hide();*/
-
+		$('#Myfile').hide();
 		$('#action').hide();
 	    $('#infos').hide();
 	    $('#unities').hide();
