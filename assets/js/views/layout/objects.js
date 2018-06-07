@@ -13,7 +13,6 @@ export default class Objects{
 		this.linkDOMElements()
 
 		this.initJstreeContainer();
-
 		this.getJstreeContainerElements();
 
 
@@ -196,12 +195,12 @@ export default class Objects{
               "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
 
          });
-		
+
 
 	}
 
 
-	initGetDataElements(){
+	getJstreeContainerElements(){
 
 		let result = ''
 
