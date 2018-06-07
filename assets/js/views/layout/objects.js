@@ -391,6 +391,7 @@ export default class Objects{
 
 
 
+
          $('#jstree_object_tree').on('delete_node.jstree', function(e, data) {
 
           console.log('delete');
@@ -437,41 +438,9 @@ export default class Objects{
          	$('#infos').show();
          	$('#jstree_object_tree').show();
          	$('#jstree_demo_div').hide();
-         	//creation du breadcrumb
+
+         	this.jsTreeBreadcrumb('jstree_demo_div','breadcrumb',data.node);
          	
-         	$('#breadcrumb').empty();
-         	 for (let k in data.node.parents){
-
-
-				//console.log($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text);
-				if($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text !== undefined){
-					$('#breadcrumb').prepend('<a href="#!" id=bc_'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).id+' class="custom-breadcrumb-item">'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text+'</a>');
-					
-					$('#bc_'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).id).click(function(){
-						$('#jstree_demo_div').show();
-						$('#jstree_object_tree').hide();
-						$('#jstree_demo_div').jstree(true).close_all();
-						$('#jstree_demo_div').jstree(true)._open_to($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]));
-						$('#jstree_demo_div').jstree(true).open_node($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]));
-						$('#plugins4_q').show();
-						
-
-
-					});
-				}
-
-            }
-            $('#breadcrumb').append('<a href="#!" id="bc_'+data.node.id+'" class="custom-breadcrumb-item">'+data.node.text+'</a>');
-            	$('#bc_'+data.node.id).click(function(){
-						$('#jstree_demo_div').show();
-						$('#jstree_object_tree').hide();
-						$('#jstree_demo_div').jstree(true).close_all();
-						$('#jstree_demo_div').jstree(true)._open_to(data.node);
-						$('#jstree_demo_div').jstree(true).open_node(data.node);
-						$('#plugins4_q').show();
-					});
-            //fin de creation breadcrumb
-
 
             let ActiveDiv = '#jstree_demo_div';
   
@@ -641,4 +610,67 @@ export default class Objects{
 				return footer.addTags();
 	}
 
+
+
+
+// a finir de factoriser +sortir les show et hides
+
+	jsTreeBreadcrumb(JsTreeDiv,breadcrumbTargetDiv,node){
+         	
+         	$('#'+breadcrumbTargetDiv).empty();
+
+         	//ajout d ela node active
+            $('#'+breadcrumbTargetDiv).append('<a href="#!" id="bc_'+node.id+'" class="custom-breadcrumb-item">'+node.text+'</a>');
+            	
+
+            	this.jsTreeEventBreadcrumb(node);
+
+         	//parsing des parents
+         	 for (let k in node.parents){
+
+         	 	let parentNode = $('#'+JsTreeDiv).jstree(true).get_node(node.parents[k]);
+
+				if(parentNode.text !== undefined){
+					$('#'+breadcrumbTargetDiv).prepend('<a href="#!" id=bc_'+parentNode.id+' class="custom-breadcrumb-item">'+parentNode.text+'</a>');
+					
+					this.jsTreeEventBreadcrumb(parentNode);
+
+				}
+
+            }
+
+            
+
+
+            
+	}
+
+
+
+	jsTreeEventBreadcrumb(node){
+
+
+		$('#bc_'+node.id).click(function(){
+
+			$('#JsTreeDiv').show();
+			$('#JsTreeDiv').jstree(true).close_all();
+			$('#JsTreeDiv').jstree(true)._open_to(node);
+			$('#JsTreeDiv').jstree(true).open_node(node);
+
+			//TODO
+			$('#jstree_object_tree').hide();
+			$('#plugins4_q').show();
+			
+		});
+
+
+
+
+		
+	}
+
+
+
 }
+
+
