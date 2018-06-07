@@ -662,7 +662,7 @@ export default class Objects{
 			JsTreeDiv.jstree(true)._open_to(node);
 			JsTreeDiv.jstree(true).open_node(node);
 			//
-			JsTreeDiv.dispatchEvent('ElementDisplay');			
+			JsTreeDiv.trigger('ElementDisplay');			
 		});
 
 
