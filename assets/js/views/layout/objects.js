@@ -141,12 +141,16 @@ export default class Objects{
 
 	activeJS(){
 
-/*		$('#add_infos').hide();
-		$('#InfosPhoto').hide();*/
+
+//INIT DES ETATS DES ELEMENTS
+
 		$('#Myfile').hide();
 		$('#action').hide();
 	    $('#infos').hide();
 	    $('#unities').hide();
+
+
+//RECUPERATION DES DATAS DES LISTES
 
 	    $.get( "unity/type", function( data ) {
             let unityType = JSON.parse(data);
@@ -172,62 +176,10 @@ export default class Objects{
                            console.log(unityUnities);
                           });
 
-        $('#unityType').on('change', function(e, data) {
-
-                console.log('ca change');
-                $('#unities').show();
-                console.log($('#unityType').val());
-                $('#unities').empty();
-                for (var k in unityUnities[$('#unityType').val()]){
-                  $('#unities').append($('<option>', {
-                    title : unityUnities[$('#unityType').val()][k]['tooltip'],
-                    value: k,
-                    text: unityUnities[$('#unityType').val()][k]['symbol']
-                  }));
-                }
-      });
 
 
 
-
-
-      $('#launch_cam').on('click', function(e, data) {
-      	console.log('in touchstart launch cam');
-      	
-      		//$('#Myfile').hide();
-/*      	$('#add_infos').show();
-      	$('#InfosPhoto').show();*/
-      		$("#Myfile").click();
-
-      		//document.getElementById("file").click();
-      		console.log('in touchstart after click');
-               
-      });
-
-
-      $('#infosValid').on('click', function(e, data) {
-
-            let formData = new FormData();
-
-            //formData.append('jpg'  ,this.image);
-            formData.append('name'  ,$('#infosName').val());
-            formData.append('file'  ,$('#InfosPhoto').val());
-            formData.append('text'  ,$('#InfosText').val());
-            formData.append('float'  ,$('#InfosValeur').val());
-            formData.append('floatTypeValueId'  ,$('#unities').val());
-
-            let AjaxSender = $.ajax({
-                  type: 'POST',
-                  url: 'objects_infos/add',
-                  data: formData,
-                  async: true,
-                  cache: false,
-                  contentType: false,
-                  processData: false
-            });
-      });
-
-
+//INSTANCIATION DU JS TREE  PRINCIPAL
 
          $('#jstree_demo_div').jstree({
           'core' : {
@@ -253,6 +205,12 @@ export default class Objects{
          });
 
     
+
+///////////////////////////////// 
+//EVENTS
+/////////////////////////////////
+
+	//DOCUMENT
         $(document)
         // listen for events
         .on('dnd_start.vakata', function (e, data) {
@@ -295,55 +253,110 @@ export default class Objects{
             });
 
 
-        })
+        });
 
 
 
-         $('#jstree_demo_div').on('rename_node.jstree', function(e, data) {
-            console.log('remane');
-                    let formData = new FormData();
+    //TOOLBAR
+
+    	 //LANCE LA CAM
+
+	      $('#launch_cam').on('click', function(e, data) {
+
+	      		$("#Myfile").click();
+
+	      });
+
+
+
+
+
+
+
+    //UNITY-TYPE    
+
+        $('#unityType').on('change', function(e, data) {
+
+                console.log('ca change');
+                $('#unities').show();
+                console.log($('#unityType').val());
+                $('#unities').empty();
+                for (var k in unityUnities[$('#unityType').val()]){
+                  $('#unities').append($('<option>', {
+                    title : unityUnities[$('#unityType').val()][k]['tooltip'],
+                    value: k,
+                    text: unityUnities[$('#unityType').val()][k]['symbol']
+                  }));
+                }
+      });
+
+
+
+
+    //ENVOI DES INFOS D'UNE NODE
+
+      $('#infosValid').on('click', function(e, data) {
+
+            let formData = new FormData();
 
             //formData.append('jpg'  ,this.image);
-            formData.append('node'  ,data.node.id);
+            formData.append('name'  ,$('#infosName').val());
+            formData.append('file'  ,$('#InfosPhoto').val());
+            formData.append('text'  ,$('#InfosText').val());
+            formData.append('float'  ,$('#InfosValeur').val());
+            formData.append('floatTypeValueId'  ,$('#unities').val());
 
-        formData.append('name'  ,data.node.text);
-        let AjaxSender = $.ajax({
-              type: 'POST',
-              url: 'node/rename',
-              data: formData,
-              async: true,
-              cache: false,
-              contentType: false,
-              processData: false,
-               success: function(d){
-                
-              }
+            let AjaxSender = $.ajax({
+                  type: 'POST',
+                  url: 'objects_infos/add',
+                  data: formData,
+                  async: true,
+                  cache: false,
+                  contentType: false,
+                  processData: false
             });
+      });
+
+
+
+
+    //RENOMMAGE D'UN CONTAINER COTE SERVEUR
+
+         $('#jstree_demo_div').on('rename_node.jstree', function(e, data) {
+            
+            let formData = new FormData();
+
+            formData.append('node',data.node.id);
+            formData.append('name',data.node.text);
+
+            ajaxSend('POST','node/rename',formData)
 
          });
         
 
 
+
+    // RENOMMAGE D'UNE BRANCHE OBJET COTE SERVEUR
+
          $('#jstree_object_tree').on('rename_node.jstree', function(e, data) {
-            console.log('remane');
-                    let formData = new FormData();
 
-            //formData.append('jpg'  ,this.image);
+            let formData = new FormData();
+
             formData.append('node'  ,data.node.id);
+			formData.append('name'  ,data.node.text);
 
-        formData.append('name'  ,data.node.text);
-        let AjaxSender = $.ajax({
-              type: 'POST',
-              url: 'object/tree/rename',
-              data: formData,
-              async: true,
-              cache: false,
-              contentType: false,
-              processData: false,
-               success: function(d){
-                
-              }
-            });
+
+	        let AjaxSender = $.ajax({
+	              type: 'POST',
+	              url: 'object/tree/rename',
+	              data: formData,
+	              async: true,
+	              cache: false,
+	              contentType: false,
+	              processData: false,
+	               success: function(d){}
+	        });
+
 
          });
 
@@ -477,7 +490,7 @@ export default class Objects{
                 
                     "kitchen" : {"icon" : "glyphicon glyphicon-apple"},
                 
-                     "home"   : {"icon" : "glyphicon glyphicon-home"}
+                    "home"   : {"icon" : "glyphicon glyphicon-home"}
                 
                 },
                 
@@ -682,14 +695,48 @@ export default class Objects{
 
 
 
+    // RENOMMAGE D'UNE BRANCHE OBJET COTE SERVEUR
+
+         $('#jstree_object_tree').on('rename_node.jstree', function(e, data) {
+
+            let formData = new FormData();
+
+            formData.append('node'  ,data.node.id);
+			formData.append('name'  ,data.node.text);
 
 
+	        
+
+
+         });
+
+
+
+
+
+	function ajaxSend(VERB,url,formData){
+
+
+		let AjaxSender = $.ajax({
+
+          type: VERB,
+          url: url,
+          data: formData,
+          async: true,
+          cache: false,
+          contentType: false,
+          processData: false,
+          success: function(d){}
+	    
+	    });
 
 
 
 
 	}
 
+
+}
 
 	
 
