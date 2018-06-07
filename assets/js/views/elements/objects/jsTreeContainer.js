@@ -17,7 +17,7 @@ export default class jsTreeContainer {
 		console.log(this.container);
 
 
-		this.JsTreeContainer = $(container);
+		this.JsTreeContainer = $('#'+ container);
 
 		this.initJstreeContainer();
 
@@ -205,7 +205,7 @@ export default class jsTreeContainer {
 
 	initEventsJsTree(){
 		console.log(this.container);
-		document.querySelector(this.container).addEventListener("select_node.jstree", (e)=>this.onSelect(e));
+		document.querySelector('#'+ this.container).addEventListener("select_node.jstree", (e)=>this.onSelectJsTree(e));
 
 
 
@@ -214,7 +214,7 @@ export default class jsTreeContainer {
 	}
 
 
-	onSelect(data){
+	onSelectJsTree(data){
 		console.log('on select');
          	this.jsTreeBreadcrumb(this.JsTreeContainer,this.breadCrumbElt,data.node);
 
