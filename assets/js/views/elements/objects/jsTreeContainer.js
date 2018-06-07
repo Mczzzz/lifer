@@ -116,7 +116,7 @@ export default class jsTreeContainer {
 		$('<div class="custom-'+this.breadCrumbElt+'"><div id="'+this.breadCrumbElt+'" class="col s12"></div></div>').insertBefore(this.JsTreeContainer);
 
 
-		this.initBreadCrumbCSS(breadCrumbElt);
+		this.initBreadCrumbCSS(this.breadCrumbElt);
 
 	}
 
