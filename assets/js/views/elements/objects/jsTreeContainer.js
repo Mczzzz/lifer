@@ -91,7 +91,7 @@ export default class jsTreeContainer {
 
 		{
 
-			//let v = this.val();
+			let v = "fr";
 			console.log(this.JsTreeContainer);
            	this.JsTreeContainer.jstree(true).search(v);
 
