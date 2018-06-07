@@ -1,4 +1,4 @@
-import SvcBackEndComm from '../../services/BackEndComm.js';
+import SvcBackEndComm from '../../../services/BackEndComm.js';
 
 export default class jsTreeContainer {
 
