@@ -46,83 +46,75 @@ export default class Objects{
 	bodyHTML(){
 
 		return `<div id="main">
-		      <!-- START WRAPPER -->
-		      <div class="wrapper">
 
-				    <div class="custom-breadcrumb">
-				      <div id="breadcrumb"class="col s12">
-				      </div>
-				    </div>
+			        <div class="wrapper">
 
-		        <!-- START CONTENT -->
-		        <section id="content">
+			            <section id="content">
 
-		          <!--start container-->
-		          <div class="container">
-		            <div class="section">
-		            					        
-				        <div id="jstree_demo_div"></div>
+			                <div class="container">
+
+				                <div class="section">
+				            					        
+						            
+						            <div id="jstree_demo_div"></div>
+						        
+						            <div id="jstree_object_tree"></div>
+						        
 				        
-				        <div id="jstree_object_tree"></div>
-				        
-		        
-				        <div id="infos">
+							        <div id="infos">
 
-							<div>
-			                    <div class="fixed-action-btn horizontal ltr-lifer" style="position: absolute; display: inline-block; left: 0px;">
-			                      <a class="btn-floating btn-large">
-			                        <i class="material-icons">add</i>
-			                      </a>
-			                      <ul>
-			                        <li>
-			                          <a id="launch_cam" class="btn-floating red">
-			                            <i class="large material-icons">camera_alt</i>
-			                          </a>
-			                        </li>
-			                        <li>
-			                          <a class="btn-floating yellow darken-1">
-			                            <i class="large material-icons">format_quote</i>
-			                          </a>
-			                        </li>
-			                        <li>
-			                          <a class="btn-floating green">
-			                            <i class="large material-icons">date_range</i>
-			                          </a>
-			                        </li>
-			                        <li>
-			                          <a class="btn-floating blue">
-			                            <i class="large material-icons">insert_link</i>
-			                          </a>
-			                        </li>
-			                        <li>
-			                          <a class="btn-floating blue">
-			                            <i class="large material-icons">looks_one</i>
-			                          </a>
-			                        </li>
-			                      </ul>
-			                    </div>
-			                </div>
+										<div>
+						                    <div class="fixed-action-btn horizontal ltr-lifer" style="position: absolute; display: inline-block; left: 0px;">
+						                      <a class="btn-floating btn-large">
+						                        <i class="material-icons">add</i>
+						                      </a>
+						                      <ul>
+						                        <li>
+						                          <a id="launch_cam" class="btn-floating red">
+						                            <i class="large material-icons">camera_alt</i>
+						                          </a>
+						                        </li>
+						                        <li>
+						                          <a class="btn-floating yellow darken-1">
+						                            <i class="large material-icons">format_quote</i>
+						                          </a>
+						                        </li>
+						                        <li>
+						                          <a class="btn-floating green">
+						                            <i class="large material-icons">date_range</i>
+						                          </a>
+						                        </li>
+						                        <li>
+						                          <a class="btn-floating blue">
+						                            <i class="large material-icons">insert_link</i>
+						                          </a>
+						                        </li>
+						                        <li>
+						                          <a class="btn-floating blue">
+						                            <i class="large material-icons">looks_one</i>
+						                          </a>
+						                        </li>
+						                      </ul>
+						                    </div>
+						                </div>
 
-			                <div id="add_infos">
-						     
-						        <input id="Myfile" type="file" accept="image/*" capture="camera">
-						    </div>
+					                	<div id="add_infos">
+								     
+								        	<input id="Myfile" type="file" accept="image/*" capture="camera">
 
-				        </div>
-				        
+								    	</div>
 
-				        <div id="evenement"></div>
- 					  <br />
-		              <div class="divider"></div>
-		            </div>
-		          
-		          </div>
-		          <!--end container-->
-		        </section>
-		        <!-- END CONTENT -->
-		      </div>
-		      <!-- END WRAPPER -->
-		    </div>`;
+						        	</div>
+						        
+				            	</div>
+			          
+			        		</div>
+
+			        	</section>
+			 
+			      	</div>
+
+		    	</div>`;
 
 
 	}
@@ -146,81 +138,8 @@ export default class Objects{
 
 	activeCSS(){
 
-		let css = document.createElement("style");
-			css.type = "text/css";
-			css.innerHTML = `
 
-							.custom-breadcrumb {
-							    padding-left: 20px;
-							    padding-top: 5px;
-							}
-
-
-							.custom-breadcrumb-item { 
-								color: red;
-
-							}
-
-							.custom-breadcrumb-item::before { 
-								content: " > ";
-
-							}
-
-							`;
-			document.body.appendChild(css);
 	}
-
-
-
-
-
-	/*initJstreeContainer(){
-
-		this.JsTreeContainer.jstree({
-          'core' : {
-              "check_callback" : true
-                      },
-              "types" : {
-                  "default" : {
-                    "icon" : "glyphicon glyphicon-tree-deciduous"
-                  },
-
-                  "car" : {
-                    "icon" : "fa fa-car"
-                  },
-                  "kitchen" : {
-                    "icon" : "glyphicon glyphicon-apple"
-                  },
-                  "home" : {
-                    "icon" : "glyphicon glyphicon-home"
-                  }
-              },
-              "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
-
-         });
-
-
-	}*/
-
-
-/*	getJstreeContainerElements(){
-
-		let GetData = new SvcBackEndComm();
-		let result = GetData.ajaxSend('GET','children');
-
-        this.JsTreeContainer.jstree(true).settings.core.data = JSON.parse(result.responseText);
-        this.JsTreeContainer.jstree(true).refresh();
-
-	}*/
-
-
-
-
-	
-
-
-
-
 
 
 
@@ -651,58 +570,7 @@ export default class Objects{
 
 
 
-// a finir de factoriser +sortir les show et hides
 
-	function jsTreeBreadcrumb(JsTreeDiv,breadcrumbTargetDiv,node){
-         	
-         	breadcrumbTargetDiv.empty();
-
-         	//ajout d ela node active
-            breadcrumbTargetDiv.append('<a href="#!" id="bc_'+node.id+'" class="custom-breadcrumb-item">'+node.text+'</a>');
-            	
-
-            jsTreeEventBreadcrumb(node,JsTreeDiv);
-
-         	//parsing des parents
-         	 for (let k in node.parents){
-
-         	 	let parentNode = JsTreeDiv.jstree(true).get_node(node.parents[k]);
-
-				if(parentNode.text !== undefined){
-					breadcrumbTargetDiv.prepend('<a href="#!" id=bc_'+parentNode.id+' class="custom-breadcrumb-item">'+parentNode.text+'</a>');
-					
-					jsTreeEventBreadcrumb(parentNode,JsTreeDiv);
-
-				}
-
-            }
-
-            
-
-
-            
-	}
-
-
-
-	function jsTreeEventBreadcrumb(node,JsTreeDiv){
-
-
-		$('#bc_'+node.id).click(function(){
-
-			JsTreeDiv.show();
-			JsTreeDiv.jstree(true).close_all();
-			JsTreeDiv.jstree(true)._open_to(node);
-			JsTreeDiv.jstree(true).open_node(node);
-			//
-			JsTreeDiv.trigger('ElementDisplay');			
-		});
-
-
-
-
-		
-	}
 
 
 
