@@ -203,7 +203,7 @@ export default class jsTreeContainer {
 
 	initEventsJsTree(){
 
-		this.container.addEventListener("select_node.jstree", (e,data)=> this.onSelect(e,data));
+		document.querySelector(this.container).addEventListener("select_node.jstree", (e,data)=> this.onSelect(e,data));
 
 
 
