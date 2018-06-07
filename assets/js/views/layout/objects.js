@@ -439,7 +439,7 @@ export default class Objects{
          	$('#jstree_object_tree').show();
          	$('#jstree_demo_div').hide();
 
-         	this.jsTreeBreadcrumb('jstree_demo_div','breadcrumb',data.node);
+         	jsTreeBreadcrumb('jstree_demo_div','breadcrumb',data.node);
          	
 
             let ActiveDiv = '#jstree_demo_div';
@@ -595,6 +595,18 @@ export default class Objects{
               $('#jstree_demo_div').jstree(true).search(v);
             }, 250);
           });
+	
+
+
+
+
+
+
+
+
+
+
+
 	}
 
 
