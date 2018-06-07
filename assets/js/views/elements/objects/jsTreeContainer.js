@@ -80,22 +80,19 @@ export default class jsTreeContainer {
 		$('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;"></div>').insertBefore(this.JsTreeContainer);
 
 
-		document.querySelector("#"+id).addEventListener("keyup", (e)=> this.eventLink());
+		document.querySelector("#"+id).addEventListener("keyup", (e)=> this.eventLink(e));
 
 
 
 	}
 
 
-	eventLink(){
+	eventLink(e){
 
 		{
-
+			console.log(e);
 			let v = "fr";
-			console.log(this.JsTreeContainer);
            	this.JsTreeContainer.jstree(true).search(v);
-
-
 		}
 
 
