@@ -21,6 +21,7 @@ export default class jsTreeContainer {
 
 		this.linkSearchElement();
 
+		this.initEventsJsTree();
 	}
 
 
