@@ -83,6 +83,7 @@ export default class jsTreeContainer {
 		document.querySelector("#"+id).addEventListener("keyup", function(){
 
 			let v = $('#'+id).val();
+			console.log(this.JsTreeContainer);
            	this.JsTreeContainer.jstree(true).search(v);
 
 
