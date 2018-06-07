@@ -1,3 +1,5 @@
+import SvcBackEndComm from '../../services/BackEndComm.js';
+
 import Header from './sections/header.js';
 import Footer from './sections/footer.js';
 
@@ -202,7 +204,8 @@ export default class Objects{
 
 	getJstreeContainerElements(){
 
-		let result = this.ajaxSend('GET','children');
+		let GetData = new SvcBackEndComm();
+		let result = GetData.ajaxSend('GET','children');
 
         let treeJSON = JSON.parse(result.responseText);
 
@@ -214,27 +217,7 @@ export default class Objects{
 
 
 
-	ajaxSend(VERB,url,formData = ""){
-
-
-			let AjaxSender = $.ajax({
-
-	          type: VERB,
-	          url: url,
-	          data: formData,
-	          async: false,
-	          cache: false,
-	          contentType: false,
-	          processData: false,
-	          success: function(d){
-	          }
-		    		
-		    });
-
-
-			return AjaxSender;
-
-		}
+	
 
 
 
