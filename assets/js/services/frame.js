@@ -33,11 +33,6 @@ export default class Frame {
 
 		//on recharge le body
 		let objects = new Objects();
-		let res = objects.getHTMLPage();
-		document.body.innerHTML = res;
-		objects.activeCSS();
-		objects.activeJS();
-
 
 	}
 

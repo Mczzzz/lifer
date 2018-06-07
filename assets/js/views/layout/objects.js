@@ -4,18 +4,33 @@ import Footer from './sections/footer.js';
 export default class Objects{
 
 
+	constructor(){
+
+		this.getHTMLPage();
+
+		this.activeCSS();
+
+		this.linkDOMElements()
+
+		this.initJstreeContainer();
+
+		this.getJstreeContainerElements();
+
+
+	}
+
+
 	getHTMLPage(){
 
 		let page = this.headerHTML();
 		
-		page += this.bodyHTML();
-
-		
+		page += this.bodyHTML();	
 
 		page += this.footerHTML();
 
-		return page;
+		document.body.innerHTML = page;
 	}
+
 
 
 	headerHTML(){
@@ -113,6 +128,22 @@ export default class Objects{
 	}
 
 
+
+	linkDOMElements(){
+
+		//JSTREE CONTAINER
+		this.JsTreeContainer = $('#jstree_demo_div');
+
+
+		//JSTREE OBJECTS
+		this.JsTreeObjects = $('#jstree_object_tree');
+
+
+
+	}
+
+
+
 	activeCSS(){
 
 		let css = document.createElement("style");
@@ -139,6 +170,54 @@ export default class Objects{
 			document.body.appendChild(css);
 	}
 
+
+
+	initJstreeContainer(){
+
+		this.JsTreeContainer.jstree({
+          'core' : {
+              "check_callback" : true
+                      },
+              "types" : {
+                  "default" : {
+                    "icon" : "glyphicon glyphicon-tree-deciduous"
+                  },
+
+                  "car" : {
+                    "icon" : "fa fa-car"
+                  },
+                  "kitchen" : {
+                    "icon" : "glyphicon glyphicon-apple"
+                  },
+                  "home" : {
+                    "icon" : "glyphicon glyphicon-home"
+                  }
+              },
+              "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
+
+         });
+		
+
+	}
+
+
+	initGetDataElements(){
+
+		let result = ''
+
+		fetch('children')
+		  .then(function(data){
+
+
+
+
+		  })
+
+
+
+	}
+
+
 	activeJS(){
 
 
@@ -155,6 +234,9 @@ export default class Objects{
 
 
 //RECUPERATION DES DATAS DES LISTES + JS TREE
+
+
+		
 
 
 		$.get( "children", function( data ) {
@@ -196,7 +278,7 @@ export default class Objects{
 
 //INSTANCIATION DU JS TREE  PRINCIPAL
 
-         $('#jstree_demo_div').jstree({
+/*         $('#jstree_demo_div').jstree({
           'core' : {
               "check_callback" : true
                       },
@@ -217,7 +299,7 @@ export default class Objects{
               },
               "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
 
-         });
+         });*/
 
     
 
