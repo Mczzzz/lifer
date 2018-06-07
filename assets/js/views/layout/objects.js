@@ -202,7 +202,7 @@ export default class Objects{
 
 	getJstreeContainerElements(){
 
-		let result = ajaxSend('GET','children');
+		let result = this.ajaxSend('GET','children');
 
 		console.log(result);
 
