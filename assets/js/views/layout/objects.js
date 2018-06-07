@@ -150,7 +150,22 @@ export default class Objects{
 	    $('#unities').hide();
 
 
-//RECUPERATION DES DATAS DES LISTES
+  		let treeJSON = "";
+
+
+
+//RECUPERATION DES DATAS DES LISTES + JS TREE
+
+
+		$.get( "children", function( data ) {
+          treeJSON = JSON.parse(data);
+          $('#jstree_demo_div').jstree(true).settings.core.check_callback = true;
+          $('#jstree_demo_div').jstree(true).settings.core.data = treeJSON;
+          $('#jstree_demo_div').jstree(true).refresh();
+         // $('#jstree_demo_div').jstree("open_all");
+        });
+
+
 
 	    $.get( "unity/type", function( data ) {
             let unityType = JSON.parse(data);
@@ -172,10 +187,10 @@ export default class Objects{
 	    });
 
       $.get( "unity/unities", function( data ) {
-                           let unityUnities = JSON.parse(data);
-                           console.log(unityUnities);
-                          });
 
+       let unityUnities = JSON.parse(data);
+   
+      });
 
 
 
@@ -205,6 +220,18 @@ export default class Objects{
          });
 
     
+
+//LINK DU CHAMP DE RECECHERCHE
+          let to = false;
+          $('#plugins4_q').keyup(function () {
+            if(to) { clearTimeout(to); }
+            to = setTimeout(function () {
+              var v = $('#plugins4_q').val();
+              $('#jstree_demo_div').jstree(true).search(v);
+            }, 250);
+          });
+
+
 
 ///////////////////////////////// 
 //EVENTS
@@ -242,16 +269,7 @@ export default class Objects{
             formData.append('node'  ,ref.get_node(data.data.nodes[0]).id);
             formData.append('parent'  ,ref.get_node(data.data.nodes[0]).parent);
 
-            let AjaxSender = $.ajax({
-                  type: 'POST',
-                  url: url,
-                  data: formData,
-                  async: true,
-                  cache: false,
-                  contentType: false,
-                  processData: false
-            });
-
+            ajaxSend('POST',url,formData);
 
         });
 
@@ -277,16 +295,17 @@ export default class Objects{
 
         $('#unityType').on('change', function(e, data) {
 
-                console.log('ca change');
                 $('#unities').show();
-                console.log($('#unityType').val());
                 $('#unities').empty();
+
                 for (var k in unityUnities[$('#unityType').val()]){
+
                   $('#unities').append($('<option>', {
                     title : unityUnities[$('#unityType').val()][k]['tooltip'],
                     value: k,
                     text: unityUnities[$('#unityType').val()][k]['symbol']
                   }));
+
                 }
       });
 
@@ -295,165 +314,73 @@ export default class Objects{
 
     //ENVOI DES INFOS D'UNE NODE
 
-      $('#infosValid').on('click', function(e, data) {
+	$('#infosValid').on('click', function(e, data) {
 
-            let formData = new FormData();
+	    let formData = new FormData();
 
-            //formData.append('jpg'  ,this.image);
-            formData.append('name'  ,$('#infosName').val());
-            formData.append('file'  ,$('#InfosPhoto').val());
-            formData.append('text'  ,$('#InfosText').val());
-            formData.append('float'  ,$('#InfosValeur').val());
-            formData.append('floatTypeValueId'  ,$('#unities').val());
+	    formData.append('name'              ,$('#infosName').val());
+		formData.append('file'              ,$('#InfosPhoto').val());
+		formData.append('text'              ,$('#InfosText').val());
+		formData.append('float'             ,$('#InfosValeur').val());
+		formData.append('floatTypeValueId'  ,$('#unities').val());
 
-            let AjaxSender = $.ajax({
-                  type: 'POST',
-                  url: 'objects_infos/add',
-                  data: formData,
-                  async: true,
-                  cache: false,
-                  contentType: false,
-                  processData: false
-            });
-      });
+	    ajaxSend('POST','objects_infos/add',formData);
+
+	});
 
 
+	//JSTREE CONTAINER EVENTS
 
 
-    //RENOMMAGE D'UN CONTAINER COTE SERVEUR
+    	//RENOMMAGE D'UN CONTAINER BACKEND
 
-         $('#jstree_demo_div').on('rename_node.jstree', function(e, data) {
+        $('#jstree_demo_div').on('rename_node.jstree', function(e, data) {
             
             let formData = new FormData();
 
             formData.append('node',data.node.id);
             formData.append('name',data.node.text);
 
-            ajaxSend('POST','node/rename',formData)
+            ajaxSend('POST','node/rename',formData);
 
-         });
-        
+        });
+    
 
-
-
-    // RENOMMAGE D'UNE BRANCHE OBJET COTE SERVEUR
-
-         $('#jstree_object_tree').on('rename_node.jstree', function(e, data) {
+        //DELETE CONTAINER BRANCH/LEAF BACKEND
+       	$('#jstree_demo_div').on('delete_node.jstree', function(e, data) {
 
             let formData = new FormData();
 
             formData.append('node'  ,data.node.id);
-			formData.append('name'  ,data.node.text);
+            formData.append('parent'  ,data.parent);
+
+            let AjaxSender = $.ajax({
+
+                type: 'POST',
+                url: 'node/delete',
+                data: formData,
+                async: true,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function(d){
+
+                    $.get( "children", function( data ) {
+
+                        treeJSON = JSON.parse(data);
+
+                        $('#jstree_demo_div').jstree(true).settings.core.check_callback = true;
+                        $('#jstree_demo_div').jstree(true).settings.core.data = treeJSON;
+                        $('#jstree_demo_div').jstree(true).refresh();
+
+                    });
+              	}
+        	});
+    	});
 
 
-	        let AjaxSender = $.ajax({
-	              type: 'POST',
-	              url: 'object/tree/rename',
-	              data: formData,
-	              async: true,
-	              cache: false,
-	              contentType: false,
-	              processData: false,
-	               success: function(d){}
-	        });
-
-
-         });
-
-
-
-
-
-
-
-         $('#jstree_demo_div').on('delete_node.jstree', function(e, data) {
-
-          console.log('delete');
-                    let formData = new FormData();
-
-            //formData.append('jpg'  ,this.image);
-            formData.append('node'  ,data.node.id);
-
-        formData.append('parent'  ,data.parent);
-        let AjaxSender = $.ajax({
-              type: 'POST',
-              url: 'node/delete',
-              data: formData,
-              async: true,
-              cache: false,
-              contentType: false,
-              processData: false,
-               success: function(d){
-                          $.get( "children", function( data ) {
-                            treeJSON = JSON.parse(data);
-                            $('#jstree_demo_div').jstree(true).settings.core.check_callback = true;
-                            $('#jstree_demo_div').jstree(true).settings.core.data = treeJSON;
-                            $('#jstree_demo_div').jstree(true).refresh();
-                           // $('#jstree_demo_div').jstree("open_all");
-                          });
-
-
-              }
-            });
-
-
-
-
-         });
-
-
-
-
-
-         $('#jstree_object_tree').on('delete_node.jstree', function(e, data) {
-
-          console.log('delete');
-                    let formData = new FormData();
-
-            //formData.append('jpg'  ,this.image);
-            formData.append('node'  ,data.node.id);
-
-        formData.append('parent'  ,data.parent);
-        let AjaxSender = $.ajax({
-              type: 'POST',
-              url: 'object/tree/delete',
-              data: formData,
-              async: true,
-              cache: false,
-              contentType: false,
-              processData: false,
-               success: function(d){
-                          $.get( "object/tree/get/"+data.node.parents[data.node.parents.length -2].replace(/root_/g, ""), function( data ) {
-                            treeJSON = JSON.parse(data);
-                            $('#jstree_object_tree').jstree(true).settings.core.check_callback = true;
-                            $('#jstree_object_tree').jstree(true).settings.core.data = treeJSON;
-                            $('#jstree_object_tree').jstree(true).refresh();
-                           // $('#jstree_demo_div').jstree("open_all");
-                          });
-
-
-              }
-            });
-
-
-
-
-         });
-
-
-
-
-     	$('#jstree_demo_div').on('ElementDisplay', function (e) { 
-
-			$('#jstree_object_tree').hide();
-			$('#plugins4_q').show();
-
-
-     	});
-
-
-
-         $('#jstree_demo_div').on('select_node.jstree', function(e, data) {
+       	//ON SELECT
+  		$('#jstree_demo_div').on('select_node.jstree', function(e, data) {
 
          	$('#plugins4_q').hide();
          	$('#infos').show();
@@ -514,69 +441,8 @@ export default class Objects{
          });
 
 
-      $('#jstree_object_tree').on('select_node.jstree', function(e, data) {
 
-                $('#action').show();
-                $('#jstree_demo_div').hide();
-      });
-
-
-
-        $('#jstree_object_tree').on('create_node.jstree', function(e, data) {
-            console.log('hi', data);
-
-            
-
-        let formData = new FormData();
-
-            //formData.append('jpg'  ,this.image);
-            formData.append('nodeText' ,data.node.text);
-            formData.append('object' , data.node.parents[data.node.parents.length -2]);
-        formData.append('parent'  ,data.parent);
-        let AjaxSender = $.ajax({
-              type: 'POST',
-              url: 'object/tree/add',
-              data: formData,
-              async: true,
-              cache: false,
-              contentType: false,
-              processData: false,
-               success: function(d){
-                 $('#jstree_object_tree').jstree(true).set_id(data.node, d);
-              }
-            });
-
-
-        });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  		//ON CREATE
         $('#jstree_demo_div').on('create_node.jstree', function(e, data) {
             console.log('hi', data);
 
@@ -606,32 +472,104 @@ export default class Objects{
 
 
 
-        let treeJSON = "";
+	//JSTREE OBJECTS EVENTS
 
-        $.get( "children", function( data ) {
-          treeJSON = JSON.parse(data);
-          $('#jstree_demo_div').jstree(true).settings.core.check_callback = true;
-          $('#jstree_demo_div').jstree(true).settings.core.data = treeJSON;
-          $('#jstree_demo_div').jstree(true).refresh();
-         // $('#jstree_demo_div').jstree("open_all");
+    	// RENOMMAGE D'UNE BRANCHE OBJET COTE SERVEUR
+
+	         $('#jstree_object_tree').on('rename_node.jstree', function(e, data) {
+
+	            let formData = new FormData();
+
+	            formData.append('node'  ,data.node.id);
+				formData.append('name'  ,data.node.text);
+
+				ajaxSend('POST','object/tree/rename',formData);
+
+		     
+	         });
+
+
+	    //DELETE OBJECTS TREE BRANCH/LEAF BACKEND
+
+         $('#jstree_object_tree').on('delete_node.jstree', function(e, data) {
+
+          console.log('delete');
+                    let formData = new FormData();
+
+            //formData.append('jpg'  ,this.image);
+            formData.append('node'  ,data.node.id);
+
+        formData.append('parent'  ,data.parent);
+        let AjaxSender = $.ajax({
+              type: 'POST',
+              url: 'object/tree/delete',
+              data: formData,
+              async: true,
+              cache: false,
+              contentType: false,
+              processData: false,
+               success: function(d){
+                          $.get( "object/tree/get/"+data.node.parents[data.node.parents.length -2].replace(/root_/g, ""), function( data ) {
+                            treeJSON = JSON.parse(data);
+                            $('#jstree_object_tree').jstree(true).settings.core.check_callback = true;
+                            $('#jstree_object_tree').jstree(true).settings.core.data = treeJSON;
+                            $('#jstree_object_tree').jstree(true).refresh();
+                           // $('#jstree_demo_div').jstree("open_all");
+                          });
+
+
+              }
+            });
+
+
+
+
+         });
+
+
+
+        //ON SELECT
+
+		 $('#jstree_object_tree').on('select_node.jstree', function(e, data) {
+
+		                $('#action').show();
+		                $('#jstree_demo_div').hide();
+		      });
+
+
+
+		//CREATE
+        $('#jstree_object_tree').on('create_node.jstree', function(e, data) {
+
+	        let formData = new FormData();
+
+            formData.append('nodeText' ,data.node.text);
+            formData.append('object' , data.node.parents[data.node.parents.length -2]);
+	        formData.append('parent'  ,data.parent);
+
+	        let AjaxSender = $.ajax({
+
+              type: 'POST',
+              url: 'object/tree/add',
+              data: formData,
+              async: true,
+              cache: false,
+              contentType: false,
+              processData: false,
+              success: function(d){
+                 $('#jstree_object_tree').jstree(true).set_id(data.node, d);
+              }
+
+	        });
+
+
         });
 
 
-          let to = false;
-          $('#plugins4_q').keyup(function () {
-            if(to) { clearTimeout(to); }
-            to = setTimeout(function () {
-              var v = $('#plugins4_q').val();
-              $('#jstree_demo_div').jstree(true).search(v);
-            }, 250);
-          });
 
 
 
-
-
-
-
+      
 
 
 
