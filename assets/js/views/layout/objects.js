@@ -240,11 +240,7 @@ export default class Objects{
 	//DOCUMENT
         $(document)
         // listen for events
-        .on('dnd_start.vakata', function (e, data) {
-            console.log('Dragged');
-
-
-        })
+        .on('dnd_start.vakata', function (e, data) {})
         .on('dnd_stop.vakata', function (e, data) {
             console.log('Dropped');
 
@@ -444,27 +440,16 @@ export default class Objects{
 
   		//ON CREATE
         $('#jstree_demo_div').on('create_node.jstree', function(e, data) {
-            console.log('hi', data);
 
-        let formData = new FormData();
+	        let formData = new FormData();
 
-            //formData.append('jpg'  ,this.image);
-            formData.append('node'  ,data.node.text);
+            formData.append('node'    ,data.node.text);
+            formData.append('parent'  ,data.parent);
 
-        formData.append('parent'  ,data.parent);
-        let AjaxSender = $.ajax({
-              type: 'POST',
-              url: 'node/add',
-              data: formData,
-              async: true,
-              cache: false,
-              contentType: false,
-              processData: false,
-               success: function(d){
-                 $('#jstree_demo_div').jstree(true).set_id(data.node, d);
-              }
-            });
 
+            let rData = ajaxSend('POST','node/add',formData);
+
+            $('#jstree_demo_div').jstree(true).set_id(data.node, rData);
 
         });
 
@@ -557,6 +542,8 @@ export default class Objects{
               contentType: false,
               processData: false,
               success: function(d){
+
+              	return d;
                  $('#jstree_object_tree').jstree(true).set_id(data.node, d);
               }
 
@@ -664,12 +651,14 @@ export default class Objects{
           cache: false,
           contentType: false,
           processData: false,
-          success: function(d){}
-	    
+          success: function(d){
+          	return d;
+          }
+	    		
 	    });
 
 
-
+		return AjaxSender;
 
 	}
 
