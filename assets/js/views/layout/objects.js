@@ -204,9 +204,10 @@ export default class Objects{
 
 		let result = this.ajaxSend('GET','children');
 
-		console.log(result.responseText);
+        let treeJSON = JSON.parse(result.responseText);
 
-
+        this.JsTreeContainer.jstree(true).settings.core.data = treeJSON;
+        this.JsTreeContainer.jstree(true).refresh();
 
 	}
 
