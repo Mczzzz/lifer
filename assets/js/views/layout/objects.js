@@ -662,7 +662,7 @@ export default class Objects{
 				if(parentNode.text !== undefined){
 					$('#'+breadcrumbTargetDiv).prepend('<a href="#!" id=bc_'+parentNode.id+' class="custom-breadcrumb-item">'+parentNode.text+'</a>');
 					
-					jsTreeEventBreadcrumb(parentNode);
+					jsTreeEventBreadcrumb(parentNode,JsTreeDiv);
 
 				}
 
