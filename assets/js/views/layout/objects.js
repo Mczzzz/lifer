@@ -15,7 +15,7 @@ export default class Objects{
 
 		this.linkDOMElements()
 
-		this.JstreeContainerObj = new JsTreeContainer();
+		this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer);
 
 
 	}
@@ -60,8 +60,7 @@ export default class Objects{
 		          <!--start container-->
 		          <div class="container">
 		            <div class="section">
-		            	<div><input type="text" id="plugins4_q" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;"></div>
-				        
+		            					        
 				        <div id="jstree_demo_div"></div>
 				        
 				        <div id="jstree_object_tree"></div>
