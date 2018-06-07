@@ -123,6 +123,7 @@ export default class jsTreeContainer {
 
 	initBreadCrumbCSS(id){
 
+	console.log('on passe dans le CSS');
 		let css = document.createElement("style");
 			css.type = "text/css";
 			css.innerHTML = `
