@@ -80,7 +80,7 @@ export default class jsTreeContainer {
 		$('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;"></div>').insertBefore(this.JsTreeContainer);
 
 
-		$('#'+id).addEventListener("keyup", function(){
+		document.querySelector("#"+id).addEventListener("keyup", function(){
 
 			let v = $('#'+id).val();
            	this.JsTreeContainer.jstree(true).search(v);
