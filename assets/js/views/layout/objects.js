@@ -1,7 +1,8 @@
-import SvcBackEndComm from '../../services/BackEndComm.js';
-
 import Header from './sections/header.js';
 import Footer from './sections/footer.js';
+
+import JsTreeContainer from '../elements/objects/jsTreeContainer.js';
+
 
 export default class Objects{
 
@@ -14,8 +15,7 @@ export default class Objects{
 
 		this.linkDOMElements()
 
-		this.initJstreeContainer();
-		this.getJstreeContainerElements();
+		this.JstreeContainerObj = new JsTreeContainer();
 
 
 	}
@@ -173,7 +173,9 @@ export default class Objects{
 
 
 
-	initJstreeContainer(){
+
+
+	/*initJstreeContainer(){
 
 		this.JsTreeContainer.jstree({
           'core' : {
@@ -199,20 +201,18 @@ export default class Objects{
          });
 
 
-	}
+	}*/
 
 
-	getJstreeContainerElements(){
+/*	getJstreeContainerElements(){
 
 		let GetData = new SvcBackEndComm();
 		let result = GetData.ajaxSend('GET','children');
 
-        let treeJSON = JSON.parse(result.responseText);
-
-        this.JsTreeContainer.jstree(true).settings.core.data = treeJSON;
+        this.JsTreeContainer.jstree(true).settings.core.data = JSON.parse(result.responseText);
         this.JsTreeContainer.jstree(true).refresh();
 
-	}
+	}*/
 
 
 
@@ -245,14 +245,14 @@ export default class Objects{
 
 		
 
-
+/*
 		$.get( "children", function( data ) {
           treeJSON = JSON.parse(data);
           $('#jstree_demo_div').jstree(true).settings.core.check_callback = true;
           $('#jstree_demo_div').jstree(true).settings.core.data = treeJSON;
           $('#jstree_demo_div').jstree(true).refresh();
          // $('#jstree_demo_div').jstree("open_all");
-        });
+        });*/
 
 
 
