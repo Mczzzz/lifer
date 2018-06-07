@@ -430,6 +430,14 @@ export default class Objects{
 
 
 
+     	$('#jstree_demo_div').addEventListener('ElementDisplay', function (e) { 
+
+			$('#jstree_object_tree').hide();
+			$('#plugins4_q').show();
+
+
+     	});
+
 
 
          $('#jstree_demo_div').on('select_node.jstree', function(e, data) {
@@ -440,41 +448,9 @@ export default class Objects{
          	$('#jstree_demo_div').hide();
 
          	jsTreeBreadcrumb($('#jstree_demo_div'),$('#breadcrumb'),data.node);
-         	//creation du breadcrumb
-         	/*
-         	$('#breadcrumb').empty();
-         	 for (let k in data.node.parents){
+         	
 
-
-				//console.log($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text);
-				if($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text !== undefined){
-					$('#breadcrumb').prepend('<a href="#!" id=bc_'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).id+' class="custom-breadcrumb-item">'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).text+'</a>');
-					
-					$('#bc_'+$('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]).id).click(function(){
-						$('#jstree_demo_div').show();
-						$('#jstree_object_tree').hide();
-						$('#jstree_demo_div').jstree(true).close_all();
-						$('#jstree_demo_div').jstree(true)._open_to($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]));
-						$('#jstree_demo_div').jstree(true).open_node($('#jstree_demo_div').jstree(true).get_node(data.node.parents[k]));
-						$('#plugins4_q').show();
-						
-
-
-					});
-				}
-
-            }
-            $('#breadcrumb').append('<a href="#!" id="bc_'+data.node.id+'" class="custom-breadcrumb-item">'+data.node.text+'</a>');
-            	$('#bc_'+data.node.id).click(function(){
-						$('#jstree_demo_div').show();
-						$('#jstree_object_tree').hide();
-						$('#jstree_demo_div').jstree(true).close_all();
-						$('#jstree_demo_div').jstree(true)._open_to(data.node);
-						$('#jstree_demo_div').jstree(true).open_node(data.node);
-						$('#plugins4_q').show();
-					});*/
-            //fin de creation breadcrumb
-
+         	
 
             let ActiveDiv = '#jstree_demo_div';
   
@@ -685,11 +661,8 @@ export default class Objects{
 			JsTreeDiv.jstree(true).close_all();
 			JsTreeDiv.jstree(true)._open_to(node);
 			JsTreeDiv.jstree(true).open_node(node);
-
-			//TODO
-			$('#jstree_object_tree').hide();
-			$('#plugins4_q').show();
-			
+			//
+			JsTreeDiv.dispatchEvent('ElementDisplay');			
 		});
 
 
