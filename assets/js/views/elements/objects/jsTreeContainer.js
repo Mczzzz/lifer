@@ -90,7 +90,7 @@ export default class jsTreeContainer {
 	eventLink(e){
 
 		{
-			console.log(e.KeyboardEvent);
+			console.log(e);
 			let v = "fr";
            	this.JsTreeContainer.jstree(true).search(e.SrcElement);
 		}
