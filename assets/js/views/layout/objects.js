@@ -449,6 +449,7 @@ export default class Objects{
 
             let rData = ajaxSend('POST','node/add',formData);
 
+            console.log(rData);
             $('#jstree_demo_div').jstree(true).set_id(data.node, rData);
 
         });
@@ -543,7 +544,6 @@ export default class Objects{
               processData: false,
               success: function(d){
 
-              	return d;
                  $('#jstree_object_tree').jstree(true).set_id(data.node, d);
               }
 
