@@ -612,7 +612,7 @@ export default class Objects{
             $('#'+breadcrumbTargetDiv).append('<a href="#!" id="bc_'+node.id+'" class="custom-breadcrumb-item">'+node.text+'</a>');
             	
 
-            	this.jsTreeEventBreadcrumb(node);
+            	jsTreeEventBreadcrumb(node);
 
          	//parsing des parents
          	 for (let k in node.parents){
@@ -622,7 +622,7 @@ export default class Objects{
 				if(parentNode.text !== undefined){
 					$('#'+breadcrumbTargetDiv).prepend('<a href="#!" id=bc_'+parentNode.id+' class="custom-breadcrumb-item">'+parentNode.text+'</a>');
 					
-					this.jsTreeEventBreadcrumb(parentNode);
+					jsTreeEventBreadcrumb(parentNode);
 
 				}
 
