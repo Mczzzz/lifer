@@ -16,9 +16,10 @@ export default class jsTreeContainer {
 		this.JsTreeContainer = container;
 
 		this.initJstreeContainer();
+
 		this.getJstreeContainerElements();
 
-
+		this.linkSearchElement();
 
 	}
 
@@ -72,6 +73,30 @@ export default class jsTreeContainer {
 
 
 
+	linkSearchElement(){
+
+		let id = 'JTC-Search';
+		//CREATE PREVIOUS SIBLING OF DIV CONTAINER
+		this.JsTreeContainer.insertBefore('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;"></div>');
+
+
+		let to = false;
+        $('#'+id).keyup(function () {
+
+            if(to) { clearTimeout(to); }
+
+            to = setTimeout(function () {
+
+              var v = $('#'+id).val();
+              this.JsTreeContainer.jstree(true).search(v);
+
+            }, 250);
+
+
+        });
+
+
+	}
 
 
 
