@@ -202,26 +202,44 @@ export default class Objects{
 
 	getJstreeContainerElements(){
 
-		let result = ''
+		let result = ajaxSend('GET','children');
 
-		fetch('/children',
-
-				{
-					method: 'GET',
-					mode: 'cors', 
-					redirect: 'follow',
-				}
-			)
-			.then(function(data){
-
-		  	console.log(data);
-
-
-		  	})
+		console.log(result);
 
 
 
 	}
+
+
+
+
+	ajaxSend(VERB,url,formData = ""){
+
+
+			let AjaxSender = $.ajax({
+
+	          type: VERB,
+	          url: url,
+	          data: formData,
+	          async: false,
+	          cache: false,
+	          contentType: false,
+	          processData: false,
+	          success: function(d){
+	          	return d;
+	          }
+		    		
+		    });
+
+
+			return AjaxSender;
+
+		}
+
+
+
+
+
 
 
 	activeJS(){
