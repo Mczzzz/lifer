@@ -456,27 +456,34 @@ export default class Objects{
   
 
              $('#jstree_object_tree').jstree({
-              'core' : {
-                "check_callback" : true
-                          },
-                              "types" : {
-                      "default" : {
-                        "icon" : "glyphicon glyphicon-tree-deciduous"
-                      },
 
-                      "car" : {
-                        "icon" : "fa fa-car"
-                      },
-                      "kitchen" : {
-                        "icon" : "glyphicon glyphicon-apple"
-                      },
-                      "home" : {
-                        "icon" : "glyphicon glyphicon-home"
-                      }
-                    },
-                   "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
 
-             });
+                'core' :
+                {
+
+	                "check_callback" : true,
+
+	                "themes" : {"dots" : false}
+
+	            },
+
+	                
+                "types" :
+                {
+                
+                    "default" : {"icon" : "glyphicon glyphicon-tree-deciduous"},
+
+                    "car"     : {"icon" : "fa fa-car"},
+                
+                    "kitchen" : {"icon" : "glyphicon glyphicon-apple"},
+                
+                     "home"   : {"icon" : "glyphicon glyphicon-home"}
+                
+                },
+                
+                 "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
+
+	             });
 
 
                let treeJSONObject = "";
