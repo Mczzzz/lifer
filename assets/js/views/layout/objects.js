@@ -204,7 +204,7 @@ export default class Objects{
 
 		let result = this.ajaxSend('GET','children');
 
-		console.log(result);
+		console.log(result.responseText);
 
 
 
@@ -226,7 +226,6 @@ export default class Objects{
 	          contentType: false,
 	          processData: false,
 	          success: function(d){
-	          	return d;
 	          }
 		    		
 		    });
