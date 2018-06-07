@@ -204,13 +204,20 @@ export default class Objects{
 
 		let result = ''
 
-		fetch('/children')
-		  .then(function(data){
+		fetch('/children',
+
+				{
+					method: 'GET',
+					mode: 'cors', 
+					redirect: 'follow',
+				}
+			)
+			.then(function(data){
 
 		  	console.log(data);
 
 
-		  })
+		  	})
 
 
 
