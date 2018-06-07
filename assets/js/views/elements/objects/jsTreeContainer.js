@@ -26,6 +26,8 @@ export default class jsTreeContainer {
 		this.linkSearchElement();
 
 		this.initEventsJsTree();
+
+		this.breadCrumbElt = 'breadcrumb';
 	}
 
 
@@ -109,13 +111,10 @@ export default class jsTreeContainer {
 	initBreadCrumb(){
 
 
-	   let id = 'breadcrumb';
+		$('<div class="custom-'+this.breadCrumbElt+'"><div id="'+this.breadCrumbElt+'" class="col s12"></div></div>').insertBefore(this.JsTreeContainer);
 
-		$('<div class="custom-'+id+'"><div id="'+id+'" class="col s12"></div></div>').insertBefore(this.JsTreeContainer);
 
-		this.breadCrumbElt = $('#'+id);
-
-		this.initBreadCrumbCSS(id);
+		this.initBreadCrumbCSS(breadCrumbElt);
 
 	}
 
@@ -217,7 +216,7 @@ export default class jsTreeContainer {
 	onSelectJsTree(data){
 		console.log('on select');
 		console.log(this.breadCrumbElt);
-         	this.jsTreeBreadcrumb(this.JsTreeContainer,this.breadCrumbElt,data.node);
+         	this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt),data.node);
 
 	}
 
