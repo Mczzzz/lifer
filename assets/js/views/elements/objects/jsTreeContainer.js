@@ -77,7 +77,7 @@ export default class jsTreeContainer {
 
 		let id = 'JTC-Search';
 		//CREATE PREVIOUS SIBLING OF DIV CONTAINER
-		this.JsTreeContainer.insertBefore('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;"></div>');
+		$('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;"></div>').insertBefore(this.JsTreeContainer);
 
 
 		let to = false;
