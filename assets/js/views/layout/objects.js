@@ -602,32 +602,9 @@ export default class Objects{
 
 
 
-
-
-
-
-
-	}
-
-
-	
-
-
-	
-
-	footerHTML(){
-
-				let footer = new Footer();
-
-				return footer.addTags();
-	}
-
-
-
-
 // a finir de factoriser +sortir les show et hides
 
-	jsTreeBreadcrumb(JsTreeDiv,breadcrumbTargetDiv,node){
+	function jsTreeBreadcrumb(JsTreeDiv,breadcrumbTargetDiv,node){
          	
          	$('#'+breadcrumbTargetDiv).empty();
 
@@ -659,7 +636,7 @@ export default class Objects{
 
 
 
-	jsTreeEventBreadcrumb(node){
+	function jsTreeEventBreadcrumb(node){
 
 
 		$('#bc_'+node.id).click(function(){
@@ -680,6 +657,32 @@ export default class Objects{
 
 		
 	}
+
+
+
+
+
+
+
+	}
+
+
+	
+
+
+	
+
+	footerHTML(){
+
+				let footer = new Footer();
+
+				return footer.addTags();
+	}
+
+
+
+
+
 
 
 
