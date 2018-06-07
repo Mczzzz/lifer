@@ -439,7 +439,7 @@ export default class Objects{
          	$('#jstree_object_tree').show();
          	$('#jstree_demo_div').hide();
 
-         	jsTreeBreadcrumb('jstree_demo_div','breadcrumb',data.node);
+         	jsTreeBreadcrumb($('#jstree_demo_div'),$('#breadcrumb'),data.node);
          	
 
             let ActiveDiv = '#jstree_demo_div';
@@ -606,21 +606,21 @@ export default class Objects{
 
 	function jsTreeBreadcrumb(JsTreeDiv,breadcrumbTargetDiv,node){
          	
-         	$('#'+breadcrumbTargetDiv).empty();
+         	breadcrumbTargetDiv.empty();
 
          	//ajout d ela node active
-            $('#'+breadcrumbTargetDiv).append('<a href="#!" id="bc_'+node.id+'" class="custom-breadcrumb-item">'+node.text+'</a>');
+            breadcrumbTargetDiv.append('<a href="#!" id="bc_'+node.id+'" class="custom-breadcrumb-item">'+node.text+'</a>');
             	
 
-            	jsTreeEventBreadcrumb(node);
+            	jsTreeEventBreadcrumb(node,JsTreeDiv);
 
          	//parsing des parents
          	 for (let k in node.parents){
 
-         	 	let parentNode = $('#'+JsTreeDiv).jstree(true).get_node(node.parents[k]);
+         	 	let parentNode = JsTreeDiv.jstree(true).get_node(node.parents[k]);
 
 				if(parentNode.text !== undefined){
-					$('#'+breadcrumbTargetDiv).prepend('<a href="#!" id=bc_'+parentNode.id+' class="custom-breadcrumb-item">'+parentNode.text+'</a>');
+					breadcrumbTargetDiv.prepend('<a href="#!" id=bc_'+parentNode.id+' class="custom-breadcrumb-item">'+parentNode.text+'</a>');
 					
 					jsTreeEventBreadcrumb(parentNode);
 
@@ -636,15 +636,15 @@ export default class Objects{
 
 
 
-	function jsTreeEventBreadcrumb(node){
+	function jsTreeEventBreadcrumb(node,JsTreeDiv){
 
 
 		$('#bc_'+node.id).click(function(){
 
-			$('#JsTreeDiv').show();
-			$('#JsTreeDiv').jstree(true).close_all();
-			$('#JsTreeDiv').jstree(true)._open_to(node);
-			$('#JsTreeDiv').jstree(true).open_node(node);
+			JsTreeDiv.show();
+			JsTreeDiv.jstree(true).close_all();
+			JsTreeDiv.jstree(true)._open_to(node);
+			JsTreeDiv.jstree(true).open_node(node);
 
 			//TODO
 			$('#jstree_object_tree').hide();
