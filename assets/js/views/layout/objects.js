@@ -124,7 +124,7 @@ export default class Objects{
 	linkDOMElements(){
 
 		//JSTREE CONTAINER
-		this.JsTreeContainer = $('#jstree_demo_div');
+		this.JsTreeContainer = '#jstree_demo_div';
 
 
 		//JSTREE OBJECTS

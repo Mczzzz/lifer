@@ -13,7 +13,9 @@ export default class jsTreeContainer {
 			//afficher les éléments
 			//link du breadcrumb + recherche
 
-		this.JsTreeContainer = container;
+		this.container = container;
+
+		this.JsTreeContainer = $(container);
 
 		this.initJstreeContainer();
 
@@ -201,7 +203,7 @@ export default class jsTreeContainer {
 
 	initEventsJsTree(){
 
-	this.JsTreeContainer.addEventListener("select_node.jstree", (e,data)=> this.onSelect(e,data));
+		this.container.addEventListener("select_node.jstree", (e,data)=> this.onSelect(e,data));
 
 
 
