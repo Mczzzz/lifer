@@ -216,6 +216,7 @@ export default class jsTreeContainer {
 
 	onSelectJsTree(data){
 		console.log('on select');
+		console.log(this.breadCrumbElt);
          	this.jsTreeBreadcrumb(this.JsTreeContainer,this.breadCrumbElt,data.node);
 
 	}
