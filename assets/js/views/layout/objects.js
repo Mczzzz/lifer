@@ -204,10 +204,10 @@ export default class Objects{
 
 		let result = ''
 
-		fetch('children')
+		fetch('/children')
 		  .then(function(data){
 
-
+		  	console.log(data);
 
 
 		  })
