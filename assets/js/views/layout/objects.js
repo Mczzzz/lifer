@@ -310,7 +310,7 @@ export default class Objects{
     
 
 //LINK DU CHAMP DE RECECHERCHE
-          let to = false;
+/*          let to = false;
           $('#plugins4_q').keyup(function () {
             if(to) { clearTimeout(to); }
             to = setTimeout(function () {
@@ -318,7 +318,7 @@ export default class Objects{
               $('#jstree_demo_div').jstree(true).search(v);
             }, 250);
           });
-
+*/
 
 
 ///////////////////////////////// 

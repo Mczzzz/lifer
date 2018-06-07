@@ -80,20 +80,14 @@ export default class jsTreeContainer {
 		$('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;"></div>').insertBefore(this.JsTreeContainer);
 
 
-		let to = false;
-        $('#'+id).keyup(function () {
+		$('#'+id).addEventListener("keyup", function(){
 
-            if(to) { clearTimeout(to); }
-
-            to = setTimeout(function () {
-
-              var v = $('#'+id).val();
-              this.JsTreeContainer.jstree(true).search(v);
-
-            }, 250);
+			let v = $('#'+id).val();
+           	this.JsTreeContainer.jstree(true).search(v);
 
 
-        });
+		})
+
 
 
 	}
