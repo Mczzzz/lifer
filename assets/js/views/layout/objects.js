@@ -430,7 +430,7 @@ export default class Objects{
 
 
 
-     	$('#jstree_demo_div').addEventListener('ElementDisplay', function (e) { 
+     	$('#jstree_demo_div').on('ElementDisplay', function (e) { 
 
 			$('#jstree_object_tree').hide();
 			$('#plugins4_q').show();
