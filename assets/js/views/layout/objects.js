@@ -652,7 +652,7 @@ export default class Objects{
             $('#'+breadcrumbTargetDiv).append('<a href="#!" id="bc_'+node.id+'" class="custom-breadcrumb-item">'+node.text+'</a>');
             	
 
-            jsTreeEventBreadcrumb(node);
+            jsTreeEventBreadcrumb(node,'#'+JsTreeDiv);
 
          	//parsing des parents
          	 for (let k in node.parents){
@@ -676,15 +676,15 @@ export default class Objects{
 
 
 
-	function jsTreeEventBreadcrumb(node){
+	function jsTreeEventBreadcrumb(node,JsTreeDiv){
 
 
 		$('#bc_'+node.id).click(function(){
 
-			$('#JsTreeDiv').show();
-			$('#JsTreeDiv').jstree(true).close_all();
-			$('#JsTreeDiv').jstree(true)._open_to(node);
-			$('#JsTreeDiv').jstree(true).open_node(node);
+			$('#'+JsTreeDiv).show();
+			$('#'+JsTreeDiv).jstree(true).close_all();
+			$('#'+JsTreeDiv).jstree(true)._open_to(node);
+			$('#'+JsTreeDiv).jstree(true).open_node(node);
 
 			//TODO
 			$('#jstree_object_tree').hide();
