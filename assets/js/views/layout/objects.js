@@ -159,22 +159,24 @@ export default class Objects{
         //Pour savoir quel jstree a lancée l'event
         let MyFrag = $(data.data.origin.element[0]);
 
-/*        let collection = this.TheContainerCollect;
+        let collection = "";
 
         console.log(MyFrag.filter("div").attr('id'));
-        console.log(this.JsTreeContainer);*/
+        console.log(this.JsTreeContainer);
+        console.log(collection);
 
         if(MyFrag.filter("div").attr('id') == this.JsTreeContainer){
          
-//         console.log('on passe bien dans le if');
-          let collection = this.TheContainerCollect;
+         console.log('on passe bien dans le if');
+         collection = this.TheContainerCollect;
+         console.log(collection);
         
         }else if (MyFrag.filter("div").attr('id') == this.JsTreeObjects){
         
 
         }
   
-
+        console.log(collection);
         collection.move(data);
        
 
