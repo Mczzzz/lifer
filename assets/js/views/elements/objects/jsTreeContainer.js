@@ -59,7 +59,7 @@ export default class jsTreeContainer {
 
 				    "items": function($node) {
 
-				        var tree = $("#tree").jstree(true);
+				        var tree = this.JsTreeContainer.jstree(true);
 
 				        return {
 				            "Create": {
