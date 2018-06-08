@@ -22,6 +22,8 @@ export default class jsTreeContainer {
 
 		this.parentId = data;
 
+		this.breadcrumbTargetDiv = $('#'+this.breadCrumbElt+this.suffixe);
+
 		this.initJstreeContainer();
 
 		this.getJstreeContainerElements();
@@ -31,6 +33,7 @@ export default class jsTreeContainer {
 
 		this.initEventsJsTree();
 
+		
 
 		this.initBreadCrumb();
 	}
@@ -170,29 +173,29 @@ export default class jsTreeContainer {
 
 
 
-	jsTreeBreadcrumb(JsTreeDiv,breadcrumbTargetDiv){
+	jsTreeBreadcrumb(){
          	
-         	breadcrumbTargetDiv.empty();
+         	this.breadcrumbTargetDiv.empty();
 
 
-         	let node = JsTreeDiv.jstree(true).get_node(JsTreeDiv.jstree(true).get_selected()[0]);
+         	let node = this.JsTreeContainer.jstree(true).get_node(this.JsTreeContainer.jstree(true).get_selected()[0]);
          	console.log(node);
 
          	//ajout d ela node active
-            breadcrumbTargetDiv.append('<a href="#!" id="bc_'+node.id+'" class="custom-breadcrumb-item">'+node.text+'</a>');
+            this.breadcrumbTargetDiv.append('<a href="#!" id="bc_'+node.id+'" class="custom-breadcrumb-item">'+node.text+'</a>');
             	
 
-            	this.jsTreeEventBreadcrumb(node,JsTreeDiv,breadcrumbTargetDiv);
+            	this.jsTreeEventBreadcrumb(node);
 
          	//parsing des parents
          	 for (let k in node.parents){
 
-         	 	let parentNode = JsTreeDiv.jstree(true).get_node(node.parents[k]);
+         	 	let parentNode = this.JsTreeContainer.jstree(true).get_node(node.parents[k]);
 
 				if(parentNode.text !== undefined){
-					breadcrumbTargetDiv.prepend('<a href="#!" id=bc_'+parentNode.id+' class="custom-breadcrumb-item">'+parentNode.text+'</a>');
+					this.breadcrumbTargetDiv.prepend('<a href="#!" id=bc_'+parentNode.id+' class="custom-breadcrumb-item">'+parentNode.text+'</a>');
 					
-					this.jsTreeEventBreadcrumb(parentNode,JsTreeDiv,breadcrumbTargetDiv);
+					this.jsTreeEventBreadcrumb(parentNode);
 
 				}
 
@@ -206,10 +209,10 @@ export default class jsTreeContainer {
 
 
 
-	jsTreeEventBreadcrumb(node,JsTreeDiv,breadcrumbTargetDiv){
+	jsTreeEventBreadcrumb(node){
 
 		console.log('jsTreeEventBreadcrumb node:'+node);
-		$('#bc_'+node.id).on("click", (e) => this.onMaximize(e,node,JsTreeDiv,breadcrumbTargetDiv));
+		$('#bc_'+node.id).on("click", (e) => this.onMaximize(e,node));
 
 		
 	}
@@ -297,7 +300,7 @@ export default class jsTreeContainer {
 	onMinimize(){
 
 
-		this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe));
+		this.jsTreeBreadcrumb();
 		$('#'+this.breadCrumbElt+this.suffixe).show();
 
 		$('#'+this.searchId).hide();
@@ -306,10 +309,8 @@ export default class jsTreeContainer {
 	}
 
 
-	onMaximize(e,node,JsTreeDiv,breadcrumbTargetDiv){
+	onMaximize(e,node){
 
-		console.log('onMaximize node:');
-		console.log(node);
 		//hide du breadcrumb
 		$('#'+this.breadCrumbElt+this.suffixe).hide();
 		$('#'+this.searchId).show();
