@@ -103,7 +103,7 @@ export default class jsTreeContainer {
 
 		}
 
-		document.querySelector("#"+id).show();
+		$("#"+id).show();
 	}
 
 
