@@ -5,7 +5,7 @@ export default class ContainerCollection {
 
 	constructor(){
 
-		this.apiPrefixe = "/container";
+		this.apiPrefixe = "/container/";
 
     this.SvcBackEndComm = new SvcBackEndComm();
 
@@ -15,7 +15,7 @@ export default class ContainerCollection {
 
   getAll(){
 
-    let result = this.SvcBackEndComm.ajaxSend('GET','all');
+    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'all');
 
     return JSON.parse(result.responseText);
 
