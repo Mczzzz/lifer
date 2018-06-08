@@ -165,7 +165,7 @@ class ContainerController extends Controller
 
         $res = new \stdClass();
         $res->error = 0;
-        $res->data = $object->getId()
+        $res->data = $object->getId();
 
         return new Response(json_encode($res));
 
