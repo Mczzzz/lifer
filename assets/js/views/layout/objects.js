@@ -190,7 +190,7 @@ export default class Objects{
   onContainerSelected(e){
 
     this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'objects', this.TheObjectCollect,e.detail.id);
-
+    this.JstreeObjectsObj.onMaximize();
 
   }
 
