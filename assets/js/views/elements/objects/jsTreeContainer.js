@@ -129,7 +129,7 @@ export default class jsTreeContainer {
 
 							.custom-`+id+` {
 							    padding-left: 20px;
-							    padding-top: 5px;
+							    padding-bottom: 5px;
 							}
 
 
