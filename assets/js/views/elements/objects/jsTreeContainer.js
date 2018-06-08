@@ -289,7 +289,6 @@ export default class jsTreeContainer {
 		this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe));
 		$('#'+this.breadCrumbElt+this.suffixe).show();
 		$('#'+this.searchId).hide();
-		$('#'+this.searchId).val('');
 		this.JsTreeContainer.hide();
 
 	}
@@ -303,7 +302,8 @@ export default class jsTreeContainer {
 
 		JsTreeDiv.jstree(true).close_all();
 		JsTreeDiv.jstree(true)._open_to(node);
-		JsTreeDiv.jstree(true).open_node(node);	
+		JsTreeDiv.jstree(true).open_node(node);
+		JsTreeDiv.jstree(true).clear_search();
 		JsTreeDiv.show();
 
 
