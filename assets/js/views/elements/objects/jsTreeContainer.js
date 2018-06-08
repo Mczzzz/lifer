@@ -22,8 +22,6 @@ export default class jsTreeContainer {
 
 		this.parentId = data;
 
-		this.breadcrumbTargetDiv = $('#'+this.breadCrumbElt+this.suffixe);
-
 		this.initJstreeContainer();
 
 		this.getJstreeContainerElements();
@@ -34,8 +32,9 @@ export default class jsTreeContainer {
 		this.initEventsJsTree();
 
 		
-
 		this.initBreadCrumb();
+
+		this.breadcrumbTargetDiv = $('#'+this.breadCrumbElt+this.suffixe);
 	}
 
 
@@ -169,6 +168,7 @@ export default class jsTreeContainer {
 							`;
 			document.body.appendChild(css);
 	}
+
 
 
 
