@@ -162,8 +162,8 @@ export default class jsTreeContainer {
          	
          	breadcrumbTargetDiv.empty();
 
-         	console.log(JsTreeDiv);
-         	let node = JsTreeDiv.jstree(true).get_selected();
+
+         	let node = JsTreeDiv.jstree(true).get_selected()[0];
          	console.log(node);
 
          	//ajout d ela node active
