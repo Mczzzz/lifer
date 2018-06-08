@@ -149,7 +149,7 @@ export default class Objects{
 
   linkVakataDomEvent(){
 
-    $(document).on('dnd_stop.vakata', (e, data) => this.vakataAction(e,FormData));
+    $(document).on('dnd_stop.vakata', (e, data) => this.vakataAction(e,data));
 
   }
 
