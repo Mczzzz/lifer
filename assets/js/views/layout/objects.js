@@ -161,7 +161,8 @@ export default class Objects{
 
         let collection = this.TheContainerCollect;
 
-        console.log(MyFrag);
+        console.log(MyFrag.filter("div").attr('id'));
+        console.log(this.JsTreeContainer);
 
         if(MyFrag.filter("div").attr('id') == this.JsTreeContainer){
          
