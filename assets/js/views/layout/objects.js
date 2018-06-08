@@ -187,7 +187,8 @@ export default class Objects{
 
 
   containerSelected(e,data){
-
+    console.log(e);
+    console.log(data);
     this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'objects', this.TheObjectCollect,data.node.id);
 
 
