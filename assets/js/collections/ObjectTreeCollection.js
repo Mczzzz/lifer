@@ -13,7 +13,7 @@ export default class ObjectTreeCollection {
 	}
 
 
-  get(id){
+  getList(id){
 
     let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get/'+ id);
 
