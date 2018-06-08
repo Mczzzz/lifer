@@ -171,7 +171,7 @@ export default class Objects{
         }
   
 
-        this.collection.move(data);
+        collection.move(data);
        
 
     });
