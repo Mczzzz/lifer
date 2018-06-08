@@ -5,7 +5,7 @@ export default class ObjectTreeCollection {
 
 	constructor(){
 
-		this.apiPrefixe = "/container/";
+		this.apiPrefixe = "/object/tree/";
 
     this.SvcBackEndComm = new SvcBackEndComm();
 
@@ -13,9 +13,9 @@ export default class ObjectTreeCollection {
 	}
 
 
-  getAll(){
+  get(id){
 
-    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'all');
+    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get/'+ id);
 
     return JSON.parse(result.responseText);
 

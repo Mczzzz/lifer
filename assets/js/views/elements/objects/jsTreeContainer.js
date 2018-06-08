@@ -3,7 +3,7 @@ export default class jsTreeContainer {
 
 
 
-	constructor(container,suffixe,collection){
+	constructor(container,suffixe,collection, data = false ){
 
 
 		this.container = container;
@@ -17,6 +17,8 @@ export default class jsTreeContainer {
 		this.breadCrumbElt = 'breadcrumb';
 
 		this.collection = collection;
+
+		this.parentId = data;
 
 		this.initJstreeContainer();
 
@@ -73,7 +75,7 @@ export default class jsTreeContainer {
 
 	getJstreeContainerElements(){
 
-        this.JsTreeContainer.jstree(true).settings.core.data = this.collection.getAll();
+        this.JsTreeContainer.jstree(true).settings.core.data = this.collection.getList(this.parentId);
         this.JsTreeContainer.jstree(true).refresh();
 
 	}

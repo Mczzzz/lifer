@@ -13,7 +13,7 @@ export default class ContainerCollection {
 	}
 
 
-  getAll(){
+  getList(){
 
     let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'all');
 

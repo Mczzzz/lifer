@@ -2,6 +2,7 @@ import Header from './sections/header.js';
 import Footer from './sections/footer.js';
 
 import ContainerCollect from '../../collections/ContainerCollection.js';
+import ObjectCollect from '../../collections/ObjectTreeCollection.js';
 import JsTreeContainer from '../elements/objects/jsTreeContainer.js';
 
 
@@ -17,6 +18,8 @@ export default class Objects{
     this.JsTreeObjects   = 'jstree_object_tree';
 
     this.TheContainerCollect = new ContainerCollect();
+
+    this.TheObjectCollect = new ObjectCollect();
 
 		this.activeCSS();
 
@@ -183,9 +186,9 @@ export default class Objects{
  
 
 
-  containerSelected(event){
+  containerSelected(e,data){
 
-    this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'objects', ContainerCollection);
+    this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'objects', this.TheObjectCollect,data.node.id);
 
 
 
@@ -201,6 +204,11 @@ export default class Objects{
 
 
 	}
+
+
+
+
+
 
 
 
@@ -319,7 +327,7 @@ export default class Objects{
 
     //ENVOI DES INFOS D'UNE NODE
 
-	$('#infosValid').on('click', function(e, data) {
+/*	$('#infosValid').on('click', function(e, data) {
 
 	    let formData = new FormData();
 
@@ -331,7 +339,7 @@ export default class Objects{
 
 	    ajaxSend('POST','objects_infos/add',formData);
 
-	});
+	});*/
 
 
 
