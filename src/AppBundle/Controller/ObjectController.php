@@ -213,12 +213,13 @@ class ObjectController extends Controller
         //on va chercher les enfants accrochés pour les remettre au parent direct
         $childs = $em->getRepository('AppBundle:Objects_tree')->findBy(array('parent' => $node));
          
-        var_dump($childs);
-        die(); 
+
         if($childs){
 
             foreach($childs as $child){
 
+                var_dump($child->getId());
+                die();
                 if(is_bool(strpos($parentId,'root_'))){
                     $child->setParent($parent);
                     $em->persist($child);
