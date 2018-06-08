@@ -7,7 +7,7 @@ export default class jsTreeContainer {
 
 
 		console.log(collection);
-		
+
 		this.container = container;
 
 		this.suffixe = suffixe;
@@ -94,10 +94,14 @@ export default class jsTreeContainer {
 
 	linkSearchElement(id){
 
+		if (!$('#'+id).length){
 
-		$('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver; margin-bottom : 10px" placeholder="Recherche"></div>').insertBefore(this.JsTreeContainer);
+			$('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver; margin-bottom : 10px" placeholder="Recherche"></div>').insertBefore(this.JsTreeContainer);
 
-		document.querySelector("#"+id).addEventListener("keyup", (e)=> this.linkSearchEvent(e));
+			document.querySelector("#"+id).addEventListener("keyup", (e)=> this.linkSearchEvent(e));
+
+		}
+
 
 	}
 
