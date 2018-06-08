@@ -206,6 +206,7 @@ export default class jsTreeContainer {
 
 	//add All Events on Jstree
 	initEventsJsTree(){
+		console.log("on init les event sur le jstree");
 		this.JsTreeContainer.on("select_node.jstree", (e,data)=>this.onSelectJsTree(e,data));
 		this.JsTreeContainer.on("rename_node.jstree", (e,data)=>this.onRenameJsTree(e,data));
 		this.JsTreeContainer.on("delete_node.jstree", (e,data)=>this.onDeleteJsTree(e,data));
@@ -255,7 +256,7 @@ export default class jsTreeContainer {
 	onCreateJsTree(e,data){
 
 		console.log("on passe");
-		
+
 		let formData = new FormData();
 
         formData.append('node'    ,data.node.text);
