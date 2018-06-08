@@ -104,7 +104,7 @@ export default class Objects{
 
   toolbarHTML(){
 
-      let TheToolBar =  `<div>
+      let TheToolBar =  `<div id="toolbar">
                           <div class="fixed-action-btn horizontal ltr-lifer" style="position: absolute; display: inline-block; left: 0px;">
                             <a class="btn-floating btn-large">
                               <i class="material-icons">add</i>
@@ -140,7 +140,7 @@ export default class Objects{
                       </div>`;
 
       $('.section').append(TheToolBar);
-
+      $('#toolbar').hide();
   }
 
 
@@ -216,6 +216,7 @@ export default class Objects{
   onChildAction(e){
 
     this.JstreeContainerObj.onMinimize();
+    $('#toolbar').show();
 
   }
 
