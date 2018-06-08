@@ -1,23 +1,20 @@
-import SvcBackEndComm from '../../../services/BackEndComm.js';
-
 export default class jsTreeContainer {
 
 
 
 
-	constructor(container,suffixe){
+	constructor(container,suffixe,collection){
 
-
-		//va faire l'init de l'arbre
-			//charger les data
-			//afficher les éléments
-			//link du breadcrumb + recherche
 
 		this.container = container;
 
 		this.suffixe = suffixe;
 
-		this.JsTreeContainer = $('#'+ container);
+		this.JsTreeContainer = $('#'+ this.container);
+
+		this.breadCrumbElt = 'breadcrumb';
+
+		this.collection = collection;
 
 		this.initJstreeContainer();
 
@@ -27,7 +24,7 @@ export default class jsTreeContainer {
 
 		this.initEventsJsTree();
 
-		this.breadCrumbElt = 'breadcrumb';
+
 
 		this.initBreadCrumb();
 	}
@@ -71,10 +68,7 @@ export default class jsTreeContainer {
 
 	getJstreeContainerElements(){
 
-		let GetData = new SvcBackEndComm();
-		let result = GetData.ajaxSend('GET','children');
-
-        this.JsTreeContainer.jstree(true).settings.core.data = JSON.parse(result.responseText);
+        this.JsTreeContainer.jstree(true).settings.core.data = this.collection.getAll();
         this.JsTreeContainer.jstree(true).refresh();
 
 	}
