@@ -149,18 +149,15 @@ export default class Objects{
 
   linkVakataDomEvent(){
 
+    $(document).on('dnd_stop.vakata', (e, data) => this.vakataAction(e,FormData));
 
-    $(document).on('dnd_stop.vakata', function (e, data) {
+  }
+
+  
+  vakataAction(e, data){
 
         //Pour savoir quel jstree a lancée l'event
         let MyFrag = $(data.data.origin.element[0]);
-//console.log(MyFrag.filter("div").attr('id'));
-       
-        //let ref = $('#'+MyFrag.filter("div").attr('id')).jstree(true);
-
-        console.log(MyFrag);
-        let collection = this.TheContainerCollect;
-
 
         if(MyFrag.filter("div").attr('id') == this.JsTreeContainer){
          
@@ -172,21 +169,12 @@ export default class Objects{
         }
   
 
-        this.TheContainerCollect.move(data);
+        collection.move(data);
        
 
-    });
+    }
 
-
-
-
-
- }
-
-
-
-
-
+ 
 
 
   containerSelected(event){
