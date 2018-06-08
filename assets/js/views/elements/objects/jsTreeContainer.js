@@ -55,6 +55,16 @@ export default class jsTreeContainer {
 	                    "icon" : "glyphicon glyphicon-home"
 	                  }
 	              },
+	               "themes" : {
+			
+			            "theme" : "default",
+			
+			            "dots" : false,
+			
+			            "icons" : false
+			
+			        },
+
 	              "plugins" : [ "dnd", "search" , "types" ]
 
 	         });
