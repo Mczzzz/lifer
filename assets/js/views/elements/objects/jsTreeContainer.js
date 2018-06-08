@@ -120,9 +120,11 @@ export default class jsTreeContainer {
 
 	initBreadCrumb(){
 
+		if (!$('#'+this.breadCrumbElt+this.suffixed).length){
 
-		$('<div class="custom-'+this.breadCrumbElt+'"><div id="'+this.breadCrumbElt+this.suffixe+'" class="col s12"></div></div>').insertBefore(this.JsTreeContainer);
+			$('<div class="custom-'+this.breadCrumbElt+'"><div id="'+this.breadCrumbElt+this.suffixe+'" class="col s12"></div></div>').insertBefore(this.JsTreeContainer);
 
+		}
 
 		this.initBreadCrumbCSS(this.breadCrumbElt);
 
