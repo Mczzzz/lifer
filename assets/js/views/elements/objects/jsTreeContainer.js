@@ -203,7 +203,7 @@ export default class jsTreeContainer {
 			JsTreeDiv.jstree(true).close_all();
 			JsTreeDiv.jstree(true)._open_to(node);
 			JsTreeDiv.jstree(true).open_node(node);
-			//
+			$('#'+this.searchId).show();//
 			JsTreeDiv.trigger('ElementDisplay');			
 		});
 	
