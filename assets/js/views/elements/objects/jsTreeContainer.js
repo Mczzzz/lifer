@@ -158,9 +158,12 @@ export default class jsTreeContainer {
 
 
 
-	jsTreeBreadcrumb(JsTreeDiv,breadcrumbTargetDiv,node){
+	jsTreeBreadcrumb(JsTreeDiv,breadcrumbTargetDiv){
          	
          	breadcrumbTargetDiv.empty();
+
+         	let node = JsTreeDiv.jstree(true).get_selected();
+         	console.log(node);
 
          	//ajout d ela node active
             breadcrumbTargetDiv.append('<a href="#!" id="bc_'+node.id+'" class="custom-breadcrumb-item">'+node.text+'</a>');
@@ -287,8 +290,10 @@ export default class jsTreeContainer {
 
 	onMinimize(){
 
+		//je vais chercher mon id selectioné
+		get_selected
 		//calulate and show dreabcrumb
-		this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe),data.node);
+		this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe));
 		$('#'+this.searchId).hide();
 
 	}
