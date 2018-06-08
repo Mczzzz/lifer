@@ -204,7 +204,7 @@ export default class jsTreeContainer {
 
 	jsTreeEventBreadcrumb(node,JsTreeDiv,breadcrumbTargetDiv){
 
-
+		console.log('jsTreeEventBreadcrumb node:'+node);
 		$('#bc_'+node.id).on("click", (e) => this.onMaximize(e,node,JsTreeDiv,breadcrumbTargetDiv));
 
 		
@@ -304,7 +304,7 @@ export default class jsTreeContainer {
 
 	onMaximize(e,node,JsTreeDiv,breadcrumbTargetDiv){
 
-
+		console.log('onMaximize node:'+node);
 		console.log(node);
 		//hide du breadcrumb
 		$('#'+this.breadCrumbElt+this.suffixe).hide();
