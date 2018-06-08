@@ -123,7 +123,6 @@ export default class jsTreeContainer {
 
 	initBreadCrumbCSS(id){
 
-	console.log('on passe dans le CSS');
 		let css = document.createElement("style");
 			css.type = "text/css";
 			css.innerHTML = `
@@ -205,15 +204,73 @@ export default class jsTreeContainer {
 /////////////////////////////////
 
 
+	//add All Events on Jstree
 	initEventsJsTree(){
 		this.JsTreeContainer.on("select_node.jstree", (e,data)=>this.onSelectJsTree(e,data));
+		this.JsTreeContainer.on("rename_node.jstree", (e,data)=>this.onRenameJsTree(e,data));
+		this.JsTreeContainer.on("delete_node.jstree", (e,data)=>this.onDeleteJsTree(e,data));
+		this.JsTreeContainer.on("create_node.jstree", (e,data)=>this.onCreateJsTree(e,data));
 	}
+
+
+
 
 
 
 	onSelectJsTree(e,data){
+
        	this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt),data.node);
+
 	}
+
+
+	onRenameJsTree(e,data){
+
+       	let formData = new FormData();
+
+        formData.append('node',data.node.id);
+        formData.append('name',data.node.text);
+
+		let GetData = new SvcBackEndComm();
+		let result = GetData.ajaxSend('POST','node/rename',formData);
+        
+	}
+
+
+	onDeleteJsTree(e,data){
+
+       	let formData = new FormData();
+
+        formData.append('node'  ,data.node.id);
+        formData.append('parent'  ,data.parent);
+
+		let GetData = new SvcBackEndComm();
+		let result = GetData.ajaxSend('POST','node/delete',formData);
+       
+		this.getJstreeContainerElements();
+
+	}
+
+
+	onCreateJsTree(e,data){
+
+		let formData = new FormData();
+
+        formData.append('node'    ,data.node.text);
+        formData.append('parent'  ,data.parent);
+
+        let GetData = new SvcBackEndComm();
+		let result = GetData.ajaxSend('POST','node/add',formData);
+
+		this.JsTreeContainer.jstree(true).set_id(data.node, result.responseText);
+
+
+	}
+
+
+
+
+
 
 
 
