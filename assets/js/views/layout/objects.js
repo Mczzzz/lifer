@@ -161,15 +161,15 @@ export default class Objects{
 
         let collection = "";
 
-        console.log(MyFrag.filter("div").attr('id'));
+/*        console.log(MyFrag.filter("div").attr('id'));
         console.log(this.JsTreeContainer);
-        console.log(collection);
+        console.log(collection);*/
 
         if(MyFrag.filter("div").attr('id') == this.JsTreeContainer){
          
-         console.log('on passe bien dans le if');
+/*         console.log('on passe bien dans le if');*/
          collection = this.TheContainerCollect;
-         console.log(collection);
+/*         console.log(collection);*/
         
         }else if (MyFrag.filter("div").attr('id') == this.JsTreeObjects){
         
@@ -177,6 +177,7 @@ export default class Objects{
         }
   
         console.log(collection);
+        console.log(data);
         collection.move(data);
        
 
