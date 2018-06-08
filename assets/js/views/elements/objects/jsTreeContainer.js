@@ -67,7 +67,7 @@ export default class jsTreeContainer {
 
 			this.JsTreeContainer.jstree(true).hide_dots();
 
-
+			this.JsTreeContainer.show();
 		}
 
 
@@ -101,9 +101,13 @@ export default class jsTreeContainer {
 			document.querySelector("#"+id).addEventListener("keyup", (e)=> this.linkSearchEvent(e));
 
 
+		}else{
+
+			$("#"+id).show();
+
 		}
 
-		$("#"+id).show();
+		
 	}
 
 
