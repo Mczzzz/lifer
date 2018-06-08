@@ -21,7 +21,7 @@ class ContainerController extends Controller
     /**
      * @Route("/container/all", name="children")
      */
-    public function getChildrenAction(Request $request)
+    public function getAllAction(Request $request)
     {
 
         $em = $this->getDoctrine()->getManager();
@@ -60,15 +60,28 @@ class ContainerController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
+        $res = new \stdClass();
+        $res->error = 0;
+
         $object = $em->getRepository('AppBundle:Objects')->find($node);
 
-        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+        if(!$object){
+
+            $res->error = 1;
+            $res->data = "No Container";
+            return new Response(json_encode($res));
+
+        }
 
 
         $parent = $em->getRepository('AppBundle:Objects')->find($parent);
-        if(!$parent) return new Response("Pas de parents truc chelou");
 
-
+        if(!$parent){
+            $res->error = 2;
+            $res->data = "Orphelin";
+            return new Response(json_encode($res));
+            
+        }
 
         $object->setContainerIn($parent);
 
@@ -77,7 +90,9 @@ class ContainerController extends Controller
         // actually executes the queries (i.e. the INSERT query)
         $em->flush();
 
-        return new Response("c ok trop de la boulette");
+
+        return new Response(json_encode($res));
+
 
     }
 
@@ -221,7 +236,7 @@ class ContainerController extends Controller
      * @Route("/container/delete", name="node_delete")
      * @Method("POST")
      */
-    public function nodeDeleteAction(Request $request)
+    public function containerDeleteAction(Request $request)
     {
 
 

@@ -261,7 +261,16 @@ export default class jsTreeContainer {
 	}
 
 
+	onDNDJstree(e,data){
 
+  		let formData = new FormData();
+
+        formData.append('node'  ,ref.get_node(data.data.nodes[0]).id);
+        formData.append('parent'  ,ref.get_node(data.data.nodes[0]).parent);
+
+        this.collection.move(formData);
+
+	}
 
 
 

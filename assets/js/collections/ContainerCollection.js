@@ -51,6 +51,12 @@ export default class ContainerCollection {
   }
 
 
+  move(data){
 
+    let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'dnd',data);
+
+    return JSON.parse(result.responseText);
+
+  }
 
 }

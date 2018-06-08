@@ -12,10 +12,19 @@ export default class Objects{
 
 		this.getHTMLPage();
 
+    this.JsTreeContainer = 'jstree_demo_div';
+
+    this.JsTreeObjects   = 'jstree_object_tree';
+
+    this.TheContainerCollect = new ContainerCollect();
+
 		this.activeCSS();
 
-		this.linkDOMElements();
+		this.initContainerJstreeDOMElements();
 
+    this.linkVakataDomEvent();
+
+    this.addEventListener('ContainerSelect', (e) => this.containerSelected(e));
 
 	}
 
@@ -125,21 +134,71 @@ export default class Objects{
 
 
 
-	linkDOMElements(){
+	initContainerJstreeDOMElements(){
 
-		//JSTREE CONTAINER
-		this.JsTreeContainer    = 'jstree_demo_div';
     //load de la collection appropriée
     let ContainerCollection = new ContainerCollect();
-    //on charge l'objet jstree standard
+    //je charge l'objet jstree standard
     this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer,'box', ContainerCollection);
-
-		//JSTREE OBJECTS
-		this.JsTreeObjects = 'jstree_object_tree';
-
+   
+    //trig me ;)
+    this.JstreeContainerObj.trigMe('onSelect', 'ContainerSelect');
 
 
 	}
+
+
+
+  linkVakataDomEvent(){
+
+
+    $(document).on('dnd_stop.vakata', function (e, data) {
+
+        //Pour savoir quel jstree a lancée l'event
+        let MyFrag = $(data.data.origin.element[0]);
+//console.log(MyFrag.filter("div").attr('id'));
+       
+        let ref = $('#'+MyFrag.filter("div").attr('id')).jstree(true);
+
+
+        if(MyFrag.filter("div").attr('id') == this.JsTreeContainer){
+         
+          let collection = this.TheContainerCollect;
+        
+        }else if (MyFrag.filter("div").attr('id') == this.JsTreeObjects){
+        
+
+        }
+  
+
+        this.collection.move(data);
+       
+
+    });
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+  containerSelected(event){
+
+    this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'objects', ContainerCollection);
+
+
+
+  }
+
+
+
+
 
 
 
@@ -222,36 +281,7 @@ export default class Objects{
 /////////////////////////////////
 
 	//DOCUMENT
-        $(document)
-        // listen for events
-        .on('dnd_start.vakata', function (e, data) {})
-        .on('dnd_stop.vakata', function (e, data) {
-            console.log('Dropped');
-
-            //Pour savoir quel jstree a lancée l'event
-            let MyFrag = $(data.data.origin.element[0]);
-             console.log(MyFrag.filter("div").attr('id'));
-           
-              ref = $('#'+MyFrag.filter("div").attr('id')).jstree(true);
-
-              if(MyFrag.filter("div").attr('id') == 'jstree_demo_div'){
-                var url = 'node/dnd'
-              }else if (MyFrag.filter("div").attr('id') == 'jstree_object_tree'){
-                var url = 'object/tree/dnd'
-
-              }
-             // console.log(data.data.origin.element[0]);
-
-        
-            let formData = new FormData();
-
-            //formData.append('jpg'  ,this.image);
-            formData.append('node'  ,ref.get_node(data.data.nodes[0]).id);
-            formData.append('parent'  ,ref.get_node(data.data.nodes[0]).parent);
-
-            ajaxSend('POST',url,formData);
-
-        });
+       
 
 
 
