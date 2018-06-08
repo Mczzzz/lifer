@@ -128,7 +128,7 @@ export default class Objects{
 
 		//JSTREE CONTAINER
 		this.JsTreeContainer    = 'jstree_demo_div';
-    this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer);
+    this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer,'box');
 
 		//JSTREE OBJECTS
 		this.JsTreeObjects = 'jstree_object_tree';

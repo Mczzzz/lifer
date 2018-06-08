@@ -5,7 +5,7 @@ export default class jsTreeContainer {
 
 
 
-	constructor(container){
+	constructor(container,suffixe){
 
 
 		//va faire l'init de l'arbre
@@ -14,8 +14,8 @@ export default class jsTreeContainer {
 			//link du breadcrumb + recherche
 
 		this.container = container;
-		console.log(this.container);
 
+		this.suffixe = suffixe;
 
 		this.JsTreeContainer = $('#'+ container);
 
@@ -90,7 +90,7 @@ export default class jsTreeContainer {
 
 	linkSearchElement(){
 
-		let id = 'JTC-Search';
+		let id = 'JTC-Search'+ this.suffixe;
 
 		$('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver; margin-bottom : 10px"></div>').insertBefore(this.JsTreeContainer);
 
@@ -113,7 +113,7 @@ export default class jsTreeContainer {
 	initBreadCrumb(){
 
 
-		$('<div class="custom-'+this.breadCrumbElt+'"><div id="'+this.breadCrumbElt+'" class="col s12"></div></div>').insertBefore(this.JsTreeContainer);
+		$('<div class="custom-'+this.breadCrumbElt+'"><div id="'+this.breadCrumbElt+this.suffixe+'" class="col s12"></div></div>').insertBefore(this.JsTreeContainer);
 
 
 		this.initBreadCrumbCSS(this.breadCrumbElt);
@@ -220,7 +220,7 @@ export default class jsTreeContainer {
 
 	onSelectJsTree(e,data){
 
-       	this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt),data.node);
+       	this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe),data.node);
 
 	}
 
