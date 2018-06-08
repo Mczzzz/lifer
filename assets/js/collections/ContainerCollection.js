@@ -22,6 +22,17 @@ export default class ContainerCollection {
   }
 
 
+
+  rename(data){
+
+    let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'rename',data);
+
+    return JSON.parse(result.responseText);
+
+  }
+
+
+
 	save(){
 
 

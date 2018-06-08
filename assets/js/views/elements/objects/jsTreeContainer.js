@@ -226,8 +226,8 @@ export default class jsTreeContainer {
         formData.append('node',data.node.id);
         formData.append('name',data.node.text);
 
-		let GetData = new SvcBackEndComm();
-		let result = GetData.ajaxSend('POST','node/rename',formData);
+        this.collection.rename(formData);
+
         
 	}
 
