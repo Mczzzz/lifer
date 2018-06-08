@@ -6,6 +6,8 @@ export default class jsTreeContainer {
 	constructor(container,suffixe,collection, data = false ){
 
 
+		console.log(collection);
+		
 		this.container = container;
 
 		this.suffixe = suffixe;
@@ -74,6 +76,7 @@ export default class jsTreeContainer {
 
 
 	getJstreeContainerElements(){
+
 
         this.JsTreeContainer.jstree(true).settings.core.data = this.collection.getList(this.parentId);
         this.JsTreeContainer.jstree(true).refresh();
