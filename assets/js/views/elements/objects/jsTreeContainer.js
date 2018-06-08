@@ -291,8 +291,7 @@ export default class jsTreeContainer {
 
 	onMinimize(){
 
-		//je vais chercher mon id selectioné
-		get_selected
+
 		//calulate and show dreabcrumb
 		this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe));
 		$('#'+this.searchId).hide();
