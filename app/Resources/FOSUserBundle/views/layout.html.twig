@@ -1,99 +1,123 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="{{ asset('bundles/app/lib/pixi.min.js') }}"></script>
-        <script src="{{ asset('bundles/app/lib/pixi-filters.js') }}"></script>
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
-        <!-- font-family: 'Berkshire Swash', cursive; -->
-        <meta charset="UTF-8" />
-        <!-- <meta name="viewport" content="initial-scale=0.5,minimum-scale=0.5,maximum-scale=1.0,width=device-width,user-scalable=no" /> -->
-        <title>Lifer</title>
-        <style>
-            * {
-              margin: 0;
-              padding: 0;
-            }
+      <meta charset="UTF-8" />
+      
+      <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+        
 
-            #username, #password, #_submit{
-                position:absolute;
-                
-                border: 2px solid rgba(255, 255, 255, 0.5);
-                  font-size: 2.75em;
-                  padding: .25em .5em .3125em;
-                  color: rgba(255, 255, 255, 0.5);
-                  border-radius: .25em;
-                  background: transparent;
-                  -webkit-transition: all .100s;
-                  transition: all .100s;
-                    box-sizing: border-box;
-                  /*bottom: 4em;*/
-                  left: 50%;
-                  width: 11em;
-                  margin-left: -5.5em;    
-            }
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" 
+              integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+              crossorigin="anonymous">   
+      </script>
 
-            #username:focus {
-              outline: none;
-              color: rgba(255, 255, 255, 0.75);
-              border-color: rgba(255, 255, 255, 0.75);
-            }
+      <!-- <meta name="viewport" content="initial-scale=0.5,minimum-scale=0.5,maximum-scale=1.0,width=device-width,user-scalable=no" /> -->
+      <title>Lifer</title>
+      
+      <style>
 
-            #username.keyup {
-              color: white;
-              border-color: white;
-              text-shadow: 0 0 .125em white;
-              box-shadow: 0 0 .25em white,inset 0 0 .25em white;
-            }
+        * {
+          margin: 0;
+          padding: 0;
+        }
+
+        body {
+            background-image: url("/bundles/app/pict/background/bk1.jpeg");
+            background-repeat: no-repeat;
+            background-size: auto 100%; 
+            background-position: center top;
+            background-attachment: fixed;
+        }
 
 
-            input {
-              font-family: 'Varela Round', sans-serif;;
-            }
+        input {
+          font-family: 'Varela Round', sans-serif;;
+        }
 
-            ::-webkit-input-placeholder {
-              color: rgba(255, 255, 255, 0.5);
-              text-shadow: 0 0 .125em transparent;
-              -webkit-transition: all .25s;
-              transition: all .25s;
-            }
+        ::-webkit-input-placeholder {
+          color: rgba(255, 255, 255, 0.5);
+          text-shadow: 0 0 .125em transparent;
+          -webkit-transition: all .25s;
+          transition: all .25s;
+        }
 
-            input:focus::-webkit-input-placeholder {
-              opacity: .5;
-            }
+        input:focus::-webkit-input-placeholder {
+          opacity: .5;
+        }
 
-            ::-moz-placeholder {
-              color: rgba(255, 255, 255, 0.5);
-              text-shadow: 0 0 .125em transparent;
-              -webkit-transition: all .25s;
-              transition: all .25s;
-            }
+        ::-moz-placeholder {
+          color: rgba(255, 255, 255, 0.5);
+          text-shadow: 0 0 .125em transparent;
+          -webkit-transition: all .25s;
+          transition: all .25s;
+        }
 
-            input:focus::-moz-placeholder {
-              opacity: .5;
-            }
+        input:focus::-moz-placeholder {
+          opacity: .5;
+        }
 
-            :-ms-input-placeholder {
-              color: rgba(255, 255, 255, 0.5);
-              text-shadow: 0 0 .125em transparent;
-              -webkit-transition: all .25s;
-              transition: all .25s;
-            }
+        :-ms-input-placeholder {
+          color: rgba(255, 255, 255, 0.5);
+          text-shadow: 0 0 .125em transparent;
+          -webkit-transition: all .25s;
+          transition: all .25s;
+        }
 
-            input:focus:-ms-input-placeholder {
-              opacity: .5;
-            }
+        input:focus:-ms-input-placeholder {
+          opacity: .5;
+        }
+
+        .lifer{
+          position: relative;
+          float: left;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-family: 'Berkshire Swash', cursive;
+          font-size: 325px;
+          color: white;
+
+        }
+
+        #username, #password, #_submit{
+            position:absolute;
+            
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            font-size: 2.75em;
+            padding: .25em .5em .3125em;
+            color: rgba(0, 0, 0, 0.5);
+            border-radius: .25em;
+            background-color: rgba(255, 255, 255, 0.5);
+            -webkit-transition: all .100s;
+            transition: all .100s;
+              box-sizing: border-box;
+            /*bottom: 4em;*/
+            left: 50%;
+            width: 11em;
+            margin-left: -5.5em;    
+        }
+
+        #username:focus {
+          outline: none;
+          color: rgba(125, 125, 125, 0.75);
+          border-color: rgba(255, 255, 255, 0.75);
+        }
+
+        #username.keyup {
+          border-color: white;
+          text-shadow: 0 0 .125em white;
+          box-shadow: 0 0 .25em white,inset 0 0 .25em white;
+        }
+
+        #password{
+        /*    visibility: hidden;*/
+            position:absolute;
+        }
 
 
 
 
 
-
-            #password{
-            /*    visibility: hidden;*/
-                position:absolute;
-            }
         </style>
     </head>
     <body>
@@ -123,4 +147,8 @@
             {% endblock fos_user_content %}
         </div>
     </body>
+
+
+
+
 </html>

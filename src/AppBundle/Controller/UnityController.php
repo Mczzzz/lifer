@@ -59,6 +59,7 @@ class UnityController extends Controller
      */
     public function getAllUnitiesAction()
     {
+
         $em = $this->getDoctrine()->getManager();
 
         $Unities = $em->getRepository('AppBundle:Unity')->findAll();

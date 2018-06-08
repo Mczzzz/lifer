@@ -1,22 +1,15 @@
 import Home from '../views/layout/home.js';
-import Node from '../views/layout/node.js';
-import Link from '../views/layout/link.js';
+import Objects from '../views/layout/objects.js';
 
 export default class Frame {
 
 
 	constructor(){
 
+	
+		this.Home();
+		//this.active = "";
 
-
-
-		this.app = new PIXI.Application(window.innerWidth, window.innerHeight, { backgroundColor : 0xD8D8D8, antialias : true });  // Add the view to the DOM 		
-
-		document.body.appendChild(this.app.view);  // ex, add display objects 
-
-
-		this.render();
-		
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
 
 
@@ -24,47 +17,24 @@ export default class Frame {
 	}
 
 
-	render(){
 
-		let homeFrame = new Home(0,0,window.innerWidth,window.innerHeight);
-		let TheHomeFrame = homeFrame.load();
-		this.attach(TheHomeFrame);
+	Home(){
 
-	}
-
-
-
-	node(){
-
-		console.log('in frame node');
-	
-		let nodeFrame = new Node(0,0,window.innerWidth,window.innerHeight);
-		let TheNode = nodeFrame.load();
-		this.attach(TheNode);
+		//this.active = "Home";
+		let home = new Home();
+		let res = home.getHTMLPage();
+		document.body.innerHTML = res;
+		home.activeJs();
 
 	}
 
 
-	link(){
+	Objects(){
 
-		console.log('in frame link');
-	
-		let linkFrame = new Link(0,0,window.innerWidth,window.innerHeight);
-		let MyLinks = linkFrame.load();
-		this.attach(MyLinks);
+		//on recharge le body
+		let objects = new Objects();
 
 	}
-
-
-	attach(layout){
-
-		this.app.stage.addChild(layout);
-
-	}
-
-
-
-
 
 
 

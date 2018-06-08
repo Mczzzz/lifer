@@ -1,73 +1,112 @@
-import UIContainer from '../../services/uiContainer.js';
-import Header from '../components/header.js';
-import Footer from '../components/footer.js';
-import NodeList from '../components/NodeList.js';
-//import Adder from '../components/adder.js';
+import jstree from 'jstree';
+import Header from './sections/header.js';
+import Footer from './sections/footer.js';
 
-export default class Home extends UIContainer{
+export default class Home{
 
 
-	constructor(x,y,w,h){
+	getHTMLPage(){
 
-		super(x,y,w,h);
+		let page = this.headerHTML();
+		
+		page += this.bodyHTML();
 
-		//this.container.name = 'Home';
-		//console.log($(this).attr('class'));
+		//floating elements
+		page += this.floatingHTML();
+
+		page += this.footerHTML();
+
+
+		return page;
 	}
 
 
-	addElements(){
+	headerHTML(){
 
-		this.drawBkground();
+				let header = new Header();
 
-		this.addListNode();
-
-		let header = new Header(0,0,this.width,this.height);
-		//console.log(header);
-		let TheHeader = header.load();
-		this.attach(TheHeader);
-
-
-		
-
-
-		let footer = new Footer(0,this.height - 100,this.width,100);
-		let TheFooter = footer.load();
-		this.attach(TheFooter);
-
-/*		const rayonButton = 30;
-		this.adder = new Adder(rayonButton);
-		this.adder.x = 20;
-		this.adder.y = window.innerHeight - (rayonButton * 2 ) - 20;
-		this.attach(this.adder);*/
-
-
+				return header.addTags();
 	}
 		
 
 
+	bodyHTML(){
 
-	drawBkground(){
+		return `
+			<div id="main">
+		      <!-- START WRAPPER -->
+		      <div class="wrapper">
 
-		let backgroundCard = new PIXI.Graphics();
-        backgroundCard.beginFill(0x00B0FF);
-        backgroundCard.lineStyle(0);
-        backgroundCard.drawRect(0, 0, this.width, this.height);
-        backgroundCard.endFill();
+		        <!-- START CONTENT -->
+		        <section id="content">
 
-        this.attach(backgroundCard);
+		          <!--start container-->
+		          <div class="container">
+		            <div class="section">
+		            
+		              <div class="divider"></div>
+		            </div>
+		          
+		          </div>
+		          <!--end container-->
+		        </section>
+		        <!-- END CONTENT -->
+		      </div>
+		      <!-- END WRAPPER -->
+		    </div>`;
 
 
 	}
 
 
-	addListNode(){
 
-		//rajouter le cadre de vision
-		//rajouter un hit area
-		let MyNodeList = new NodeList(15,100,(this.width / 2) - 30, (this.height - 200) / 2 );
-		let TheMyNodeList = MyNodeList.load();
-		this.attach(TheMyNodeList);
+
+
+	floatingHTML(){
+
+		return `<div class="fixed-action-btn " style="bottom: 19px; left: 19px; width: 60px">
+		              <a class="btn-floating btn-large gradient-45deg-light-blue-cyan gradient-shadow">
+		                <i class="material-icons">add</i>
+		              </a>
+		              <ul>
+		                <li>
+		                  <a href=""  class="btn-floating grey">
+		                    <i class="material-icons">face</i>
+		                  </a>
+		                </li>
+		                <li>
+		                  <a href="#!" id="menu-obj"class="btn-floating green">
+		                    <i class="material-icons">widgets</i>
+		                  </a>
+		                </li>
+		                <li>
+		                  <a href="app-calendar.html" class="btn-floating grey">
+		                    <i class="material-icons">today</i>
+		                  </a>
+		                </li>
+		              </ul>
+		            </div>`;
+
+	}
+
+	footerHTML(){
+
+				let footer = new Footer();
+
+				return footer.addTags();
+	}
+
+
+	activeJs(){
+
+	    //$('#nestable3').nestable();
+
+	    $('#menu-obj').on('click', function() {
+
+	       let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
+	       window.dispatchEvent(LinkEvent);
+	    });
+
 
 	}
 
