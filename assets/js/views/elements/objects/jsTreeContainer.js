@@ -285,11 +285,11 @@ export default class jsTreeContainer {
 	onMinimize(){
 
 
-
-		//calulate and show dreabcrumb
-		this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe));
-		$('#'+this.breadCrumbElt+this.suffixe).show();
-
+		if(!this.parentId){
+			//calulate and show dreabcrumb
+			this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe));
+			$('#'+this.breadCrumbElt+this.suffixe).show();
+		}
 		$('#'+this.searchId).hide();
 		this.JsTreeContainer.hide();
 
@@ -302,7 +302,7 @@ export default class jsTreeContainer {
 		$('#'+this.breadCrumbElt+this.suffixe).hide();
 		$('#'+this.searchId).show();
 		$('#'+this.searchId).val('');
-		
+
 		this.JsTreeContainer.jstree(true).close_all();
 		this.JsTreeContainer.jstree(true)._open_to(node);
 		this.JsTreeContainer.jstree(true).open_node(node);
