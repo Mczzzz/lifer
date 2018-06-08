@@ -218,13 +218,14 @@ class ObjectController extends Controller
 
             foreach($childs as $child){
 
-                var_dump($child->getId());
-                die();
                 if(is_bool(strpos($parentId,'root_'))){
                     $child->setParent($parent);
-                    $em->persist($child);
+                    
+                }else{
+                    $child->setParent(null);
                 }
 
+                $em->persist($child);
             }
 
             $em->flush();
