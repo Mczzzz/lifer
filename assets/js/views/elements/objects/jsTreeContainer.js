@@ -296,11 +296,17 @@ export default class jsTreeContainer {
 	}
 
 
-	onMinimize(){
+	onMinimize(hideBC = false){
 
 
-		this.jsTreeBreadcrumb();
-		$('#'+this.breadCrumbElt+this.suffixe).show();
+		
+		if(hideBC){
+			$('#'+this.breadCrumbElt+this.suffixe).hide();
+		}else{
+			this.jsTreeBreadcrumb();
+			$('#'+this.breadCrumbElt+this.suffixe).show();
+		}
+		
 
 		$('#'+this.searchId).hide();
 		this.JsTreeContainer.hide();
