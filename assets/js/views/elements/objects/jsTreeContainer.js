@@ -73,7 +73,11 @@ export default class jsTreeContainer {
 
 
 
+	setParentId(parentId){
 
+		this.parentId = parentId;
+
+	}
 
 	getJstreeContainerElements(){
 

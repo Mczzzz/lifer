@@ -196,7 +196,8 @@ export default class Objects{
 
     }else{
 
-      this.JstreeObjectsObj.getJstreeContainerElements(e.detail.id);
+      this.JstreeObjectsObj.setParentId(e.detail.id);
+      this.JstreeObjectsObj.getJstreeContainerElements();
 
     }
 
