@@ -13,9 +13,9 @@ export default class Objects{
 
 		this.getHTMLPage();
 
-    this.JsTreeContainer = 'jstree_demo_div';
+    this.JsTreeContainer = 'jstreeContainerdiv';
 
-    this.JsTreeObjects   = 'jstree_object_tree';
+    this.JsTreeObjects   = 'jstreeObjectDiv';
 
     this.TheContainerCollect = new ContainerCollect();
 
@@ -192,7 +192,7 @@ export default class Objects{
     //create or refresh the child
     if( this.JstreeObjectsObj === undefined ){
 
-      this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'child', this.TheObjectCollect,e.detail.id);
+      this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'Child', this.TheObjectCollect,e.detail.id);
 
     }else{
 
