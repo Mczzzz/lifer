@@ -159,18 +159,13 @@ export default class Objects{
 
         //Pour savoir quel jstree a lancée l'event
         let MyFrag = $(data.data.origin.element[0]);
+        let ref = $('#'+MyFrag.filter("div").attr('id')).jstree(true);
 
         let TheJstree = "";
 
-/*        console.log(MyFrag.filter("div").attr('id'));
-        console.log(this.JsTreeContainer);
-        console.log(collection);*/
-
         if(MyFrag.filter("div").attr('id') == this.JsTreeContainer){
-         
-/*         console.log('on passe bien dans le if');*/
-         TheJstree = this.JstreeContainerObj;
-/*         console.log(collection);*/
+
+          TheJstree = this.JstreeContainerObj;
         
         }else if (MyFrag.filter("div").attr('id') == this.JsTreeObjects){
         
@@ -179,7 +174,7 @@ export default class Objects{
 
         console.log(data);
 
-       TheJstree.onDNDJstree(data); 
+       TheJstree.onDNDJstree(e,data,ref); 
 
        
 

@@ -261,7 +261,7 @@ export default class jsTreeContainer {
 	}
 
 
-	onDNDJstree(e,data){
+	onDNDJstree(e,data,ref){
 
   		let formData = new FormData();
 
