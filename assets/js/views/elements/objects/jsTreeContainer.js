@@ -248,15 +248,12 @@ export default class jsTreeContainer {
 
 	onCreateJsTree(e,data){
 
-		console.log("on passe");
-
 		let formData = new FormData();
 
         formData.append('node'    ,data.node.text);
         formData.append('parent'  ,data.parent);
 
-        let GetData = new SvcBackEndComm();
-		let result = GetData.ajaxSend('POST','node/add',formData);
+		let result = this.collection.create(formData);
 
 		this.JsTreeContainer.jstree(true).set_id(data.node, result.responseText);
 
