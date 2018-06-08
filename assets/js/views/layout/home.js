@@ -70,7 +70,7 @@ export default class Home{
 		              </a>
 		              <ul>
 		                <li>
-		                  <a href=""  class="btn-floating blue">
+		                  <a href=""  class="btn-floating grey">
 		                    <i class="material-icons">face</i>
 		                  </a>
 		                </li>
@@ -80,7 +80,7 @@ export default class Home{
 		                  </a>
 		                </li>
 		                <li>
-		                  <a href="app-calendar.html" class="btn-floating amber">
+		                  <a href="app-calendar.html" class="btn-floating grey">
 		                    <i class="material-icons">today</i>
 		                  </a>
 		                </li>
