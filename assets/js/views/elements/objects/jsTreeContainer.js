@@ -285,7 +285,7 @@ export default class jsTreeContainer {
 	onMinimize(){
 
 
-		
+
 		//calulate and show dreabcrumb
 		this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe));
 		$('#'+this.breadCrumbElt+this.suffixe).show();
@@ -302,11 +302,12 @@ export default class jsTreeContainer {
 		$('#'+this.breadCrumbElt+this.suffixe).hide();
 		$('#'+this.searchId).show();
 		$('#'+this.searchId).val('');
-		JsTreeDiv.jstree(true).close_all();
-		JsTreeDiv.jstree(true)._open_to(node);
-		JsTreeDiv.jstree(true).open_node(node);
-		JsTreeDiv.jstree(true).clear_search();
-		JsTreeDiv.show();
+		
+		this.JsTreeContainer.jstree(true).close_all();
+		this.JsTreeContainer.jstree(true)._open_to(node);
+		this.JsTreeContainer.jstree(true).open_node(node);
+		this.JsTreeContainer.jstree(true).clear_search();
+		this.JsTreeContainer.show();
 
 		if(!this.parentId){
 
