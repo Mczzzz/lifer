@@ -166,6 +166,7 @@ export default class Objects{
 
         if(MyFrag.filter("div").attr('id') == this.JsTreeContainer){
          
+         console.log('on passe bien dans le if');
           let collection = this.TheContainerCollect;
         
         }else if (MyFrag.filter("div").attr('id') == this.JsTreeObjects){
