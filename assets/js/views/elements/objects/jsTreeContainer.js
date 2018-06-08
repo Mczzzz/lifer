@@ -293,11 +293,9 @@ export default class jsTreeContainer {
 	onMinimize(){
 
 
-		if(!this.parentId){
-			//calulate and show dreabcrumb
-			this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe));
-			$('#'+this.breadCrumbElt+this.suffixe).show();
-		}
+		this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe));
+		$('#'+this.breadCrumbElt+this.suffixe).show();
+
 		$('#'+this.searchId).hide();
 		this.JsTreeContainer.hide();
 
@@ -306,6 +304,8 @@ export default class jsTreeContainer {
 
 	onMaximize(e,node,JsTreeDiv,breadcrumbTargetDiv){
 
+
+		console.log(node);
 		//hide du breadcrumb
 		$('#'+this.breadCrumbElt+this.suffixe).hide();
 		$('#'+this.searchId).show();
