@@ -287,6 +287,7 @@ export default class jsTreeContainer {
 
 		//calulate and show dreabcrumb
 		this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe));
+		$('#'+this.breadCrumbElt+this.suffixe).show();
 		$('#'+this.searchId).hide();
 		this.JsTreeContainer.hide();
 
