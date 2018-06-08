@@ -228,8 +228,17 @@ export default class jsTreeContainer {
 
 	onSelectJsTree(e,data){
 
-		let NodeEvent = new CustomEvent('ContainerSelect', {'detail' : {'container' : this.container, 'id' : data.node.id }});
-        window.dispatchEvent(NodeEvent);
+		if(!this.parentId){
+
+			let NodeEvent = new CustomEvent('ContainerSelect', {'detail' : {'container' : this.container, 'id' : data.node.id }});
+        	window.dispatchEvent(NodeEvent);
+		}else{
+
+			let NodeEvent = new CustomEvent('childAction', {'detail' : {'container' : this.container }});
+        	window.dispatchEvent(NodeEvent);
+
+		}
+		
 
 
     //   	this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe),data.node);
