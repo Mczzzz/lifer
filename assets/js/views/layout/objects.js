@@ -1,7 +1,6 @@
 import Header from './sections/header.js';
 import Footer from './sections/footer.js';
 
-import ContainerCollect from '../../collections/ContainerCollection.js';
 import JsTreeContainer from '../elements/objects/jsTreeContainer.js';
 
 
@@ -159,7 +158,7 @@ export default class Objects{
         //Pour savoir quel jstree a lancée l'event
         let MyFrag = $(data.data.origin.element[0]);
 
-        let collection = "";
+        let TheJstree = "";
 
 /*        console.log(MyFrag.filter("div").attr('id'));
         console.log(this.JsTreeContainer);
@@ -168,17 +167,18 @@ export default class Objects{
         if(MyFrag.filter("div").attr('id') == this.JsTreeContainer){
          
 /*         console.log('on passe bien dans le if');*/
-         collection = this.TheContainerCollect;
+         TheJstree = this.JstreeContainerObj;
 /*         console.log(collection);*/
         
         }else if (MyFrag.filter("div").attr('id') == this.JsTreeObjects){
         
 
         }
-  
-        console.log(collection);
+
         console.log(data);
-        collection.move(data);
+
+       TheJstree.onDNDJstree(data); 
+
        
 
     }
