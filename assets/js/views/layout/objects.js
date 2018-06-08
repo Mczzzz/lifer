@@ -159,6 +159,8 @@ export default class Objects{
         //Pour savoir quel jstree a lancée l'event
         let MyFrag = $(data.data.origin.element[0]);
 
+        let collection = this.TheContainerCollect;
+
         if(MyFrag.filter("div").attr('id') == this.JsTreeContainer){
          
           let collection = this.TheContainerCollect;
