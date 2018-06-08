@@ -218,7 +218,7 @@ export default class jsTreeContainer {
 
 	onSelectJsTree(e,data){
 
-		let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'container' : this.container}});
+		let NodeEvent = new CustomEvent('ContainerSelect', {'detail' : {'container' : this.container}});
         window.dispatchEvent(NodeEvent);
 
 
