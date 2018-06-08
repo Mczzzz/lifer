@@ -104,8 +104,7 @@ export default class jsTreeContainer {
 
 			$('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver; margin-bottom : 10px" placeholder="Recherche"></div>').insertBefore(this.JsTreeContainer);
 
-			document.querySelector("#"+id).addEventListener("keyup", (e)=> this.linkSearchEvent(e));
-
+			document.querySelector("#"+id).addEventListener("keyup click", (e)=> this.linkSearchEvent(e));
 
 		}else{
 
@@ -119,7 +118,9 @@ export default class jsTreeContainer {
 
 	linkSearchEvent(e){
 
-           	this.JsTreeContainer.jstree(true).search(e.srcElement.value);
+			if(e.srcElement.value.length > 1){
+           		this.JsTreeContainer.jstree(true).search(e.srcElement.value);
+            }
 
            	if(this.parentId){
 	           	let NodeEvent = new CustomEvent('childAction', {'detail' : {'container' : this.container }});
