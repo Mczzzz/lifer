@@ -158,9 +158,9 @@ export default class Objects{
         let MyFrag = $(data.data.origin.element[0]);
 //console.log(MyFrag.filter("div").attr('id'));
        
-        let ref = $('#'+MyFrag.filter("div").attr('id')).jstree(true);
+        //let ref = $('#'+MyFrag.filter("div").attr('id')).jstree(true);
 
-        console.log(ref);
+        console.log(MyFrag);
         let collection = this.TheContainerCollect;
 
 
@@ -174,7 +174,7 @@ export default class Objects{
         }
   
 
-        collection.move(data);
+        this.TheContainerCollect.move(data);
        
 
     });
