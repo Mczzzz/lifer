@@ -141,7 +141,7 @@ export default class Objects{
 	initContainerJstreeDOMElements(){
 
     //je charge l'objet jstree standard
-    this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer,'box', this.TheContainerCollect);
+    this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer,'Parent', this.TheContainerCollect);
    
     //trig me ;)
     //this.JstreeContainerObj.trigMe('onSelect', 'ContainerSelect');
@@ -192,11 +192,11 @@ export default class Objects{
     //create or refresh the child
     if( this.JstreeObjectsObj === undefined ){
 
-      this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'objects', this.TheObjectCollect,e.detail.id);
+      this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'child', this.TheObjectCollect,e.detail.id);
 
     }else{
 
-      this.JstreeObjectsObj.getJstreeContainerElements(e.detail.id)
+      this.JstreeObjectsObj.getJstreeContainerElements(e.detail.id);
 
     }
 
