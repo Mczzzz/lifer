@@ -174,7 +174,7 @@ export default class jsTreeContainer {
 
 
 	jsTreeBreadcrumb(){
-         	
+         	console.log('this.breadcrumbTargetDiv :::');
          	console.log(this.breadcrumbTargetDiv);
          	this.breadcrumbTargetDiv.empty();
 
@@ -211,7 +211,7 @@ export default class jsTreeContainer {
 
 	jsTreeEventBreadcrumb(node){
 
-		console.log('jsTreeEventBreadcrumb node:'+node);
+
 		$('#bc_'+node.id).on("click", (e) => this.onMaximize(e,node));
 
 		
