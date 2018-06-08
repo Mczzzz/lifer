@@ -24,7 +24,7 @@ export default class Objects{
 
     this.linkVakataDomEvent();
 
-    //this.addEventListener('ContainerSelect', (e) => this.containerSelected(e));
+    window.addEventListener('ContainerSelect', (e,data) => this.containerSelected(e,data));
 
 	}
 

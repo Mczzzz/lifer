@@ -12,6 +12,8 @@ export default class jsTreeContainer {
 
 		this.JsTreeContainer = $('#'+ this.container);
 
+		this.searchId = 'JTC-Search'+ this.suffixe;
+
 		this.breadCrumbElt = 'breadcrumb';
 
 		this.collection = collection;
@@ -20,10 +22,10 @@ export default class jsTreeContainer {
 
 		this.getJstreeContainerElements();
 
-		this.linkSearchElement();
+
+		this.linkSearchElement(this.searchId);
 
 		this.initEventsJsTree();
-
 
 
 		this.initBreadCrumb();
@@ -55,41 +57,6 @@ export default class jsTreeContainer {
 	                    "icon" : "glyphicon glyphicon-home"
 	                  }
 	            },
-	            "contextmenu": {   
-
-				    "items": function($node) {
-
-				        var tree = this.JsTreeContainer.jstree(true);
-
-				        return {
-				            "Create": {
-				                "separator_before": false,
-				                "separator_after": false,
-				                "label": "Create",
-				                "action": function (obj) { 
-				                    $node = tree.create_node($node);
-				                    tree.edit($node);
-				                }
-				            },
-				            "Rename": {
-				                "separator_before": false,
-				                "separator_after": false,
-				                "label": "Rename",
-				                "action": function (obj) { 
-				                    tree.edit($node);
-				                }
-				            },                         
-				            "Remove": {
-				                "separator_before": false,
-				                "separator_after": false,
-				                "label": "Remove",
-				                "action": function (obj) { 
-				                    tree.delete_node($node);
-				                }
-				            }
-				        };
-				    }
-			    },
 	              "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
 
 	         });
@@ -120,9 +87,8 @@ export default class jsTreeContainer {
 
 
 
-	linkSearchElement(){
+	linkSearchElement(id){
 
-		let id = 'JTC-Search'+ this.suffixe;
 
 		$('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver; margin-bottom : 10px" placeholder="Recherche"></div>').insertBefore(this.JsTreeContainer);
 
@@ -247,14 +213,80 @@ export default class jsTreeContainer {
 
 
 
-
+//EVENT LAYOUT
 
 
 	onSelectJsTree(e,data){
 
-       	this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe),data.node);
+		let NodeEvent = new CustomEvent('changeFrame', {'detail' : {'container' : this.container}});
+        window.dispatchEvent(NodeEvent);
+
+
+    //   	this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe),data.node);
+
+/*
+       		            "contextmenu": {   
+
+				    "items": function($node) {
+
+				        var tree = this.JsTreeContainer.jstree(true);
+
+				        return {
+				            "Create": {
+				                "separator_before": false,
+				                "separator_after": false,
+				                "label": "Create",
+				                "action": function (obj) { 
+				                    $node = tree.create_node($node);
+				                    tree.edit($node);
+				                }
+				            },
+				            "Rename": {
+				                "separator_before": false,
+				                "separator_after": false,
+				                "label": "Rename",
+				                "action": function (obj) { 
+				                    tree.edit($node);
+				                }
+				            },                         
+				            "Remove": {
+				                "separator_before": false,
+				                "separator_after": false,
+				                "label": "Remove",
+				                "action": function (obj) { 
+				                    tree.delete_node($node);
+				                }
+				            }
+				        };
+				    }
+			    },*/
+
+
 
 	}
+
+
+	onMinimize(){
+
+		//calulate and show dreabcrumb
+		this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe),data.node);
+		$('#'+this.searchId).hide();
+
+	}
+
+
+	onMaximize(){
+
+		//hide du breadcrumb
+		$('#'+this.breadCrumbElt+this.suffixe).hide();
+		$('#'+this.searchId).show();
+
+	}
+
+
+//ACTIONS
+
+
 
 
 	onRenameJsTree(e,data){
