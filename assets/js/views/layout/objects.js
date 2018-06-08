@@ -198,6 +198,7 @@ export default class Objects{
 
       this.JstreeObjectsObj.setParentId(e.detail.id);
       this.JstreeObjectsObj.getJstreeContainerElements();
+      this.JstreeObjectsObj.onMaximize();
 
     }
 
