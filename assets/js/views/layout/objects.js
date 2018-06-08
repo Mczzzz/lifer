@@ -68,9 +68,9 @@ export default class Objects{
 				                <div class="section">
 				            					        
 						            
-						            <div id="jstree_demo_div"></div>
+						            <div id="jstreeContainerdiv"></div>
 						        
-						            <div id="jstree_object_tree"></div>
+						            <div id="jstreeObjectDiv"></div>
 						        
 				        
 							        <div id="infos">
