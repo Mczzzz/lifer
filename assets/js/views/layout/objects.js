@@ -27,8 +27,8 @@ export default class Objects{
 
     this.linkVakataDomEvent();
 
-    window.addEventListener('ContainerSelect', (e) => this.containerSelected(e));
-
+    window.addEventListener('ContainerSelect', (e) => this.onContainerSelected(e));
+    window.addEventListener('childAction', (e) => this.onChildAction(e));
 	}
 
 
@@ -186,16 +186,19 @@ export default class Objects{
  
 
 
-  containerSelected(e){
+  onContainerSelected(e){
 
     this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'objects', this.TheObjectCollect,e.detail.id);
-
 
 
   }
 
 
+  onChildAction(e){
 
+    this.JstreeContainerObj.onMinimize();
+    
+  }
 
 
 
