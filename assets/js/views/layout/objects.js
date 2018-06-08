@@ -189,9 +189,12 @@ export default class Objects{
 
   onContainerSelected(e){
 
-    console.log('this.JstreeObjectsObj :'+ this.JstreeObjectsObj);
-    this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'objects', this.TheObjectCollect,e.detail.id);
+    if( this.JstreeObjectsObj === undefined ){
+      
+      console.log('this.JstreeObjectsObj :'+ this.JstreeObjectsObj);
 
+      this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'objects', this.TheObjectCollect,e.detail.id);
+    }
   }
 
 
