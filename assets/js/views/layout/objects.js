@@ -1,7 +1,7 @@
 import Header from './sections/header.js';
 import Footer from './sections/footer.js';
 
-import ContainerCollection from '../../collections/ContainerCollection.js';
+import ContainerCollect from '../../collections/ContainerCollection.js';
 import JsTreeContainer from '../elements/objects/jsTreeContainer.js';
 
 
@@ -130,7 +130,7 @@ export default class Objects{
 		//JSTREE CONTAINER
 		this.JsTreeContainer    = 'jstree_demo_div';
     //load de la collection appropriée
-    let ContainerCollection = new ContainerCollection();
+    let ContainerCollection = new ContainerCollect();
     //on charge l'objet jstree standard
     this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer,'box', ContainerCollection);
 
