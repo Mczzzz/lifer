@@ -254,8 +254,8 @@ export default class jsTreeContainer {
         formData.append('parent'  ,data.parent);
 
 		let result = this.collection.create(formData);
-
-		this.JsTreeContainer.jstree(true).set_id(data.node, result.responseText);
+		console.log(result);
+		this.JsTreeContainer.jstree(true).set_id(data.node, result.data);
 
 
 	}

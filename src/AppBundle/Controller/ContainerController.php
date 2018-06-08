@@ -128,7 +128,7 @@ class ContainerController extends Controller
      * @Route("/container/add", name="node_add")
      * @Method("POST")
      */
-    public function nodeAddAction(Request $request)
+    public function containerAddAction(Request $request)
     {
 
         $request = Request::createFromGlobals();
@@ -163,7 +163,11 @@ class ContainerController extends Controller
         // actually executes the queries (i.e. the INSERT query)
         $em->flush();
 
-        return new Response($object->getId());
+        $res = new \stdClass();
+        $res->error = 0;
+        $res->data = $object->getId()
+
+        return new Response(json_encode($res));
 
 
     }
