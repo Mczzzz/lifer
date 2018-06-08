@@ -197,18 +197,8 @@ export default class jsTreeContainer {
 	jsTreeEventBreadcrumb(node,JsTreeDiv,breadcrumbTargetDiv){
 
 
-		$('#bc_'+node.id).click(function(){
+		$('#bc_'+node.id).on("click", (e) => this.onMaximize(e,node,JsTreeDiv,breadcrumbTargetDiv));
 
-			JsTreeDiv.jstree(true).close_all();
-			JsTreeDiv.jstree(true)._open_to(node);
-			JsTreeDiv.jstree(true).open_node(node);	
-			JsTreeDiv.show()
-			breadcrumbTargetDiv.hide();
-			$('#'+this.searchId).show();	
-		});
-	
-
-		
 		
 	}
 
@@ -303,11 +293,17 @@ export default class jsTreeContainer {
 	}
 
 
-	onMaximize(){
+	onMaximize(e,node,JsTreeDiv,breadcrumbTargetDiv){
 
 		//hide du breadcrumb
 		$('#'+this.breadCrumbElt+this.suffixe).hide();
 		$('#'+this.searchId).show();
+
+		JsTreeDiv.jstree(true).close_all();
+		JsTreeDiv.jstree(true)._open_to(node);
+		JsTreeDiv.jstree(true).open_node(node);	
+		JsTreeDiv.show();
+
 
 	}
 
