@@ -38,7 +38,7 @@ export default class jsTreeContainer {
 
 			this.JsTreeContainer.jstree({
 	          'core' : {
-	              "check_callback" : true
+	              	"check_callback" : true
 	                      },
 	              "types" : {
 	                  "default" : {
@@ -54,8 +54,43 @@ export default class jsTreeContainer {
 	                  "home" : {
 	                    "icon" : "glyphicon glyphicon-home"
 	                  }
-	              },
-	              "plugins" : [ "dnd", "search" , "types" ]
+	            },
+	            "contextmenu": {   
+
+				    "items": function($node) {
+
+				        var tree = $("#tree").jstree(true);
+
+				        return {
+				            "Create": {
+				                "separator_before": false,
+				                "separator_after": false,
+				                "label": "Create",
+				                "action": function (obj) { 
+				                    $node = tree.create_node($node);
+				                    tree.edit($node);
+				                }
+				            },
+				            "Rename": {
+				                "separator_before": false,
+				                "separator_after": false,
+				                "label": "Rename",
+				                "action": function (obj) { 
+				                    tree.edit($node);
+				                }
+				            },                         
+				            "Remove": {
+				                "separator_before": false,
+				                "separator_after": false,
+				                "label": "Remove",
+				                "action": function (obj) { 
+				                    tree.delete_node($node);
+				                }
+				            }
+				        };
+				    }
+			    },
+	              "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
 
 	         });
 
