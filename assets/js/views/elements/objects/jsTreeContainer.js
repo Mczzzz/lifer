@@ -92,7 +92,7 @@ export default class jsTreeContainer {
 
 		let id = 'JTC-Search';
 
-		$('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver;"></div>').insertBefore(this.JsTreeContainer);
+		$('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver; margin-top : 10px"></div>').insertBefore(this.JsTreeContainer);
 
 		document.querySelector("#"+id).addEventListener("keyup", (e)=> this.linkSearchEvent(e));
 
