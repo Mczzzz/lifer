@@ -238,7 +238,7 @@ class ObjectController extends Controller
         $res = new \stdClass();
         $res->error = 0;
 
-        return new Response(json_encode($res);
+        return new Response(json_encode($res));
 
 
 
