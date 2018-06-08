@@ -170,7 +170,7 @@ export default class jsTreeContainer {
             breadcrumbTargetDiv.append('<a href="#!" id="bc_'+node.id+'" class="custom-breadcrumb-item">'+node.text+'</a>');
             	
 
-            	this.jsTreeEventBreadcrumb(node,JsTreeDiv);
+            	this.jsTreeEventBreadcrumb(node,JsTreeDiv,breadcrumbTargetDiv);
 
          	//parsing des parents
          	 for (let k in node.parents){
