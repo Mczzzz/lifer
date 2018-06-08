@@ -254,6 +254,8 @@ export default class jsTreeContainer {
 
 	onCreateJsTree(e,data){
 
+		console.log("on passe");
+		
 		let formData = new FormData();
 
         formData.append('node'    ,data.node.text);
