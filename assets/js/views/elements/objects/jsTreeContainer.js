@@ -304,17 +304,16 @@ export default class jsTreeContainer {
 
 	onMaximize(e,node,JsTreeDiv,breadcrumbTargetDiv){
 
-		console.log('onMaximize node:'+node);
+		console.log('onMaximize node:');
 		console.log(node);
 		//hide du breadcrumb
 		$('#'+this.breadCrumbElt+this.suffixe).hide();
 		$('#'+this.searchId).show();
 		$('#'+this.searchId).val('');
-
+		this.JsTreeContainer.jstree(true).clear_search();
 		this.JsTreeContainer.jstree(true).close_all();
 		this.JsTreeContainer.jstree(true)._open_to(node);
 		this.JsTreeContainer.jstree(true).open_node(node);
-		this.JsTreeContainer.jstree(true).clear_search();
 		this.JsTreeContainer.show();
 
 		if(!this.parentId){
