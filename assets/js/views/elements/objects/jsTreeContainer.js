@@ -372,6 +372,12 @@ export default class jsTreeContainer {
 
 		let formData = new FormData();
 
+		if(this.parentId){
+
+			formData.append('container'    ,this.parentId);
+		
+		}
+
         formData.append('node'    ,data.node.text);
         formData.append('parent'  ,data.parent);
 

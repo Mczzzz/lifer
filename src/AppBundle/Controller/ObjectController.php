@@ -69,31 +69,30 @@ class ObjectController extends Controller
      * @Route("/object/tree/add", name="object_tree_add")
      * @Method("POST")
      */
-    public function treeAddAction(Request $request)
+    public function objectAddAction(Request $request)
     {
 
         $request = Request::createFromGlobals();
 
-        $objectId = $request->request->get('object');
-        $nodeText = $request->request->get('nodeText');
-        $parentId = $request->request->get('parent');        
+        $objectId = $request->request->get('container');
+        $parentId = $request->request->get('parent');
+        $nodeText = $request->request->get('node');
+                
 
         $user = $this->getUser();
 
 
 
 
-         $em = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
 
-        $objet = $em->getRepository('AppBundle:Objects')->find(str_replace('root_', '', $objectId));
+        $objet = $em->getRepository('AppBundle:Objects')->find($objectId);
         if(!$objet) return new Response("Pas d'objet ya un truc chelou dans le tree");
-
-
 
 
          if(is_bool(strpos($parentId,'root_'))){
               
-            $parent = $em->getRepository('AppBundle:Objects_tree')->find(str_replace('root_', '', $parentId));
+            $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
             if(!$parent) return new Response("Pas de parents truc chelou");       
          }
 

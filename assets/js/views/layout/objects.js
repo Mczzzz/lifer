@@ -91,7 +91,7 @@ export default class Objects{
 			                          </a>
 			                        </li>
 			                        <li>
-			                          <a class="btn-floating yellow darken-1">
+			                          <a id="tooBarAddText" class="btn-floating yellow darken-1">
 			                            <i class="large material-icons">format_quote</i>
 			                          </a>
 			                        </li>
