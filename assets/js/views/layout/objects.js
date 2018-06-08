@@ -160,6 +160,9 @@ export default class Objects{
        
         let ref = $('#'+MyFrag.filter("div").attr('id')).jstree(true);
 
+        console.log(ref);
+        let collection = this.TheContainerCollect;
+
 
         if(MyFrag.filter("div").attr('id') == this.JsTreeContainer){
          
