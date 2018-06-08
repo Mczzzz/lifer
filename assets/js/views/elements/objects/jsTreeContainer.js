@@ -119,13 +119,15 @@ export default class jsTreeContainer {
 	linkSearchEvent(e){
 		
 
-           		this.JsTreeContainer.jstree(true).search(e.srcElement.value);
+            this.JsTreeContainer.jstree(true).search(e.srcElement.value);
 
+            //TODO A AMELIORER JE PENSE
 
            	if(this.parentId){
 	           	let NodeEvent = new CustomEvent('childAction', {'detail' : {'container' : this.container }});
 	        	window.dispatchEvent(NodeEvent);
         	}
+        	
 	}
 
 
