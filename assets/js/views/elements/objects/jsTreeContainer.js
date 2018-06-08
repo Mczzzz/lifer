@@ -179,7 +179,6 @@ export default class jsTreeContainer {
 
 
          	let node = this.JsTreeContainer.jstree(true).get_node(this.JsTreeContainer.jstree(true).get_selected()[0]);
-         	console.log(node);
 
          	//ajout d ela node active
             this.breadcrumbTargetDiv.append('<a href="#!" id="bc_'+node.id+'" class="custom-breadcrumb-item">'+node.text+'</a>');
@@ -189,7 +188,7 @@ export default class jsTreeContainer {
 
          	//parsing des parents
          	 for (let k in node.parents){
-
+         	 	console.log('paaaaaarsing');
          	 	let parentNode = this.JsTreeContainer.jstree(true).get_node(node.parents[k]);
 
 				if(parentNode.text !== undefined){
