@@ -180,7 +180,7 @@ export default class jsTreeContainer {
 				if(parentNode.text !== undefined){
 					breadcrumbTargetDiv.prepend('<a href="#!" id=bc_'+parentNode.id+' class="custom-breadcrumb-item">'+parentNode.text+'</a>');
 					
-					this.jsTreeEventBreadcrumb(parentNode,JsTreeDiv);
+					this.jsTreeEventBreadcrumb(parentNode,JsTreeDiv,breadcrumbTargetDiv);
 
 				}
 
@@ -194,19 +194,20 @@ export default class jsTreeContainer {
 
 
 
-	jsTreeEventBreadcrumb(node,JsTreeDiv){
+	jsTreeEventBreadcrumb(node,JsTreeDiv,breadcrumbTargetDiv){
 
 
 		$('#bc_'+node.id).click(function(){
 
-			JsTreeDiv.show();
 			JsTreeDiv.jstree(true).close_all();
 			JsTreeDiv.jstree(true)._open_to(node);
-			JsTreeDiv.jstree(true).open_node(node);
-			$('#'+this.searchId).show();//
-			JsTreeDiv.trigger('ElementDisplay');			
+			JsTreeDiv.jstree(true).open_node(node);		
 		});
 	
+
+		$('#'+this.searchId).show();//
+		JsTreeDiv.show()
+		breadcrumbTargetDiv.hide;
 	}
 
 
