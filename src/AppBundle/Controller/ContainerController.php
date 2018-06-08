@@ -173,7 +173,7 @@ class ContainerController extends Controller
      * @Route("/container/rename", name="node_rename")
      * @Method("POST")
      */
-    public function nodeRenameAction(Request $request)
+    public function containerRenameAction(Request $request)
     {
 
 
@@ -199,7 +199,8 @@ class ContainerController extends Controller
 
         $res = new \stdClass();
         $res->error = 0;
-        return new Response($res);
+
+        return new Response(json_encode($res));
 
 
 
