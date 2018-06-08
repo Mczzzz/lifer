@@ -13,9 +13,7 @@ export default class Objects{
 
 		this.activeCSS();
 
-		this.linkDOMElements()
-
-		this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer);
+		this.linkDOMElements();
 
 
 	}
@@ -98,12 +96,6 @@ export default class Objects{
 						                    </div>
 						                </div>
 
-					                	<div id="add_infos">
-								     
-								        	<input id="Myfile" type="file" accept="image/*" capture="camera">
-
-								    	</div>
-
 						        	</div>
 						        
 				            	</div>
@@ -120,15 +112,26 @@ export default class Objects{
 	}
 
 
+  footerHTML(){
+
+        let footer = new Footer();
+
+        return footer.addTags();
+  }
+
+
+
+
+
 
 	linkDOMElements(){
 
 		//JSTREE CONTAINER
-		this.JsTreeContainer = 'jstree_demo_div';
-
+		this.JsTreeContainer    = 'jstree_demo_div';
+    this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer);
 
 		//JSTREE OBJECTS
-		this.JsTreeObjects = $('#jstree_object_tree');
+		this.JsTreeObjects = 'jstree_object_tree';
 
 
 
@@ -143,8 +146,23 @@ export default class Objects{
 
 
 
+
+
+
+
+
+
+
+
+
 	activeJS(){
 
+/*
+                            <div id="add_infos">
+                     
+                          <input id="Myfile" type="file" accept="image/*" capture="camera">
+
+                      </div>*/
 
 //INIT DES ETATS DES ELEMENTS
 
@@ -161,16 +179,7 @@ export default class Objects{
 //RECUPERATION DES DATAS DES LISTES + JS TREE
 
 
-		
-
-/*
-		$.get( "children", function( data ) {
-          treeJSON = JSON.parse(data);
-          $('#jstree_demo_div').jstree(true).settings.core.check_callback = true;
-          $('#jstree_demo_div').jstree(true).settings.core.data = treeJSON;
-          $('#jstree_demo_div').jstree(true).refresh();
-         // $('#jstree_demo_div').jstree("open_all");
-        });*/
+	
 
 
 
@@ -490,51 +499,9 @@ export default class Objects{
          });
 
 
-
-
-
-	function ajaxSend(VERB,url,formData){
-
-
-		let AjaxSender = $.ajax({
-
-          type: VERB,
-          url: url,
-          data: formData,
-          async: true,
-          cache: false,
-          contentType: false,
-          processData: false,
-          success: function(d){
-          	return d;
-          }
-	    		
-	    });
-
-
-		return AjaxSender;
-
-	}
-
-
-}
+    }
 
 	
-
-
-	
-
-	footerHTML(){
-
-				let footer = new Footer();
-
-				return footer.addTags();
-	}
-
-
-
-
-
 
 
 
