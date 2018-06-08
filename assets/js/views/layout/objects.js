@@ -136,10 +136,8 @@ export default class Objects{
 
 	initContainerJstreeDOMElements(){
 
-    //load de la collection appropriée
-    let ContainerCollection = new ContainerCollect();
     //je charge l'objet jstree standard
-    this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer,'box', ContainerCollection);
+    this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer,'box', this.TheContainerCollect);
    
     //trig me ;)
     //this.JstreeContainerObj.trigMe('onSelect', 'ContainerSelect');
