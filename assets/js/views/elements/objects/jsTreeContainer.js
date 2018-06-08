@@ -203,7 +203,7 @@ export default class jsTreeContainer {
 			JsTreeDiv.jstree(true)._open_to(node);
 			JsTreeDiv.jstree(true).open_node(node);	
 			JsTreeDiv.show()
-			breadcrumbTargetDiv.hide;
+			breadcrumbTargetDiv.hide();
 			$('#'+this.searchId).show();	
 		});
 	
