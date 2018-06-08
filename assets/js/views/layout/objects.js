@@ -72,45 +72,49 @@ export default class Objects{
 						        
 						            <div id="jstreeObjectDiv"></div>
 						        
-				        
-							        <div id="infos">
+				                <div class="divider"></div>
 
-										<div>
-						                    <div class="fixed-action-btn horizontal ltr-lifer" style="position: absolute; display: inline-block; left: 0px;">
-						                      <a class="btn-floating btn-large">
-						                        <i class="material-icons">add</i>
-						                      </a>
-						                      <ul>
-						                        <li>
-						                          <a id="launch_cam" class="btn-floating red">
-						                            <i class="large material-icons">camera_alt</i>
-						                          </a>
-						                        </li>
-						                        <li>
-						                          <a class="btn-floating yellow darken-1">
-						                            <i class="large material-icons">format_quote</i>
-						                          </a>
-						                        </li>
-						                        <li>
-						                          <a class="btn-floating green">
-						                            <i class="large material-icons">date_range</i>
-						                          </a>
-						                        </li>
-						                        <li>
-						                          <a class="btn-floating blue">
-						                            <i class="large material-icons">insert_link</i>
-						                          </a>
-						                        </li>
-						                        <li>
-						                          <a class="btn-floating blue">
-						                            <i class="large material-icons">looks_one</i>
-						                          </a>
-						                        </li>
-						                      </ul>
-						                    </div>
-						                </div>
+  					            <div id="infos"></div>
 
-						        	</div>
+
+
+
+										  <div>
+			                    <div class="fixed-action-btn horizontal ltr-lifer" style="position: absolute; display: inline-block; left: 0px;">
+			                      <a class="btn-floating btn-large">
+			                        <i class="material-icons">add</i>
+			                      </a>
+			                      <ul>
+			                        <li>
+			                          <a id="launch_cam" class="btn-floating red">
+			                            <i class="large material-icons">camera_alt</i>
+			                          </a>
+			                        </li>
+			                        <li>
+			                          <a class="btn-floating yellow darken-1">
+			                            <i class="large material-icons">format_quote</i>
+			                          </a>
+			                        </li>
+			                        <li>
+			                          <a class="btn-floating green">
+			                            <i class="large material-icons">date_range</i>
+			                          </a>
+			                        </li>
+			                        <li>
+			                          <a class="btn-floating blue">
+			                            <i class="large material-icons">insert_link</i>
+			                          </a>
+			                        </li>
+			                        <li>
+			                          <a class="btn-floating blue">
+			                            <i class="large material-icons">looks_one</i>
+			                          </a>
+			                        </li>
+			                      </ul>
+			                    </div>
+			                </div>
+
+						        	
 						        
 				            	</div>
 			          
