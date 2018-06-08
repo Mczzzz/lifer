@@ -29,6 +29,7 @@ export default class Objects{
 
     window.addEventListener('ContainerSelect', (e) => this.onContainerSelected(e));
     window.addEventListener('childAction', (e) => this.onChildAction(e));
+    window.addEventListener('parentAction', (e) => this.onParentAction(e));
 	}
 
 
@@ -197,9 +198,15 @@ export default class Objects{
   onChildAction(e){
 
     this.JstreeContainerObj.onMinimize();
-    
+
   }
 
+
+  onParentAction(e){
+
+    this.JstreeObjectsObj.onMinimize();
+
+  }
 
 
 
