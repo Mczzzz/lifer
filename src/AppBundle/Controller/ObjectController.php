@@ -169,7 +169,10 @@ class ObjectController extends Controller
         // actually executes the queries (i.e. the INSERT query)
         $em->flush();
 
-        return new Response('OK');
+        $res = new \stdClass();
+        $res->error = 0;
+
+        return new Response(json_encode($res));
 
 
 
@@ -232,10 +235,9 @@ class ObjectController extends Controller
         // actually executes the queries (i.e. the INSERT query)
         $em->flush();
 
-        return new Response('OK');
-
-
-
+        $res = new \stdClass();
+        $res->error = 0;
+        return new Response($res);
 
 
 
