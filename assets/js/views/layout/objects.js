@@ -142,7 +142,7 @@ export default class Objects{
     this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer,'box', ContainerCollection);
    
     //trig me ;)
-    this.JstreeContainerObj.trigMe('onSelect', 'ContainerSelect');
+    //this.JstreeContainerObj.trigMe('onSelect', 'ContainerSelect');
 
 
 	}
