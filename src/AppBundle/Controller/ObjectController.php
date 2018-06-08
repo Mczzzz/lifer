@@ -119,7 +119,12 @@ class ObjectController extends Controller
         // actually executes the queries (i.e. the INSERT query)
         $em->flush();
 
-        return new Response($object_tree->getId());
+
+        $res = new \stdClass();
+        $res->error = 0;
+        $res->data = $object_tree->getId();
+
+        return new Response(json_encode($res));
 
 
     }
