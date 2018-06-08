@@ -1,6 +1,7 @@
 import Header from './sections/header.js';
 import Footer from './sections/footer.js';
 
+import ContainerCollect from '../../collections/ContainerCollection.js';
 import JsTreeContainer from '../elements/objects/jsTreeContainer.js';
 
 
@@ -152,6 +153,7 @@ export default class Objects{
 
   }
 
+  
   
   vakataAction(e, data){
 
