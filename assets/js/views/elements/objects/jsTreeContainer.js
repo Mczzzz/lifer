@@ -130,7 +130,7 @@ export default class jsTreeContainer {
 
 	initBreadCrumb(){
 
-		console.log($('#'+this.breadCrumbElt+this.suffixed).attr('class'));
+
 		if (!$('#'+this.breadCrumbElt+this.suffixed).length){
 
 			$('<div class="custom-'+this.breadCrumbElt+'"><div id="'+this.breadCrumbElt+this.suffixe+'" class="col s12"></div></div>').insertBefore(this.JsTreeContainer);
@@ -174,10 +174,8 @@ export default class jsTreeContainer {
 
 
 	jsTreeBreadcrumb(){
-         	console.log('this.breadcrumbTargetDiv :::');
-         	console.log(this.breadcrumbTargetDiv);
+
          	this.breadcrumbTargetDiv.empty();
-         	this.breadcrumbTargetDiv.append('<p>coucou</p>');
 
          	let node = this.JsTreeContainer.jstree(true).get_node(this.JsTreeContainer.jstree(true).get_selected()[0]);
          	
@@ -189,10 +187,11 @@ export default class jsTreeContainer {
 
          	//parsing des parents
          	 for (let k in node.parents){
-         	 	console.log('paaaaaarsing');
+
          	 	let parentNode = this.JsTreeContainer.jstree(true).get_node(node.parents[k]);
-         	 	console.log(parentNode.text);
+
 				if(parentNode.text !== undefined){
+					
 					this.breadcrumbTargetDiv.prepend('<a href="#!" id=bc_'+parentNode.id+' class="custom-breadcrumb-item">'+parentNode.text+'</a>');
 					
 					this.jsTreeEventBreadcrumb(parentNode);
