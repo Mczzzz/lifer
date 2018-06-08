@@ -289,6 +289,7 @@ export default class jsTreeContainer {
 		this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe));
 		$('#'+this.breadCrumbElt+this.suffixe).show();
 		$('#'+this.searchId).hide();
+		$('#'+this.searchId).val('');
 		this.JsTreeContainer.hide();
 
 	}
