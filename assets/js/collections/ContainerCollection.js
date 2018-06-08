@@ -33,6 +33,17 @@ export default class ContainerCollection {
 
 
 
+  delete(data){
+
+    let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'delete',data);
+
+    return JSON.parse(result.responseText);
+
+  }
+
+
+
+
 	save(){
 
 

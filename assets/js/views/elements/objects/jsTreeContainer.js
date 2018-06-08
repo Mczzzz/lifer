@@ -239,8 +239,7 @@ export default class jsTreeContainer {
         formData.append('node'  ,data.node.id);
         formData.append('parent'  ,data.parent);
 
-		let GetData = new SvcBackEndComm();
-		let result = GetData.ajaxSend('POST','node/delete',formData);
+        this.collection.delete(formData);
        
 		this.getJstreeContainerElements();
 
