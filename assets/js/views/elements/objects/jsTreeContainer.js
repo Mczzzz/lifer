@@ -177,10 +177,10 @@ export default class jsTreeContainer {
          	console.log('this.breadcrumbTargetDiv :::');
          	console.log(this.breadcrumbTargetDiv);
          	this.breadcrumbTargetDiv.empty();
-
+         	this.breadcrumbTargetDiv.append('<p>coucou</p>');
 
          	let node = this.JsTreeContainer.jstree(true).get_node(this.JsTreeContainer.jstree(true).get_selected()[0]);
-
+         	c
          	//ajout d ela node active
             this.breadcrumbTargetDiv.append('<a href="#!" id="bc_'+node.id+'" class="custom-breadcrumb-item">'+node.text+'</a>');
             	
