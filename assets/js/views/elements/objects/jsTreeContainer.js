@@ -139,6 +139,7 @@ export default class jsTreeContainer {
 
 		let css = document.createElement("style");
 			css.type = "text/css";
+			css.id = "bc_css_style";
 			css.innerHTML = `
 
 							.custom-`+id+` {
