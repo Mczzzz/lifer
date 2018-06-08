@@ -190,7 +190,7 @@ export default class jsTreeContainer {
          	 for (let k in node.parents){
          	 	console.log('paaaaaarsing');
          	 	let parentNode = this.JsTreeContainer.jstree(true).get_node(node.parents[k]);
-
+         	 	console.log(parentNode.text);
 				if(parentNode.text !== undefined){
 					this.breadcrumbTargetDiv.prepend('<a href="#!" id=bc_'+parentNode.id+' class="custom-breadcrumb-item">'+parentNode.text+'</a>');
 					
