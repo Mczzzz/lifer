@@ -66,19 +66,22 @@ export default class jsTreeContainer {
 				                "separator_before": false,
 				                "separator_after": false,
 				                "label": "Create",
-				                "action": ""
+				                "action": function (obj) { 
+				                }
 				            },
 				            "Rename": {
 				                "separator_before": false,
 				                "separator_after": false,
 				                "label": "Rename",
-				                "action": ""
+				                "action": function (obj) { 
+				                }
 				            },                         
 				            "Remove": {
 				                "separator_before": false,
 				                "separator_after": false,
 				                "label": "Remove",
-				                "action": ""
+				                "action": function (obj) { 
+				                }
 				            }
 				        };
 				    }
