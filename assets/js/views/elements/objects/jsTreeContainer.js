@@ -54,6 +54,46 @@ export default class jsTreeContainer {
 			        },
 	              	"check_callback" : true
 	                      },
+
+ "contextmenu": {   
+
+				    "items": function($node) {
+
+				        var tree = this.JsTreeContainer.jstree(true);
+
+				        return {
+				            "Create": {
+				                "separator_before": false,
+				                "separator_after": false,
+				                "label": "Create",
+				                "action": function (obj) { 
+				                    $node = tree.create_node($node);
+				                    tree.edit($node);
+				                }
+				            },
+				            "Rename": {
+				                "separator_before": false,
+				                "separator_after": false,
+				                "label": "Rename",
+				                "action": function (obj) { 
+				                    tree.edit($node);
+				                }
+				            },                         
+				            "Remove": {
+				                "separator_before": false,
+				                "separator_after": false,
+				                "label": "Remove",
+				                "action": function (obj) { 
+				                    tree.delete_node($node);
+				                }
+				            }
+				        };
+				    }
+			    },
+
+
+
+
 	              "types" : {
 	                  "default" : {
 	                    "icon" : "glyphicon glyphicon-tree-deciduous"
@@ -273,48 +313,7 @@ export default class jsTreeContainer {
         	window.dispatchEvent(NodeEvent);
 
 		}
-		
-
-
-    //   	this.jsTreeBreadcrumb(this.JsTreeContainer,$('#'+this.breadCrumbElt+this.suffixe),data.node);
-
-/*
-       		            "contextmenu": {   
-
-				    "items": function($node) {
-
-				        var tree = this.JsTreeContainer.jstree(true);
-
-				        return {
-				            "Create": {
-				                "separator_before": false,
-				                "separator_after": false,
-				                "label": "Create",
-				                "action": function (obj) { 
-				                    $node = tree.create_node($node);
-				                    tree.edit($node);
-				                }
-				            },
-				            "Rename": {
-				                "separator_before": false,
-				                "separator_after": false,
-				                "label": "Rename",
-				                "action": function (obj) { 
-				                    tree.edit($node);
-				                }
-				            },                         
-				            "Remove": {
-				                "separator_before": false,
-				                "separator_after": false,
-				                "label": "Remove",
-				                "action": function (obj) { 
-				                    tree.delete_node($node);
-				                }
-				            }
-				        };
-				    }
-			    },*/
-
+	
 
 
 	}
