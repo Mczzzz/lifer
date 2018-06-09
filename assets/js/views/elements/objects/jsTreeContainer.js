@@ -175,6 +175,8 @@ export default class jsTreeContainer {
 
 	notifyLayout(){
 
+			let NodeEvent = "";
+
 		    if(this.parentId){
 
 	           	let NodeEvent = new CustomEvent('childAction', {'detail' : {'container' : this.container }});
