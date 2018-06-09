@@ -55,7 +55,7 @@ export default class jsTreeContainer {
 	              	"check_callback" : true
 	                      },
 
- 				"contextmenu": {   
+ 				/*"contextmenu": {   
 
 				    "items": function($node) {
 
@@ -89,7 +89,7 @@ export default class jsTreeContainer {
 				            }
 				        };
 				    }
-			    },
+			    },*/
 
 
 
