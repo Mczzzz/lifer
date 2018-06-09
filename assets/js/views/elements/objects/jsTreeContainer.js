@@ -370,9 +370,11 @@ export default class jsTreeContainer {
 
 	onDeleteJsTree(e,data){
 
+
+	//Mesaage d'alerte
 		swal({
 		  title: "t sur de toi ?",
-		  text: "Once deleted, you will not be able to recover this imaginary file!",
+		  text: "Ctrl-Z n'est pas implémenté alors réfléchis bien !",
 		  icon: "warning",
 		  buttons: true,
 		  dangerMode: true,
