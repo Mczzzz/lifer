@@ -46,6 +46,10 @@ export default class jsTreeContainer {
 
 			this.JsTreeContainer.jstree({
 	          'core' : {
+	          		'themes': {
+			            'name': 'proton',
+			            'responsive': true
+			        },
 	              	"check_callback" : true
 	                      },
 	              "types" : {
