@@ -67,6 +67,7 @@ export default class jsTreeContainer {
 				                "separator_after": false,
 				                "label": "Create",
 				                "action": function (obj) { 
+
 				                }
 				            },
 				            "Rename": {
@@ -81,6 +82,7 @@ export default class jsTreeContainer {
 				                "separator_after": false,
 				                "label": "Remove",
 				                "action": function (obj) { 
+				                	this.onDeleteJsTree(obj,obj);
 				                }
 				            }
 				        };
