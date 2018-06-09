@@ -55,37 +55,30 @@ export default class jsTreeContainer {
 	              	"check_callback" : true
 	                      },
 
- "contextmenu": {   
+ 					"contextmenu": {   
 
 				    "items": function($node) {
 
-				        var tree = this.JsTreeContainer.jstree(true);
+				        //var tree = this.JsTreeContainer.jstree(true);
 
 				        return {
 				            "Create": {
 				                "separator_before": false,
 				                "separator_after": false,
 				                "label": "Create",
-				                "action": function (obj) { 
-				                    $node = tree.create_node($node);
-				                    tree.edit($node);
-				                }
+				                "action": (obj) => this.onCreateJsTree(false,obj)
 				            },
 				            "Rename": {
 				                "separator_before": false,
 				                "separator_after": false,
 				                "label": "Rename",
-				                "action": function (obj) { 
-				                    tree.edit($node);
-				                }
+				                "action": ""
 				            },                         
 				            "Remove": {
 				                "separator_before": false,
 				                "separator_after": false,
 				                "label": "Remove",
-				                "action": function (obj) { 
-				                    tree.delete_node($node);
-				                }
+				                "action": ""
 				            }
 				        };
 				    }
