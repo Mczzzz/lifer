@@ -127,7 +127,7 @@ export default class jsTreeContainer {
 
             this.JsTreeContainer.jstree(true).search(e.srcElement.value);
 
-            notifyLayout();
+            this.notifyLayout();
 
 
 	}
