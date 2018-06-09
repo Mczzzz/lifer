@@ -226,6 +226,7 @@ export default class Objects{
   onParentAction(e){
 
     this.JstreeObjectsObj.onMinimize(true);
+    $('#toolbar').hide();
 
   }
 
