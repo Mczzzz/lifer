@@ -1,3 +1,5 @@
+import swal from 'sweetalert';
+
 export default class jsTreeContainer {
 
 
