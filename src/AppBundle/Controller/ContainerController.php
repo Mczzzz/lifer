@@ -238,7 +238,11 @@ class ContainerController extends Controller
      */
     public function containerDeleteAction(Request $request)
     {
-
+        
+//TODO : Que fais t'on de l'arbre interne de l'objet ?
+// renvoi au parent
+// chutier d'infos
+// déplacement vers une autre node
 
         $request = Request::createFromGlobals();
         $node = $request->request->get('node');
@@ -272,6 +276,8 @@ class ContainerController extends Controller
         }
 
 
+
+
         //on verifie s'il y a aussi des containerStore seulement
         $childs = $em->getRepository('AppBundle:Objects')->findBy(array('containerStore' => $node));
          
@@ -296,6 +302,7 @@ class ContainerController extends Controller
 
         $res = new \stdClass();
         $res->error = 0;
+
         return new Response(json_encode($res));
 
 

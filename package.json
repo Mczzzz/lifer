@@ -9,6 +9,7 @@
     "jquery": "^3.3.1",
     "jstree": "^3.3.5",
     "materialize-css": "^0.100.2",
-    "moment-es6": "^1.0.0"
+    "moment-es6": "^1.0.0",
+    "sweetalert": "^2.1.0"
   }
 }

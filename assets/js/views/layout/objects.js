@@ -29,6 +29,8 @@ export default class Objects{
 
     this.toolbarHTML();
 
+    this.activeJS();
+
     window.addEventListener('ContainerSelect', (e) => this.onContainerSelected(e));
     window.addEventListener('childAction', (e) => this.onChildAction(e));
     window.addEventListener('parentAction', (e) => this.onParentAction(e));
@@ -254,6 +256,7 @@ export default class Objects{
 
 	activeJS(){
 
+   
 /*
                             <div id="add_infos">
                      
@@ -261,15 +264,7 @@ export default class Objects{
 
                       </div>*/
 
-//INIT DES ETATS DES ELEMENTS
 
-		$('#Myfile').hide();
-		$('#action').hide();
-	    $('#infos').hide();
-	    $('#unities').hide();
-
-
-  		let treeJSON = "";
 
 
 
@@ -280,7 +275,7 @@ export default class Objects{
 
 
 
-	    $.get( "unity/type", function( data ) {
+/*	    $.get( "unity/type", function( data ) {
             let unityType = JSON.parse(data);
             console.log(unityType);
               $('#unityType').append($('<option>', {
@@ -297,17 +292,7 @@ export default class Objects{
 
 
 	                             
-	    });
-
-      $.get( "unity/unities", function( data ) {
-
-       let unityUnities = JSON.parse(data);
-   
-      });
-
-
-
-
+	    });*/
 
 
 ///////////////////////////////// 
@@ -322,13 +307,13 @@ export default class Objects{
     //TOOLBAR
 
     	 //LANCE LA CAM
-
+/*
 	      $('#launch_cam').on('click', function(e, data) {
 
 	      		$("#Myfile").click();
 
 	      });
-
+*/
 
 
 
@@ -337,7 +322,7 @@ export default class Objects{
 
     //UNITY-TYPE    
 
-        $('#unityType').on('change', function(e, data) {
+/*        $('#unityType').on('change', function(e, data) {
 
                 $('#unities').show();
                 $('#unities').empty();
@@ -352,7 +337,7 @@ export default class Objects{
 
                 }
       });
-
+*/
 
 
 
@@ -371,200 +356,6 @@ export default class Objects{
 	    ajaxSend('POST','objects_infos/add',formData);
 
 	});*/
-
-
-
-       	//ON SELECT
-  		$('#jstree_demo_div').on('select_node.jstree', function(e, data) {
-
-         	$('#plugins4_q').hide();
-         	$('#infos').show();
-         	$('#jstree_object_tree').show();
-         	$('#jstree_demo_div').hide();
-
-         	jsTreeBreadcrumb($('#jstree_demo_div'),$('#breadcrumb'),data.node);
-         	
-
-         	
-
-            let ActiveDiv = '#jstree_demo_div';
-  
-
-             $('#jstree_object_tree').jstree({
-
-
-                'core' :
-                {
-
-	                "check_callback" : true,
-
-	                "themes" : {"dots" : false}
-
-	            },
-
-	                
-                "types" :
-                {
-                
-                    "default" : {"icon" : "glyphicon glyphicon-tree-deciduous"},
-
-                    "car"     : {"icon" : "fa fa-car"},
-                
-                    "kitchen" : {"icon" : "glyphicon glyphicon-apple"},
-                
-                    "home"   : {"icon" : "glyphicon glyphicon-home"}
-                
-                },
-                
-                 "plugins" : [ "dnd", "search" , "types", "contextmenu" ]
-
-	             });
-
-
-               let treeJSONObject = "";
-
-                $.get( "object/tree/get/"+data.node.id, function( data ) {
-                  treeJSONObject = JSON.parse(data);
-                  $('#jstree_object_tree').jstree(true).settings.core.check_callback = true;
-                  $('#jstree_object_tree').jstree(true).settings.core.data = treeJSONObject;
-                  $('#jstree_object_tree').jstree(true).refresh();
-                  $('#jstree_object_tree').jstree(true).open_all();
-                 // $('#jstree_demo_div').jstree("open_all");
-                });
-
-
-         });
-
-
-
-
-
-
-	//JSTREE OBJECTS EVENTS
-
-    	// RENOMMAGE D'UNE BRANCHE OBJET COTE SERVEUR
-
-	         $('#jstree_object_tree').on('rename_node.jstree', function(e, data) {
-
-	            let formData = new FormData();
-
-	            formData.append('node'  ,data.node.id);
-				formData.append('name'  ,data.node.text);
-
-				ajaxSend('POST','object/tree/rename',formData);
-
-		     
-	         });
-
-
-	    //DELETE OBJECTS TREE BRANCH/LEAF BACKEND
-
-         $('#jstree_object_tree').on('delete_node.jstree', function(e, data) {
-
-          console.log('delete');
-                    let formData = new FormData();
-
-            //formData.append('jpg'  ,this.image);
-            formData.append('node'  ,data.node.id);
-
-        formData.append('parent'  ,data.parent);
-        let AjaxSender = $.ajax({
-              type: 'POST',
-              url: 'object/tree/delete',
-              data: formData,
-              async: true,
-              cache: false,
-              contentType: false,
-              processData: false,
-               success: function(d){
-                          $.get( "object/tree/get/"+data.node.parents[data.node.parents.length -2].replace(/root_/g, ""), function( data ) {
-                            treeJSON = JSON.parse(data);
-                            $('#jstree_object_tree').jstree(true).settings.core.check_callback = true;
-                            $('#jstree_object_tree').jstree(true).settings.core.data = treeJSON;
-                            $('#jstree_object_tree').jstree(true).refresh();
-                           // $('#jstree_demo_div').jstree("open_all");
-                          });
-
-
-              }
-            });
-
-
-
-
-         });
-
-
-
-        //ON SELECT
-
-		 $('#jstree_object_tree').on('select_node.jstree', function(e, data) {
-
-		                $('#action').show();
-		                $('#jstree_demo_div').hide();
-		      });
-
-
-
-		//CREATE
-        $('#jstree_object_tree').on('create_node.jstree', function(e, data) {
-
-	        let formData = new FormData();
-
-            formData.append('nodeText' ,data.node.text);
-            formData.append('object' , data.node.parents[data.node.parents.length -2]);
-	        formData.append('parent'  ,data.parent);
-
-	        let AjaxSender = $.ajax({
-
-              type: 'POST',
-              url: 'object/tree/add',
-              data: formData,
-              async: true,
-              cache: false,
-              contentType: false,
-              processData: false,
-              success: function(d){
-
-                 $('#jstree_object_tree').jstree(true).set_id(data.node, d);
-              }
-
-	        });
-
-
-        });
-
-
-
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-    // RENOMMAGE D'UNE BRANCHE OBJET COTE SERVEUR
-
-         $('#jstree_object_tree').on('rename_node.jstree', function(e, data) {
-
-            let formData = new FormData();
-
-            formData.append('node'  ,data.node.id);
-			formData.append('name'  ,data.node.text);
-
-
-	        
-
-
-         });
 
 
     }

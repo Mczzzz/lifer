@@ -368,6 +368,26 @@ export default class jsTreeContainer {
 
 	onDeleteJsTree(e,data){
 
+		swal({
+		  title: "t sur de toi ?",
+		  text: "Once deleted, you will not be able to recover this imaginary file!",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+		.then((willDelete) => {
+		  if (willDelete) {
+		    swal("Poof! à la poubelle ;)", {
+		      icon: "success",
+		    });
+		  } else {
+		    swal("t'inquietes ta data est tjs la");
+		    return false;
+		  }
+		});
+
+
+
        	let formData = new FormData();
 
         formData.append('node'  ,data.node.id);
