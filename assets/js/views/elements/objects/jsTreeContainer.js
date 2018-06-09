@@ -66,7 +66,7 @@ export default class jsTreeContainer {
 				                "separator_before": false,
 				                "separator_after": false,
 				                "label": "Create",
-				                "action": (obj) => this.onCreateJsTree(false,obj)
+				                "action": ""
 				            },
 				            "Rename": {
 				                "separator_before": false,
