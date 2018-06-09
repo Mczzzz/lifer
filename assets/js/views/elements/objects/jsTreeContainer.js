@@ -55,11 +55,11 @@ export default class jsTreeContainer {
 	              	"check_callback" : true
 	                      },
 
- 					"contextmenu": {   
+ 				"contextmenu": {   
 
 				    "items": function($node) {
 
-				        //var tree = this.JsTreeContainer.jstree(true);
+				        var tree = this.JsTreeContainer.jstree(true);
 
 				        return {
 				            "Create": {
@@ -67,7 +67,8 @@ export default class jsTreeContainer {
 				                "separator_after": false,
 				                "label": "Create",
 				                "action": function (obj) { 
-
+				                    $node = tree.create_node($node);
+				                    tree.edit($node);
 				                }
 				            },
 				            "Rename": {
@@ -75,6 +76,7 @@ export default class jsTreeContainer {
 				                "separator_after": false,
 				                "label": "Rename",
 				                "action": function (obj) { 
+				                    tree.edit($node);
 				                }
 				            },                         
 				            "Remove": {
@@ -82,7 +84,7 @@ export default class jsTreeContainer {
 				                "separator_after": false,
 				                "label": "Remove",
 				                "action": function (obj) { 
-				                	this.onDeleteJsTree(obj,obj);
+				                    tree.delete_node($node);
 				                }
 				            }
 				        };
