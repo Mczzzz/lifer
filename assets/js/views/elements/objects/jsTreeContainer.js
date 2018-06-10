@@ -45,6 +45,7 @@ export default class jsTreeContainer {
 
 
 	initJstreeContainer(){
+			console.log('initJstreeContainer');
 
 			let HtmlElementTree = this.JsTreeContainer;
 
@@ -91,6 +92,7 @@ export default class jsTreeContainer {
 			                "separator_after": false,
 			                "label": "Supprimer",
 			                "action": function (obj) {
+			                	console.log('on passe ???');
 			                	HtmlElementTree.trigger( "deleteNode", [ obj ] );
 			                	}
 			                }
