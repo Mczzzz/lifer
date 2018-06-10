@@ -406,11 +406,15 @@ export default class jsTreeContainer {
 	        formData.append('parent'  ,data.node.parent);
 
 	        let result = this.collection.delete(formData);
-	        console.log('result:');
-	        console.log(result);
-	        this.JsTreeContainer.jstree(true).delete_node(data.node);
+
+	        if(result.error == 0){
+
+	        	this.JsTreeContainer.jstree(true).delete_node(data.node);
 	       
-			this.getJstreeContainerElements();
+				this.getJstreeContainerElements();
+
+	        }
+
 
 
 		    swal("Poof! à la poubelle ;)", {
