@@ -167,28 +167,22 @@ export default class jsTreeContainer {
 
             this.JsTreeContainer.jstree(true).search(e.srcElement.value);
 
-            this.notifyLayout();
-
-
-	}
-
-
-	notifyLayout(){
-
-			let NodeEvent = "";
-
-		    if(this.parentId){
+            if(this.parentId){
 
 	           	let NodeEvent = new CustomEvent('childAction', {'detail' : {'container' : this.container }});
+	           	window.dispatchEvent(NodeEvent);
 
         	}else{
         		let NodeEvent = new CustomEvent('parentAction', {'detail' : {'container' : this.container }});
+        		window.dispatchEvent(NodeEvent);
 	        	
         	}
         	
-			window.dispatchEvent(NodeEvent);
+			
+
 
 	}
+
 
 
 
