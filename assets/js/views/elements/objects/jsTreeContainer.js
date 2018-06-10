@@ -86,7 +86,7 @@ export default class jsTreeContainer {
 			                "separator_after": false,
 			                "label": "Remove",
 			                "action": function (obj) {
-			                	(obj) => onDeleteJsTree(false,obj);
+			                	this.onDeleteJsTree(false,obj);
 			                	}
 			                }
 			            }
