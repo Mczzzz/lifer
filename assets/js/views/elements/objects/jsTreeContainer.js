@@ -51,9 +51,6 @@ export default class jsTreeContainer {
 
 			this.JsTreeContainer.on("deleteNode", (data) => this.onDeleteJsTree(data,data));
 
-
-			let test = this.onDeleteJsTree();
-
 			this.JsTreeContainer.jstree({
 	          'core' : {
 	          		'themes': {
@@ -423,7 +420,6 @@ export default class jsTreeContainer {
 		  } else {
 
 		    swal("t'inquietes ta data est tjs la");
-		    this.reviveNode(data);
 		    return false;
 		  }
 		});
@@ -435,12 +431,6 @@ export default class jsTreeContainer {
 	}
 
 
-	reviveNode(data){
-
-		console.log('in revive');
-		this.jsTreeContainer.jstree(true).create_node(data.node);
-
-	}
 
 
 
