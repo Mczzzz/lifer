@@ -396,9 +396,23 @@ export default class jsTreeContainer {
 		})
 		.then((willDelete) => {
 		  if (willDelete) {
+
+		  	let formData = new FormData();
+
+	        formData.append('node'  ,data.node.id);
+	        formData.append('parent'  ,data.parent);
+
+	        $result = this.collection.delete(formData);
+	       
+			this.getJstreeContainerElements();
+
+
 		    swal("Poof! à la poubelle ;)", {
 		      icon: "success",
 		    });
+
+
+
 		  } else {
 		    swal("t'inquietes ta data est tjs la");
 		    return false;
@@ -407,14 +421,7 @@ export default class jsTreeContainer {
 
 
 
-       	let formData = new FormData();
-
-        formData.append('node'  ,data.node.id);
-        formData.append('parent'  ,data.parent);
-
-        $result = this.collection.delete(formData);
-       
-		this.getJstreeContainerElements();
+       	
 
 	}
 
