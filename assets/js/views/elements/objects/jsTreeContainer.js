@@ -385,10 +385,12 @@ export default class jsTreeContainer {
 
 	onDeleteJsTree(e,data){
 
-
+	console.log('in delete');
+	console.log(e);
+	console.log(data);
 	//Mesaage d'alerte
 		swal({
-		  title: "t sur de toi ?",
+		  title: "t sur ???",
 		  text: "Ctrl-Z n'est pas implémenté alors réfléchis bien !",
 		  icon: "warning",
 		  buttons: true,
@@ -396,6 +398,8 @@ export default class jsTreeContainer {
 		})
 		.then((willDelete) => {
 		  if (willDelete) {
+
+
 
 		  	let formData = new FormData();
 
