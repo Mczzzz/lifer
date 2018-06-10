@@ -90,7 +90,7 @@ export default class jsTreeContainer {
 			                "label": "Supprimer",
 			                "action": function (obj) {
 			                	console.log('on passe ???');
-			                	HtmlElementTree.trigger( "deleteNode", [ obj ] );
+			                	HtmlElementTree.trigger( "deleteNode", [ obj, $node ] );
 			                	}
 			                }
 			            }
@@ -406,6 +406,8 @@ export default class jsTreeContainer {
 	        formData.append('parent'  ,data.parent);
 
 	        $result = this.collection.delete(formData);
+
+	        this.JsTreeContainer.jstree(true).delete_node(data.node);
 	       
 			this.getJstreeContainerElements();
 
