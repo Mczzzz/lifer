@@ -55,41 +55,41 @@ export default class jsTreeContainer {
 	              	"check_callback" : true
 	                      },
 
- 				/*"contextmenu": {   
+				"contextmenu": {   
 
-				    "items": function($node) {
+			    "items": function($node) {
 
-				        var tree = this.JsTreeContainer.jstree(true);
+			        var tree = this.JsTreeContainer.jstree(true);
 
-				        return {
-				            "Create": {
-				                "separator_before": false,
-				                "separator_after": false,
-				                "label": "Create",
-				                "action": function (obj) { 
-				                    $node = tree.create_node($node);
-				                    tree.edit($node);
-				                }
-				            },
-				            "Rename": {
-				                "separator_before": false,
-				                "separator_after": false,
-				                "label": "Rename",
-				                "action": function (obj) { 
-				                    tree.edit($node);
-				                }
-				            },                         
-				            "Remove": {
-				                "separator_before": false,
-				                "separator_after": false,
-				                "label": "Remove",
-				                "action": function (obj) { 
-				                    tree.delete_node($node);
-				                }
-				            }
-				        };
-				    }
-			    },*/
+			        return {
+			            "Create": {
+			                "separator_before": false,
+			                "separator_after": false,
+			                "label": "Create",
+			                "action": function (obj) { 
+			                    $node = tree.create_node($node);
+			                    tree.edit($node);
+			                }
+			            },
+			            "Rename": {
+			                "separator_before": false,
+			                "separator_after": false,
+			                "label": "Rename",
+			                "action": function (obj) { 
+			                    tree.edit($node);
+			                }
+			            },                         
+			            "Remove": {
+			                "separator_before": false,
+			                "separator_after": false,
+			                "label": "Remove",
+			                "action": function (obj) { 
+			                    tree.delete_node($node);
+			                }
+			            }
+			        };
+			    }
+		    },
 
 
 
@@ -294,6 +294,8 @@ export default class jsTreeContainer {
 		this.JsTreeContainer.on("rename_node.jstree", (e,data)=>this.onRenameJsTree(e,data));
 		this.JsTreeContainer.on("delete_node.jstree", (e,data)=>this.onDeleteJsTree(e,data));
 		this.JsTreeContainer.on("create_node.jstree", (e,data)=>this.onCreateJsTree(e,data));
+
+		this.JsTreeContainer.on("deleteObject", (e,data)=>this.onDeleteJsTree(e,data));
 	}
 
 
@@ -408,7 +410,7 @@ export default class jsTreeContainer {
         formData.append('node'  ,data.node.id);
         formData.append('parent'  ,data.parent);
 
-        this.collection.delete(formData);
+        $result = this.collection.delete(formData);
        
 		this.getJstreeContainerElements();
 
