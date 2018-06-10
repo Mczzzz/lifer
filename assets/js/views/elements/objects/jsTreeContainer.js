@@ -405,8 +405,9 @@ export default class jsTreeContainer {
 	        formData.append('node'  ,data.node.id);
 	        formData.append('parent'  ,data.parent);
 
-	        $result = this.collection.delete(formData);
-
+	        let result = this.collection.delete(formData);
+	        console.log('result:');
+	        console.log(result);
 	        this.JsTreeContainer.jstree(true).delete_node(data.node);
 	       
 			this.getJstreeContainerElements();
