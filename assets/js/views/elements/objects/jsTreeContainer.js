@@ -59,7 +59,7 @@ export default class jsTreeContainer {
 
 			    "items": function($node) {
 
-			        var tree = this.JsTreeContainer.jstree(true);
+			      //  var tree = this.JsTreeContainer.jstree(true);
 
 			        return {
 			            "Create": {
@@ -67,8 +67,8 @@ export default class jsTreeContainer {
 			                "separator_after": false,
 			                "label": "Create",
 			                "action": function (obj) { 
-			                    $node = tree.create_node($node);
-			                    tree.edit($node);
+			                    $node = this.JsTreeContainer.jstree(true).create_node($node);
+			                    this.JsTreeContainer.jstree(true).edit($node);
 			                }
 			            },
 			            "Rename": {
@@ -76,7 +76,7 @@ export default class jsTreeContainer {
 			                "separator_after": false,
 			                "label": "Rename",
 			                "action": function (obj) { 
-			                    tree.edit($node);
+			                    this.JsTreeContainer.jstree(true).edit($node);
 			                }
 			            },                         
 			            "Remove": {
@@ -84,7 +84,7 @@ export default class jsTreeContainer {
 			                "separator_after": false,
 			                "label": "Remove",
 			                "action": function (obj) { 
-			                    tree.delete_node($node);
+			                    this.JsTreeContainer.jstree(true).delete_node($node);
 			                }
 			            }
 			        };
