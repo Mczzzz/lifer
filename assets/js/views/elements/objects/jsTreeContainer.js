@@ -49,7 +49,7 @@ export default class jsTreeContainer {
 
 			let HtmlElementTree = this.JsTreeContainer;
 
-			this.JsTreeContainer.on("deleteNode", (data) => this.onDeleteJsTree(data,data));
+			this.JsTreeContainer.on("deleteNode", (e, data) => this.onDeleteJsTree(e,data));
 
 			this.JsTreeContainer.jstree({
 	          'core' : {
