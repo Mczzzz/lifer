@@ -46,7 +46,7 @@ export default class jsTreeContainer {
 
 	initJstreeContainer(){
 
-			let HtmlElementTree = this.JsTreeContainer;
+			let HtmlDelete = this.JsTreeContainer;
 
 			this.JsTreeContainer.jstree({
 	          'core' : {
@@ -87,7 +87,7 @@ export default class jsTreeContainer {
 			                "label": "Remove",
 			                "action": function (obj) { 
 			                    //HtmlElementTree.jstree(true).delete_node($node);
-			                    this.onDeleteJsTree(false,obj);
+			                    HtmlDelete(false,obj);
 			                }
 			            }
 			        };
