@@ -91,7 +91,7 @@ export default class jsTreeContainer {
 			                "action": function (obj) {
 			                	console.log('on passe ???');
 			                	console.log($node);
-			                	HtmlElementTree.trigger( "deleteNode", [{'obj' : obj} ,{'node' : $node } ] );
+			                	HtmlElementTree.trigger( "deleteNode", [{'node' : $node}] );
 			                	}
 			                }
 			            }
