@@ -403,7 +403,7 @@ export default class jsTreeContainer {
 		  	let formData = new FormData();
 
 	        formData.append('node'  ,data.node.id);
-	        formData.append('parent'  ,data.parent);
+	        formData.append('parent'  ,data.node.parent);
 
 	        let result = this.collection.delete(formData);
 	        console.log('result:');
