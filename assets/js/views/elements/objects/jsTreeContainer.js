@@ -86,8 +86,7 @@ export default class jsTreeContainer {
 			                "separator_after": false,
 			                "label": "Remove",
 			                "action": function (obj) { 
-			                    //HtmlElementTree.jstree(true).delete_node($node);
-			                    HtmlDelete(false,obj);
+			                    HtmlElementTree.jstree(true).delete_node($node);
 			                }
 			            }
 			        };
