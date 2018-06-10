@@ -390,7 +390,8 @@ export default class jsTreeContainer {
 	console.log(data);
 
 	let JstreeHTML = this.jsTreeContainer;
-	//Mesaage d'alerte
+
+
 		swal({
 		  title: "t sur ???",
 		  text: "Ctrl-Z n'est pas implémenté alors réfléchis bien !",
@@ -398,9 +399,9 @@ export default class jsTreeContainer {
 		  buttons: true,
 		  dangerMode: true,
 		})
+
 		.then((willDelete) => {
 		  if (willDelete) {
-
 
 
 		  	let formData = new FormData();
@@ -419,9 +420,11 @@ export default class jsTreeContainer {
 
 
 
+
 		  } else {
+
 		    swal("t'inquietes ta data est tjs la");
-		    JstreeHTML.jstree(true).create_node(data.node);
+		    this.reviveNode(data);
 		    return false;
 		  }
 		});
@@ -431,6 +434,16 @@ export default class jsTreeContainer {
        	
 
 	}
+
+
+	reviveNode(data){
+
+		console.log('in revive');
+		this.jsTreeContainer.jstree(true).create_node(data.node);
+
+	}
+
+
 
 
 	onCreateJsTree(e,data){
