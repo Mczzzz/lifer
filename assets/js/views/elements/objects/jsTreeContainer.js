@@ -46,7 +46,7 @@ export default class jsTreeContainer {
 
 	initJstreeContainer(){
 
-			let HtmlDelete = this.JsTreeContainer;
+			let HtmlElementTree = this.JsTreeContainer;
 
 			this.JsTreeContainer.jstree({
 	          'core' : {
