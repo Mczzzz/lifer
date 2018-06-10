@@ -419,6 +419,7 @@ export default class jsTreeContainer {
 
 		  } else {
 		    swal("t'inquietes ta data est tjs la");
+		    this.jsTreeContainer.jstree(true).create_node(data.node);
 		    return false;
 		  }
 		});
