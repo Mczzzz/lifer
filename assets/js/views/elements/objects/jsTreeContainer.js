@@ -46,6 +46,8 @@ export default class jsTreeContainer {
 
 	initJstreeContainer(){
 
+			let HtmlElementTree = this.JsTreeContainer;
+
 			this.JsTreeContainer.jstree({
 	          'core' : {
 	          		'themes': {
@@ -67,8 +69,8 @@ export default class jsTreeContainer {
 			                "separator_after": false,
 			                "label": "Create",
 			                "action": function (obj) { 
-			                    $node = this.JsTreeContainer.jstree(true).create_node($node);
-			                    this.JsTreeContainer.jstree(true).edit($node);
+			                    $node = HtmlElementTree.jstree(true).create_node($node);
+			                    HtmlElementTree.jstree(true).edit($node);
 			                }
 			            },
 			            "Rename": {
@@ -76,7 +78,7 @@ export default class jsTreeContainer {
 			                "separator_after": false,
 			                "label": "Rename",
 			                "action": function (obj) { 
-			                    this.JsTreeContainer.jstree(true).edit($node);
+			                    HtmlElementTree.jstree(true).edit($node);
 			                }
 			            },                         
 			            "Remove": {
@@ -84,7 +86,7 @@ export default class jsTreeContainer {
 			                "separator_after": false,
 			                "label": "Remove",
 			                "action": function (obj) { 
-			                    this.JsTreeContainer.jstree(true).delete_node($node);
+			                    HtmlElementTree.jstree(true).delete_node($node);
 			                }
 			            }
 			        };
