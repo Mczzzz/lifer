@@ -388,6 +388,8 @@ export default class jsTreeContainer {
 	console.log('in delete');
 	console.log(e);
 	console.log(data);
+
+	let JstreeHTML = this.jsTreeContainer;
 	//Mesaage d'alerte
 		swal({
 		  title: "t sur ???",
@@ -419,7 +421,7 @@ export default class jsTreeContainer {
 
 		  } else {
 		    swal("t'inquietes ta data est tjs la");
-		    this.jsTreeContainer.jstree(true).create_node(data.node);
+		    this.JstreeHTML.jstree(true).create_node(data.node);
 		    return false;
 		  }
 		});
