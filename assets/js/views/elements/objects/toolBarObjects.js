@@ -97,11 +97,13 @@ export default class toolBarObjects  extends toolBar {
 
 		var nom = document.createElement("input");
 		nom.type = "text";
+		nom.id = "swal_wl_name";
 		nom.placeholder = "nom";
 		div.append(nom);
 
 		var url = document.createElement("input");
 		url.type = "url";
+		url.id = "swal_wl_url";
 		url.placeholder = "http(s)://lifer.hopeful.care/...";
 		div.append(url);
 
@@ -120,8 +122,9 @@ export default class toolBarObjects  extends toolBar {
 			  },
 			})
 			.then(name => {
-			  console.log(name);
-			 
+			 // console.log(name);
+			 	console.log($("#swal_wl_name").val());
+			 	console.log($("#swal_wl_url").val());
 			  // enregistrement de l'infos en base
 
 
