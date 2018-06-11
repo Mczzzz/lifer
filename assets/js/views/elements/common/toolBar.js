@@ -44,7 +44,7 @@ export default class toolBar {
 
 		let coreList = `<ul id="ul_`+this.id+`"></ul>`;
 
-		$('#'+this.id).append(intiIcon);
+		$('#'+this.id).append(coreList);
 
 	}
 
