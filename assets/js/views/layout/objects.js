@@ -111,7 +111,7 @@ export default class Objects{
   toolbarHTML(){
 
     this.ObjectToolBar = new toolBar(this.TheObjectInfosCollect);
-
+    this.ObjectToolBar.hide();
   }
 
 
