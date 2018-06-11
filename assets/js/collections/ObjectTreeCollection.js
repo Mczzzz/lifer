@@ -17,7 +17,7 @@ export default class ObjectTreeCollection {
 
     let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get/'+ id);
 
-    return result.responseText;
+    return result;
 
   }
 
@@ -27,7 +27,7 @@ export default class ObjectTreeCollection {
 
     let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'rename',data);
 
-    return result.responseText;
+    return result;
 
   }
 
@@ -37,7 +37,7 @@ export default class ObjectTreeCollection {
 
     let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'delete',data);
 
-    return result.responseText;
+    return result;
 
   }
 
@@ -46,7 +46,7 @@ export default class ObjectTreeCollection {
 
     let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'add',data);
 
-    return result.responseText;
+    return result;
 
   }
 
