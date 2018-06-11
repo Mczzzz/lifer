@@ -99,6 +99,11 @@ export default class toolBarObjects  extends toolBar {
 				      placeholder: "Lien",
 				      type: "url",
 				    },
+				element :"input",
+			  	    attributes: {
+				      placeholder: "Titre",
+				      type: "text",
+				    },
 				   },
 
 			  button: {
