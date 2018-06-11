@@ -182,13 +182,15 @@ export default class Objects{
     }
 
     this.ObjectToolBar.setContainerId(e.detail.id);
+    this.ObjectToolBar.setLeafId("");
 
   }
 
 
   onChildAction(e){
-    console.log('onchildAction :');
-    console.log(e);
+
+    this.ObjectToolBar.setLeafId(e.detail.id);
+
     this.JstreeContainerObj.onMinimize();
     this.ObjectToolBar.show();
 
@@ -199,6 +201,7 @@ export default class Objects{
 
     this.JstreeObjectsObj.onMinimize(true);
     this.ObjectToolBar.hide();
+    this.ObjectToolBar.setLeafId("");
 
   }
 
