@@ -90,7 +90,10 @@ export default class toolBarObjects  extends toolBar {
 
 		console.log('instartweblink');
 
+		//custom html for sweetAlert
+
 		var div = document.createElement("div");
+		div.class = 'col s9';
 
 		var nom = document.createElement("input");
 		nom.type = "text";
@@ -101,6 +104,8 @@ export default class toolBarObjects  extends toolBar {
 		url.type = "url";
 		url.placeholder = "http(s)://lifer.hopeful.care/...";
 		div.append(url);
+
+		//sweetalert definition
 
 		swal({
 			  title : 'Insérez un lien Web',
