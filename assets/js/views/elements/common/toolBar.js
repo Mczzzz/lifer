@@ -73,7 +73,7 @@ export default class toolBar {
         $('#ul_'+this.id).append(addTolist);
 	
 		//(e) => this[e.detail.frame](e)
-        $('tbLink_'+k).on( "click", (e) => this[action](e));
+        $('tbLink_'+k).on( "click", function (e) {console.log('je suis dans le click du button de la toolbar')});
 
 	}
 
@@ -85,57 +85,5 @@ export default class toolBar {
 	}
 
 
-	html(){
-
-
-      	let TheToolBar =  `
-                           
-
-
-
-                            <ul>
-
-
-                              <li>
-                                <a id="launch_cam" class="btn-floating red">
-                                  <i class="large material-icons">camera_alt</i>
-                                </a>
-                              </li>
-
-
-                              <li>
-                                <a id="tooBarAddText" class="btn-floating yellow darken-1">
-                                  <i class="large material-icons">format_quote</i>
-                                </a>
-                              </li>
-
-
-                              <li>
-                                <a class="btn-floating green">
-                                  <i class="large material-icons">date_range</i>
-                                </a>
-                              </li>
-
-
-                              <li>
-                                <a class="btn-floating blue">
-                                  <i class="large material-icons">insert_link</i>
-                                </a>
-                              </li>
-
-
-                              <li>
-                                <a class="btn-floating blue">
-                                  <i class="large material-icons">looks_one</i>
-                                </a>
-                              </li>
-
-                            </ul>
-
-		`;
-
-	}
-
-
-
+	
 }
