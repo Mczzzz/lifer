@@ -8,6 +8,15 @@ export default class toolBarObjects  extends toolBar {
 
 		super();
 
+
+		this.init();
+	}
+
+
+	init(){
+
+		this.initButton("add");
+
 	}
 
 

@@ -3,10 +3,8 @@ export default class toolBar {
 
 	constructor(){
 
-		console.log('initToolBar Parent');
 		this.id = 'toolbar';
 
-		//this.myList = myList;
 
 		this.initHtml();
 
