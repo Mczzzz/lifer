@@ -51,12 +51,14 @@ export default class toolBar {
 
 	alimentList(){
 
-	for (let k in this.myList){
+		for (let k in this.myList){
 
-		addTolist(k, myList[k].color, myList[k].icon, myList[k].action);
+			this.addTolist(k, myList[k].color, myList[k].icon, myList[k].action);
+
+		}
 
 	}
-
+	
 
 
 	addToList(k, color, icon, action){
