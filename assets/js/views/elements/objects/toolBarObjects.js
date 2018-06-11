@@ -17,7 +17,27 @@ export default class toolBarObjects  extends toolBar {
 
 		this.initButton("add");
 
+		this.ObjectsInitActions();
 	}
+
+
+	ObjectsInitActions(){
+
+
+		let buttons = {
+
+			"photo" : {
+
+				"color" :  "red",
+				"icon"  :  "camera_alt",
+				"action" : "startPhoto"
+
+			}
+		};
+
+	}
+
+	this.alimentList(buttons);
 
 
 }

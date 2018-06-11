@@ -19,7 +19,7 @@ export default class toolBar {
 
  	 let TheToolBar =  `<div id="`+this.id+`"" class="fixed-action-btn horizontal ltr-lifer" style="position: absolute; display: inline-block; left: 0px;">
 
-></div>`;
+</div>`;
 
 
 		$('.section').append(TheToolBar);
@@ -35,6 +35,8 @@ export default class toolBar {
 
 		$('#'+this.id).append(intiIcon);
 
+		this.initList();
+
 	}
 
 
@@ -47,9 +49,9 @@ export default class toolBar {
 	}
 
 
-	alimentList(){
+	alimentList(myList){
 
-		for (let k in this.myList){
+		for (let k in myList){
 
 			this.addTolist(k, myList[k].color, myList[k].icon, myList[k].action);
 
@@ -70,7 +72,8 @@ export default class toolBar {
 
         $('#ul_'+this.id).append(addTolist);
 	
-        $('tbLink_'+k).on( "click", (e) => this.action(e));
+		//(e) => this[e.detail.frame](e)
+        $('tbLink_'+k).on( "click", (e) => this[action](e));
 
 	}
 
