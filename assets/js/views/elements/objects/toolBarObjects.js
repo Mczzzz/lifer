@@ -28,7 +28,7 @@ export default class toolBarObjects  extends toolBar {
 
 	setLeafId(leafId){
 
-		this.containerId = leafId;
+		this.leafId = leafId;
 	}
 
 
