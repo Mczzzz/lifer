@@ -73,7 +73,7 @@ export default class toolBar {
         $('#ul_'+this.id).append(addTolist);
 	
 		//(e) => this[e.detail.frame](e)
-        $('tbLink_'+k).on( "click", function (e) {console.log('je suis dans le click du button de la toolbar')});
+        $('#tbLink_'+k).on( "click", function (e) {console.log('je suis dans le click du button de la toolbar')});
 
 	}
 
