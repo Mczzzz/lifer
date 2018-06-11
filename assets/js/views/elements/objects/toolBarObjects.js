@@ -94,10 +94,12 @@ export default class toolBarObjects  extends toolBar {
 
 		var nom = document.createElement("input");
 		nom.type = "text";
+		nom.placeholder = "nom";
 		div.append(nom);
 
 		var url = document.createElement("input");
 		url.type = "url";
+		url.placeholder = "http(s)://lifer.hopeful.care/...";
 		div.append(url);
 
 		swal({
