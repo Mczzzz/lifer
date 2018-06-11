@@ -91,20 +91,9 @@ export default class toolBarObjects  extends toolBar {
 		console.log('instartweblink');
 
 		swal({
-			  text: 'Insérez un lien Web',
-			  
-			  content: {
-			  	element :"input",
-			  	    attributes: {
-				      placeholder: "Lien",
-				      type: "url",
-				    },
-				element :"input",
-			  	    attributes: {
-				      placeholder: "Titre",
-				      type: "text",
-				    },
-				   },
+			  title : 'Insérez un lien Web',
+			  html: true,
+			  text: 'You can use <b>bold text</b>, ' + '<a href="//github.com">links</a> ' + 'and other HTML tags',
 
 			  button: {
 			    text: "Ajouter",
