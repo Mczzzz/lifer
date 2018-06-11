@@ -12,7 +12,25 @@ export default class toolBarObjects  extends toolBar {
 
 		this.ObjectInfosCollect = ObjectInfosCollect;
 		this.init();
+
+		this.containerId = "";
+		this.leafId = "";
+
 	}
+
+
+
+	setContainerId(containerId){
+
+		this.containerId = containerId;
+	}
+
+
+	setLeafId(leafId){
+
+		this.containerId = leafId;
+	}
+
 
 
 	init(){

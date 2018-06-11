@@ -181,11 +181,14 @@ export default class Objects{
 
     }
 
+    this.ObjectToolBar.setContainerId(e.detail.id);
+
   }
 
 
   onChildAction(e){
-
+    console.log('onchildAction :');
+    console.log(e);
     this.JstreeContainerObj.onMinimize();
     this.ObjectToolBar.show();
 
