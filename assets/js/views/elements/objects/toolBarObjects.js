@@ -120,9 +120,11 @@ export default class toolBarObjects  extends toolBar {
 			  },
 			})
 			.then(name => {
-			  if (!name) throw null;
+			  console.log(name);
 			 
 			  // enregistrement de l'infos en base
+
+
 			})
 			.then(results => {
 			  return results.json();
