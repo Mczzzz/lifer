@@ -53,7 +53,7 @@ export default class toolBar {
 
 		for (let k in myList){
 
-			this.addTolist(k, myList[k].color, myList[k].icon, myList[k].action);
+			this.addToList(k, myList[k].color, myList[k].icon, myList[k].action);
 
 		}
 
