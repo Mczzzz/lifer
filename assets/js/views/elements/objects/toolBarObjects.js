@@ -30,7 +30,7 @@ export default class toolBarObjects  extends toolBar {
 
 			"photo" : {
 
-				"color" :  "red",
+				"color" :  "grey", //red
 				"icon"  :  "camera_alt",
 				"action" : "startPhoto"
 
@@ -38,7 +38,7 @@ export default class toolBarObjects  extends toolBar {
 
 			"texte" : {
 
-				"color" :  " yellow darken-1",
+				"color" :  "grey", // yellow darken-1
 				"icon"  :  "format_quote",
 				"action" : "startTexte"
 
@@ -46,7 +46,7 @@ export default class toolBarObjects  extends toolBar {
 
 			"event" : {
 
-				"color" :  "green",
+				"color" :  "grey", // green
 				"icon"  :  "date_range",
 				"action" : "startEvent"
 
@@ -62,7 +62,7 @@ export default class toolBarObjects  extends toolBar {
 
 			"value" : {
 
-				"color" :  "blue",
+				"color" :  "grey", //blue
 				"icon"  :  "looks_one",
 				"action" : "startValue"
 
