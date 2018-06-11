@@ -312,7 +312,7 @@ export default class jsTreeContainer {
 
 		}else{
 
-			let NodeEvent = new CustomEvent('childAction', {'detail' : {'container' : this.container }});
+			let NodeEvent = new CustomEvent('childAction', {'detail' : {'container' : this.container, 'id' : data.node.id }});
         	window.dispatchEvent(NodeEvent);
 
 		}
