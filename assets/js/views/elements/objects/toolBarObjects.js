@@ -1,3 +1,5 @@
+import swal from 'sweetalert';
+
 import toolBar from '../common/toolBar.js';
 
 
@@ -38,7 +40,7 @@ export default class toolBarObjects  extends toolBar {
 
 				"color" :  " yellow darken-1",
 				"icon"  :  "format_quote",
-				"action" : "startPhoto"
+				"action" : "startTexte"
 
 			},
 
@@ -46,7 +48,7 @@ export default class toolBarObjects  extends toolBar {
 
 				"color" :  "green",
 				"icon"  :  "date_range",
-				"action" : "startPhoto"
+				"action" : "startEvent"
 
 			},
 
@@ -54,7 +56,7 @@ export default class toolBarObjects  extends toolBar {
 
 				"color" :  "blue",
 				"icon"  :  "insert_link",
-				"action" : "startPhoto"
+				"action" : "startWebLink"
 
 			},
 
@@ -62,7 +64,7 @@ export default class toolBarObjects  extends toolBar {
 
 				"color" :  "blue",
 				"icon"  :  "looks_one",
-				"action" : "startPhoto"
+				"action" : "startValue"
 
 			},
 
@@ -82,5 +84,12 @@ export default class toolBarObjects  extends toolBar {
 
 		console.log('instartphoto');
 	}
+
+
+	startWebLink(){
+
+		console.log('instartweblink');
+	}
+
 
 }
