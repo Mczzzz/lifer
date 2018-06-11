@@ -182,13 +182,14 @@ export default class Objects{
     }
 
     this.ObjectToolBar.setContainerId(e.detail.id);
+    console.log("reset de leaf");
     this.ObjectToolBar.setLeafId("");
 
   }
 
 
   onChildAction(e){
-
+    console.log("set de leaf : " +e.detail.id);
     this.ObjectToolBar.setLeafId(e.detail.id);
 
     this.JstreeContainerObj.onMinimize();
