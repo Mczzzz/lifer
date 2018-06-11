@@ -5,12 +5,12 @@ import toolBar from '../common/toolBar.js';
 
 export default class toolBarObjects  extends toolBar {
 
-	constructor(){
+	constructor(ObjectInfosCollect){
 
 
 		super();
 
-
+		this.ObjectInfosCollect = ObjectInfosCollect;
 		this.init();
 	}
 
@@ -122,14 +122,17 @@ export default class toolBarObjects  extends toolBar {
 			  },
 			})
 			.then(name => {
-			 // console.log(name);
-			 	console.log($("#swal_wl_name").val());
-			 	console.log($("#swal_wl_url").val());
 
+			 	let formData = new FormData();
+
+		        formData.append('titre',$("#swal_wl_name").val());
+		        formData.append('name',$("#swal_wl_url").val());
+
+			 	this.ObjectInfosCollect.create(formData);
 			  // enregistrement de l'infos en base
 
 			  //on load la collection et onva enregistrer
-			  
+
 
 
 			})

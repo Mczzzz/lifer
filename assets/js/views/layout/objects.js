@@ -3,6 +3,7 @@ import Footer from './sections/footer.js';
 
 import ContainerCollect from '../../collections/ContainerCollection.js';
 import ObjectCollect from '../../collections/ObjectTreeCollection.js';
+import ObjectInfosCollect from '../../collections/ObjectInfosCollection.js';
 
 import JsTreeContainer from '../elements/objects/jsTreeContainer.js';
 import toolBar from '../elements/objects/toolBarObjects.js';
@@ -21,6 +22,8 @@ export default class Objects{
     this.TheContainerCollect = new ContainerCollect();
 
     this.TheObjectCollect = new ObjectCollect();
+
+    this.TheObjectInfosCollect = new ObjectInfosCollect();
 
 		this.activeCSS();
 
@@ -107,7 +110,7 @@ export default class Objects{
 
   toolbarHTML(){
 
-    let ObjectToolBar = new toolBar();
+    let ObjectToolBar = new toolBar(this.TheObjectInfosCollect);
 
   }
 
