@@ -107,7 +107,7 @@ export default class Objects{
 
   toolbarHTML(){
 
-    let ObjecttoolBar = new toolBarObjects();
+    let ObjecttoolBar = new toolBar();
 
 /*      let TheToolBar =  `<div id="toolbar">
                           <div class="fixed-action-btn horizontal ltr-lifer" style="position: absolute; display: inline-block; left: 0px;">
