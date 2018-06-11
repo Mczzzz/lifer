@@ -3,8 +3,9 @@ import Footer from './sections/footer.js';
 
 import ContainerCollect from '../../collections/ContainerCollection.js';
 import ObjectCollect from '../../collections/ObjectTreeCollection.js';
-import JsTreeContainer from '../elements/objects/jsTreeContainer.js';
 
+import JsTreeContainer from '../elements/objects/jsTreeContainer.js';
+import toolBar from '../elements/objects/toolBarObjects.js';
 
 export default class Objects{
 
@@ -106,7 +107,9 @@ export default class Objects{
 
   toolbarHTML(){
 
-      let TheToolBar =  `<div id="toolbar">
+    let ObjecttoolBar = new toolBarObjects();
+
+/*      let TheToolBar =  `<div id="toolbar">
                           <div class="fixed-action-btn horizontal ltr-lifer" style="position: absolute; display: inline-block; left: 0px;">
                             <a class="btn-floating btn-large">
                               <i class="material-icons">add</i>
@@ -140,9 +143,8 @@ export default class Objects{
                             </ul>
                           </div>
                       </div>`;
+*/
 
-      $('.section').append(TheToolBar);
-      $('#toolbar').hide();
   }
 
 
