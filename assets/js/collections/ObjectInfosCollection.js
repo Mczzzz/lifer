@@ -5,7 +5,7 @@ export default class ObjectInfosCollection {
 
 	constructor(){
 
-		this.apiPrefixe = "/object/infos";
+		this.apiPrefixe = "/object/infos/";
 
     this.SvcBackEndComm = new SvcBackEndComm();
 

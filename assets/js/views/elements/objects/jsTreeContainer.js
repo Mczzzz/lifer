@@ -37,6 +37,12 @@ export default class jsTreeContainer {
 		this.initBreadCrumb();
 
 		this.breadcrumbTargetDiv = $('#'+this.breadCrumbElt+this.suffixe);
+
+
+
+		this.containerId = "";
+		this.leafId = "";
+
 	}
 
 
