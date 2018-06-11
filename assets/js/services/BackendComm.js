@@ -22,7 +22,9 @@ export default class BackendComm {
 
 			console.log(AjaxSender);
 
-			return JSON.parse(AjaxSender);
+
+
+			return JSON.parse(AjaxSender.responseText);
 
 	}
 
