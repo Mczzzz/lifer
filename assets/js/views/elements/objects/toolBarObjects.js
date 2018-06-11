@@ -90,10 +90,22 @@ export default class toolBarObjects  extends toolBar {
 
 		console.log('instartweblink');
 
+		var div = document.createElement("div");
+
+		var nom = document.createElement("input");
+		url.type = "text";
+		div.append(url);
+
+		var url = document.createElement("input");
+		url.type = "url";
+		div.append(url);
+
 		swal({
 			  title : 'Insérez un lien Web',
-			  html: true,
-			  text: 'You can use <b>bold text</b>, ' + '<a href="//github.com">links</a> ' + 'and other HTML tags',
+			//  text: 'You can use <b>bold text</b>, ' + '<a href="//github.com">links</a> ' + 'and other HTML tags',
+
+			  content : div,
+
 
 			  button: {
 			    text: "Ajouter",
