@@ -92,7 +92,7 @@ export default class toolBarObjects  extends toolBar {
 
 		swal({
 			  text: 'Insérez un lien Web',
-			  content: ["input","input"],
+			  html: "<p>coucou</p>",
 			  button: {
 			    text: "Ajouter",
 			    closeModal: false,
