@@ -125,7 +125,11 @@ export default class toolBarObjects  extends toolBar {
 			 // console.log(name);
 			 	console.log($("#swal_wl_name").val());
 			 	console.log($("#swal_wl_url").val());
+
 			  // enregistrement de l'infos en base
+
+			  //on load la collection et onva enregistrer
+			  
 
 
 			})
