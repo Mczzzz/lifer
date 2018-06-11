@@ -110,7 +110,7 @@ export default class Objects{
 
   toolbarHTML(){
 
-    let ObjectToolBar = new toolBar(this.TheObjectInfosCollect);
+    this.ObjectToolBar = new toolBar(this.TheObjectInfosCollect);
 
   }
 
@@ -187,7 +187,7 @@ export default class Objects{
   onChildAction(e){
 
     this.JstreeContainerObj.onMinimize();
-    //$('#toolbar').show();
+    this.ObjectToolBar.show();
 
   }
 
@@ -195,7 +195,7 @@ export default class Objects{
   onParentAction(e){
 
     this.JstreeObjectsObj.onMinimize(true);
-    //$('#toolbar').hide();
+    this.ObjectToolBar.hide();
 
   }
 

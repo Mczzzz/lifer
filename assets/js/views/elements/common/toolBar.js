@@ -85,5 +85,12 @@ export default class toolBar {
 	}
 
 
+
+	show(){
+
+		 $('#'+this.id).show();
+
+	}
+
 	
 }
