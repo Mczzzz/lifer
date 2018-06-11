@@ -93,7 +93,7 @@ export default class toolBarObjects  extends toolBar {
 		//custom html for sweetAlert
 
 		var div = document.createElement("div");
-		div.class = 'col s9';
+		div.className = 'col s9';
 
 		var nom = document.createElement("input");
 		nom.type = "text";
