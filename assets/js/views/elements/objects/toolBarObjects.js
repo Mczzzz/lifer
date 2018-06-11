@@ -1,4 +1,4 @@
-import swal from 'sweetalert2';
+import swal from 'sweetalert';
 
 import toolBar from '../common/toolBar.js';
 
