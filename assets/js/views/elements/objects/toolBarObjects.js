@@ -92,7 +92,7 @@ export default class toolBarObjects  extends toolBar {
 
 		swal({
 			  text: 'Insérez un lien Web',
-			  content: "input",
+			  content: ["input","input"],
 			  button: {
 			    text: "Ajouter",
 			    closeModal: false,
@@ -101,7 +101,7 @@ export default class toolBarObjects  extends toolBar {
 			.then(name => {
 			  if (!name) throw null;
 			 
-			  return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
+			  // enregistrement de l'infos en base
 			})
 			.then(results => {
 			  return results.json();
