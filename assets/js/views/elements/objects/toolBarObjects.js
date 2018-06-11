@@ -93,7 +93,7 @@ export default class toolBarObjects  extends toolBar {
 		var div = document.createElement("div");
 
 		var nom = document.createElement("input");
-		url.type = "text";
+		nom.type = "text";
 		div.append(url);
 
 		var url = document.createElement("input");
