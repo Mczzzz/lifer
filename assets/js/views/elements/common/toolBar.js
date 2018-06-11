@@ -6,7 +6,7 @@ export default class toolBar {
 
 		this.id = 'toolbar';
 
-		this.myList = myList;
+		//this.myList = myList;
 
 		this.initHtml();
 
