@@ -220,7 +220,7 @@ export default class Objects{
   onChildAction(e){
 
     this.JstreeContainerObj.onMinimize();
-    $('#toolbar').show();
+    //$('#toolbar').show();
 
   }
 
@@ -228,7 +228,7 @@ export default class Objects{
   onParentAction(e){
 
     this.JstreeObjectsObj.onMinimize(true);
-    $('#toolbar').hide();
+    //$('#toolbar').hide();
 
   }
 
