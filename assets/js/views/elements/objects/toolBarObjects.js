@@ -75,4 +75,10 @@ export default class toolBarObjects  extends toolBar {
 
 	}
 
+
+	tartPhoto(){
+
+		console.log('instartphoto');
+	}
+
 }
