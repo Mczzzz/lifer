@@ -91,10 +91,10 @@ export default class toolBarObjects  extends toolBar {
 		console.log('instartweblink');
 
 		swal({
-			  text: 'Search for a movie. e.g. "La La Land".',
+			  text: 'Insérez un lien Web',
 			  content: "input",
 			  button: {
-			    text: "Search!",
+			    text: "Ajouter",
 			    closeModal: false,
 			  },
 			})
@@ -131,7 +131,7 @@ export default class toolBarObjects  extends toolBar {
 			  }
 			});
 
-		
+
 	}
 
 
