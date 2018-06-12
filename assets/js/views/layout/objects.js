@@ -68,8 +68,9 @@ export default class Objects{
 
 	headerHTML(){
 
-			new Header( $('body') );
+		let header = 	new Header();
 
+    header.addTags();
 	}
 		
 
