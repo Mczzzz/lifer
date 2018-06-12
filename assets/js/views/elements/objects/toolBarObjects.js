@@ -11,6 +11,7 @@ export default class toolBarObjects  extends toolBar {
 		super();
 
 		this.ObjectInfosCollect = ObjectInfosCollect;
+		this.ObjectInfosResourcesTypeCollect = ObjectInfosResourcesTypeCollect;
 		this.init();
 
 		this.containerId = "";
@@ -44,7 +45,7 @@ export default class toolBarObjects  extends toolBar {
 	ObjectsInitActions(){
 
 		//on load les éléments de la barre d'outils
-		let AllButtons = ObjectInfosResourcesTypeCollect.getList();
+		let AllButtons = this.ObjectInfosResourcesTypeCollect.getList();
 
 		let buttons = {};
 
