@@ -136,11 +136,12 @@ export default class jsTreeContainer {
 	getJstreeContainerElements(){
 
 
-        this.JsTreeContainer.jstree(true).settings.core.data = this.collection.getList(this.parentId);
+		let dataList = this.collection.getList(this.parentId);
+
+		console.log(dataList);
+
+        this.JsTreeContainer.jstree(true).settings.core.data = dataList;
         this.JsTreeContainer.jstree(true).refresh();
-        let idRootNode = this.JsTreeContainer.jstree(true).create_node('#','Mon Univers','first');
-        let RootNode = this.JsTreeContainer.jstree(true).get_node(idRootNode);
-        this.JsTreeContainer.jstree(true).c(RootNode, "0");
 	}
 
 
