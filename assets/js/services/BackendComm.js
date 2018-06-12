@@ -20,7 +20,7 @@ export default class BackendComm {
 		    });
 
 
-			console.log(AjaxSender);
+
 
 
 
