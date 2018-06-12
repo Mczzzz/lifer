@@ -184,7 +184,7 @@ export default class Objects{
 
     if(e.detail.id == 0) return true;
 
-    console.log(e);
+
 
     this.objectIdSelect = e.detail.id;
     //create or refresh the child
@@ -192,8 +192,7 @@ export default class Objects{
 
       this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'Child', this.TheObjectCollect,e.detail.id,e.detail.name);
 
-    }else{
-      console.log(e);
+
       this.JstreeObjectsObj.setParentId(e.detail.id,e.detail.name);
       this.JstreeObjectsObj.getJstreeContainerElements();
       this.JstreeObjectsObj.onMaximize();
@@ -201,15 +200,14 @@ export default class Objects{
     }
 
     this.ObjectToolBar.setContainerId(e.detail.id);
-    console.log("reset de leaf");
+
     this.ObjectToolBar.setLeafId("");
 
   }
 
 
   onChildAction(e){
-    console.log(e);
-    console.log("set de leaf : " +e.detail.id);
+
     this.ObjectToolBar.setLeafId(e.detail.id);
 
     this.JstreeContainerObj.onMinimize();
@@ -221,7 +219,7 @@ export default class Objects{
     if(e.detail.id == 0) return true;
 
     if('id' in e.detail){
-      console.log("on lance l'ajax");
+
       let ListInfos = this.TheObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);
 
     for (let k in ListInfos){
