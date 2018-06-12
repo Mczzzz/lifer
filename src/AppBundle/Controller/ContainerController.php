@@ -35,7 +35,9 @@ class ContainerController extends Controller
 
             $res = new \stdClass();
             $res->id = $object->getId();
-            $res->parent = ($object->getContainerIn()->getId() == 2 && $object->getId() == 2)?  "#" : $object->getContainerIn()->getId() ;
+         
+            $res->parent = (!is_object($object->getContainerIn()))?  "#" : $object->getContainerIn()->getId() ;
+          
             $res->text = $object->getName();
             $res->type = (strlen($object->getType()) > 0)? $object->getType() : "default";
             
