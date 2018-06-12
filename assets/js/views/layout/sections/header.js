@@ -29,7 +29,7 @@ export default class Header{
 	    		console.log($('body').val());
 	    		let html = $.parseHTML( tags );
 
-	    $('body').append(html);
+	    $('body').append("coucou");
 	}
 
 
