@@ -141,7 +141,7 @@ export default class jsTreeContainer {
         this.JsTreeContainer.jstree(true).refresh();
         let idRootNode = this.JsTreeContainer.jstree(true).create_node('#','Mon Univers','first');
         let RootNode = this.JsTreeContainer.jstree(true).get_node(idRootNode);
-        this.JsTreeContainer.jstree(true).set_id(RootNode, 0);
+        this.JsTreeContainer.jstree(true).set_id(RootNode, "0");
 	}
 
 
