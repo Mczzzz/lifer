@@ -14,7 +14,7 @@ use AppBundle\Entity\Objects;
 use AppBundle\Entity\Objects_tree;
 use AppBundle\Entity\Objects_infos;
 use AppBundle\Entity\Objects_infos_resources;
-use AppBundle\Entity\Objects_infos_resources_types;
+use AppBundle\Entity\Object_infos_resources_types;
 use AppBundle\Entity\Humans;
 
 class ObjectInfosController extends Controller
