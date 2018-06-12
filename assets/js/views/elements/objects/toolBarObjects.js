@@ -144,7 +144,7 @@ export default class toolBarObjects  extends toolBar {
 			 	let formData = new FormData();
 
 		        formData.append('titre',$("#swal_wl_name").val());
-		        formData.append('name',$("#swal_wl_url").val());
+		        formData.append('url',$("#swal_wl_url").val());
 				formData.append('ObjectId', this.containerId);
 				formData.append('ObjectLeafId', this.leafId);
 

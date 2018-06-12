@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 use AppBundle\Entity\Objects;
 use AppBundle\Entity\Objects_tree;
+use AppBundle\Entity\Objects_infos;
+use AppBundle\Entity\Objects_infos_resources;
 use AppBundle\Entity\Humans;
 
 class ObjectInfosController extends Controller
@@ -27,55 +29,54 @@ class ObjectInfosController extends Controller
 
         $request = Request::createFromGlobals();
 
-        $objectId = $request->request->get('container');
-        $parentId = $request->request->get('parent');
-        $nodeText = $request->request->get('node');
-                
+        $objectId     = $request->request->get('ObjectId');
+        $objectLeafId = $request->request->get('ObjectLeafId');
+        $name = $request->request->get('titre');
+        $url = $request->request->get('url');        
 
         $user = $this->getUser();
 
 
-
-
         $em = $this->getDoctrine()->getManager();
+
 
         $objet = $em->getRepository('AppBundle:Objects')->find($objectId);
         if(!$objet) return new Response("Pas d'objet ya un truc chelou dans le tree");
 
 
-         if(is_bool(strpos($parentId,'root_'))){
+
+         if(is_bool(strpos($objectLeafId,'root_'))){ //a voir si on garde ce if ?????
               
-            $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
+            $parent = $em->getRepository('AppBundle:Objects_tree')->find($objectLeafId);
             if(!$parent) return new Response("Pas de parents truc chelou");       
          }
 
 
-/*       $human = $em->getRepository('AppBundle:Humans')->findOneBy(array('idLifer' => $user->getId()));
-        if(!$human) return new Response("Pas d'humain truc chelou");*/
+        //on insere les infos d'objects
+
+        $object_infos = new Objects_infos();
+        
+        $object_infos->setName($name);
+
+        $object_infos->setObject($objet);
+
+        $object_infos->setCreator($user);
+
+        $em->persist($object_infos);
+
+        $em->flush();
+
+
+        //on crée la ressource
+        $object_infos_resources = new Objects_infos_resources();
 
         
 
-        $object_tree = new Objects_tree();
-        $object_tree->setName($nodeText);
-
-        $object_tree->setObject($objet);
-
-        if(is_bool(strpos($parentId,'root_'))){
-              
-            $object_tree->setParent($parent);
-        }
-
-        $object_tree->setCreator($user);
-
-        $em->persist($object_tree);
-
-        // actually executes the queries (i.e. the INSERT query)
-        $em->flush();
 
 
         $res = new \stdClass();
         $res->error = 0;
-        $res->data = $object_tree->getId();
+        $res->data = $object_infos->getId();
 
         return new Response(json_encode($res));
 
