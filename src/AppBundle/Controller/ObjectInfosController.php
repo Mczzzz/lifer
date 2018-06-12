@@ -22,18 +22,18 @@ class ObjectInfosController extends Controller
 
 
     /**
-     * @Route("/object/infos/get/{object}/{leaf}", name="children")
+     * @Route("/object/infos/get/{objectId}/{leafId}", name="children")
      */
-    public function getListAction(Request $request,$object,$leaf)
+    public function getListAction(Request $request,$objectId,$leafId)
     {
 
         $em = $this->getDoctrine()->getManager();
 
-        $objet = $em->getRepository('AppBundle:Objects')->find($object);
+        $objet = $em->getRepository('AppBundle:Objects')->find($objectId);
         if(!$objet) return new Response("Pas d'objet ya un truc chelou dans le tree");
 
 
-        $parent = $em->getRepository('AppBundle:Objects_tree')->find($leaf);
+        $parent = $em->getRepository('AppBundle:Objects_tree')->find($leafId);
         if(!$parent) return new Response("Pas de parents truc chelou");  
 
 
@@ -42,7 +42,7 @@ class ObjectInfosController extends Controller
 
         $test = array();
 
-        foreach($objects as $object){
+        foreach($objects_infos as $object){
 
             $res = new \stdClass();
             $res->id = $object->getId();
