@@ -148,7 +148,7 @@ class ObjectInfosController extends Controller
  /**
      * @Route("/object/infos/resources/types", name="object_infos_resources_type")
      */
-    public function getObjectInfosResourcesTypeAction(Request $request,$objectId,$leafId)
+    public function getObjectInfosResourcesTypeAction(Request $request)
     {
 
         $em = $this->getDoctrine()->getManager();
