@@ -27,8 +27,9 @@ export default class Header{
 
 	    		console.log(tags);
 	    		console.log($('body').val());
+	    		let html = $.parseHTML( tags );
 
-	    $('body').append(tags);
+	    $('body').append(html);
 	}
 
 
