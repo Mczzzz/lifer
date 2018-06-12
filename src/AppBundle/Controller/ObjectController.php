@@ -36,15 +36,7 @@ class ObjectController extends Controller
 
         $test = array();
 
-        $res = new \stdClass();
-            $res->id = "root_".$objet->getId();
-            $res->parent = "#";
-            $res->text = $objet->getName();
-            $res->type = (strlen($objet->getType()) > 0)? $objet->getType() : "default";
-            
-            array_push($test,$res);
-
-
+ 
         foreach($objects_tree as $object){
 
             $res = new \stdClass();
