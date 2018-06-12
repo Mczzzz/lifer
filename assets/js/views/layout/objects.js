@@ -134,6 +134,8 @@ export default class Objects{
 
     //je charge l'objet jstree standard
     this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer,'Parent', this.TheContainerCollect);
+
+    this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'Child', this.TheObjectCollect,0,"null");
    
     //trig me ;)
     //this.JstreeContainerObj.trigMe('onSelect', 'ContainerSelect');

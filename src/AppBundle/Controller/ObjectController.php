@@ -249,4 +249,57 @@ class ObjectController extends Controller
 
 
 
+    /**
+     * @Route("/object/tree/dnd", name="object_tree_dnd")
+     * @Method("POST")
+     */
+    public function MoveAction(Request $request)
+    {
+        $request = Request::createFromGlobals();
+        $node = $request->request->get('node');
+        $parent = $request->request->get('parent');
+
+        $em = $this->getDoctrine()->getManager();
+
+        $res = new \stdClass();
+        $res->error = 0;
+
+        $object = $em->getRepository('AppBundle:Objects_tree')->find($node);
+
+        if(!$object){
+
+            $res->error = 1;
+            $res->data = "No Container";
+            return new Response(json_encode($res));
+
+        }
+
+        if($parent > 0){
+
+            $parent = $em->getRepository('AppBundle:Objects_tree')->find($parent);
+
+            if(!$parent){
+                $res->error = 2;
+                $res->data = "Orphelin";
+                return new Response(json_encode($res));
+                
+            }
+
+        }else{
+            $parent = null;
+        }
+
+        $object->setContainerIn($parent);
+
+        $em->persist($object);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $em->flush();
+
+
+        return new Response(json_encode($res));
+
+
+    }
+
 }
