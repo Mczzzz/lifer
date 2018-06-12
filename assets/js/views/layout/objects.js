@@ -215,8 +215,11 @@ export default class Objects{
 
     //listing des infos
     $('#leafInfos').empty();
+    
+    if(e.detail.id == 0) return true;
+
     let ListInfos = this.TheObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);
-    console.log(ListInfos);
+
     for (let k in ListInfos){
       $('#leafInfos').append(ListInfos[k].text+'<br />');
 
