@@ -62,7 +62,7 @@ class Objects_infos_resources
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="ts_update", type="datetimetz")
+     * @ORM\Column(name="ts_update", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
      */
     private $tsUpdate;
 
