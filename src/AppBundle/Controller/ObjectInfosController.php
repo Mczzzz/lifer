@@ -70,8 +70,19 @@ class ObjectInfosController extends Controller
         //on crée la ressource
         $object_infos_resources = new Objects_infos_resources();
 
-        
+        $object_infos_resources->setText($url);
 
+        $object_infos_resources->setTypeId(1);
+
+        $object_infos_resources->setObject($objet);
+
+        $object_infos_resources->setObjectTree($parent);
+
+        $object_infos_resources->setObjectInfos($object_infos);
+
+        $em->persist($object_infos_resources);
+
+        $em->flush();
 
 
         $res = new \stdClass();
