@@ -5,6 +5,7 @@ export default class Header{
 	
 		this.backGroundColor =  'gradient-45deg-purple-deep-orange';
 
+		this.addTags();
 	}
 
 
