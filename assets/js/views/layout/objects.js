@@ -4,6 +4,7 @@ import Footer from './sections/footer.js';
 import ContainerCollect from '../../collections/ContainerCollection.js';
 import ObjectCollect from '../../collections/ObjectTreeCollection.js';
 import ObjectInfosCollect from '../../collections/ObjectInfosCollection.js';
+import ObjectInfosResourcesTypeCollect from '../../collections/ObjectInfosResourcesTypeCollection.js';
 
 import JsTreeContainer from '../elements/objects/jsTreeContainer.js';
 import toolBar from '../elements/objects/toolBarObjects.js';
@@ -24,6 +25,8 @@ export default class Objects{
     this.TheObjectCollect = new ObjectCollect();
 
     this.TheObjectInfosCollect = new ObjectInfosCollect();
+
+    this.TheObjectInfosResourcesTypeCollect = new ObjectInfosResourcesTypeCollect();
 
 		this.activeCSS();
 
@@ -110,7 +113,7 @@ export default class Objects{
 
   toolbarHTML(){
 
-    this.ObjectToolBar = new toolBar(this.TheObjectInfosCollect);
+    this.ObjectToolBar = new toolBar(this.TheObjectInfosCollect,this.TheObjectInfosResourcesTypeCollect);
     this.ObjectToolBar.hide();
   }
 

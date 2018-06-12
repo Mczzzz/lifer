@@ -5,7 +5,7 @@ import toolBar from '../common/toolBar.js';
 
 export default class toolBarObjects  extends toolBar {
 
-	constructor(ObjectInfosCollect){
+	constructor(ObjectInfosCollect,ObjectInfosResourcesTypeCollect){
 
 
 		super();
@@ -43,15 +43,30 @@ export default class toolBarObjects  extends toolBar {
 
 	ObjectsInitActions(){
 
+		//on load les éléments de la barre d'outils
+		let AllButtons = ObjectInfosResourcesTypeCollect.getList();
 
-		let buttons = {
+		let buttons = {};
+
+		for(let k in AllButtons){
+			let eachButton = {};
+
+			eachButton.color = AllButtons[k].color;
+
+			eachButton.icon = AllButtons[k].picto;
+
+			buttons[AllButtons[k].name] = eachButton;
+		}
+
+		console.log(buttons);
+
+		let bouttons = {
 
 			"photo" : {
 
 				"color" :  "grey", //red
 				"icon"  :  "camera_alt",
 				"action" : "startPhoto",
-				""
 
 			},
 
