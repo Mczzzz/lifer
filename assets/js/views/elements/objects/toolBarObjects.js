@@ -50,7 +50,8 @@ export default class toolBarObjects  extends toolBar {
 
 				"color" :  "grey", //red
 				"icon"  :  "camera_alt",
-				"action" : "startPhoto"
+				"action" : "startPhoto",
+				""
 
 			},
 
@@ -62,13 +63,13 @@ export default class toolBarObjects  extends toolBar {
 
 			},
 
-			"event" : {
+/*			"event" : {
 
 				"color" :  "grey", // green
 				"icon"  :  "date_range",
 				"action" : "startEvent"
 
-			},
+			},*/
 
 			"weblink" : {
 

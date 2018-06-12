@@ -14,6 +14,7 @@ use AppBundle\Entity\Objects;
 use AppBundle\Entity\Objects_tree;
 use AppBundle\Entity\Objects_infos;
 use AppBundle\Entity\Objects_infos_resources;
+use AppBundle\Entity\Objects_infos_resources_types;
 use AppBundle\Entity\Humans;
 
 class ObjectInfosController extends Controller
@@ -139,5 +140,39 @@ class ObjectInfosController extends Controller
 
 
 
+    ////////////////////////////////////////
+    //// API infos ressources type
+    ////////////////////////////////////////
+
+
+ /**
+     * @Route("/object/infos/resources/types", name="object_infos_resources_type")
+     */
+    public function getObjectInfosResourcesTypeAction(Request $request,$objectId,$leafId)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $resourcesTypes = $em->getRepository('AppBundle:Objects_infos_resources_types')->findBy(array('enable' => true));
+        if(!$resourcesTypes) return new Response("Pas d'objet ya un truc chelou dans le tree");
+
+
+           $test = array();
+
+        foreach($resourcesTypes as $types){
+
+            $res = new \stdClass();
+            $res->id = $types->getId();
+            $res->name = $types->getName();
+            $res->picto = $types->getPicto();
+            $res->color = $types->getColor();
+
+            array_push($test,$res);
+
+        }
+
+        return new response(json_encode($test));
+
+    }
 
 }

@@ -28,6 +28,29 @@ class Object_infos_resources_types
      */
     private $name;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Picto", type="string", length=255, unique=false, nullable=true)
+     */
+    private $picto;
+
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="Enable", type="boolean", nullable=true)
+     */
+    private $enable;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Color", type="string", length=255, unique=false, nullable=true)
+     */
+    private $color;
+
 
     /**
      * Get id
@@ -61,6 +84,74 @@ class Object_infos_resources_types
     public function getName()
     {
         return $this->name;
+    }
+
+
+
+    /**
+     * @return string
+     */
+    public function getPicto()
+    {
+        return $this->picto;
+    }
+
+    /**
+     * @param string $picto
+     *
+     * @return self
+     */
+    public function setPicto($picto)
+    {
+        $this->picto = $picto;
+
+        return $this;
+    }
+
+
+
+
+
+    /**
+     * @return boolean
+     */
+    public function isEnable()
+    {
+        return $this->enable;
+    }
+
+    /**
+     * @param boolean $enable
+     *
+     * @return self
+     */
+    public function setEnable($enable)
+    {
+        $this->enable = $enable;
+
+        return $this;
+    }
+
+
+
+    /**
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param string $color
+     *
+     * @return self
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+
+        return $this;
     }
 }
 
