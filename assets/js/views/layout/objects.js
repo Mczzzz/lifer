@@ -46,14 +46,23 @@ export default class Objects{
 
 	getHTMLPage(){
 
-		let page = this.headerHTML();
+		this.headerHTML();
 		
-		page += this.bodyHTML();	
+		this.bodyHTML();	
 
-		page += this.footerHTML();
+		this.footerHTML();
 
-		document.body.innerHTML = page;
+    this.setCustomDesign();
+
 	}
+
+
+  setCustomDesign(){
+
+
+
+  }
+
 
 
 
@@ -61,14 +70,13 @@ export default class Objects{
 
 				let header = new Header();
 
-				return header.addTags();
 	}
 		
 
 
 	bodyHTML(){
 
-		return `<div id="main">
+		let body =  `<div id="main">
 
 			        <div class="wrapper">
 
@@ -98,6 +106,7 @@ export default class Objects{
 
 		    	</div>`;
 
+    $('body').append(body);
 
 	}
 
@@ -106,7 +115,6 @@ export default class Objects{
 
         let footer = new Footer();
 
-        return footer.addTags();
   }
 
 

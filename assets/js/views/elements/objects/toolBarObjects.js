@@ -63,52 +63,6 @@ export default class toolBarObjects  extends toolBar {
 			buttons[AllButtons[k].name] = eachButton;
 		}
 
-		console.log(buttons);
-
-		let bouttons = {
-
-			"photo" : {
-
-				"color" :  "grey", //red
-				"icon"  :  "camera_alt",
-				"action" : "startPhoto",
-
-			},
-
-			"texte" : {
-
-				"color" :  "grey", // yellow darken-1
-				"icon"  :  "format_quote",
-				"action" : "startTexte"
-
-			},
-
-/*			"event" : {
-
-				"color" :  "grey", // green
-				"icon"  :  "date_range",
-				"action" : "startEvent"
-
-			},*/
-
-			"weblink" : {
-
-				"color" :  "blue",
-				"icon"  :  "insert_link",
-				"action" : "startWebLink"
-
-			},
-
-			"value" : {
-
-				"color" :  "grey", //blue
-				"icon"  :  "looks_one",
-				"action" : "startValue"
-
-			},
-
-		};
-
 	
 
 	this.alimentList(buttons);
