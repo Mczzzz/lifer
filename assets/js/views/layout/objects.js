@@ -208,6 +208,7 @@ export default class Objects{
 
 
   onChildAction(e){
+    console.log(e);
     console.log("set de leaf : " +e.detail.id);
     this.ObjectToolBar.setLeafId(e.detail.id);
 
