@@ -223,7 +223,7 @@ export default class Objects{
       let ListInfos = this.TheObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);
 
     for (let k in ListInfos){
-      $('#leafInfos').append(ListInfos[k].text+'<br />');
+      $('#leafInfos').append(ListInfos[k].name+'<br />');
 
     }
     
