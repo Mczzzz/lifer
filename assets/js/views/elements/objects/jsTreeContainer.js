@@ -154,7 +154,7 @@ export default class jsTreeContainer {
 		if(this.parentId != false) RootName = this.parentName;
 
 		console.log(dataList);
-		if(dataList != ""){
+		if(!('error' in dataList)){
 
 			let MyUnivers = {'id': 0, 'parent': "#", 'text': RootName, type: ""};
 			dataList.unshift(MyUnivers);
