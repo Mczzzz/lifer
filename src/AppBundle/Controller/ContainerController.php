@@ -266,12 +266,17 @@ class ContainerController extends Controller
          $object = $em->getRepository('AppBundle:Objects')->find($node);
         if(!$object) return new Response("Pas d'objet ya un truc chelou");
 
-        $parent = $em->getRepository('AppBundle:Objects')->find($parent);
-        if(!$parent) return new Response("Pas de parents truc chelou");
-
+        if($parent > 0){
+            $parent = $em->getRepository('AppBundle:Objects')->find($parent);
+            if(!$parent) return new Response("Pas de parents truc chelou");
+         }else{
+            $parent = null;
+         }
         //on va chercher les enfants accrochés pour les remettre au parent direct
         $childs = $em->getRepository('AppBundle:Objects')->findBy(array('containerIn' => $node));
          
+
+
         if($childs){
 
             foreach($childs as $child){
