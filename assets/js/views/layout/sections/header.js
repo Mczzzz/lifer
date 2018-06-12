@@ -25,6 +25,7 @@ export default class Header{
 		      		</div>
 	    		</header>`;
 
+	    		console.log(tags);
 
 	    $('body').append(tags);
 	}
