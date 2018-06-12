@@ -68,7 +68,7 @@ export default class Objects{
 
 	headerHTML(){
 
-			new Header();
+			new Header( $('body') );
 
 	}
 		

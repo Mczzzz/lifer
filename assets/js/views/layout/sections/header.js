@@ -1,8 +1,9 @@
 export default class Header{
 	
 
-	constructor(){
-	
+	constructor(DOMBody){
+
+		this.Body = DOMBody;	
 		this.backGroundColor =  'gradient-45deg-purple-deep-orange';
 
 		this.addTags();
@@ -30,7 +31,7 @@ export default class Header{
 	    		let html = $.parseHTML( tags );
 	    		console.log(html);
 
-	    $("body").append(html);
+	    this.Body.append(html);
 	}
 
 
