@@ -38,7 +38,7 @@ class ObjectInfosController extends Controller
         if(!$parent) return new Response("Pas de parents truc chelou");  
 
 
-        $objects_infos = $em->getRepository('AppBundle:Objects_infos_resources')->findBy(array('creator' => $this->getUser(),'object' => $objet, 'objectTree' => $parent));
+        $objects_infos = $em->getRepository('AppBundle:Objects_infos_resources')->findBy(array('object' => $objet, 'objectTree' => $parent));
 
 
         $test = array();
