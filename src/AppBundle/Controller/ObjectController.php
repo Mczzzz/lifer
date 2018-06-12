@@ -28,7 +28,17 @@ class ObjectController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $objet = $em->getRepository('AppBundle:Objects')->find($id);
-        if(!$objet) return new Response("Pas d'objet ya un truc chelou");
+        
+        if(!$objet) {
+
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }
+
 
 
         $objects_tree = $em->getRepository('AppBundle:Objects_tree')->findBy(array('object' => $objet->getId()));
