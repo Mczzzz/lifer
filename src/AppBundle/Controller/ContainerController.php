@@ -156,9 +156,11 @@ class ContainerController extends Controller
 
          $em = $this->getDoctrine()->getManager();
 
+         if($parent > 0){
+            $parent = $em->getRepository('AppBundle:Objects')->find($parent);
+            if(!$parent) return new Response("Pas de parents truc chelou");
+         }
 
-        $parent = $em->getRepository('AppBundle:Objects')->find($parent);
-        if(!$parent) return new Response("Pas de parents truc chelou");
 
        $human = $em->getRepository('AppBundle:Humans')->findOneBy(array('idLifer' => $user->getId()));
         if(!$human) return new Response("Pas d'humain truc chelou");
@@ -171,8 +173,14 @@ class ContainerController extends Controller
 
         $object->setOwner($human);
         $object->setUsufruct($human);
-        $object->setContainerStore($parent);
-        $object->setContainerIn($parent);
+        if($parent > 0){
+            $object->setContainerStore($parent);
+            $object->setContainerIn($parent);
+        }else{
+            $object->setContainerStore(null);
+            $object->setContainerIn(null);
+        }
+
         $object->setCreator($user);
 
         $em->persist($object);
