@@ -197,7 +197,8 @@ export default class Objects{
     this.ObjectToolBar.show();
 
     //listing des infos
-    let ListInfos = this.ObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);
+
+    let ListInfos = this.TheObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);
 
     $('#infos').append(ListInfos);
 
