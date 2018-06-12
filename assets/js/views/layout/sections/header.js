@@ -16,7 +16,7 @@ export default class Header{
 						<nav id="headerBackground"class="navbar-color `+this.backGroundColor+` gradient-shadow">
 							<div class="nav-wrapper">
 
-
+<i class="material-icons">widgets</i>
 
 
 							</div>
