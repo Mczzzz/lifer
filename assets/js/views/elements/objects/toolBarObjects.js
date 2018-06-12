@@ -56,6 +56,10 @@ export default class toolBarObjects  extends toolBar {
 
 			eachButton.icon = AllButtons[k].picto;
 
+			eachButton.id = AllButtons[k].id;
+
+			eachButton.action = 'start'+ AllButtons[k].name[0].toUpperCase() + AllButtons[k].name.slice(1);
+
 			buttons[AllButtons[k].name] = eachButton;
 		}
 
