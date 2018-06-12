@@ -153,7 +153,7 @@ class ObjectInfosController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $resourcesTypes = $em->getRepository('AppBundle:Objects_infos_resources_types')->findBy(array('enable' => true));
+        $resourcesTypes = $em->getRepository('AppBundle:Object_infos_resources_types')->findBy(array('enable' => true));
         if(!$resourcesTypes) return new Response("Pas d'objet ya un truc chelou dans le tree");
 
 
