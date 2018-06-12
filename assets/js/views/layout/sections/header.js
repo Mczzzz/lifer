@@ -10,15 +10,21 @@ export default class Header{
 
 	addTags(){
 
-		return	`<header id="header" class="page-topbar">
+		let html = 	`<header id="header" class="page-topbar">
 					<div class="navbar-fixed">
 						<nav id="headerBackground"class="navbar-color `+this.backGroundColor+` gradient-shadow">
 							<div class="nav-wrapper">
+
+
+
+
 							</div>
 		        		</nav>
 		      		</div>
 	    		</header>`;
 
+
+	    $('body').append(html);
 	}
 
 

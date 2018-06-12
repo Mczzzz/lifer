@@ -68,9 +68,8 @@ export default class Objects{
 
 	headerHTML(){
 
-		let header = 	new Header();
+			new Header();
 
-    header.addTags();
 	}
 		
 

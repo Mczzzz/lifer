@@ -7,9 +7,9 @@ export default class Home{
 
 	getHTMLPage(){
 
-		let page = this.headerHTML();
+		this.headerHTML();
 		
-		page += this.bodyHTML();
+		let page = this.bodyHTML();
 
 		//floating elements
 		page += this.floatingHTML();
@@ -23,9 +23,9 @@ export default class Home{
 
 	headerHTML(){
 
-				let header = new Header();
+		new Header();
 
-				return header.addTags();
+		//		return header.addTags();
 	}
 		
 
