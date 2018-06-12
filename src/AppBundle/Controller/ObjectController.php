@@ -202,9 +202,14 @@ class ObjectController extends Controller
          $object = $em->getRepository('AppBundle:Objects_tree')->find($node);
         if(!$object) return new Response("Pas d'objet ya un truc chelou");
 
-        if(is_bool(strpos($parentId,'root_'))){
+        if($parentId > 0){
+
             $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
             if(!$parent) return new Response("Pas de parents truc chelou");
+        
+        }else{
+
+            $parent = null;
         }
 
         //on va chercher les enfants accrochés pour les remettre au parent direct
@@ -215,12 +220,9 @@ class ObjectController extends Controller
 
             foreach($childs as $child){
 
-                if(is_bool(strpos($parentId,'root_'))){
-                    $child->setParent($parent);
+
+                $child->setParent($parent);
                     
-                }else{
-                    $child->setParent(null);
-                }
 
                 $em->persist($child);
             }
