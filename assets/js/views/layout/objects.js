@@ -168,6 +168,7 @@ export default class Objects{
 
   onContainerSelected(e){
 
+    this.objectIdSelect = e.detail.id;
     //create or refresh the child
     if( this.JstreeObjectsObj === undefined ){
 
@@ -194,6 +195,11 @@ export default class Objects{
 
     this.JstreeContainerObj.onMinimize();
     this.ObjectToolBar.show();
+
+    //listing des infos
+    let ListInfos = this.ObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);
+
+    $('#infos').append(ListInfos);
 
   }
 

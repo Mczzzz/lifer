@@ -13,9 +13,9 @@ export default class ObjectInfosCollection {
 	}
 
 
-  getList(id){
+  getList(objectId,leafId){
 
-    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get/'+ id);
+    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get/'+ objectId + '/' + leafId);
 
     return result;
 
