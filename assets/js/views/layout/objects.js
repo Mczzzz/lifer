@@ -69,7 +69,7 @@ export default class Objects{
 	headerHTML(){
 
 		let header = new Header();
-    header.setBackgroundColor('gradient-45deg-cyan-light-green');
+    header.setBackgroundColor('gradient-45deg-green-teal');
 
 	}
 		
