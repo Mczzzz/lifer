@@ -115,6 +115,7 @@ export default class Objects{
   footerHTML(){
 
         let footer = new Footer();
+        footer.setBackgroundColor('gradient-45deg-green-teal');
 
   }
 
