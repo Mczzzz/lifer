@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use AppBundle\Entity\Objects;
 use AppBundle\Entity\Objects_tree;
+use AppBundle\Entity\Objects_infos;
 use AppBundle\Entity\Humans;
 
 class ObjectController extends Controller
@@ -216,9 +217,10 @@ class ObjectController extends Controller
 
 
 
+    //TODO : il faut supprimer avant les infos relatives
 
 
-/**
+    /**
      * @Route("/object/tree/delete", name="object_tree_delete")
      * @Method("POST")
      */
@@ -236,12 +238,26 @@ class ObjectController extends Controller
 
 
          $object = $em->getRepository('AppBundle:Objects_tree')->find($node);
-        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+         
+         if(!$object){
+
+            $res->error = 1;
+            $res->data = "No Container";
+            return new Response(json_encode($res));
+
+        }
 
         if($parentId > 0){
 
             $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
-            if(!$parent) return new Response("Pas de parents truc chelou");
+           
+           if(!$parent){
+
+            $res->error = 2;
+            $res->data = "No Container";
+            return new Response(json_encode($res));
+
+        }
         
         }else{
 
@@ -265,6 +281,23 @@ class ObjectController extends Controller
 
             $em->flush();
         }
+
+
+        //s'il y a des infos on les détruits
+         $childsInfos = $em->getRepository('AppBundle:Objects_infos')->findBy(array('objectTree' => $node));
+
+         if($childsInfos){
+
+            foreach($childsInfos as $childI){
+
+
+                $em->remove($childI);
+                
+            }
+
+            $em->flush();
+        }
+
 
 
         //maintenant on peut detruire la node sans se prendre de probleme de clef etrangere
