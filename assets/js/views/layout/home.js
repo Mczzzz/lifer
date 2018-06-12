@@ -95,7 +95,7 @@ export default class Home{
 		              </ul>
 		            </div>`;
 
-		$('body').append(body);
+		$('body').append(floating);
 
 	}
 
