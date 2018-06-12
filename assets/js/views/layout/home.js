@@ -10,6 +10,7 @@ export default class Home{
 
 
 		this.getHTMLPage();
+		this.activeJs();
 	}
 
 
@@ -38,7 +39,7 @@ export default class Home{
 
 	bodyHTML(){
 
-		return `
+		let body =  `
 			<div id="main">
 		      <!-- START WRAPPER -->
 		      <div class="wrapper">
@@ -61,6 +62,7 @@ export default class Home{
 		      <!-- END WRAPPER -->
 		    </div>`;
 
+		$('body').append(body);
 
 	}
 
@@ -70,7 +72,7 @@ export default class Home{
 
 	floatingHTML(){
 
-		return `<div class="fixed-action-btn " style="bottom: 19px; left: 19px; width: 60px">
+		let floating =  `<div class="fixed-action-btn " style="bottom: 19px; left: 19px; width: 60px">
 		              <a class="btn-floating btn-large gradient-45deg-light-blue-cyan gradient-shadow">
 		                <i class="material-icons">add</i>
 		              </a>
@@ -93,13 +95,13 @@ export default class Home{
 		              </ul>
 		            </div>`;
 
+		$('body').append(body);
+
 	}
 
 	footerHTML(){
 
-				let footer = new Footer();
-
-				return footer.addTags();
+		new Footer();
 	}
 
 
