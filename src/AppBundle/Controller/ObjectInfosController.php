@@ -20,6 +20,47 @@ class ObjectInfosController extends Controller
 {
 
 
+
+    /**
+     * @Route("/object/infos/get/{object}/{leaf}", name="children")
+     */
+    public function getListAction(Request $request,$objectId,$leafId)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $objet = $em->getRepository('AppBundle:Objects')->find($objectId);
+        if(!$objet) return new Response("Pas d'objet ya un truc chelou dans le tree");
+
+
+        $parent = $em->getRepository('AppBundle:Objects_tree')->find($leafId);
+        if(!$parent) return new Response("Pas de parents truc chelou");  
+
+
+        $objects_infos = $em->getRepository('AppBundle:Objects_infos')->findBy(array('creator' => $this->getUser(),'object' => $objet, 'objectTree' => $parent ));
+
+
+        $test = array();
+
+        foreach($objects as $object){
+
+            $res = new \stdClass();
+            $res->id = $object->getId();
+            $res->text = $object->getName();
+            
+            array_push($test,$res);
+
+        }
+
+        return new response(json_encode($test));
+
+    }
+
+
+
+
+
+
     /**
      * @Route("/object/infos/add", name="object_infos_add")
      * @Method("POST")
@@ -59,6 +100,8 @@ class ObjectInfosController extends Controller
         $object_infos->setName($name);
 
         $object_infos->setObject($objet);
+
+        $object_infos->setObjectTree($parent);
 
         $object_infos->setCreator($user);
 
