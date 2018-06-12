@@ -47,7 +47,7 @@ export default class jsTreeContainer {
 
 
 	initJstreeContainer(){
-			console.log('initJstreeContainer');
+
 
 			let HtmlElementTree = this.JsTreeContainer;
 
@@ -91,8 +91,7 @@ export default class jsTreeContainer {
 			                "separator_after": false,
 			                "label": "Supprimer",
 			                "action": function (obj) {
-			                	console.log('on passe ???');
-			                	console.log($node);
+
 			                	HtmlElementTree.trigger( "deleteNode", [{'node' : $node}] );
 			                	}
 			                }
@@ -141,7 +140,7 @@ export default class jsTreeContainer {
         this.JsTreeContainer.jstree(true).refresh();
         let idRootNode = this.JsTreeContainer.jstree(true).create_node('#','Mon Univers','first');
         let RootNode = this.JsTreeContainer.jstree(true).get_node(idRootNode);
-        this.JsTreeContainer.jstree(true).set_id(RootNode, "0");
+        this.JsTreeContainer.jstree(true).c(RootNode, "0");
 	}
 
 
@@ -292,7 +291,7 @@ export default class jsTreeContainer {
 
 	//add All Events on Jstree
 	initEventsJsTree(){
-		console.log("on init les event sur le jstree");
+
 		this.JsTreeContainer.on("select_node.jstree", (e,data)=>this.onSelectJsTree(e,data));
 		this.JsTreeContainer.on("rename_node.jstree", (e,data)=>this.onRenameJsTree(e,data));
 		this.JsTreeContainer.on("create_node.jstree", (e,data)=>this.onCreateJsTree(e,data));
@@ -384,9 +383,7 @@ export default class jsTreeContainer {
 
 	onDeleteJsTree(e,data){
 
-	console.log('in delete');
-	console.log(e);
-	console.log(data);
+
 
 	let JstreeHTML = this.jsTreeContainer;
 
@@ -459,7 +456,7 @@ export default class jsTreeContainer {
         formData.append('parent'  ,data.parent);
 
 		let result = this.collection.create(formData);
-		console.log(result);
+
 		this.JsTreeContainer.jstree(true).set_id(data.node, result.data);
 
 
