@@ -221,7 +221,7 @@ export default class Objects{
     if(e.detail.id == 0) return true;
 
     if('id' in e.detail){
-
+      console.log("on lance l'ajax");
       let ListInfos = this.TheObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);
 
     for (let k in ListInfos){
