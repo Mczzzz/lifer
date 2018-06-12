@@ -181,6 +181,8 @@ export default class Objects{
 
   onContainerSelected(e){
 
+    if(e.detail.id == 0) return true;
+
     this.objectIdSelect = e.detail.id;
     //create or refresh the child
     if( this.JstreeObjectsObj === undefined ){
