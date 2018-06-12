@@ -138,7 +138,14 @@ export default class jsTreeContainer {
 
 		let dataList = this.collection.getList(this.parentId);
 
-		console.log(dataList);
+		for (let k in dataList){
+
+			if (dataList[k].id == '#') dataList[k].id = 0;
+
+		}
+
+		let MyUnivers = {'id': 0, 'parent': "#", 'text': "Mon Univers", type: ""};
+		dataList.unshift(MyUnivers);
 
         this.JsTreeContainer.jstree(true).settings.core.data = dataList;
         this.JsTreeContainer.jstree(true).refresh();
