@@ -220,13 +220,20 @@ export default class Objects{
 
     if(e.detail.id == 0) return true;
 
-    let ListInfos = this.TheObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);
+    if('id' in e.detail){
+
+      let ListInfos = this.TheObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);
 
     for (let k in ListInfos){
       $('#leafInfos').append(ListInfos[k].text+'<br />');
 
     }
     
+
+
+    }
+
+
 
   }
 
