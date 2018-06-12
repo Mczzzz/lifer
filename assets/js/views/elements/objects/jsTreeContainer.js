@@ -159,14 +159,16 @@ export default class jsTreeContainer {
 			let MyUnivers = {'id': 0, 'parent': "#", 'text': RootName, type: ""};
 			dataList.unshift(MyUnivers);
 
+			this.JsTreeContainer.jstree(true).settings.core.data = dataList;
+        	this.JsTreeContainer.jstree(true).refresh();
+
 
 		}
 
 
 		
 
-        this.JsTreeContainer.jstree(true).settings.core.data = dataList;
-        this.JsTreeContainer.jstree(true).refresh();
+
 	}
 
 
