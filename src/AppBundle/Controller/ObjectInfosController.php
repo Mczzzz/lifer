@@ -38,7 +38,7 @@ class ObjectInfosController extends Controller
         if(!$parent) return new Response("Pas de parents truc chelou");  
 
 
-        $objects_infos = $em->getRepository('AppBundle:Objects_infos')->findBy(array('creator' => $this->getUser(),'object' => $objet, 'objectTree' => $parent ));
+        $objects_infos = $em->getRepository('AppBundle:Objects_infos_resources')->findBy(array('creator' => $this->getUser(),'object' => $objet, 'objectTree' => $parent));
 
 
         $test = array();
@@ -46,8 +46,10 @@ class ObjectInfosController extends Controller
         foreach($objects_infos as $object){
 
             $res = new \stdClass();
-            $res->id = $object->getId();
-            $res->text = $object->getName();
+            $res->infos = new \stdClass();
+            $res->infos->id = $object->getObjectInfos()->getId();
+            $res->infos->name = $object->getObjectInfos()->getName();
+            $res->infos->update = $object->getObjectInfos()->getUpdate();
             
             array_push($test,$res);
 

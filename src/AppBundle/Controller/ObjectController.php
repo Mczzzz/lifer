@@ -290,9 +290,8 @@ class ObjectController extends Controller
 
             foreach($childsInfos as $childI){
 
-
                 $em->remove($childI);
-                
+
             }
 
             $em->flush();
