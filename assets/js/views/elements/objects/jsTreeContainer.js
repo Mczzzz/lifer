@@ -138,7 +138,7 @@ export default class jsTreeContainer {
 
 
         this.JsTreeContainer.jstree(true).settings.core.data = this.collection.getList(this.parentId);
-        this.JsTreeContainer.jstree(true).create_nodete('#','Mon Univers','first');
+        this.JsTreeContainer.jstree(true).create_node('#','Mon Univers','first');
         this.JsTreeContainer.jstree(true).refresh();
 
 	}
