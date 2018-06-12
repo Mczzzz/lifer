@@ -165,6 +165,7 @@ export default class Objects{
         
         }else if (MyFrag.filter("div").attr('id') == this.JsTreeObjects){
         
+          TheJsTree = this.JstreeObjectsObj;
 
         }
 
@@ -215,7 +216,7 @@ export default class Objects{
 
     //listing des infos
     $('#leafInfos').empty();
-    
+
     if(e.detail.id == 0) return true;
 
     let ListInfos = this.TheObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);

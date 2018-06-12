@@ -51,6 +51,13 @@ export default class ObjectTreeCollection {
   }
 
 
+  move(data){
+
+    let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'dnd',data);
+
+    return result;
+
+  }
 
 
 }
