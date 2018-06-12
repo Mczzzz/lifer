@@ -60,7 +60,6 @@ class ContainerController extends Controller
         $node = $request->request->get('node');
         $parent = $request->request->get('parent');
 
-        if($parent == 0) $parent = null;
         $em = $this->getDoctrine()->getManager();
 
         $res = new \stdClass();
@@ -76,14 +75,19 @@ class ContainerController extends Controller
 
         }
 
+        if($parent > 0){
 
-        $parent = $em->getRepository('AppBundle:Objects')->find($parent);
+            $parent = $em->getRepository('AppBundle:Objects')->find($parent);
 
-        if(!$parent){
-            $res->error = 2;
-            $res->data = "Orphelin";
-            return new Response(json_encode($res));
-            
+            if(!$parent){
+                $res->error = 2;
+                $res->data = "Orphelin";
+                return new Response(json_encode($res));
+                
+            }
+
+        }else{
+            $parent = null;
         }
 
         $object->setContainerIn($parent);
