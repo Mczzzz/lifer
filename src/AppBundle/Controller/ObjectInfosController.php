@@ -22,9 +22,9 @@ class ObjectInfosController extends Controller
 
 
     /**
-     * @Route("/object/infos/get/{objectId}/{leafId}", name="children")
+     * @Route("/object/infos/get/{objectId}/{leafId}", name="object_infos_get_objid_leafid")
      */
-    public function getListAction(Request $request,$objectId,$leafId)
+    public function getObjectInfosAction(Request $request,$objectId,$leafId)
     {
 
         $em = $this->getDoctrine()->getManager();

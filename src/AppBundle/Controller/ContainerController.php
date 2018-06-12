@@ -21,7 +21,7 @@ class ContainerController extends Controller
     /**
      * @Route("/container/all", name="children")
      */
-    public function getAllAction(Request $request)
+    public function getContainerAllAction(Request $request)
     {
 
         $em = $this->getDoctrine()->getManager();
