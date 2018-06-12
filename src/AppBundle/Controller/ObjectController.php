@@ -82,10 +82,15 @@ class ObjectController extends Controller
         if(!$objet) return new Response("Pas d'objet ya un truc chelou dans le tree");
 
 
-         if(is_bool(strpos($parentId,'root_'))){
+         if($parentId > 0){
               
             $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
             if(!$parent) return new Response("Pas de parents truc chelou");       
+         
+         }else{
+         
+            $parent = null;
+         
          }
 
 
@@ -99,10 +104,10 @@ class ObjectController extends Controller
 
         $object_tree->setObject($objet);
 
-        if(is_bool(strpos($parentId,'root_'))){
+        
               
-            $object_tree->setParent($parent);
-        }
+        $object_tree->setParent($parent);
+        
 
         $object_tree->setCreator($user);
 
