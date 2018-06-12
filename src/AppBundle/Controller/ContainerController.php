@@ -60,6 +60,7 @@ class ContainerController extends Controller
         $node = $request->request->get('node');
         $parent = $request->request->get('parent');
 
+        if($parent == 0) $parent = null;
         $em = $this->getDoctrine()->getManager();
 
         $res = new \stdClass();
