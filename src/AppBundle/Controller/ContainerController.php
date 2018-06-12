@@ -26,7 +26,7 @@ class ContainerController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $objects = $em->getRepository('AppBundle:Objects')->findBy(array('creator' => $this->getUser());
+        $objects = $em->getRepository('AppBundle:Objects')->findBy(array('creator' => $this->getUser()));
 
 
         $test = array();
