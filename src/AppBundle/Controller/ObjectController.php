@@ -325,7 +325,7 @@ class ObjectController extends Controller
             $parent = null;
         }
 
-        $object->setContainerIn($parent);
+        $object->setParent($parent);
 
         $em->persist($object);
 
