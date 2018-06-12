@@ -22,9 +22,6 @@ export default class Frame {
 
 		//this.active = "Home";
 		let home = new Home();
-		let res = home.getHTMLPage();
-		document.body.innerHTML = res;
-		home.activeJs();
 
 	}
 

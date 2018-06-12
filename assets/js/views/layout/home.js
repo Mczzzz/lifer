@@ -5,19 +5,25 @@ import Footer from './sections/footer.js';
 export default class Home{
 
 
+
+	constructor(){
+
+
+		this.getHTMLPage();
+	}
+
+
 	getHTMLPage(){
 
 		this.headerHTML();
 		
-		let page = this.bodyHTML();
+		this.bodyHTML();
 
 		//floating elements
-		page += this.floatingHTML();
+		this.floatingHTML();
 
-		page += this.footerHTML();
+		this.footerHTML();
 
-
-		return page;
 	}
 
 

@@ -10,7 +10,7 @@ export default class Header{
 
 
 	addTags(){
-
+		console.log('in addtags');
 		let html = 	`<header id="header" class="page-topbar">
 					<div class="navbar-fixed">
 						<nav id="headerBackground"class="navbar-color `+this.backGroundColor+` gradient-shadow">
@@ -24,7 +24,7 @@ export default class Header{
 		      		</div>
 	    		</header>`;
 
-
+	    		console.log(html);
 	    $('body').append(html);
 	}
 
