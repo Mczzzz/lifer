@@ -161,6 +161,7 @@ export default class Objects{
         
         }else if (MyFrag.filter("div").attr('id') == this.JsTreeObjects){
         
+          console.log('on passe bien ici');
           TheJsTree = this.JstreeObjectsObj;
 
         }
