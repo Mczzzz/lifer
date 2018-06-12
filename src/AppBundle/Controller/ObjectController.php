@@ -41,7 +41,7 @@ class ObjectController extends Controller
 
             $res = new \stdClass();
             $res->id = $object->getId();
-            $res->parent = (!$object->getParent())?  "root_".$objet->getId() : $object->getParent()->getId() ;
+            $res->parent = (!$object->getParent())?  "#" : $object->getParent()->getId() ;
             $res->text = $object->getName();
             $res->type = (strlen($object->getType()) > 0)? $object->getType() : "default";
             
