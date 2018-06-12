@@ -127,9 +127,10 @@ export default class jsTreeContainer {
 
 
 
-	setParentId(parentId){
+	setParentId(parentId,parentName){
 
 		this.parentId = parentId;
+		this.parentName = parentName;
 
 	}
 
@@ -147,6 +148,11 @@ export default class jsTreeContainer {
 			}
 
 			let MyUnivers = {'id': 0, 'parent': "#", 'text': "Mon Univers", type: ""};
+			dataList.unshift(MyUnivers);
+
+		}else{
+
+			let MyUnivers = {'id': 0, 'parent': "#", 'text': this.parentName, type: ""};
 			dataList.unshift(MyUnivers);
 
 		}	
@@ -320,12 +326,12 @@ export default class jsTreeContainer {
 
 		if(!this.parentId){
 
-			let NodeEvent = new CustomEvent('ContainerSelect', {'detail' : {'container' : this.container, 'id' : data.node.id }});
+			let NodeEvent = new CustomEvent('ContainerSelect', {'detail' : {'container' : this.container, 'id' : data.node.id, 'name' : data.node.text }});
         	window.dispatchEvent(NodeEvent);
 
 		}else{
 
-			let NodeEvent = new CustomEvent('childAction', {'detail' : {'container' : this.container, 'id' : data.node.id }});
+			let NodeEvent = new CustomEvent('childAction', {'detail' : {'container' : this.container, 'id' : data.node.id, 'name' : data.node.text }});
         	window.dispatchEvent(NodeEvent);
 
 		}
