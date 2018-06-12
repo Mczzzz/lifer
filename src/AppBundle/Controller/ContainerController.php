@@ -120,20 +120,40 @@ class ContainerController extends Controller
 
         $object = $em->getRepository('AppBundle:Objects_tree')->find($node);
 
-        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+        if(!$object) {
 
-       if(is_bool(strpos($parentId,'root_'))){
-        $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
-        if(!$parent) return new Response("Pas de parents truc chelou");
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
         }
 
 
-        if(is_bool(strpos($parentId,'root_'))){
-               $object->setParent($parent);
+       if($parentId > 0){
 
-            }else{
-                 $object->setParent(null);
-           }
+            $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
+            
+
+            if(!$parent) {
+
+                 $res = new \stdClass();
+                    $res->error = 2;
+                    $res->data = "";
+
+                    return new Response(json_encode($res));
+
+            }
+
+        }else{
+
+            $parent = null;
+
+        }
+
+
+        $object->setParent($parent);
 
         $em->persist($object);
 
@@ -163,12 +183,34 @@ class ContainerController extends Controller
 
          if($parent > 0){
             $parent = $em->getRepository('AppBundle:Objects')->find($parent);
-            if(!$parent) return new Response("Pas de parents truc chelou");
+
+           if(!$parent) {
+
+                 $res = new \stdClass();
+                    $res->error = 2;
+                    $res->data = "";
+
+                    return new Response(json_encode($res));
+
+            }
+         }else{
+
+            $parent = null;
+
          }
 
 
        $human = $em->getRepository('AppBundle:Humans')->findOneBy(array('idLifer' => $user->getId()));
-        if(!$human) return new Response("Pas d'humain truc chelou");
+
+        if(!$human) {
+
+                 $res = new \stdClass();
+                    $res->error = 3;
+                    $res->data = "";
+
+                    return new Response(json_encode($res));
+
+            }
 
          
 
@@ -178,13 +220,10 @@ class ContainerController extends Controller
 
         $object->setOwner($human);
         $object->setUsufruct($human);
-        if($parent > 0){
-            $object->setContainerStore($parent);
-            $object->setContainerIn($parent);
-        }else{
-            $object->setContainerStore(null);
-            $object->setContainerIn(null);
-        }
+
+        $object->setContainerStore($parent);
+        $object->setContainerIn($parent);
+
 
         $object->setCreator($user);
 
@@ -222,7 +261,15 @@ class ContainerController extends Controller
 
          $object = $em->getRepository('AppBundle:Objects')->find($node);
 
-        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+        if(!$object) {
+
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }
          
         $object->setName($name);
 
@@ -269,11 +316,29 @@ class ContainerController extends Controller
 
 
          $object = $em->getRepository('AppBundle:Objects')->find($node);
-        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+
+        if(!$object) {
+
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }
 
         if($parent > 0){
             $parent = $em->getRepository('AppBundle:Objects')->find($parent);
-            if(!$parent) return new Response("Pas de parents truc chelou");
+
+                if(!$parent) {
+
+                 $res = new \stdClass();
+                    $res->error = 2;
+                    $res->data = "";
+
+                    return new Response(json_encode($res));
+
+            }
          }else{
             $parent = null;
          }

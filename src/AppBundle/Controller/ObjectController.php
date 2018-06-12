@@ -104,7 +104,16 @@ class ObjectController extends Controller
          if($parentId > 0){
               
             $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
-            if(!$parent) return new Response("Pas de parents truc chelou");       
+
+             if(!$parent) {
+
+             $res = new \stdClass();
+                $res->error = 2;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }      
          
          }else{
          
@@ -176,7 +185,15 @@ class ObjectController extends Controller
 
          $object = $em->getRepository('AppBundle:Objects_tree')->find($node);
 
-        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+        if(!$object) {
+
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }
          
         $object->setName($name);
 
