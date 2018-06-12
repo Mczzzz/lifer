@@ -139,10 +139,10 @@ export default class jsTreeContainer {
 		let dataList = this.collection.getList(this.parentId);
 
 		console.log(dataList);
-		
+
 		for (let k in dataList){
 
-			if (dataList[k].id == '#') dataList[k].id = 0;
+			if (dataList[k].parent == '#') dataList[k].parent = 0;
 
 		}
 
