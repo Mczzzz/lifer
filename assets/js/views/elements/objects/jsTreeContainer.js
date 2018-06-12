@@ -153,22 +153,14 @@ export default class jsTreeContainer {
 
 		if(this.parentId != false) RootName = this.parentName;
 
-		console.log(dataList);
-		if(!('error' in dataList)){
 
 			let MyUnivers = {'id': 0, 'parent': "#", 'text': RootName, type: ""};
 			dataList.unshift(MyUnivers);
 
-			this.JsTreeContainer.jstree(true).settings.core.data = dataList;
-        	this.JsTreeContainer.jstree(true).refresh();
-
-
-		}
-
-
 		
 
-
+        this.JsTreeContainer.jstree(true).settings.core.data = dataList;
+        this.JsTreeContainer.jstree(true).refresh();
 	}
 
 
