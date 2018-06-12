@@ -5,7 +5,7 @@ export default class jsTreeContainer {
 
 
 
-	constructor(container,suffixe,collection, data = false ){
+	constructor(container,suffixe,collection, data = false,dataName ){
 
 
 
@@ -23,6 +23,7 @@ export default class jsTreeContainer {
 		this.collection = collection;
 
 		this.parentId = data;
+		this.parentName = dataName;
 
 		this.initJstreeContainer();
 
@@ -146,7 +147,7 @@ export default class jsTreeContainer {
 				if (dataList[k].parent == '#') dataList[k].parent = 0;
 
 			}
-			
+
 
 		let RootName = "Mon Univers";
 

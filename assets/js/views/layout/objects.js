@@ -189,11 +189,11 @@ export default class Objects{
     //create or refresh the child
     if( this.JstreeObjectsObj === undefined ){
 
-      this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'Child', this.TheObjectCollect,e.detail.id);
+      this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'Child', this.TheObjectCollect,e.detail.id,e.detail.name);
 
     }else{
       console.log(e);
-      this.JstreeObjectsObj.setParentId(e.detail.id,e.detail.text);
+      this.JstreeObjectsObj.setParentId(e.detail.id,e.detail.name);
       this.JstreeObjectsObj.getJstreeContainerElements();
       this.JstreeObjectsObj.onMaximize();
 
