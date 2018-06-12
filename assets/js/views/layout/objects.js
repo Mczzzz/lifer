@@ -82,7 +82,7 @@ export default class Objects{
 						        
 				                <div class="divider"></div>
 
-  					            <div id="infos"></div>
+  					            <div id="leafInfos"></div>
 						        	
 						        
 				            	</div>
@@ -197,10 +197,10 @@ export default class Objects{
     this.ObjectToolBar.show();
 
     //listing des infos
-    $('#infos').empty();
+    $('#leafInfos').empty();
     let ListInfos = this.TheObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);
-
-    $('#infos').append(ListInfos.text);
+    console.log(ListInfos);
+    $('#leafInfos').append(ListInfos.text);
 
   }
 
