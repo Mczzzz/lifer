@@ -21,6 +21,7 @@ export default class Frame {
 	Home(){
 
 		//this.active = "Home";
+		$('body').empty();
 		let home = new Home();
 
 	}
@@ -28,6 +29,8 @@ export default class Frame {
 
 	Objects(){
 
+		//on vide le body
+		$('body').empty();
 		//on recharge le body
 		let objects = new Objects();
 

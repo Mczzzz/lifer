@@ -107,7 +107,6 @@ export default class Home{
 
 	activeJs(){
 
-	    //$('#nestable3').nestable();
 
 	    $('#menu-obj').on('click', function() {
 
