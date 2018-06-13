@@ -214,6 +214,9 @@ export default class Objects{
 
     if(e.detail.id == 0) return true;
 
+    new infosLoader();
+
+
     if('id' in e.detail){
 
       let ListInfos = this.TheObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);
@@ -224,8 +227,7 @@ export default class Objects{
     }
     
 
-    new infosLoader();
-
+    
 /*      console.log($('#tabs-swipe-demo'));
        $('#tabs-swipe-demo').tabs({
             swipeable : true,
