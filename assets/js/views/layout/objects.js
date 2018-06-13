@@ -94,12 +94,24 @@ export default class Objects{
 						        
 				                <div class="divider"></div>
 
-  					            <div id="leafInfos"></div>
+  					            <div id="leafInfos">
+                          <div class="col s12">
+                            <ul id="tabs-swipe-demo" class="tabs">
+                              <li class="tab col s3"><a href="#test-swipe-1" class="">Test 1</a></li>
+                              <li class="tab col s3"><a class="" href="#test-swipe-2">Test 2</a></li>
+                              <li class="tab col s3"><a href="#test-swipe-3" class="active">Test 3</a></li>
+                              <li class="indicator" style="right: 188px; left: 375px;"></li></ul>
+                                <div class="tabs-content carousel initialized" data-namespace="DIVtabs-contentcarousel0" style="height: 200px;"><div id="test-swipe-1" class="col s12 carousel carousel-item blue white-text">
+                                  <div class="col s12 mt-1"></div>Test 1</div>
+                                  <div id="test-swipe-2" class="col s12 carousel carousel-item red white-text">
+                                  <div class="col s12 mt-1"></div>Test 2</div>
+                                  <div id="test-swipe-3" class="col s12 carousel carousel-item green white-text active"></div>
 						        	
 						        
-				            	</div>
+				            	          </div>
 			          
-			        		</div>
+			        		           </div>
+                          </div>
 
 			        	</section>
 			 
