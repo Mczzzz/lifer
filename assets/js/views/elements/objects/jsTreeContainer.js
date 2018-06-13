@@ -557,12 +557,24 @@ export default class jsTreeContainer {
 
 
 		swal({
-		  title: "Choisissez sont type",
-		  text: "Cela vous permet d'hériter de propriété standard",
-		  icon: "warning",
+		  title: "Choisissez son type",
+		  text: "Cela vous permet d'hériter de propriétés communes",
+		  icon: "info",
 		  buttons: true,
-		  dangerMode: true,
+		  dangerMode: false,
 		})
+		.then((value) => {
+
+			swal({
+			  title: "Choisissez son type",
+			  text: "Cela vous permet d'hériter de propriétés communes",
+			  icon: "warning",
+			  buttons: true,
+			  dangerMode: true,
+			})
+
+
+			})
 
 
 	}
