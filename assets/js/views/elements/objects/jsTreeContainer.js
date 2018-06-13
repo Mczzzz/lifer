@@ -105,12 +105,22 @@ export default class jsTreeContainer {
 			                	}
 			                };
 
+			        let type = {
+			                "separator_before": true,
+			                "separator_after": false,
+			                "label": "Type",
+			                "action": function (obj) { 
+			                   /* HtmlElementTree.jstree(true).edit($node);*/
+			                }
+			            };
+
 					
 					let res = {};
 					res.Create = create;
 					if($node.id > 0){
 						res.Rename = rename;
 						res.Remove = remove;
+						res.Type = type;
 					}
 			        
 			        return res;
