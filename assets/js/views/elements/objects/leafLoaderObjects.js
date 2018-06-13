@@ -39,6 +39,10 @@ export default class leafLoaderObjects{
 
 	activeJQUERY(){
 
+	console.log('beforeSleep');
+	this.sleep(3000);
+	console.log('afterSleep');
+
     if ($('#tabs-swipe-demo').length) {
     	console.log('on y passe activejsquery');
       $('#tabs-swipe-demo').tabs({
@@ -48,5 +52,13 @@ export default class leafLoaderObjects{
 
 
 	}
+
+
+  	sleep(time){
+
+ 		return new Promise((resolve) => setTimeout(resolve, time));
+	}
+
+
 
 }
