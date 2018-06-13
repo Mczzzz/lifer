@@ -99,11 +99,6 @@ export default class Objects{
                               <h4 class="header">Swipeable Tabs</h4>
                               <div class="row">
                                 <div class="col s12">
-                                  <p>By setting the <a>swipeable</a> option to <a>true</a>, you can enable tabs where you can swipe on touch enabled devices to switch tabs. Make sure you keep the tab content divs in the same wrapping container. You can also set the <a>responsiveThreshold</a> option to a screen width in pixels where the swipeable functionality will activate.</p>
-                                  <br />
-                                  <p>Note: This is also touch compatible! Try swiping with your finger to scroll through the carousel.</p>
-                                </div>
-                                <div class="col s12">
                                   <ul id="tabs-swipe-demo" class="tabs">
                                     <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
                                     <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
