@@ -242,6 +242,11 @@ export default class Objects{
     }
     
 
+        $('ul.tabs').tabs({
+            swipeable : true,
+            responsiveThreshold : 1920
+          });
+    
 
     }
 
@@ -289,12 +294,6 @@ export default class Objects{
                     $('ul.tabs').tabs();
     });*/
 
-      $(document).ready(function(){
-          $('ul.tabs').tabs({
-            swipeable : true,
-            responsiveThreshold : 1920
-          });
-        });
    
 /*
                             <div id="add_infos">
