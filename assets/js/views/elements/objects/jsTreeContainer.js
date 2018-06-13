@@ -110,18 +110,18 @@ export default class jsTreeContainer {
 			                "separator_before": true,
 			                "separator_after": false,
 			                "label": "Type",
-			                "submenu": { "Assigner" : {
+			                "submenu": { "Assign" : {
 			               					"separator_before": true,
 											"separator_after": false,
-			                				"label": "Type",			             
+			                				"label": "Assigner",			             
 							                "action": function (obj) { 
 							                   HtmlElementTree.trigger( "addType", [{'node' : $node}] );
 							                }
 			                			},
-			                			"type des enfants" : {
+			                			"AssignChilds" : {
 			               					"separator_before": true,
 											"separator_after": false,
-			                				"label": "Type",			             
+			                				"label": "Types enfants",			             
 							                "action": function (obj) { 
 							                   HtmlElementTree.trigger( "addChildType", [{'node' : $node}] );
 							                }
