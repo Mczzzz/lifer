@@ -15,9 +15,6 @@ export default class Header{
 					<div class="navbar-fixed">
 						<nav id="headerBackground"class="navbar-color `+this.backGroundColor+` gradient-shadow">
 							<div class="nav-wrapper">
-
-							
-
 							</div>
 		        		</nav>
 		      		</div>
