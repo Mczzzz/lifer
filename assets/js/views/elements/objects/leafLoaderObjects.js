@@ -39,7 +39,7 @@ export default class leafLoaderObjects{
 
 	activeJQUERY(){
 
-		   $('ul.tabs').tabs({
+		   $('#tabs-swipe-demo').tabs({
             swipeable : true,
             responsiveThreshold : 1920
           });
