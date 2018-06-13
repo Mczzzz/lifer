@@ -53,6 +53,7 @@ export default class jsTreeContainer {
 			let HtmlElementTree = this.JsTreeContainer;
 
 			this.JsTreeContainer.on("deleteNode", (e, data) => this.onDeleteJsTree(e,data));
+			this.JsTreeContainer.on("addType", (e, data) => this.onAddTypeJsTree(e,data));
 
 			this.JsTreeContainer.jstree({
 	          'core' : {
@@ -110,7 +111,7 @@ export default class jsTreeContainer {
 			                "separator_after": false,
 			                "label": "Type",
 			                "action": function (obj) { 
-			                   /* HtmlElementTree.jstree(true).edit($node);*/
+			                   HtmlElementTree.trigger( "addType", [{'node' : $node}] );
 			                }
 			            };
 
@@ -552,6 +553,19 @@ export default class jsTreeContainer {
 
 
 
+	onAddTypeJsTree(e,data){
+
+
+		swal({
+		  title: "Choisissez sont type",
+		  text: "Cela vous permet d'hériter de propriété standard",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+
+
+	}
 
 
 
