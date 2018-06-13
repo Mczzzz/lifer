@@ -5,7 +5,7 @@ export default class leafLoaderObjects{
 
 
 		this.addHTML();
-		this.activeJQUERY();
+		
 	}
 
 
@@ -34,15 +34,14 @@ export default class leafLoaderObjects{
 
         $('#leafInfos').append(html);
 
+        $('#test-swipe-1').on("click", (e) => this.activeJQUERY());
+
 	}
 
 
 	activeJQUERY(){
 
-	console.log('beforeSleep');
-	this.sleep(3000);
-	console.log('afterSleep');
-
+		console.log('activeJquery in');
     if ($('#tabs-swipe-demo').length) {
     	console.log('on y passe activejsquery');
       $('#tabs-swipe-demo').tabs({
