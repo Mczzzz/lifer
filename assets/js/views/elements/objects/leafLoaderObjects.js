@@ -1,3 +1,5 @@
+import materialize from 'materialize-css';
+
 export default class leafLoaderObjects{
 
 
@@ -43,7 +45,7 @@ export default class leafLoaderObjects{
         'swipeable': true
       });
     }
-        	
+
         });
 
 	}
