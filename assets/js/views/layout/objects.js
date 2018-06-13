@@ -95,23 +95,30 @@ export default class Objects{
 				                <div class="divider"></div>
 
   					            <div id="leafInfos">
-                          <div class="col s12">
-                            <ul id="tabs-swipe-demo" class="tabs">
-                              <li class="tab col s3"><a href="#test-swipe-1" class="">Test 1</a></li>
-                              <li class="tab col s3"><a class="" href="#test-swipe-2">Test 2</a></li>
-                              <li class="tab col s3"><a href="#test-swipe-3" class="active">Test 3</a></li>
-                              <li class="indicator" style="right: 188px; left: 375px;"></li></ul>
-                                <div class="tabs-content carousel initialized" data-namespace="DIVtabs-contentcarousel0" style="height: 200px;"><div id="test-swipe-1" class="col s12 carousel carousel-item blue white-text">
-                                  <div class="col s12 mt-1"></div>Test 1</div>
-                                  <div id="test-swipe-2" class="col s12 carousel carousel-item red white-text">
+                            <div id="Swipeable-tab" class="section">
+                              <h4 class="header">Swipeable Tabs</h4>
+                              <div class="row">
+                                <div class="col s12">
+                                  <p>By setting the <a>swipeable</a> option to <a>true</a>, you can enable tabs where you can swipe on touch enabled devices to switch tabs. Make sure you keep the tab content divs in the same wrapping container. You can also set the <a>responsiveThreshold</a> option to a screen width in pixels where the swipeable functionality will activate.</p>
+                                  <br />
+                                  <p>Note: This is also touch compatible! Try swiping with your finger to scroll through the carousel.</p>
+                                </div>
+                                <div class="col s12">
+                                  <ul id="tabs-swipe-demo" class="tabs">
+                                    <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
+                                    <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
+                                    <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
+                                  </ul>
+                                  <div id="test-swipe-1" class="col s12 carousel carousel-item blue white-text">
+                                    <div class="col s12 mt-1"></div>Test 1</div>
+                                </div>
+                                <div id="test-swipe-2" class="col s12 carousel carousel-item red white-text">
                                   <div class="col s12 mt-1"></div>Test 2</div>
-                                  <div id="test-swipe-3" class="col s12 carousel carousel-item green white-text active"></div>
-						        	
-						        
-				            	          </div>
-			          
-			        		           </div>
-                          </div>
+                              </div>
+                              <div id="test-swipe-3" class="col s12 carousel carousel-item green white-text">
+                                <div class="col s12 mt-1"></div>Test 3</div>
+                            </div>
+                        </div>
 
 			        	</section>
 			 
