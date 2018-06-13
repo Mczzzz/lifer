@@ -289,9 +289,12 @@ export default class Objects{
                     $('ul.tabs').tabs();
     });*/
 
-                  $(document).ready(function(){
-                  $('ul.tabs').tabs('select_tab', 'tab_id');
-                });
+      $(document).ready(function(){
+          $('ul.tabs').tabs({
+            swipeable : true,
+            responsiveThreshold : 1920
+          });
+        });
    
 /*
                             <div id="add_infos">
