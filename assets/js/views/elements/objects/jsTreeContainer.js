@@ -560,18 +560,27 @@ export default class jsTreeContainer {
 		  title: "Choisissez son type",
 		  text: "Cela vous permet d'hériter de propriétés communes",
 		  icon: "info",
-		  buttons: true,
+		  buttons: {
+		  		cancel:{
+		  			text: "Annuler",
+			    	closeModal: true,
+		  		}
+
+			},
 		  dangerMode: false,
 		})
 		.then((value) => {
 
-			swal({
-			  title: "Choisissez son type",
-			  text: "Cela vous permet d'hériter de propriétés communes",
-			  icon: "warning",
-			  buttons: true,
-			  dangerMode: true,
-			})
+			switch (value){
+
+				case "other" :
+
+					 swal("Oh noes!", "The AJAX request failed!", "error");
+					 break;
+
+
+			}
+
 
 
 			})
