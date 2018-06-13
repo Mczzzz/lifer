@@ -226,6 +226,11 @@ export default class Objects{
 
     new infosLoader();
 
+      console.log($('#tabs-swipe-demo'));
+       $('#tabs-swipe-demo').tabs({
+            swipeable : true,
+            responsiveThreshold : 1920
+          });
 
 
     }
