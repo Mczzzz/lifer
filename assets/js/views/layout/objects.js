@@ -289,9 +289,9 @@ export default class Objects{
                     $('ul.tabs').tabs();
     });*/
 
-      $('#tabs-swipe-demo').tabs({
-        'swipeable': true
-      });
+                  $(document).ready(function(){
+                  $('ul.tabs').tabs('select_tab', 'tab_id');
+                });
    
 /*
                             <div id="add_infos">
