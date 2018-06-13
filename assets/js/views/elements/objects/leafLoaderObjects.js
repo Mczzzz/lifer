@@ -39,11 +39,12 @@ export default class leafLoaderObjects{
 
 	activeJQUERY(){
 
-		console.log($('#tabs-swipe-demo'));
-		   $('#tabs-swipe-demo').tabs({
-            swipeable : true,
-            responsiveThreshold : 1920
-          });
+    if ($('#tabs-swipe-demo').length) {
+    	console.log('on y passe activejsquery');
+      $('#tabs-swipe-demo').tabs({
+        'swipeable': true
+      });
+    }
 
 
 	}
