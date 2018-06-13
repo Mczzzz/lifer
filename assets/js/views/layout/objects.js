@@ -285,9 +285,13 @@ export default class Objects{
 
 	activeJS(){
 
-    $(document).ready(function(){
+/*    $(document).ready(function(){
                     $('ul.tabs').tabs();
-    });
+    });*/
+
+      $('#tabs-swipe-demo').tabs({
+        'swipeable': true
+      });
    
 /*
                             <div id="add_infos">
