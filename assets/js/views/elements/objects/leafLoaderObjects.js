@@ -22,13 +22,13 @@ export default class leafLoaderObjects{
                                     <li class="tab col s3"><a href="#test-swipe-3"><i class="material-icons">access_alarms</i></a></li>
                                 </ul>
                                 <div id="test-swipe-1" class="col s12 carousel carousel-item blue white-text">
-                                    <div class="col s12 mt-1"></div>Test 1</div>
+                                    <div id="tab_infos_node" class="col s12 mt-1"></div>
                                 </div>
 		                        <div id="test-swipe-2" class="col s12 carousel carousel-item red white-text">
-		                            <div class="col s12 mt-1"></div>Test 2</div>
+		                            <div class="col s12 mt-1"></div></div>
 		                        </div>
                                 <div id="test-swipe-3" class="col s12 carousel carousel-item green white-text">
-                                    <div class="col s12 mt-1"></div>Test 3</div>
+                                    <div class="col s12 mt-1"></div></div>
                                 </div>
                             </div>
                         </div>
