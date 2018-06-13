@@ -285,6 +285,9 @@ export default class Objects{
 
 	activeJS(){
 
+    $(document).ready(function(){
+                    $('ul.tabs').tabs();
+    });
    
 /*
                             <div id="add_infos">
