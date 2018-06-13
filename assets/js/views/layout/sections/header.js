@@ -14,11 +14,11 @@ export default class Header{
 		let html = 	`<header id="header" class="page-topbar">
 					<div class="navbar-fixed">
 						<nav id="headerBackground"class="navbar-color `+this.backGroundColor+` gradient-shadow">
-							
-
-							<i class="material-icons medium">keyboard_backspace</i>
+							<div class="nav-wrapper">
 
 							
+
+							</div>
 		        		</nav>
 		      		</div>
 	    		</header>`;

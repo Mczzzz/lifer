@@ -1,4 +1,4 @@
-import Header from './sections/header.js';
+import Header from '../elements/objects/headerObjects.js';
 import Footer from './sections/footer.js';
 
 import ContainerCollect from '../../collections/ContainerCollection.js';
