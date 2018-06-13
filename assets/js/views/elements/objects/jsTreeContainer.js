@@ -71,7 +71,49 @@ export default class jsTreeContainer {
 			      	console.log('jstree context menu before return');
 			      	console.log($node);
 
-			        return {
+			      	let create = {
+					                "separator_before": false,
+					                "separator_after": false,
+					                "label": "Ajouter",
+					                "action": function (obj) { 
+					                    $node = HtmlElementTree.jstree(true).create_node($node);
+					                    HtmlElementTree.jstree(true).edit($node);
+					                }
+
+									}
+
+
+				    let rename = {
+			                "separator_before": false,
+			                "separator_after": false,
+			                "label": "Renomer",
+			                "action": function (obj) { 
+			                    HtmlElementTree.jstree(true).edit($node);
+			                }
+			            };
+
+
+
+					let remove = {
+
+			                "separator_before": false,
+			                "separator_after": false,
+			                "label": "Supprimer",
+			                "action": function (obj) {
+
+			                	HtmlElementTree.trigger( "deleteNode", [{'node' : $node}] );
+			                	}
+			                };
+
+					
+					let res = {};
+					res.Create = create;
+					res.Rename = rename;
+					res.Remove = remove;
+			        
+			        return res;
+
+/*			        {
 			            "Create": {
 			                "separator_before": false,
 			                "separator_after": false,
@@ -98,7 +140,7 @@ export default class jsTreeContainer {
 			                	HtmlElementTree.trigger( "deleteNode", [{'node' : $node}] );
 			                	}
 			                }
-			            }
+			            }*/
 			        }
 			    },
 
