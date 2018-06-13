@@ -110,9 +110,25 @@ export default class jsTreeContainer {
 			                "separator_before": true,
 			                "separator_after": false,
 			                "label": "Type",
-			                "action": function (obj) { 
-			                   HtmlElementTree.trigger( "addType", [{'node' : $node}] );
+			                "submenu": { "Assigner" : {
+			               					"separator_before": true,
+											"separator_after": false,
+			                				"label": "Type",			             
+							                "action": function (obj) { 
+							                   HtmlElementTree.trigger( "addType", [{'node' : $node}] );
+							                }
+			                			},
+			                			"type des enfants" : {
+			               					"separator_before": true,
+											"separator_after": false,
+			                				"label": "Type",			             
+							                "action": function (obj) { 
+							                   HtmlElementTree.trigger( "addChildType", [{'node' : $node}] );
+							                }
+			                			}
 			                }
+
+
 			            };
 
 					
@@ -563,7 +579,7 @@ export default class jsTreeContainer {
 		  buttons: {
 		  		cancel:{
 		  			text: "Annuler",
-			    	closeModal: true,
+			    	closeModal: true
 		  		}
 
 			},
