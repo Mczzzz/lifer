@@ -42,20 +42,15 @@ export default class leafLoaderObjects{
 	activeJQUERY(){
 
 
-    if ($('#tabs-swipe-demo').length) {
-    	console.log('on y passe activejsquery');
-      $('#tabs-swipe-demo').tabs({
-        'swipeable': true
-      });
-    }
+	    if ($('#tabs-swipe-demo').length) {
+
+	      $('#tabs-swipe-demo').tabs({
+	        'swipeable': true
+	      });
+
+	    }
 
 
-	}
-
-
-  	sleep(time){
-
- 		return new Promise((resolve) => setTimeout(resolve, time));
 	}
 
 
