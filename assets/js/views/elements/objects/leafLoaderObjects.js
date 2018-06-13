@@ -34,7 +34,17 @@ export default class leafLoaderObjects{
 
         $('#leafInfos').append(html);
 
-        $('#test-swipe-1').on("click", (e) => this.activeJQUERY());
+        $('#test-swipe-1').on("click", function(e){
+
+        			console.log('activeJquery in');
+    if ($('#tabs-swipe-demo').length) {
+    	console.log('on y passe activejsquery');
+      $('#tabs-swipe-demo').tabs({
+        'swipeable': true
+      });
+    }
+        	
+        });
 
 	}
 
