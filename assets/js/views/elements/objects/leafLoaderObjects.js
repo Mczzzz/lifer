@@ -15,7 +15,7 @@ export default class leafLoaderObjects{
                         <div class="row">
                             <div class="col s12">
                                 <ul id="tabs-swipe-demo" class="tabs">
-                                    <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
+                                    <li class="tab col s3"><a href="#test-swipe-1"><i class="material-icons">today</i></a></li>
                                     <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
                                     <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
                                 </ul>
