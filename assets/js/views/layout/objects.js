@@ -95,9 +95,7 @@ export default class Objects{
 						        
 				                <div class="divider"></div>
 
-  					            <div id="leafInfos">
-                           
-                        </div>
+  					            <div id="leafInfos"></div>
 
 			        	</section>
 			 
