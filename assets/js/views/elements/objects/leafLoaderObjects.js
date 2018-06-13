@@ -1,5 +1,3 @@
-import $ from "jquery";
-
 export default class leafLoaderObjects{
 
 
@@ -41,7 +39,7 @@ export default class leafLoaderObjects{
 
 	activeJQUERY(){
 
-			console.log($('#tabs-swipe-demo'));
+		console.log($('#tabs-swipe-demo'));
 		   $('#tabs-swipe-demo').tabs({
             swipeable : true,
             responsiveThreshold : 1920
