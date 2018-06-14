@@ -111,7 +111,7 @@ class ObjectInfosController extends Controller
         if(strlen($url) > 0){
 
 
-            $resourceType = $em->getRepository('AppBundle:Objects_infos_resources_types')->find(1);
+            $resourceType = $em->getRepository('AppBundle:Object_infos_resources_types')->find(1);
 
         }
 
