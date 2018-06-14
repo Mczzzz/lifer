@@ -121,7 +121,8 @@ class ObjectInfosController extends Controller
 
         }
 
-        var_dump($text);
+        $test = explode('\n',$text);
+        var_dump($test);
         die();
 
         $user = $this->getUser();
