@@ -121,7 +121,7 @@ class ObjectInfosController extends Controller
 
         }
 
-        $test = explode('\n\r',$text);
+        $test = explode("\n\r",$text);
         var_dump($test);
         die();
 
