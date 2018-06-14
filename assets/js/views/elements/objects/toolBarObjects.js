@@ -142,7 +142,8 @@ export default class toolBarObjects  extends toolBar {
 			} else{
 
 			//je réactialise mes infos
-			window.dispatchEvent('InfosRefresh');
+			let evUpdateLinkList = new CustomEvent('InfosRefresh', {'detail' : results});
+            window.dispatchEvent(evUpdateLinkList);
 			//je ferme mon arbre
 			swal.close();
 
@@ -151,12 +152,11 @@ export default class toolBarObjects  extends toolBar {
 
 
 			})
-			.catch(err => {
+			.then(err => {
 			  if (err) {
-			  	console.log(err);
 			    swal("Arf !!!", "La synchro avec le serveur à merdée", "error");
 			  } else {
-			    window.dispatchEvent('InfosRefresh');
+			    swal.stopLoading();
 			    swal.close();
 			  }
 			});
