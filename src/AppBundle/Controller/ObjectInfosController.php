@@ -105,6 +105,8 @@ class ObjectInfosController extends Controller
         $name = $request->request->get('titre');
         $url = $request->request->get('url');        
 
+        $em = $this->getDoctrine()->getManager();
+
 
         if(strlen($url) > 0){
 
