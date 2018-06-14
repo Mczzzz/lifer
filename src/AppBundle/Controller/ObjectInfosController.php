@@ -57,8 +57,8 @@ class ObjectInfosController extends Controller
             $res->resources->value = $object->getValue();
 
             $res->resources->type = new \stdClass();
-            $res->resources->type->name = $object->getTypeId()->getName();
-            $res->resources->type->name = $object->getTypeId()->getPicto();
+            $res->resources->type->name = $object->getType()->getName();
+            $res->resources->type->name = $object->getType()->getPicto();
             
             array_push($test,$res);
 
