@@ -223,8 +223,8 @@ export default class Objects{
 
     for (let k in ListInfos){
       $('#tab_infos_node').append(`
-        <i class="material-icons" style="font-size:10px;margin-left:10px">`+ListInfos[k].resources.type.picto+`</i>
-        <a href="`+ListInfos[k].resources.text+`">`+ListInfos[k].infos.name+`</a><br />
+        <i class="material-icons" style="font-size:10px;margin-left:20px">`+ListInfos[k].resources.type.picto+`</i>
+        <a href="`+ListInfos[k].resources.text+`" target="_blank" style="text-decoration:none;">`+ListInfos[k].infos.name+`</a><br />
         `);
 
     }
