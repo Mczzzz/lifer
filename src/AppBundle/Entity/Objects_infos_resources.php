@@ -55,7 +55,7 @@ class Objects_infos_resources
     /**
      * @var int
      *
-     * @ORM\ManyToOne(targetEntity="Objects_infos_resources_types", inversedBy="objects_infos_resources_types")
+     * @ORM\ManyToOne(targetEntity="Object_infos_resources_types", inversedBy="object_infos_resources_types")
      * @ORM\JoinColumn(name="type", referencedColumnName="id")
      */
     private $type;
