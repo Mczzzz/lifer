@@ -1,5 +1,5 @@
 import materialize from 'materialize-css';
-import ObjectInfosCollect from '../../collections/ObjectInfosCollection.js';
+import ObjectInfosCollect from '../../../collections/ObjectInfosCollection.js';
 
 export default class leafLoaderObjects{
 
