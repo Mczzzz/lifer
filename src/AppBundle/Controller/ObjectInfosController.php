@@ -31,11 +31,29 @@ class ObjectInfosController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $objet = $em->getRepository('AppBundle:Objects')->find($objectId);
-        if(!$objet) return new Response("Pas d'objet ya un truc chelou dans le tree");
+
+        if(!$objet) {
+
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }
 
 
         $parent = $em->getRepository('AppBundle:Objects_tree')->find($leafId);
-        if(!$parent) return new Response("Pas de parents truc chelou");  
+        
+        if(!$parent) {
+
+             $res = new \stdClass();
+                $res->error = 2;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        } 
 
 
         $objects_infos = $em->getRepository('AppBundle:Objects_infos_resources')->findBy(array('object' => $objet, 'objectTree' => $parent));
@@ -87,6 +105,14 @@ class ObjectInfosController extends Controller
         $name = $request->request->get('titre');
         $url = $request->request->get('url');        
 
+
+        if(strlen($url) > 0){
+
+
+            $resourceType = $em->getRepository('AppBundle:Objects_infos_resources_types')->find(1);
+
+        }
+
         $user = $this->getUser();
 
 
@@ -94,14 +120,32 @@ class ObjectInfosController extends Controller
 
 
         $objet = $em->getRepository('AppBundle:Objects')->find($objectId);
-        if(!$objet) return new Response("Pas d'objet ya un truc chelou dans le tree");
+        
+        if(!$objet) {
+
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }
 
 
 
-         if(is_bool(strpos($objectLeafId,'root_'))){ //a voir si on garde ce if ?????
+         if($objectLeafId > 0 ){ //a voir si on garde ce if ?????
               
             $parent = $em->getRepository('AppBundle:Objects_tree')->find($objectLeafId);
-            if(!$parent) return new Response("Pas de parents truc chelou");       
+            
+            if(!$parent) {
+
+             $res = new \stdClass();
+                $res->error = 2;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }       
          }
 
 
@@ -127,7 +171,7 @@ class ObjectInfosController extends Controller
 
         $object_infos_resources->setText($url);
 
-        $object_infos_resources->setTypeId(1);
+        $object_infos_resources->setType($resourceType);
 
         $object_infos_resources->setObject($objet);
 
