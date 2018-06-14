@@ -123,7 +123,8 @@ export default class toolBarObjects  extends toolBar {
 				formData.append('ObjectId', this.containerId);
 				formData.append('ObjectLeafId', this.leafId);
 
-			 	this.ObjectInfosCollect.create(formData);
+				let results = this.ObjectInfosCollect.create(formData);
+			 	return results;
 			  // enregistrement de l'infos en base
 
 			  //on load la collection et onva enregistrer
@@ -132,23 +133,11 @@ export default class toolBarObjects  extends toolBar {
 
 			})
 			.then(results => {
+
+				console.log(results);
 			  return results.json();
-			})
-			.then(json => {
-			  const movie = json.results[0];
-			 
-			  if (!movie) {
-			    return swal("No movie was found!");
-			  }
-			 
-			  const name = movie.trackName;
-			  const imageURL = movie.artworkUrl100;
-			 
-			  swal({
-			    title: "Top result:",
-			    text: name,
-			    icon: imageURL,
-			  });
+// on contrôle le retour
+
 			})
 			.catch(err => {
 			  if (err) {
