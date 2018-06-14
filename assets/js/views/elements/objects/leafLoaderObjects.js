@@ -7,9 +7,10 @@ export default class leafLoaderObjects{
 	constructor(){
 
 
+
 		this.addHTML();
 		this.activeJQUERY();
-
+		this.ObjectInfosCollect = new ObjectInfosCollect();
 		window.addEventListener('InfosRefresh', (e) => this.refresh(e));
 	}
 
@@ -69,7 +70,7 @@ export default class leafLoaderObjects{
 
 	refresh(e){
 
-		 let ListInfos = ObjectInfosCollect.getList(this.objectId,this.leafId);
+		 let ListInfos = this.ObjectInfosCollect.getList(this.objectId,this.leafId);
 
         $('#tab_infos_node').empty();
 
