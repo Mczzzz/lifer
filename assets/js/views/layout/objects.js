@@ -190,11 +190,17 @@ export default class Objects{
       this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'Child', this.TheObjectCollect,e.detail.id,e.detail.name);
 
 
+      
+
+
+    }else{
+
       this.JstreeObjectsObj.setParentId(e.detail.id,e.detail.name);
-      this.JstreeObjectsObj.getJstreeContainerElements();
-      this.JstreeObjectsObj.onMaximize();
 
     }
+
+    this.JstreeObjectsObj.getJstreeContainerElements();
+    this.JstreeObjectsObj.onMaximize();
 
     this.ObjectToolBar.setContainerId(e.detail.id);
 
