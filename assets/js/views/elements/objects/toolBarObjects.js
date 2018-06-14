@@ -91,18 +91,62 @@ export default class toolBarObjects  extends toolBar {
 		nom.placeholder = "Titre";
 		div.append(nom);
 
-	swal({
-			  title : 'Note :',
-			//  text: 'You can use <b>bold text</b>, ' + '<a href="//github.com">links</a> ' + 'and other HTML tags',
+		swal({
+				  title : 'Note :',
+				//  text: 'You can use <b>bold text</b>, ' + '<a href="//github.com">links</a> ' + 'and other HTML tags',
 
-			  content : div,
+				  content : div,
 
 
-			  button: {
-			    text: "Ajouter",
-			    closeModal: false,
+				  button: {
+				    text: "Ajouter",
+				    closeModal: false,
+				  }
+		})
+		.then(name => {
+
+	 	let formData = new FormData();
+
+        formData.append('text',$("#swal_wl_text").val());
+		formData.append('ObjectId', this.containerId);
+		formData.append('ObjectLeafId', this.leafId);
+
+		let results = this.ObjectInfosCollect.create(formData);
+	 	return results;
+	  // enregistrement de l'infos en base
+
+	  //on load la collection et onva enregistrer
+
+
+
+			})
+			.then(results => {
+
+			let err = 0 ;
+			// on contrôle le retour
+			if(results.error != 0){
+				err = results.error;
+			} else{
+
+			//je réactialise mes infos
+			let evUpdateLinkList = new CustomEvent('InfosRefresh', {'detail' : results});
+            window.dispatchEvent(evUpdateLinkList);
+			//je ferme mon arbre
+			swal.close();
+
+
+			}
+
+
+			})
+			.then(err => {
+			  if (err) {
+			    swal("Arf !!!", "La synchro avec le serveur à merdée", "error");
+			  } else {
+			    swal.stopLoading();
+			    swal.close();
 			  }
-	})
+			});
 
 	}
 

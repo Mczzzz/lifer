@@ -103,7 +103,8 @@ class ObjectInfosController extends Controller
         $objectId     = $request->request->get('ObjectId');
         $objectLeafId = $request->request->get('ObjectLeafId');
         $name = $request->request->get('titre');
-        $url = $request->request->get('url');        
+        $url = $request->request->get('url');
+        $text = $request->request->get('text');         
 
         $em = $this->getDoctrine()->getManager();
 
@@ -113,7 +114,14 @@ class ObjectInfosController extends Controller
 
             $resourceType = $em->getRepository('AppBundle:Object_infos_resources_types')->find(1);
 
+        }else if(strlen($text) > 0){
+
+
+            $resourceType = $em->getRepository('AppBundle:Object_infos_resources_types')->find(2);
+
         }
+
+
 
         $user = $this->getUser();
 
