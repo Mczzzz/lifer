@@ -135,6 +135,7 @@ export default class toolBarObjects  extends toolBar {
 			})
 			.then(results => {
 
+			console.log(results.error);
 			// on contrôle le retour
 			if(results.error > 0) return results.error;
 
