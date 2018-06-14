@@ -151,11 +151,12 @@ export default class toolBarObjects  extends toolBar {
 
 
 			})
-			.catch(err => {
+			.then(err => {
 			  if (err) {
 			    swal("Arf !!!", "La synchro avec le serveur à merdée", "error");
 			  } else {
 			    swal.stopLoading();
+			    window.dispatchEvent('InfosRefresh');
 			    swal.close();
 			  }
 			});
