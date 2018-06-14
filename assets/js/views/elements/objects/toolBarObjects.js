@@ -134,14 +134,18 @@ export default class toolBarObjects  extends toolBar {
 			})
 			.then(results => {
 
-				console.log(results);
-			  return results.json();
-// on contrôle le retour
+			// on contrôle le retour
+			if(results.error > 0) return results.error;
+
+			//je réactialise mes infos
+
+			//je ferme mon arbre
+			swal.close();
 
 			})
 			.catch(err => {
 			  if (err) {
-			    swal("Oh noes!", "The AJAX request failed!", "error");
+			    swal("Arf !!!", "La synchro avec le serveur à merdée", "error");
 			  } else {
 			    swal.stopLoading();
 			    swal.close();
