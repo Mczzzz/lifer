@@ -82,6 +82,7 @@ export default class toolBarObjects  extends toolBar {
 	startWebLink(){
 
 		console.log('instartweblink');
+		
 
 		//custom html for sweetAlert
 
@@ -138,7 +139,7 @@ export default class toolBarObjects  extends toolBar {
 			if(results.error > 0) return results.error;
 
 			//je réactialise mes infos
-
+			window.dispatchEvent('InfosRefresh');
 			//je ferme mon arbre
 			swal.close();
 

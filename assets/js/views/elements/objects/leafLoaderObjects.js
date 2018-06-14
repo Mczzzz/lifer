@@ -1,4 +1,5 @@
 import materialize from 'materialize-css';
+import ObjectInfosCollect from '../../collections/ObjectInfosCollection.js';
 
 export default class leafLoaderObjects{
 
@@ -8,6 +9,8 @@ export default class leafLoaderObjects{
 
 		this.addHTML();
 		this.activeJQUERY();
+
+		window.addEventListener('InfosRefresh', (e) => this.refresh(e));
 	}
 
 
@@ -54,5 +57,30 @@ export default class leafLoaderObjects{
 	}
 
 
+	loadList(objectIdSelect,leafId){
+
+		this.objectId = objectIdSelect;
+		this.leafId = leafId;
+       
+       	this.refresh();
+
+	}
+
+
+	refresh(e){
+
+		 let ListInfos = ObjectInfosCollect.getList(this.objectId,this.leafId);
+
+        $('#tab_infos_node').empty();
+
+	    for (let k in ListInfos){
+	      $('#tab_infos_node').append(`
+	        <i class="material-icons" style="font-size:10px;margin-left:20px">`+ListInfos[k].resources.type.picto+`</i>
+	        <a href="`+ListInfos[k].resources.text+`" target="_blank" style="text-decoration:none;color:white">`+ListInfos[k].infos.name+`</a><br />
+	        `);
+
+	    }
+
+	}
 
 }

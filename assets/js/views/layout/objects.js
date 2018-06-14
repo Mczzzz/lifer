@@ -211,6 +211,7 @@ export default class Objects{
 
   onChildAction(e){
 
+
     this.ObjectToolBar.setLeafId(e.detail.id);
 
     this.JstreeContainerObj.onMinimize();
@@ -221,28 +222,12 @@ export default class Objects{
 
     if(e.detail.id == 0) return true;
 
-    new infosLoader();
+    let infosElement = new infosLoader();
 
 
     if('id' in e.detail){
 
-      let ListInfos = this.TheObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);
-
-    for (let k in ListInfos){
-      $('#tab_infos_node').append(`
-        <i class="material-icons" style="font-size:10px;margin-left:20px">`+ListInfos[k].resources.type.picto+`</i>
-        <a href="`+ListInfos[k].resources.text+`" target="_blank" style="text-decoration:none;color:white">`+ListInfos[k].infos.name+`</a><br />
-        `);
-
-    }
-    
-
-    
-/*      console.log($('#tabs-swipe-demo'));
-       $('#tabs-swipe-demo').tabs({
-            swipeable : true,
-            responsiveThreshold : 1920
-          });*/
+      infosElement.loadList(this.objectIdSelect,e.detail.id);
 
 
     }
