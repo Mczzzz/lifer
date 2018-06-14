@@ -222,7 +222,10 @@ export default class Objects{
       let ListInfos = this.TheObjectInfosCollect.getList(this.objectIdSelect,e.detail.id);
 
     for (let k in ListInfos){
-      $('#tab_infos_node').append(ListInfos[k].infos.name+'<br />');
+      $('#tab_infos_node').append(`
+        <i class="material-icons" style="font-size:10px;margin-left:10px">`+ListInfos[k].resources.type.picto+`</i>
+        <a href="`+ListInfos[k].resources.text+`">`+ListInfos[k].infos.name+`</a><br />
+        `);
 
     }
     
