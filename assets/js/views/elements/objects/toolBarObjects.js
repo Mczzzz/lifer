@@ -79,6 +79,33 @@ export default class toolBarObjects  extends toolBar {
 	}
 
 
+	startText(){
+		console.log('instartText');
+
+		var div = document.createElement("div");
+		div.className = 'col s9';
+
+		var nom = document.createElement("textarea");
+		nom.type = "text";
+		nom.id = "swal_wl_text";
+		nom.placeholder = "Titre";
+		div.append(nom);
+
+	swal({
+			  title : 'Note :',
+			//  text: 'You can use <b>bold text</b>, ' + '<a href="//github.com">links</a> ' + 'and other HTML tags',
+
+			  content : div,
+
+
+			  button: {
+			    text: "Ajouter",
+			    closeModal: false,
+			  }
+	})
+
+	}
+
 	startWebLink(){
 
 		console.log('instartweblink');
