@@ -118,12 +118,11 @@ class ObjectInfosController extends Controller
 
 
             $resourceType = $em->getRepository('AppBundle:Object_infos_resources_types')->find(2);
+            $name = explode("\n",$text);
 
         }
 
-        $test = explode("\n",$text);
-        var_dump($test);
-        die();
+
 
         $user = $this->getUser();
 
