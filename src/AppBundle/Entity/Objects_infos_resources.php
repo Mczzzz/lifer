@@ -55,9 +55,10 @@ class Objects_infos_resources
     /**
      * @var int
      *
-     * @ORM\Column(name="typeId", type="integer")
+     * @ORM\ManyToOne(targetEntity="Objects_infos_resources_types", inversedBy="objects_infos_resources_types")
+     * @ORM\JoinColumn(name="type", referencedColumnName="id")
      */
-    private $typeId;
+    private $type;
 
     /**
      * @var \DateTime
@@ -177,26 +178,7 @@ class Objects_infos_resources
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getTypeId()
-    {
-        return $this->typeId;
-    }
-
-    /**
-     * @param int $typeId
-     *
-     * @return self
-     */
-    public function setTypeId($typeId)
-    {
-        $this->typeId = $typeId;
-
-        return $this;
-    }
-
+  
     /**
      * @return \DateTime
      */
@@ -233,6 +215,26 @@ class Objects_infos_resources
     public function setValue($value)
     {
         $this->value = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param int $type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
 
         return $this;
     }
