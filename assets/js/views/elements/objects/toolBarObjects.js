@@ -86,6 +86,7 @@ export default class toolBarObjects  extends toolBar {
 		div.className = 'col s9';
 
 		var nom = document.createElement("textarea");
+		nom.style = "height:600px;";
 		nom.id = "swal_wl_text";
 		nom.placeholder = "Titre";
 		div.append(nom);
