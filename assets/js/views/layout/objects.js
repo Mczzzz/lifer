@@ -178,6 +178,7 @@ export default class Objects{
 
   onContainerSelected(e){
 
+    console.log(e);
     if(e.detail.id == 0) return true;
 
 
