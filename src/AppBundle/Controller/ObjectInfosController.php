@@ -46,10 +46,19 @@ class ObjectInfosController extends Controller
         foreach($objects_infos as $object){
 
             $res = new \stdClass();
+
             $res->infos = new \stdClass();
             $res->infos->id = $object->getObjectInfos()->getId();
             $res->infos->name = $object->getObjectInfos()->getName();
             $res->infos->update = $object->getObjectInfos()->getUpdate();
+
+            $res->resources = new \stdClass();
+            $res->resources->text = $object->getText();
+            $res->resources->value = $object->getValue();
+
+            $res->resources->type = new \stdClass();
+            $res->resources->type->name = $object->getTypeId()->getName();
+            $res->resources->type->name = $object->getTypeId()->getPicto();
             
             array_push($test,$res);
 
