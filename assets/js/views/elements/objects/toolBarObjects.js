@@ -135,14 +135,20 @@ export default class toolBarObjects  extends toolBar {
 			})
 			.then(results => {
 
-			console.log(results.error);
+			let err = 0 ;
 			// on contrôle le retour
-			if(results.error > 0) return results.error;
+			if(results.error != 0){
+				err = results.error;
+			} else{
 
 			//je réactialise mes infos
 			window.dispatchEvent('InfosRefresh');
 			//je ferme mon arbre
 			swal.close();
+
+
+			}
+
 
 			})
 			.catch(err => {
