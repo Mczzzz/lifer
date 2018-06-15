@@ -339,7 +339,7 @@ export default class jsTreeContainer {
          	let node = this.JsTreeContainer.jstree(true).get_node(this.JsTreeContainer.jstree(true).get_selected()[0]);
          	
          	//ajout d ela node active
-            this.breadcrumbTargetDiv.append('<a id="bc_'+node.id+'" style="margin-left:10px" class="btn waves-effect waves-light purple lightrn-1">'+node.text+'</a>');
+            this.breadcrumbTargetDiv.append('<a id="bc_'+node.id+'" style="margin-left:10px" class="waves-effect waves-light  btn gradient-45deg-light-blue-cyan box-shadow-none border-round mr-1">'+node.text+'</a>');
             	
 
             	this.jsTreeEventBreadcrumb(node);
@@ -351,7 +351,7 @@ export default class jsTreeContainer {
 
 				if(parentNode.text !== undefined){
 					
-					this.breadcrumbTargetDiv.prepend('<a href="#!" id="bc_'+parentNode.id+'" style="margin-left:10px" class="btn waves-effect waves-light purple lightrn-1">'+parentNode.text+'</a>');
+					this.breadcrumbTargetDiv.prepend('<a href="#!" id="bc_'+parentNode.id+'" style="margin-left:10px" class="waves-effect waves-light  btn gradient-45deg-light-blue-cyan box-shadow-none border-round mr-1">'+parentNode.text+'</a>');
 					
 					this.jsTreeEventBreadcrumb(parentNode);
 
