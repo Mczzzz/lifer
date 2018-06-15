@@ -352,7 +352,7 @@ export default class jsTreeContainer {
 
 				if(parentNode.text !== undefined){
 
-					i -=0.1;
+					i -=0.15;
 					
 					this.breadcrumbTargetDiv.prepend('<a href="#!" id="bc_'+parentNode.id+'" style="opacity: '+i+';border-radius: 4px 12px 4px 4px;background: #0288d1;color:white;padding:5px;margin-right: 5px" class="">'+parentNode.text+'</a>');
 					
