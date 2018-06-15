@@ -91,7 +91,7 @@ export default class Objects{
 						            
 						            <div id="jstreeContainerdiv"></div>
 						        
-						            <div id="jstreeObjectDiv"></div>
+						            <div id="jstreeObjectDiv" style="overflow-y: scroll;"></div>
 						        
 				                <div class="divider"></div>
 

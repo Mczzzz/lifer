@@ -28,7 +28,7 @@ export default class leafLoaderObjects{
                                     <li class="tab col s3"><a class="active" href="#test-swipe-2"><i class="material-icons red-text">note</i></a></li>
                                     <li class="tab col s3"><a href="#test-swipe-3"><i class="material-icons green-text">access_alarms</i></a></li>
                                 </ul>
-                                <div id="test-swipe-1" class="col s12 carousel carousel-item blue white-text">
+                                <div id="test-swipe-1" class="col s12 carousel carousel-item blue white-text" style="overflow-y: scroll;">
                                     <div id="tab_infos_node" class="col s12 mt-1"></div>
                                 </div>
 		                        <div id="test-swipe-2" class="col s12 carousel carousel-item red white-text">
