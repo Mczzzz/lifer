@@ -17,7 +17,10 @@ export default class leafLoaderObjects{
 
 	addHTML(){
 
-		let html = `<div id="Swipeable-tab" class="section">
+		let html = `<div id="Swipeable-tab" style="  position:absolute;
+  bottom: 0;
+  top:auto;
+  left: 0;width:100%" class="section">
                         <div class="row">
                             <div class="col s12">
                                 <ul id="tabs-swipe-demo" class="tabs">
