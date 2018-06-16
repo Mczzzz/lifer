@@ -78,7 +78,20 @@ export default class Objects{
 
 	bodyHTML(){
 
-		let body =  `<div id="main">
+    let body = `<div class="container">
+                  <div class="header">Header</div>
+                  <div class="main">
+                    <div class="top"></div>
+                    <div class="bottom">
+                      <div class="manage"></div>
+                      <div class="tools"></div>
+                    </div>
+                  </div>
+                  <div class="footer">Footer</div>
+                 </div>`;
+
+
+		let body_old =  `<div id="main">
 
 			        <div class="wrapper">
 
