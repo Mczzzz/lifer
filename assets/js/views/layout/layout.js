@@ -10,7 +10,7 @@ export default class Layout {
 	initBody(){
 
 		let container = document.createElement("div");
-		constainer.class = "container";
+		container.class = "container";
 
 			let header = document.createElement("div");
 			header.class = "header";
