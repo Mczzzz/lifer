@@ -10,38 +10,38 @@ export default class Layout {
 	initBody(){
 
 		let container = document.createElement("div");
-		container.class = "container";
+		container.className = "container";
 
 			let header = document.createElement("div");
-			header.class = "header";
+			header.className = "header";
 			container.append(header);
 
 			let main = document.createElement("div");
-			main.class = "main";
+			main.className = "main";
 			container.append(main);
 
 				let breadcrumb = document.createElement("div");
-				breadcrumb.class = "breadcrumb";
+				breadcrumb.className = "breadcrumb";
 				main.append(breadcrumb);
 
 				let top = document.createElement("div");
-				top.class = "top";
+				top.className = "top";
 				main.append(top);
 
 				let bottom = document.createElement("div");
-				bottom.class = "bottom";
+				bottom.className = "bottom";
 				main.append(bottom);
 
 					let manage = document.createElement("div");
-					manage.class = "manage";
+					manage.className = "manage";
 					bottom.append(manage);
 
 					let tools = document.createElement("div");
-					tools.class = "tools";
+					tools.className = "tools";
 					bottom.append(tools);
 
 			let footer = document.createElement("div");
-			footer.class = "footer";
+			footer.className = "footer";
 			container.append(footer);
 
 
