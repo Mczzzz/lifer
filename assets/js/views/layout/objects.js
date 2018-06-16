@@ -47,12 +47,12 @@ export default class Objects{
 
 	getHTMLPage(){
 
+    this.bodyHTML();  
+
 		this.headerHTML();
 		
-		this.bodyHTML();	
-
-		this.footerHTML();
-
+    this.footerHTML();
+		
     this.setCustomDesign();
 
 	}
@@ -79,7 +79,7 @@ export default class Objects{
 	bodyHTML(){
 
     let body = `<div class="container">
-                  <div class="header">Header</div>
+                  <div class="header"></div>
                   <div class="main">
                     <div class="top"></div>
                     <div class="bottom">
@@ -87,7 +87,7 @@ export default class Objects{
                       <div class="tools"></div>
                     </div>
                   </div>
-                  <div class="footer">Footer</div>
+                  <div class="footer"></div>
                  </div>`;
 
 

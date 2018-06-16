@@ -20,7 +20,7 @@ export default class Header{
 		      		</div>
 	    		</header>`;
 
-	    $('body').append(html);
+	    $('.header').append(html);
 	}
 
 
