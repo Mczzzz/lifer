@@ -81,6 +81,7 @@ export default class Objects{
     let body = `<div class="container">
                   <div class="header"></div>
                   <div class="main">
+                    <div class="breadcrumb"></div>
                     <div class="top"></div>
                     <div class="bottom">
                       <div class="manage"></div>
@@ -90,7 +91,7 @@ export default class Objects{
                   <div class="footer"></div>
                  </div>`;
 
-
+/*
 		let body_old =  `<div id="main">
 
 			        <div class="wrapper">
@@ -114,7 +115,7 @@ export default class Objects{
 			 
 			      	</div>
 
-		    	</div>`;
+		    	</div>`;*/
 
     $('body').append(body);
 
