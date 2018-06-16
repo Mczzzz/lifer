@@ -3,7 +3,7 @@ export default class Layout {
 	constructor(){
 
 		this.initBody();
-
+		this.initCSS();
 	}
 
 
@@ -47,24 +47,54 @@ export default class Layout {
 
 		$('body').append(container);
 
-/*	    let body = `<div class="container">
-              <div class="header"></div>
-              <div class="main">
-                <div class="breadcrumb"></div>
-                <div class="top"></div>
-                <div class="bottom">
-                  <div class="manage"></div>
-                  <div class="tools"></div>
-                </div>
-              </div>
-              <div class="footer"></div>
-             </div>`;
-*/
-
 	}
 
 
 	initCSS(){
+
+			let css = document.createElement("style");
+			css.type = "text/css";
+			css.id = "layout_css_style";
+
+			css.innerHTML = `	.container{
+									height: 100vh;
+									width: 100vh;
+									display: flex;
+									flex-direction: column;
+									justify-content: space-between;
+									background-color: grey;
+									align-items: stretch;
+								}	
+
+									.header{
+										background-color: green;
+									}
+
+									.main{
+										flex:1;
+										background-color: orange;
+										display: flex;
+										flex-direction: column;
+										
+									}
+
+										.top{
+											flex:1;
+											background-color: red;
+											overflow-y: scroll;
+										}
+
+										.bottom{
+
+											background-color: purple;
+										}
+
+									.footer{
+										background-color: green;
+									}
+							`;
+
+			$('body').append(css);
 
 
 	}
