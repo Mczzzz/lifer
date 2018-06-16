@@ -1,5 +1,5 @@
-import Home from '../views/layout/home.js';
-import Objects from '../views/layout/objects.js';
+import Home from '../views/layout/frames/home.js';
+import Objects from '../views/layout/frames/objects.js';
 
 export default class Frame {
 

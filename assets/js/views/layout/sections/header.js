@@ -11,9 +11,7 @@ export default class Header{
 
 	addTags(){
 
-		let html = 	`<nav id="headerBackground"class="navbar-color `+this.backGroundColor+` gradient-shadow">
-						
-		      		</div>`;
+		let html = 	`<div class="navbar-color `+this.backGroundColor+` gradient-shadow"></div>`;
 
 	    $('.header').append(html);
 	}
