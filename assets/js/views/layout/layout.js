@@ -73,6 +73,7 @@ export default class Layout {
 
 									.header{
 										background-color: green;
+										height:56px;
 									}
 
 									.main{
@@ -82,7 +83,11 @@ export default class Layout {
 										flex-direction: column;
 										
 									}
-
+										.breadcrumb{
+											background-color: grey;
+											overflow-x: scroll;
+											height:20px;
+										}
 										.top{
 											flex:1;
 											background-color: red;
@@ -96,6 +101,7 @@ export default class Layout {
 
 									.footer{
 										background-color: green;
+										height:10px;
 									}
 							`;
 
