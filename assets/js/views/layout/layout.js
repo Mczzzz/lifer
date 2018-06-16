@@ -56,7 +56,12 @@ export default class Layout {
 			css.type = "text/css";
 			css.id = "layout_css_style";
 
-			css.innerHTML = `	.container{
+			css.innerHTML = `	body{
+									margin:0px;
+									background-color: blue;
+								}
+
+								.container{
 									height: 100vh;
 									width: 100vh;
 									display: flex;
