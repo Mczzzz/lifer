@@ -93,7 +93,7 @@ export default class tools {
 		this.toolsObjects.style.display        = 'flex';
 		this.toolsObjects.style.alignItems     = 'center';
 		this.toolsObjects.style.justifyContent = 'center';
-	    this.toolsObjects.style.transform      = 'translate(-60px, 0)';
+	    this.toolsObjects.style.transform      = 'translate(-80px, 0)';
 		/*this.toolsMain.style.boxShadow      = '0 3px 10px 0 rgba(38, 198, 218, 0.5)';*/
 		/*this.toolsObjects.animate([
   // keyframes
