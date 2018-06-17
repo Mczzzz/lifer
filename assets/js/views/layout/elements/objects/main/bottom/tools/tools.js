@@ -35,7 +35,7 @@ export default class tools {
 
 	main(){
 
-		let text = 'coucou';
+		let text = '<i class="material-icons">add</i>';
 
 		let start = document.createElement("a");
 		start.append(text);
