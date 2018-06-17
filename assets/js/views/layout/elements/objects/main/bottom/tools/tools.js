@@ -35,7 +35,7 @@ export default class tools {
 
 	main(){
 
-		let text = 'add<';
+		let text = 'add';
 
 		let start = document.createElement("a");
 		
