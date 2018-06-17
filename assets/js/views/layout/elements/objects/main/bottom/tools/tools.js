@@ -118,7 +118,8 @@ export default class tools {
 	animateObjects(e){
 
 		console.log('on click');
-		$('.toolsObjects').className("toolsObjectsAnimate");
+		this.toolsObjects.classList.add('toolsObjectsAnimate');
+		/*$('.toolsObjects').className("toolsObjectsAnimate");*/
 	}
 
 
