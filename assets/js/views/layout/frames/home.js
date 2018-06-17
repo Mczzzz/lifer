@@ -1,8 +1,9 @@
-import jstree from 'jstree';
+/*import jstree from 'jstree'*/;
 
 import layout from '../layout.js';
+
 import Header from '../sections/header.js';
-/*import Footer from './sections/footer.js';*/
+import Footer from '../sections/footer.js';
 
 export default class Home extends layout{
 
@@ -12,13 +13,32 @@ export default class Home extends layout{
 
 		super();
 
+		this.bkgdHF = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
 		this.headerCustom();
-/*		this.getHTMLPage();
-		this.activeJs();*/
+		this.footerCustom();
+
 	}
 
 
-	getHTMLPage(){
+	headerCustom(){
+
+		let HomeHeader = new Header();
+		
+		HomeHeader.setBkgdColor(this.bkgdHF);
+
+	}
+
+
+	footerCustom(){
+
+		let HomeFooter = new Footer();
+		
+		HomeFooter.setBkgdColor(this.bkgdHF);
+
+	}
+
+
+/*	getHTMLPage(){
 
 		this.headerHTML();
 		
@@ -29,16 +49,10 @@ export default class Home extends layout{
 
 		this.footerHTML();
 
-	}
+	}*/
 
 
-	headerCustom(){
 
-		let HomeHeader = new Header();
-		
-		HomeHeader.setBkgdColor('linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)');
-
-	}
 		
 
 
@@ -104,11 +118,11 @@ export default class Home extends layout{
 
 	}
 
-	footerHTML(){
+/*	footerHTML(){
 
 		new Footer();
 	}
-
+*/
 
 	activeJs(){
 
