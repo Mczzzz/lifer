@@ -41,6 +41,7 @@ export default class tools {
 		
 		let icon = document.createElement("i");
 		icon.className = "material-icons";
+		icon.style.color = "white";
 	
 		icon.append(text);
 		start.append(icon);
