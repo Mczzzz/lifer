@@ -12,7 +12,23 @@ export default class tools {
 
 	initDivs(){
 
+		let toolsContainer = document.createElement("div");
+		toolsContainer.className = "toolsContainer";
 
+			let toolsMain = document.createElement("div");
+			toolsMain.className = "toolsMain";
+			toolsContainer.append(toolsMain);
+
+			let toolsOjects = document.createElement("div");
+			toolsOjects.className = "toolsOjects";
+			toolsContainer.append(toolsOjects);
+
+			let toolsHumans = document.createElement("div");
+			toolsHumans.className = "toolsHumans";
+			toolsContainer.append(toolsHumans);
+
+
+		$('.tools').append(ToolsContainer);
 
 	}
 
