@@ -98,9 +98,18 @@ export default class tools {
 		this.toolsObjects.style.justifyContent = 'center';
 	    this.toolsObjects.style.transform      = 'translate(-80px, 0)';
 	    this.toolsObjects.style.opacity        = '0';
-	    /*this.toolsObjects.style.transition     = 'opacity .25s ease-in-out';*/
-	    /*this.toolsObjects.style.transition     = 'opacity .25s ease-in-out';*/
-		/*this.toolsMain.style.boxShadow      = '0 3px 10px 0 rgba(38, 198, 218, 0.5)';*/
+
+	    let css = document.createElement("style");
+			css.type = "text/css";
+			css.id = "toolsObjects";
+			css.innerHTML = `
+							.toolsObjectsAnimate {
+								transition: .4s linear;
+							    transform: translate(80px, 0)';
+							    opacity: 1;
+							}
+							`;
+			document.body.appendChild(css);
 		
 		
 	}
@@ -109,8 +118,7 @@ export default class tools {
 	animateObjects(e){
 
 		console.log('on click');
-		$('.toolsObjects').animate({opacity: '1', transform: 'translate(80px, 0)'});
-
+		$('.toolsObjects').className("toolsObjectsAnimate");
 	}
 
 
