@@ -63,7 +63,7 @@ export default class tools {
 		this.toolsMain.style.justifyContent = 'center';
 		/*this.toolsMain.style.boxShadow      = '0 3px 10px 0 rgba(38, 198, 218, 0.5)';*/
 
-		this.toolsMain.on("click", (e)=>this.animateObjects(e));
+		$('.toolsMain').on("click", (e)=>this.animateObjects(e));
 
 	}
 
