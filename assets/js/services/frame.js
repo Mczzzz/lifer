@@ -1,3 +1,4 @@
+//import i18n from 'i18next';
 import Home from '../views/layout/frames/home.js';
 import Objects from '../views/layout/frames/objects.js';
 

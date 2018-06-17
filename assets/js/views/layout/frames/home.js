@@ -1,8 +1,8 @@
 import jstree from 'jstree';
 
 import layout from '../layout.js';
-/*import Header from './sections/header.js';
-import Footer from './sections/footer.js';*/
+import Header from '../sections/header.js';
+/*import Footer from './sections/footer.js';*/
 
 export default class Home extends layout{
 
@@ -39,7 +39,7 @@ export default class Home extends layout{
 		
 
 
-	bodyHTML(){
+	/*bodyHTML(){
 
 		let body =  `
 			<div id="main">
@@ -66,7 +66,7 @@ export default class Home extends layout{
 
 		$('body').append(body);
 
-	}
+	}*/
 
 
 

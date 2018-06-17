@@ -6,6 +6,8 @@
     "webpack-notifier": "^1.6.0"
   },
   "dependencies": {
+    "fs": "0.0.1-security",
+    "i18next": "^11.3.3",
     "jquery": "^3.3.1",
     "jstree": "^3.3.5",
     "materialize-css": "^0.100.2",
