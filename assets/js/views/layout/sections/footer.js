@@ -11,7 +11,7 @@ export default class Footer{
 
 	setBkgdColor(color){
 
-		$('.header').css( "background", color );
+		$('.footer').css( "background", color );
 
 	}
 
