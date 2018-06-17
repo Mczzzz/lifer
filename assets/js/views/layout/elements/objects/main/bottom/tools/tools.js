@@ -107,7 +107,7 @@ export default class tools {
 	animateObjects(e){
 
 		console.log('on click');
-		this.toolsObjects.animate([
+		$('.toolsObjects').animate([
 		  // keyframes
 		  { transform: 'translateX(0px)' }, 
 		  { transform: 'translateX(80px) opacity' }
