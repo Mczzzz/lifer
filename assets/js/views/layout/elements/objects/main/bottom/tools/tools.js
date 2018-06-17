@@ -63,6 +63,8 @@ export default class tools {
 		this.toolsMain.style.justifyContent = 'center';
 		/*this.toolsMain.style.boxShadow      = '0 3px 10px 0 rgba(38, 198, 218, 0.5)';*/
 
+		this.toolsMain.on("click", (e)=>this.animateObjects(e));
+
 	}
 
 
@@ -95,17 +97,26 @@ export default class tools {
 		this.toolsObjects.style.justifyContent = 'center';
 	    this.toolsObjects.style.transform      = 'translate(-80px, 0)';
 	    this.toolsObjects.style.opacity        = '0';
+	    this.toolsObjects.style.transition     = 'opacity .25s ease-in-out';
 		/*this.toolsMain.style.boxShadow      = '0 3px 10px 0 rgba(38, 198, 218, 0.5)';*/
-		/*this.toolsObjects.animate([
-  // keyframes
-  { transform: 'translateY(0px)' }, 
-  { transform: 'translateY(-300px)' }
-], { 
-  // timing options
-  duration: 1000,
-  iterations: Infinity
-});*/
 		
+		
+	}
+
+
+	animateObjects(e){
+
+		this.toolsObjects.animate([
+		  // keyframes
+		  { transform: 'translateX(0px)' }, 
+		  { transform: 'translateX(80px) opacity' }
+		], { 
+		  // timing options
+		  duration: 1000,
+		  iterations: Infinity
+		});
+
+
 	}
 
 
