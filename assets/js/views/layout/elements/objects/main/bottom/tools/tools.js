@@ -96,17 +96,17 @@ export default class tools {
 		this.toolsObjects.style.display        = 'flex';
 		this.toolsObjects.style.alignItems     = 'center';
 		this.toolsObjects.style.justifyContent = 'center';
-	    this.toolsObjects.style.transform      = 'translate(-80px, 0)';
+	    this.toolsObjects.style.transform      = 'translate(-80px, -30px) scale(0.01)';
 	    this.toolsObjects.style.opacity        = '0';
 	    this.toolsObjects.style.transition	   = '0.4s cubic-bezier(0, 0.87, 0.01, 0.87)';
-	    $('.toolsObjects').hide();
+	   /* $('.toolsObjects').hide();*/
 	   	
 		
 	}
 
 
 	animateObjects(e){
-		$('.toolsObjects').show();
+		/*$('.toolsObjects').show();*/
 		this.toolsObjects.style.transform = '';
 		this.toolsObjects.style.opacity = '1';
 	}
