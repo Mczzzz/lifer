@@ -98,29 +98,15 @@ export default class tools {
 		this.toolsObjects.style.justifyContent = 'center';
 	    this.toolsObjects.style.transform      = 'translate(-80px, 0)';
 	    this.toolsObjects.style.opacity        = '0';
-	    this.toolsObjects.style.transition	   = '.4s linear';
-
-	    let css = document.createElement("style");
-			css.type = "text/css";
-			css.id = "toolsObjects";
-			css.innerHTML = `
-							.toolsObjectsAnimate {
-								transition: .4s linear;
-							    transform: translate(80px, 0);
-							    opacity: 1;
-							}
-							`;
-			document.body.appendChild(css);
-		
+	    this.toolsObjects.style.transition	   = '0.4s cubic-bezier(0, 0.87, 0.01, 0.87)';
+	    $('.toolsObjects').hide();
+	   	
 		
 	}
 
 
 	animateObjects(e){
-
-		console.log('on click');
-		/*this.toolsObjects.classList.add('toolsObjectsAnimate');*/
-		/*$('.toolsObjects').className("toolsObjectsAnimate");*/
+		$('.toolsObjects').show();
 		this.toolsObjects.style.transform = '';
 		this.toolsObjects.style.opacity = '1';
 	}
