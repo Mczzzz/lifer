@@ -6,30 +6,55 @@ export default class tools {
 
 		this.initDivs();
 
-
+		this.main();
 	}
 
 
 	initDivs(){
 
-		let toolsContainer = document.createElement("div");
-		toolsContainer.className = "toolsContainer";
+		this.toolsContainer = document.createElement("div");
+		this.toolsContainer.className = "toolsContainer";
 
-			let toolsMain = document.createElement("div");
-			toolsMain.className = "toolsMain";
-			toolsContainer.append(toolsMain);
+			this.toolsMain = document.createElement("div");
+			this.toolsMain.className = "toolsMain";
+			this.toolsContainer.append(this.toolsMain);
 
-			let toolsOjects = document.createElement("div");
-			toolsOjects.className = "toolsOjects";
-			toolsContainer.append(toolsOjects);
+			this.toolsOjects = document.createElement("div");
+			this.toolsOjects.className = "toolsOjects";
+			this.toolsContainer.append(this.toolsOjects);
 
-			let toolsHumans = document.createElement("div");
-			toolsHumans.className = "toolsHumans";
-			toolsContainer.append(toolsHumans);
+			this.toolsHumans = document.createElement("div");
+			this.toolsHumans.className = "toolsHumans";
+			this.toolsContainer.append(this.toolsHumans);
 
 
 		$('.tools').append(toolsContainer);
 
+	}
+
+
+	main(){
+
+		let text = 'coucou';
+
+		let start = document.createElement("a");
+		start.append(text);
+
+		this.toolsMain.append(start);
+
+
+	}
+
+
+	objects(){
+
+		
+	}
+
+
+	humans(){
+
+		
 	}
 
 
