@@ -3,6 +3,7 @@
 import layout from '../layout.js';
 
 import Header from '../sections/header.js';
+import Main from '../sections/main.js';
 import Footer from '../sections/footer.js';
 
 export default class Home extends layout{
@@ -15,6 +16,7 @@ export default class Home extends layout{
 
 		this.bkgdHF = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
 		this.headerCustom();
+		this.mainCustom();
 		this.footerCustom();
 
 	}
@@ -25,6 +27,15 @@ export default class Home extends layout{
 		let HomeHeader = new Header();
 		
 		HomeHeader.setBkgdColor(this.bkgdHF);
+
+	}
+
+
+	mainCustom(){
+
+		let HomeMain = new Main();
+
+		HomeMain.setBkgdTopColor('grey');
 
 	}
 
