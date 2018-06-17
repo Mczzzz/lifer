@@ -105,7 +105,7 @@ export default class tools {
 			css.innerHTML = `
 							.toolsObjectsAnimate {
 								transition: .4s linear;
-							    transform: 'translate(80px, 0)';
+							    transform: translate(80px, 0);
 							    opacity: 1;
 							}
 							`;
