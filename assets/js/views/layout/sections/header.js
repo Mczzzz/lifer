@@ -11,7 +11,7 @@ export default class Header{
 
 	setBkgdColor(color){
 
-		$('.header').css( "background-color", color );
+		$('.header').css( "background", color );
 
 	}
 
