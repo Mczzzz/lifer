@@ -30,6 +30,7 @@ export default class tools {
 
 		$('.tools').append(this.toolsContainer);
 
+		this.toolsContainer.style.display = "flex";
 	}
 
 
