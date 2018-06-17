@@ -93,9 +93,17 @@ export default class tools {
 		this.toolsObjects.style.display        = 'flex';
 		this.toolsObjects.style.alignItems     = 'center';
 		this.toolsObjects.style.justifyContent = 'center';
-		this.toolsObjects.style.transform      = 'scale(0.5) translate(-100%, -100%)';
+	/*	this.toolsObjects.style.transform      = 'scale(0.5) translate(-100%, -100%)';*/
 		/*this.toolsMain.style.boxShadow      = '0 3px 10px 0 rgba(38, 198, 218, 0.5)';*/
-
+		this.toolsObjects.animate([
+  // keyframes
+  { transform: 'translateY(0px)' }, 
+  { transform: 'translateY(-300px)' }
+], { 
+  // timing options
+  duration: 1000,
+  iterations: Infinity
+});
 		
 	}
 
