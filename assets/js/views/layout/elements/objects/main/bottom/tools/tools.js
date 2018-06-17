@@ -38,12 +38,15 @@ export default class tools {
 		let text = 'add';
 
 		let start = document.createElement("a");
+		start.css("height", 56);
 		
 		let icon = document.createElement("i");
 		icon.className = "material-icons";
 	
 		icon.append(text);
 		start.append(icon);
+
+
 		this.toolsMain.append(start);
 
 
