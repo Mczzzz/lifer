@@ -47,7 +47,7 @@ export default class tools {
 		start.append(icon);
 
 
-		this.toolsMain.append(start);
+		this.toolsOjects.append(start);
 
 
 		//css
@@ -65,6 +65,33 @@ export default class tools {
 
 
 	objects(){
+
+
+		let text = 'add';
+
+		let objects = document.createElement("a");
+		
+		let icon = document.createElement("i");
+		icon.className = "material-icons";
+		icon.style.color = "white";
+	
+		icon.append(text);
+		objects.append(icon);
+
+
+		this.toolsObjects.append(objects);
+
+
+		//css
+		this.toolsObjects.style.margin         = '10px';
+		this.toolsObjects.style.background     = 'linear-gradient(45deg, #0288d1 0%, #26c6da 100%)';
+		this.toolsObjects.style.width          = '30px';
+		this.toolsObjects.style.height         = '30px';
+		this.toolsObjects.style.borderRadius   = '50%';
+		this.toolsObjects.style.display        = 'flex';
+		this.toolsObjects.style.alignItems     = 'center';
+		this.toolsObjects.style.justifyContent = 'center';
+		/*this.toolsMain.style.boxShadow      = '0 3px 10px 0 rgba(38, 198, 218, 0.5)';*/
 
 		
 	}
