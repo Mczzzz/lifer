@@ -38,7 +38,7 @@ export default class tools {
 		let text = 'add';
 
 		let start = document.createElement("a");
-		start.css("height", 56);
+		start.style.height = "56px";
 		
 		let icon = document.createElement("i");
 		icon.className = "material-icons";
