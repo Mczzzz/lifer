@@ -34,9 +34,10 @@ export default class Home extends layout{
 
 	headerCustom(){
 
-		new Header();
+		let HomeHeader = new Header();
 
-		//		return header.addTags();
+		HomeHeader.setBkgdColor('linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)');
+
 	}
 		
 

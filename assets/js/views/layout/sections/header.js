@@ -5,24 +5,14 @@ export default class Header{
 	
 		this.backGroundColor =  '';
 
-		this.addTags();
 	}
 
 
-	addTags(){
 
-		let html = 	`<div class="navbar-color `+this.backGroundColor+` gradient-shadow"></div>`;
+	setBkgdColor(color){
 
-	    $('.header').append(html);
-	}
-
-
-	setBackgroundColor(color){
-
-		$('#headerBackground').removeAttr('class');
-		$('#headerBackground').addClass('navbar-color');
-		$('#headerBackground').addClass('gradient-shadow');
-		$('#headerBackground').addClass(color);
+		$('.header').removeClass('background');
+		$('.header').addClass(color);
 
 	}
 
