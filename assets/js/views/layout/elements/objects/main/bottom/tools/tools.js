@@ -9,6 +9,7 @@ export default class tools {
 
 		this.main();
 		this.objects();
+		this.humans();
 	}
 
 
