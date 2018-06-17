@@ -51,14 +51,15 @@ export default class tools {
 
 
 		//css
-		this.toolsMain.style.margin = '10px';
-		this.toolsMain.style.background = 'linear-gradient(45deg, #0288d1 0%, #26c6da 100%)';
-		this.toolsMain.style.width = '60px';
-		this.toolsMain.style.height = '60px';
-		this.toolsMain.style.borderRadius = '50%';
-		this.toolsMain.style.display = 'flex';
-		this.toolsMain.style.alignItems = 'center';
+		this.toolsMain.style.margin         = '10px';
+		this.toolsMain.style.background     = 'linear-gradient(45deg, #0288d1 0%, #26c6da 100%)';
+		this.toolsMain.style.width          = '60px';
+		this.toolsMain.style.height         = '60px';
+		this.toolsMain.style.borderRadius   = '50%';
+		this.toolsMain.style.display        = 'flex';
+		this.toolsMain.style.alignItems     = 'center';
 		this.toolsMain.style.justifyContent = 'center';
+		this.toolsMain.style.boxShadow      = '0 6px 20px 0 rgba(38, 198, 218, 0.5)';
 
 	}
 
