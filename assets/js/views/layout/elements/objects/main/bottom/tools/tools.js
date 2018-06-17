@@ -59,7 +59,7 @@ export default class tools {
 		this.toolsMain.style.display        = 'flex';
 		this.toolsMain.style.alignItems     = 'center';
 		this.toolsMain.style.justifyContent = 'center';
-		this.toolsMain.style.boxShadow      = '0 6px 20px 0 rgba(38, 198, 218, 0.5)';
+		/*this.toolsMain.style.boxShadow      = '0 3px 10px 0 rgba(38, 198, 218, 0.5)';*/
 
 	}
 
