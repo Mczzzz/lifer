@@ -38,7 +38,6 @@ export default class tools {
 		let text = 'add';
 
 		let start = document.createElement("a");
-		start.style.height = "56px";
 		
 		let icon = document.createElement("i");
 		icon.className = "material-icons";
@@ -49,6 +48,16 @@ export default class tools {
 
 		this.toolsMain.append(start);
 
+
+		//css
+		this.toolsMain.style.margin = '10px';
+		this.toolsMain.style.background = 'aqua';
+		this.toolsMain.style.width = '60px';
+		this.toolsMain.style.height = '60px';
+		this.toolsMain.style.borderRadius = '50%';
+		this.toolsMain.style.display = 'flex';
+		this.toolsMain.style.alignItems = 'center';
+		this.toolsMain.style.justifyContent = 'center';
 
 	}
 
