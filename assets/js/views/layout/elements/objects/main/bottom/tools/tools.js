@@ -98,6 +98,7 @@ export default class tools {
 		this.toolsObjects.style.justifyContent = 'center';
 	    this.toolsObjects.style.transform      = 'translate(-80px, 0)';
 	    this.toolsObjects.style.opacity        = '0';
+	    this.toolsObjects.style.transition	   = '.4s linear';
 
 	    let css = document.createElement("style");
 			css.type = "text/css";
@@ -118,8 +119,10 @@ export default class tools {
 	animateObjects(e){
 
 		console.log('on click');
-		this.toolsObjects.classList.add('toolsObjectsAnimate');
+		/*this.toolsObjects.classList.add('toolsObjectsAnimate');*/
 		/*$('.toolsObjects').className("toolsObjectsAnimate");*/
+		this.toolsObjects.style.transform = '';
+		this.toolsObjects.style.opacity = '1';
 	}
 
 
