@@ -35,11 +35,15 @@ export default class tools {
 
 	main(){
 
-		let text = '<i class="material-icons">add</i>';
+		let text = 'add<';
 
 		let start = document.createElement("a");
-		start.append(text);
-
+		
+		let icon = document.createElement("i");
+		icon.className = "material-icons";
+	
+		icon.append(text);
+		start.append(icon);
 		this.toolsMain.append(start);
 
 
