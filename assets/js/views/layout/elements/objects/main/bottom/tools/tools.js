@@ -110,7 +110,7 @@ export default class tools {
 		$('.toolsObjects').animate([
 		  // keyframes
 		  { transform: 'translateX(0px)' }, 
-		  { transform: 'translateX(80px) opacity' }
+		  { transform: 'translateX(80px)' }
 		], { 
 		  // timing options
 		  duration: 1000,
