@@ -108,7 +108,7 @@ export default class tools {
 	animateObjects(e){
 
 		console.log('on click');
-		$('.toolsObjects').transition({perspective: '100px',
+		this.toolsObjects.transition({perspective: '100px',
   rotateY: '180deg'});
 
 	}
