@@ -7,6 +7,7 @@ export default class tools {
 		this.initDivs();
 
 		this.main();
+		this.objects();
 	}
 
 
