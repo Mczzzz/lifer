@@ -110,7 +110,7 @@ export default class tools {
 
 		console.log('on click');
 		$('.toolsObjects').animate({opacity: '1',
-  x: '80'});
+  translateX: '80px'});
 
 	}
 
