@@ -106,6 +106,7 @@ export default class tools {
 
 	animateObjects(e){
 
+		console.log('on click');
 		this.toolsObjects.animate([
 		  // keyframes
 		  { transform: 'translateX(0px)' }, 
