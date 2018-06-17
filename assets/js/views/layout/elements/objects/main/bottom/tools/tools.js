@@ -109,7 +109,7 @@ export default class tools {
 	animateObjects(e){
 
 		console.log('on click');
-		$('.toolsObjects').animate({opacity: '1',transform: translate('80px', '0px')});
+		$('.toolsObjects').animate({opacity: '1', left: '80px'});
 
 	}
 
