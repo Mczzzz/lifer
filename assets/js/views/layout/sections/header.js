@@ -3,7 +3,7 @@ export default class Header{
 
 	constructor(){
 	
-		this.backGroundColor =  'gradient-45deg-purple-deep-orange';
+		this.backGroundColor =  '';
 
 		this.addTags();
 	}

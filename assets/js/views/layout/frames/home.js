@@ -11,6 +11,8 @@ export default class Home extends layout{
 	constructor(){
 
 		super();
+
+		this.headerCustom();
 /*		this.getHTMLPage();
 		this.activeJs();*/
 	}
@@ -30,7 +32,7 @@ export default class Home extends layout{
 	}
 
 
-	headerHTML(){
+	headerCustom(){
 
 		new Header();
 
