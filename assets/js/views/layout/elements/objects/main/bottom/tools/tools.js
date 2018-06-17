@@ -1,3 +1,5 @@
+import transition from 'jquery.transit';
+
 export default class tools {
 
 
