@@ -64,7 +64,7 @@ export default class tools {
 		this.toolsMain.style.justifyContent = 'center';
 		/*this.toolsMain.style.boxShadow      = '0 3px 10px 0 rgba(38, 198, 218, 0.5)';*/
 
-		$('.toolsMain').on("click", (e)=>this.animateObjects(e));
+		$('.toolsMain').on("click", (e)=>this.animateChilds(e));
 
 	}
 
@@ -105,54 +105,51 @@ export default class tools {
 	}
 
 
-	animateObjects(e){
+	animateChilds(e){
 		/*$('.toolsObjects').show();*/
 		this.toolsObjects.style.transform = '';
 		this.toolsObjects.style.opacity = '1';
+
+		this.toolsHumans.style.transform = '';
+		this.toolsHumans.style.opacity = '1';
+
 	}
 
 
 	humans(){
 
+		let text = 'face';
+
+		let humans = document.createElement("a");
+		
+		let icon = document.createElement("i");
+		icon.className = "material-icons";
+		icon.style.color = "white";
+	
+		icon.append(text);
+		humans.append(icon);
+
+
+		this.toolsHumans.append(humans);
+
+
+		//css
+		this.toolsHumans.style.margin         = '17px';
+		this.toolsHumans.style.background     = 'linear-gradient(45deg, #0097a7 0%, #9ccc65 100%)';
+		this.toolsHumans.style.width          = '46px';
+		this.toolsHumans.style.height         = '46px';
+		this.toolsHumans.style.borderRadius   = '50%';
+		this.toolsHumans.style.display        = 'flex';
+		this.toolsHumans.style.alignItems     = 'center';
+		this.toolsHumans.style.justifyContent = 'center';
+	    this.toolsHumans.style.transform      = 'translate(-160px, -30px) scale(0.01)';
+	    this.toolsHumans.style.opacity        = '0';
+	    this.toolsHumans.style.transition	   = '0.4s cubic-bezier(0, 0.87, 0.01, 0.87)';
 		
 	}
 
 
-/*
-floatingHTML(){
 
-		let floating =  `<div class="fixed-action-btn " style="bottom: 19px; left: 19px; width: 60px">
-		              <a class="btn-floating btn-large gradient-45deg-light-blue-cyan gradient-shadow">
-		                <i class="material-icons">add</i>
-		              </a>
-		              <ul>
-		                <li>
-		                  <a href=""  class="btn-floating grey">
-		                    <i class="material-icons">face</i>
-		                  </a>
-		                </li>
-		                <li>
-		                  <a href="#!" id="menu-obj"class="btn-floating green">
-		                    <i class="material-icons">widgets</i>
-		                  </a>
-		                </li>
-		                <li>
-		                  <a href="app-calendar.html" class="btn-floating grey">
-		                    <i class="material-icons">today</i>
-		                  </a>
-		                </li>
-		              </ul>
-		            </div>`;
-
-		$('body').append(floating);
-
-	}
-
-/*	footerHTML(){
-
-		new Footer();
-	}
-*/
 /*
 	activeJs(){
 
