@@ -86,7 +86,7 @@ export default class tools {
 
 		//css
 		this.toolsObjects.style.margin         = '17px';
-		this.toolsObjects.style.background     = 'linear-gradient(45deg, #0097a7 0%, #b2ff59 100%)';
+		this.toolsObjects.style.background     = 'linear-gradient(45deg, #0097a7 0%, #9ccc65 100%)';
 		this.toolsObjects.style.width          = '46px';
 		this.toolsObjects.style.height         = '46px';
 		this.toolsObjects.style.borderRadius   = '50%';
