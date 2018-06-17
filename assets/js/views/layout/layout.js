@@ -62,8 +62,7 @@ export default class Layout {
 								}
 
 								.container{
-									height: 100vh;
-									width: 100vh;
+									
 									display: flex;
 									flex-direction: column;
 									justify-content: space-between;
