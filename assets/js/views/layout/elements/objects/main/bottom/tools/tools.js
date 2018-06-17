@@ -51,7 +51,7 @@ export default class tools {
 
 		//css
 		this.toolsMain.style.margin = '10px';
-		this.toolsMain.style.background = 'aqua';
+		this.toolsMain.style.background = 'linear-gradient(45deg, #0288d1 0%, #26c6da 100%)';
 		this.toolsMain.style.width = '60px';
 		this.toolsMain.style.height = '60px';
 		this.toolsMain.style.borderRadius = '50%';
