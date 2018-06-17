@@ -98,7 +98,7 @@ export default class tools {
 		this.toolsObjects.style.justifyContent = 'center';
 	    this.toolsObjects.style.transform      = 'translate(-80px, 0)';
 	    this.toolsObjects.style.opacity        = '0.5';
-	    this.toolsObjects.style.transition     = 'opacity .25s ease-in-out';
+	    /*this.toolsObjects.style.transition     = 'opacity .25s ease-in-out';*/
 	    /*this.toolsObjects.style.transition     = 'opacity .25s ease-in-out';*/
 		/*this.toolsMain.style.boxShadow      = '0 3px 10px 0 rgba(38, 198, 218, 0.5)';*/
 		
@@ -109,8 +109,8 @@ export default class tools {
 	animateObjects(e){
 
 		console.log('on click');
-		$('.toolsObjects').animate({perspective: '100px',
-  rotateY: '180deg'});
+		$('.toolsObjects').animate({opacity: '1',
+  x: '80'});
 
 	}
 
