@@ -19,9 +19,9 @@ export default class tools {
 			this.toolsMain.className = "toolsMain";
 			this.toolsContainer.append(this.toolsMain);
 
-			this.toolsOjects = document.createElement("div");
-			this.toolsOjects.className = "toolsOjects";
-			this.toolsContainer.append(this.toolsOjects);
+			this.toolsObjects = document.createElement("div");
+			this.toolsObjects.className = "toolsObjects";
+			this.toolsContainer.append(this.toolsObjects);
 
 			this.toolsHumans = document.createElement("div");
 			this.toolsHumans.className = "toolsHumans";
@@ -48,7 +48,7 @@ export default class tools {
 		start.append(icon);
 
 
-		this.toolsOjects.append(start);
+		this.toolsObjects.append(start);
 
 
 		//css
