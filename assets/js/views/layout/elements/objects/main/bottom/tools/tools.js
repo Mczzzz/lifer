@@ -28,7 +28,7 @@ export default class tools {
 			toolsContainer.append(toolsHumans);
 
 
-		$('.tools').append(ToolsContainer);
+		$('.tools').append(toolsContainer);
 
 	}
 
