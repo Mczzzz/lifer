@@ -85,10 +85,10 @@ export default class tools {
 
 
 		//css
-		this.toolsObjects.style.margin         = '10px';
+		this.toolsObjects.style.margin         = '17px';
 		this.toolsObjects.style.background     = 'linear-gradient(45deg, #0288d1 0%, #26c6da 100%)';
-		this.toolsObjects.style.width          = '45px';
-		this.toolsObjects.style.height         = '45px';
+		this.toolsObjects.style.width          = '46px';
+		this.toolsObjects.style.height         = '46px';
 		this.toolsObjects.style.borderRadius   = '50%';
 		this.toolsObjects.style.display        = 'flex';
 		this.toolsObjects.style.alignItems     = 'center';
