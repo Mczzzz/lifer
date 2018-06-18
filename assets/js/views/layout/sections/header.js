@@ -19,13 +19,14 @@ export default class Header {
 
 		$('.headerContainer').css( "background", "grey" );
 
-		$('.headerContainer').css( "width", $('.header').width() * 0.8 );
-		$('.headerContainer').css( "height", $('.header').height() * 0.8 );
+		//calcul de la marge à applique en fontion du height
+		let margeSize = $('.header').height() - $('.header').height() * 0.9;
 
-		$('.headerContainer').css( "margin-left", $('.header').width() * 0.1 );
-		$('.headerContainer').css( "margin-right", $('.header').width() * 0.1 );
-		$('.headerContainer').css( "margin-top", $('.header').height() * 0.1 );
-		$('.headerContainer').css( "margin-bottom", $('.header').height() * 0.1 );
+		$('.headerContainer').css( "width", $('.header').width() - margeSize * 2 );
+		$('.headerContainer').css( "height", $('.header').height() - margeSize * 2 );
+
+		$('.headerContainer').css( "margin", margeSize );
+
 	}
 
 
