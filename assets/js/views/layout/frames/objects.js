@@ -58,6 +58,7 @@ export default class Objects extends layout{
     let HomeHeader = new Header();
     
     HomeHeader.setBkgdColor(this.bkgdHF);
+    HomeHeader.setBackToHome();
 
   }
 
