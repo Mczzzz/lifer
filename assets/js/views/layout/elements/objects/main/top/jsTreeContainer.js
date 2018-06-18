@@ -1,3 +1,5 @@
+import LoaderCollection from '../../../../../../services/LoaderCollection.js';
+
 export default class jsTreeContainer {
 
 
@@ -119,6 +121,35 @@ export default class jsTreeContainer {
 
 			this.JsTreeContainer.jstree(true).hide_dots();
 
+	}
+
+
+	getJstreeContainerElements(){
+
+
+		let dataList = this.collection.getList(this.parentId);
+
+		
+
+			for (let k in dataList){
+
+				if (dataList[k].parent == '#') dataList[k].parent = 0;
+
+			}
+
+
+		let RootName = "Mon Univers";
+
+		if(this.parentId != false) RootName = this.parentName;
+
+
+			let MyUnivers = {'id': 0, 'parent': "#", 'text': RootName, type: ""};
+			dataList.unshift(MyUnivers);
+
+		
+
+        this.JsTreeContainer.jstree(true).settings.core.data = dataList;
+        this.JsTreeContainer.jstree(true).refresh();
 	}
 
 
