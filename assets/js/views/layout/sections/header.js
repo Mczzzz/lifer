@@ -18,15 +18,14 @@ export default class Header {
 		$('.headerContainer').css( "justify-content", "space-between" );
 
 		$('.headerContainer').css( "background", "grey" );
-		console.log($('.header').height());
-		console.log($('.header').width());
-/*		$('.headerContainer').css( "width", $('.header').style.width * 0.8 );
-		$('.headerContainer').css( "height", $('.header').style.height * 0.8 );
 
-		$('.headerContainer').css( "margin-left", $('.header').style.width * 0.1 );
-		$('.headerContainer').css( "margin-right", $('.header').style.width * 0.1 );
-		$('.headerContainer').css( "margin-top", $('.header').style.height * 0.1 );
-		$('.headerContainer').css( "margin-bottom", $('.header').style.height * 0.1 );*/
+		$('.headerContainer').css( "width", $('.header').width() * 0.8 );
+		$('.headerContainer').css( "height", $('.header').height() * 0.8 );
+
+		$('.headerContainer').css( "margin-left", $('.header').width() * 0.1 );
+		$('.headerContainer').css( "margin-right", $('.header').width() * 0.1 );
+		$('.headerContainer').css( "margin-top", $('.header').height() * 0.1 );
+		$('.headerContainer').css( "margin-bottom", $('.header').height() * 0.1 );
 	}
 
 
