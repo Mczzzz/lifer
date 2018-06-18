@@ -3,14 +3,17 @@ import ObjectInfos from '../collections/ObjectInfosCollection.js';
 import ObjectInfosResourcesType from '../collections/ObjectInfosResourcesTypeCollection.js';
 import ObjectTree from '../collections/ObjectTreeCollection.js';
 
-export default class LoaderCollection {
+const classes = {
+    Container,
+    ObjectInfos,
+    ObjectInfosResourcesType,
+    ObjectTree
+};
 
-	constructor(collection){
-
-		this.collection = new [collection]();
-
-		console.log(this.collection);
-
-	}
-
+class LoaderCollection  {
+    constructor (className) {
+        return new classes[className]();
+    }
 }
+
+export default LoaderCollection;
