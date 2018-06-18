@@ -17,7 +17,7 @@ export default class Header {
 		$('.headerContainer').css( "display", "flex" );
 		$('.headerContainer').css( "justify-content", "space-between" );
 
-		$('.headerContainer').css( "background", "grey" );
+		/*$('.headerContainer').css( "background", "grey" );*/
 
 		//calcul de la marge à applique en fontion du height
 		let margeSize = $('.header').height() - $('.header').height() * 0.9;
@@ -43,7 +43,7 @@ export default class Header {
 		headerBackHome.className = "headerBackHome";
 		$('.headerContainer').append(headerBackHome);
 
-		$('.headerBackHome').css( "background", "blue" );
+		/*$('.headerBackHome').css( "background", "blue" );*/
 
 		$('.headerBackHome').append('<i id="BackToHome" class="material-icons" style="font-size:40px;color:white">keyboard_backspace</i>');
 	
