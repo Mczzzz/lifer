@@ -16,7 +16,7 @@ export default class jsTreeContainer {
 
 		this.initJstreeContainer();
 
-/*		getJstreeContainerElements*/
+		this.getJstreeContainerElements();
 
 	}
 
@@ -156,8 +156,8 @@ export default class jsTreeContainer {
 
 		
 
-        this.JsTreeContainer.jstree(true).settings.core.data = dataList;
-        this.JsTreeContainer.jstree(true).refresh();
+        $('.JsTreeContain').jstree(true).settings.core.data = dataList;
+        $('.JsTreeContain').jstree(true).refresh();
 	}
 
 
