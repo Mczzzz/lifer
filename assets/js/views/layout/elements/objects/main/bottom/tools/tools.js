@@ -20,7 +20,9 @@ export default class tools {
 		this.toolsInput.style.padding   = '4px';
 		this.toolsInput.style.borderRadius   = '4px';
 		this.toolsInput.style.border   = '1px solid silver';
-		this.toolsInput.style.placeholder   = 'Recherche';
+		this.toolsInput.style.placeHolder   = 'Recherche';
+		this.toolsInput.style.height   = '3rem';
+		this.toolsInput.style.width   = '100%';
 		this.toolsInput.className = "toolsInput";
 		this.toolsContainer.append(this.toolsInput);
 
