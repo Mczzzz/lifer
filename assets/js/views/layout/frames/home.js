@@ -1,5 +1,3 @@
-/*import jstree from 'jstree'*/;
-
 import layout from '../layout.js';
 
 import Header from '../sections/header.js';
