@@ -55,4 +55,18 @@ export default class Header {
 
 	}
 
+
+	setIconPage(){
+
+		let headerWidgets = document.createElement("div");
+		headerWidgets.className = "headerWidgets";
+		$('.headerContainer').append(headerWidgets);
+
+		/*$('.headerBackHome').css( "background", "blue" );*/
+
+		$('.headerWidgets').append('<i id="BackToHome" class="material-icons" style="font-size:40px;color:white">widgets</i>');
+
+	}
+
+
 }

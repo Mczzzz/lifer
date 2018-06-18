@@ -59,6 +59,7 @@ export default class Objects extends layout{
     
     HomeHeader.setBkgdColor(this.bkgdHF);
     HomeHeader.setBackToHome();
+    HomeHeader.setIconPage();
 
   }
 
