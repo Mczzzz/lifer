@@ -2,6 +2,7 @@ import layout from '../layout.js';
 
 import Header from '../sections/header.js';
 import Footer from '../sections/footer.js';
+import Tools from '../elements/objects/main/bottom/tools/tools.js';
 /*import Header from '../elements/objects/headerObjects.js';
 import Footer from './sections/footer.js';
 
@@ -63,6 +64,17 @@ export default class Objects extends layout{
     HomeHeader.setBackToHome();
     HomeHeader.setIconPage();
 
+  }
+
+
+
+  mainBottomTools(){
+
+
+     let mainBottomTools = new Tools();
+
+    
+    
   }
 
 
