@@ -3,14 +3,18 @@ import LoaderCollection from '../../../../../../services/LoaderCollection.js';
 export default class jsTreeContainer {
 
 
-	constructor(HTMLParent){
+	constructor(HTMLParent,collection){
 		console.log('in contructor');
 		//create the div to attach to parent
 		this.JsTreeContain = document.createElement("div");
 		this.JsTreeContain.className = "JsTreeContain";
 		$('.'+HTMLParent).append(this.JsTreeContain);
 
-		let res = new LoaderCollection('Container');
+		this.collection = new LoaderCollection(collection);
+
+		this.initJstreeContainer();
+
+/*		getJstreeContainerElements*/
 
 	}
 
