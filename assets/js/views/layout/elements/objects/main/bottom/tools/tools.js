@@ -24,7 +24,7 @@ export default class tools {
 		
 		this.toolsInput.style.height   = '2rem';
 
-		let margeSize = $('.tools').width() - $('.header').width() * 0.9;
+		let margeSize = $('.tools').width() - $('.tools').width() * 0.9;
 
 		this.toolsInput.style.width =  $('.tools').width() - margeSize * 2 ;
 
