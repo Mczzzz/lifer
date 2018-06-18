@@ -6,7 +6,7 @@ export default class jsTreeContainer {
 		//create the div to attach to parent
 		let JsTreeContain = document.createElement("div");
 		JsTreeContain.className = "JsTreeContain";
-		$('.top').append(JsTreeContain);
+		$('.'+HTMLParent).append(JsTreeContain);
 
 	}
 
