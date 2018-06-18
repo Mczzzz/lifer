@@ -22,8 +22,12 @@ export default class tools {
 		this.toolsInput.style.border   = '1px solid silver';
 		this.toolsInput.style.placeHolder   = 'Recherche...';
 		this.toolsInput.style.height   = '2rem';
-		this.toolsInput.style.width   = '100%';
-		this.toolsInput.style.margin   = '10px';
+
+		let margeSize = $('.tools').width() - $('.header').width() * 0.9;
+
+		this.toolsInput.style.width =  $('.tools').width() - margeSize * 2 ;
+
+		this.toolsInput.style.margin   = margeSize;
 		this.toolsInput.className = "toolsInput";
 		this.toolsContainer.append(this.toolsInput);
 
