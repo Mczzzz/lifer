@@ -22,7 +22,7 @@ export default class tools {
 		this.toolsInput.style.padding   = '5px';
 		this.toolsInput.style.borderRadius   = '5px';
 		this.toolsInput.style.border   = '1px solid silver';
-		this.toolsInput.style.height   = '2rem';
+		this.toolsInput.style.height   = '40px';
 
 		this.toolsContainer.append(this.toolsInput);
 		$('.tools').append(this.toolsContainer);

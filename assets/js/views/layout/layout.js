@@ -96,6 +96,9 @@ export default class Layout {
 										.bottom{
 
 											background-color: purple;
+											display:flex;
+											flex-direction: column;
+											justify-content: space-between;
 										}
 
 									.footer{
