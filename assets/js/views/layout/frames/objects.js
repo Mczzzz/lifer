@@ -1,5 +1,6 @@
 import layout from '../layout.js';
 
+import Header from '../sections/header.js';
 /*import Header from '../elements/objects/headerObjects.js';
 import Footer from './sections/footer.js';
 
@@ -18,6 +19,9 @@ export default class Objects extends layout{
 	constructor(){
 
     super();
+
+    this.bkgdHF = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
+    this.headerCustom();
 
 /*		this.getHTMLPage();
 
@@ -49,7 +53,17 @@ export default class Objects extends layout{
 	}
 
 
-	getHTMLPage(){
+  headerCustom(){
+
+    let HomeHeader = new Header();
+    
+    HomeHeader.setBkgdColor(this.bkgdHF);
+
+  }
+
+
+
+/*	getHTMLPage(){
 
     this.bodyHTML();  
 
@@ -59,27 +73,27 @@ export default class Objects extends layout{
 		
     this.setCustomDesign();
 
-	}
+	}*/
 
 
-  setCustomDesign(){
+/*  setCustomDesign(){
 
 
 
   }
+*/
 
 
-
-
+/*
 	headerHTML(){
 
 		let header = new Header();
     header.setBackgroundColor('gradient-45deg-green-teal');
 
-	}
+	}*/
 		
 
-
+/*
 	bodyHTML(){
 
     let body = `<div class="container">
@@ -95,7 +109,7 @@ export default class Objects extends layout{
                   <div class="footer"></div>
                  </div>`;
 
-/*
+
 		let body_old =  `<div id="main">
 
 			        <div class="wrapper">
@@ -119,11 +133,11 @@ export default class Objects extends layout{
 			 
 			      	</div>
 
-		    	</div>`;*/
+		    	</div>`;
 
     $('body').append(body);
 
-	}
+	}*/
 
 
   footerHTML(){
