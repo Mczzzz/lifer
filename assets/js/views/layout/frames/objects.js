@@ -1,3 +1,5 @@
+import layout from '../layout.js';
+
 /*import Header from '../elements/objects/headerObjects.js';
 import Footer from './sections/footer.js';
 
@@ -10,12 +12,14 @@ import JsTreeContainer from '../elements/objects/jsTreeContainer.js';
 import toolBar from '../elements/objects/toolBarObjects.js';
 import infosLoader from '../elements/objects/leafLoaderObjects.js';
 */
-export default class Objects{
+export default class Objects extends layout{
 
 
 	constructor(){
 
-		this.getHTMLPage();
+    super();
+
+/*		this.getHTMLPage();
 
     this.JsTreeContainer = 'jstreeContainerdiv';
 
@@ -41,7 +45,7 @@ export default class Objects{
 
     window.addEventListener('ContainerSelect', (e) => this.onContainerSelected(e));
     window.addEventListener('childAction', (e) => this.onChildAction(e));
-    window.addEventListener('parentAction', (e) => this.onParentAction(e));
+    window.addEventListener('parentAction', (e) => this.onParentAction(e));*/
 	}
 
 
