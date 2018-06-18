@@ -103,7 +103,7 @@ export default class tools {
 
 
 	    $('.toolsObjects').on('click', function() {
-
+	   
 	       let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
 	       window.dispatchEvent(LinkEvent);
 	    });
@@ -143,7 +143,7 @@ export default class tools {
 
 		//css
 		this.toolsHumans.style.margin         = '17px';
-		this.toolsHumans.style.background     = 'linear-gradient(45deg, #0097a7 0%, #9ccc65 100%)';
+		this.toolsHumans.style.background     = 'linear-gradient(45deg, rgb(223, 4, 226) 0%, rgb(255, 185, 250) 100%)';
 		this.toolsHumans.style.width          = '46px';
 		this.toolsHumans.style.height         = '46px';
 		this.toolsHumans.style.borderRadius   = '50%';
