@@ -16,6 +16,8 @@ export default class Header{
 
 		$('.headerContainer').css( "display", "flex" );
 		$('.headerContainer').css( "justify-content", "space-between" );
+
+		$('.headerContainer').css( "background", "grey" );
 	}
 
 
@@ -32,6 +34,9 @@ export default class Header{
 		headerBackHome.className = "headerBackHome";
 		$('.headerContainer').append(headerBackHome);
 
+		$('.headerBackHome').css( "background", "blue" );
+
+		$('.hheaderBackHome').append('<i id="BackToHome" class="material-icons" style="font-size:40px;margin-left:10px">keyboard_backspace</i>');
 		/*$(".nav-wrapper").append('<i id="BackToHome" class="material-icons" style="font-size:40px;margin-left:10px">keyboard_backspace</i>');*/
 	}
 
