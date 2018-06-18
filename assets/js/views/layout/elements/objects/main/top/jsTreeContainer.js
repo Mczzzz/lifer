@@ -127,7 +127,7 @@ export default class jsTreeContainer {
 
 	         });
 
-			this.JsTreeContain.jstree(true).hide_dots();
+			$('.JsTreeContain').jstree(true).hide_dots();
 
 	}
 
