@@ -10,6 +10,8 @@ export default class jsTreeContainer {
 		this.JsTreeContain.className = "JsTreeContain";
 		$('.'+HTMLParent).append(this.JsTreeContain);
 
+		let res = new LoaderCollection('Container');
+
 	}
 
 
