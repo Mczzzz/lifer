@@ -3,6 +3,7 @@ import layout from '../layout.js';
 import Header from '../sections/header.js';
 import Footer from '../sections/footer.js';
 import Tools from '../elements/objects/main/bottom/tools/tools.js';
+import jsTreeContainer from '../elements/objects/main/top/jsTreeContainer.js'
 /*import Header from '../elements/objects/headerObjects.js';
 import Footer from './sections/footer.js';
 
@@ -24,6 +25,7 @@ export default class Objects extends layout{
 
     this.bkgdHF = 'linear-gradient(45deg, #43A047 0%, #1de9b6 100%)';
     this.headerCustom();
+    this.mainTop();
     this.mainBottomTools();
     this.footerCustom();
 
@@ -68,13 +70,21 @@ export default class Objects extends layout{
   }
 
 
+  mainTop(){
+
+
+     let jsTreeParent = new jsTreeContainer();
+
+    
+  }
+
+
 
   mainBottomTools(){
 
 
      let mainBottomTools = new Tools();
 
-    
     
   }
 
@@ -94,7 +104,7 @@ export default class Objects extends layout{
 
     this.ObjectToolBar = new toolBar(this.TheObjectInfosCollect,this.TheObjectInfosResourcesTypeCollect);
     this.ObjectToolBar.hide();
-    
+
   }
 
 

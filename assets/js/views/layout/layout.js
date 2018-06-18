@@ -91,6 +91,8 @@ export default class Layout {
 											flex:1;
 											background-color: red;
 											overflow-y: scroll;
+											display:flex;
+											flex-direction: column;
 										}
 
 										.bottom{
