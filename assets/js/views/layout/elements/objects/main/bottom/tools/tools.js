@@ -16,11 +16,12 @@ export default class tools {
 
 		this.toolsInput = document.createElement("input");
 		this.toolsInput.type = "text";
+		this.toolsInput.placeHolder   = 'Recherche...';
 		this.toolsInput.style.display   = 'block';
 		this.toolsInput.style.padding   = '4px';
 		this.toolsInput.style.borderRadius   = '4px';
 		this.toolsInput.style.border   = '1px solid silver';
-		this.toolsInput.style.placeHolder   = 'Recherche...';
+		
 		this.toolsInput.style.height   = '2rem';
 
 		let margeSize = $('.tools').width() - $('.header').width() * 0.9;
