@@ -73,7 +73,7 @@ export default class Objects extends layout{
   mainTop(){
 
 
-     let jsTreeParent = new jsTreeContainer('top');
+     let jsTreeParent = new jsTreeContainer('top','Container');
 
     
   }
