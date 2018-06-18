@@ -16,7 +16,7 @@ export default class tools {
 
 		this.toolsInput = document.createElement("input");
 		this.toolsInput.type = "text";
-		/*this.toolsInput.placeHolder   = 'Recherche...';*/
+		this.toolsInput.placeholder   = 'Recherche...';
 		this.toolsInput.style.display   = 'block';
 		this.toolsInput.style.padding   = '5px';
 		this.toolsInput.style.borderRadius   = '5px';
