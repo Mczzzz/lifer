@@ -11,11 +11,11 @@ export default class Header{
 	initContainer(){
 
 		let headerContainer = document.createElement("div");
-		headerContainer.className = "headercontainer";
+		headerContainer.className = "headerContainer";
 		$('.header').append(headerContainer);
 
-		$('.headerContainer ').css( "display", "flex" );
-		$('.headerContainer ').css( "justify-content", "space-between" );
+		$('.headerContainer').css( "display", "flex" );
+		$('.headerContainer').css( "justify-content", "space-between" );
 	}
 
 
@@ -28,7 +28,11 @@ export default class Header{
 
 	setBackToHome(){
 
-		$(".nav-wrapper").append('<i id="BackToHome" class="material-icons" style="font-size:40px;margin-left:10px">keyboard_backspace</i>');
+		let headerBackHome = document.createElement("div");
+		headerBackHome.className = "headerBackHome";
+		$('.headerContainer').append(headerBackHome);
+
+		/*$(".nav-wrapper").append('<i id="BackToHome" class="material-icons" style="font-size:40px;margin-left:10px">keyboard_backspace</i>');*/
 	}
 
 }
