@@ -45,7 +45,7 @@ export default class Header {
 
 		$('.headerBackHome').css( "background", "blue" );
 
-		$('.hheaderBackHome').append('<i id="BackToHome" class="material-icons" style="font-size:40px;margin-left:10px">keyboard_backspace</i>');
+		$('.headerBackHome').append('<i id="BackToHome" class="material-icons" style="font-size:40px;margin-left:10px">keyboard_backspace</i>');
 		/*$(".nav-wrapper").append('<i id="BackToHome" class="material-icons" style="font-size:40px;margin-left:10px">keyboard_backspace</i>');*/
 	}
 
