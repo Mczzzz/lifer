@@ -2,7 +2,7 @@ import layout from '../layout.js';
 
 import Header from '../sections/header.js';
 import Main from '../sections/main.js';
-import Tools from '../elements/objects/main/bottom/tools/tools.js';
+import Tools from '../elements/home/main/bottom/tools/tools.js';
 import Footer from '../sections/footer.js';
 
 export default class Home extends layout{
