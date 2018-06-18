@@ -18,8 +18,9 @@ export default class Header{
 		$('.headerContainer').css( "justify-content", "space-between" );
 
 		$('.headerContainer').css( "background", "grey" );
-		$('.headerContainer').css( "width", "100%" );
-		$('.headerContainer').css( "height", "100%" );
+		$('.headerContainer').css( "width", "80%" );
+		$('.headerContainer').css( "height", "80%" );
+		$('.headerContainer').css( "margin", "10%" );
 	}
 
 
