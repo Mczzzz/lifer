@@ -30,6 +30,7 @@ export default class tools {
 		let margeSize = 5;
 		$('.toolsInput').css( "margin", margeSize );
 		$('.toolsInput').css( "width", $('.tools').width() - margeSize * 4);
+		$('.toolsContainer').css( "height", this.toolsInput.style.height + margeSize * 2);
 
 		$('.tools').css( "background", '#E8E8E8' );
 	}
