@@ -18,8 +18,8 @@ export default class tools {
 		this.toolsInput.type = "text";
 		/*this.toolsInput.placeHolder   = 'Recherche...';*/
 		this.toolsInput.style.display   = 'block';
-		this.toolsInput.style.padding   = '4px';
-		this.toolsInput.style.borderRadius   = '4px';
+		this.toolsInput.style.padding   = '5px';
+		this.toolsInput.style.borderRadius   = '5px';
 		this.toolsInput.style.border   = '1px solid silver';
 		
 		this.toolsInput.style.height   = '2rem';
@@ -33,8 +33,9 @@ export default class tools {
 
 		let margeSize = 5;
 		console.log( $('.tools').width());
+		console.log( $('.tools').width() - margeSize * 2);
 		/*$('.toolsInput').css( "margin", margeSize );*/
-		$('.toolsInput').css( "width", $('.tools').width() - margeSize * 2);
+		$('.toolsInput').css( "width", $('.tools').width() - margeSize * 4);
 	}
 
  
