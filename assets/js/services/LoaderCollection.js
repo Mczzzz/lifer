@@ -9,6 +9,8 @@ export default class LoaderCollection {
 
 		this.collection = new [collection]();
 
+		console.log(this.collection);
+
 	}
 
 }
