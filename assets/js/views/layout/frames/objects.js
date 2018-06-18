@@ -1,6 +1,7 @@
 import layout from '../layout.js';
 
 import Header from '../sections/header.js';
+import Footer from '../sections/footer.js';
 /*import Header from '../elements/objects/headerObjects.js';
 import Footer from './sections/footer.js';
 
@@ -20,8 +21,9 @@ export default class Objects extends layout{
 
     super();
 
-    this.bkgdHF = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
+    this.bkgdHF = 'linear-gradient(45deg, #43A047 0%, #1de9b6 100%)';
     this.headerCustom();
+    this.footerCustom();
 
 /*		this.getHTMLPage();
 
@@ -63,6 +65,14 @@ export default class Objects extends layout{
 
   }
 
+
+  footerCustom(){
+
+    let HomeFooter = new Footer();
+    
+    HomeFooter.setBkgdColor(this.bkgdHF);
+
+  }
 
 
 /*	getHTMLPage(){
