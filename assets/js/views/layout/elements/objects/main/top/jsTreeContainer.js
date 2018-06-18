@@ -26,7 +26,7 @@ export default class jsTreeContainer {
 /*			this.JsTreeContainer.on("deleteNode", (e, data) => this.onDeleteJsTree(e,data));
 			this.JsTreeContainer.on("addType", (e, data) => this.onAddTypeJsTree(e,data));*/
 
-			this.JsTreeContain.jstree({
+			$('.JsTreeContain').jstree({
 	          'core' : {
 	          		'themes': {
 			            'name': 'proton',
