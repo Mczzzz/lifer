@@ -13,7 +13,7 @@ export default class jsTreeContainer {
 
 	initJstreeContainer(){
 
-		let HtmlElementTree = this.JsTreeContain;
+		let HtmlElementTree = $('.JsTreeContain');
 
 /*			this.JsTreeContainer.on("deleteNode", (e, data) => this.onDeleteJsTree(e,data));
 			this.JsTreeContainer.on("addType", (e, data) => this.onAddTypeJsTree(e,data));*/
