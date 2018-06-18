@@ -103,7 +103,7 @@ export default class tools {
 
 
 	    $('.toolsObjects').on('click', function() {
-	   
+
 	       let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
 	       window.dispatchEvent(LinkEvent);
 	    });
@@ -156,19 +156,5 @@ export default class tools {
 		
 	}
 
-
-
-/*
-	activeJs(){
-
-
-	    $('#menu-obj').on('click', function() {
-
-	       let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
-	       window.dispatchEvent(LinkEvent);
-	    });
-
-
-	}*/
 
 }
