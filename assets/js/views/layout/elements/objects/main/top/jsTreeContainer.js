@@ -145,28 +145,21 @@ export default class jsTreeContainer {
 
 	getJstreeContainerElements(){
 
-
 		let dataList = this.collection.getList(this.parentId);
-
 		
-
 			for (let k in dataList){
 
 				if (dataList[k].parent == '#') dataList[k].parent = 0;
 
 			}
 
-
 		let RootName = "Mon Univers";
 
 		if(this.parentId != false) RootName = this.parentName;
 
-
-			let MyUnivers = {'id': 0, 'parent': "#", 'text': RootName, type: ""};
-			dataList.unshift(MyUnivers);
-
-		
-
+		let MyUnivers = {'id': 0, 'parent': "#", 'text': RootName, type: ""};
+		dataList.unshift(MyUnivers);
+		console.log(dataList);
         $('.JsTreeContain').jstree(true).settings.core.data = dataList;
         $('.JsTreeContain').jstree(true).refresh();
 	}
