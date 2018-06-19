@@ -104,6 +104,17 @@ export default class jsTreeContainer {
 
 			            };
 
+					let res = {};
+					res.Create = create;
+					if($node.id > 0){
+						res.Rename = rename;
+						res.Remove = remove;
+						res.Type = type;
+					}
+			        
+			        return res;
+
+
 			        }
 			    },
 
