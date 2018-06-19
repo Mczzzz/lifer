@@ -5,30 +5,28 @@ import jstree from 'jstree';
 export default class jsTreeContainer {
 
 
-	constructor(HTMLParent,collection){
+	constructor(HTMLParent,collection,MyClass){
 		console.log('in contructor');
 		//create the div to attach to parent
-		this.JsTreeContain = document.createElement("div");
-		this.JsTreeContain.className = "JsTreeContain";
-		$('.'+HTMLParent).append(this.JsTreeContain);
-
+		this.MyClass = MyClass;
+		this.JsTree = document.createElement("div");
+		this.JsTree.className = this.MyClass;
+		$('.'+HTMLParent).append(this.JsTree);
 		this.collection = new LoaderCollection(collection);
 
-		this.initJstreeContainer();
+		this.initJstree();
 
 		this.getJstreeContainerElements();
 
 	}
 
 
-	initJstreeContainer(){
-
-		let HtmlElementTree = $('.JsTreeContain');
+	initJstree(){
 
 /*			this.JsTreeContainer.on("deleteNode", (e, data) => this.onDeleteJsTree(e,data));
 			this.JsTreeContainer.on("addType", (e, data) => this.onAddTypeJsTree(e,data));*/
 
-			$('.JsTreeContain').jstree({
+			$('.'+this.MyClass).jstree({
 	          'core' : {
 	          		'themes': {
 			            'name': 'proton',
@@ -50,8 +48,8 @@ export default class jsTreeContainer {
 					                "separator_after": false,
 					                "label": "Ajouter",
 					                "action": function (obj) { 
-					                    $node = HtmlElementTree.jstree(true).create_node($node);
-					                    HtmlElementTree.jstree(true).edit($node);
+					                    $node = $('.'+this.MyClass).jstree(true).create_node($node);
+					                    $('.'+this.MyClass).jstree(true).edit($node);
 					                }
 
 									}
@@ -62,7 +60,7 @@ export default class jsTreeContainer {
 			                "separator_after": false,
 			                "label": "Renomer",
 			                "action": function (obj) { 
-			                    HtmlElementTree.jstree(true).edit($node);
+			                   $('.'+this.MyClass).jstree(true).edit($node);
 			                }
 			            };
 
@@ -75,7 +73,7 @@ export default class jsTreeContainer {
 			                "label": "Supprimer",
 			                "action": function (obj) {
 
-			                	HtmlElementTree.trigger( "deleteNode", [{'node' : $node}] );
+			                	$('.'+this.MyClass).trigger( "deleteNode", [{'node' : $node}] );
 			                	}
 			                };
 
@@ -88,7 +86,7 @@ export default class jsTreeContainer {
 											"separator_after": false,
 			                				"label": "Assigner",			             
 							                "action": function (obj) { 
-							                   HtmlElementTree.trigger( "addType", [{'node' : $node}] );
+							                   $('.'+this.MyClass).trigger( "addType", [{'node' : $node}] );
 							                }
 			                			},
 			                			"AssignChilds" : {
@@ -96,7 +94,7 @@ export default class jsTreeContainer {
 											"separator_after": false,
 			                				"label": "Types enfants",			             
 							                "action": function (obj) { 
-							                   HtmlElementTree.trigger( "addChildType", [{'node' : $node}] );
+							                   $('.'+this.MyClass).trigger( "addChildType", [{'node' : $node}] );
 							                }
 			                			}
 			                }
@@ -138,7 +136,7 @@ export default class jsTreeContainer {
 
 	         });
 
-			$('.JsTreeContain').jstree(true).hide_dots();
+			$('.'+this.MyClass).jstree(true).hide_dots();
 
 	}
 
@@ -160,8 +158,8 @@ export default class jsTreeContainer {
 		let MyUnivers = {'id': 0, 'parent': "#", 'text': RootName, type: ""};
 		dataList.unshift(MyUnivers);
 		console.log(dataList);
-        $('.JsTreeContain').jstree(true).settings.core.data = dataList;
-        $('.JsTreeContain').jstree(true).refresh();
+        $('.'+this.MyClass).jstree(true).settings.core.data = dataList;
+        $('.'+this.MyClass).jstree(true).refresh();
 	}
 
 
