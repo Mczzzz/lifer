@@ -155,7 +155,7 @@ export default class jsTreeContainer {
 
 		let RootName = "Mon Univers";
 
-		if(this.parentId != false) RootName = this.parentName;
+		//if(this.parentId != false) RootName = this.parentName;
 
 		let MyUnivers = {'id': 0, 'parent': "#", 'text': RootName, type: ""};
 		dataList.unshift(MyUnivers);
