@@ -14,17 +14,15 @@ export default class jsTreeContainer {
 		$('.'+HTMLParent).append(this.JsTree);
 		this.collection = new LoaderCollection(collection);
 
-		this.initJstree();
-
-		this.getJstreeContainerElements();
-
+		this.initJsTree();
+		this.jsTreeData();
 	}
 
 
-	initJstree(){
+	initJsTree(){
 
-/*			this.JsTreeContainer.on("deleteNode", (e, data) => this.onDeleteJsTree(e,data));
-			this.JsTreeContainer.on("addType", (e, data) => this.onAddTypeJsTree(e,data));*/
+			$('.'+this.MyClass).on("deleteNode", (e, data) => this.onDeleteJsTree(e,data));
+			$('.'+this.MyClass).on("addType", (e, data) => this.onAddTypeJsTree(e,data));
 
 			$('.'+this.MyClass).jstree({
 	          'core' : {
@@ -86,7 +84,7 @@ export default class jsTreeContainer {
 											"separator_after": false,
 			                				"label": "Assigner",			             
 							                "action": function (obj) { 
-							                   $('.'+this.MyClass).trigger( "addType", [{'node' : $node}] );
+							                //   $('.'+this.MyClass).trigger( "addType", [{'node' : $node}] );
 							                }
 			                			},
 			                			"AssignChilds" : {
@@ -94,7 +92,7 @@ export default class jsTreeContainer {
 											"separator_after": false,
 			                				"label": "Types enfants",			             
 							                "action": function (obj) { 
-							                   $('.'+this.MyClass).trigger( "addChildType", [{'node' : $node}] );
+							                 //  $('.'+this.MyClass).trigger( "addChildType", [{'node' : $node}] );
 							                }
 			                			}
 			                }
@@ -141,7 +139,7 @@ export default class jsTreeContainer {
 	}
 
 
-	getJstreeContainerElements(){
+	jsTreeData(){
 
 		let dataList = this.collection.getList(this.parentId);
 		
@@ -157,10 +155,19 @@ export default class jsTreeContainer {
 
 		let MyUnivers = {'id': 0, 'parent': "#", 'text': RootName, type: ""};
 		dataList.unshift(MyUnivers);
-		console.log(dataList);
+
         $('.'+this.MyClass).jstree(true).settings.core.data = dataList;
         $('.'+this.MyClass).jstree(true).refresh();
 	}
+
+
+
+
+	linkSearch(){
+
+		
+	}
+
 
 
 }
