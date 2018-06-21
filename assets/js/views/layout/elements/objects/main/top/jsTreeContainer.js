@@ -178,8 +178,8 @@ export default class jsTreeContainer {
 	}
 
 	linkSearchEvent(e){
-		console.log(e);
-            $('.'+this.MyClass).jstree(true).search(e.srcElement.value);
+
+            $('.'+this.MyClass).jstree(true).search(this.searchElement.val());
     }
 
 }
