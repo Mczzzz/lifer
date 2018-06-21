@@ -105,12 +105,12 @@ export default class Objects extends layout{
     this.jsTreeParent.linkSearch('toolsInput');
 
     //ask Parent tree to be informed on select
-    this.jsTreeParent.initEventsElementSelect(EventSelectedCallBack);
+    this.jsTreeParent.initEventsElementSelect(this.EventSelectedCallBack);
   }
 
 
   EventSelectedCallBack(e,data){
-    this.jsTreeChild = new jsTreeContainer('top','ObjectTree','JsTreeObjects');
+    this.jsTreeChild = new jsTreeContainer('topBottom','Container','JsTreeObjects');
   }
 
 
