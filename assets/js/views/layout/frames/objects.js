@@ -114,7 +114,7 @@ export default class Objects extends layout{
     console.log(e);
     console.log(data);
     this.jsTreeChild = new jsTreeContainer('topBottom','Container','JsTreeObjects');
-      
+    console.log(this.jsTreeChild);   
   }
 
 
