@@ -111,7 +111,7 @@ export default class Objects extends layout{
 
   EventSelectedCallBack(e,data){
 
-    test(e,data);
+    this.test(e,data);
       
   }
 
