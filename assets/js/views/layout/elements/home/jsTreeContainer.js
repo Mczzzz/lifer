@@ -208,33 +208,6 @@ export default class jsTreeContainer {
 
 	}
 
-	getJstreeContainerElements(){
-
-
-		let dataList = this.collection.getList(this.parentId);
-
-		
-
-			for (let k in dataList){
-
-				if (dataList[k].parent == '#') dataList[k].parent = 0;
-
-			}
-
-
-		let RootName = "Mon Univers";
-
-		if(this.parentId != false) RootName = this.parentName;
-
-
-			let MyUnivers = {'id': 0, 'parent': "#", 'text': RootName, type: ""};
-			dataList.unshift(MyUnivers);
-
-		
-
-        this.JsTreeContainer.jstree(true).settings.core.data = dataList;
-        this.JsTreeContainer.jstree(true).refresh();
-	}
 
 
 
@@ -244,45 +217,6 @@ export default class jsTreeContainer {
 
 
 
-
-	linkSearchElement(id){
-
-		if (!$('#'+id).length){
-
-			$('<div><input type="text" id="'+id+'" value="" class="input" style=" display:block; padding:4px; border-radius:4px; border:1px solid silver; margin-bottom : 10px" placeholder="Recherche"></div>').insertBefore(this.JsTreeContainer);
-
-			document.querySelector("#"+id).addEventListener("keyup", (e)=> this.linkSearchEvent(e));
-
-		}else{
-
-			$("#"+id).show();
-
-		}
-
-		
-	}
-
-
-	linkSearchEvent(e){
-		
-
-            this.JsTreeContainer.jstree(true).search(e.srcElement.value);
-
-            if(this.parentId){
-
-	           	let NodeEvent = new CustomEvent('childAction', {'detail' : {'container' : this.container }});
-	           	window.dispatchEvent(NodeEvent);
-
-        	}else{
-        		let NodeEvent = new CustomEvent('parentAction', {'detail' : {'container' : this.container }});
-        		window.dispatchEvent(NodeEvent);
-	        	
-        	}
-        	
-			
-
-
-	}
 
 
 

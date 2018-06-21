@@ -101,14 +101,17 @@ export default class Objects extends layout{
 
   elementAnimation(){
 
-    //au démarrage relie mon champs recherche à mon jstree Parent
+    //active search on parent tree
     this.jsTreeParent.linkSearch('toolsInput');
 
-
+    //ask Parent tree to be informed on select
+    this.jsTreeParent.initEventsElementSelect('toto');
   }
 
 
-
+  toto(){
+    console.log('in toto');
+  }
 
 
 

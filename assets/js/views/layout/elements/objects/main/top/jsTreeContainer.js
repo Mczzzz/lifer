@@ -138,7 +138,7 @@ export default class jsTreeContainer {
 
 	}
 
-
+//LOAD DATAS
 	jsTreeData(){
 
 		let dataList = this.collection.getList(this.parentId);
@@ -159,10 +159,10 @@ export default class jsTreeContainer {
         $('.'+this.MyClass).jstree(true).settings.core.data = dataList;
         $('.'+this.MyClass).jstree(true).refresh();
 	}
+//LOAD DATAS - END
 
 
-
-
+//SEARCH
 	linkSearch(element){
 
 		this.searchElement = $('.'+element);
@@ -181,5 +181,16 @@ export default class jsTreeContainer {
 
             $('.'+this.MyClass).jstree(true).search(this.searchElement.val());
     }
+//SEARCH - END
+
+
+////LISTENER -> PARENT
+	initEventsElementSelect(method){
+
+		$('.'+this.MyClass).on("select_node.jstree", (e,data)=>parent[method](e,data));
+
+	}
+
+
 
 }
