@@ -163,11 +163,23 @@ export default class jsTreeContainer {
 
 
 
-	linkSearch(){
+	linkSearch(element){
 
-		
+		this.searchElement = $('.'+element);
+
+		this.searchElement.addEventListener("keyup", (e)=> this.linkSearchEvent(e));
+
 	}
 
+	unlinkSearch(){
 
+		this.searchElement.removeEventListener("keyup", (e)=> this.linkSearchEvent(e));
+
+	}
+
+	linkSearchEvent(e){
+		
+            $('.'+this.MyClass).jstree(true).search(e.srcElement.value);
+    }
 
 }

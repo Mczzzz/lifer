@@ -28,6 +28,7 @@ export default class Objects extends layout{
     this.mainTop();
     this.mainBottomTools();
     this.footerCustom();
+    this.elementAnimation();
 
 /*		this.getHTMLPage();
 
@@ -73,7 +74,7 @@ export default class Objects extends layout{
   mainTop(){
 
     //divParent,Collection,class
-     let jsTreeParent = new jsTreeContainer('top','Container','JsTreeContainer');
+     this.jsTreeParent = new jsTreeContainer('top','Container','JsTreeContainer');
 
     
   }
@@ -96,6 +97,20 @@ export default class Objects extends layout{
     HomeFooter.setBkgdColor(this.bkgdHF);
 
   }
+
+
+  elementAnimation(){
+
+    //au démarrage relie mon champs recherche à mon jstree Parent
+    this.jsTreeParent.linkSearch('toolsInput');
+
+
+  }
+
+
+
+
+
 
 
 
