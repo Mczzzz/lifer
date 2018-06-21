@@ -109,7 +109,7 @@ export default class Objects extends layout{
   }
 
 
-  toto(){
+  toto(e,data){
     console.log('in toto');
   }
 
