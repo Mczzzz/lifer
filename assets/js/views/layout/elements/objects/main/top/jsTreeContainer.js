@@ -187,7 +187,7 @@ export default class jsTreeContainer {
 ////LISTENER -> PARENT
 	initEventsElementSelect(method){
 
-		$('.'+this.MyClass).on("select_node.jstree", (e,data)=>super[method](e,data));
+		$('.'+this.MyClass).on("select_node.jstree", (e,data)=>caller[method](e,data));
 
 	}
 
