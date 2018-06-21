@@ -167,7 +167,7 @@ export default class jsTreeContainer {
 
 		this.searchElement = $('.'+element);
 
-		$('.'+element).addEventListener("keyup", (e)=> this.linkSearchEvent(e));
+		this.searchElement.on("keyup", (e)=> this.linkSearchEvent(e));
 
 	}
 
