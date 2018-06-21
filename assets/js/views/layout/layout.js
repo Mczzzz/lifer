@@ -28,6 +28,14 @@ export default class Layout {
 				top.className = "top";
 				main.append(top);
 
+					let topUp = document.createElement("div");
+					topUp.className = "topUp";
+					top.append(topUp);
+
+					let topBottom = document.createElement("div");
+					topBottom.className = "topBottom";
+					top.append(topBottom);
+
 				let bottom = document.createElement("div");
 				bottom.className = "bottom";
 				main.append(bottom);
@@ -95,6 +103,15 @@ export default class Layout {
 											flex-direction: column;
 										}
 
+											.topUp{
+												flex:1;
+												background-color: grey;
+												overflow-y: scroll;
+											}
+											.topBottom{
+												background-color: yellow;
+												overflow-y: scroll;
+											}
 										.bottom{
 
 											background-color: purple;

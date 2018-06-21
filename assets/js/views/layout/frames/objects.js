@@ -74,7 +74,7 @@ export default class Objects extends layout{
   mainTop(){
 
     //divParent,Collection,class
-     this.jsTreeParent = new jsTreeContainer('top','Container','JsTreeContainer');
+     this.jsTreeParent = new jsTreeContainer('topUp','Container','JsTreeContainer');
 
     
   }
@@ -105,11 +105,11 @@ export default class Objects extends layout{
     this.jsTreeParent.linkSearch('toolsInput');
 
     //ask Parent tree to be informed on select
-    this.jsTreeParent.initEventsElementSelect(this.toto);
+    this.jsTreeParent.initEventsElementSelect(EventSelectedCallBack);
   }
 
 
-  toto(e,data){
+  EventSelectedCallBack(e,data){
     this.jsTreeChild = new jsTreeContainer('top','ObjectTree','JsTreeObjects');
   }
 
