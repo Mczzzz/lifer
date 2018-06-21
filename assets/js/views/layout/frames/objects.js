@@ -105,13 +105,16 @@ export default class Objects extends layout{
     this.jsTreeParent.linkSearch('toolsInput');
 
     //ask Parent tree to be informed on select
-    this.jsTreeParent.initEventsElementSelect(this.toto());
+    this.jsTreeParent.initEventsElementSelect(this.toto);
   }
 
 
   toto(){
     console.log('in toto');
   }
+
+
+
 
 
 
