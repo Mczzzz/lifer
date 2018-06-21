@@ -5,7 +5,7 @@ import jstree from 'jstree';
 export default class jsTreeContainer {
 
 
-	constructor(HTMLParent,collection,MyClass,ParentINode= false){
+	constructor(HTMLParent,collection,MyClass,ParentNode= false){
 
 		//create the div to attach to parent
 		this.MyClass = MyClass;
