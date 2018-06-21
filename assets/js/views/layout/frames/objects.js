@@ -110,7 +110,7 @@ export default class Objects extends layout{
 
 
   toto(e,data){
-    console.log(e);
+    this.jsTreeChild = new jsTreeContainer('top','Container','JsTreeObjects');
   }
 
 
