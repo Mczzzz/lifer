@@ -5,7 +5,7 @@ import jstree from 'jstree';
 export default class jsTreeContainer {
 
 
-	constructor(HTMLParent,collection,MyClass){
+	constructor(HTMLParent,collection,MyClass,ParentId = false){
 
 		//create the div to attach to parent
 		this.MyClass = MyClass;
@@ -13,7 +13,7 @@ export default class jsTreeContainer {
 		this.JsTree.className = this.MyClass;
 		$('.'+HTMLParent).append(this.JsTree);
 		this.collection = new LoaderCollection(collection);
-
+		this.ParentId = ParentId;
 		this.initJsTree();
 		this.jsTreeData();
 	}
@@ -141,7 +141,7 @@ export default class jsTreeContainer {
 //LOAD DATAS
 	jsTreeData(){
 
-		let dataList = this.collection.getList(this.parentId);
+		let dataList = this.collection.getList(this.ParentId);
 		
 			for (let k in dataList){
 
