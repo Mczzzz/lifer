@@ -186,7 +186,7 @@ export default class jsTreeContainer {
 ////LISTENER -> PARENT
 	initEventsElementSelect(myMethod){
 
-		this.JsTree.on("select_node.jstree", (e,data)=> myMethod(e,data));
+		this.JsTree.addEventListener("select_node.jstree", (e,data)=> myMethod(e,data));
 
 	}
 
