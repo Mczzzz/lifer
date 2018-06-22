@@ -99,7 +99,7 @@ export default class Objects extends layout{
 
 
   EventSelectedCallBack(e,data){
-
+      console.log("on passe");
     this.jsTreeChild.loadData(data.node);
 
   }
