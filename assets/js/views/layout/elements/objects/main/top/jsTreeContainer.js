@@ -220,6 +220,10 @@ export default class jsTreeContainer {
 	}
 
 
+	hide(){
+		$('.'+this.MyClass).hide();
+	}
+
 
 ////LISTENER -> PARENT
 	initEventsElementSelect(myMethod){
