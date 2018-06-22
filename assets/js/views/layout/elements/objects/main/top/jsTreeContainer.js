@@ -203,7 +203,7 @@ export default class jsTreeContainer {
      	let i = 1;
      	 for (let k in node.parents){
 
-     	 	let parentNode = $('.'+this.MyClass)jstree(true).get_node(node.parents[k]);
+     	 	let parentNode = $('.'+this.MyClass).jstree(true).get_node(node.parents[k]);
 
 			if(parentNode.text !== undefined){
 
