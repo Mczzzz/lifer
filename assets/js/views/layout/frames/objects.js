@@ -104,9 +104,13 @@ export default class Objects extends layout{
   }
 
   ObjectJsTreeChildSelect(data){
-
+      this.jsTreeParent.unlinkSearch();
       this.jsTreeParent.breadcrumbize('breadcrumb');
       this.jsTreeParent.hide();
+
+      this.jsTreeChild.linkSearch('toolsInput');
+
+      //
 
   }
 
