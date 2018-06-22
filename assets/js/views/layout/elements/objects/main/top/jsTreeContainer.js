@@ -188,7 +188,9 @@ export default class jsTreeContainer {
 
 		$('.'+this.MyClass).on("select_node.jstree", function(e,data){
 
-				$('.'+this.MyClass).trigger(myMethod,[{'data' : data}])
+				//$('.'+this.MyClass).trigger(myMethod,[{'data' : data}])
+			let ev = new CustomEvent(myMethod, {'detail' : data});
+            window.dispatchEvent(ev);
 
 		});
 
