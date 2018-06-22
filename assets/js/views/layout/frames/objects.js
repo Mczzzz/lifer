@@ -25,7 +25,7 @@ export default class Objects extends layout{
 
     this.bkgdHF = 'linear-gradient(45deg, #43A047 0%, #1de9b6 100%)';
     this.headerCustom();
-    this.mainTop();
+    this.mainTopUp();
     this.mainBottomTools();
     this.footerCustom();
     this.elementAnimation();
@@ -71,7 +71,7 @@ export default class Objects extends layout{
   }
 
 
-  mainTop(){
+  mainTopUp(){
 
     //divParent,Collection,class
      this.jsTreeParent = new jsTreeContainer('topUp','Container','JsTreeContainer');
@@ -79,6 +79,13 @@ export default class Objects extends layout{
     
   }
 
+  mainTopBottom(){
+
+    //divParent,Collection,class
+    this.jsTreeChild = new jsTreeContainer('topBottom','ObjectTree','JsTreeObjects');
+
+    
+  }
 
 
   mainBottomTools(){
