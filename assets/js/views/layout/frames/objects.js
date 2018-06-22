@@ -100,10 +100,7 @@ export default class Objects extends layout{
 
   EventSelectedCallBack(e,data){
 
-    console.log(data);
-    let jsTreeChild = new jsTreeContainer('topBottom','ObjectTree','JsTreeObjects',data.node);
-
-    return jsTreeChild;
+    this.jsTreeChild.loadData(data.node);
 
   }
 
