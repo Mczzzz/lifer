@@ -12,6 +12,7 @@ export default class jsTreeContainer {
 		this.JsTree = document.createElement("div");
 		this.JsTree.className = this.MyClass;
 		$('.'+HTMLParent).append(this.JsTree);
+		this.searchElt = false;
 		this.collection = new LoaderCollection(collection);
 		this.initJsTree();
 
@@ -167,12 +168,17 @@ export default class jsTreeContainer {
 		this.searchElement = $('.'+element);
 
 		this.searchElement.on("keyup", (e)=> this.linkSearchEvent(e));
+		this.searchElt = true;
 
 	}
 
 	unlinkSearch(){
 
-		this.searchElement.off("keyup", (e)=> this.linkSearchEvent(e))
+		if(this.searchElt){
+			this.searchElement.off("keyup", (e)=> this.linkSearchEvent(e));
+			this.searchElt = false;
+		}
+		
 
 	}
 
