@@ -57,7 +57,7 @@ export default class Objects extends layout{
 
     //divParent,Collection,class
      this.jsTreeParent = new jsTreeContainer('topUp','Container','JsTreeContainer');
-
+     this.jsTreeParent.loadData();
     
   }
 
