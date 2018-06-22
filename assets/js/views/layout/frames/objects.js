@@ -90,6 +90,10 @@ export default class Objects extends layout{
     window.addEventListener(EvParSel, (data) => this[EvParSel](data));
     this.jsTreeParent.initEventsElementSelect(EvParSel);
 
+    //ask Child tree to be informed on select
+    let EvChildSel = 'ObjectJsTreeChildSelect';
+    window.addEventListener(EvChildSel, (data) => this[EvChildSel](data));
+    this.jsTreeParent.initEventsElementSelect(EvChildSel);
   }
 
 
@@ -99,7 +103,11 @@ export default class Objects extends layout{
 
   }
 
+  ObjectJsTreeChildSelect(data){
 
+      this.jsTreeParent.breadcrumbize('breadcrumb');
+
+  }
 
 
 
