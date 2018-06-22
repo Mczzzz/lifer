@@ -95,7 +95,7 @@ export default class Objects extends layout{
 
   ObjectJsTreeParentSelect(data){
 
-      this.jsTreeParent.loadData(data.detail.node.id);
+      this.jsTreeChild.loadData(data.detail.node.id);
 
   }
 
