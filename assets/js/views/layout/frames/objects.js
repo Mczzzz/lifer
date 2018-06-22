@@ -87,8 +87,9 @@ export default class Objects extends layout{
 
     //ask Parent tree to be informed on select
     let EvParSel = 'ObjectJsTreeParentSelect';
-    window.addEventListener(EvParSel, (e) => this[EvParSel](e));
+    window.addEventListener(EvParSel, (e,data) => this[EvParSel](e,data));
     this.jsTreeParent.initEventsElementSelect(EvParSel);
+
   }
 
 
