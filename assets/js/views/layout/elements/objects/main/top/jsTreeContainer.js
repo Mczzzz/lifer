@@ -138,9 +138,9 @@ export default class jsTreeContainer {
 	}
 
 //LOAD DATAS
-	loadData(){
+	loadData(ParentNode = false){
 
-		let dataList = this.collection.getList(this.ParentNode.id);
+		let dataList = this.collection.getList(ParentNode.id);
 		
 			for (let k in dataList){
 
@@ -150,7 +150,7 @@ export default class jsTreeContainer {
 
 		let RootName = "Mon Univers";
 
-		if(this.ParentNode != false) RootName = this.ParentNode.text;
+		if(ParentNode != false) RootName = ParentNode.text;
 
 		let MyUnivers = {'id': 0, 'parent': "#", 'text': RootName, type: ""};
 		dataList.unshift(MyUnivers);
