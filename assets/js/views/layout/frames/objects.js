@@ -93,7 +93,7 @@ export default class Objects extends layout{
     //ask Child tree to be informed on select
     let EvChildSel = 'ObjectJsTreeChildSelect';
     window.addEventListener(EvChildSel, (data) => this[EvChildSel](data));
-    this.jsTreeParent.initEventsElementSelect(EvChildSel);
+    this.jsTreeChild.initEventsElementSelect(EvChildSel);
   }
 
 
