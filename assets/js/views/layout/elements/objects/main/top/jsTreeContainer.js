@@ -11,7 +11,7 @@ export default class jsTreeContainer {
 		this.MyClass = MyClass;
 		this.JsTree = document.createElement("div");
 		this.JsTree.className = this.MyClass;
-		let ParentDiv = document.document.getElementsByClassName(HTMLParent);
+		let ParentDiv = document.getElementsByClassName(HTMLParent);
 		ParentDiv.append(this.JsTree);
 		this.collection = new LoaderCollection(collection);
 		this.initJsTree();
