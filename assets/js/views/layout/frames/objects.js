@@ -31,14 +31,6 @@ export default class Objects extends layout{
     this.footerCustom();
     this.elementAnimation();
 
-/*		
-  
-    this.linkVakataDomEvent();
-
-
-    window.addEventListener('ContainerSelect', (e) => this.onContainerSelected(e));
-    window.addEventListener('childAction', (e) => this.onChildAction(e));
-    window.addEventListener('parentAction', (e) => this.onParentAction(e));*/
 	}
 
 
@@ -94,13 +86,15 @@ export default class Objects extends layout{
     this.jsTreeParent.linkSearch('toolsInput');
 
     //ask Parent tree to be informed on select
-    this.jsTreeChild = this.jsTreeParent.initEventsElementSelect(this.EventSelectedCallBack);
+    let EvParSel = 'ObjectJsTreeParentSelect';
+    window.addEventListener(EvParSel, (e) => this[EvParSel](e));
+    this.jsTreeParent.initEventsElementSelect(EvParSel);
   }
 
 
-  EventSelectedCallBack(e,data){
-      console.log("on passe");
-    this.jsTreeChild.loadData(data.node);
+  ObjectJsTreeParentSelect(e,data){
+
+      console.log(data);
 
   }
 

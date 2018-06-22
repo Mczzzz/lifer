@@ -11,12 +11,8 @@ export default class jsTreeContainer {
 		this.MyClass = MyClass;
 		this.JsTree = document.createElement("div");
 		this.JsTree.className = this.MyClass;
-		this.ParentDiv = document.getElementsByClassName(HTMLParent);
-		
+		$('.'+HTMLParent).append(this.JsTree);
 		this.collection = new LoaderCollection(collection);
-		this.ParentDiv.append(this.JsTree);
-
-
 		this.initJsTree();
 
 	}
@@ -159,8 +155,8 @@ export default class jsTreeContainer {
 		let MyUnivers = {'id': 0, 'parent': "#", 'text': RootName, type: ""};
 		dataList.unshift(MyUnivers);
 
-        this.JsTree.jstree(true).settings.core.data = dataList;
-        this.JsTree.jstree(true).refresh();
+        $('.'+this.MyClass).jstree(true).settings.core.data = dataList;
+        $('.'+this.MyClass).jstree(true).refresh();
 	}
 //LOAD DATAS - END
 
@@ -182,7 +178,7 @@ export default class jsTreeContainer {
 
 	linkSearchEvent(e){
 
-            this.JsTree.jstree(true).search(this.searchElement.val());
+            $('.'+this.MyClass).jstree(true).search(this.searchElement.val());
     }
 //SEARCH - END
 
@@ -190,7 +186,11 @@ export default class jsTreeContainer {
 ////LISTENER -> PARENT
 	initEventsElementSelect(myMethod){
 
-		this.JsTree.addEventListener("select_node.jstree", (e,data)=> myMethod(e,data));
+		$('.'+this.MyClass).on("select_node.jstree", function(e,data){
+
+				window.trigger(myMethod,[{'node' : $node}])
+
+		});
 
 	}
 
