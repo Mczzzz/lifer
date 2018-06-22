@@ -23,7 +23,7 @@ export default class jsTreeContainer {
 			$('.'+this.MyClass).on("deleteNode", (e, data) => this.onDeleteJsTree(e,data));
 			$('.'+this.MyClass).on("addType", (e, data) => this.onAddTypeJsTree(e,data));
 
-			this.JsTree.jstree({
+			$('.'+this.MyClass).jstree({
 	          'core' : {
 	          		'themes': {
 			            'name': 'proton',
