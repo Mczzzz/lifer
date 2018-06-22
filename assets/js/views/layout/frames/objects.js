@@ -106,6 +106,7 @@ export default class Objects extends layout{
   ObjectJsTreeChildSelect(data){
 
       this.jsTreeParent.breadcrumbize('breadcrumb');
+      this.jsTreeParent.hide();
 
   }
 
