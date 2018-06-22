@@ -26,33 +26,15 @@ export default class Objects extends layout{
     this.bkgdHF = 'linear-gradient(45deg, #43A047 0%, #1de9b6 100%)';
     this.headerCustom();
     this.mainTopUp();
+    this.mainTopBottom();
     this.mainBottomTools();
     this.footerCustom();
     this.elementAnimation();
 
-/*		this.getHTMLPage();
-
-    this.JsTreeContainer = 'jstreeContainerdiv';
-
-    this.JsTreeObjects   = 'jstreeObjectDiv';
-
-    this.TheContainerCollect = new ContainerCollect();
-
-    this.TheObjectCollect = new ObjectCollect();
-
-    this.TheObjectInfosCollect = new ObjectInfosCollect();
-
-    this.TheObjectInfosResourcesTypeCollect = new ObjectInfosResourcesTypeCollect();
-
-		this.activeCSS();
-
-		this.initContainerJstreeDOMElements();
-
+/*		
+  
     this.linkVakataDomEvent();
 
-    this.toolbarHTML();
-
-    this.activeJS();
 
     window.addEventListener('ContainerSelect', (e) => this.onContainerSelected(e));
     window.addEventListener('childAction', (e) => this.onChildAction(e));
@@ -124,6 +106,28 @@ export default class Objects extends layout{
     return jsTreeChild;
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
