@@ -100,7 +100,7 @@ export default class Objects extends layout{
 
   EventSelectedCallBack(e,data){
 
-    this.jsTreeChild.loadData(data.node);
+    $('.JsTreeObjects').loadData(data.node);
 
   }
 
