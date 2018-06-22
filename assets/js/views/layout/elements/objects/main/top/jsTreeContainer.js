@@ -8,7 +8,6 @@ export default class jsTreeContainer {
 	constructor(HTMLParent,collection,MyClass){
 
 		//create the div to attach to parent
-		this.MineClass = $('.'+this.MyClass);
 		this.MyClass = MyClass;
 		this.JsTree = document.createElement("div");
 		this.JsTree.className = this.MyClass;
@@ -187,7 +186,7 @@ export default class jsTreeContainer {
 ////LISTENER -> PARENT
 	initEventsElementSelect(myMethod){
 
-		this.MineClass.addEventListener("select_node.jstree", (e,data)=> myMethod(e,data));
+		this.JsTree.on("select_node.jstree", (e,data)=> myMethod(e,data));
 
 	}
 
