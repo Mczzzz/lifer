@@ -23,7 +23,7 @@ export default class jsTreeContainer {
 			$('.'+this.MyClass).on("deleteNode", (e, data) => this.onDeleteJsTree(e,data));
 			$('.'+this.MyClass).on("addType", (e, data) => this.onAddTypeJsTree(e,data));
 
-			$('.'+this.MyClass).jstree({
+			this.JsTree.jstree({
 	          'core' : {
 	          		'themes': {
 			            'name': 'proton',
@@ -155,8 +155,8 @@ export default class jsTreeContainer {
 		let MyUnivers = {'id': 0, 'parent': "#", 'text': RootName, type: ""};
 		dataList.unshift(MyUnivers);
 
-        $('.'+this.MyClass).jstree(true).settings.core.data = dataList;
-        $('.'+this.MyClass).jstree(true).refresh();
+        this.JsTree.jstree(true).settings.core.data = dataList;
+        this.JsTree.jstree(true).refresh();
 	}
 //LOAD DATAS - END
 
@@ -178,7 +178,7 @@ export default class jsTreeContainer {
 
 	linkSearchEvent(e){
 
-            $('.'+this.MyClass).jstree(true).search(this.searchElement.val());
+            this.JsTree.jstree(true).search(this.searchElement.val());
     }
 //SEARCH - END
 
