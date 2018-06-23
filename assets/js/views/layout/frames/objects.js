@@ -109,12 +109,12 @@ export default class Objects extends layout{
       this.jsTreeParent.deselectAll();
       this.jsTreeParent.closeAll();
       console.log(this.jsTreeParent.getHTMLParent());
-      this.jsTreeParent.getHTMLParent().flex = 0;
+      this.jsTreeParent.getHTMLParent()[0].style.flex = 0;
 
       this.jsTreeParent.hide();
 
       this.jsTreeChild.linkSearch('toolsInput');
-      this.jsTreeChild.getHTMLParent().flex = 1;
+      this.jsTreeChild.getHTMLParent()[0].style.flex = 1;
 
       //
 
