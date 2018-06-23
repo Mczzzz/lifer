@@ -203,7 +203,7 @@ export default class jsTreeContainer {
         this.breadcrumbTargetDiv.append('<a id="bc_'+node.id+'" style="border-radius: 4px 12px 4px 4px;background: #0288d1;color:white;padding:5px;margin-right: 5px;" class="">'+node.text+'</a>');
         	
 
-        //	this.jsTreeEventBreadcrumb(node);
+        this.jsTreeEventBreadcrumb(node);
 
      	//parsing des parents
      	let i = 1;
@@ -217,13 +217,35 @@ export default class jsTreeContainer {
 				
 				this.breadcrumbTargetDiv.prepend('<a href="#!" id="bc_'+parentNode.id+'" style="opacity: '+i+';border-radius: 4px 12px 4px 4px;background: #0288d1;color:white;padding:5px;margin-right: 5px" class="">'+parentNode.text+'</a>');
 				
-		//		this.jsTreeEventBreadcrumb(parentNode);
+		        this.jsTreeEventBreadcrumb(parentNode);
 
 			}
 
         }
 
 	}
+
+
+	jsTreeEventBreadcrumb(node){
+
+
+		$('#bc_'+node.id).on("click", (e) => this.openNode(e,node));
+
+		
+	}
+
+
+	openNode(e,node){
+
+		$('.'+this.MyClass).jstree(true).clear_search();
+		$('.'+this.MyClass).jstree(true).close_all();
+		$('.'+this.MyClass).jstree(true)._open_to(node);
+		$('.'+this.MyClass).jstree(true).open_node(node);
+
+	}
+
+
+
 
 
 	hide(){
@@ -246,14 +268,14 @@ export default class jsTreeContainer {
 
 	}
 
-	openNode(id){
+/*	openNode(id){
 console.log(id);
 		let node = $('.'+this.MyClass).jstree(true).get_node(id);
 		console.log(node);
 		$('.'+this.MyClass).jstree(true).open_node(node);
 
 
-	}
+	}*/
 
 
 
