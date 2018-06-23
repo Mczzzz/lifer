@@ -109,6 +109,7 @@ export default class Objects extends layout{
   ObjectJsTreeParentSelect(data){
       this.jsTreeChild.unlinkSearch();
       this.jsTreeChild.loadData(data.detail.node);
+      this.jsTreeChild.show();
       this.in = "Container";
 
   }
@@ -134,7 +135,6 @@ export default class Objects extends layout{
         this.jsTreeParent.getHTMLParent()[0].style.flex = 0;
 
         this.jsTreeParent.hide();
-        this.jsTreeChild.show();
         this.jsTreeChild.linkSearch('toolsInput');
         this.jsTreeChild.getHTMLParent()[0].style.flex = 1;
       }
