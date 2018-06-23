@@ -248,7 +248,7 @@ export default class jsTreeContainer {
 
 	openNode(id){
 
-		let node = $('.'+this.MyClass).jstree(true).get_node(id,true);
+		let node = $('.'+this.MyClass).jstree(true).get_node(id,true).children;
 		console.log(node);
 		$('.'+this.MyClass).jstree(true).open_node(node);
 
