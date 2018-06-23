@@ -251,7 +251,7 @@ export default class jsTreeContainer {
 		this.breadcrumbTargetDiv.empty();
 		//$('.'+this.MyClass).show();
 		if(this.BreadEventCallBack != false){
-			let ev = new CustomEvent(myMethod, {'detail' : node});
+			let ev = new CustomEvent(this.BreadEventCallBack, {'detail' : node});
         	window.dispatchEvent(ev);
 		}
 
