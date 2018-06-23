@@ -231,6 +231,30 @@ export default class jsTreeContainer {
 	}
 
 
+	deselectAll(){
+
+		$('.'+this.MyClass).jstree(true).deselect_all();
+
+	}
+
+
+	closeAll(){
+
+
+		$('.'+this.MyClass).jstree(true).close_all();
+
+
+	}
+
+	openNode(id){
+
+		$('.'+this.MyClass).jstree(true).open_node();
+
+
+	}
+
+
+
 ////LISTENER -> PARENT
 	initEventsElementSelect(myMethod){
 
