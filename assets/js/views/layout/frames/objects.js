@@ -115,7 +115,8 @@ export default class Objects extends layout{
   ObjectBreadParentSelect(data){
       console.log('in breadParent callback object');
       this.jsTreeParent.show();
-
+      this.jsTreeParent.getHTMLParent()[0].style.flex = 1;
+      this.jsTreeChild.getHTMLParent()[0].style.flex = 0;
   }
 
 
