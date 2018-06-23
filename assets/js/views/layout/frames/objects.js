@@ -84,7 +84,7 @@ export default class Objects extends layout{
 
     //active search on parent tree
     this.jsTreeParent.linkSearch('toolsInput');
-    this.jsTreeParent.openNode('#');
+    this.jsTreeParent.openNode($('#0'));
 
     //ask Parent tree to be informed on select
     let EvParSel = 'ObjectJsTreeParentSelect';
@@ -106,9 +106,10 @@ export default class Objects extends layout{
 
   ObjectJsTreeChildSelect(data){
       this.jsTreeParent.unlinkSearch();
+      this.jsTreeParent.breadcrumbize('breadcrumb');
       this.jsTreeParent.deselectAll();
       this.jsTreeParent.closeAll();
-      this.jsTreeParent.breadcrumbize('breadcrumb');
+      
      // this.jsTreeParent.hide();
 
       this.jsTreeChild.linkSearch('toolsInput');
