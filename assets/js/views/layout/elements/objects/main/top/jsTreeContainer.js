@@ -265,6 +265,10 @@ export default class jsTreeContainer {
 		$('.'+this.MyClass).hide();
 	}
 
+	show(){
+		$('.'+this.MyClass).show();
+	}
+
 
 	deselectAll(){
 
