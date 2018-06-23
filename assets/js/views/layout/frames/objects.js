@@ -109,6 +109,7 @@ export default class Objects extends layout{
   ObjectJsTreeParentSelect(data){
       this.jsTreeChild.unlinkSearch();
       this.jsTreeChild.loadData(data.detail.node);
+      this.in = "Container";
 
   }
 
