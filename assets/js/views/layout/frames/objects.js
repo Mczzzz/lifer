@@ -91,10 +91,18 @@ export default class Objects extends layout{
     window.addEventListener(EvParSel, (data) => this[EvParSel](data));
     this.jsTreeParent.initEventsElementSelect(EvParSel);
 
+    //ask Parent tree to be informed on select
+    let EvBreadParSel = 'ObjectBreadParentSelect';
+    window.addEventListener(EvBreadParSel, (data) => this[EvBreadParSel](data));
+    this.jsTreeParent.initEventsBreadSelect(EvBreadParSel);
+
     //ask Child tree to be informed on select
     let EvChildSel = 'ObjectJsTreeChildSelect';
     window.addEventListener(EvChildSel, (data) => this[EvChildSel](data));
     this.jsTreeChild.initEventsElementSelect(EvChildSel);
+
+
+
   }
 
 
@@ -103,6 +111,15 @@ export default class Objects extends layout{
       this.jsTreeChild.loadData(data.detail.node);
 
   }
+
+  ObjectBreadParentSelect(data){
+      console.log('in breadParent callback object');
+      this.jsTreeParent.show();
+
+  }
+
+
+
 
   ObjectJsTreeChildSelect(data){
 

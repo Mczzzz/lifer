@@ -14,6 +14,7 @@ export default class jsTreeContainer {
 		this.HTMLParent = $('.'+HTMLParent);
 		this.HTMLParent.append(this.JsTree);
 		this.searchElt = false;
+		this.BreadEventCallBack = false;
 		this.collection = new LoaderCollection(collection);
 		this.initJsTree();
 
@@ -248,6 +249,12 @@ export default class jsTreeContainer {
 		$('.'+this.MyClass).jstree(true).open_node(node);
 		//clearbreadcrumb
 		this.breadcrumbTargetDiv.empty();
+		//$('.'+this.MyClass).show();
+		if(this.BreadEventCallBack != false){
+			let ev = new CustomEvent(myMethod, {'detail' : node});
+        	window.dispatchEvent(ev);
+		}
+
 	}
 
 
@@ -294,6 +301,13 @@ console.log(id);
             window.dispatchEvent(ev);
 
 		});
+
+	}
+
+
+	initEventsBreadSelect(myMethod){
+
+		this.BreadEventCallBack = myMethod;
 
 	}
 
