@@ -108,10 +108,11 @@ export default class Objects extends layout{
       this.jsTreeParent.breadcrumbize('breadcrumb');
       this.jsTreeParent.deselectAll();
       this.jsTreeParent.closeAll();
-      
-     // this.jsTreeParent.hide();
+      this.jsTreeParent.getHTMLParent().style.flex = 0;
+      this.jsTreeParent.hide();
 
       this.jsTreeChild.linkSearch('toolsInput');
+      this.jsTreeChild.getHTMLParent().style.flex = 1;
 
       //
 

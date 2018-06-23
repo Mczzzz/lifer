@@ -11,11 +11,16 @@ export default class jsTreeContainer {
 		this.MyClass = MyClass;
 		this.JsTree = document.createElement("div");
 		this.JsTree.className = this.MyClass;
-		$('.'+HTMLParent).append(this.JsTree);
+		this.HTMLParent = $('.'+HTMLParent);
+		this.HTMLParent.append(this.JsTree);
 		this.searchElt = false;
 		this.collection = new LoaderCollection(collection);
 		this.initJsTree();
 
+	}
+
+	getHTMLParent(){
+		return this.HTMLParent;
 	}
 
 
