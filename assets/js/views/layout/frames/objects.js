@@ -24,6 +24,7 @@ export default class Objects extends layout{
     super();
 
     this.bkgdHF = 'linear-gradient(45deg, #43A047 0%, #1de9b6 100%)';
+    this.in = "Container";
     this.headerCustom();
     this.mainTopUp();
     this.mainTopBottom();
@@ -104,19 +105,22 @@ export default class Objects extends layout{
   }
 
   ObjectJsTreeChildSelect(data){
-      this.jsTreeParent.unlinkSearch();
-      this.jsTreeParent.breadcrumbize('breadcrumb');
-      this.jsTreeParent.deselectAll();
-      this.jsTreeParent.closeAll();
-      console.log(this.jsTreeParent.getHTMLParent());
-      this.jsTreeParent.getHTMLParent()[0].style.flex = 0;
 
-      this.jsTreeParent.hide();
+      if(this.in == "Container"){
+        this.jsTreeParent.unlinkSearch();
+        this.jsTreeParent.breadcrumbize('breadcrumb');
+        this.jsTreeParent.deselectAll();
+        this.jsTreeParent.closeAll();
+        this.jsTreeParent.getHTMLParent().style.flex = 0;
 
-      this.jsTreeChild.linkSearch('toolsInput');
-      this.jsTreeChild.getHTMLParent()[0].style.flex = 1;
+        this.jsTreeParent.hide();
 
-      //
+        this.jsTreeChild.linkSearch('toolsInput');
+        this.jsTreeChild.getHTMLParent().style.flex = 1;
+      }
+
+
+      this.in = "Child";
 
   }
 
