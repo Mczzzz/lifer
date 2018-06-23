@@ -241,7 +241,8 @@ export default class jsTreeContainer {
 		$('.'+this.MyClass).jstree(true).close_all();
 		$('.'+this.MyClass).jstree(true)._open_to(node);
 		$('.'+this.MyClass).jstree(true).open_node(node);
-
+		//clearbreadcrumb
+		this.breadcrumbTargetDiv.empty();
 	}
 
 
