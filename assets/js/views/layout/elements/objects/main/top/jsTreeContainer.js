@@ -32,6 +32,8 @@ export default class jsTreeContainer {
 			$('.'+this.MyClass).on("deleteNode", (e, data) => this.onDeleteJsTree(e,data));
 			$('.'+this.MyClass).on("addType", (e, data) => this.onAddTypeJsTree(e,data));
 
+			let JqElName = this.MyClass;
+
 			$('.'+this.MyClass).jstree({
 	          'core' : {
 	          		'themes': {
@@ -54,8 +56,8 @@ export default class jsTreeContainer {
 					                "separator_after": false,
 					                "label": "Ajouter",
 					                "action": function (obj) { 
-					                    $node = $('.'+this.MyClass).jstree(true).create_node($node);
-					                    $('.'+this.MyClass).jstree(true).edit($node);
+					                    $node = $('.'+JqElName).jstree(true).create_node($node);
+					                    $('.'+JqElName).jstree(true).edit($node);
 					                }
 
 									}
@@ -66,7 +68,7 @@ export default class jsTreeContainer {
 			                "separator_after": false,
 			                "label": "Renomer",
 			                "action": function (obj) { 
-			                   $('.'+this.MyClass).jstree(true).edit($node);
+			                   $('.'+JqElName).jstree(true).edit($node);
 			                }
 			            };
 
@@ -79,7 +81,7 @@ export default class jsTreeContainer {
 			                "label": "Supprimer",
 			                "action": function (obj) {
 
-			                	$('.'+this.MyClass).trigger( "deleteNode", [{'node' : $node}] );
+			                	$('.'+JqElName).trigger( "deleteNode", [{'node' : $node}] );
 			                	}
 			                };
 
