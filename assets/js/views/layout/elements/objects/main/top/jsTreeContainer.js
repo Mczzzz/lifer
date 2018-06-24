@@ -251,6 +251,7 @@ export default class jsTreeContainer {
 		$('.'+this.MyClass).jstree(true).open_node(node);
 		//clearbreadcrumb
 		this.breadcrumbTargetDiv.empty();
+		this.breadcrumbTargetDiv.css("padding", "0px");
 		//$('.'+this.MyClass).show();
 		if(this.BreadEventCallBack != false){
 			let ev = new CustomEvent(this.BreadEventCallBack, {'detail' : node});
