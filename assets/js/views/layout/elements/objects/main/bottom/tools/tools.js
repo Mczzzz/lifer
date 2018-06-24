@@ -43,14 +43,17 @@ export default class tools {
 
  		this.toolsContainer = document.createElement("div");
 		this.toolsContainer.className = "toolsContainer";
+		this.toolsObjects.style.display = 'flex';
 
 			this.toolsInfos = document.createElement("div");
 			this.toolsInfos.className = "toolsInfos";
 			this.toolsContainer.append(this.toolsInfos);
+			this.toolsInfos.style.flex = "1 1 0%";
 
 			this.toolsEvent = document.createElement("div");
 			this.toolsEvent.className = "toolsEvent";
 			this.toolsContainer.append(this.toolsEvent);
+			this.toolsEvent.style.flex = "1 1 0%";
 
 		$('.tools').append(this.toolsContainer);
 
