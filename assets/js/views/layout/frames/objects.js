@@ -114,6 +114,7 @@ export default class Objects extends layout{
       this.jsTreeParent.getHTMLParent()[0].style.flex = "1 1 0%";
       this.jsTreeChild.getHTMLParent()[0].style.flex = "";
       this.jsTreeChild.show();
+      this.mainBottomTools.clearSearch();
       this.in = "Container";
 
   }
@@ -152,7 +153,7 @@ export default class Objects extends layout{
 
 
       this.in = "Child";
-
+      this.mainBottomTools.clearSearch();
       
 
   }
