@@ -267,6 +267,10 @@ export default class jsTreeContainer {
 	}
 
 
+	clearSearch(){
+		$('.'+this.MyClass).jstree(true).clear_search();
+	}
+
 	openNode(e,node){
 
 		$('.'+this.MyClass).jstree(true).clear_search();
