@@ -28,7 +28,7 @@ export default class jsTreeContainer {
 
 	initJsTree(){
 
-			this.HTMLParent.css("padding", "10px");
+			/*this.HTMLParent.css("padding", "10px");*/
 			$('.'+this.MyClass).on("deleteNode", (e, data) => this.onDeleteJsTree(e,data));
 			$('.'+this.MyClass).on("addType", (e, data) => this.onAddTypeJsTree(e,data));
 
@@ -275,6 +275,7 @@ export default class jsTreeContainer {
 
 	show(){
 		$('.'+this.MyClass).show();
+		this.HTMLParent.css("padding", "10px");
 	}
 
 
