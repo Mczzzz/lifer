@@ -202,7 +202,7 @@ export default class jsTreeContainer {
 
 		this.breadcrumbTargetDiv = $('.'+breadcrumb);
 		this.breadcrumbTargetDiv.empty();
-		this.breadcrumbTargetDiv.height(30);
+		this.breadcrumbTargetDiv.padding(10);
 
 		let node = $('.'+this.MyClass).jstree(true).get_node($('.'+this.MyClass).jstree(true).get_selected()[0]);
 
