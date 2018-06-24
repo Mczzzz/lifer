@@ -43,7 +43,7 @@ export default class tools {
 
  		this.toolsContainer = document.createElement("div");
 		this.toolsContainer.className = "toolsContainer";
-		this.toolsObjects.style.display = 'flex';
+		this.toolsContainer.style.display = 'flex';
 
 			this.toolsInfos = document.createElement("div");
 			this.toolsInfos.className = "toolsInfos";
