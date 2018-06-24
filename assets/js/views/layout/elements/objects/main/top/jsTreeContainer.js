@@ -233,6 +233,8 @@ export default class jsTreeContainer {
 
         }
 
+        this.breadcrumbTargetDiv.scrollLeft(this.breadcrumbTargetDiv[0].scrollWidth);
+
 	}
 
 
