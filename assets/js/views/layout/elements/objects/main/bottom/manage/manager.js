@@ -46,7 +46,9 @@ export default class manager {
 	    	console.log(ListInfos[k]);
 	    	if(ListInfos[k].resources.type.name == "text"){
 	    		console.log('in text');
-		    	this.Manager.append(`
+
+	    		
+		    	$(".MyManager").append(`
 		        <i class="material-icons" style="font-size:10px;margin-left:20px">`+ListInfos[k].resources.type.picto+`</i>
 		        <a href="`+ListInfos[k].resources.text+`" target="_blank" style="text-decoration:none;color:white">`+ListInfos[k].infos.name+`</a><br />
 		        `);
@@ -54,7 +56,7 @@ export default class manager {
 	    	}else if(ListInfos[k].resources.type.name == "webLink"){
 
 console.log('webLink');
-	    	this.Manager.append(`
+	    	$(".MyManager").append(`
 	        <i class="material-icons" style="font-size:10px;margin-left:20px">`+ListInfos[k].resources.type.picto+`</i>
 	        <a href="`+ListInfos[k].resources.text+`" target="_blank" style="text-decoration:none;color:white">`+ListInfos[k].infos.name+`</a><br />
 	        `);
