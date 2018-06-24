@@ -297,15 +297,6 @@ export default class jsTreeContainer {
 
 	}
 
-/*	openNode(id){
-console.log(id);
-		let node = $('.'+this.MyClass).jstree(true).get_node(id);
-		console.log(node);
-		$('.'+this.MyClass).jstree(true).open_node(node);
-
-
-	}*/
-
 
 
 ////LISTENER -> PARENT
@@ -326,6 +317,117 @@ console.log(id);
 		this.BreadEventCallBack = myMethod;
 
 	}
+
+
+
+
+//MISE A JOUR COLLECTION
+	onRenameJsTree(e,data){
+
+       	let formData = new FormData();
+
+        formData.append('node',data.node.id);
+        formData.append('name',data.node.text);
+
+        this.collection.rename(formData);
+
+        
+	}
+
+
+	onDeleteJsTree(e,data){
+
+
+
+	let JstreeHTML = this.jsTreeContainer;
+
+
+		swal({
+		  title: "t sur ???",
+		  text: "Ctrl-Z n'est pas implémenté alors réfléchis bien !",
+		  icon: "warning",
+		  buttons: true,
+		  dangerMode: true,
+		})
+
+		.then((willDelete) => {
+		  if (willDelete) {
+
+
+		  	let formData = new FormData();
+
+	        formData.append('node'  ,data.node.id);
+	        formData.append('parent'  ,data.node.parent);
+
+	        let result = this.collection.delete(formData);
+
+	        if(result.error == 0){
+
+	        	this.JsTreeContainer.jstree(true).delete_node(data.node);
+	       
+				this.getJstreeContainerElements();
+
+	        }
+
+
+
+		    swal("Poof! à la poubelle ;)", {
+		      icon: "success",
+		    });
+
+
+
+
+		  } else {
+
+		    swal("t'inquietes ta data est tjs la");
+		    return false;
+		  }
+		});
+
+
+
+       	
+
+	}
+
+
+
+
+
+
+	onCreateJsTree(e,data){
+
+		let formData = new FormData();
+
+		if(this.parentId){
+
+			formData.append('container'    ,this.parentId);
+		
+		}
+
+        formData.append('node'    ,data.node.text);
+        formData.append('parent'  ,data.parent);
+
+		let result = this.collection.create(formData);
+
+		this.JsTreeContainer.jstree(true).set_id(data.node, result.data);
+
+
+	}
+
+
+	onDNDJstree(e,data,ref){
+
+  		let formData = new FormData();
+
+        formData.append('node'  ,ref.get_node(data.data.nodes[0]).id);
+        formData.append('parent'  ,ref.get_node(data.data.nodes[0]).parent);
+
+        this.collection.move(formData);
+
+	}
+
 
 
 
