@@ -69,6 +69,23 @@ export default class tools {
 			this.toolsEvent.className = "toolsEvent";
 			this.toolsContainer.append(this.toolsEvent);
 			this.toolsEvent.style.flex = "1 1 0%";
+			this.toolsEvent.style.textAlign = "center";
+			this.toolsEvent.style.verticalAlign = "middle";
+			let eventButton = document.createElement("a");
+				let eventPicto = document.createElement("i");
+					eventPicto.className = "material-icons";
+					eventPicto.style.color = "#4CAF50";
+					eventPicto.append("access_alarms");
+
+			eventButton.append(eventPicto);
+			this.toolsEvent.append(eventButton);
+
+
+
+
+
+
+
 
 		$('.tools').append(this.toolsContainer);
 

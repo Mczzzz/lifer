@@ -213,6 +213,16 @@ export default class jsTreeContainer {
 	breadcrumbize(breadcrumb){
 
 		this.breadcrumbTargetDiv = $('.'+breadcrumb);
+
+		this.MyBreadContainer = document.createElement("div");
+		if(this.Parent){
+			this.MyBreadContainer.className = "childBreadContainer";
+		}else{
+			this.MyBreadContainer.className = "parentBreadContainer";
+		}
+		
+		this.breadcrumbTargetDiv.append(MyBreadContainer);
+
 		this.breadcrumbTargetDiv.empty();
 		this.breadcrumbTargetDiv.css("background-color", "white");
 		this.breadcrumbTargetDiv.css("padding", "10px");
