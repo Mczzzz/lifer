@@ -16,7 +16,7 @@ export default class manager {
 		console.log('on passe dans le cinitHTML du manager');
 			this.Manager = document.createElement("div");
 			this.Manager.className = "MyManager";
-			$(".manage").append(this.Manager);
+			this.ParentContainer.append(this.Manager);
 	}
 
 	loadInfos(){
