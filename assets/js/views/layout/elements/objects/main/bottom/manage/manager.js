@@ -39,7 +39,7 @@ export default class manager {
 
 		 let ListInfos = this.collection.getList(this.objectId,this.leafId);
 
-        this.Manager.empty();
+        $(".MyManager").empty();
 
 	    for (let k in ListInfos){
 	    	console.log('in for');
