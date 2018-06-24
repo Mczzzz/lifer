@@ -58,7 +58,7 @@ export default class Objects extends layout{
 
     //divParent,Collection,class
     this.jsTreeChild = new jsTreeContainer('topBottom','ObjectTree','JsTreeObjects');
-
+    this.jsTreeChild.hide();
     
   }
 
