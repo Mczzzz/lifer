@@ -152,6 +152,13 @@ export default class jsTreeContainer {
 //LOAD DATAS
 	loadData(ParentNode = false){
 
+		this.Parent = false;
+
+		if(ParentNode != false){
+
+			this.Parent = ParentNode;
+		}
+
 		let dataList = this.collection.getList(ParentNode.id);
 		
 			for (let k in dataList){
@@ -408,9 +415,9 @@ export default class jsTreeContainer {
 
 		let formData = new FormData();
 
-		if(this.parentId){
+		if(this.Parent){
 
-			formData.append('container'    ,this.parentId);
+			formData.append('container'    ,this.Parent.id);
 		
 		}
 
@@ -419,7 +426,7 @@ export default class jsTreeContainer {
 
 		let result = this.collection.create(formData);
 
-		this.JsTreeContainer.jstree(true).set_id(data.node, result.data);
+		$('.'+this.MyClass).jstree(true).set_id(data.node, result.data);
 
 
 	}
