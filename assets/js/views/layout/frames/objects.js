@@ -73,10 +73,10 @@ export default class Objects extends layout{
   }
 
 
- mainBottomManager(){
+ mainBottomManager(field){
 
 
-     this.mainBottomTManager = new Manager();
+     this.mainBottomTManager = new Manager(field);
 
     
   }
@@ -161,7 +161,7 @@ export default class Objects extends layout{
         this.jsTreeChild.getHTMLParent()[0].style.flex = "1 1 0%";
 
         this.mainBottomTools.initInfosObjects();
-        this.mainBottomManager('manage');
+        this.mainBottomManager("manage");
       }
 
 
