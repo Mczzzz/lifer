@@ -149,6 +149,7 @@ export default class Objects extends layout{
   ObjectJsTreeChildSelect(data){
 
     console.log('ChildSelect');
+    console.log(data);
     console.log(this.in);
 
       if(this.in == "Container"){
@@ -167,6 +168,9 @@ export default class Objects extends layout{
 
       this.in = "Child";
       this.mainBottomTools.clearSearch();
+      //this.mainBottomManager(objectId,leafId);
+
+      //on lance le manager
 
       
 
