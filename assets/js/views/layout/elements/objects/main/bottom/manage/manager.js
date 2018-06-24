@@ -43,6 +43,7 @@ export default class manager {
 
 	    for (let k in ListInfos){
 	    	console.log('in for');
+	    	console.log(ListInfos[k]);
 	    	if(ListInfos[k].resources.name == "text"){
 	    		console.log('in text');
 		    	this.Manager.append(`
