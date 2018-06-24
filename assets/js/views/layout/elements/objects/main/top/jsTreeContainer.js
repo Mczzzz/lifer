@@ -271,6 +271,8 @@ export default class jsTreeContainer {
 	hide(){
 		$('.'+this.MyClass).hide();
 		this.HTMLParent.css("padding", "0px");
+		this.deselectAll();
+		this.closeAll();
 	}
 
 	show(){
