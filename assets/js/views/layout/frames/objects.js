@@ -66,7 +66,7 @@ export default class Objects extends layout{
   mainBottomTools(){
 
 
-     let mainBottomTools = new Tools();
+     this.mainBottomTools = new Tools();
 
     
   }
@@ -147,6 +147,8 @@ export default class Objects extends layout{
 
 
       this.in = "Child";
+
+      this.mainBottomTools.initInfosObjects();
 
   }
 

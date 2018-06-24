@@ -11,6 +11,8 @@ export default class tools {
 
 	initSearch(){
 
+		$('.tools').empty();
+
 		this.toolsContainer = document.createElement("div");
 		this.toolsContainer.className = "toolsContainer";
 
@@ -35,6 +37,25 @@ export default class tools {
 	}
 
  
+ 	initInfosObjects(){
+
+ 		$('.tools').empty();
+
+ 		this.toolsContainer = document.createElement("div");
+		this.toolsContainer.className = "toolsContainer";
+
+			this.toolsInfos = document.createElement("div");
+			this.toolsInfos.className = "toolsInfos";
+			this.toolsContainer.append(toolsInfos);
+
+			this.toolsEvent = document.createElement("div");
+			this.toolsEvent.className = "toolsEvent";
+			this.toolsContainer.append(toolsEvent);
+
+		$('.tools').append(this.toolsContainer);
+
+
+ 	}
 
 
 }
