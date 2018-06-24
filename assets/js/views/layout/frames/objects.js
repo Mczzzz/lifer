@@ -112,7 +112,7 @@ export default class Objects extends layout{
       this.jsTreeChild.loadData(data.detail.node);
       
       this.jsTreeParent.getHTMLParent()[0].style.flex = "1 1 0%";
-      this.jsTreeChild.getHTMLParent()[0].style.flex = "0 0 0%";
+      this.jsTreeChild.getHTMLParent()[0].style.flex = "";
       this.jsTreeChild.show();
       this.in = "Container";
 
