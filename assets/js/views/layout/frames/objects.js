@@ -76,7 +76,7 @@ export default class Objects extends layout{
  mainBottomManager(field){
 
 
-     this.mainBottomTManager = new Manager(field);
+     this.mainBottomManager = new Manager(field);
 
     
   }
