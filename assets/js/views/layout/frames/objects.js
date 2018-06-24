@@ -145,12 +145,14 @@ export default class Objects extends layout{
         this.jsTreeParent.hide();
         this.jsTreeChild.linkSearch('toolsInput');
         this.jsTreeChild.getHTMLParent()[0].style.flex = "1 1 0%";
+
+        this.mainBottomTools.initInfosObjects();
       }
 
 
       this.in = "Child";
 
-      this.mainBottomTools.initInfosObjects();
+      
 
   }
 
