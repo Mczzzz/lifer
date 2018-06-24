@@ -44,14 +44,14 @@ export default class manager {
 	    for (let k in ListInfos){
 	    	console.log('in for');
 	    	console.log(ListInfos[k]);
-	    	if(ListInfos[k].resources.name == "text"){
+	    	if(ListInfos[k].resources.type.name == "text"){
 	    		console.log('in text');
 		    	this.Manager.append(`
 		        <i class="material-icons" style="font-size:10px;margin-left:20px">`+ListInfos[k].resources.type.picto+`</i>
 		        <a href="`+ListInfos[k].resources.text+`" target="_blank" style="text-decoration:none;color:white">`+ListInfos[k].infos.name+`</a><br />
 		        `);
 
-	    	}else if(ListInfos[k].resources.name == "webLink"){
+	    	}else if(ListInfos[k].resources.type.name == "webLink"){
 
 console.log('webLink');
 	    	this.Manager.append(`
