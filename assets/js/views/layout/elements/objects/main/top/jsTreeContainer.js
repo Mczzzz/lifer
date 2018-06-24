@@ -207,7 +207,7 @@ export default class jsTreeContainer {
 		let node = $('.'+this.MyClass).jstree(true).get_node($('.'+this.MyClass).jstree(true).get_selected()[0]);
 
      	//ajout d ela node active
-        this.breadcrumbTargetDiv.append('<a id="bc_'+node.id+'" style="border-radius: 4px 12px 4px 4px;background: #0288d1;color:white;padding:5px;margin-right: 5px;" class="">'+node.text+'</a>');
+        this.breadcrumbTargetDiv.append('<a id="bc_'+node.id+'" style="font-family: \'Titillium Web\',sans-serif,Arial,sans-serif;border-radius: 4px 12px 4px 4px;background: #0288d1;color:white;padding:5px;margin-right: 5px;" class="">'+node.text+'</a>');
         	
 
         this.jsTreeEventBreadcrumb(node);
@@ -222,7 +222,7 @@ export default class jsTreeContainer {
 
 				i -=0.15;
 				
-				this.breadcrumbTargetDiv.prepend('<a href="#!" id="bc_'+parentNode.id+'" style="opacity: '+i+';border-radius: 4px 12px 4px 4px;background: #0288d1;color:white;padding:5px;margin-right: 5px" class="">'+parentNode.text+'</a>');
+				this.breadcrumbTargetDiv.prepend('<a href="#!" id="bc_'+parentNode.id+'" style="font-family: \'Titillium Web\',sans-serif,Arial,sans-serif;opacity: '+i+';border-radius: 4px 12px 4px 4px;background: #0288d1;color:white;padding:5px;margin-right: 5px" class="">'+parentNode.text+'</a>');
 				
 		        this.jsTreeEventBreadcrumb(parentNode);
 
