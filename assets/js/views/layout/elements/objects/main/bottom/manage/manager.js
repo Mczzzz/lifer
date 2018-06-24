@@ -6,7 +6,7 @@ export default class manager {
 
 	constructor(HTMLParent){
 		console.log('on passe dans le constructeur du manager');
-	this.ParentContainer = $(HTMLParent);
+	this.ParentContainer = $("."+HTMLParent);
 
 	this.initHTML();
 	}
