@@ -53,7 +53,6 @@ export default class tools {
 			this.toolsInfos.style.flex = "1 1 0%";
 			this.toolsInfos.style.textAlign = "center";
 			this.toolsInfos.style.paddingTop = "12px";
-			this.toolsInfos.style.verticalAlign = "middle";
 			let infoButton = document.createElement("a");
 				let infoPicto = document.createElement("i");
 					infoPicto.className = "material-icons";
@@ -71,7 +70,7 @@ export default class tools {
 			this.toolsContainer.append(this.toolsEvent);
 			this.toolsEvent.style.flex = "1 1 0%";
 			this.toolsEvent.style.textAlign = "center";
-			this.toolsEvent.style.verticalAlign = "middle";
+			this.toolsEvent.style.paddingTop = "12px";
 			let eventButton = document.createElement("a");
 				let eventPicto = document.createElement("i");
 					eventPicto.className = "material-icons";
