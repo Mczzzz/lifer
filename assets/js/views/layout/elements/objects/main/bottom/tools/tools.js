@@ -11,10 +11,8 @@ export default class tools {
 
 	initSearch(){
 
-		$('.tools').empty();
-
-		this.toolsContainer = document.createElement("div");
-		this.toolsContainer.className = "toolsContainer";
+		this.toolsSearchContainer = document.createElement("div");
+		this.toolsSearchContainer.className = "toolsSearchContainer";
 
 		this.toolsInput = document.createElement("input");
 		this.toolsInput.className = "toolsInput";
@@ -26,8 +24,8 @@ export default class tools {
 		this.toolsInput.style.border   = '1px solid silver';
 		this.toolsInput.style.height   = '40px';
 
-		this.toolsContainer.append(this.toolsInput);
-		$('.tools').append(this.toolsContainer);
+		this.toolsSearchContainer.append(this.toolsInput);
+		$('.tools').append(this.toolsSearchContainer);
 
 		let margeSize = 5;
 		$('.toolsInput').css( "margin", margeSize );
@@ -36,20 +34,25 @@ export default class tools {
 		$('.tools').css( "background", '#E8E8E8' );
 	}
 
+	removeSearch(){
+		$('.tools').removeChild($('.'+toolsSearchContainer));
+	}
+
+	removeInfos(){
+		$('.tools').removeChild($('.'+toolsInfosContainer));
+	}
  
  	initInfosObjects(){
 
- 		$('.tools').empty();
-
- 		this.toolsContainer = document.createElement("div");
-		this.toolsContainer.className = "toolsContainer";
-		this.toolsContainer.style.display = 'flex';
-		this.toolsContainer.style.height = "50px";
-		console.log(this.toolsContainer);
+ 		this.toolsInfosContainer = document.createElement("div");
+		this.toolsInfosContainer.className = "toolsInfosContainer";
+		this.toolsInfosContainer.style.display = 'flex';
+		this.toolsInfosContainer.style.height = "50px";
+		console.log(this.toolsInfosContainer);
 
 			this.toolsInfos = document.createElement("div");
 			this.toolsInfos.className = "toolsInfos";
-			this.toolsContainer.append(this.toolsInfos);
+			this.toolsInfosContainer.append(this.toolsInfos);
 			this.toolsInfos.style.flex = "1 1 0%";
 			this.toolsInfos.style.textAlign = "center";
 			this.toolsInfos.style.paddingTop = "12px";
@@ -67,7 +70,7 @@ export default class tools {
 
 			this.toolsEvent = document.createElement("div");
 			this.toolsEvent.className = "toolsEvent";
-			this.toolsContainer.append(this.toolsEvent);
+			this.toolsInfosContainer.append(this.toolsEvent);
 			this.toolsEvent.style.flex = "1 1 0%";
 			this.toolsEvent.style.textAlign = "center";
 			this.toolsEvent.style.paddingTop = "12px";
@@ -82,12 +85,7 @@ export default class tools {
 
 
 
-
-
-
-
-
-		$('.tools').append(this.toolsContainer);
+		$('.tools').append(this.toolsInfosContainer);
 
 
  	}
