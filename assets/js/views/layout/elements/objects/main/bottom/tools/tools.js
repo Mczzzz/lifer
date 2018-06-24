@@ -44,6 +44,7 @@ export default class tools {
  		this.toolsContainer = document.createElement("div");
 		this.toolsContainer.className = "toolsContainer";
 		this.toolsContainer.style.display = 'flex';
+		this.toolsContainer.style.height = '50px';
 
 			this.toolsInfos = document.createElement("div");
 			this.toolsInfos.className = "toolsInfos";
