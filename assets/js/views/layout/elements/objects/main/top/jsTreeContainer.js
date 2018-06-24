@@ -25,6 +25,7 @@ export default class jsTreeContainer {
 	}
 
 
+
 	initJsTree(){
 
 			this.HTMLParent.css("padding", "10px");
@@ -267,6 +268,7 @@ export default class jsTreeContainer {
 
 	hide(){
 		$('.'+this.MyClass).hide();
+		this.HTMLParent.css("padding", "0px");
 	}
 
 	show(){
