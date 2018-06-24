@@ -312,6 +312,11 @@ export default class jsTreeContainer {
 
 		});
 
+
+		$('.'+this.MyClass).on("rename_node.jstree", (e,data)=>this.onRenameJsTree(e,data));
+		$('.'+this.MyClass).on("create_node.jstree", (e,data)=>this.onCreateJsTree(e,data));
+
+
 	}
 
 

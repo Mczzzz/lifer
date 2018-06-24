@@ -183,16 +183,6 @@ export default class Objects extends layout{
 
 
 
-
-	initContainerJstreeDOMElements(){
-
-    //je charge l'objet jstree standard
-    this.JstreeContainerObj = new JsTreeContainer(this.JsTreeContainer,'Parent', this.TheContainerCollect);
-
-	}
-
-
-
   linkVakataDomEvent(){
 
     $(document).on('dnd_stop.vakata', (e, data) => this.vakataAction(e,data));
@@ -234,74 +224,10 @@ export default class Objects extends layout{
  
 
 
-  onContainerSelected(e){
-
-    console.log(e);
-    if(e.detail.id == 0) return true;
+  
 
 
 
-    this.objectIdSelect = e.detail.id;
-    //create or refresh the child
-    if( this.JstreeObjectsObj === undefined ){
-
-      this.JstreeObjectsObj = new JsTreeContainer(this.JsTreeObjects,'Child', this.TheObjectCollect,e.detail.id,e.detail.name);
-
-
-      
-
-
-    }else{
-
-      this.JstreeObjectsObj.setParentId(e.detail.id,e.detail.name);
-
-    }
-
-    this.JstreeObjectsObj.getJstreeContainerElements();
-    this.JstreeObjectsObj.onMaximize();
-
-    this.ObjectToolBar.setContainerId(e.detail.id);
-
-    this.ObjectToolBar.setLeafId("");
-
-  }
-
-
-  onChildAction(e){
-
-
-    this.ObjectToolBar.setLeafId(e.detail.id);
-
-    this.JstreeContainerObj.onMinimize();
-    this.ObjectToolBar.show();
-
-    //listing des infos
-    $('#leafInfos').empty();
-
-    if(e.detail.id == 0) return true;
-
-    let infosElement = new infosLoader();
-
-
-    if('id' in e.detail){
-
-      infosElement.loadList(this.objectIdSelect,e.detail.id);
-
-
-    }
-
-
-
-  }
-
-
-  onParentAction(e){
-
-    this.JstreeObjectsObj.onMinimize(true);
-    this.ObjectToolBar.hide();
-    this.ObjectToolBar.setLeafId("");
-
-  }
 
 
 
