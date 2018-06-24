@@ -193,7 +193,7 @@ export default class jsTreeContainer {
 	unlinkSearch(){
 
 		if(this.searchElt){
-			this.searchElement.off("keyup", (e)=> this.linkSearchEvent(e));
+			this.searchElement.off("keyup");
 			this.searchElt = false;
 		}
 		
