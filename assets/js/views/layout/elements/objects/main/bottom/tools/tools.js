@@ -51,6 +51,7 @@ export default class tools {
 			this.toolsInfos.className = "toolsInfos";
 			this.toolsContainer.append(this.toolsInfos);
 			this.toolsInfos.style.flex = "1 1 0%";
+			this.toolsInfos.style.textAlign = "center";
 			let infoButton = document.createElement("a");
 				let infoPicto = document.createElement("i");
 					infoPicto.className = "material-icons";
