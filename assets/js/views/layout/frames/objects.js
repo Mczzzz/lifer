@@ -110,8 +110,8 @@ export default class Objects extends layout{
       this.jsTreeChild.unlinkSearch();
       this.jsTreeChild.loadData(data.detail.node);
       this.jsTreeChild.show();
-      this.jsTreeParent.getHTMLParent()[0].style.flex = 1;
-      this.jsTreeChild.getHTMLParent()[0].style.flex = "";
+      this.jsTreeParent.getHTMLParent()[0].style.flex = "1 1 0%";
+      this.jsTreeChild.getHTMLParent()[0].style.flex = "0 0 0%";
       this.in = "Container";
 
   }
@@ -119,8 +119,8 @@ export default class Objects extends layout{
   ObjectBreadParentSelect(data){
       console.log('in breadParent callback object');
       this.jsTreeParent.show();
-      this.jsTreeParent.getHTMLParent()[0].style.flex = 1;
-      this.jsTreeChild.getHTMLParent()[0].style.flex = "";
+      this.jsTreeParent.getHTMLParent()[0].style.flex = "1 1 0%";
+      this.jsTreeChild.getHTMLParent()[0].style.flex = "0 0 0%";
       this.jsTreeChild.hide();
       this.in = "Container";
   }
@@ -135,11 +135,11 @@ export default class Objects extends layout{
         this.jsTreeParent.breadcrumbize('breadcrumb');
         this.jsTreeParent.deselectAll();
         this.jsTreeParent.closeAll();
-        this.jsTreeParent.getHTMLParent()[0].style.flex = "";
+        this.jsTreeParent.getHTMLParent()[0].style.flex = "0 0 0%";
 
         this.jsTreeParent.hide();
         this.jsTreeChild.linkSearch('toolsInput');
-        this.jsTreeChild.getHTMLParent()[0].style.flex = 1;
+        this.jsTreeChild.getHTMLParent()[0].style.flex = "1 1 0%";
       }
 
 
