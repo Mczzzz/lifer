@@ -35,16 +35,16 @@ export default class tools {
 	}
 
 	removeSearch(){
-		$('.'+'toolsSearchContainer').remove();
+		$(".toolsSearchContainer").remove();
 	}
 
 	clearSearch(){
 
-		$('.'+'toolsSearchContainer').val("");
+		$(".toolsSearchContainer").val("");
 	}
 
 	removeInfos(){
-		$('.'+'toolsInfosContainer').remove();
+		$(".toolsInfosContainer").val("");
 	}
  
  	initInfosObjects(){
