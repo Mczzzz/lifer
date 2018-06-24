@@ -38,13 +38,13 @@ export default class manager {
 
 		 let ListInfos = this.collection.getList(this.objectId,this.leafId);
 
-        $('.MyManager').empty();
+        $(".MyManager").empty();
 
 	    for (let k in ListInfos){
 
 	    	if(ListInfos[k].resources.name == "text"){
 
-		    	$('.MyManager').append(`
+		    	$(".MyManager").append(`
 		        <i class="material-icons" style="font-size:10px;margin-left:20px">`+ListInfos[k].resources.type.picto+`</i>
 		        <a href="`+ListInfos[k].resources.text+`" target="_blank" style="text-decoration:none;color:white">`+ListInfos[k].infos.name+`</a><br />
 		        `);
@@ -52,7 +52,7 @@ export default class manager {
 	    	}else if(ListInfos[k].resources.name == "webLink"){
 
 
-	    	$('.MyManager').append(`
+	    	$(".MyManager").append(`
 	        <i class="material-icons" style="font-size:10px;margin-left:20px">`+ListInfos[k].resources.type.picto+`</i>
 	        <a href="`+ListInfos[k].resources.text+`" target="_blank" style="text-decoration:none;color:white">`+ListInfos[k].infos.name+`</a><br />
 	        `);
