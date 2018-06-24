@@ -94,6 +94,7 @@ export default class Layout {
 										.breadcrumb{
 											background-color: grey;
 											overflow-x: scroll;
+											white-space:nowrap;
 										}
 										.top{
 											flex:1;
