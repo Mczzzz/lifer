@@ -46,11 +46,11 @@ export default class tools {
 
 			this.toolsInfos = document.createElement("div");
 			this.toolsInfos.className = "toolsInfos";
-			this.toolsContainer.append(toolsInfos);
+			this.toolsContainer.append(this.toolsInfos);
 
 			this.toolsEvent = document.createElement("div");
 			this.toolsEvent.className = "toolsEvent";
-			this.toolsContainer.append(toolsEvent);
+			this.toolsContainer.append(this.toolsEvent);
 
 		$('.tools').append(this.toolsContainer);
 
