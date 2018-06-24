@@ -2,6 +2,7 @@ import layout from '../layout.js';
 
 import Header from '../sections/header.js';
 import Footer from '../sections/footer.js';
+import Manager from '../elements/objects/main/bottom/manage/manager.js';
 import Tools from '../elements/objects/main/bottom/tools/tools.js';
 import jsTreeContainer from '../elements/objects/main/top/jsTreeContainer.js'
 /*import Header from '../elements/objects/headerObjects.js';
@@ -70,6 +71,16 @@ export default class Objects extends layout{
 
     
   }
+
+
+ mainBottomManager(){
+
+
+     this.mainBottomTManager = new Manager();
+
+    
+  }
+
 
 
   footerCustom(){
@@ -150,6 +161,7 @@ export default class Objects extends layout{
         this.jsTreeChild.getHTMLParent()[0].style.flex = "1 1 0%";
 
         this.mainBottomTools.initInfosObjects();
+        this.mainBottomManager();
       }
 
 
