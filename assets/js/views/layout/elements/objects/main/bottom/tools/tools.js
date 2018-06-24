@@ -52,10 +52,11 @@ export default class tools {
 			this.toolsContainer.append(this.toolsInfos);
 			this.toolsInfos.style.flex = "1 1 0%";
 			this.toolsInfos.style.textAlign = "center";
+			this.toolsInfos.style.verticalAlign = "middle";
 			let infoButton = document.createElement("a");
 				let infoPicto = document.createElement("i");
 					infoPicto.className = "material-icons";
-					infoPicto.style.color = "white";
+					infoPicto.style.color = "#2196F3";
 					infoPicto.append("info");
 
 			infoButton.append(infoPicto);
