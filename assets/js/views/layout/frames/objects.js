@@ -76,7 +76,7 @@ export default class Objects extends layout{
  mainBottomManager(field){
 
 
-     this.mainBottomManager = new Manager(field);
+     this.mainBottomMyManager = new Manager(field);
 
     
   }
@@ -170,7 +170,7 @@ export default class Objects extends layout{
 
       this.in = "Child";
       this.mainBottomTools.clearSearch();
-      this.mainBottomManager.loadList(this.ParentId,data.detail.node.id);
+      this.mainBottomMyManager.loadList(this.ParentId,data.detail.node.id);
 
       //on lance le manager
 
