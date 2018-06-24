@@ -40,11 +40,11 @@ export default class tools {
 
 	clearSearch(){
 
-		$(".toolsSearchContainer").val("");
+		$(".toolsInput").val("");
 	}
 
 	removeInfos(){
-		$(".toolsInfosContainer").val("");
+		$(".toolsInfosContainer").remove();
 	}
  
  	initInfosObjects(){
