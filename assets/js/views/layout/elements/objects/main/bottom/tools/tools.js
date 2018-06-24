@@ -35,11 +35,11 @@ export default class tools {
 	}
 
 	removeSearch(){
-		$('.tools').removeChild($('.'+toolsSearchContainer));
+		$('.tools').removeChild($('.'+'toolsSearchContainer'));
 	}
 
 	removeInfos(){
-		$('.tools').removeChild($('.'+toolsInfosContainer));
+		$('.tools').removeChild($('.'+'toolsInfosContainer'));
 	}
  
  	initInfosObjects(){
