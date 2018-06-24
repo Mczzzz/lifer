@@ -1,5 +1,6 @@
 import LoaderCollection from '../../../../../../services/LoaderCollection.js';
 
+import swal from 'sweetalert';
 import jstree from 'jstree';
 
 export default class jsTreeContainer {
