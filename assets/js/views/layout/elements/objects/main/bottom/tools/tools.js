@@ -52,6 +52,7 @@ export default class tools {
 			this.toolsContainer.append(this.toolsInfos);
 			this.toolsInfos.style.flex = "1 1 0%";
 			this.toolsInfos.style.textAlign = "center";
+			this.toolsInfos.style.paddingTop = "12px";
 			this.toolsInfos.style.verticalAlign = "middle";
 			let infoButton = document.createElement("a");
 				let infoPicto = document.createElement("i");
