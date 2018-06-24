@@ -16,6 +16,8 @@ export default class manager {
 		console.log('on passe dans le cinitHTML du manager');
 			this.Manager = document.createElement("div");
 			this.Manager.className = "MyManager";
+			this.Manager.style.backgroundColor = "black";
+			this.Manager.style.height = "250px";
 			this.ParentContainer.append(this.Manager);
 	}
 
