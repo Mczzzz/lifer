@@ -133,6 +133,8 @@ export default class Objects extends layout{
   ObjectJsTreeChildSelect(data){
 
     console.log('ChildSelect');
+    console.log(this.in);
+
       if(this.in == "Container"){
         this.jsTreeParent.unlinkSearch();
         this.jsTreeParent.breadcrumbize('breadcrumb');
