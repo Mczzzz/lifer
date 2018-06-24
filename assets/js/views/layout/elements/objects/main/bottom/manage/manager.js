@@ -18,7 +18,7 @@ export default class manager {
 		console.log('on passe dans le cinitHTML du manager');
 			this.Manager = document.createElement("div");
 			this.Manager.className = "MyManager";
-			this.Manager.style.backgroundColor = "black";
+			//this.Manager.style.backgroundColor = "black";
 			this.Manager.style.height = "250px";
 			this.ParentContainer.append(this.Manager);
 	}
@@ -47,7 +47,7 @@ export default class manager {
 	    	if(ListInfos[k].resources.type.name == "text"){
 	    		console.log('in text');
 
-	    		
+
 		    	$(".MyManager").append(`
 		        <i class="material-icons" style="font-size:10px;margin-left:20px">`+ListInfos[k].resources.type.picto+`</i>
 		        <a href="`+ListInfos[k].resources.text+`" target="_blank" style="text-decoration:none;color:white">`+ListInfos[k].infos.name+`</a><br />
