@@ -107,11 +107,13 @@ export default class Objects extends layout{
 
 
   ObjectJsTreeParentSelect(data){
+    console.log('ParentSelect');
       this.jsTreeChild.unlinkSearch();
       this.jsTreeChild.loadData(data.detail.node);
-      this.jsTreeChild.show();
+      
       this.jsTreeParent.getHTMLParent()[0].style.flex = "1 1 0%";
       this.jsTreeChild.getHTMLParent()[0].style.flex = "0 0 0%";
+      this.jsTreeChild.show();
       this.in = "Container";
 
   }
@@ -130,6 +132,7 @@ export default class Objects extends layout{
 
   ObjectJsTreeChildSelect(data){
 
+    console.log('ChildSelect');
       if(this.in == "Container"){
         this.jsTreeParent.unlinkSearch();
         this.jsTreeParent.breadcrumbize('breadcrumb');
