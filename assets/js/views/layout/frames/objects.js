@@ -161,7 +161,7 @@ export default class Objects extends layout{
         this.jsTreeChild.getHTMLParent()[0].style.flex = "1 1 0%";
 
         this.mainBottomTools.initInfosObjects();
-        this.mainBottomManager();
+        this.mainBottomManager('manage');
       }
 
 
