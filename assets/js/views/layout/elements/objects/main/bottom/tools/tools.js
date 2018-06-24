@@ -51,6 +51,17 @@ export default class tools {
 			this.toolsInfos.className = "toolsInfos";
 			this.toolsContainer.append(this.toolsInfos);
 			this.toolsInfos.style.flex = "1 1 0%";
+			let infoButton = document.createElement("a");
+				let infoPicto = document.createElement("i");
+					infoPicto.className = "material-icons";
+					infoPicto.style.color = "white";
+					infoPicto.append("info");
+
+			infoButton.append(infoPicto);
+			this.toolsInfos.append(infoButton);
+
+
+
 
 			this.toolsEvent = document.createElement("div");
 			this.toolsEvent.className = "toolsEvent";
