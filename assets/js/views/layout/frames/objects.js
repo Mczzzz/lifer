@@ -119,6 +119,7 @@ export default class Objects extends layout{
 
   ObjectJsTreeParentSelect(data){
     console.log('ParentSelect');
+      this.ParentId = data.detail.node.id;
       this.jsTreeChild.unlinkSearch();
       this.jsTreeChild.loadData(data.detail.node);
       
@@ -133,6 +134,7 @@ export default class Objects extends layout{
 
   ObjectBreadParentSelect(data){
       console.log('in breadParent callback object');
+      this.ParentId = "";
       this.jsTreeParent.show();
       this.jsTreeParent.getHTMLParent()[0].style.flex = "1 1 0%";
       this.jsTreeChild.getHTMLParent()[0].style.flex = "0 0 0%";
@@ -168,7 +170,7 @@ export default class Objects extends layout{
 
       this.in = "Child";
       this.mainBottomTools.clearSearch();
-      //this.mainBottomManager(objectId,leafId);
+      this.mainBottomManager.loadList(this.ParentId,data.detail.node.id);
 
       //on lance le manager
 
