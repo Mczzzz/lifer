@@ -110,6 +110,8 @@ export default class Objects extends layout{
       this.jsTreeChild.unlinkSearch();
       this.jsTreeChild.loadData(data.detail.node);
       this.jsTreeChild.show();
+      this.jsTreeParent.getHTMLParent()[0].style.flex = 1;
+      this.jsTreeChild.getHTMLParent()[0].style.flex = "";
       this.in = "Container";
 
   }
