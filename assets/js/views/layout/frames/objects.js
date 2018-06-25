@@ -166,7 +166,7 @@ export default class Objects extends layout{
 
         //BREADCRUMB
             let listEl = this.jsTreeParent.getObjPathToNode();     
-            this.ObjBreadcrumb.init("bcContainer", listEl ,true);
+            this.ObjBreadcrumb.init("bcContainer", listEl ,'ObjectBreadParentSelect',true);
         ////////////
 
 //this.jsTreeParent.breadcrumbize('breadcrumb');

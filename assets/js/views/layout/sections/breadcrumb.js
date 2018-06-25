@@ -58,12 +58,20 @@ export default class Breadcrumb {
 			opacity += stepOpacity;
 
 			//link event listener
-			bc.addEventListener("click", function(e,data){console.log(data)});
+			bc.addEventListener("click", (e,data,listener)=>this.eventParentDispatcher(e,data,listener));
 
 		}
 
 		//on bouge la frame en fin de liste
 		this.elParent.scrollLeft(this.elParent[0].scrollWidth);
+
+	}
+
+
+	eventParentDispatcher(e, data,listener){
+
+		let NodeEvent = new CustomEvent(listener, {'detail' : {'data' : data}});
+       	window.dispatchEvent(NodeEvent);
 
 	}
 
