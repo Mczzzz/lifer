@@ -6,10 +6,10 @@ import Footer from '../elements/objects/footer/footer.js';
 
 
 
-import Breadcrumb from '../elements/common/ui/breadcrumb.js';
+/*import Breadcrumb from '../elements/common/ui/breadcrumb.js';
 import Manager from '../elements/objects/main/bottom/manage/manage.js';
 import Tools from '../elements/objects/main/bottom/tools/tools.js';
-import jsTreeContainer from '../elements/objects/main/top/jsTreeContainer.js'
+import jsTreeContainer from '../elements/objects/main/top/jsTreeContainer.js'*/
 
 
 export default class Objects extends layout{
