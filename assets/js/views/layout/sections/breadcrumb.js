@@ -58,7 +58,7 @@ export default class Breadcrumb {
 			opacity += stepOpacity;
 
 			//link event listener
-			bc.addEventListener("click", (e,data,listener)=>this.eventParentDispatcher(e,data,listener));
+			bc.addEventListener("click", (e)=>this.eventParentDispatcher(e,data,listener));
 
 		}
 
