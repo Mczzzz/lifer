@@ -7,7 +7,6 @@ export default class up {
 	constructor(parent, event){
 
 		this.parent = parent;
-		this.EvParent = event;
 
 		this.MyClass = "topUp";
 
@@ -41,12 +40,13 @@ export default class up {
 
 	callBack(data){
 		console.log(data.detail.Event.type);
+		this["on_"+data.detail.Event.type](data);
 
 	}
 
 
-	jsTreeSelect(data){
-
+	on_select_node(data){
+		console.log('in on_select_node');
 		let ev = new CustomEvent(this.EvParent, {'detail' : data});
         this.parent.dispatchEvent(ev);
 

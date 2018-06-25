@@ -4,10 +4,9 @@ import jsTreeContainer from '../../../../../elements/common/ui/jsTreeContainer.j
 export default class down {
 	
 
-	constructor(parent, event){
+	constructor(parent){
 
 		this.parent = parent;
-		this.EvParent = event;
 
 		this.MyClass = "topDown";
 
@@ -41,7 +40,7 @@ export default class down {
 
 	jsTreeSelect(data){
 
-		let ev = new CustomEvent(this.EvParent, {'detail' : data});
+		let ev = new CustomEvent('callBack', {'detail' : data});
         this.parent.dispatchEvent(ev);
 
 	}
