@@ -1,6 +1,7 @@
 import layout from '../layout.js';
 
 import Header from '../sections/header.js';
+import Breadcrumb from '../sections/breadcrumb.js';
 import Footer from '../sections/footer.js';
 import Manager from '../elements/objects/main/bottom/manage/manager.js';
 import Tools from '../elements/objects/main/bottom/tools/tools.js';
@@ -27,6 +28,7 @@ export default class Objects extends layout{
     this.bkgdHF = 'linear-gradient(45deg, #43A047 0%, #1de9b6 100%)';
     this.in = "Container";
     this.headerCustom();
+    this.breadcrumb();
     this.mainTopUp();
     this.mainTopBottom();
     this.mainBottomTools();
@@ -48,6 +50,7 @@ export default class Objects extends layout{
 
   breadcrumb(){
 
+    this.ObjBreadcrumb = new Breadcrumb();
 
   }
 
@@ -160,9 +163,15 @@ export default class Objects extends layout{
     console.log(this.in);
 
       if(this.in == "Container"){
-        //this.jsTreeParent.unlinkSearch();
-        let tobc = this.jsTreeParent.getObjPathToNode();
-        console.log(tobc);
+
+        //BREADCRUMB
+            let tobc = this.jsTreeParent.getObjPathToNode();
+            //on instancie breadcrumb et on lui passe les données
+            console.log(tobc);
+
+            this.ObjBreadcrumb.init("bcContainer",tobc,true);
+        ////////////
+
 //this.jsTreeParent.breadcrumbize('breadcrumb');
         this.jsTreeParent.getHTMLParent()[0].style.flex = "0 0 0%";
 
