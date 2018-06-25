@@ -33,6 +33,8 @@ export default class down {
 	
 
 	loadData(data){
+		console.log('in down loaddata');
+		console.log(data);
 		this.jsTree.loadData(data);
 	}
 
