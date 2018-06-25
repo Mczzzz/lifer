@@ -13,33 +13,43 @@ export default class down {
 		this.container = document.getElementsByClassName(this.MyClass)[0];
 
 		this.initTree();
+		this.initListener();
 
 	}
 
 	initTree(){
 
-		let EvParSel = 'callBack';
-
 		this.jsTree = new jsTreeContainer(this.container,'ObjectTree','JsTreeObjects');
-
-     	this.jsTree.onElementSelect();
-	    
-	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
-	    
+       
 	}
+
 	
 	loadData(data){
+
 		this.jsTree.loadData(data);
+
+	}
+
+
+
+
+
+	initListener(){
+
+	    this.container.addEventListener('callBack', (data) => this.callBack(data));
+
 	}
 
 
 	callBack(data){
-		console.log(data);
+		
+		this["on_"+data.detail.Event.type](data);
 
 	}
 
-	jsTreeSelect(data){
+	on_select_node(data){
 
+		data.element = this.MyClass;
 		let ev = new CustomEvent('callBack', {'detail' : data});
         this.parent.dispatchEvent(ev);
 

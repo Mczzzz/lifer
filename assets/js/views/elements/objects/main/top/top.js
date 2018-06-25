@@ -47,6 +47,20 @@ export default class top {
 	}
 
 
+	initListener(){
+  
+	    this.container.addEventListener('callBack', (data) => this.callBack(data));
+
+	}
+
+
+	callBack(data){
+		console.log(data);
+		//this["on_"+data.detail.Event.type](data);
+
+	}
+
+
 
 	upSelect(data){
 

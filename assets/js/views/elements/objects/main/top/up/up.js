@@ -13,26 +13,20 @@ export default class up {
 		this.container = document.getElementsByClassName(this.MyClass)[0];
 
 		this.initTree();	    
+		this.initListener();
 
 	}
 	
 	initTree(){
 
-		let EvParSel = 'callBack';
-
 		this.jsTree = new jsTreeContainer(this.container,'Container','JsTreeContainer');
-
-     	this.jsTree.onElementSelect();
-	    
-	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
-
+    
 	}
 
 
 	getObjPathToNode(){
 		this.jsTree.getObjPathToNode();
 	}
-
 
 
 
@@ -49,21 +43,26 @@ export default class up {
 
 
 
+	initListener(){
+
+	    this.container.addEventListener('callBack', (data) => this.callBack(data));
+
+	}
+
 
 	callBack(data){
-
+		
 		this["on_"+data.detail.Event.type](data);
 
 	}
 
-
 	on_select_node(data){
-		console.log('in on_select_node');
-		let ev = new CustomEvent(this.EvParent, {'detail' : data});
+
+		data.element = this.MyClass;
+		let ev = new CustomEvent('callBack', {'detail' : data});
         this.parent.dispatchEvent(ev);
 
 	}
-
 
 	
 

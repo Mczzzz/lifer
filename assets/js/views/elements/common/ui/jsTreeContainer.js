@@ -19,6 +19,8 @@ export default class jsTreeContainer {
 		this.collection = new LoaderCollection(collection);
 		this.initJsTree();
 
+		this.initCallBackEvents();
+		
 		$('.'+this.MyClass).on("rename_node.jstree", (e,data)=>this.onRenameJsTree(e,data));
 		$('.'+this.MyClass).on("create_node.jstree", (e,data)=>this.onCreateJsTree(e,data));
 	}
@@ -305,7 +307,7 @@ export default class jsTreeContainer {
 
 
 ////LISTENER -> PARENT
-	onElementSelect(){
+	initCallBackEvents(){
 
 		let parent = this.HTMLParent;
 
