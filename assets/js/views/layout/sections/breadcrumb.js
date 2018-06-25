@@ -6,7 +6,6 @@ export default class Breadcrumb {
 		this.elParent = $(".breadcrumb");
 		this.elParent.empty();
 		this.elParent.css("background-color", "white");
-		this.elParent.css("padding", "10px");
 
 	}
 
@@ -71,6 +70,7 @@ export default class Breadcrumb {
 
 		//on bouge la frame en fin de liste
 		this.elParent.scrollLeft(this.elParent[0].scrollWidth);
+		this.elParent.css("padding", "10px");
 
 	}
 
