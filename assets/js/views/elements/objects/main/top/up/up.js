@@ -7,7 +7,7 @@ export default class up {
 	constructor(){
 
 		this.container = document.getElementsByClassName("topUp");
-
+		console.log(this.container);
      	this.jsTreeParent = new jsTreeContainer('topUp','Container','JsTreeContainer');
      	this.jsTreeParent.loadData();
 
