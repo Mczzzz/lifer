@@ -13,7 +13,7 @@ export default class up {
 
      	//ask Parent tree to be informed on select
 	    let EvParSel = 'ObjectJsTreeParentSelect';
-	    this.addEventListener(EvParSel, (data) => this[EvParSel](data));
+	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
 	    this.jsTreeParent.initEventsElementSelect(EvParSel);
 
 	}
