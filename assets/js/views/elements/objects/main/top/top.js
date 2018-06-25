@@ -29,10 +29,9 @@ export default class top {
 
 	initUp(){
 
-		let EvParSel = 'upSelect';
+		this.up = new Up(this.container);
 
-		this.up = new Up(this.container, EvParSel);
-
+		let EvParSel = 'callBack';
 	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
 	}
 

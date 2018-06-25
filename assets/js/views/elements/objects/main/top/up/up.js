@@ -4,7 +4,7 @@ import jsTreeContainer from '../../../../../elements/common/ui/jsTreeContainer.j
 export default class up {
 	
 
-	constructor(parent, event){
+	constructor(parent){
 
 		this.parent = parent;
 
@@ -20,16 +20,12 @@ export default class up {
 
 		let EvParSel = 'callBack';
 
-		this.jsTree = new jsTreeContainer(this.MyClass,'Container','JsTreeContainer');
+		this.jsTree = new jsTreeContainer(this.container,'Container','JsTreeContainer');
 
-     	this.jsTree.onElementSelect(this.container, EvParSel);
+     	this.jsTree.onElementSelect();
 	    
 	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
 
-	}
-
-	loadData(){
-		this.jsTree.loadData();
 	}
 
 
@@ -38,8 +34,24 @@ export default class up {
 	}
 
 
+
+
+	loadData(){
+		this.jsTree.loadData();
+	}
+
+
+	hide(){
+
+		this.container.style.display = "none";
+
+	}
+
+
+
+
 	callBack(data){
-		console.log(data.detail.Event.type);
+
 		this["on_"+data.detail.Event.type](data);
 
 	}
@@ -53,11 +65,7 @@ export default class up {
 	}
 
 
-	hide(){
-
-		this.container.style.display = "none";
-
-	}
+	
 
 
 

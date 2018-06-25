@@ -12,7 +12,7 @@ export default class jsTreeContainer {
 		this.MyClass = MyClass;
 		this.JsTree = document.createElement("div");
 		this.JsTree.className = this.MyClass;
-		this.HTMLParent = $('.'+HTMLParent);
+		this.HTMLParent = HTMLParent;
 		this.HTMLParent.append(this.JsTree);
 		this.searchElt = false;
 		this.BreadEventCallBack = false;
@@ -23,9 +23,9 @@ export default class jsTreeContainer {
 		$('.'+this.MyClass).on("create_node.jstree", (e,data)=>this.onCreateJsTree(e,data));
 	}
 
-	getHTMLParent(){
+/*	getHTMLParent(){
 		return this.HTMLParent;
-	}
+	}*/
 
 
 
@@ -305,12 +305,12 @@ export default class jsTreeContainer {
 
 
 ////LISTENER -> PARENT
-	onElementSelect(parent){
+	onElementSelect(){
 
 		$('.'+this.MyClass).on("select_node.jstree", function(e,data){
 
 			let ev = new CustomEvent('callBack', {'detail' : {'data' : data, 'Event' : e}});
-            parent.dispatchEvent(ev);
+            this.HTMLParent.dispatchEvent(ev);
 
 		});
 

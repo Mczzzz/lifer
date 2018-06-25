@@ -20,9 +20,9 @@ export default class down {
 
 		let EvParSel = 'callBack';
 
-		this.jsTree = new jsTreeContainer(this.MyClass,'ObjectTree','JsTreeObjects');
+		this.jsTree = new jsTreeContainer(this.container,'ObjectTree','JsTreeObjects');
 
-     	this.jsTree.onElementSelect(this.container, EvParSel);
+     	this.jsTree.onElementSelect();
 	    
 	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
 	    
