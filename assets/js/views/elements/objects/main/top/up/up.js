@@ -40,7 +40,7 @@ export default class up {
 
 
 	callBack(data){
-		console.log(data);
+		console.log(data.detail.Event.type);
 
 	}
 
