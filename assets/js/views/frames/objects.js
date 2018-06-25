@@ -1,8 +1,12 @@
 import layout from '../layout/layout.js';
 
-import Header from '../elements/common/sections/header.js';
-import Breadcrumb from '../elements/common/ui/breadcrumb.js';
+import Header from '../elements/objects/header/header.js';
+import Main   from '../elements/objects/main/main.js'; 
 import Footer from '../elements/common/sections/footer.js';
+
+
+
+import Breadcrumb from '../elements/common/ui/breadcrumb.js';
 import Manager from '../elements/objects/main/bottom/manage/manage.js';
 import Tools from '../elements/objects/main/bottom/tools/tools.js';
 import jsTreeContainer from '../elements/objects/main/top/jsTreeContainer.js'
@@ -32,10 +36,6 @@ export default class Objects extends layout{
 
     let HomeHeader = new Header();
     
-    HomeHeader.setBkgdColor(this.bkgdHF);
-    HomeHeader.setBackToHome();
-    HomeHeader.setIconPage();
-
   }
 
   breadcrumb(){
