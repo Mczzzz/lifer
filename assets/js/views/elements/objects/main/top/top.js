@@ -13,7 +13,6 @@ export default class top {
 	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
 
 
-
 		this.up   = new Up(this.container, 'upSelect');
 		this.down = new Down();
 
