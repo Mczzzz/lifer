@@ -41,7 +41,7 @@ export default class Breadcrumb {
 
 		let opacity = 0.2;
 
-		let stepOpacity = (1 - opacity) / MysetLength;
+		let stepOpacity = (1 - opacity) / ( MysetLength - 1);
 
 		for (let data of datas){
 
