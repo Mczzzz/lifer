@@ -30,7 +30,7 @@ export default class Breadcrumb {
 			this.elParent.append(element);
 		}
 		
-		setData(data,element);
+		this.setData(data,element);
 
 	}
 
