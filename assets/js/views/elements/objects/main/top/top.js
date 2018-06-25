@@ -9,15 +9,40 @@ export default class top {
 		this.MyClass = "top";
 		this.container = document.getElementsByClassName(this.MyClass)[0];
 
-		let EvParSel = 'upSelect';
-	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
-
-
-		this.up   = new Up(this.container, 'upSelect');
-		this.down = new Down();
+		this.init();
 
 	}
 	
+
+	init(){
+
+		this.initUp();
+		this.up.loadData();
+
+		this.initDown();
+	
+	}
+
+	initUp(){
+
+		let EvParSel = 'upSelect';
+
+		this.up = new Up(this.container, EvParSel);
+
+	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
+	}
+
+
+	initDown(){
+
+		let EvParSel = 'downSelect';
+
+		this.down = new Down(this.container,EvParSel);
+
+	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
+
+	}
+
 
 	upSelect(){
 

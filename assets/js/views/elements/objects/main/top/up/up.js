@@ -13,9 +13,8 @@ export default class up {
 		this.container = document.getElementsByClassName(this.MyClass)[0];
 
      	this.jsTree = new jsTreeContainer(this.MyClass,'Container','JsTreeContainer');
-     	this.jsTree.loadData();
+     	
 
-     	//ask Parent tree to be informed on select
 	    let EvParSel = 'jsTreeSelect';
 	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
 
@@ -23,6 +22,10 @@ export default class up {
 
 	}
 	
+
+	loadData(){
+		this.jsTree.loadData();
+	}
 
 	jsTreeSelect(data){
 
