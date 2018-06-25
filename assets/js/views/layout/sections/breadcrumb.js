@@ -33,7 +33,7 @@ export default class Breadcrumb {
 
 	}
 
-	setData(datas,element){
+	setData(datas,element,listener){
 
 		let MysetLength = datas.length;
 
