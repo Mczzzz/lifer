@@ -7,7 +7,6 @@ export default class Breadcrumb {
 		this.elParent.empty();
 		this.elParent.css("background-color", "white");
 		this.elParent.css("padding", "10px");
-		this.elParent.scrollLeft(this.elParent[0].scrollWidth);
 
 	}
 
@@ -38,9 +37,9 @@ export default class Breadcrumb {
 
 	setData(datas,element){
 
+
 		for (let data of datas){
 
-			console.log(data);
 			let bc = document.createElement("a");
 			bc.id = data.id;
 			bc.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
@@ -55,7 +54,9 @@ export default class Breadcrumb {
 
 		}
 
-
+		//on bouge la frame en fin de liste
+		this.elParent.scrollLeft(this.elParent[0].scrollWidth);
+		
 	}
 
 
