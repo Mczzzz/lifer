@@ -46,8 +46,8 @@ export default class top {
 
 
 	upSelect(data){
-		console.log(data);
-		this.up.loadData();
+		console.log(data.detail.detail.node);
+		this.down.loadData(data.detail.detail.node);
 
 
 	}

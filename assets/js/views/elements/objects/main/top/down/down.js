@@ -38,7 +38,7 @@ export default class down {
 
 	jsTreeSelect(data){
 
-		console.log('in up.js');
+		console.log('in down.js');
 		let ev = new CustomEvent(this.EvParent, {'detail' : data});
         this.parent.dispatchEvent(ev);
 
