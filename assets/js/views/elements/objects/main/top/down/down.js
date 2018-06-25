@@ -32,8 +32,8 @@ export default class down {
 	}
 	
 
-	loadData(){
-		this.jsTree.loadData();
+	loadData(data){
+		this.jsTree.loadData(data);
 	}
 
 	jsTreeSelect(data){
