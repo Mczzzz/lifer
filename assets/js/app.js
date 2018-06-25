@@ -1,4 +1,4 @@
-import Main from './controller/main.js';
+import Main from './controller/home.js';
 
 const LiferApp = new Main();
 

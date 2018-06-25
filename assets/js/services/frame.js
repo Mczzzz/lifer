@@ -7,17 +7,12 @@ export default class Frame {
 
 	constructor(){
 
-	
-		this.Home();
-		//this.active = "";
-
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
-
-
 
 	}
 
 
+	
 
 	Home(){
 
