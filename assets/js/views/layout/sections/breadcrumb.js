@@ -11,14 +11,21 @@ export default class Breadcrumb {
 	}
 
 
-	skinner(){
+	skin(el,opacity){
 
-
+		el.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
+		el.style.borderRadius = "4px 12px 4px 4px";
+		el.style.background   = "#0288d1";
+		el.style.color        = "white";
+		el.style.padding      = "5px";
+		el.style.marginRight  = "5px";
+		el.style.opacity      = opacity;
 
 	}
 
 
 	init(ClassElement, data,listener,first = false){
+
 
 		let element = document.createElement("div");
 		element.className = ClassElement;
@@ -45,13 +52,9 @@ export default class Breadcrumb {
 
 			let bc = document.createElement("a");
 			bc.id = data.id;
-			bc.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
-			bc.style.borderRadius = "4px 12px 4px 4px";
-			bc.style.background   = "#0288d1";
-			bc.style.color        = "white";
-			bc.style.padding      = "5px";
-			bc.style.marginRight  = "5px";
-			bc.style.opacity      = opacity;
+
+			this.skin(bc,opacity);
+			
 			bc.append(data.text);
 			element.append(bc);
 
