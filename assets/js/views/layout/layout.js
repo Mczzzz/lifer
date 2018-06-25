@@ -34,7 +34,7 @@ export default class Layout {
 
 					let topDown = document.createElement("div");
 					topDown.className = "topDown";
-					top.append(topBottom);
+					top.append(topDown);
 
 				let bottom = document.createElement("div");
 				bottom.className = "bottom";
