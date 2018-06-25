@@ -160,8 +160,7 @@ export default class jsTreeContainer {
 
 			this.Parent = ParentNode;
 		}
-		console.log('loadData');
-		console.log(ParentNode);
+
 		let dataList = this.collection.getList(ParentNode.id);
 		
 			for (let k in dataList){
@@ -306,11 +305,11 @@ export default class jsTreeContainer {
 
 
 ////LISTENER -> PARENT
-	onElementSelect(parent, myMethod){
+	onElementSelect(parent){
 
 		$('.'+this.MyClass).on("select_node.jstree", function(e,data){
 
-			let ev = new CustomEvent(myMethod, {'detail' : data});
+			let ev = new CustomEvent('callBack', {'detail' : {'data' : data, 'Event' : e}});
             parent.dispatchEvent(ev);
 
 		});

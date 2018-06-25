@@ -13,15 +13,13 @@ export default class down {
 
 		this.container = document.getElementsByClassName(this.MyClass)[0];
 
-
 		this.initTree();
 
 	}
 
-
 	initTree(){
 
-		let EvParSel = 'jsTreeSelect';
+		let EvParSel = 'callBack';
 
 		this.jsTree = new jsTreeContainer(this.MyClass,'ObjectTree','JsTreeObjects');
 
@@ -31,18 +29,25 @@ export default class down {
 	    
 	}
 	
-
 	loadData(data){
 		this.jsTree.loadData(data);
 	}
 
+
+	callBack(data){
+		console.log(data);
+
+	}
+
 	jsTreeSelect(data){
 
-		console.log('in down.js');
 		let ev = new CustomEvent(this.EvParent, {'detail' : data});
         this.parent.dispatchEvent(ev);
 
 	}
+
+
+
 
 
 }

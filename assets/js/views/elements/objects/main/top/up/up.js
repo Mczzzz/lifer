@@ -8,6 +8,7 @@ export default class up {
 
 		this.parent = parent;
 		this.EvParent = event;
+
 		this.MyClass = "topUp";
 
 		this.container = document.getElementsByClassName(this.MyClass)[0];
@@ -18,7 +19,7 @@ export default class up {
 	
 	initTree(){
 
-		let EvParSel = 'jsTreeSelect';
+		let EvParSel = 'callBack';
 
 		this.jsTree = new jsTreeContainer(this.MyClass,'Container','JsTreeContainer');
 
@@ -32,10 +33,29 @@ export default class up {
 		this.jsTree.loadData();
 	}
 
+
+	getObjPathToNode(){
+		this.jsTree.getObjPathToNode();
+	}
+
+
+	callBack(data){
+		console.log(data);
+
+	}
+
+
 	jsTreeSelect(data){
 
 		let ev = new CustomEvent(this.EvParent, {'detail' : data});
         this.parent.dispatchEvent(ev);
+
+	}
+
+
+	hide(){
+
+		this.container.style.display = "none";
 
 	}
 
