@@ -210,7 +210,7 @@ export default class jsTreeContainer {
 
 //BREADCRUMB
 
-	getBreadcrumb(){
+	getObjPathToNode(){
 
 		let bcArray = [];
 
