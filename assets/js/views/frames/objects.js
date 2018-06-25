@@ -53,7 +53,6 @@ export default class Objects extends layout{
 
     this.Footer = new Footer();
     
-
   }
 
 
