@@ -44,9 +44,10 @@ export default class top {
 	}
 
 
-	upSelect(){
 
-		console.log('in up Select');
+	upSelect(data){
+		console.log(data);
+		this.up.loadData();
 
 
 	}
