@@ -19,7 +19,7 @@ export default class up {
 	    let EvParSel = 'jsTreeSelect';
 	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
 
-	    this.jsTree.initEventsElementSelect(this.MyClass, EvParSel);
+	    this.jsTree.initEventsElementSelect(this.container, EvParSel);
 
 	}
 	
