@@ -165,11 +165,11 @@ export default class Objects extends layout{
       if(this.in == "Container"){
 
         //BREADCRUMB
-            let tobc = this.jsTreeParent.getObjPathToNode();
+            let listEl = this.jsTreeParent.getObjPathToNode();
             //on instancie breadcrumb et on lui passe les données
             console.log(tobc);
 
-            this.ObjBreadcrumb.init("bcContainer",tobc,true);
+            this.ObjBreadcrumb.init("bcContainer", listEl ,true);
         ////////////
 
 //this.jsTreeParent.breadcrumbize('breadcrumb');
