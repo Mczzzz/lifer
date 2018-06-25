@@ -69,7 +69,7 @@ export default class Breadcrumb {
 
 
 	eventParentDispatcher(e, data,listener){
-
+		console.log('on passe dans le eventParentDispatcher')
 		let NodeEvent = new CustomEvent(listener, {'detail' : {'data' : data}});
        	window.dispatchEvent(NodeEvent);
 
