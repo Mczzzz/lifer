@@ -1,1 +1,11 @@
-mainBottom.js
+export default class bottom {
+	
+
+	constructor(){
+
+
+	}
+	
+
+
+}
