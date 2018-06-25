@@ -50,7 +50,7 @@ export default class Breadcrumb {
 			bc.style.padding      = "5px";
 			bc.style.marginRight  = "5px";
 			bc.style.opacity      = 1;
-
+			bc.append(data.text);
 			element.append(bc);
 
 		}
