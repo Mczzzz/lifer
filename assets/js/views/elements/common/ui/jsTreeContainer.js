@@ -19,6 +19,8 @@ export default class jsTreeContainer {
 		this.collection = new LoaderCollection(collection);
 		this.initJsTree();
 
+		$('.'+this.MyClass).on("rename_node.jstree", (e,data)=>this.onRenameJsTree(e,data));
+		$('.'+this.MyClass).on("create_node.jstree", (e,data)=>this.onCreateJsTree(e,data));
 	}
 
 	getHTMLParent(){
@@ -303,7 +305,7 @@ export default class jsTreeContainer {
 
 
 ////LISTENER -> PARENT
-	initEventsElementSelect(parent, myMethod){
+	onElementSelect(parent, myMethod){
 
 		$('.'+this.MyClass).on("select_node.jstree", function(e,data){
 
@@ -311,10 +313,6 @@ export default class jsTreeContainer {
             parent.dispatchEvent(ev);
 
 		});
-
-
-		$('.'+this.MyClass).on("rename_node.jstree", (e,data)=>this.onRenameJsTree(e,data));
-		$('.'+this.MyClass).on("create_node.jstree", (e,data)=>this.onCreateJsTree(e,data));
 
 
 	}

@@ -12,16 +12,21 @@ export default class up {
 
 		this.container = document.getElementsByClassName(this.MyClass)[0];
 
-     	this.jsTree = new jsTreeContainer(this.MyClass,'Container','JsTreeContainer');
-     	
-
-	    let EvParSel = 'jsTreeSelect';
-	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
-
-	    this.jsTree.initEventsElementSelect(this.container, EvParSel);
+		this.initTree();	    
 
 	}
 	
+	initTree(){
+
+		let EvParSel = 'jsTreeSelect';
+
+		this.jsTree = new jsTreeContainer(this.MyClass,'Container','JsTreeContainer');
+
+     	this.jsTree.onElementSelect(this.container, EvParSel);
+	    
+	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
+	    
+	}
 
 	loadData(){
 		this.jsTree.loadData();
