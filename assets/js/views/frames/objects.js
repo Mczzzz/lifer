@@ -19,12 +19,18 @@ export default class Objects extends layout{
 
     super();
 
-    this.in = "Container";
     this.headerInit();
 
-    this.footerCustom();
+    this.footerInit();
+
+
+
 
     this.elementAnimation();
+
+    this.in = "Container";
+
+
 
     this.breadcrumb();
     this.mainTopUp();
