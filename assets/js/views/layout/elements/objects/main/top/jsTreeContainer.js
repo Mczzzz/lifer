@@ -232,6 +232,8 @@ export default class jsTreeContainer {
 
         }
 
+        return bcArray;
+
 	}
 
 
