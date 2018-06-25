@@ -26,7 +26,8 @@ export default class Breadcrumb {
 
 	init(ClassElement, data,listener,first = false){
 
-		if(!$("."+ClassElement)[0]){
+		if($("."+ClassElement)[0] != null){
+			console.log('on remove');
 			$("."+ClassElement).remove();
 		}
 
