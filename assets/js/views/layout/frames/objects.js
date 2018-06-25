@@ -46,6 +46,11 @@ export default class Objects extends layout{
 
   }
 
+  breadcrumb(){
+
+
+  }
+
 
   mainTopUp(){
 
@@ -155,8 +160,10 @@ export default class Objects extends layout{
     console.log(this.in);
 
       if(this.in == "Container"){
-        this.jsTreeParent.unlinkSearch();
-        this.jsTreeParent.breadcrumbize('breadcrumb');
+        //this.jsTreeParent.unlinkSearch();
+        let tobc = this.jsTreeParent.getObjPathToNode();
+        console.log(tobc);
+//this.jsTreeParent.breadcrumbize('breadcrumb');
         this.jsTreeParent.getHTMLParent()[0].style.flex = "0 0 0%";
 
         this.jsTreeParent.hide();

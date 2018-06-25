@@ -210,50 +210,27 @@ export default class jsTreeContainer {
 
 //BREADCRUMB
 
-	breadcrumbize(breadcrumb){
+	getBreadcrumb(){
 
-		this.breadcrumbTargetDiv = $('.'+breadcrumb);
-
-/*		this.MyBreadContainer = document.createElement("div");
-		if(this.Parent){
-			this.MyBreadContainer.className = "childBreadContainer";
-		}else{
-			this.MyBreadContainer.className = "parentBreadContainer";
-		}
-		
-		this.breadcrumbTargetDiv.append(MyBreadContainer);*/
-
-		this.breadcrumbTargetDiv.empty();
-		this.breadcrumbTargetDiv.css("background-color", "white");
-		this.breadcrumbTargetDiv.css("padding", "10px");
+		let bcArray = [];
 
 		let node = $('.'+this.MyClass).jstree(true).get_node($('.'+this.MyClass).jstree(true).get_selected()[0]);
 
-     	//ajout d ela node active
-        this.breadcrumbTargetDiv.append('<a id="bc_'+node.id+'" style="font-family: \'Titillium Web\',sans-serif,Arial,sans-serif;border-radius: 4px 12px 4px 4px;background: #0288d1;color:white;padding:5px;margin-right: 5px;" class="">'+node.text+'</a>');
-        	
+		bcArray.push(node);
 
-        this.jsTreeEventBreadcrumb(node);
 
-     	//parsing des parents
-     	let i = 1;
-     	 for (let k in node.parents){
+		for (let k in node.parents){
 
      	 	let parentNode = $('.'+this.MyClass).jstree(true).get_node(node.parents[k]);
 
 			if(parentNode.text !== undefined){
 
-				i -=0.15;
-				
-				this.breadcrumbTargetDiv.prepend('<a id="bc_'+parentNode.id+'" style="font-family: \'Titillium Web\',sans-serif,Arial,sans-serif;opacity: '+i+';border-radius: 4px 12px 4px 4px;background: #0288d1;color:white;padding:5px;margin-right: 5px" class="">'+parentNode.text+'</a>');
-				
-		        this.jsTreeEventBreadcrumb(parentNode);
+			bcArray.unshift(parentNode);
+					
 
 			}
 
         }
-
-        this.breadcrumbTargetDiv.scrollLeft(this.breadcrumbTargetDiv[0].scrollWidth);
 
 	}
 
