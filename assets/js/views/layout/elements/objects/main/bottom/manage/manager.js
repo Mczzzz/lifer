@@ -35,8 +35,8 @@ export default class manager {
 
 
 	refresh(){
-
-
+///GROS HACK
+			return true;
 		 let ListInfos = this.collection.getList(this.objectId,this.leafId);
 
         $(".MyManager").empty();
