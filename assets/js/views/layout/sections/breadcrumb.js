@@ -18,7 +18,7 @@ export default class Breadcrumb {
 	}
 
 
-	init(ClassElement, data,first = false){
+	init(ClassElement, data,listener,first = false){
 
 		let element = document.createElement("div");
 		element.className = ClassElement;
@@ -29,9 +29,7 @@ export default class Breadcrumb {
 			this.elParent.append(element);
 		}
 		
-		console.log(data);
-
-		this.setData(data,element);
+		this.setData(data,element,listener);
 
 	}
 
@@ -58,6 +56,9 @@ export default class Breadcrumb {
 			element.append(bc);
 
 			opacity += stepOpacity;
+
+			//link event listener
+			bc.addEventListener("click", function(e){console.log(e)});
 
 		}
 
