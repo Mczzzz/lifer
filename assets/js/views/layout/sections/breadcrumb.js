@@ -38,7 +38,7 @@ export default class Breadcrumb {
 
 	setData(datas,element){
 
-		for (let data in datas){
+		for (let data of datas){
 			console.log(data);
 			let bc = document.createElement("a");
 			bc.id = data.node.id;
