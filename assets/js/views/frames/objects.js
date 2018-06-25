@@ -2,7 +2,7 @@ import layout from '../layout/layout.js';
 
 import Header from '../elements/objects/header/header.js';
 import Main   from '../elements/objects/main/main.js'; 
-import Footer from '../elements/common/sections/footer.js';
+import Footer from '../elements/objects/footer/footer.js';
 
 
 
@@ -19,24 +19,38 @@ export default class Objects extends layout{
 
     super();
 
-    this.bkgdHF = 'linear-gradient(45deg, #43A047 0%, #1de9b6 100%)';
     this.in = "Container";
-    this.headerCustom();
+    this.headerInit();
+
+    this.footerCustom();
+
+    this.elementAnimation();
+
     this.breadcrumb();
     this.mainTopUp();
     this.mainTopBottom();
     this.mainBottomTools();
-    this.footerCustom();
-    this.elementAnimation();
 
 	}
 
 
-  headerCustom(){
+  headerInit(){
 
-    let HomeHeader = new Header();
+    this.Header = new Header();
     
   }
+
+
+
+  footerInit(){
+
+    this.Footer = new Footer();
+    
+
+  }
+
+
+
 
   breadcrumb(){
 
@@ -81,13 +95,6 @@ export default class Objects extends layout{
 
 
 
-  footerCustom(){
-
-    let HomeFooter = new Footer();
-    
-    HomeFooter.setBkgdColor(this.bkgdHF);
-
-  }
 
 
   elementAnimation(){
