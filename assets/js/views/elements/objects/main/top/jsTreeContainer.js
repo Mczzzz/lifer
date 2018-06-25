@@ -1,4 +1,4 @@
-import LoaderCollection from '../../../../../../services/LoaderCollection.js';
+import LoaderCollection from '../../../../../services/LoaderCollection.js';
 
 import swal from 'sweetalert';
 import jstree from 'jstree';

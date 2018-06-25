@@ -1,23 +1,13 @@
-import layout from '../layout.js';
+import layout from '../layout/layout.js';
 
-import Header from '../sections/header.js';
-import Breadcrumb from '../sections/breadcrumb.js';
-import Footer from '../sections/footer.js';
-import Manager from '../elements/objects/main/bottom/manage/manager.js';
+import Header from '../elements/common/sections/header.js';
+import Breadcrumb from '../elements/common/ui/breadcrumb.js';
+import Footer from '../elements/common/sections/footer.js';
+import Manager from '../elements/objects/main/bottom/manage/manage.js';
 import Tools from '../elements/objects/main/bottom/tools/tools.js';
 import jsTreeContainer from '../elements/objects/main/top/jsTreeContainer.js'
-/*import Header from '../elements/objects/headerObjects.js';
-import Footer from './sections/footer.js';
 
-import ContainerCollect from '../../collections/ContainerCollection.js';
-import ObjectCollect from '../../collections/ObjectTreeCollection.js';
-import ObjectInfosCollect from '../../collections/ObjectInfosCollection.js';
-import ObjectInfosResourcesTypeCollect from '../../collections/ObjectInfosResourcesTypeCollection.js';
 
-import JsTreeContainer from '../elements/objects/jsTreeContainer.js';
-import toolBar from '../elements/objects/toolBarObjects.js';
-import infosLoader from '../elements/objects/leafLoaderObjects.js';
-*/
 export default class Objects extends layout{
 
 

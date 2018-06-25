@@ -1,6 +1,6 @@
-import ObjectInfosCollect from '../../../../../../../collections/ObjectInfosCollection.js';
+import ObjectInfosCollect from '../../../../../../collections/ObjectInfosCollection.js';
 
-export default class manager {
+export default class manage {
 
 
 

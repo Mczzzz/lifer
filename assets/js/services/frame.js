@@ -1,6 +1,6 @@
 //import i18n from 'i18next';
-import Home from '../views/layout/frames/home.js';
-import Objects from '../views/layout/frames/objects.js';
+import Home from '../views/frames/home.js';
+import Objects from '../views/frames/objects.js';
 
 export default class Frame {
 

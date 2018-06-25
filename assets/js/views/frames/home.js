@@ -1,9 +1,9 @@
-import layout from '../layout.js';
+import layout from '../layout/layout.js';
 
-import Header from '../sections/header.js';
-import Main from '../sections/main.js';
+import Header from '../elements/common/sections/header.js';
+import Main from '../elements/common/sections/main.js';
 import Tools from '../elements/home/main/bottom/tools/tools.js';
-import Footer from '../sections/footer.js';
+import Footer from '../elements/common/sections/footer.js';
 
 export default class Home extends layout{
 
