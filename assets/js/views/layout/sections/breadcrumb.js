@@ -25,8 +25,11 @@ export default class Breadcrumb {
 
 
 	init(ClassElement, data,listener,first = false){
-			console.log('in init');
-			console.log($("."+ClassElement)[0]);
+
+		if(!$("."+ClassElement)[0]){
+			$("."+ClassElement).remove();
+		}
+
 		let element = document.createElement("div");
 		element.className = ClassElement;
 		
