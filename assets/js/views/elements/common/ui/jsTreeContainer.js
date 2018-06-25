@@ -160,7 +160,8 @@ export default class jsTreeContainer {
 
 			this.Parent = ParentNode;
 		}
-
+		console.log('loadData');
+		console.log(ParentNode);
 		let dataList = this.collection.getList(ParentNode.id);
 		
 			for (let k in dataList){
