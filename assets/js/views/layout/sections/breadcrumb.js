@@ -37,6 +37,11 @@ export default class Breadcrumb {
 
 	setData(datas,element){
 
+		let MysetLength = datas.length;
+
+		let opacity = 0.2;
+
+		let stepOpacity = (1 - opacity) / MysetLength;
 
 		for (let data of datas){
 
@@ -48,15 +53,17 @@ export default class Breadcrumb {
 			bc.style.color        = "white";
 			bc.style.padding      = "5px";
 			bc.style.marginRight  = "5px";
-			bc.style.opacity      = 1;
+			bc.style.opacity      = opacity;
 			bc.append(data.text);
 			element.append(bc);
+
+			opacity += stepOpacity;
 
 		}
 
 		//on bouge la frame en fin de liste
 		this.elParent.scrollLeft(this.elParent[0].scrollWidth);
-		
+
 	}
 
 
