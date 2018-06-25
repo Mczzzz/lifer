@@ -307,10 +307,12 @@ export default class jsTreeContainer {
 ////LISTENER -> PARENT
 	onElementSelect(){
 
+		let parent = this.HTMLParent;
+
 		$('.'+this.MyClass).on("select_node.jstree", function(e,data){
 
 			let ev = new CustomEvent('callBack', {'detail' : {'data' : data, 'Event' : e}});
-            this.HTMLParent.dispatchEvent(ev);
+            parent.dispatchEvent(ev);
 
 		});
 
