@@ -25,7 +25,7 @@ export default class up {
      	this.jsTree.onElementSelect(this.container, EvParSel);
 	    
 	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
-	    
+
 	}
 
 	loadData(){
@@ -34,7 +34,6 @@ export default class up {
 
 	jsTreeSelect(data){
 
-		console.log('in up.js');
 		let ev = new CustomEvent(this.EvParent, {'detail' : data});
         this.parent.dispatchEvent(ev);
 
