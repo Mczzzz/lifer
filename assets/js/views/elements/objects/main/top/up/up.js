@@ -6,22 +6,27 @@ export default class up {
 
 	constructor(){
 
-		this.container = document.getElementsByClassName("topUp")[0];
+		this.MyClass = "topUp";
+
+		this.container = document.getElementsByClassName(this.MyClass)[0];
 		console.log(this.container);
-     	this.jsTreeParent = new jsTreeContainer('topUp','Container','JsTreeContainer');
+     	this.jsTreeParent = new jsTreeContainer(this.MyClass,'Container','JsTreeContainer');
      	this.jsTreeParent.loadData();
 
      	//ask Parent tree to be informed on select
-	    let EvParSel = 'ObjectJsTreeParentSelect';
+	    let EvParSel = 'jsTreeSelect';
+
 	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
-	    this.jsTreeParent.initEventsElementSelect(EvParSel);
+
+	    this.jsTreeParent.initEventsElementSelect(this.MyClass, EvParSel);
 
 	}
 	
 
-	ObjectJsTreeParentSelect(){
+	jsTreeSelect(data){
 
-console.log('in up.js');
+		console.log(data);
+		console.log('in up.js');
 
 	}
 

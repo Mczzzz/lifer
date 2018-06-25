@@ -303,12 +303,13 @@ export default class jsTreeContainer {
 
 
 ////LISTENER -> PARENT
-	initEventsElementSelect(myMethod){
+	initEventsElementSelect(parent, myMethod){
 
 		$('.'+this.MyClass).on("select_node.jstree", function(e,data){
 
 			let ev = new CustomEvent(myMethod, {'detail' : data});
-            window.dispatchEvent(ev);
+			let theParent = document.querySelector("."+parent);
+            theParent.dispatchEvent(ev);
 
 		});
 
