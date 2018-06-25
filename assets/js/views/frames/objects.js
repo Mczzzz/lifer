@@ -20,22 +20,18 @@ export default class Objects extends layout{
     super();
 
     this.headerInit();
-
+    this.mainInit();
     this.footerInit();
 
 
 
-
-    this.elementAnimation();
-
     this.in = "Container";
-
-
 
     this.breadcrumb();
     this.mainTopUp();
     this.mainTopBottom();
     this.mainBottomTools();
+    this.elementAnimation();
 
 	}
 
@@ -46,6 +42,11 @@ export default class Objects extends layout{
     
   }
 
+  mainInit(){
+
+    this.Main = new Main();
+    
+  }
 
 
   footerInit(){

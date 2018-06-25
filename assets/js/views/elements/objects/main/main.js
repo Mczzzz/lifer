@@ -1,5 +1,6 @@
-/*import MainTop from './top/mainTop.js';
-import MainBottom from './bottom/mainBottom.js';*/
+import MainBreadcrumb from './breadcrumb/breadcrumb.js';
+import MainTop from './top/top.js';
+import MainBottom from './bottom/bottom.js';
 
 export default class main {
 	
