@@ -39,9 +39,10 @@ export default class Breadcrumb {
 	setData(datas,element){
 
 		for (let data of datas){
+
 			console.log(data);
 			let bc = document.createElement("a");
-			bc.id = data.node.id;
+			bc.id = data.id;
 			bc.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
 			bc.style.borderRadius = "4px 12px 4px 4px";
 			bc.style.background   = "#0288d1";
