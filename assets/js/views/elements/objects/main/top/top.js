@@ -31,18 +31,12 @@ export default class top {
 
 		this.up = new Up(this.container);
 
-		let EvParSel = 'callBack';
-	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
 	}
 
 
 	initDown(){
 
-		let EvParSel = 'downSelect';
-
-		this.down = new Down(this.container,EvParSel);
-
-	    this.container.addEventListener(EvParSel, (data) => this[EvParSel](data));
+		this.down = new Down(this.container);
 
 	}
 
@@ -56,15 +50,15 @@ export default class top {
 
 	callBack(data){
 		console.log(data);
-		//this["on_"+data.detail.Event.type](data);
+		this["on_"+data.detail.element+"_"+data.detail.Event.type](data);
 
 	}
 
 
 
-	upSelect(data){
+	on_topUp_select_node(data){
 
-		this.down.loadData(data.detail.detail.node);
+		this.down.loadData(data.detail.detail.data.node);
 
 
 	}
