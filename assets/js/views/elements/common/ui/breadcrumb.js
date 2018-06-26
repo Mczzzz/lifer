@@ -67,10 +67,12 @@ export default class Breadcrumb {
 
 	eventParentDispatcher(e, data,element){
 
-		data.element = element;
-		data.Event = {};
-		data.Event.type = "click";
-		let NodeEvent = new CustomEvent('callBack', {'detail' : {'data' : data}});
+		let res = {};
+		res.element = element;
+		res.Event = {};
+		res.Event.type = "click";
+		res.data = data
+		let NodeEvent = new CustomEvent('callBack', {'detail' : res });
        	this.parent.dispatchEvent(NodeEvent);
 
 	}
