@@ -4,8 +4,8 @@ export default class Breadcrumb {
 	constructor(parent){
 
 		this.parent = parent;
-this.parent.empty();
-this.parent.css("background-color", "white");
+//this.parent.empty();
+//this.parent.css("background-color", "white");
 
 	}
 
