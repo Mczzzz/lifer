@@ -54,7 +54,7 @@ this.parent.css("background-color", "white");
 
 			opacity += stepOpacity;
 
-			bc.addEventListener("click", (e)=>this.eventParentDispatcher(e,data));
+			bc.addEventListener("click", (e)=>this.eventParentDispatcher(e,data,element));
 
 		}
 
@@ -63,6 +63,16 @@ this.parent.scrollLeft(this.parent[0].scrollWidth);
 this.parent.css("padding", "10px");
 
 	}
+
+
+	eventParentDispatcher(e, data,element){
+
+		data.element = element;
+		let NodeEvent = new CustomEvent('callBack', {'detail' : {'data' : data}});
+       	this.parent.dispatchEvent(NodeEvent);
+
+	}
+
 
 
 	destroy(ClassElement){
@@ -93,13 +103,7 @@ this.parent.css("padding", "0px");
 
 
 
-	eventParentDispatcher(e, data,listener){
-		console.log('on passe dans le eventParentDispatcher')
-		console.log(listener);
-		let NodeEvent = new CustomEvent('callBack', {'detail' : {'data' : data}});
-       	window.dispatchEvent(NodeEvent);
 
-	}
 
 
 

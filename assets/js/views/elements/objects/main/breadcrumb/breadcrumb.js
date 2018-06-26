@@ -25,13 +25,13 @@ export default class breadcrumb {
 
 	initBreadcrumb(){
 
-		this.BC = new BreadcrumbCommon();
+		this.BC = new BreadcrumbCommon(this.container);
 	}
 
 
-	loadData(data){
+	loadData(data,element){
 
-		this.BC.init("bcContainer", data ,true);
+		this.BC.init(element, data ,true);
 	}
 
 
@@ -43,9 +43,9 @@ export default class breadcrumb {
 
 
 	callBack(data){
-
+		console.log('in callBack breadcrumb');
 		let methode = "on_"+data.detail.element+"_"+data.detail.Event.type;
-
+		console.log(methode);
 		this[methode](data.detail);
 
 	}

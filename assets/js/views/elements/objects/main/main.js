@@ -46,7 +46,9 @@ export default class main {
 
 	on_top_topDown_select_node(data){
 
-		this.breadcrumb.loadData(data.breadcrumb);
+		this.breadcrumb.loadData(data.breadcrumb, 'bcContainer');
 
 	}
+
+	
 }
