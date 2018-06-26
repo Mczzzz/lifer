@@ -60,10 +60,13 @@ export default class breadcrumb {
 	on_click(data){
 
 		console.log('in on_click');
-		data.element = "breadcrumb";
-		data.Event = {};
-		data.Event.type = "select";
-		let NodeEvent = new CustomEvent('callBack', {'detail' : {'data' : data}});
+		console.log(data);
+		let res;
+		res.element = "breadcrumb";
+		res.Event = {};
+		res.Event.type = "select";
+		res.data
+		let NodeEvent = new CustomEvent('callBack', {'detail' : {'data' : res}});
        	this.parent.dispatchEvent(NodeEvent);
 
 	}
