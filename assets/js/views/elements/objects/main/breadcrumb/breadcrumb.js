@@ -42,7 +42,7 @@ export default class breadcrumb {
 
 	initListener(){
 	  
-		    this.container.addEventListener('callBack', (data) => this.callBack(data.detail));
+		    this.container.addEventListener('callBack', (data) => this.callBack(data));
 
 	}
 
