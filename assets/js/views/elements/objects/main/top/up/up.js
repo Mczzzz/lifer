@@ -57,10 +57,9 @@ export default class up {
 	}
 
 	on_select_node(data){
-		console.log("up on_select_node");
+
 		data.element = this.MyClass;
 		let ev = new CustomEvent('callBack', {'detail' : data});
-		console.log(this.parent);
         this.parent.dispatchEvent(ev);
 
 	}

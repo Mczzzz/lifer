@@ -4,10 +4,9 @@ import Down from './down/down.js'
 export default class top {
 	
 
-	constructor(parent, event){
+	constructor(parent){
 
 		this.parent = parent;
-		this.EvParent = event;
 
 		this.MyClass = "top";
 
@@ -73,9 +72,12 @@ export default class top {
 	on_topDown_select_node(data){
 
 		this.up.hide();
+
 		//remonte event pour le breadcrumb
 		data.breadcrumb = this.up.getObjPathToNode();
 
+
+		console.log(data);
 		let ev = new CustomEvent('callBack', {'detail' : data});
         this.parent.dispatchEvent(ev);
 	}
