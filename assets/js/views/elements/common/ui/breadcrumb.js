@@ -59,7 +59,8 @@ export default class Breadcrumb {
 		}
 
 		//on bouge la frame en fin de liste
-this.parent.scrollLeft(this.parent[0].scrollWidth);
+		console.log(this.parent);
+this.parent.scrollLeft(this.parent.scrollWidth);
 this.parent.css("padding", "10px");
 
 	}
