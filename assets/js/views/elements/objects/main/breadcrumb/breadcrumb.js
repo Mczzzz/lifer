@@ -30,7 +30,8 @@ export default class breadcrumb {
 
 
 	loadData(data){
-		this.BC.init("bcContainer", data ,'ObjectBreadParent',true);
+
+		this.BC.init("bcContainer", data ,true);
 	}
 
 

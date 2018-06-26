@@ -1,29 +1,19 @@
 export default class Breadcrumb {
 
 
-	constructor(){
+	constructor(parent){
 
-		this.elParent = $(".breadcrumb");
-		this.elParent.empty();
-		this.elParent.css("background-color", "white");
-
-	}
-
-
-	skin(el,opacity){
-
-		el.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
-		el.style.borderRadius = "4px 12px 4px 4px";
-		el.style.background   = "#0288d1";
-		el.style.color        = "white";
-		el.style.padding      = "5px";
-		el.style.marginRight  = "5px";
-		el.style.opacity      = opacity;
+		this.parent = parent;
+this.parent.empty();
+this.parent.css("background-color", "white");
 
 	}
 
 
-	init(ClassElement, data,listener,first = false){
+
+
+
+	init(ClassElement, data,first = false){
 
 		if($("."+ClassElement)[0] != null){
 			console.log('on remove');
@@ -34,16 +24,16 @@ export default class Breadcrumb {
 		element.className = ClassElement;
 		
 		if(first){
-			this.elParent.prepend(element);
+			this.parent.prepend(element);
 		}else{
-			this.elParent.append(element);
+			this.parent.append(element);
 		}
 		
-		this.setData(data,element,listener);
+		this.setData(data,element);
 
 	}
 
-	setData(datas,element,listener){
+	setData(datas,element){
 
 		let MysetLength = datas.length;
 
@@ -64,22 +54,13 @@ export default class Breadcrumb {
 
 			opacity += stepOpacity;
 
-			bc.addEventListener("click", (e)=>this.eventParentDispatcher(e,data,listener));
+			bc.addEventListener("click", (e)=>this.eventParentDispatcher(e,data));
 
 		}
 
 		//on bouge la frame en fin de liste
-		this.elParent.scrollLeft(this.elParent[0].scrollWidth);
-		this.elParent.css("padding", "10px");
-
-	}
-
-
-	eventParentDispatcher(e, data,listener){
-		console.log('on passe dans le eventParentDispatcher')
-		console.log(listener);
-		let NodeEvent = new CustomEvent(listener, {'detail' : {'data' : data}});
-       	window.dispatchEvent(NodeEvent);
+this.parent.scrollLeft(this.parent[0].scrollWidth);
+this.parent.css("padding", "10px");
 
 	}
 
@@ -91,9 +72,37 @@ export default class Breadcrumb {
 	}
 
 	destroyAll(){
-		this.elParent.empty();
-		this.elParent.css("padding", "0px");
+this.parent.empty();
+this.parent.css("padding", "0px");
 	}
+
+
+
+
+	skin(el,opacity){
+
+		el.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
+		el.style.borderRadius = "4px 12px 4px 4px";
+		el.style.background   = "#0288d1";
+		el.style.color        = "white";
+		el.style.padding      = "5px";
+		el.style.marginRight  = "5px";
+		el.style.opacity      = opacity;
+
+	}
+
+
+
+	eventParentDispatcher(e, data,listener){
+		console.log('on passe dans le eventParentDispatcher')
+		console.log(listener);
+		let NodeEvent = new CustomEvent('callBack', {'detail' : {'data' : data}});
+       	window.dispatchEvent(NodeEvent);
+
+	}
+
+
+
 
 }
 	
