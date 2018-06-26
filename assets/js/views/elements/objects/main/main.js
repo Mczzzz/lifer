@@ -38,6 +38,8 @@ export default class main {
 
 	callBack(data){
 
+		console.log(data);
+
 		let methode = "on_"+data.detail.element+"_"+data.detail.Event.type;
 		console.log(methode);
 		this[methode](data.detail);
