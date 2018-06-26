@@ -42,7 +42,7 @@ export default class breadcrumb {
 
 	initListener(){
 	  
-		    this.container.addEventListener('callBack', (data) => this.callBack(data));
+		    this.container.addEventListener('callBack', (data) => this.callBack(data.detail));
 
 	}
 
@@ -50,7 +50,7 @@ export default class breadcrumb {
 	callBack(data){
 		console.log('in callBack breadcrumb');
 		console.log(data);
-		let methode = "on_"+data.detail.element+"_"+data.detail.Event.type;
+		let methode = "on_"+data.element+"_"+data.data.Event.type;
 		console.log(methode);
 		this[methode](data.detail);
 
