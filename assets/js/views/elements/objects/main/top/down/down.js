@@ -31,6 +31,11 @@ export default class down {
 	}
 
 
+	hide(){
+
+		this.container.style.display = "none";
+
+	}
 
 
 

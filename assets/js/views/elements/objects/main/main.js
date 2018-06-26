@@ -55,8 +55,8 @@ export default class main {
 	on_breadcrumb_select(data){
 
 
-		console.log('on_breadcrumb_select');
-		console.log(data);
+		//action on top
+		this.top.focusUp(data);
 	}
 	
 }

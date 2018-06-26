@@ -61,6 +61,9 @@ export default class top {
 
 
 
+
+
+
 	on_topUp_select_node(data){
 
 		this.down.loadData(data.data.node);
@@ -81,5 +84,19 @@ export default class top {
 		let ev = new CustomEvent('callBack', {'detail' : data});
         this.parent.dispatchEvent(ev);
 	}
+
+
+
+
+	focusUp(){
+
+		this.up.show();
+		this.down.hide();
+	}
+
+
+
+
+
 
 }

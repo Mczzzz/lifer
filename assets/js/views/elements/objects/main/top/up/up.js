@@ -41,7 +41,10 @@ export default class up {
 
 	}
 
+	focus(){
 
+		this.container.style.display = "";
+	}
 
 	initListener(){
 
