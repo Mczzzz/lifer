@@ -20,7 +20,7 @@ export default class jsTreeContainer {
 		this.initJsTree();
 
 		this.initCallBackEvents();
-		
+
 		$('.'+this.MyClass).on("rename_node.jstree", (e,data)=>this.onRenameJsTree(e,data));
 		$('.'+this.MyClass).on("create_node.jstree", (e,data)=>this.onCreateJsTree(e,data));
 	}
@@ -215,7 +215,7 @@ export default class jsTreeContainer {
 //BREADCRUMB
 
 	getObjPathToNode(){
-
+		console.log("in jstreeContainer");
 		let bcArray = [];
 
 		let node = $('.'+this.MyClass).jstree(true).get_node($('.'+this.MyClass).jstree(true).get_selected()[0]);
@@ -235,7 +235,7 @@ export default class jsTreeContainer {
 			}
 
         }
-
+        console.log(bcArray);
         return bcArray;
 
 	}

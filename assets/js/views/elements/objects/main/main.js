@@ -7,12 +7,41 @@ export default class main {
 
 	constructor(){
 
-		this.breadcrumb = new Breadcrumb();
-		this.top = new Top();
-		this.bottom = new Bottom();
+
+		this.MyClass = "main";
+
+		this.container = document.getElementsByClassName(this.MyClass)[0];
+
 
 	}
 	
+
+	init(){
+
+		this.initListener();
+
+		this.breadcrumb = new Breadcrumb(this.container);
+		this.top = new Top(this.container);
+		this.bottom = new Bottom(this.container);
+
+
+	}
+
+
+	initListener(){
+  
+	    this.container.addEventListener('callBack', (data) => this.callBack(data));
+
+	}
+
+
+	callBack(data){
+
+		let methode = "on_"+data.detail.element+"_"+data.detail.Event.type;
+		console.log(methode);
+		this[methode](data.detail);
+
+	}
 
 
 }
