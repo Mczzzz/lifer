@@ -38,6 +38,12 @@ export default class down {
 	}
 
 
+	show(){
+
+		this.container.style.display = "none";
+
+	}
+
 
 	initListener(){
 

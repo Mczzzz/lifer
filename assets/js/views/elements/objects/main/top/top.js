@@ -75,7 +75,7 @@ export default class top {
 	on_topDown_select_node(data){
 
 		this.up.hide();
-
+		this.down.show();
 		//remonte event pour le breadcrumb
 		data.breadcrumb = this.up.getObjPathToNode();
 
