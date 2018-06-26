@@ -12,6 +12,7 @@ export default class main {
 
 		this.container = document.getElementsByClassName(this.MyClass)[0];
 
+		this.init();
 
 	}
 	
