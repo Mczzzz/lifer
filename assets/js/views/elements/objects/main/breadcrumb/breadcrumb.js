@@ -50,7 +50,7 @@ export default class breadcrumb {
 	callBack(data){
 		console.log('in callBack breadcrumb');
 		console.log(data);
-		let methode = "on_"+data.detail.data.Event.type;
+		let methode = "on_"+data.detail.Event.type;
 		console.log(methode);
 		this[methode](data.detail);
 
