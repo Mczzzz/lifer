@@ -52,9 +52,11 @@ export default class main {
 
 	}
 
-	on_breadcrumb_select(){
+	on_breadcrumb_select(data){
+
 
 		console.log('on_breadcrumb_select');
+		console.log(data);
 	}
 	
 }
