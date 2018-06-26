@@ -48,7 +48,7 @@ export default class main {
 
 		//active breadcrumb
 		console.log(data);
-		this.breadcrumb.loadData(data.detail.breadcrumb);
+		this.breadcrumb.loadData(data.breadcrumb);
 
 	}
 }
