@@ -57,4 +57,11 @@ export default class breadcrumb {
 	}
 
 
+	on_click(data){
+
+		let NodeEvent = new CustomEvent('callBack', {'detail' : {'data' : data}});
+       	this.parent.dispatchEvent(NodeEvent);
+
+	}
+
 }
