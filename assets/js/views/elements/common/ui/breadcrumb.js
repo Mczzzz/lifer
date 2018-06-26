@@ -29,11 +29,11 @@ export default class Breadcrumb {
 			this.parent.append(element);
 		}
 		
-		this.setData(data,element);
+		this.setData(data);
 
 	}
 
-	setData(datas,element){
+	setData(datas){
 
 		let MysetLength = datas.length;
 
@@ -54,7 +54,7 @@ export default class Breadcrumb {
 
 			opacity += stepOpacity;
 
-			bc.addEventListener("click", (e)=>this.eventParentDispatcher(e,data,element));
+			bc.addEventListener("click", (e)=>this.eventParentDispatcher(e,data,bc));
 
 		}
 
