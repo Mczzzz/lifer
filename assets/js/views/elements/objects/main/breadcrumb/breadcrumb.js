@@ -61,7 +61,7 @@ export default class breadcrumb {
 
 		console.log('in on_click');
 		console.log(data);
-		let res;
+		let res = {};
 		res.element = "breadcrumb";
 		res.Event = {};
 		res.Event.type = "select";
