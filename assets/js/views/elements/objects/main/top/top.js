@@ -77,7 +77,7 @@ export default class top {
 		data.breadcrumb = this.up.getObjPathToNode();
 
 		data.element = "top_"+data.element;
-		console.log(data);
+
 		let ev = new CustomEvent('callBack', {'detail' : data});
         this.parent.dispatchEvent(ev);
 	}
