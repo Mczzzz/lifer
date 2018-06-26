@@ -25,6 +25,11 @@ export default class breadcrumb {
 
 	initBreadcrumb(){
 
+		//on cree 2 compartiments DIV
+		//container
+		//objects
+
+		//on y ajoute des instances prêtes à l'emploi
 		this.BC = new BreadcrumbCommon(this.container);
 	}
 
