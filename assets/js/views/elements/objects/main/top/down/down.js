@@ -43,7 +43,7 @@ export default class down {
 
 	callBack(data){
 		
-		this["on_"+data.detail.Event.type](data);
+		this["on_"+data.detail.Event.type](data.detail);
 
 	}
 

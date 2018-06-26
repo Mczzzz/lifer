@@ -53,11 +53,10 @@ export default class top {
 
 
 	callBack(data){
-		console.log("in top callback");
-		console.log(data);
-		let methode = "on_"+data.detail.element+"_"+data.detail.detail.Event.type;
-		console.log(methode);
-		this[methode](data);
+
+		let methode = "on_"+data.detail.element+"_"+data.detail.Event.type;
+
+		this[methode](data.detail);
 
 	}
 
@@ -65,19 +64,19 @@ export default class top {
 
 	on_topUp_select_node(data){
 
-		this.down.loadData(data.detail.detail.data.node);
+		this.down.loadData(data.data.node);
 
 
 	}
 
 
-	downSelect(data){
+	on_topDown_select_node(data){
 
 		this.up.hide();
 		//remonte event pour le breadcrumb
 		data.breadcrumb = this.up.getObjPathToNode();
 
-		let ev = new CustomEvent(this.EvParent, {'detail' : data});
+		let ev = new CustomEvent('callBack', {'detail' : data});
         this.parent.dispatchEvent(ev);
 	}
 

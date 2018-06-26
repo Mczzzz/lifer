@@ -52,7 +52,7 @@ export default class up {
 
 	callBack(data){
 		
-		this["on_"+data.detail.Event.type](data);
+		this["on_"+data.detail.Event.type](data.detail);
 
 	}
 
