@@ -20,6 +20,8 @@ export default class top {
 
 	init(){
 
+		this.initListener();
+
 		this.initUp();
 		this.up.loadData();
 
@@ -39,6 +41,8 @@ export default class top {
 		this.down = new Down(this.container);
 
 	}
+
+
 
 
 	initListener(){
