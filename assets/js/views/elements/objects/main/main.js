@@ -47,7 +47,8 @@ export default class main {
 	on_top_topDown_select_node(data){
 
 		//active breadcrumb
-		this.breadcrumb.loadData(data.detail.breadrumb);
+		console.log(data);
+		this.breadcrumb.loadData(data.detail.breadcrumb);
 
 	}
 }
