@@ -41,7 +41,7 @@ export default class up {
 
 	}
 
-	focus(){
+	show(){
 
 		this.container.style.display = "";
 	}
