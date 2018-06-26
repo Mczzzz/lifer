@@ -65,8 +65,8 @@ export default class breadcrumb {
 		res.element = "breadcrumb";
 		res.Event = {};
 		res.Event.type = "select";
-		res.data
-		let NodeEvent = new CustomEvent('callBack', {'detail' : {'data' : res}});
+		res.data = data;
+		let NodeEvent = new CustomEvent('callBack', {'detail' : res });
        	this.parent.dispatchEvent(NodeEvent);
 
 	}
