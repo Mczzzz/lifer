@@ -55,7 +55,9 @@ export default class top {
 	callBack(data){
 		console.log("in top callback");
 		console.log(data);
-		this["on_"+data.detail.detail.element+"_"+data.detail.detail.Event.type](data);
+		let methode = "on_"+data.detail.detail.element+"_"+data.detail.detail.Event.type;
+		console.log(methode);
+		this[methode](data);
 
 	}
 
