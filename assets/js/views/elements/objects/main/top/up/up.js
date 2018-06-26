@@ -25,7 +25,7 @@ export default class up {
 
 
 	getObjPathToNode(){
-		this.jsTree.getObjPathToNode();
+		return this.jsTree.getObjPathToNode();
 	}
 
 

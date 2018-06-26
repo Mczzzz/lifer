@@ -215,7 +215,7 @@ export default class jsTreeContainer {
 //BREADCRUMB
 
 	getObjPathToNode(){
-		console.log("in jstreeContainer");
+
 		let bcArray = [];
 
 		let node = $('.'+this.MyClass).jstree(true).get_node($('.'+this.MyClass).jstree(true).get_selected()[0]);
@@ -235,7 +235,7 @@ export default class jsTreeContainer {
 			}
 
         }
-        console.log(bcArray);
+
         return bcArray;
 
 	}
