@@ -29,11 +29,11 @@ export default class Breadcrumb {
 			this.parent.append(element);
 		}
 		
-		this.setData(data);
+		this.setData(data,element);
 
 	}
 
-	setData(datas){
+	setData(datas,element){
 
 		let MysetLength = datas.length;
 
