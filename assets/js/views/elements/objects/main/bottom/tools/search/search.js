@@ -20,7 +20,7 @@ export default class search {
 
 		this.addContainer();
 		this.addInput();
-
+		this.linkSearch();
 
 	}
 
