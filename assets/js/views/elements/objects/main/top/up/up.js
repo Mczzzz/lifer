@@ -24,7 +24,8 @@ export default class up {
 	initTree(){
 
 		this.jsTree = new jsTreeContainer(this.container,'Container','JsTreeContainer');
-		console.log(this.jstree.getSearchElements());
+		let res = this.jstree.getSearchElements();
+		console.log(res);
 		//this.searchService.addTarget();
     
 	}
