@@ -4,7 +4,9 @@ import jsTreeContainer from '../../../../../elements/common/ui/jsTreeContainer.j
 export default class down {
 	
 
-	constructor(parent){
+	constructor(parent,ServicesContainer){
+
+		this.ServicesContainer = ServicesContainer;
 
 		this.parent = parent;
 
@@ -23,6 +25,7 @@ export default class down {
 	initTree(){
 
 		this.jsTree = new jsTreeContainer(this.container,'ObjectTree','JsTreeObjects');
+		this.ServicesContainer.search.addTarget(this.jsTree.getSearchElements());
        
 	}
 
