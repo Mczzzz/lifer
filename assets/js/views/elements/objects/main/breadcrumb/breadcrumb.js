@@ -62,7 +62,7 @@ export default class breadcrumb {
 
 	callBack(data){
 		console.log('in callBack breadcrumb');
-		console.log(data);
+
 		let methode = "on_"+data.detail.Event.type;
 		console.log(methode);
 		this[methode](data.detail);
@@ -73,7 +73,7 @@ export default class breadcrumb {
 	on_click(data){
 
 		console.log('in on_click');
-		console.log(data);
+
 		let res = {};
 		res.element = "breadcrumb";
 		res.Event = {};
