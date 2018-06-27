@@ -48,6 +48,7 @@ export default class up {
 		console.log(data);
 
 		this.container.style.display = "";
+		this.container.style.padding = "10px";
 
 		if(data){
 			this.jsTree.openNode(data.data);

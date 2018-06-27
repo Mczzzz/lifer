@@ -31,6 +31,7 @@ export default class top {
 	initUp(){
 
 		this.up = new Up(this.container);
+		this.up.show();
 
 	}
 
