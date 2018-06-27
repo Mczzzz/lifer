@@ -60,9 +60,7 @@ export default class search {
 
 		res.element = this.input;
 
-		return res;
-
-		this.searchService.addInput();
+		this.searchService.addInput(res);
 
 	}
 
