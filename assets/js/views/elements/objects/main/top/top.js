@@ -4,7 +4,9 @@ import Down from './down/down.js'
 export default class top {
 	
 
-	constructor(parent){
+	constructor(parent,ServicesContainer){
+
+		this.ServicesContainer = ServicesContainer;
 
 		this.parent = parent;
 
@@ -30,7 +32,7 @@ export default class top {
 
 	initUp(){
 
-		this.up = new Up(this.container);
+		this.up = new Up(this.container,this.ServicesContainer);
 		this.up.show();
 
 	}

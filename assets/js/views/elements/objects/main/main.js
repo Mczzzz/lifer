@@ -5,8 +5,10 @@ import Bottom from './bottom/bottom.js';
 export default class main {
 	
 
-	constructor(){
+	constructor(ServicesContainer){
 
+
+		this.ServicesContainer = ServicesContainer;
 
 		this.MyClass = "main";
 
@@ -22,8 +24,8 @@ export default class main {
 		this.initListener();
 
 		this.breadcrumb = new Breadcrumb(this.container);
-		this.top = new Top(this.container);
-		this.bottom = new Bottom(this.container);
+		this.top = new Top(this.container,this.ServicesContainer);
+		this.bottom = new Bottom(this.container,this.ServicesContainer);
 
 
 	}

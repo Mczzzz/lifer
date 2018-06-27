@@ -1,13 +1,12 @@
-import SearchServices from '../../../../../../services/search.js';
 import jsTreeContainer from '../../../../../elements/common/ui/jsTreeContainer.js';
 
 
 export default class up {
 	
 
-	constructor(parent){
+	constructor(parent, ServicesContainer){
 
-		this.searchService = new SearchServices();
+		this.ServicesContainer = ServicesContainer;
 
 		this.parent = parent;
 
@@ -24,7 +23,7 @@ export default class up {
 	initTree(){
 
 		this.jsTree = new jsTreeContainer(this.container,'Container','JsTreeContainer');
-		this.searchService.addTarget(this.jsTree.getSearchElements());
+		this.ServicesContainer.search.addTarget(this.jsTree.getSearchElements());
     
 	}
 

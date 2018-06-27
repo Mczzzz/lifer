@@ -15,10 +15,12 @@ import jsTreeContainer from '../elements/objects/main/top/jsTreeContainer.js'*/
 export default class Objects extends layout{
 
 
-	constructor(){
+	constructor(ServicesContainer){
 
     super();
 
+    this.ServicesContainer = ServicesContainer;
+    
     this.headerInit();
     this.mainInit();
     this.footerInit();
@@ -44,7 +46,7 @@ export default class Objects extends layout{
 
   mainInit(){
 
-    this.Main = new Main();
+    this.Main = new Main(this.ServicesContainer);
     
   }
 

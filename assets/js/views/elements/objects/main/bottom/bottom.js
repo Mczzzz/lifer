@@ -4,7 +4,10 @@ import Tools from './tools/tools.js';
 export default class bottom {
 	
 
-	constructor(parent){
+	constructor(parent,ServicesContainer){
+
+
+		this.ServicesContainer = ServicesContainer;
 
 		this.parent = parent;
 
@@ -21,7 +24,7 @@ export default class bottom {
 
 		//this.Manage = new Manage(this.container);
 
-		this.Tools = new Tools(this.container);
+		this.Tools = new Tools(this.container,this.ServicesContainer);
 	}
 
 

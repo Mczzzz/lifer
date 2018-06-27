@@ -1,9 +1,11 @@
-import Search from './search/search.js';
 
 export default class tools {
 
 
-	constructor(parent){
+	constructor(parent, ServicesContainer){
+
+
+		this.ServicesContainer = ServicesContainer;
 
 		this.parent = parent;
 
@@ -18,7 +20,7 @@ export default class tools {
 
 	init(){
 
-		this.search = new Search(this.container);
+		this.search = new Search(this.container,this.ServicesContainer);
 
 	}
 

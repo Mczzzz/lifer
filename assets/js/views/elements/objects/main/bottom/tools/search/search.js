@@ -3,9 +3,10 @@ import SearchServices from '../../../../../../../services/search.js';
 export default class search {
 
 
-	constructor(parent){
+	constructor(parent,ServicesContainer){
 
-		this.searchService = new SearchServices();
+
+		this.ServicesContainer = ServicesContainer;
 
 		this.parent = parent;
 
@@ -60,7 +61,7 @@ export default class search {
 
 		res.element = this.input;
 
-		this.searchService.addInput(res);
+		this.ServicesContainer.search.addInput(res);
 
 	}
 
