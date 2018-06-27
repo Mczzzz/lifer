@@ -57,6 +57,7 @@ export default class main {
 
 		//action on top
 		this.top.focusUp(data);
+		this.breadcrumb.hide();
 	}
 	
 }

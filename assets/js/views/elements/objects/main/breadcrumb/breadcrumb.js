@@ -40,6 +40,13 @@ export default class breadcrumb {
 	}
 
 
+	hide(){
+
+		this.container.style.display = "none";
+
+	}
+
+
 	initListener(){
 	  
 		    this.container.addEventListener('callBack', (data) => this.callBack(data));
