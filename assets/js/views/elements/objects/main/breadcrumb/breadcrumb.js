@@ -11,7 +11,7 @@ export default class breadcrumb {
 		this.MyClass = "breadcrumb";
 
 		this.container = document.getElementsByClassName(this.MyClass)[0];
-		this.container.style.background = "#cadff7";
+		this.container.style.background = "#ffffff";
 		
 		this.init();
 
