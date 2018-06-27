@@ -35,8 +35,8 @@ export default class Home extends layout{
 
 		let HomeMain = new Main();
 
-		HomeMain.setBkgdTopColor('#E8E8E8');
-		HomeMain.setBkgdBottomColor('#E8E8E8');
+		HomeMain.setBkgdTopColor('#e8eff7');
+		HomeMain.setBkgdBottomColor('#e8eff7');
 
 	}
 

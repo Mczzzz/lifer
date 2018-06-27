@@ -11,6 +11,7 @@ export default class up {
 		this.MyClass = "topUp";
 
 		this.container = document.getElementsByClassName(this.MyClass)[0];
+		this.container.style.background = "#e8eff7";
 
 		this.initTree();	    
 		this.initListener();
@@ -44,9 +45,6 @@ export default class up {
 	}
 
 	show(data = false){
-
-		console.log('in show up');
-		console.log(data);
 
 		this.container.style.display = "";
 		this.container.style.padding = "10px";
