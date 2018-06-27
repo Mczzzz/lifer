@@ -43,7 +43,7 @@ export default class search {
 		console.log(e);
 		console.log(el);
 		for(let target of this.targets){
-
+			console.log('in for');
 			console.log(target);
 
 		}
