@@ -19,7 +19,7 @@ export default class bottom {
 
 	init(){
 
-		this.Manage = new Manage(this.container);
+		//this.Manage = new Manage(this.container);
 
 		this.Tools = new Tools(this.container);
 	}
