@@ -70,7 +70,7 @@ export default class top {
 		console.log('on_topUp_select_node');
 		this.down.loadData(data.data.node);
 		this.down.show();
-		this.down.monForceFlex();
+		this.down.minForceFlex();
 
 
 	}
