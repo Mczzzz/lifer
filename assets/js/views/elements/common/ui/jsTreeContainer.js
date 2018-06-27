@@ -185,12 +185,12 @@ export default class jsTreeContainer {
 
 
 //SEARCH
-	getSearchElements(){
+    getSearchElements(){
 		console.log('in getSearchElements');
 		let res = {};
-		res.element = $('.'+this.MyClass).jstree(true);
+/*		res.element = $('.'+this.MyClass).jstree(true);
 		res.methode = 'search';
-
+*/
 		return res;
 
 	}
