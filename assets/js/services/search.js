@@ -18,9 +18,10 @@ export default class search {
 
 	addInput(el){
 		console.log('addInput');
+		console.log(el);
 		this.inputs.push(el);
 		
-		el.element.on("keyup", (e)=> this.match(e,el.element));
+		el.element.addEventListener("keyup", (e)=> this.match(e,el.element));
 
 	}
 
