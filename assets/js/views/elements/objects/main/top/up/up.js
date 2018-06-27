@@ -41,6 +41,7 @@ export default class up {
 
 		this.container.style.display = "none";
 		this.container.style.padding = "0px";
+		this.container.style.flex = "0";
 
 
 	}
@@ -49,6 +50,7 @@ export default class up {
 
 		this.container.style.display = "";
 		this.container.style.padding = "10px";
+		this.container.style.flex = "1";
 
 		if(data){
 			this.jsTree.openNode(data.data);

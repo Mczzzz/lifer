@@ -35,6 +35,7 @@ export default class down {
 	hide(){
 
 		this.container.style.display = "none";
+		this.container.style.flex = "0";
 		this.container.style.padding = "0px";
 		this.jsTree.hide();
 
@@ -44,6 +45,7 @@ export default class down {
 	show(){
 
 		this.container.style.display = "";
+		this.container.style.flex = "1";
 		this.container.style.padding = "10px";
 		this.jsTree.show();
 
