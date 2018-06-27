@@ -40,7 +40,7 @@ export default class top {
 
 	initDown(){
 
-		this.down = new Down(this.container);
+		this.down = new Down(this.container,this.ServicesContainer);
 
 	}
 
