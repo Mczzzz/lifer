@@ -1,15 +1,34 @@
+import Search from 'search/search.js';
+
 export default class tools {
 
 
-	constructor(){
+	constructor(parent){
 
-		this.initSearch();
+		this.parent = parent;
+
+		this.MyClass = "tools";
+
+		this.container = document.getElementsByClassName(this.MyClass)[0];
+
+		this.init();
+
+	}
+
+
+	init(){
+
+
+		this.search = new Search(this.container);
+
+
 
 	}
 
 
 
-	initSearch(){
+
+/*	initSearch(){
 
 		this.toolsSearchContainer = document.createElement("div");
 		this.toolsSearchContainer.className = "toolsSearchContainer";
@@ -41,9 +60,9 @@ export default class tools {
 	clearSearch(){
 
 		$(".toolsInput").val("");
-	}
+	}*/
 
-	removeInfos(){
+/*	removeInfos(){
 		$(".toolsInfosContainer").remove();
 	}
  
@@ -93,7 +112,7 @@ export default class tools {
 		$('.tools').append(this.toolsInfosContainer);
 
 
- 	}
+ 	}*/
 
 
 }
