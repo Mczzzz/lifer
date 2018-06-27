@@ -59,6 +59,8 @@ export default class up {
 
 	}
 
+	
+
 	initListener(){
 
 	    this.container.addEventListener('callBack', (data) => this.callBack(data));
