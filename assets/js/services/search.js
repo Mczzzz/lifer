@@ -18,7 +18,7 @@ export default class search {
 	addInput(el){
 
 		this.inputs.push(el);
-
+		console.log('addInput');
 		el.element.on("keyup", (e)=> this.match(e,el.element));
 
 	}
