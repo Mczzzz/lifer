@@ -12,13 +12,14 @@ export default class search {
 	addTarget(elMethode){
 
 		this.targets.push(elMethode);
+		console.log('addTarget');
 		console.log(this.targets);
 	}
 
 	addInput(el){
-
-		this.inputs.push(el);
 		console.log('addInput');
+		this.inputs.push(el);
+		
 		el.element.on("keyup", (e)=> this.match(e,el.element));
 
 	}
