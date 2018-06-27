@@ -51,6 +51,10 @@ export default class down {
 
 	}
 
+	minForceFlex(){
+		this.container.style.flex = "0";
+	}
+
 
 	initListener(){
 
