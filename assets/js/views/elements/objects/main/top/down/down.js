@@ -12,6 +12,8 @@ export default class down {
 
 		this.container = document.getElementsByClassName(this.MyClass)[0];
 		this.container.style.background = "#a5dc86";
+		this.container.style.transition	   = '0.4s cubic-bezier(0, 0.87, 0.01, 0.87)';
+
 
 		this.initTree();
 		this.initListener();
