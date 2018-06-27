@@ -38,6 +38,7 @@ export default class up {
 	hide(){
 
 		this.container.style.display = "none";
+		this.container.style.padding = "0px";
 
 
 	}
