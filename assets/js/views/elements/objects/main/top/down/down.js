@@ -11,6 +11,7 @@ export default class down {
 		this.MyClass = "topDown";
 
 		this.container = document.getElementsByClassName(this.MyClass)[0];
+		this.container.style.background = "#a5dc86";
 
 		this.initTree();
 		this.initListener();

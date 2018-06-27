@@ -13,6 +13,7 @@ export default class up {
 		this.container = document.getElementsByClassName(this.MyClass)[0];
 		this.container.style.background = "#e8eff7";
 
+
 		this.initTree();	    
 		this.initListener();
 
