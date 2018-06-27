@@ -1,10 +1,32 @@
-import ObjectInfosCollect from '../../../../../../collections/ObjectInfosCollection.js';
 
 export default class manage {
 
 
+	constructor(parent,ServicesContainer){
 
-	constructor(HTMLParent){
+
+		this.ServicesContainer = ServicesContainer;
+
+		this.parent = parent;
+
+		this.MyClass = "manage";
+
+		this.container = document.getElementsByClassName(this.MyClass)[0];
+
+		this.init();
+
+	}
+	
+
+	init(){
+
+		//this.Manage = new Manage(this.container);
+
+		this.Tools = new Tools(this.container,this.ServicesContainer);
+	}
+
+
+/*	constructor(HTMLParent){
 
 	this.ParentContainer = $("."+HTMLParent);
 
@@ -69,7 +91,7 @@ console.log('webLink');
 
 	    }
 
-	}
+	}*/
 
 
 }

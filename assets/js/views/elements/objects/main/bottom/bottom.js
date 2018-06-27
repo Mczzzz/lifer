@@ -24,7 +24,8 @@ export default class bottom {
 
 		//this.Manage = new Manage(this.container);
 
-		this.Tools = new Tools(this.container,this.ServicesContainer);
+		this.Tools  = new Tools(this.container,this.ServicesContainer);
+		this.Manage = new Manage(this.container,this.ServicesContainer);
 	}
 
 
