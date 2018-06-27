@@ -1,3 +1,4 @@
+import SearchServices from '../../../../../../services/search.js';
 import jsTreeContainer from '../../../../../elements/common/ui/jsTreeContainer.js';
 
 
@@ -6,13 +7,14 @@ export default class up {
 
 	constructor(parent){
 
+		this.searchService = new SearchServices();
+
 		this.parent = parent;
 
 		this.MyClass = "topUp";
 
 		this.container = document.getElementsByClassName(this.MyClass)[0];
 		this.container.style.background = "#e8eff7";
-
 
 		this.initTree();	    
 		this.initListener();
@@ -22,6 +24,7 @@ export default class up {
 	initTree(){
 
 		this.jsTree = new jsTreeContainer(this.container,'Container','JsTreeContainer');
+		this.searchService.addTarget(this.jstree.getSearchElements());
     
 	}
 
@@ -59,7 +62,7 @@ export default class up {
 
 	}
 
-	
+
 
 	initListener(){
 

@@ -185,14 +185,30 @@ export default class jsTreeContainer {
 
 
 //SEARCH
-	linkSearch(element){
+
+	getSearchElements(){
+
+		let res = {};
+		res.element = $('.'+this.MyClass).jstree(true);
+		res.methode = 'search';
+
+		return res;
+
+	}
+
+
+
+
+
+
+/*	linkSearch(element){
 
 		this.searchElement = $('.'+element);
 
 		this.searchElement.on("keyup", (e)=> this.linkSearchEvent(e));
 		this.searchElt = true;
 
-	}
+	}*/
 
 	unlinkSearch(){
 
