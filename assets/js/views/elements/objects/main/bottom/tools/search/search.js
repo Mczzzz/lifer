@@ -1,7 +1,11 @@
+import SearchServices from '../../../../../../../services/search.js';
+
 export default class search {
 
 
 	constructor(parent){
+
+		this.searchService = new SearchServices();
 
 		this.parent = parent;
 
@@ -52,13 +56,20 @@ export default class search {
 
 	linkSearch(){
 
+		let res = {};
+
+		res.element = this.input;
+
+		return res;
+
+		this.searchService.addInput();
 
 	}
 
 
 	unlinkSearch(){
 
-		
+
 	}
 
 }

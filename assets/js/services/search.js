@@ -5,7 +5,7 @@ export default class search {
 	constructor(){
 
 		this.targets = [];  
-
+		this.inputs = [];
 	}
 
 
@@ -15,13 +15,17 @@ export default class search {
 		console.log(this.targets);
 	}
 
-	addInput(){
+	addInput(el){
 
+		this.inputs.push(el);
+
+		el.element.on("keyup", (e)=> this.match(e,el.element));
 
 	}
 
 
 	removeTarget(){
+
 
 	}
 
@@ -30,6 +34,19 @@ export default class search {
 
 
 	}
+
+
+
+	match(e,el){
+
+		console.log('in match');
+		console.log(e);
+		console.log(el);
+
+	}
+
+
+
 	//les élements s'enregistre à moi
 
 	//je manipule ceux qui sont enregistrés
