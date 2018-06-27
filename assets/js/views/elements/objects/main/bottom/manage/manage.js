@@ -20,11 +20,18 @@ export default class manage {
 
 	init(){
 
-		//this.Manage = new Manage(this.container);
+		this.initContainer();
 
-		this.Tools = new Tools(this.container,this.ServicesContainer);
 	}
 
+
+	initConatainer(){
+
+		this.Manager = document.createElement("div");
+		this.Manager.className = "MyManager";
+		this.parent.append(this.Manager);
+
+	}
 
 /*	constructor(HTMLParent){
 
