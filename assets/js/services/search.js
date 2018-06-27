@@ -42,6 +42,7 @@ export default class search {
 
 		for(let target of this.targets){
 
+			console.log(target);
 			target.element[target.methode](el.value);
 
 		}
