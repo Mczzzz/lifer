@@ -66,6 +66,7 @@ export default class top {
 
 	on_topUp_select_node(data){
 
+		console.log('on_topUp_select_node');
 		this.down.loadData(data.data.node);
 
 

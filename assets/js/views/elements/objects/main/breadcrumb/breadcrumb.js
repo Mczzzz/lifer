@@ -48,7 +48,7 @@ export default class breadcrumb {
 
 	show(){
 
-		this.container.style.display = "flex";
+		this.container.style.display = "";
 
 	}
 
