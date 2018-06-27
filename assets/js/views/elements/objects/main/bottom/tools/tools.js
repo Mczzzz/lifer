@@ -1,3 +1,5 @@
+import Search from './search/search.js';
+
 
 export default class tools {
 
