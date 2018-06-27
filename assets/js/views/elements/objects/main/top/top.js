@@ -90,9 +90,9 @@ export default class top {
 
 
 
-	focusUp(){
+	focusUp(data){
 
-		this.up.show();
+		this.up.show(data);
 		this.down.hide();
 	}
 

@@ -197,7 +197,7 @@ export default class jsTreeContainer {
 	unlinkSearch(){
 
 		if(this.searchElt){
-			this.searchElement.off("keyup");
+			this.searchElement.off("onkeyup");
 			this.searchElt = false;
 		}
 		
@@ -241,33 +241,33 @@ export default class jsTreeContainer {
 	}
 
 
-	jsTreeEventBreadcrumb(node){
+/*	jsTreeEventBreadcrumb(node){
 
 
 		$('#bc_'+node.id).on("click", (e) => this.openNode(e,node));
 
 		
-	}
+	}*/
 
 
 	clearSearch(){
 		$('.'+this.MyClass).jstree(true).clear_search();
 	}
 
-	openNode(e,node){
+
+	openNode(node){
 
 		$('.'+this.MyClass).jstree(true).clear_search();
 		$('.'+this.MyClass).jstree(true).close_all();
 		$('.'+this.MyClass).jstree(true)._open_to(node);
 		$('.'+this.MyClass).jstree(true).open_node(node);
-		//clearbreadcrumb
-		this.breadcrumbTargetDiv.empty();
-		this.breadcrumbTargetDiv.css("padding", "0px");
-		//$('.'+this.MyClass).show();
-		if(this.BreadEventCallBack != false){
+
+
+/*		if(this.BreadEventCallBack != false){
 			let ev = new CustomEvent(this.BreadEventCallBack, {'detail' : node});
         	window.dispatchEvent(ev);
-		}
+		}*/
+
 
 	}
 
@@ -319,11 +319,11 @@ export default class jsTreeContainer {
 	}
 
 
-	initEventsBreadSelect(myMethod){
+/*	initEventsBreadSelect(myMethod){
 
 		this.BreadEventCallBack = myMethod;
 
-	}
+	}*/
 
 
 

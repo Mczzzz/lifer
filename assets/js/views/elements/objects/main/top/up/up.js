@@ -39,11 +39,21 @@ export default class up {
 
 		this.container.style.display = "none";
 
+
 	}
 
-	show(){
+	show(data = false){
+
+		console.log('in show up');
+		console.log(data);
 
 		this.container.style.display = "";
+
+		if(data){
+			this.jsTree.openNode(data.data);
+		}
+
+
 	}
 
 	initListener(){
