@@ -190,6 +190,7 @@ export default class jsTreeContainer {
 		let res = {};
 		res.element = $('.'+this.MyClass).jstree(true);
 		res.methode = 'search';
+		res.me = this.MyClass;
 
 		return res;
 

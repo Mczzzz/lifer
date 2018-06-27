@@ -26,6 +26,13 @@ export default class search {
 
 	removeTarget(){
 
+		for(let target of this.targets){
+
+			console.log(target);
+			target.element[target.methode](el.value);
+
+		}
+
 
 	}
 
@@ -39,7 +46,7 @@ export default class search {
 
 	match(e,el){
 
-
+	console.log(this.targets);
 		for(let target of this.targets){
 
 			console.log(target);
