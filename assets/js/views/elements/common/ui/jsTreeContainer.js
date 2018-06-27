@@ -185,9 +185,8 @@ export default class jsTreeContainer {
 
 
 //SEARCH
-
 	getSearchElements(){
-
+		console.log('in getSearchElements');
 		let res = {};
 		res.element = $('.'+this.MyClass).jstree(true);
 		res.methode = 'search';
@@ -209,7 +208,7 @@ export default class jsTreeContainer {
 		this.searchElt = true;
 
 	}*/
-
+/*
 	unlinkSearch(){
 
 		if(this.searchElt){
@@ -223,7 +222,7 @@ export default class jsTreeContainer {
 	linkSearchEvent(e){
 
             $('.'+this.MyClass).jstree(true).search(this.searchElement.val());
-    }
+    }*/
 //SEARCH - END
 
 
