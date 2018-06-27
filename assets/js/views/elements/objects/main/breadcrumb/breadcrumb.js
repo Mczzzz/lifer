@@ -46,6 +46,12 @@ export default class breadcrumb {
 
 	}
 
+	show(){
+
+		this.container.style.display = "flex";
+
+	}
+
 
 	initListener(){
 	  

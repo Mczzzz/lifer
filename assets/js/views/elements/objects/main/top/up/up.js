@@ -43,7 +43,7 @@ export default class up {
 
 	show(){
 
-		this.container.style.display = "";
+		this.container.style.display = "flex";
 	}
 
 	initListener(){
