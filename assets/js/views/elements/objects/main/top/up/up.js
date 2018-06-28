@@ -1,18 +1,15 @@
+import superViews from "../../../../../elements/common/super/views.js"
 import jsTreeContainer from '../../../../../elements/common/ui/jsTreeContainer.js';
 
 
-export default class up {
+export default class up extends superViews{
 	
 
-	constructor(parent, ServicesContainer){
+	constructor(parent, MyClass, ServicesContainer){
 
-		this.ServicesContainer = ServicesContainer;
+		super(parent, MyClass, ServicesContainer);
 
-		this.parent = parent;
 
-		this.MyClass = "topUp";
-
-		this.container = document.getElementsByClassName(this.MyClass)[0];
 		this.container.style.background = "#e8eff7";
 
 		this.initTree();	    

@@ -23,9 +23,9 @@ export default class main {
 
 		this.initListener();
 
-		this.breadcrumb = new Breadcrumb(this.container);
-		this.top = new Top(this.container,this.ServicesContainer);
-		this.bottom = new Bottom(this.container,this.ServicesContainer);
+		this.breadcrumb = new Breadcrumb(this.container,"breadcrumb",this.ServicesContainer);
+		this.top = new Top(this.container,"top",this.ServicesContainer);
+		this.bottom = new Bottom(this.container,"bottom",this.ServicesContainer);
 
 
 	}

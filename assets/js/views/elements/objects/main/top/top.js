@@ -1,18 +1,13 @@
+import superViews from "../../../../elements/common/super/views.js"
 import Up   from './up/up.js'
 import Down from './down/down.js'
 
-export default class top {
+export default class top extends superViews{
 	
 
-	constructor(parent,ServicesContainer){
+	constructor(parent,MyClass, ServicesContainer){
 
-		this.ServicesContainer = ServicesContainer;
-
-		this.parent = parent;
-
-		this.MyClass = "top";
-
-		this.container = document.getElementsByClassName(this.MyClass)[0];
+		super(parent,MyClass, ServicesContainer);
 
 		this.init();
 
@@ -32,7 +27,7 @@ export default class top {
 
 	initUp(){
 
-		this.up = new Up(this.container,this.ServicesContainer);
+		this.up = new Up(this.container,"topUp",this.ServicesContainer);
 		this.up.show();
 
 	}
@@ -40,7 +35,7 @@ export default class top {
 
 	initDown(){
 
-		this.down = new Down(this.container,this.ServicesContainer);
+		this.down = new Down(this.container,"topDown",this.ServicesContainer);
 
 	}
 

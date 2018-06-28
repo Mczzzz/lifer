@@ -1,18 +1,15 @@
+import superViews from "../../../../../elements/common/super/views.js"
 import jsTreeContainer from '../../../../../elements/common/ui/jsTreeContainer.js';
 
 
-export default class down {
+export default class down extends superViews{
 	
 
-	constructor(parent, ServicesContainer){
+	constructor(parent, MyClass, ServicesContainer){
 
-		this.ServicesContainer = ServicesContainer;
-
-		this.parent = parent;
-
-		this.MyClass = "topDown";
-
-		this.container = document.getElementsByClassName(this.MyClass)[0];
+	
+		super(parent, MyClass, ServicesContainer);
+		
 		this.container.style.background = "#a5dc86";
 		//this.container.style.transition	   = '0.4s cubic-bezier(0, 0.87, 0.01, 0.87)';
 

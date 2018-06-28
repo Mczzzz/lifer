@@ -1,19 +1,14 @@
+import superViews from "../../../../elements/common/super/views.js"
 import Manage from './manage/manage.js';
 import Tools from './tools/tools.js';
 
-export default class bottom {
+export default class bottom extends superViews{
 	
 
-	constructor(parent,ServicesContainer){
+	constructor(parent,MyClass,ServicesContainer){
 
 
-		this.ServicesContainer = ServicesContainer;
-
-		this.parent = parent;
-
-		this.MyClass = "bottom";
-
-		this.container = document.getElementsByClassName(this.MyClass)[0];
+		super(parent,MyClass,ServicesContainer);
 
 		this.init();
 

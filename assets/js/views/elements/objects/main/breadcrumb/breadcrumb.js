@@ -1,16 +1,13 @@
+import superViews from "../../../../elements/common/super/views.js"
 import BreadcrumbCommon from '../../../../elements/common/ui/breadcrumb.js';
 
 
-export default class breadcrumb {
+export default class breadcrumb extends superViews{
 	
 
-	constructor(parent){
+	constructor(parent, MyClass,ServicesContainer){
 
-		this.parent = parent;
-
-		this.MyClass = "breadcrumb";
-
-		this.container = document.getElementsByClassName(this.MyClass)[0];
+		super(parent, MyClass,ServicesContainer);
 		this.container.style.background = "#ffffff";
 		
 		this.init();
