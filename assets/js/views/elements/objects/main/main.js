@@ -1,19 +1,15 @@
+import superViews from "../../../elements/common/super/views.js"
 import Breadcrumb from './breadcrumb/breadcrumb.js';
 import Top from './top/top.js';
 import Bottom from './bottom/bottom.js';
 
-export default class main {
+export default class main extends superViews{
 	
 
-	constructor(ServicesContainer){
+	constructor(parent, MyClass,ServicesContainer){
 
-
-		this.ServicesContainer = ServicesContainer;
-
-		this.MyClass = "main";
-
-		this.container = document.getElementsByClassName(this.MyClass)[0];
-
+		super(parent, MyClass,ServicesContainer);
+	
 		this.init();
 
 	}

@@ -5,21 +5,17 @@ import Main   from '../elements/objects/main/main.js';
 import Footer from '../elements/objects/footer/footer.js';
 
 
-
-/*import Breadcrumb from '../elements/common/ui/breadcrumb.js';
-import Manager from '../elements/objects/main/bottom/manage/manage.js';
-import Tools from '../elements/objects/main/bottom/tools/tools.js';
-import jsTreeContainer from '../elements/objects/main/top/jsTreeContainer.js'*/
-
-
 export default class Objects extends layout{
 
 
 	constructor(ServicesContainer){
 
-    super();
+
+    super(); 
 
     this.ServicesContainer = ServicesContainer;
+
+    this.container = document.getElementsByClassName("container")[0];
     
     this.headerInit();
     this.mainInit();
@@ -40,20 +36,20 @@ export default class Objects extends layout{
 
   headerInit(){
 
-    this.Header = new Header();
+    this.Header = new Header(this.container,"header",this.ServicesContainer);
     
   }
 
   mainInit(){
 
-    this.Main = new Main(this.ServicesContainer);
+    this.Main = new Main(this.container,"main",this.ServicesContainer);
     
   }
 
 
   footerInit(){
 
-    this.Footer = new Footer();
+    this.Footer = new Footer(this.container,"footer",this.ServicesContainer);
     
   }
 
