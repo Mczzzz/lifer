@@ -4,9 +4,9 @@ import FooterCommon from '../../common/sections/footer.js';
 export default class Footer extends superViews{
 	
 
-	constructor(parent, MyClass,ServicesContainer){
+	constructor(parent, MyClass){
 
-		super(parent, MyClass,ServicesContainer);
+		super(parent, MyClass);
 	
 		this.bkgdHF = 'linear-gradient(45deg, #43A047 0%, #1de9b6 100%)';
 

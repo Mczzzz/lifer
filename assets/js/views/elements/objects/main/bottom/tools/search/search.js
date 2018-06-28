@@ -4,9 +4,9 @@ import { SearchServices } from '../../../../../../../services/search.js';
 export default class search extends superViews{
 
 
-	constructor(parent,MyClass, ServicesContainer){
+	constructor(parent,MyClass){
 
-		super(parent,MyClass, ServicesContainer);
+		super(parent,MyClass);
 
 		this.init();
 
@@ -56,8 +56,6 @@ export default class search extends superViews{
 
 		res.element = this.input;
 
-		console.log(SearchServices);
-		//this.ServicesContainer.search.addInput(res);
 		SearchServices.addInput(res);
 	}
 

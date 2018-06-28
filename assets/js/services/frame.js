@@ -5,9 +5,8 @@ import Objects from '../views/frames/objects.js';
 export default class Frame {
 
 
-	constructor(ServicesContainer){
+	constructor(){
 
-		this.ServicesContainer = ServicesContainer;
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
 
 	}
@@ -29,7 +28,7 @@ export default class Frame {
 		//on vide le body
 		$('body').empty();
 		//on recharge le body
-		let objects = new Objects(this.ServicesContainer);
+		let objects = new Objects();
 
 	}
 

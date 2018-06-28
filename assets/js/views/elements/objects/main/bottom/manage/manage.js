@@ -4,9 +4,9 @@ import List from './list/list.js';
 export default class manage extends superViews{
 
 
-	constructor(parent,MyClass,ServicesContainer){
+	constructor(parent,MyClass){
 
-		super(parent,MyClass,ServicesContainer);
+		super(parent,MyClass);
 
 		this.init();
 
@@ -22,7 +22,7 @@ export default class manage extends superViews{
 
 	initContainer(){
 
-		this.List = new List(this.container,"list",this.ServicesContainer);
+		this.List = new List(this.container,"list");
 
 	}
 

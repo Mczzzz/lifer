@@ -6,9 +6,9 @@ import Bottom from './bottom/bottom.js';
 export default class main extends superViews{
 	
 
-	constructor(parent, MyClass,ServicesContainer){
+	constructor(parent, MyClass){
 
-		super(parent, MyClass,ServicesContainer);
+		super(parent, MyClass);
 	
 		this.init();
 
@@ -19,9 +19,9 @@ export default class main extends superViews{
 
 		this.initListener();
 
-		this.breadcrumb = new Breadcrumb(this.container,"breadcrumb",this.ServicesContainer);
-		this.top = new Top(this.container,"top",this.ServicesContainer);
-		this.bottom = new Bottom(this.container,"bottom",this.ServicesContainer);
+		this.breadcrumb = new Breadcrumb(this.container,"breadcrumb");
+		this.top = new Top(this.container,"top");
+		this.bottom = new Bottom(this.container,"bottom");
 
 
 	}

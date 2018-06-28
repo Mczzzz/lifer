@@ -6,10 +6,10 @@ import jsTreeContainer from '../../../../../elements/common/ui/jsTreeContainer.j
 export default class down extends superViews{
 	
 
-	constructor(parent, MyClass, ServicesContainer){
+	constructor(parent, MyClass){
 
 	
-		super(parent, MyClass, ServicesContainer);
+		super(parent, MyClass);
 
 		this.container.style.background = "#a5dc86";
 		//this.container.style.transition	   = '0.4s cubic-bezier(0, 0.87, 0.01, 0.87)';
@@ -23,7 +23,7 @@ export default class down extends superViews{
 	initTree(){
 
 		this.jsTree = new jsTreeContainer(this.container,'ObjectTree','JsTreeObjects');
-		//this.ServicesContainer.search.addTarget(this.jsTree.getSearchElements());
+
 		SearchServices.addTarget(this.jsTree.getSearchElements());
 
        

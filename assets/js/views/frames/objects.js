@@ -8,12 +8,11 @@ import Footer from '../elements/objects/footer/footer.js';
 export default class Objects extends layout{
 
 
-	constructor(ServicesContainer){
+	constructor(){
 
 
     super(); 
 
-    this.ServicesContainer = ServicesContainer;
 
     this.container = document.getElementsByClassName("container")[0];
     
@@ -36,20 +35,20 @@ export default class Objects extends layout{
 
   headerInit(){
 
-    this.Header = new Header(this.container,"header",this.ServicesContainer);
+    this.Header = new Header(this.container,"header");
     
   }
 
   mainInit(){
 
-    this.Main = new Main(this.container,"main",this.ServicesContainer);
+    this.Main = new Main(this.container,"main");
     
   }
 
 
   footerInit(){
 
-    this.Footer = new Footer(this.container,"footer",this.ServicesContainer);
+    this.Footer = new Footer(this.container,"footer");
     
   }
 

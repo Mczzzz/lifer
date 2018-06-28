@@ -5,9 +5,9 @@ import Down from './down/down.js'
 export default class top extends superViews{
 	
 
-	constructor(parent,MyClass, ServicesContainer){
+	constructor(parent,MyClass){
 
-		super(parent,MyClass, ServicesContainer);
+		super(parent,MyClass);
 
 		this.init();
 
@@ -27,7 +27,7 @@ export default class top extends superViews{
 
 	initUp(){
 
-		this.up = new Up(this.container,"topUp",this.ServicesContainer);
+		this.up = new Up(this.container,"topUp");
 		this.up.show();
 
 	}
@@ -35,7 +35,7 @@ export default class top extends superViews{
 
 	initDown(){
 
-		this.down = new Down(this.container,"topDown",this.ServicesContainer);
+		this.down = new Down(this.container,"topDown");
 
 	}
 
@@ -64,7 +64,7 @@ export default class top extends superViews{
 
 	on_topUp_select_node(data){
 
-		console.log('on_topUp_select_node');
+
 		this.down.loadData(data.data.node);
 		this.down.show();
 		this.down.minForceFlex();
@@ -77,7 +77,7 @@ export default class top extends superViews{
 
 		this.up.hide();
 		this.down.show();
-		//remonte event pour le breadcrumb
+
 		data.breadcrumb = this.up.getObjPathToNode();
 
 		data.element = "top_"+data.element;

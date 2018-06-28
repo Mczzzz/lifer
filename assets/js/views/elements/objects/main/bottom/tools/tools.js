@@ -5,10 +5,10 @@ import Search from './search/search.js';
 export default class tools extends superViews{
 
 
-	constructor(parent, MyClass, ServicesContainer){
+	constructor(parent, MyClass){
 
 
-		super(parent,MyClass,ServicesContainer);
+		super(parent,MyClass);
 
 		this.init();
 
@@ -17,7 +17,7 @@ export default class tools extends superViews{
 
 	init(){
 
-		this.search = new Search(this.container,"search",this.ServicesContainer);
+		this.search = new Search(this.container,"search");
 
 	}
 

@@ -5,9 +5,9 @@ import BreadcrumbCommon from '../../../../elements/common/ui/breadcrumb.js';
 export default class breadcrumb extends superViews{
 	
 
-	constructor(parent, MyClass,ServicesContainer){
+	constructor(parent, MyClass){
 
-		super(parent, MyClass,ServicesContainer);
+		super(parent, MyClass);
 		this.container.style.background = "#ffffff";
 		
 		this.init();
