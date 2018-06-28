@@ -1,19 +1,14 @@
+import superViews from "../../../../../elements/common/super/views.js"
 import Search from './search/search.js';
 
 
-export default class tools {
+export default class tools extends superViews{
 
 
-	constructor(parent, ServicesContainer){
+	constructor(parent, MyClass, ServicesContainer){
 
 
-		this.ServicesContainer = ServicesContainer;
-
-		this.parent = parent;
-
-		this.MyClass = "tools";
-
-		this.container = document.getElementsByClassName(this.MyClass)[0];
+		super(parent,MyClass,ServicesContainer);
 
 		this.init();
 
@@ -22,7 +17,7 @@ export default class tools {
 
 	init(){
 
-		this.search = new Search(this.container,this.ServicesContainer);
+		this.search = new Search(this.container,"search",this.ServicesContainer);
 
 	}
 

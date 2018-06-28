@@ -1,18 +1,12 @@
+import superViews from "../../../../../elements/common/super/views.js"
 import List from './list/list.js';
 
-export default class manage {
+export default class manage extends superViews{
 
 
-	constructor(parent,ServicesContainer){
+	constructor(parent,MyClass,ServicesContainer){
 
-
-		this.ServicesContainer = ServicesContainer;
-
-		this.parent = parent;
-
-		this.MyClass = "manage";
-
-		this.container = document.getElementsByClassName(this.MyClass)[0];
+		super(parent,MyClass,ServicesContainer);
 
 		this.init();
 

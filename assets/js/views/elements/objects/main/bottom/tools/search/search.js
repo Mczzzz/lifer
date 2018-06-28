@@ -1,14 +1,12 @@
+import superViews from "../../../../../../elements/common/super/views.js"
 import SearchServices from '../../../../../../../services/search.js';
 
-export default class search {
+export default class search extends superViews{
 
 
-	constructor(parent,ServicesContainer){
+	constructor(parent,MyClass, ServicesContainer){
 
-
-		this.ServicesContainer = ServicesContainer;
-
-		this.parent = parent;
+		super(parent,MyClass, ServicesContainer);
 
 		this.init();
 
@@ -19,18 +17,15 @@ export default class search {
 
 	init(){
 
-		this.addContainer();
+		this.skinContainer();
 		this.addInput();
 		this.linkSearch();
 
 	}
 
 
-	addContainer(){
+	skinContainer(){
 
-		this.container = document.createElement("div");
-		this.MyClass = "search";
-		this.parent.append(this.container);
 		this.container.style.background = "#e8eff7";
 		this.container.style.padding = "5px";
 
