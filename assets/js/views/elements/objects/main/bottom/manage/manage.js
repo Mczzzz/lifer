@@ -25,7 +25,7 @@ export default class manage {
 	}
 
 
-	initConatainer(){
+	initContainer(){
 
 		this.Manager = document.createElement("div");
 		this.Manager.className = "MyManager";
