@@ -1,3 +1,4 @@
+import { SearchServices } from '../../../../../../services/search.js';
 import superViews from "../../../../../elements/common/super/views.js"
 import jsTreeContainer from '../../../../../elements/common/ui/jsTreeContainer.js';
 
@@ -20,8 +21,8 @@ export default class up extends superViews{
 	initTree(){
 
 		this.jsTree = new jsTreeContainer(this.container,'Container','JsTreeContainer');
-		this.ServicesContainer.search.addTarget(this.jsTree.getSearchElements());
-    
+		//this.ServicesContainer.search.addTarget(this.jsTree.getSearchElements());
+    	SearchServices.addTarget(this.jsTree.getSearchElements());
 	}
 
 
