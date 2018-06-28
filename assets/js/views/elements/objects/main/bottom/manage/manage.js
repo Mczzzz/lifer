@@ -28,7 +28,7 @@ export default class manage {
 
 	initContainer(){
 
-		this.List = new List(this.parent,"list",this.ServicesContainer);
+		this.List = new List(this.container,"list",this.ServicesContainer);
 
 	}
 
