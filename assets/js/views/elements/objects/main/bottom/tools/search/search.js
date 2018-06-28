@@ -58,7 +58,7 @@ export default class search extends superViews{
 
 		console.log(SearchServices);
 		//this.ServicesContainer.search.addInput(res);
-
+		SearchServices.addInput(res);
 	}
 
 

@@ -1,3 +1,4 @@
+import { SearchServices } from '../../../../../../services/search.js';
 import superViews from "../../../../../elements/common/super/views.js"
 import jsTreeContainer from '../../../../../elements/common/ui/jsTreeContainer.js';
 
@@ -9,7 +10,7 @@ export default class down extends superViews{
 
 	
 		super(parent, MyClass, ServicesContainer);
-		
+
 		this.container.style.background = "#a5dc86";
 		//this.container.style.transition	   = '0.4s cubic-bezier(0, 0.87, 0.01, 0.87)';
 
@@ -22,7 +23,9 @@ export default class down extends superViews{
 	initTree(){
 
 		this.jsTree = new jsTreeContainer(this.container,'ObjectTree','JsTreeObjects');
-		this.ServicesContainer.search.addTarget(this.jsTree.getSearchElements());
+		//this.ServicesContainer.search.addTarget(this.jsTree.getSearchElements());
+		SearchServices.addTarget(this.jsTree.getSearchElements());
+
        
 	}
 
