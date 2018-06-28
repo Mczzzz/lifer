@@ -1,5 +1,5 @@
 import superViews from "../../../../../../elements/common/super/views.js"
-import SearchServices from '../../../../../../../services/search.js';
+import { SearchServices } from '../../../../../../../services/search.js';
 
 export default class search extends superViews{
 
@@ -56,7 +56,8 @@ export default class search extends superViews{
 
 		res.element = this.input;
 
-		this.ServicesContainer.search.addInput(res);
+		console.log(SearchServices);
+		//this.ServicesContainer.search.addInput(res);
 
 	}
 

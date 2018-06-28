@@ -68,4 +68,5 @@ class search {
 
 }
 
-export default new search();
+const instance = new search();
+export { instance as SearchServices };
