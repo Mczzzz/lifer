@@ -1,5 +1,4 @@
-
-export default class search {
+class search {
 	
 
 	constructor(){
@@ -68,3 +67,5 @@ export default class search {
 
 
 }
+
+export default new search();

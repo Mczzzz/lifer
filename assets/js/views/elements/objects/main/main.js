@@ -27,10 +27,6 @@ export default class main extends superViews{
 	}
 
 
-
-
-
-
 	initListener(){
   
 	    this.container.addEventListener('callBack', (data) => this.callBack(data));
