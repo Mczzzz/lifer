@@ -1,3 +1,4 @@
+import List from './list/list.js';
 
 export default class manage {
 
@@ -27,9 +28,7 @@ export default class manage {
 
 	initContainer(){
 
-		this.Manager = document.createElement("div");
-		this.Manager.className = "MyManager";
-		this.parent.append(this.Manager);
+		this.List = new List(this.parent,"list",this.ServicesContainer);
 
 	}
 
