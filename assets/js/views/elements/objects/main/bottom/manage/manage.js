@@ -26,6 +26,12 @@ export default class manage extends superViews{
 
 	}
 
+
+	open(){
+		this.List.showList();
+	}
+
+
 /*	constructor(HTMLParent){
 
 	this.ParentContainer = $("."+HTMLParent);
