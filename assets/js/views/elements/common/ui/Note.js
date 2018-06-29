@@ -6,9 +6,8 @@ export default class Note extends superViews{
 	constructor(parent){
 
 
-
-
 		this.init();
+		
 	}
 
 
@@ -25,7 +24,9 @@ export default class Note extends superViews{
 
 	background(){
 
-
+		this.container.style.position = "absolute";
+		this.container.style.height = "100%";
+		this.container.style.width = "100%";
 
 
 	}
