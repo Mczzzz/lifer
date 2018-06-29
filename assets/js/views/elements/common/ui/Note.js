@@ -1,12 +1,34 @@
-export default class Note{
+import superViews from "../super/views.js"
+
+export default class Note extends superViews{
 	
 
-	constructor(){
-	
+	constructor(parent){
+
+
+
+
+		this.init();
+	}
+
+
+	init(){
+
+
+		this.background();
+
+
+
 	}
 
 
 
+	background(){
+
+
+
+
+	}
 
 
 }
