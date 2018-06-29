@@ -25,7 +25,7 @@ export default class list extends superViews{
 	initContainer(){
 
 		console.log("initContainer list");
-		this.container.height = "300px";
+		this.container.style.height = "300px";
 	}
 
 /*	constructor(HTMLParent){
