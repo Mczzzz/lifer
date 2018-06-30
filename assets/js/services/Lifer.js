@@ -18,7 +18,7 @@ class Brain {
 
 		let tutu = "yu";
 
-		let testeur = "yi/yu";
+		let testeur = "yi/yu/yaya/yiyi/coucou/kiki";
 
 		let arrayPath = testeur.split("/");
 
