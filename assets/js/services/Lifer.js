@@ -15,8 +15,28 @@ class Brain {
 		let witi = "yi";
 		 toto[witi] = {};
 		let tata = "ya";
-		let tutu = "yu";	
-		 toto[witi][tutu] = {};
+
+		let tutu = "yu";
+
+		let testeur = "yi/yu";
+
+		let arrayPath = testeur.split("/");
+
+		let FinalObject = toto;
+
+		for(let myPath of arrayPath ){
+
+			if(!(FinalObject[myPath] instanceof Object)){
+				FinalObject[myPath] = {};
+			}
+
+			FinalObject = FinalObject[myPath];
+
+		}
+
+
+	//	 toto["yi"]["yu"] = {};
+
 		console.log(toto);				
 
 	}
