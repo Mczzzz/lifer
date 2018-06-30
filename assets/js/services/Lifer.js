@@ -26,7 +26,7 @@ class Brain {
 	addMe(path,me){
 
 
-		this.dataCenter[me]={};
+		this.dataCenter[path][me]={};
 
 	}
 
