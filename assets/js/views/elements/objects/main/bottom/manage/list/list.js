@@ -33,6 +33,12 @@ export default class list extends superViews{
 		
 	}
 
+	showList(){
+
+		this.container.style.height = "0px";
+		
+	}
+
 /*	constructor(HTMLParent){
 
 	this.ParentContainer = $("."+HTMLParent);

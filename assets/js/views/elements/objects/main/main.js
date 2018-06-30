@@ -58,6 +58,7 @@ export default class main extends superViews{
 		//action on top
 		this.top.focusUp(data);
 		this.breadcrumb.hide();
+		this.bottom.hideManage();
 	}
 	
 

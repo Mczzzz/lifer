@@ -31,6 +31,10 @@ export default class manage extends superViews{
 		this.List.showList();
 	}
 
+	close(){
+
+		this.List.hideList();
+	}
 
 /*	constructor(HTMLParent){
 

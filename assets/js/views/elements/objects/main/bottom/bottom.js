@@ -28,5 +28,8 @@ export default class bottom extends superViews{
 		this.Manage.open();
 	}
 
+	hideManage(){
+		this.Manage.close();
+	}
 
 }
