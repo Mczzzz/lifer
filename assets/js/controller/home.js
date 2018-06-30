@@ -6,7 +6,7 @@ export default class Home {
 
 
 	constructor(parent){
-
+		Lifer.dumpMe();
 		Lifer.addMe(parent,'app');
 		Lifer.dumpMe();
 		
