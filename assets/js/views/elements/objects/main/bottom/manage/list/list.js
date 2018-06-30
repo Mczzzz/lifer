@@ -33,7 +33,7 @@ export default class list extends superViews{
 		
 	}
 
-	showList(){
+	hideList(){
 		console.log('in hide list');
 		this.container.style.height = "0px";
 		
