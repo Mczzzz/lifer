@@ -6,10 +6,10 @@ export default class Home {
 
 
 	constructor(parent){
-		Lifer.dumpMe();
-		Lifer.addMe(parent,'app');
-		Lifer.dumpMe();
 		
+		Lifer.addMe(parent,'home');
+		Lifer.dumpMe();
+
 		this.frame = new Frame();
 		this.frame.Home();
 	}
