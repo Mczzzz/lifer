@@ -11,7 +11,13 @@ class Brain {
 							data[containerId
 								 leafId]
 							tigger[]*/
-							
+		let toto = {};
+		let witi = yi;
+		 toto[witi] = {};
+		let tata = ya;
+		let tutu = yu	
+		 toto[tata][tutu] = {};
+		console.log(toto);				
 
 	}
 

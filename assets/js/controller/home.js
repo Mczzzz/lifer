@@ -5,12 +5,14 @@ import Frame from '../services/frame.js';
 export default class Home {
 
 
-	constructor(parent){
-		
-		Lifer.addMe(parent,'home');
+	constructor(path){
+
+		let Me = 'home';
+
+		Lifer.addMe(path,Me);
 		Lifer.dumpMe();
 
-		this.frame = new Frame();
+		this.frame = new Frame(path+"/"+Me);
 		this.frame.Home();
 	}
 

@@ -1,11 +1,14 @@
-//import i18n from 'i18next';
+import { Lifer } from '../services/Lifer.js';
 import Home from '../views/frames/home.js';
 import Objects from '../views/frames/objects.js';
 
 export default class Frame {
 
 
-	constructor(){
+	constructor(parent){
+
+		Lifer.addMe(parent,'frame');
+		Lifer.dumpMe();
 
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
 
