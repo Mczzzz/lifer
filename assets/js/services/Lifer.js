@@ -16,7 +16,7 @@ class Brain {
 		 toto[witi] = {};
 		let tata = "ya";
 		let tutu = "yu";	
-		 toto[tata][tutu] = {};
+		 toto[witi][tutu] = {};
 		console.log(toto);				
 
 	}
