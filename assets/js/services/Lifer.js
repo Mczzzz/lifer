@@ -25,8 +25,12 @@ class Brain {
 
 	addMe(path,me){
 
-
-		this.dataCenter[path][me]={};
+		if(path.length > 0){
+			this.dataCenter[path][me]={};
+		}else{
+			this.dataCenter[me]={};
+		}
+		
 
 	}
 
