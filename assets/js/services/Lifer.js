@@ -12,10 +12,10 @@ class Brain {
 								 leafId]
 							tigger[]*/
 		let toto = {};
-		let witi = yi;
+		let witi = "yi";
 		 toto[witi] = {};
-		let tata = ya;
-		let tutu = yu	
+		let tata = "ya";
+		let tutu = "yu";	
 		 toto[tata][tutu] = {};
 		console.log(toto);				
 
