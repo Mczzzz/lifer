@@ -48,6 +48,7 @@ export default class main extends superViews{
 
 		this.breadcrumb.loadData(data.breadcrumb, 'bcContainer');
 		this.breadcrumb.show();
+		this.bottom.openManage();
 
 	}
 

@@ -24,6 +24,9 @@ export default class bottom extends superViews{
 	}
 
 
+	openManage(){
+		this.Manage.open();
+	}
 
 
 }
