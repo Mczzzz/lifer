@@ -1,3 +1,4 @@
+import LoaderCollection from '../../../../../../../services/LoaderCollection.js';
 import superViews from "../../../../../../elements/common/super/views.js"
 
 export default class list extends superViews{
@@ -9,7 +10,7 @@ export default class list extends superViews{
 		super(parent,MyClass);
 		
 
-
+		this.collection = new LoaderCollection('ObjectInfosCollection');
 		this.init();
 
 	}
@@ -38,6 +39,46 @@ export default class list extends superViews{
 		this.container.style.height = "0px";
 		
 	}
+
+	getList(ojectId,leafId){
+
+		let ListInfos = this.collection.getList(this.objectId,this.leafId);
+		console.log(ListInfos);
+
+/*        $(".MyManager").empty();
+
+	    for (let k in ListInfos){
+	    	console.log('in for');
+	    	console.log(ListInfos[k]);
+	    	if(ListInfos[k].resources.type.name == "text"){
+	    		console.log('in text');
+
+
+		    	$(".MyManager").append(`
+		        <i class="material-icons" style="font-size:10px;margin-left:20px">`+ListInfos[k].resources.type.picto+`</i>
+		        <a href="`+ListInfos[k].resources.text+`" target="_blank" style="text-decoration:none;color:white">`+ListInfos[k].infos.name+`</a><br />
+		        `);
+
+	    	}else if(ListInfos[k].resources.type.name == "webLink"){
+
+			console.log('webLink');
+	    	$(".MyManager").append(`
+	        <i class="material-icons" style="font-size:10px;margin-left:20px">`+ListInfos[k].resources.type.picto+`</i>
+	        <a href="`+ListInfos[k].resources.text+`" target="_blank" style="text-decoration:none;color:white">`+ListInfos[k].infos.name+`</a><br />
+	        `);
+
+
+	    	}
+
+
+
+
+	    }*/
+
+
+
+	}
+
 
 /*	constructor(HTMLParent){
 

@@ -24,9 +24,9 @@ export default class bottom extends superViews{
 	}
 
 
-	openManage(){
+	openManage(ojectId,leafId){
 		console.log('openMange');
-		this.Manage.open();
+		this.Manage.open(ojectId,leafId);
 	}
 
 	hideManage(){

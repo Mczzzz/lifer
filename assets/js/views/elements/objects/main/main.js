@@ -45,10 +45,10 @@ export default class main extends superViews{
 	}
 
 	on_top_topDown_select_node(data){
-
+		console.log(data);
 		this.breadcrumb.loadData(data.breadcrumb, 'bcContainer');
 		this.breadcrumb.show();
-		this.bottom.openManage();
+		this.bottom.openManage(ojectId,leafId);
 
 	}
 
