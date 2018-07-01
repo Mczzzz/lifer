@@ -10,7 +10,7 @@ export default class list extends superViews{
 		super(parent,MyClass,path);
 		
 
-		this.collection = new LoaderCollection('ObjectInfosCollection');
+		this.collection = new LoaderCollection('ObjectInfos');
 		this.init();
 
 	}
