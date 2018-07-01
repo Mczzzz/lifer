@@ -82,7 +82,7 @@ addMe(path){
 		for(let myData of dataArray ){
 
 			console.log(Object.keys(myData));
-			dataRepresentation._data[Object.keys(myData)] = myData[Object.keys(myData)];
+			dataRepresentation._data[Object.keys(myData)[0]] = myData[Object.keys(myData)[0]];
 
 		}
 
