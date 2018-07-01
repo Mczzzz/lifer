@@ -82,12 +82,11 @@ addMe(path){
 		for(let myData of dataArray ){
 
 			console.log(Object.keys(myData));
-
-			//dataRepresentation._data[]
+			dataRepresentation._data[Object.keys(myData)] = myData[Object.keys(myData)];
 
 		}
 
-		
+		console.log(this.dataCenter);
 
 	}
 
