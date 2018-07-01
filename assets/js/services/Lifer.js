@@ -51,9 +51,6 @@ addMe(path){
 
 	addData(path,dataArray){
 
-		console.log('in addData');
-	    console.log(this.dataCenter);
-
 		if(path.length == 0) return false;
 
 		console.log('in addData after Path length');
@@ -67,8 +64,6 @@ addMe(path){
 			if(!(dataRepresentation[myPath] instanceof Object)){
 				console.log('aie '+myPath+' not exist');
 				return false;
-			}else{
-				console.log(myPath);
 			}
 
 			dataRepresentation = dataRepresentation[myPath];
