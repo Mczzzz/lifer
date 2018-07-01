@@ -6,9 +6,9 @@ import jsTreeContainer from '../../../../../elements/common/ui/jsTreeContainer.j
 export default class up extends superViews{
 	
 
-	constructor(parent, MyClass){
+	constructor(parent, MyClass,path){
 
-		super(parent, MyClass);
+		super(parent, MyClass,path);
 
 
 		this.container.style.background = "#e8eff7";

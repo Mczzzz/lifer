@@ -6,10 +6,10 @@ import jsTreeContainer from '../../../../../elements/common/ui/jsTreeContainer.j
 export default class down extends superViews{
 	
 
-	constructor(parent, MyClass){
+	constructor(parent, MyClass,path){
 
 	
-		super(parent, MyClass);
+		super(parent, MyClass,path);
 
 		this.container.style.background = "#a5dc86";
 		//this.container.style.transition	   = '0.4s cubic-bezier(0, 0.87, 0.01, 0.87)';
