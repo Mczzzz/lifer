@@ -77,10 +77,11 @@ addMe(path){
 
 
 		console.log(this.dataCenter);
+		console.log(dataArray);
 
 		for(let myData of dataArray ){
 
-			console.log(myData);
+			//dataRepresentation._data[]
 
 		}
 
