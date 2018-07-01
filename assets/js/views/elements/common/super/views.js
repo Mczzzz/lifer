@@ -10,7 +10,7 @@ export default class views {
 
 		this.MyClass = MyClass;
 
-		this.path = path+"/"+Me;
+		this.path = path+"/"+this.MyClass;
 
 		Lifer.addMe(this.path);
 
