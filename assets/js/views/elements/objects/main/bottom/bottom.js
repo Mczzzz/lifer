@@ -19,8 +19,8 @@ export default class bottom extends superViews{
 
 		//this.Manage = new Manage(this.container);
 
-		this.Tools  = new Tools(this.container,"tools");
-		this.Manage = new Manage(this.container,"manage");
+		this.Tools  = new Tools(this.container,"tools",this.path);
+		this.Manage = new Manage(this.container,"manage",this.path);
 	}
 
 

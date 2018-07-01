@@ -22,7 +22,7 @@ export default class manage extends superViews{
 
 	initContainer(){
 
-		this.List = new List(this.container,"list");
+		this.List = new List(this.container,"list",this.path);
 
 	}
 

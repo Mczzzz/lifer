@@ -17,7 +17,7 @@ export default class tools extends superViews{
 
 	init(){
 
-		this.search = new Search(this.container,"search");
+		this.search = new Search(this.container,"search",this.path);
 
 	}
 
