@@ -69,10 +69,6 @@ addMe(path){
 			}
 
 
-		}else{
-			
-			this.dataCenter[me]={};
-		
 		}
 
 
