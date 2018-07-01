@@ -15,9 +15,9 @@ export default class Objects extends layout{
     super(); 
 
     let Me = 'objects';
+    this.path = path+"/"+Me;
+    Lifer.addMe(this.path);
 
-    Lifer.addMe(path+"/"+Me);
-    Lifer.dumpMe();
 
     this.container = document.getElementsByClassName("container")[0];
     
@@ -40,20 +40,20 @@ export default class Objects extends layout{
 
   headerInit(){
 
-    this.Header = new Header(this.container,"header");
+    this.Header = new Header(this.container,"header",this.path);
     
   }
 
   mainInit(){
 
-    this.Main = new Main(this.container,"main");
+    this.Main = new Main(this.container,"main",this.path);
     
   }
 
 
   footerInit(){
 
-    this.Footer = new Footer(this.container,"footer");
+    this.Footer = new Footer(this.container,"footer",this.path);
     
   }
 

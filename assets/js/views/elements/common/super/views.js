@@ -1,12 +1,18 @@
+import { Lifer } from '../../services/Lifer.js';
+
 export default class views {
 	
 
-	constructor(parent, MyClass){
+	constructor(parent, MyClass,path){
 
 
 		this.parent = parent;
 
 		this.MyClass = MyClass;
+
+		this.path = path+"/"+Me;
+
+		Lifer.addMe(this.path);
 
 		this.superInit();
 
