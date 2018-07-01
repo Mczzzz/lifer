@@ -45,6 +45,8 @@ addMe(path){
 
 		}
 
+		this.dumpMe();
+
 
 	}
 
