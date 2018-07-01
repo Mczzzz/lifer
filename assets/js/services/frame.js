@@ -8,8 +8,9 @@ export default class Frame {
 	constructor(path){
 
 		let Me = 'frame';
+		this.path = path+"/"+Me;
 
-		Lifer.addMe(path+"/"+Me);
+		Lifer.addMe(this.path);
 		Lifer.dumpMe();
 
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
@@ -23,7 +24,7 @@ export default class Frame {
 
 		//this.active = "Home";
 		$('body').empty();
-		let home = new Home(path+"/"+Me);
+		let home = new Home(this.path);
 
 	}
 
@@ -33,7 +34,7 @@ export default class Frame {
 		//on vide le body
 		$('body').empty();
 		//on recharge le body
-		let objects = new Objects(path+"/"+Me);
+		let objects = new Objects(this.path);
 
 	}
 
