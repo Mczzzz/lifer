@@ -51,6 +51,8 @@ addMe(path){
 
 	addData(path,dataArray){
 
+		console.log('in addData');
+
 		if(path.length == 0) return false;
 
 		let arrayPath = path.split("/");
@@ -73,6 +75,8 @@ addMe(path){
 			dataRepresentation.datas = {};
 		}			
 
+
+		console.log(this.dataCenter);
 
 		for(let myData of dataArray ){
 
