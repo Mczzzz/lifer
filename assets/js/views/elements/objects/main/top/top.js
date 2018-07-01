@@ -27,7 +27,7 @@ export default class top extends superViews{
 
 	initUp(){
 
-		this.up = new Up(this.container,"topUp");
+		this.up = new Up(this.container,"topUp",this.path);
 		this.up.show();
 
 	}
@@ -35,7 +35,7 @@ export default class top extends superViews{
 
 	initDown(){
 
-		this.down = new Down(this.container,"topDown");
+		this.down = new Down(this.container,"topDown",this.path);
 
 	}
 
