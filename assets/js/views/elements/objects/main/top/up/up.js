@@ -78,7 +78,7 @@ export default class up extends superViews{
 
 			console.log(data);
 		//alimentation de Lifer
-		this.Lifer.addData("app/home/frame/home/objects",[{"ContainerId" : data}]);
+		Lifer.addData("app/home/frame/home/objects",[{"ContainerId" : data}]);
 		
 		data.element = this.MyClass;
 		let ev = new CustomEvent('callBack', {'detail' : data});

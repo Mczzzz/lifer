@@ -9,7 +9,7 @@ export default class Home {
 
 		let Me = 'home';
 
-		this.Lifer.addMe(path+"/"+Me);
+		Lifer.addMe(path+"/"+Me);
 
 		this.frame = new Frame(path+"/"+Me);
 		this.frame.Home();

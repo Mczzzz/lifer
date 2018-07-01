@@ -10,7 +10,7 @@ export default class Frame {
 		let Me = 'frame';
 		this.path = path+"/"+Me;
 
-		this.Lifer.addMe(this.path);
+		Lifer.addMe(this.path);
 
 
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
