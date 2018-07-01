@@ -5,9 +5,11 @@ import Objects from '../views/frames/objects.js';
 export default class Frame {
 
 
-	constructor(parent){
+	constructor(path){
 
-		Lifer.addMe(parent,'frame');
+		let Me = 'frame';
+
+		Lifer.addMe(path+"/"+Me);
 		Lifer.dumpMe();
 
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
@@ -21,7 +23,7 @@ export default class Frame {
 
 		//this.active = "Home";
 		$('body').empty();
-		let home = new Home();
+		let home = new Home(path+"/"+Me);
 
 	}
 
@@ -31,7 +33,7 @@ export default class Frame {
 		//on vide le body
 		$('body').empty();
 		//on recharge le body
-		let objects = new Objects();
+		let objects = new Objects(path+"/"+Me);
 
 	}
 
