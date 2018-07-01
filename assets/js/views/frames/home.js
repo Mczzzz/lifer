@@ -1,3 +1,4 @@
+import { Lifer } from '../../services/Lifer.js';
 import layout from '../layout/layout.js';
 
 import Header from '../elements/common/sections/header.js';
@@ -9,9 +10,13 @@ export default class Home extends layout{
 
 
 
-	constructor(){
+	constructor(path){
 
 		super();
+
+		let Me = 'home';
+
+		Lifer.addMe(path+"/"+Me);
 
 		this.bkgdHF = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
 		this.headerCustom();
