@@ -14,7 +14,7 @@ export default class Objects extends layout{
 
     super(); 
 
-    let Me = 'home';
+    let Me = 'objects';
 
     Lifer.addMe(path+"/"+Me);
     Lifer.dumpMe();
