@@ -71,8 +71,8 @@ addMe(path){
 		}
 
 
-		if(!(dataRepresentation.datas instanceof Object)){
-			dataRepresentation.datas = {};
+		if(!(dataRepresentation._datas instanceof Object)){
+			dataRepresentation._datas = {};
 		}			
 
 
