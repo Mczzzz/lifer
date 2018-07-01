@@ -1,3 +1,4 @@
+import { Lifer } from '../../services/Lifer.js';
 import layout from '../layout/layout.js';
 
 import Header from '../elements/objects/header/header.js';
