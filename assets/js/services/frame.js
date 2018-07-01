@@ -11,7 +11,7 @@ export default class Frame {
 		this.path = path+"/"+Me;
 
 		Lifer.addMe(this.path);
-		Lifer.dumpMe();
+
 
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
 

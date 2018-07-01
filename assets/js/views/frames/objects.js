@@ -17,7 +17,7 @@ export default class Objects extends layout{
     let Me = 'home';
 
     Lifer.addMe(path+"/"+Me);
-
+    Lifer.dumpMe();
 
     this.container = document.getElementsByClassName("container")[0];
     
