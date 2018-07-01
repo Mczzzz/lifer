@@ -9,10 +9,10 @@ export default class Home {
 
 		let Me = 'home';
 
-		Lifer.addMe(path,Me);
+		Lifer.addMe(path);
 		Lifer.dumpMe();
 
-		this.frame = new Frame(path+"/"+Me);
+		this.frame = new Frame(path+"/"+Me+"/guigui/er/fli");
 		this.frame.Home();
 	}
 
