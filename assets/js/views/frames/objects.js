@@ -16,7 +16,7 @@ export default class Objects extends layout{
 
     let Me = 'objects';
     this.path = path+"/"+Me;
-    Lifer.addMe(this.path);
+    this.Lifer.addMe(this.path);
 
 
     this.container = document.getElementsByClassName("container")[0];

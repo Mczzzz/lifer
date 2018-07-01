@@ -12,7 +12,7 @@ export default class views {
 
 		this.path = path+"/"+this.MyClass;
 
-		Lifer.addMe(this.path);
+		this.Lifer.addMe(this.path);
 
 		this.superInit();
 

@@ -45,17 +45,42 @@ addMe(path){
 
 		}
 
-		this.dumpMe();
-
 
 	}
 
 
-	addData(path,data){
+	addData(path,dataArray){
+
+		if(path.length == 0) return false;
+
+		let arrayPath = path.split("/");
+
+		let dataRepresentation = this.dataCenter;
 
 
+		for(let myPath of arrayPath ){
 
-		this.targets.push(elMethode);
+			if(!(dataRepresentation[myPath] instanceof Object)){
+				return false;
+			}
+
+			dataRepresentation = dataRepresentation[myPath];
+
+		}
+
+
+		if(!(dataRepresentation.datas instanceof Object)){
+			dataRepresentation.datas = {};
+		}			
+
+
+		for(let myData of dataArray ){
+
+			console.log(MyData);
+
+		}
+
+		
 
 	}
 
