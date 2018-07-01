@@ -51,6 +51,7 @@ addMe(path){
 
 	addData(path,dataArray){
 
+
 		if(path.length == 0) return false;
 
 		console.log('in addData after Path length');
@@ -72,19 +73,26 @@ addMe(path){
 
 
 		if(!(dataRepresentation._datas instanceof Object)){
+
 			dataRepresentation._datas = {};
+
 		}			
 
 
-		console.log(this.dataCenter);
-		console.log(dataArray);
-
 		for(let myData of dataArray ){
-			console.log(myData);
-			console.log(Object.keys(myData));
+
 			dataRepresentation._datas[Object.keys(myData)[0]] = myData[Object.keys(myData)[0]];
 
 		}
+
+
+		if((dataRepresentation._trigger instanceof Object)){
+
+//TODO : il faut controller s'il y a des objets a prevenirs
+
+
+		}	
+
 
 		console.log(this.dataCenter);
 
@@ -95,7 +103,6 @@ addMe(path){
 
 
 
-		this.targets.push(elMethode);
 
 	}
 
