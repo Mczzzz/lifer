@@ -52,7 +52,8 @@ addMe(path){
 	addData(path,dataArray){
 
 		console.log('in addData');
-
+	    console.log(this.dataCenter);
+	    
 		if(path.length == 0) return false;
 
 		console.log('in addData after Path length');
