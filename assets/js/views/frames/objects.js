@@ -8,10 +8,14 @@ import Footer from '../elements/objects/footer/footer.js';
 export default class Objects extends layout{
 
 
-	constructor(){
+	constructor(path){
 
 
     super(); 
+
+    let Me = 'home';
+
+    Lifer.addMe(path+"/"+Me);
 
 
     this.container = document.getElementsByClassName("container")[0];
