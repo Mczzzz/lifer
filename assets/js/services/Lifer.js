@@ -49,14 +49,32 @@ class Brain {
 	}
 
 
-	addMe(path,me){
+
+addMe(path){
 
 		if(path.length > 0){
-			this.dataCenter[path][me]={};
+
+			let arrayPath = path.split("/");
+
+			let dataRepresentation = this.dataCenter;
+
+			for(let myPath of arrayPath ){
+
+				if(!(dataRepresentation[myPath] instanceof Object)){
+					dataRepresentation[myPath] = {};
+				}
+
+				dataRepresentation = dataRepresentation[myPath];
+
+			}
+
+
 		}else{
+			
 			this.dataCenter[me]={};
-		}
 		
+		}
+
 
 	}
 
