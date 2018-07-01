@@ -19,9 +19,9 @@ export default class main extends superViews{
 
 		this.initListener();
 
-		this.breadcrumb = new Breadcrumb(this.container,"breadcrumb");
-		this.top = new Top(this.container,"top");
-		this.bottom = new Bottom(this.container,"bottom");
+		this.breadcrumb = new Breadcrumb(this.container,"breadcrumb",this.path);
+		this.top = new Top(this.container,"top",this.path);
+		this.bottom = new Bottom(this.container,"bottom",this.path);
 
 
 	}
