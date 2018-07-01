@@ -5,10 +5,10 @@ import Tools from './tools/tools.js';
 export default class bottom extends superViews{
 	
 
-	constructor(parent,MyClass){
+	constructor(parent,MyClass,path){
 
 
-		super(parent,MyClass);
+		super(parent,MyClass,path);
 
 		this.init();
 

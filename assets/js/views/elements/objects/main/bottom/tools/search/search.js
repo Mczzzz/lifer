@@ -4,9 +4,9 @@ import { SearchServices } from '../../../../../../../services/search.js';
 export default class search extends superViews{
 
 
-	constructor(parent,MyClass){
+	constructor(parent,MyClass,path){
 
-		super(parent,MyClass);
+		super(parent,MyClass,path);
 
 		this.init();
 

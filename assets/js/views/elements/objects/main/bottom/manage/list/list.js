@@ -4,10 +4,10 @@ import superViews from "../../../../../../elements/common/super/views.js"
 export default class list extends superViews{
 
 
-	constructor(parent,MyClass){
+	constructor(parent,MyClass,path){
 
 
-		super(parent,MyClass);
+		super(parent,MyClass,path);
 		
 
 		this.collection = new LoaderCollection('ObjectInfosCollection');

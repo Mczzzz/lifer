@@ -5,10 +5,10 @@ import Search from './search/search.js';
 export default class tools extends superViews{
 
 
-	constructor(parent, MyClass){
+	constructor(parent, MyClass,path){
 
 
-		super(parent,MyClass);
+		super(parent,MyClass,path);
 
 		this.init();
 

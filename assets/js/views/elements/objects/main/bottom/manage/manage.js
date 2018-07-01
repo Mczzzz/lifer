@@ -4,9 +4,9 @@ import List from './list/list.js';
 export default class manage extends superViews{
 
 
-	constructor(parent,MyClass){
+	constructor(parent,MyClass,path){
 
-		super(parent,MyClass);
+		super(parent,MyClass,path);
 
 		this.init();
 
