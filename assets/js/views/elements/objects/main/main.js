@@ -6,9 +6,9 @@ import Bottom from './bottom/bottom.js';
 export default class main extends superViews{
 	
 
-	constructor(parent, MyClass){
+	constructor(parent, MyClass, path){
 
-		super(parent, MyClass);
+		super(parent, MyClass, path);
 	
 		this.init();
 
@@ -54,7 +54,7 @@ export default class main extends superViews{
 
 	on_breadcrumb_select(data){
 
-
+		console.log(data)
 		//action on top
 		this.top.focusUp(data);
 		this.breadcrumb.hide();
