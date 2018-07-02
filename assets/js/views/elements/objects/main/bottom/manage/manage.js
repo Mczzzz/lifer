@@ -15,6 +15,7 @@ export default class manage extends superViews{
 
 	init(){
 
+		this.container.style.overflowY= "scroll";
 		this.initContainer();
 
 	}

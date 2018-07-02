@@ -31,7 +31,6 @@ export default class list extends superViews{
 	showList(){
 		console.log('in show list');
 		this.container.style.maxHeight = "300px";
-		this.container.overflowY = "scroll";
 		
 	}
 
