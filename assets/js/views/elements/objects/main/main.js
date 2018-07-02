@@ -48,11 +48,12 @@ export default class main extends superViews{
 		console.log(data);
 
 		let ContainerNode = this.Lifer.getData("app/home/frame/objects","ContainerNode");
+		let LeafNode = this.Lifer.getData("app/home/frame/objects","LeafNode");
 		console.log(ContainerNode);
 
 		this.breadcrumb.loadData(data.breadcrumb, 'bcContainer');
 		this.breadcrumb.show();
-		this.bottom.openManage(ojectId,leafId);
+		this.bottom.openManage(ContainerNode,LeafNode);
 
 	}
 
