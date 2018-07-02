@@ -47,28 +47,26 @@ export default class list extends superViews{
 		
 		let ListInfos = this.collection.getList(ContainerNode.id,LeafNode.id);
 
+
 	    for (let k in ListInfos){
 
 	    
-	    	if(ListInfos[k].resources.type.name == "text"){
+	    	let i = document.createElement("i");
+				i.className = "material-icons";
+				i.style.fontSize = "10px";
+				i.style.marginLeft = "20px";
 
-		    	this.container.append(`
-		        <i class="material-icons" style="font-size:10px;margin-left:20px">`+ListInfos[k].resources.type.picto+`</i>
-		        <a href="`+ListInfos[k].resources.text+`" target="_blank" style="text-decoration:none;color:white">`+ListInfos[k].infos.name+`</a><br />
-		        `);
+			i.append(ListInfos[k].resources.type.picto);
 
-	    	}else if(ListInfos[k].resources.type.name == "webLink"){
+			this.container.append(i);
 
-			console.log('webLink');
-	    	this.container.append(`
-	        <i class="material-icons" style="font-size:10px;margin-left:20px">`+ListInfos[k].resources.type.picto+`</i>
-	        <a href="`+ListInfos[k].resources.text+`" target="_blank" style="text-decoration:none;color:white">`+ListInfos[k].infos.name+`</a><br />
-	        `);
+			let a = document.createElement("a");
+				a.href = ListInfos[k].resources.text;
+				a.target = "_blank";
+				a.style.textDecoration = "none";
+				a.style.color = "white";
 
-
-	    	}
-
-
+			this.container.append(a);
 
 
 	    }
