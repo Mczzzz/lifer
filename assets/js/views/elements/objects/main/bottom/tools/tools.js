@@ -23,7 +23,7 @@ export default class tools extends superViews{
 
 	openNoteTools(){
 
-		this.note = new Note(this.container,"note",this.path);
+		this.note = new Note(this.container,"note",this.path, true);
 
 	}
 

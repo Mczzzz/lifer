@@ -3,7 +3,7 @@ import { Lifer } from '../../../../services/Lifer.js';
 export default class views {
 	
 
-	constructor(parent, MyClass,path){
+	constructor(parent, MyClass,path,prepend = false){
 
 
 		this.parent = parent;
@@ -14,13 +14,13 @@ export default class views {
 		this.Lifer = Lifer;
 		this.Lifer.addMe(this.path);
 
-		this.superInit();
+		this.superInit(prepend);
 
 	}
 
 
 
-	superInit(){
+	superInit(prepend){
 
 
 		if(document.getElementsByClassName(this.MyClass)[0] !== undefined){
@@ -32,7 +32,12 @@ export default class views {
 			this.container = document.createElement("div");
 			this.container.className = this.MyClass;
 
-			this.parent.append(this.container);
+			if(prepend){
+				this.parent.prepend(this.container);
+			}else{
+				this.parent.append(this.container);
+			}
+			
 
 		}
 
