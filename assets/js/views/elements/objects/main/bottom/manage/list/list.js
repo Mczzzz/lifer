@@ -43,7 +43,7 @@ export default class list extends superViews{
 	getList(objectId,leafId){
 		console.log(objectId);
 		console.log(leafId);
-		let ListInfos = this.collection.getList(this.objectId,this.leafId);
+		let ListInfos = this.collection.getList(objectId,leafId);
 		console.log(ListInfos);
 
 /*        $(".MyManager").empty();
