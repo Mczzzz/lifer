@@ -24,7 +24,7 @@ export default class Header {
 
 		console.log('in header');
 		console.log($('.header').height());
-		console.log(this.header.style.height);
+		console.log(this.header.height());
 
 		//calcul de la marge à applique en fontion du height
 		let margeSize = $('.header').height() - $('.header').height() * 0.9;
