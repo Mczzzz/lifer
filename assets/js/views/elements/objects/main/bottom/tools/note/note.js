@@ -43,7 +43,7 @@ export default class note extends superViews{
 		let i = document.createElement("i");
 			i.className = "material-icons";
 			i.style.fontSize = "25px";
-			i.style.color = "white";
+			i.style.color = "green";
 			i.style.marginRight = "15px";
 
 		i.append("note_add");
