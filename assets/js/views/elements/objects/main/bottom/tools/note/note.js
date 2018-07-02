@@ -26,6 +26,7 @@ export default class note extends superViews{
 		this.tb.style.height = "40px";
 		this.tb.style.background = "#e8eff7";
 		this.tb.style.display = "flex";
+		this.tb.style.justifyContent = "space-around";
 	    this.container.append(this.tb);
 
 	    this.addButton();
@@ -35,6 +36,8 @@ export default class note extends superViews{
 	addButton(){
 
 		let button = document.createElement("div");
+		button.style.display = "flex";
+		button.style.alignItems = "center";
 		this.tb.append(button);
 
 		let i = document.createElement("i");
