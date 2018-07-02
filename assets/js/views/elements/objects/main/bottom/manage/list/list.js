@@ -48,6 +48,7 @@ export default class list extends superViews{
 		let ListInfos = this.collection.getList(ContainerNode.id,LeafNode.id);
 
 		let ul = document.createElement("ul");
+		ul.style.listStyleType = "none";
 		this.container.append(ul);
 
 	    for (let k in ListInfos){
