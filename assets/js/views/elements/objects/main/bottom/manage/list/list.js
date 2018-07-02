@@ -43,7 +43,7 @@ export default class list extends superViews{
 	getList(){
 
 		this.container.innerHTML ="";
-		
+
 		let ContainerNode = this.Lifer.getData("app/home/frame/objects","ContainerNode");
 		let LeafNode = this.Lifer.getData("app/home/frame/objects","LeafNode");
 		
@@ -60,7 +60,7 @@ export default class list extends superViews{
 
 	    	let i = document.createElement("i");
 				i.className = "material-icons";
-				i.style.fontSize = "30px";
+				i.style.fontSize = "20px";
 				i.style.color = "white";
 				//i.style.marginLeft = "0px";
 				i.style.marginRight = "15px";
