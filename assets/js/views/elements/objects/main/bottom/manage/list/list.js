@@ -60,7 +60,7 @@ export default class list extends superViews{
 
 	    	let i = document.createElement("i");
 				i.className = "material-icons";
-				i.style.fontSize = "20px";
+				i.style.fontSize = "25px";
 				i.style.color = "white";
 				//i.style.marginLeft = "0px";
 				i.style.marginRight = "15px";
@@ -74,6 +74,7 @@ export default class list extends superViews{
 				a.target = "_blank";
 				a.style.textDecoration = "none";
 				a.style.color = "white";
+				a.style.verticalAlign =  "super";
 				a.style.fontSize = "20px";
 
 			a.append(ListInfos[k].infos.name);
