@@ -22,18 +22,14 @@ export default class Header {
 		this.headerContainer.style.display = "flex";
 		this.headerContainer.style.justifyContent = "space-between";
 
-		console.log('in header');
-		console.log($('.header').height());
-		console.log(this.header.offsetHeight);
-
 		//calcul de la marge à applique en fontion du height
-		let margeSize = $('.header').height() - $('.header').height() * 0.9;
+		let margeSize = this.header.offsetHeight - this.header.offsetHeight * 0.9;
 
-		$('.headerContainer').css( "width", $('.header').width() - margeSize * 2 );
-		$('.headerContainer').css( "height", $('.header').height() - margeSize * 2 );
+/*		$('.headerContainer').css( "width", $('.header').width() - margeSize * 2 );
+		$('.headerContainer').css( "height", $('.header').height() - margeSize * 2 );*/
 
-		this.headerContainer.style.width = "";
-		this.headerContainer.style.height = "";
+		this.headerContainer.style.width = (this.header.offsetWidth - margeSize * 2 ) +"px";
+		this.headerContainer.style.height = (this.header.offsetHeight - margeSize * 2 ) +"px";
 
 		this.headerContainer.style.margin = margeSize+"px";
 		
