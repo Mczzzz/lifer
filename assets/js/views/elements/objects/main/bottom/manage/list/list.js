@@ -66,6 +66,8 @@ export default class list extends superViews{
 				a.style.textDecoration = "none";
 				a.style.color = "white";
 
+			a.append(ListInfos[k].infos.name);
+
 			this.container.append(a);
 
 
