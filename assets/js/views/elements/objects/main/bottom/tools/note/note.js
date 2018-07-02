@@ -26,7 +26,7 @@ export default class note extends superViews{
 		this.tb.style.height = "40px";
 		this.tb.style.background = "#e8eff7";
 		this.tb.style.display = "flex";
-	    this.container.append(div);
+	    this.container.append(this.tb);
 
 	    this.addButton();
 	}
