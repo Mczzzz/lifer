@@ -27,9 +27,12 @@ export default class manage extends superViews{
 	}
 
 
-	open(ojbectId,leafId){
+	open(objectId,leafId){
+		console.log(objectId);
+		console.log(leafId);
 		this.List.showList();
-		this.List.getList(ojbectId,leafId);
+
+		this.List.getList(objectId,leafId);
 	}
 
 	close(){
