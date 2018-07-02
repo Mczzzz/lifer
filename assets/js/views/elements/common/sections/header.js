@@ -50,28 +50,43 @@ export default class Header {
 		headerBackHome.className = "headerBackHome";
 		this.headerContainer.append(headerBackHome);
 
-		/*$('.headerBackHome').css( "background", "blue" );*/
+		let i = document.createElement("i");
+		i.id = "BackToHome";
+		i.className = "material-icons";
+		i.style.fontSize = "40px";
+		i.style.color = "white";
+		i.append('keyboard_backspace');
 
-		$('.headerBackHome').append('<i id="BackToHome" class="material-icons" style="font-size:40px;color:white">keyboard_backspace</i>');
+		headerBackHome.append(i);
 	
-		 $('#BackToHome').on('click', function() {
 
-	       let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Home'}});
-	       window.dispatchEvent(LinkEvent);
-	    });
+		i.addEventListener("click", (e)=>this.linkBackToHome(e));
 
 	}
+
+	linkBackToHome(e){
+
+       let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Home'}});
+       window.dispatchEvent(LinkEvent);
+
+	}
+
 
 
 	setIconPage(){
 
 		let headerWidgets = document.createElement("div");
 		headerWidgets.className = "headerWidgets";
+
 		this.headerContainer.append(headerWidgets);
 
-		/*$('.headerBackHome').css( "background", "blue" );*/
+		let i = document.createElement("i");
+		i.className = "material-icons";
+		i.style.fontSize = "40px";
+		i.style.color = "white";
+		i.append('widgets');
 
-		$('.headerWidgets').append('<i id="BackToHome" class="material-icons" style="font-size:40px;color:white">widgets</i>');
+		headerWidgets.append(i);
 
 	}
 
