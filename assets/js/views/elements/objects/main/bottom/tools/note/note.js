@@ -3,10 +3,10 @@ import superViews from "../../../../../../elements/common/super/views.js"
 export default class note extends superViews{
 
 
-	constructor(parent, MyClass,path){
+	constructor(parent, MyClass,path,prepend){
 
 
-		super(parent,MyClass,path);
+		super(parent,MyClass,path,prepend);
 
 		this.init();
 
