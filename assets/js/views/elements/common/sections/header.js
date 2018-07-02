@@ -6,18 +6,24 @@ export default class Header {
 		this.backGroundColor =  '';
 		this.initContainer();
 
+		this.header = document.getElementsByClassName('header');
+
 	}
 
 	initContainer(){
 
-		let headerContainer = document.createElement("div");
-		headerContainer.className = "headerContainer";
-		$('.header').append(headerContainer);
+		this.headerContainer = document.createElement("div");
+		this.headerContainer.className = "headerContainer";
 
-		$('.headerContainer').css( "display", "flex" );
-		$('.headerContainer').css( "justify-content", "space-between" );
 
-		/*$('.headerContainer').css( "background", "grey" );*/
+		this.header.append(this.headerContainer);
+
+		this.headerContainer.style.display = "flex";
+		this.headerContainer.style.justifyContent = "space-between";
+
+		console.log('in header');
+		console.log($('.header').height());
+		console.log(this.header.style.height);
 
 		//calcul de la marge à applique en fontion du height
 		let margeSize = $('.header').height() - $('.header').height() * 0.9;
@@ -25,14 +31,18 @@ export default class Header {
 		$('.headerContainer').css( "width", $('.header').width() - margeSize * 2 );
 		$('.headerContainer').css( "height", $('.header').height() - margeSize * 2 );
 
-		$('.headerContainer').css( "margin", margeSize );
+		this.headerContainer.style.width = "";
+		this.headerContainer.style.height = "";
+
+		this.headerContainer.style.margin = margeSize+"px";
+		
 
 	}
 
 
 	setBkgdColor(color){
 
-		$('.header').css( "background", color );
+		this.header.style.background = color;
 
 	}
 
@@ -41,7 +51,7 @@ export default class Header {
 
 		let headerBackHome = document.createElement("div");
 		headerBackHome.className = "headerBackHome";
-		$('.headerContainer').append(headerBackHome);
+		this.headerContainer.append(headerBackHome);
 
 		/*$('.headerBackHome').css( "background", "blue" );*/
 
@@ -60,7 +70,7 @@ export default class Header {
 
 		let headerWidgets = document.createElement("div");
 		headerWidgets.className = "headerWidgets";
-		$('.headerContainer').append(headerWidgets);
+		this.headerContainer.append(headerWidgets);
 
 		/*$('.headerBackHome').css( "background", "blue" );*/
 
