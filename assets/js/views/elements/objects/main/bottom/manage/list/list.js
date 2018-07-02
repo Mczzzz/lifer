@@ -40,11 +40,13 @@ export default class list extends superViews{
 		
 	}
 
-	getList(objectId,leafId){
-		console.log(objectId);
-		console.log(leafId);
-		let ListInfos = this.collection.getList(objectId,leafId);
-		console.log(ListInfos);
+	getList(){
+
+		let ContainerNode = this.Lifer.getData("app/home/frame/objects","ContainerNode");
+		let LeafNode = this.Lifer.getData("app/home/frame/objects","LeafNode");
+		
+		let ListInfos = this.collection.getList(ContainerNode.id,LeafNode.id);
+
 
 /*        $(".MyManager").empty();
 
