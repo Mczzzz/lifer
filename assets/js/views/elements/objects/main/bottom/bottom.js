@@ -38,4 +38,7 @@ export default class bottom extends superViews{
 		this.Tools.openNoteTools();
 	}
 
+	hideNodeTools(){
+		this.Tools.hideNoteTools();
+	}
 }

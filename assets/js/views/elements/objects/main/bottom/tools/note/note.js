@@ -53,4 +53,17 @@ export default class note extends superViews{
 	}
 
 
+	hide(){
+
+		this.container.style.display = "none";
+
+	}
+
+
+	show(){
+
+		this.container.style.display = "";
+		
+	}
+
 }

@@ -18,12 +18,21 @@ export default class tools extends superViews{
 	init(){
 
 		this.search = new Search(this.container,"search",this.path);
+		this.note = new Note(this.container,"note",this.path, true);
+		this.note.hide();
 
 	}
 
 	openNoteTools(){
 
-		this.note = new Note(this.container,"note",this.path, true);
+		this.note.show();
+
+	}
+
+
+	hideNoteTools(){
+
+		this.note.hide();
 
 	}
 
