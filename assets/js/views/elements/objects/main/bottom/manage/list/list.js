@@ -47,10 +47,14 @@ export default class list extends superViews{
 		
 		let ListInfos = this.collection.getList(ContainerNode.id,LeafNode.id);
 
+		let ul = document.createElement("ul");
+		this.container.append(ul);
 
 	    for (let k in ListInfos){
 
-	    
+	    let li = document.createElement("li");
+	    ul.append(li);
+
 	    	let i = document.createElement("i");
 				i.className = "material-icons";
 				i.style.fontSize = "10px";
@@ -58,7 +62,7 @@ export default class list extends superViews{
 
 			i.append(ListInfos[k].resources.type.picto);
 
-			this.container.append(i);
+			li.append(i);
 
 			let a = document.createElement("a");
 				a.href = ListInfos[k].resources.text;
@@ -68,7 +72,7 @@ export default class list extends superViews{
 
 			a.append(ListInfos[k].infos.name);
 
-			this.container.append(a);
+			li.append(a);
 
 
 	    }
