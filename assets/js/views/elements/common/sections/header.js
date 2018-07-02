@@ -3,7 +3,7 @@ export default class Header {
 
 	constructor(){
 
-		this.header = document.getElementsByClassName('header');
+		this.header = document.getElementsByClassName('header')[0];
 		console.log(this.header);
 		this.backGroundColor =  '';
 		this.initContainer();
