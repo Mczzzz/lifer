@@ -1,3 +1,4 @@
+import Header from '../sections/header.js';
 import superViews from "../super/views.js"
 
 export default class Note extends superViews{
@@ -32,9 +33,17 @@ export default class Note extends superViews{
 		this.container.style.height = "97%";
 		this.container.style.width = "97%";
 		this.container.style.display = "flex";
-		this.container.style.background = "blue";
+		this.container.style.background = "white";
 
 
+	}
+
+
+	addHeader(){
+
+		let Note = new Header();
+		Note.setBkgdColor("linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(216, 216, 216) 100%)");
+		
 	}
 
 
