@@ -1,0 +1,48 @@
+[1mdiff --git a/assets/js/services/search.js b/assets/js/services/search.js[m
+[1mindex 0ab0d95..b49c816 100644[m
+[1m--- a/assets/js/services/search.js[m
+[1m+++ b/assets/js/services/search.js[m
+[36m@@ -27,8 +27,7 @@[m [mclass search {[m
+ [m
+ 		let it = 0;[m
+ 		for(let target of this.targets){[m
+[31m-			console.log(it);[m
+[31m-			console.log(el);[m
+[32m+[m
+ 			if(target.me == el){[m
+ [m
+ 				this.targets.splice(it,1);[m
+[36m@@ -40,8 +39,7 @@[m [mclass search {[m
+ 			[m
+ 		}[m
+ [m
+[31m-		console.log(it);[m
+[31m-		console.log(this.targets);[m
+[32m+[m
+ [m
+ 	}[m
+ [m
+[36m@@ -57,7 +55,7 @@[m [mclass search {[m
+ [m
+ 		for(let target of this.targets){[m
+ [m
+[31m-			console.log(target);[m
+[32m+[m
+ 			target.element[target.methode](el.value);[m
+ [m
+ 		}[m
+[1mdiff --git a/assets/js/views/elements/_old/jsTreeContainer.js b/assets/js/views/elements/_old/jsTreeContainer.js[m
+[1mindex 08256a7..350b932 100644[m
+[1m--- a/assets/js/views/elements/_old/jsTreeContainer.js[m
+[1m+++ b/assets/js/views/elements/_old/jsTreeContainer.js[m
+[36m@@ -68,9 +68,7 @@[m [mexport default class jsTreeContainer {[m
+ [m
+ 			    "items": function($node) {[m
+ [m
+[31m-			      //  var tree = this.JsTreeContainer.jstree(true);[m
+[31m-			      	console.log('jstree context menu before return');[m
+[31m-			      	console.log($node);[m
+[32m+[m
+ [m
+ 			      	let create = {[m
+ 					                "separator_before": false,[m
