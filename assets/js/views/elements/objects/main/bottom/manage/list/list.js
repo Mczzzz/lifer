@@ -51,6 +51,8 @@ export default class list extends superViews{
 
 		let ul = document.createElement("ul");
 		ul.style.listStyleType = "none";
+		ul.style.margin = "0px";
+		ul.style.padding = "15px";
 		this.container.append(ul);
 
 	    for (let k in ListInfos){
