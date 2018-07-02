@@ -68,9 +68,7 @@ export default class jsTreeContainer {
 
 			    "items": function($node) {
 
-			      //  var tree = this.JsTreeContainer.jstree(true);
-			      	console.log('jstree context menu before return');
-			      	console.log($node);
+
 
 			      	let create = {
 					                "separator_before": false,

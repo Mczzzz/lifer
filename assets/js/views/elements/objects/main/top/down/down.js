@@ -76,6 +76,11 @@ export default class down extends superViews{
 
 	on_select_node(data){
 
+		console.log('on select leaf');
+		console.log(data);
+
+		this.Lifer.addData("app/home/frame/objects",[{"LeafNode" : data.data.node}]);
+
 		data.element = this.MyClass;
 		let ev = new CustomEvent('callBack', {'detail' : data});
         this.parent.dispatchEvent(ev);

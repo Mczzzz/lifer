@@ -27,8 +27,7 @@ class search {
 
 		let it = 0;
 		for(let target of this.targets){
-			console.log(it);
-			console.log(el);
+
 			if(target.me == el){
 
 				this.targets.splice(it,1);
@@ -40,8 +39,7 @@ class search {
 			
 		}
 
-		console.log(it);
-		console.log(this.targets);
+
 
 	}
 
@@ -57,7 +55,7 @@ class search {
 
 		for(let target of this.targets){
 
-			console.log(target);
+
 			target.element[target.methode](el.value);
 
 		}

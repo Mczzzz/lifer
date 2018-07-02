@@ -76,9 +76,7 @@ export default class up extends superViews{
 
 	on_select_node(data){
 
-			console.log(data);
-		//alimentation de Lifer
-		this.Lifer.addData("app/home/frame/objects",[{"ContainerId" : data.data.node}]);
+		this.Lifer.addData("app/home/frame/objects",[{"ContainerNode" : data.data.node}]);
 		
 		data.element = this.MyClass;
 		let ev = new CustomEvent('callBack', {'detail' : data});
