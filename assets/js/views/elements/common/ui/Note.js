@@ -3,10 +3,12 @@ import superViews from "../super/views.js"
 export default class Note extends superViews{
 	
 
-	constructor(parent){
+	constructor(parent,MyClass,path){
 
+		super(parent, MyClass , path);
 
 		this.init();
+
 		
 	}
 
@@ -27,6 +29,8 @@ export default class Note extends superViews{
 		this.container.style.position = "absolute";
 		this.container.style.height = "100%";
 		this.container.style.width = "100%";
+		this.container.style.display = "flex";
+		this.container.style.background = "blue";
 
 
 	}

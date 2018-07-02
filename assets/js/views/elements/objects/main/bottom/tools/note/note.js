@@ -1,4 +1,5 @@
 import superViews from "../../../../../../elements/common/super/views.js"
+import popNote from "../../../../../../elements/common/ui/Note.js"
 
 export default class note extends superViews{
 
@@ -50,6 +51,9 @@ export default class note extends superViews{
 
 		button.append(i);
 
+
+		button.addEventListener("click", (e)=>this.openPopNote(e));
+
 	}
 
 
@@ -65,5 +69,13 @@ export default class note extends superViews{
 		this.container.style.display = "";
 		
 	}
+
+
+	openPopNote(e){
+
+		let ThePopNote = new popNote(this.container,"popNote",this.path);
+
+	}
+
 
 }
