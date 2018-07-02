@@ -54,7 +54,6 @@ addMe(path){
 
 		if(path.length == 0) return false;
 
-		console.log('in addData after Path length');
 		let arrayPath = path.split("/");
 
 		let dataRepresentation = this.dataCenter;
@@ -94,9 +93,53 @@ addMe(path){
 		}	
 
 
-		console.log(this.dataCenter);
 
 	}
+
+
+
+	getData(path,Key){
+
+
+		if(path.length == 0) return false;
+
+		let arrayPath = path.split("/");
+
+		let dataRepresentation = this.dataCenter;
+
+
+		for(let myPath of arrayPath ){
+
+			if(!(dataRepresentation[myPath] instanceof Object)){
+				console.log('aie '+myPath+' not exist');
+				return false;
+			}
+
+			dataRepresentation = dataRepresentation[myPath];
+
+		}
+
+
+		if(!(dataRepresentation._datas instanceof Object)){
+
+			console.log('Pas de datas setter')
+			return false;
+
+		}			
+
+		if(!(dataRepresentation._datas[Key] instanceof Object)){
+
+			console.log("Cette clef de data n'existe pas");
+			return false;
+
+		}	
+
+
+		return dataRepresentation._datas[Key];
+
+
+	}
+
 
 
 	addTrigger(path,data,callBack){

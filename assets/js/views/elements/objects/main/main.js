@@ -46,6 +46,10 @@ export default class main extends superViews{
 
 	on_top_topDown_select_node(data){
 		console.log(data);
+
+		let ContainerNode = this.Lifer.addData("app/home/frame/objects","ContainerNode");
+		console.log(ContainerNode);
+		
 		this.breadcrumb.loadData(data.breadcrumb, 'bcContainer');
 		this.breadcrumb.show();
 		this.bottom.openManage(ojectId,leafId);
