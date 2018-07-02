@@ -30,7 +30,7 @@ export default class Home extends layout{
 
 	headerCustom(){
 
-		let HomeHeader = new Header();
+		let HomeHeader = new Header('header');
 		
 		HomeHeader.setBkgdColor(this.bkgdHF);
 

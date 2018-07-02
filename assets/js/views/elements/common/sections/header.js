@@ -1,9 +1,9 @@
 export default class Header {
 	
 
-	constructor(){
+	constructor(parent){
 
-		this.header = document.getElementsByClassName('header')[0];
+		this.header = document.getElementsByClassName(parent)[0];
 		console.log(this.header);
 		this.backGroundColor =  '';
 		this.initContainer();

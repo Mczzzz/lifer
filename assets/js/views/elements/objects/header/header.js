@@ -10,7 +10,7 @@ export default class Header extends superViews{
 	
 		this.bkgdHF = 'linear-gradient(45deg, #43A047 0%, #1de9b6 100%)';
 
-		this.HeaderObject = new HeaderCommon();
+		this.HeaderObject = new HeaderCommon('header');
 
 
 
