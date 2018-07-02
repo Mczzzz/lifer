@@ -27,8 +27,10 @@ export default class Note extends superViews{
 	background(){
 
 		this.container.style.position = "absolute";
-		this.container.style.height = "100%";
-		this.container.style.width = "100%";
+		this.container.style.top = "2.5%";
+		this.container.style.left = "2.5%";
+		this.container.style.height = "95%";
+		this.container.style.width = "95%";
 		this.container.style.display = "flex";
 		this.container.style.background = "blue";
 
