@@ -7,7 +7,7 @@ export default class Header {
 		this.initContainer();
 
 		this.header = document.getElementsByClassName('header');
-
+		console.log(this.header);
 	}
 
 	initContainer(){
