@@ -1,6 +1,6 @@
 import superViews from "../../../../../elements/common/super/views.js"
 import Search from './search/search.js';
-
+import Note from './note/note.js';
 
 export default class tools extends superViews{
 
@@ -21,6 +21,10 @@ export default class tools extends superViews{
 
 	}
 
+	openNoteTools(){
 
+		this.note = new Note(this.container,"note",this.path);
+
+	}
 
 }

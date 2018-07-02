@@ -34,4 +34,8 @@ export default class bottom extends superViews{
 		this.Manage.close();
 	}
 
+	openNoteTools(){
+		this.Tools.openNoteTools();
+	}
+
 }
