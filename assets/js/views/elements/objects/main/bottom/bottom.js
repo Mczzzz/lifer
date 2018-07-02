@@ -30,7 +30,7 @@ export default class bottom extends superViews{
 	}
 
 	hideManage(){
-		console.log('hideMange');
+
 		this.Manage.close();
 	}
 
