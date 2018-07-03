@@ -53,13 +53,23 @@ export default class Note extends superViews{
 
 	addMain(){
 
+		this.Main = document.createElement("div");
+		this.Main.className = "mainNote";
+		this.container.append(this.Main);
+
+		this.Main.style.background = "blue";
+		this.Main.style.flex = 1;
 	}
 
 
 	addFooter(){
 
+		this.Footer = document.createElement("div");
+		this.Footer.className = "footerNote";
+		this.container.append(this.Footer);
 
-
+		this.Footer.style.background = "red";
+		this.Footer.style.height = "40px";
 	}
 
 }
