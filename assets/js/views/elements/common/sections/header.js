@@ -43,6 +43,12 @@ export default class Header {
 
 	}
 
+	setHeight(height){
+
+		this.header.style.height = height+"px";
+
+	}
+
 
 	setBackToHome(){
 
