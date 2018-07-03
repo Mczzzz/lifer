@@ -1,8 +1,9 @@
 export default class Footer{
 	
 
-	constructor(){
-	
+	constructor(parent){
+		
+		this.footer = document.getElementsByClassName(parent)[0];
 		this.backGroundColor =  '';
 
 	}
@@ -11,7 +12,7 @@ export default class Footer{
 
 	setBkgdColor(color){
 
-		$('.footer').css( "background", color );
+		this.footer.style.background = color;
 
 	}
 

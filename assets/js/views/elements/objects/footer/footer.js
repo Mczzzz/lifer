@@ -10,7 +10,7 @@ export default class Footer extends superViews{
 	
 		this.bkgdHF = 'linear-gradient(45deg, #43A047 0%, #1de9b6 100%)';
 
-		this.FooterObject = new FooterCommon();
+		this.FooterObject = new FooterCommon('footer');
 
 
 		this.skin();

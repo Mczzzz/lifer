@@ -1,3 +1,4 @@
+import Footer from '../sections/footer.js';
 import Header from '../sections/header.js';
 import superViews from "../super/views.js"
 
@@ -19,7 +20,7 @@ export default class Note extends superViews{
 
 		this.background();
 		this.addHeader();
-
+		this.addMain();
 
 	}
 
@@ -49,5 +50,16 @@ export default class Note extends superViews{
 		
 	}
 
+
+	addMain(){
+
+	}
+
+
+	addFooter(){
+
+
+
+	}
 
 }
