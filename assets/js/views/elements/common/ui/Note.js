@@ -54,6 +54,17 @@ export default class Note extends superViews{
 
 	addMain(){
 
+		//add css for placeholder div
+		let css = document.createElement("style");
+			css.type = "text/css";
+			css.id = "divContentEditable_css_style";
+			css.innerHTML = `[contenteditable=true]:empty::before {
+			  					content: attr(placeholder);
+								}
+							`;
+			document.body.appendChild(css);
+		
+
 		this.Main = document.createElement("div");
 		this.Main.className = "mainNote";
 		this.container.append(this.Main);
