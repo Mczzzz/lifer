@@ -18,7 +18,7 @@ export default class Note extends superViews{
 
 
 		this.background();
-		this.addHeader();
+		//this.addHeader();
 
 
 	}

@@ -56,7 +56,6 @@ export default class Header {
 		this.headerContainer.append(headerBack);
 
 		let i = document.createElement("i");
-		i.id = "BackToHome";
 		i.className = "material-icons";
 		i.style.fontSize = "40px";
 		i.style.color = "white";
