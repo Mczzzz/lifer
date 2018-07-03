@@ -80,7 +80,7 @@ export default class Note extends superViews{
 
 		this.Texte = document.createElement("textarea");
 		this.Texte.placeholder="Texte...";
-		this.Texte.style.fontSize = "25px";
+		this.Texte.style.fontSize = "15px";
 		this.Texte.style.margin = "5px";
 		this.Texte.style.flex = "1";
 		this.Texte.style.border = "none";
