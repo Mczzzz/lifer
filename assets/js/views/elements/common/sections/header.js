@@ -53,6 +53,7 @@ export default class Header {
 	setHeight(height){
 
 		this.headerGlobal.style.height = height+"px";
+		this.margeSize = this.headerGlobal.offsetHeight - this.headerGlobal.offsetHeight * 0.9;
 		console.log(this.headerGlobal.offsetHeight);
 		console.log(this.margeSize);
 		this.headerContainer.style.height = (this.headerGlobal.offsetHeight - this.margeSize * 2 ) +"px";
