@@ -33,10 +33,10 @@ export default class Header {
 		this.headerContainer.style.alignItems = "center";
 
 		//calcul de la marge à applique en fontion du height
-		let margeSize = this.headerGlobal.offsetHeight - this.headerGlobal.offsetHeight * 0.9;
+		this.margeSize = this.headerGlobal.offsetHeight - this.headerGlobal.offsetHeight * 0.9;
 
-		this.headerContainer.style.width = (this.header.offsetWidth - margeSize * 2 ) +"px";
-		this.headerContainer.style.height = (this.header.offsetHeight - margeSize * 2 ) +"px";
+		this.headerContainer.style.width = (this.header.offsetWidth - this.margeSize * 2 ) +"px";
+		this.headerContainer.style.height = (this.header.offsetHeight - this.margeSize * 2 ) +"px";
 
 		this.headerContainer.style.margin = margeSize+"px";
 		
@@ -53,7 +53,7 @@ export default class Header {
 	setHeight(height){
 
 		this.headerGlobal.style.height = height+"px";
-		this.headerContainer.style.height = (this.headerGlobal.offsetHeight - margeSize * 2 ) +"px";
+		this.headerContainer.style.height = (this.headerGlobal.offsetHeight - this.margeSize * 2 ) +"px";
 
 	}
 
