@@ -28,6 +28,7 @@ export default class Header {
 
 		this.headerContainer.style.display = "flex";
 		this.headerContainer.style.justifyContent = "space-between";
+		this.headerContainer.style.alignItems = "center";
 
 		//calcul de la marge à applique en fontion du height
 		let margeSize = this.headerGlobal.offsetHeight - this.headerGlobal.offsetHeight * 0.9;
