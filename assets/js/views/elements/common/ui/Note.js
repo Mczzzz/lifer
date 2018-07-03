@@ -112,7 +112,7 @@ export default class Note extends superViews{
 
 	changeTextColor(e,name){
 
-	console.log(this[name].length);
+	console.log(this[name].innerHTML === "");
 
 	}
 
