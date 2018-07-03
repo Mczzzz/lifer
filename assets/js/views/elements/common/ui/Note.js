@@ -67,6 +67,11 @@ export default class Note extends superViews{
 		this.Title.style.boxSizing = "border-box";
 		this.Title.style.width = "100%";
 		this.Title.style.margin = "5px";
+		this.Title.style.margin = "5px";
+		this.Title.style.border = "none";
+		this.Title.style.background = "transparent";
+		this.Title.style.color = "white";
+		this.Title.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
 		this.Main.append(this.Title);
 
 
