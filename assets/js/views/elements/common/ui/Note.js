@@ -60,6 +60,12 @@ export default class Note extends superViews{
 
 		this.Main.style.background = "blue";
 		this.Main.style.flex = 1;
+
+
+		this.Title = document.createElement("textarea");
+		this.Main.append(this.Title);
+
+
 	}
 
 
