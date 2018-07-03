@@ -65,10 +65,9 @@ export default class Note extends superViews{
 
 
 		this.Title = document.createElement("textarea");
-		this.Title.style.boxSizing = "border-box";
-		this.Title.style.width = "100%";
 		this.Title.style.margin = "5px";
 		this.Title.style.border = "none";
+		this.Title.style.outline = "none";
 		this.Title.style.background = "transparent";
 		this.Title.style.color = "white";
 		this.Title.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
@@ -77,11 +76,10 @@ export default class Note extends superViews{
 
 
 		this.Texte = document.createElement("textarea");
-		this.Texte.style.boxSizing = "border-box";
-		this.Texte.style.width = "100%";
 		this.Texte.style.margin = "5px";
 		this.Texte.style.flex = "1";
 		this.Texte.style.border = "none";
+		this.Texte.style.outline = "none";
 		this.Texte.style.background = "transparent";
 		this.Texte.style.color = "white";
 		this.Texte.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
