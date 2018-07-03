@@ -78,7 +78,7 @@ export default class Note extends superViews{
 
 		this.Title = document.createElement("div");
 		this.Title.contentEditable  = "true";
-		this.Title.setAttribute("placehoder", "Titre...");
+		this.Title.setAttribute("placeholder", "Titre...");
 		this.Title.style.fontSize   = "20px";
 		this.Title.style.fontWeight = "bold";
 		this.Title.style.margin     = "5px";
@@ -93,7 +93,7 @@ export default class Note extends superViews{
 
 		this.Texte = document.createElement("div");
 		this.Texte.contentEditable  = "true";
-		this.Texte.setAttribute("placehoder", "Texte...");
+		this.Texte.setAttribute("placeholder", "Texte...");
 		this.Texte.style.fontSize = "15px";
 		this.Texte.style.margin = "5px";
 		this.Texte.style.flex = "1";
