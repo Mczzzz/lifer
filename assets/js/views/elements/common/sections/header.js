@@ -49,6 +49,33 @@ export default class Header {
 
 	}
 
+	setBack(){
+
+		let headerBack = document.createElement("div");
+		headerBack.className = "headerBack";
+		this.headerContainer.append(headerBack);
+
+		let i = document.createElement("i");
+		i.id = "BackToHome";
+		i.className = "material-icons";
+		i.style.fontSize = "40px";
+		i.style.color = "white";
+		i.append('keyboard_backspace');
+
+		headerBack.append(i);
+
+		i.addEventListener("click", (e)=>this.linkBack(e));
+
+	}
+
+	linkBack(e){
+/*
+       let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Home'}});
+       window.dispatchEvent(LinkEvent);
+*/
+	}
+
+
 
 	setBackToHome(){
 
