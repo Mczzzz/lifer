@@ -45,7 +45,7 @@ export default class Note extends superViews{
 		let Note = new Header(this.MyClass);
 		Note.setBkgdColor("linear-gradient(45deg, rgb(255, 255, 255) 0%, rgb(216, 216, 216) 100%)");
 		Note.setHeight(40);
-/*		Note.setBack();*/
+		Note.setBack();
 		
 	}
 
