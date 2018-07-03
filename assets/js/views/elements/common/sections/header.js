@@ -18,17 +18,19 @@ export default class Header {
 
 		this.header.append(this.headerGlobal);
 
+
 		this.headerContainer = document.createElement("div");
 		this.headerContainer.className = "headerContainer";
 
 
 		this.headerGlobal.append(this.headerContainer);
 
+
 		this.headerContainer.style.display = "flex";
 		this.headerContainer.style.justifyContent = "space-between";
 
 		//calcul de la marge à applique en fontion du height
-		let margeSize = this.header.offsetHeight - this.header.offsetHeight * 0.9;
+		let margeSize = this.headerGlobal.offsetHeight - this.headerGlobal.offsetHeight * 0.9;
 
 /*		$('.headerContainer').css( "width", $('.header').width() - margeSize * 2 );
 		$('.headerContainer').css( "height", $('.header').height() - margeSize * 2 );*/
