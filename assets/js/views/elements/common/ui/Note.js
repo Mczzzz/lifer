@@ -65,6 +65,7 @@ export default class Note extends superViews{
 
 
 		this.Title = document.createElement("textarea");
+		this.Title.placeholder="Titre...";
 		this.Title.style.margin = "5px";
 		this.Title.style.border = "none";
 		this.Title.style.outline = "none";
@@ -76,6 +77,7 @@ export default class Note extends superViews{
 
 
 		this.Texte = document.createElement("textarea");
+		this.Title.placeholder="Texte...";
 		this.Texte.style.margin = "5px";
 		this.Texte.style.flex = "1";
 		this.Texte.style.border = "none";
