@@ -75,6 +75,21 @@ export default class Note extends superViews{
 		this.Main.append(this.Title);
 
 
+
+		this.Texte = document.createElement("textarea");
+		this.Texte.style.boxSizing = "border-box";
+		this.Texte.style.width = "100%";
+		this.Texte.style.margin = "5px";
+		this.Texte.style.margin = "5px";
+		this.Texte.style.border = "none";
+		this.Texte.style.background = "transparent";
+		this.Texte.style.color = "white";
+		this.Texte.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
+		this.Main.append(this.Texte);
+
+
+
+
 	}
 
 
