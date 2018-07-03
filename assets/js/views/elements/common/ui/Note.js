@@ -119,6 +119,7 @@ export default class Note extends superViews{
 	}
 	
 	if(name == 'Title' && e.key == "Enter"){
+		console.log(his.Title.innerHTML);
 		this.Title.innerHTML = this.Title.innerHTML.slice(0,-1);
 		this.Texte.focus();
 
