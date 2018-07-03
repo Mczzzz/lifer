@@ -65,19 +65,22 @@ export default class Note extends superViews{
 
 
 		this.Title = document.createElement("textarea");
-		this.Title.placeholder="Titre...";
-		this.Title.style.margin = "5px";
-		this.Title.style.border = "none";
-		this.Title.style.outline = "none";
+		this.Title.placeholder      = "Titre...";
+		this.Title.style.fontSize   = "25px";
+		this.Title.style.fontWeight = "bold";
+		this.Title.style.margin     = "5px";
+		this.Title.style.border     = "none";
+		this.Title.style.outline    = "none";
 		this.Title.style.background = "transparent";
-		this.Title.style.color = "white";
-		this.Title.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
+		this.Title.style.color      = "white";
+		this.Title.style.fontFamily = "'Titillium Web',sans-serif,Arial,sans-serif";
 		this.Main.append(this.Title);
 
 
 
 		this.Texte = document.createElement("textarea");
 		this.Texte.placeholder="Texte...";
+		this.Texte.style.fontSize = "20px";
 		this.Texte.style.margin = "5px";
 		this.Texte.style.flex = "1";
 		this.Texte.style.border = "none";
