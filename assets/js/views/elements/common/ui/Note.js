@@ -81,7 +81,7 @@ export default class Note extends superViews{
 		this.Title.setAttribute("placeholder", "Titre...");
 		this.Title.style.fontSize   = "20px";
 		this.Title.style.fontWeight = "bold";
-		this.Title.style.margin     = "5px";
+		this.Title.style.margin     = "10px";
 		this.Title.style.border     = "none";
 		this.Title.style.outline    = "none";
 		this.Title.style.background = "transparent";
@@ -96,7 +96,7 @@ export default class Note extends superViews{
 		this.Texte.contentEditable  = "true";
 		this.Texte.setAttribute("placeholder", "Texte...");
 		this.Texte.style.fontSize = "15px";
-		this.Texte.style.margin = "5px";
+		this.Texte.style.margin = "10px";
 		this.Texte.style.flex = "1";
 		this.Texte.style.border = "none";
 		this.Texte.style.outline = "none";
@@ -111,7 +111,7 @@ export default class Note extends superViews{
 	}
 
 	changeTextColor(e,name){
-
+		console.log(e);
 	if(this[name].innerHTML === ""){
 		this[name].style.color = "grey";
 	}else{
