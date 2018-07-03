@@ -64,7 +64,9 @@ export default class Note extends superViews{
 
 
 		this.Title = document.createElement("textarea");
-		this.Title.style.boxSizing = 'border-box';
+		this.Title.style.boxSizing = "border-box";
+		this.Title.style.width = "100%";
+		this.Title.style.margin = "5px";
 		this.Main.append(this.Title);
 
 
