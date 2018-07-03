@@ -129,7 +129,7 @@ export default class Note extends superViews{
 		this.Footer.className = "footerNote";
 		this.container.append(this.Footer);
 
-		this.Footer.style.background = "red";
+		this.Footer.style.background = "grey";
 		this.Footer.style.height = "40px";
 	}
 
