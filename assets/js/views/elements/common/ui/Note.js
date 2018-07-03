@@ -111,13 +111,19 @@ export default class Note extends superViews{
 	}
 
 	changeTextColor(e,name){
-		console.log(e);
+
 	if(this[name].innerHTML === ""){
 		this[name].style.color = "grey";
 	}else{
 		this[name].style.color = "black";
 	}
 	
+	if(name == 'Title' && e.key == "Enter"){
+
+		this.Texte.focus();
+		this.Texte.select();
+
+	}
 
 	}
 
