@@ -68,7 +68,6 @@ export default class Note extends superViews{
 		this.Title.style.boxSizing = "border-box";
 		this.Title.style.width = "100%";
 		this.Title.style.margin = "5px";
-		this.Title.style.margin = "5px";
 		this.Title.style.border = "none";
 		this.Title.style.background = "transparent";
 		this.Title.style.color = "white";
@@ -81,7 +80,7 @@ export default class Note extends superViews{
 		this.Texte.style.boxSizing = "border-box";
 		this.Texte.style.width = "100%";
 		this.Texte.style.margin = "5px";
-		this.Texte.style.margin = "5px";
+		this.Texte.style.flex = "1";
 		this.Texte.style.border = "none";
 		this.Texte.style.background = "transparent";
 		this.Texte.style.color = "white";
