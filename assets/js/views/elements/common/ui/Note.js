@@ -60,6 +60,7 @@ export default class Note extends superViews{
 
 		this.Main.style.background = "white";
 		this.Main.style.display = "flex";
+		this.Main.style.overflowY = "scroll";
 		this.Main.style.flexDirection = "column";
 		this.Main.style.flex = 1;
 
