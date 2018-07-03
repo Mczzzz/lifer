@@ -120,7 +120,7 @@ export default class Note extends superViews{
 	
 	if(name == 'Title' && e.key == "Enter"){
 		console.log(this.Title.innerHTML);
-		this.Title.innerHTML = this.Title.innerHTML.slice(0,-1);
+		this.Title.innerHTML = this.Title.innerHTML.replace(/<div><br><\/div>/i, '');
 		this.Texte.focus();
 
 	}
