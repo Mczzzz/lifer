@@ -15,6 +15,8 @@ export default class Header {
 
 		this.headerGlobal = document.createElement("div");
 		this.headerGlobal.className = "headerGlobal";
+		this.headerGlobal.style.width = "100%";
+		this.headerGlobal.draggable = true;
 
 		this.header.append(this.headerGlobal);
 
@@ -32,9 +34,6 @@ export default class Header {
 
 		//calcul de la marge à applique en fontion du height
 		let margeSize = this.headerGlobal.offsetHeight - this.headerGlobal.offsetHeight * 0.9;
-
-/*		$('.headerContainer').css( "width", $('.header').width() - margeSize * 2 );
-		$('.headerContainer').css( "height", $('.header').height() - margeSize * 2 );*/
 
 		this.headerContainer.style.width = (this.header.offsetWidth - margeSize * 2 ) +"px";
 		this.headerContainer.style.height = (this.header.offsetHeight - margeSize * 2 ) +"px";
@@ -74,6 +73,7 @@ export default class Header {
 		i.addEventListener("click", (e)=>this.linkBack(e));
 
 	}
+
 
 	linkBack(e){
 /*
