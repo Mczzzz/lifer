@@ -85,7 +85,7 @@ export default class Note extends superViews{
 		this.Title.style.border     = "none";
 		this.Title.style.outline    = "none";
 		this.Title.style.background = "transparent";
-		this.Title.style.color      = "black";
+		this.Title.style.color      = "grey";
 		this.Title.style.fontFamily = "'Titillium Web',sans-serif,Arial,sans-serif";
 		this.Main.append(this.Title);
 
@@ -100,7 +100,7 @@ export default class Note extends superViews{
 		this.Texte.style.border = "none";
 		this.Texte.style.outline = "none";
 		this.Texte.style.background = "transparent";
-		this.Texte.style.color = "black";
+		this.Texte.style.color = "grey";
 		this.Texte.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
 		this.Main.append(this.Texte);
 
