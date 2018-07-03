@@ -13,11 +13,16 @@ export default class Header {
 
 	initContainer(){
 
+		this.headerGlobal = document.createElement("div");
+		this.headerGlobal.className = "headerGlobal";
+
+		this.header.append(this.headerGlobal);
+
 		this.headerContainer = document.createElement("div");
 		this.headerContainer.className = "headerContainer";
 
 
-		this.header.append(this.headerContainer);
+		this.headerGlobal.append(this.headerContainer);
 
 		this.headerContainer.style.display = "flex";
 		this.headerContainer.style.justifyContent = "space-between";
@@ -39,13 +44,13 @@ export default class Header {
 
 	setBkgdColor(color){
 
-		this.headerContainer.style.background = color;
+		this.headerGlobal.style.background = color;
 
 	}
 
 	setHeight(height){
 
-		this.headerContainer.style.height = height+"px";
+		this.headerGlobal.style.height = height+"px";
 
 	}
 
