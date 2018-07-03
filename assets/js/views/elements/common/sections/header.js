@@ -39,13 +39,13 @@ export default class Header {
 
 	setBkgdColor(color){
 
-		this.header.style.background = color;
+		this.headerContainer.style.background = color;
 
 	}
 
 	setHeight(height){
 
-		this.header.style.height = height+"px";
+		this.headerContainer.style.height = height+"px";
 
 	}
 
