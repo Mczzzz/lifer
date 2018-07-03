@@ -38,7 +38,7 @@ export default class Header {
 		this.headerContainer.style.width = (this.header.offsetWidth - this.margeSize * 2 ) +"px";
 		this.headerContainer.style.height = (this.header.offsetHeight - this.margeSize * 2 ) +"px";
 
-		this.headerContainer.style.margin = margeSize+"px";
+		this.headerContainer.style.margin = this.margeSize+"px";
 		
 
 	}
