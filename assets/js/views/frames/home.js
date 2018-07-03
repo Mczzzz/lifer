@@ -56,7 +56,7 @@ export default class Home extends layout{
 
 	footerCustom(){
 
-		let HomeFooter = new Footer();
+		let HomeFooter = new Footer('footer');
 		
 		HomeFooter.setBkgdColor(this.bkgdHF);
 
