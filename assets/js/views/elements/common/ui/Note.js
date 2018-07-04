@@ -178,17 +178,17 @@ export default class Note extends superViews{
 		img.classList.add("obj");
 			
 
-			this.Main.prepend(img); 
+		this.Main.prepend(img); 
 
 
 		let reader = new FileReader();
 		reader.readAsDataURL(this.camLauncher.files[0]);
 
-		reader.onloadend = (e)=> this.insertPict(reader.result);
+		reader.onloadend = ()=> this.insertPict(reader.result);
 		//reader.onloadend => this.insertPict(reader.result);
 
 
-		console.log(reader.result);
+		//console.log(reader.result);
 		
 
 
@@ -199,7 +199,7 @@ export default class Note extends superViews{
 	insertPict(pict){
 
 //on transforme en image
-
+	console.log(pict);
 
 	let imgObj = new Image();
 
