@@ -173,25 +173,44 @@ export default class Note extends superViews{
 
 	addPict(e){
 
+
+		let img = document.createElement("img");
+		img.classList.add("obj");
+			
+
+			this.Main.prepend(img); 
+
+
 		let reader = new FileReader();
 
-		reader.onloadend = function(){
+
+
+		reader.onloadend = function(img){
 
              this.dataURL = reader.result;
 
              console.log('pict selectionned');
+ 			 
+ 			 img.file = this.dataURL;
+/* 			 let event = new CustomEvent('changeFrame', {'detail' : {'data' : this.dataURL}});
+                window.dispatchEvent(event);*/
 
-			this.img = document.createElement("img");
-			this.img.classList.add("obj");
-			this.img.file = this.dataURL;
-			
-
- 
             };
             console.log(this.camLauncher.files[0]);
 			reader.readAsDataURL(this.camLauncher.files[0]);
 
-			this.Main.prepend(this.img); 
+		
 		
 	}
+
+
+	insertPict(pict){
+
+			this.img = document.createElement("img");
+			this.img.classList.add("obj");
+			this.img.file = pict;
+
+			this.Main.prepend(this.img); 
+	}
+
 }
