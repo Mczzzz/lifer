@@ -186,6 +186,7 @@ export default class Note extends superViews{
 
 		while (reader.readyState < 2) {
 		  console.log(reader.readyState);
+		  console.log(reader.result);
 		}
 		console.log('after while');
 		console.log(reader.readyState);
