@@ -137,17 +137,17 @@ export default class Note extends superViews{
 		this.Footer.className = "footerNote";
 		this.container.append(this.Footer);
 
-		this.Footer.style.background = "grey";
+		this.Footer.style.background = "linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)";
 		this.Footer.style.height = "40px";
 		this.Footer.style.display = "flex";
-		this.Footer.style.color = "linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)";
+		this.Footer.style.color = "";
 
 		this.Photo = document.createElement("div");
 		this.Footer.append(this.Photo);
 
 		this.PhotoPicto = document.createElement("i");
 		this.PhotoPicto.className = "material-icons";
-		this.PhotoPicto.style.fontSize = "20px";
+		this.PhotoPicto.style.fontSize = "40px";
 		this.PhotoPicto.style.color = "grey";
 		this.PhotoPicto.append('camera_alt');
 		this.Photo.append(this.PhotoPicto);
