@@ -80,7 +80,7 @@ export default class toolBarObjects  extends toolBar {
 
 
 	startText(){
-		console.log('instartText');
+
 
 		var div = document.createElement("div");
 		div.className = 'col s9';

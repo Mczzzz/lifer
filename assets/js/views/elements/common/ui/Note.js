@@ -89,7 +89,7 @@ export default class Note extends superViews{
 		this.Title.style.fontFamily = "'Titillium Web',sans-serif,Arial,sans-serif";
 		this.Main.append(this.Title);
 		this.Title.focus();
-		
+
 		this.Title.addEventListener("keyup", (e)=>this.changeTextColor(e,"Title"));
 
 
@@ -121,7 +121,7 @@ export default class Note extends superViews{
 	}
 	
 	if(name == 'Title' && e.key == "Enter"){
-		console.log(this.Title.innerHTML);
+
 		this.Title.innerHTML = this.Title.innerHTML.replace(/<div><br><\/div>/i, '');
 		this.Texte.focus();
 
@@ -139,6 +139,18 @@ export default class Note extends superViews{
 
 		this.Footer.style.background = "grey";
 		this.Footer.style.height = "40px";
+		this.Footer.style.display = "flex";
+		this.Footer.style.color = "linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)";
+
+		this.Photo = document.createElement("div");
+		this.Footer.append(this.Photo);
+
+		this.PhotoPicto = document.createElement("i");
+		this.PhotoPicto.className = "material-icons";
+		this.PhotoPicto.style.fontSize = "20px";
+		this.PhotoPicto.style.color = "grey";
+		this.PhotoPicto.append('camera_alt');
+		this.Photo.append(this.PhotoPicto);
 	}
 
 }
