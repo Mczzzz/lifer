@@ -208,7 +208,6 @@ export default class Note extends superViews{
 
 		//on transforme en image
 
-		EXIF.read('my.jpg').then(console.log).catch(console.error);
 
 		this.imgObj = new Image();
 
