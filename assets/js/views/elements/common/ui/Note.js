@@ -184,14 +184,14 @@ export default class Note extends superViews{
 			this.img = document.createElement("img");
 			this.img.classList.add("obj");
 			this.img.file = this.dataURL;
-			this.Main.prepend(this.img); 
+			
 
  
             };
 
 			reader.readAsDataURL(this.camLauncher.files[0]);
 
-		
+			this.Main.prepend(this.img); 
 		
 	}
 }
