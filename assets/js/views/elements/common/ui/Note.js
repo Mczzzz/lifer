@@ -168,10 +168,10 @@ export default class Note extends superViews{
 		this.Footer.append(this.camLauncher);
 		this.camLauncher.click();
 
-		this.camLauncher.addEventListener("change", (e)=>this.addPict(e));
+		this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
 	}	
 
-	addPict(e){
+	importPict(e){
 
 
 		let img = document.createElement("img");
@@ -184,7 +184,7 @@ export default class Note extends superViews{
 		let reader = new FileReader();
 		reader.readAsDataURL(this.camLauncher.files[0]);
 
-		reader.onloadend = ()=> this.insertPict(reader.result);
+		reader.onloadend = ()=> this.loadPict(reader.result);
 		//reader.onloadend => this.insertPict(reader.result);
 
 
@@ -195,27 +195,35 @@ export default class Note extends superViews{
 		
 	}
 
+	loadPict(pict){
+
+	this.imgObj = new Image();
+
+	this.imgObj.src = pict;
+
+	this.imgObj.addEventListener('load',()=>this.insertPict(pict));
+
+
+	}
+
+
 
 	insertPict(pict){
 
 //on transforme en image
-	console.log(pict);
 
-	let imgObj = new Image();
+	console.log(this.imgObj.naturalWidth);
+	console.log(this.imgObj.naturalHeight);
 
-	imgObj.src = pict;
-
-	console.log(imgObj.naturalWidth);
-	console.log(imgObj.naturalHeight);
 	let ratio = 1;
 
-	if(imgObj.naturalWidth >= imgObj.naturalHeight){
+	if(this.imgObj.naturalWidth >= this.imgObj.naturalHeight){
 
-		ratio = imgObj.naturalHeight / imgObj.naturalWidth;
+		ratio = this.imgObj.naturalHeight / this.imgObj.naturalWidth;
 
 	}else{
 
-		ratio = imgObj.naturalWidth / imgObj.naturalHeight;
+		ratio = this.imgObj.naturalWidth / this.imgObj.naturalHeight;
 
 	}
 	
