@@ -182,10 +182,17 @@ export default class Note extends superViews{
 
 
 		let reader = new FileReader();
+		reader.readAsDataURL(this.camLauncher.files[0]);
 
+		while (reader.readyState < 2) {
+		  
+		}
 
+		this.insertPict(reader.result);
 
-		reader.onloadend = function(){
+		
+
+		/*reader.onloadend = function(){
 
              this.dataURL = reader.result;
 
@@ -194,10 +201,10 @@ export default class Note extends superViews{
  			 img.file = this.dataURL;
 /* 			 let event = new CustomEvent('changeFrame', {'detail' : {'data' : this.dataURL}});
                 window.dispatchEvent(event);*/
-
-            };
+/*
+            };*/
             console.log(this.camLauncher.files[0]);
-			reader.readAsDataURL(this.camLauncher.files[0]);
+			
 
 		
 		
