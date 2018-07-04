@@ -197,6 +197,9 @@ export default class Note extends superViews{
 
 	loadPict(pict){
 
+		let exif = EXIF.readFromBinaryFile(new BinaryFile(pict));
+		console.log('exif');
+		console.log(exif.Orientation);
 		//on transforme en image
 
 		this.imgObj = new Image();
@@ -207,10 +210,8 @@ export default class Note extends superViews{
 
 
 		//on va lire l'exif pour connaitre l'orientation
-		let exif = EXIF.readFromBinaryFile(new BinaryFile(pict));
 
-		console.log(exif.Orientation);
-		
+
 /*	    switch(exif.Orientation){
 
 	       case 8:
