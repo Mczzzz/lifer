@@ -160,6 +160,11 @@ export default class Note extends superViews{
 
 	launchCam(){
 
+		this.camLauncher = document.createElement("input");
+		this.camLauncher.type = "file";
+		this.camLauncher.accept = "image/*";
+		this.camLauncher.capture = "camera";
+		this.Footer.append(this.camLauncher);
 
 	}	
 }
