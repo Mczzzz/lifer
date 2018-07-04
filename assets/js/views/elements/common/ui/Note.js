@@ -197,12 +197,33 @@ export default class Note extends superViews{
 
 	loadPict(pict){
 
-	this.imgObj = new Image();
+		//on transforme en image
 
-	this.imgObj.src = pict;
+		this.imgObj = new Image();
 
-	this.imgObj.addEventListener('load',()=>this.insertPict(pict));
+		this.imgObj.src = pict;
 
+		this.imgObj.addEventListener('load',()=>this.insertPict(pict));
+
+
+		//on va lire l'exif pour connaitre l'orientation
+		let exif = EXIF.readFromBinaryFile(new BinaryFile(pict));
+
+		console.log(exif.Orientation);
+		
+/*	    switch(exif.Orientation){
+
+	       case 8:
+	           ctx.rotate(90*Math.PI/180);
+	           break;
+	       case 3:
+	           ctx.rotate(180*Math.PI/180);
+	           break;
+	       case 6:
+	           ctx.rotate(-90*Math.PI/180);
+	           break;
+
+	    }*/
 
 	}
 
@@ -211,24 +232,6 @@ export default class Note extends superViews{
 	insertPict(pict){
 
 //on transforme en image
-
-	console.log(this.imgObj.naturalWidth);
-	console.log(this.imgObj.naturalHeight);
-
-	let ratio = 1;
-
-	if(this.imgObj.naturalWidth >= this.imgObj.naturalHeight){
-
-		ratio = this.imgObj.naturalHeight / this.imgObj.naturalWidth;
-
-	}else{
-
-		ratio = this.imgObj.naturalWidth / this.imgObj.naturalHeight;
-
-	}
-	
-	console.log(ratio);
-//on la tourne si besoin
 
 
 //on insere en mode homotetique
