@@ -208,21 +208,29 @@ export default class Note extends superViews{
 	console.log(imgObj.naturalWidth);
 	console.log(imgObj.naturalHeight);
 
+	if(imgObj.naturalWidth >= imgObj.naturalHeight){
 
+		let ratio = imgObj.naturalHeight / imgObj.naturalWidth;
+
+	}else{
+
+		let ratio = imgObj.naturalWidth / imgObj.naturalHeight;
+
+	}
+	
 
 //on la tourne si besoin
 
 
 //on insere en mode homotetique
 
-
-console.log(pict);
 		console.log('in insert pict');
 
 			this.img = document.createElement("img");
 			this.img.classList.add("obj");
 			this.img.src = pict;
-
+			console.log(this.img.clientWidth);
+			console.log(this.img.clientHeight);
 			this.Main.prepend(this.img); 
 	}
 
