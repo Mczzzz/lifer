@@ -181,13 +181,6 @@ export default class Note extends superViews{
 
 		this.Main.prepend(img); 
 
-		  EXIF(this.camLauncher.files[0],function(err,orientation) {
-	    if (!err) {
-	    	console.log('EXIF-orientation');
-	      console.log(orientation); // displays {scale: {x: 1, y: 1}, rotation: 90}
-	    }
-	  });
-
 
 		let reader = new FileReader();
 		reader.readAsDataURL(this.camLauncher.files[0]);
@@ -257,6 +250,17 @@ export default class Note extends superViews{
 			this.img.height = this.img.offsetHeight  * ratioWidth;
 			console.log(this.img.offsetWidth);
 			console.log(this.img.offsetHeight);
+
+			EXIF(this.camLauncher.files[0],(err,orientation) => this.rotateImg(err,orientation));
+
+
+
+	}
+
+	rotateImg(err,orientation){
+
+		console.log('in rotate Image');
+		console.log(orientation);
 
 	}
 
