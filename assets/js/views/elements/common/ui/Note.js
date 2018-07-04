@@ -221,7 +221,7 @@ console.log(pict);
 
 			this.img = document.createElement("img");
 			this.img.classList.add("obj");
-			this.img.file = pict;
+			this.img.src = pict;
 
 			this.Main.prepend(this.img); 
 	}
