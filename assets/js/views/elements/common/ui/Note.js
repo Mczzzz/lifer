@@ -216,6 +216,7 @@ export default class Note extends superViews{
 
 	insertPict(pict){
 
+console.log(pict);
 		console.log('in insert pict');
 
 			this.img = document.createElement("img");
