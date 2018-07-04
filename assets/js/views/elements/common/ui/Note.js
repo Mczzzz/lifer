@@ -188,7 +188,7 @@ export default class Note extends superViews{
 
  
             };
-
+            console.log(this.camLauncher.files[0]);
 			reader.readAsDataURL(this.camLauncher.files[0]);
 
 			this.Main.prepend(this.img); 
