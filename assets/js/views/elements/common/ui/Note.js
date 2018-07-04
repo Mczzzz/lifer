@@ -229,8 +229,8 @@ export default class Note extends superViews{
 			this.img = document.createElement("img");
 			this.img.classList.add("obj");
 			this.img.src = pict;
-			console.log(this.img.clientWidth);
-			console.log(this.img.clientHeight);
+			console.log(this.img.offsetWidth);
+			console.log(this.img.offsetHeight);
 			this.Main.prepend(this.img); 
 	}
 
