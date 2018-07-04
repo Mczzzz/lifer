@@ -164,6 +164,7 @@ export default class Note extends superViews{
 		this.camLauncher.type = "file";
 		this.camLauncher.accept = "image/*";
 		this.camLauncher.capture = "camera";
+		this.camLauncher.style.display = "none";
 		this.Footer.append(this.camLauncher);
 		this.camLauncher.click();
 
