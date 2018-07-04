@@ -185,9 +185,11 @@ export default class Note extends superViews{
 		reader.readAsDataURL(this.camLauncher.files[0]);
 
 		while (reader.readyState < 2) {
-		  
+		  console.log(reader.readyState);
 		}
-
+		console.log('after while');
+		console.log(reader.readyState);
+		console.log(reader.result);
 		this.insertPict(reader.result);
 
 		
