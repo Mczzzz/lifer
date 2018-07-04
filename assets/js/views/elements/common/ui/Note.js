@@ -1,4 +1,4 @@
-import EXIF from "exif-js";
+import EXIF from "exif-js2";
 import Footer from '../sections/footer.js';
 import Header from '../sections/header.js';
 import superViews from "../super/views.js"
