@@ -1,4 +1,4 @@
-import EXIF from "exif-js2";
+//import EXIF from "jpeg-exif";
 import Footer from '../sections/footer.js';
 import Header from '../sections/header.js';
 import superViews from "../super/views.js"
@@ -198,9 +198,22 @@ export default class Note extends superViews{
 
 	loadPict(pict){
 
-		let exif = EXIF.readFromBinaryFile(new BinaryFile(pict));
+		/*let exif = new EXIF({image: new BinaryFile(pict)},function (error, exifData){
+
+	 		if (error){
+	            console.log('Error: '+error.message);
+	 		}
+	        else{
+	            console.log(exifData); // Do something with your data!
+	        }
+	 
+
+		});*/
+
+/*		let data=exif.parseSync(new BinaryFile(pict));
+			console.log(data);
 		console.log('exif');
-		console.log(exif.Orientation);
+		console.log(exif.Orientation);*/
 		//on transforme en image
 
 		this.imgObj = new Image();
