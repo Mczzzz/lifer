@@ -261,6 +261,7 @@ export default class Note extends superViews{
 
 		console.log('in rotate Image');
 		console.log(orientation);
+		this.img.style.transform = 'rotate(' + orientation.rotate + 'deg)';
 
 	}
 
