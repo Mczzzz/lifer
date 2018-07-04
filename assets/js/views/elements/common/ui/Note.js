@@ -88,7 +88,8 @@ export default class Note extends superViews{
 		this.Title.style.color      = "grey";
 		this.Title.style.fontFamily = "'Titillium Web',sans-serif,Arial,sans-serif";
 		this.Main.append(this.Title);
-
+		this.Title.focus();
+		
 		this.Title.addEventListener("keyup", (e)=>this.changeTextColor(e,"Title"));
 
 
@@ -104,6 +105,7 @@ export default class Note extends superViews{
 		this.Texte.style.color = "grey";
 		this.Texte.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
 		this.Main.append(this.Texte);
+
 
 		this.Texte.addEventListener("keyup", (e)=>this.changeTextColor(e,"Texte"));
 
