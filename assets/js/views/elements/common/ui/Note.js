@@ -184,7 +184,7 @@ export default class Note extends superViews{
 		let reader = new FileReader();
 		reader.readAsDataURL(this.camLauncher.files[0]);
 
-		reader.addEventListener("onloadend", (e)=>this.insertPict(reader.result));
+		reader.onloadend = (e)=> this.insertPict(reader.result);
 		//reader.onloadend => this.insertPict(reader.result);
 
 
@@ -217,7 +217,7 @@ export default class Note extends superViews{
 	insertPict(pict){
 
 		console.log('in insert pict');
-		
+
 			this.img = document.createElement("img");
 			this.img.classList.add("obj");
 			this.img.file = pict;
