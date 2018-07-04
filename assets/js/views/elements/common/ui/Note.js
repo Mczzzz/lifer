@@ -188,33 +188,33 @@ export default class Note extends superViews{
 		//reader.onloadend => this.insertPict(reader.result);
 
 
-		console.log('after while');
-		console.log(reader.readyState);
 		console.log(reader.result);
 		
 
-		
 
-		/*reader.onloadend = function(){
-
-             this.dataURL = reader.result;
-
-             console.log('pict selectionned');
- 			 
- 			 img.file = this.dataURL;
-/* 			 let event = new CustomEvent('changeFrame', {'detail' : {'data' : this.dataURL}});
-                window.dispatchEvent(event);*/
-/*
-            };*/
-            console.log(this.camLauncher.files[0]);
-			
-
-		
 		
 	}
 
 
 	insertPict(pict){
+
+//on transforme en image
+
+
+	let imgObj = new Image();
+
+	imgObj.src = pict;
+
+	console.log(imgObj.naturalWidth);
+	console.log(imgObj.naturalHeight);
+
+
+
+//on la tourne si besoin
+
+
+//on insere en mode homotetique
+
 
 console.log(pict);
 		console.log('in insert pict');
