@@ -140,6 +140,7 @@ export default class Note extends superViews{
 		this.Footer.style.background = "linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)";
 		this.Footer.style.height = "40px";
 		this.Footer.style.display = "flex";
+		this.Footer.style.alignItems = "center";
 		this.Footer.style.color = "";
 
 		this.Photo = document.createElement("div");
@@ -149,8 +150,16 @@ export default class Note extends superViews{
 		this.PhotoPicto.className = "material-icons";
 		this.PhotoPicto.style.fontSize = "40px";
 		this.PhotoPicto.style.color = "grey";
+		this.PhotoPicto.style.marginLeft = "10px";
 		this.PhotoPicto.append('camera_alt');
 		this.Photo.append(this.PhotoPicto);
+
+		this.PhotoPicto.addEventListener("click", (e)=>this.launchCam(e));
 	}
 
+
+	launchCam(){
+
+
+	}	
 }
