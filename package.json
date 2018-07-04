@@ -6,9 +6,10 @@
     "webpack-notifier": "^1.6.0"
   },
   "dependencies": {
+    "exif-orientation": "^1.0.0",
+    "exifreader": "^2.5.0",
     "fs": "0.0.1-security",
     "i18next": "^11.3.3",
-    "jpeg-exif": "^1.1.1",
     "jquery": "^3.3.1",
     "jstree": "^3.3.5",
     "moment-es6": "^1.0.0"

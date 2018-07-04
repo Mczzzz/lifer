@@ -1,4 +1,4 @@
-//import EXIF from "jpeg-exif";
+import EXIF from 'exif-orientation';
 import Footer from '../sections/footer.js';
 import Header from '../sections/header.js';
 import superViews from "../super/views.js"
@@ -181,6 +181,13 @@ export default class Note extends superViews{
 
 		this.Main.prepend(img); 
 
+		  EXIF(this.camLauncher.files[0],function(err,orientation) {
+	    if (!err) {
+	    	console.log('EXIF-orientation');
+	      console.log(orientation); // displays {scale: {x: 1, y: 1}, rotation: 90}
+	    }
+	  });
+
 
 		let reader = new FileReader();
 		reader.readAsDataURL(this.camLauncher.files[0]);
@@ -198,23 +205,10 @@ export default class Note extends superViews{
 
 	loadPict(pict){
 
-		/*let exif = new EXIF({image: new BinaryFile(pict)},function (error, exifData){
 
-	 		if (error){
-	            console.log('Error: '+error.message);
-	 		}
-	        else{
-	            console.log(exifData); // Do something with your data!
-	        }
-	 
-
-		});*/
-
-/*		let data=exif.parseSync(new BinaryFile(pict));
-			console.log(data);
-		console.log('exif');
-		console.log(exif.Orientation);*/
 		//on transforme en image
+
+		EXIF.read('my.jpg').then(console.log).catch(console.error);
 
 		this.imgObj = new Image();
 
