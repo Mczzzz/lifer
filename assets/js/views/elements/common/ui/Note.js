@@ -165,7 +165,7 @@ export default class Note extends superViews{
 		this.camLauncher.accept = "image/*";
 		this.camLauncher.capture = "camera";
 		this.Footer.append(this.camLauncher);
-		this.camLauncher.focus();
+		this.camLauncher.click();
 
 	}	
 }
