@@ -207,18 +207,19 @@ export default class Note extends superViews{
 
 	console.log(imgObj.naturalWidth);
 	console.log(imgObj.naturalHeight);
+	let ratio = 1;
 
 	if(imgObj.naturalWidth >= imgObj.naturalHeight){
 
-		let ratio = imgObj.naturalHeight / imgObj.naturalWidth;
+		ratio = imgObj.naturalHeight / imgObj.naturalWidth;
 
 	}else{
 
-		let ratio = imgObj.naturalWidth / imgObj.naturalHeight;
+		ratio = imgObj.naturalWidth / imgObj.naturalHeight;
 
 	}
 	
-
+	console.log(ratio);
 //on la tourne si besoin
 
 
