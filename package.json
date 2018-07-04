@@ -6,6 +6,7 @@
     "webpack-notifier": "^1.6.0"
   },
   "dependencies": {
+    "exif-js": "^2.3.0",
     "fs": "0.0.1-security",
     "i18next": "^11.3.3",
     "jquery": "^3.3.1",
