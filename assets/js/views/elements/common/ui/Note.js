@@ -168,5 +168,11 @@ export default class Note extends superViews{
 		this.Footer.append(this.camLauncher);
 		this.camLauncher.click();
 
+		this.camLauncher.addEventListener("change", (e)=>this.addPict(e));
 	}	
+
+	addPict(e){
+
+		console.log('pict selectionned');
+	}
 }
