@@ -185,7 +185,7 @@ export default class Note extends superViews{
 
 
 
-		reader.onloadend = function(img){
+		reader.onloadend = function(){
 
              this.dataURL = reader.result;
 
