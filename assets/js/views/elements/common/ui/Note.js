@@ -282,7 +282,7 @@ export default class Note extends superViews{
 			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg)';
 
 			let ratioWidth = this.img.offsetWidth / this.imgObj.naturalHeight;
-			this.img.height = this.img.offsetWidth  * ratioWidth;
+			this.img.height = this.img.offsetHeight  * ratioWidth;
 			
 
 /*			let ratioHeight = this.img.offsetWidth / this.imgObj.naturalHeight;
