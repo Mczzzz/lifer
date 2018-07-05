@@ -199,32 +199,12 @@ export default class Note extends superViews{
 	loadPict(pict){
 
 
-		//on transforme en image
-
-
 		this.imgObj = new Image();
 
 		this.imgObj.src = pict;
 
 		this.imgObj.addEventListener('load',()=>this.getOrientation(pict));
 
-
-		//on va lire l'exif pour connaitre l'orientation
-
-
-/*	    switch(exif.Orientation){
-
-	       case 8:
-	           ctx.rotate(90*Math.PI/180);
-	           break;
-	       case 3:
-	           ctx.rotate(180*Math.PI/180);
-	           break;
-	       case 6:
-	           ctx.rotate(-90*Math.PI/180);
-	           break;
-
-	    }*/
 
 	}
 
@@ -264,6 +244,16 @@ export default class Note extends superViews{
 
 	rotateImg(err,orientation,pict){
 
+		//il faut rajouter une div intermediaire,
+		//car l'img en rotation n'est qu'une interpolation
+		this.imgDiv = document.createElement("div");
+		this.imgDiv.style.display = "flex";
+		this.imgDiv.style.alignItems = "center";
+		this.Main.prepend(this.imgDiv); 
+			this.img.classList.add("obj");
+
+
+
 		console.log('in rotate Image');
 		console.log(orientation);
 		
@@ -272,7 +262,7 @@ export default class Note extends superViews{
 
 			this.img = document.createElement("img");
 			this.img.classList.add("obj");
-			this.Main.prepend(this.img); 
+			this.imgDiv.prepend(this.img); 
 
 
 		if(orientation.rotate == 90){
@@ -289,7 +279,7 @@ export default class Note extends superViews{
 			let ratioWidth = this.img.offsetWidth / this.imgObj.naturalHeight;
 
 			console.log(ratioWidth);
-			this.img.width = this.img.offsetHeight  * ratioWidth;
+			this.img.height = this.img.offsetHeight  * ratioWidth;
 			
 
 /*			let ratioHeight = this.img.offsetWidth / this.imgObj.naturalHeight;
