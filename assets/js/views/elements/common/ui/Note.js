@@ -206,7 +206,7 @@ export default class Note extends superViews{
 
 		this.imgObj.src = pict;
 
-		this.imgObj.addEventListener('load',()=>this.insertPict(pict));
+		this.imgObj.addEventListener('load',()=>this.getOrientation(pict));
 
 
 		//on va lire l'exif pour connaitre l'orientation
@@ -228,16 +228,21 @@ export default class Note extends superViews{
 
 	}
 
+	getOrientation(pict){
+
+		EXIF(this.camLauncher.files[0],(err,orientation) => this.rotateImg(err,orientation,pict));
+
+	}
+
 
 
 	insertPict(pict){
 
 //on transforme en image
 
-
 //on insere en mode homotetique
 
-		console.log('in insert pict');
+/*		console.log('in insert pict');
 
 			this.img = document.createElement("img");
 			this.img.classList.add("obj");
@@ -253,20 +258,46 @@ export default class Note extends superViews{
 
 			EXIF(this.camLauncher.files[0],(err,orientation) => this.rotateImg(err,orientation));
 
-
+*/
 
 	}
 
-	rotateImg(err,orientation){
+	rotateImg(err,orientation,pict){
 
 		console.log('in rotate Image');
 		console.log(orientation);
-		this.img.style.transform = 'rotate(' + orientation.rotate + 'deg)';
+		
+
+		console.log('in insert pict');
+
+			this.img = document.createElement("img");
+			this.img.classList.add("obj");
+			this.Main.prepend(this.img); 
+
 
 		if(orientation.rotate == 90){
 
+			this.img.src = pict;
+
+			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg)';
+
+			let ratioWidth = this.img.offsetWidth / this.imgObj.naturalHeight;
+			this.img.height = this.img.offsetHeight  * ratioWidth;
+			
+
 /*			let ratioHeight = this.img.offsetWidth / this.imgObj.naturalHeight;
 			this.img.height = this.img.offsetWidth  * ratioHeight;*/
+			
+		}else{
+			this.img.src = pict;
+						//calcul de ma nouvelle taille
+			let ratioWidth = this.img.offsetWidth / this.imgObj.naturalWidth;
+
+			this.img.height = this.img.offsetHeight  * ratioWidth;
+			console.log(this.img.offsetWidth);
+			console.log(this.img.offsetHeight);
+
+
 		}
 
 	}
