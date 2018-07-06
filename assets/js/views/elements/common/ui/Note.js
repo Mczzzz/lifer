@@ -250,7 +250,6 @@ export default class Note extends superViews{
 		this.imgDiv.style.display = "flex";
 		this.imgDiv.style.alignItems = "center";
 		this.Main.prepend(this.imgDiv); 
-			this.img.classList.add("obj");
 
 
 
