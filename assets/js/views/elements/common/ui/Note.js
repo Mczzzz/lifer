@@ -216,32 +216,6 @@ export default class Note extends superViews{
 
 
 
-	insertPict(pict){
-
-//on transforme en image
-
-//on insere en mode homotetique
-
-/*		console.log('in insert pict');
-
-			this.img = document.createElement("img");
-			this.img.classList.add("obj");
-			this.img.src = pict;
-			this.Main.prepend(this.img); 
-
-			//calcul de ma nouvelle taille
-			let ratioWidth = this.img.offsetWidth / this.imgObj.naturalWidth;
-
-			this.img.height = this.img.offsetHeight  * ratioWidth;
-			console.log(this.img.offsetWidth);
-			console.log(this.img.offsetHeight);
-
-			EXIF(this.camLauncher.files[0],(err,orientation) => this.rotateImg(err,orientation));
-
-*/
-
-	}
-
 	rotateImg(err,orientation,pict){
 
 
@@ -271,6 +245,7 @@ export default class Note extends superViews{
 
 			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg) translate('+decalX+'px)';
 
+			this.imgDiv.style.minHeight = ImgWidth+"px";
 
 		}
 	}
