@@ -175,11 +175,11 @@ export default class Note extends superViews{
 	importPict(e){
 
 
-		let img = document.createElement("img");
+/*		let img = document.createElement("img");
 		img.classList.add("obj");
 			
 
-		this.Main.prepend(img); 
+		this.Main.prepend(img); */
 
 
 		let reader = new FileReader();
@@ -258,10 +258,10 @@ export default class Note extends superViews{
 		
 
 		console.log('in insert pict');
-/*
+
 			this.img = document.createElement("img");
 			this.img.classList.add("obj");
-			this.Main.prepend(this.img); */
+			this.Main.prepend(this.img); 
 
 
 		if(orientation.rotate == 90){
