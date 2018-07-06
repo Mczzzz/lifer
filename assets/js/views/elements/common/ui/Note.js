@@ -296,10 +296,11 @@ export default class Note extends superViews{
 		}else{
 			this.img.src = pict;
 						//calcul de ma nouvelle taille
+			this.img.width = "100%";
 
 			let ratioWidth = this.img.offsetWidth / this.imgObj.naturalWidth;
 
-			this.img.height = this.img.offsetHeight  * ratioWidth;
+			//this.img.height = this.img.offsetHeight  * ratioWidth;
 
 			console.log(this.img.offsetWidth);
 			console.log(this.img.offsetHeight);
