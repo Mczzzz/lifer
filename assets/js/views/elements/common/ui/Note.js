@@ -256,6 +256,8 @@ export default class Note extends superViews{
 		this.img.classList.add("obj");
 		this.imgDiv.prepend(this.img); 
 
+
+		console.log(this.imgDiv.width);
 		let RatioPhoto = this.imgObj.naturalWidth / this.imgObj.naturalHeight;
 
 		if(orientation.rotate == 90){
@@ -294,6 +296,7 @@ export default class Note extends superViews{
 		}else{
 			this.img.src = pict;
 						//calcul de ma nouvelle taille
+
 			let ratioWidth = this.img.offsetWidth / this.imgObj.naturalWidth;
 
 			this.img.height = this.img.offsetHeight  * ratioWidth;
