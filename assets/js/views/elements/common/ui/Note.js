@@ -261,7 +261,7 @@ export default class Note extends superViews{
 
 			this.img = document.createElement("img");
 			this.img.classList.add("obj");
-			this.Main.prepend(this.img); 
+
 
 
 		if(orientation.rotate == 90){
@@ -296,6 +296,9 @@ export default class Note extends superViews{
 
 
 		}
+
+
+		this.Main.prepend(this.img); 
 
 	}
 
