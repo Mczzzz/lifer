@@ -247,8 +247,8 @@ export default class Note extends superViews{
 		//il faut rajouter une div intermediaire,
 		//car l'img en rotation n'est qu'une interpolation
 		this.imgDiv = document.createElement("div");
-		this.imgDiv.style.display = "flex";
-		this.imgDiv.style.alignItems = "center";
+		/*this.imgDiv.style.display = "flex";
+		this.imgDiv.style.alignItems = "center";*/
 		this.Main.prepend(this.imgDiv); 
 
 
