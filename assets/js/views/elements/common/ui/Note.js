@@ -232,6 +232,7 @@ export default class Note extends superViews{
 		this.img.src = pict;
 		this.img.style.width = "100%";
 		this.img.height = this.img.offsetWidth  / RatioPhoto;
+		
 
 		if(orientation.rotate == 90){
 
@@ -249,6 +250,9 @@ export default class Note extends superViews{
 
 			this.imgDiv.style.minHeight = ImgWidth+"px";
 
+		}else{
+
+			this.imgDiv.style.minHeight = this.img.height+"px";
 		}
 	}
 
