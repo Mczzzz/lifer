@@ -268,8 +268,8 @@ export default class Note extends superViews{
 
 			this.img.src = pict;
 
-			console.log(this.img.offsetWidth);
-			console.log(this.img.offsetHeight);
+			console.log(this.imgObj.naturalHeight);
+			console.log(this.imgObj.naturalWidth);
 
 			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg)';
 
@@ -277,7 +277,7 @@ export default class Note extends superViews{
 			console.log(this.img.offsetHeight);
 			let ratioWidth = this.img.offsetWidth / this.imgObj.naturalHeight;
 
-			let RatioPhoto = this.img.offsetWidth / this.img.offsetHeight;
+			let RatioPhoto = this.imgObj.naturalWidth / this.imgObj.naturalHeight;
 
 			console.log(ratioWidth);
 			this.img.height = this.img.offsetHeight  * ratioWidth;
