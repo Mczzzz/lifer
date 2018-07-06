@@ -246,7 +246,8 @@ export default class Note extends superViews{
 
 		//il faut rajouter une div intermediaire,
 		//car l'img en rotation n'est qu'une interpolation
-		//this.imgDiv = document.createElement("div");
+		this.imgDiv = document.createElement("div");
+		this.Main.prepend(this.imgDiv);
 		/*this.imgDiv.style.display = "flex";
 		this.imgDiv.style.alignItems = "center";*/
 		
@@ -261,7 +262,7 @@ export default class Note extends superViews{
 
 			this.img = document.createElement("img");
 			this.img.classList.add("obj");
-			this.Main.prepend(this.img); 
+			this.imgDiv.prepend(this.img); 
 
 
 		if(orientation.rotate == 90){
