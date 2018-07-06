@@ -254,36 +254,47 @@ export default class Note extends superViews{
 
 
 
-		console.log('in rotate Image');
+/*		console.log('in rotate Image');
 		console.log(orientation);
 		
 
-		console.log('in insert pict');
+		console.log('in insert pict');*/
 
 			this.img = document.createElement("img");
 			this.img.classList.add("obj");
 			this.imgDiv.prepend(this.img); 
 
+			let RatioPhoto = this.imgObj.naturalWidth / this.imgObj.naturalHeight;
 
 		if(orientation.rotate == 90){
 
 			this.img.src = pict;
 
-			console.log(this.imgObj.naturalHeight);
+			let ImgWidth  = this.img.offsetWidth * RatioPhoto;
+			let ImgHeight = this.img.offsetWidth;
+			let DivHeight = ImgWidth;
+			let decalX = -((ImgWidth - this.img.offsetWidth) / 2);
+
+
+	/*		console.log(this.imgObj.naturalHeight);
 			console.log(this.imgObj.naturalWidth);
-
-			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg)';
-
-			console.log(this.img.offsetWidth);
-			console.log(this.img.offsetHeight);
+		console.log(this.img.offsetWidth);
+			console.log(this.img.offsetHeight);*/
 			let ratioWidth = this.img.offsetWidth / this.imgObj.naturalHeight;
 
-			let RatioPhoto = this.imgObj.naturalWidth / this.imgObj.naturalHeight;
+			
 
-			console.log(ratioWidth);
-			this.img.height = this.img.offsetHeight  * ratioWidth;
-			this.img.width = this.img.height  *  RatioPhoto;
+	//		console.log(ratioWidth);
+			/*this.img.height = this.img.offsetHeight  * ratioWidth;
+			this.img.width = this.img.height  *  RatioPhoto;*/
 
+			//calcul decalage X
+
+			//calcul decalage Y
+
+			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg) translate('+decalX+'px)';
+
+			this.imgDiv.style.minHeight = ImgWidth+"px";
 
 		}else{
 			this.img.src = pict;
@@ -292,8 +303,8 @@ export default class Note extends superViews{
 
 			this.img.height = this.img.offsetHeight  * ratioWidth;
 
-			console.log(this.img.offsetWidth);
-			console.log(this.img.offsetHeight);
+		//	console.log(this.img.offsetWidth);
+		//	console.log(this.img.offsetHeight);
 
 
 		}
