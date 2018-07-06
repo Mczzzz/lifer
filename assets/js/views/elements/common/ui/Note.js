@@ -238,7 +238,7 @@ export default class Note extends superViews{
 			let ImgHeight = this.img.offsetWidth;
 			let ImgWidth = this.img.offsetWidth * RatioPhoto;
 
-			let decalX = -((ImgWidth - this.img.offsetWidth) / 2);
+			let decalX = (ImgWidth - this.img.offsetWidth) / 2;
 
 			this.img.width = ImgWidth;
 			this.img.height = ImgHeight;
