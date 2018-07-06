@@ -245,7 +245,7 @@ export default class Note extends superViews{
 			this.img.width = ImgWidth;
 			this.img.height = ImgHeight;
 
-			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg) translate('+decalX+'px)';
+			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg) translate('+decalX+'px,'+decalX+'px)';
 
 			this.imgDiv.style.minHeight = ImgWidth+"px";
 
