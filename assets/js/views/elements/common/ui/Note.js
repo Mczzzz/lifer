@@ -275,11 +275,11 @@ export default class Note extends superViews{
 			let DivHeight = ImgWidth;
 			let decalX = -((ImgWidth - this.img.offsetWidth) / 2);
 
-
+			console.log(this.imgObj.naturalHeight);
 			console.log(this.imgObj.naturalHeight);
 			console.log(this.imgObj.naturalWidth);
 		console.log(this.img.offsetWidth);
-			console.log(this.img.offsetHeight);
+			console.log(this.img.width);
 			let ratioWidth = this.img.offsetWidth / this.imgObj.naturalHeight;
 
 			
