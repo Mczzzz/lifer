@@ -241,8 +241,8 @@ export default class Note extends superViews{
 			let decalX = -((ImgWidth - this.img.offsetWidth) / 2);
 
 			this.img.style.width = "";
-			this.img.width = ImgHeight;
-			this.img.height = ImgWidth;
+			this.img.width = ImgWidth;
+			this.img.height = ImgHeight;
 
 			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg) translate('+decalX+'px)';
 
