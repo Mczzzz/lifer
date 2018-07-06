@@ -252,23 +252,17 @@ export default class Note extends superViews{
 		//this.imgDiv.style.alignItems = "center";
 		
 
+		this.img = document.createElement("img");
+		this.img.classList.add("obj");
+		this.imgDiv.prepend(this.img); 
 
-
-/*		console.log('in rotate Image');
-		console.log(orientation);
-		
-
-		console.log('in insert pict');*/
-
-			this.img = document.createElement("img");
-			this.img.classList.add("obj");
-			this.imgDiv.prepend(this.img); 
-
-			let RatioPhoto = this.imgObj.naturalWidth / this.imgObj.naturalHeight;
+		let RatioPhoto = this.imgObj.naturalWidth / this.imgObj.naturalHeight;
 
 		if(orientation.rotate == 90){
 
 			this.img.src = pict;
+
+			console.log(this.img.width);
 
 			let ImgWidth  = this.img.offsetWidth * RatioPhoto;
 			let ImgHeight = this.img.offsetWidth;
@@ -278,8 +272,9 @@ export default class Note extends superViews{
 			console.log(this.imgObj.naturalHeight);
 			console.log(this.imgObj.naturalHeight);
 			console.log(this.imgObj.naturalWidth);
-		console.log(this.img.offsetWidth);
+			console.log(this.img.offsetWidth);
 			console.log(this.img.width);
+
 			let ratioWidth = this.img.offsetWidth / this.imgObj.naturalHeight;
 
 			
@@ -292,16 +287,16 @@ export default class Note extends superViews{
 
 			//calcul decalage Y
 
-			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg) translate('+decalX+'px)';
+			//this.img.style.transform = 'rotate(' + orientation.rotate + 'deg) translate('+decalX+'px)';
 
-			this.imgDiv.style.minHeight = ImgWidth+"px";
+			//this.imgDiv.style.minHeight = ImgWidth+"px";
 
 		}else{
 			this.img.src = pict;
 						//calcul de ma nouvelle taille
 			let ratioWidth = this.img.offsetWidth / this.imgObj.naturalWidth;
 
-			this.img.height = this.img.offsetHeight  * ratioWidth;
+			//this.img.height = this.img.offsetHeight  * ratioWidth;
 
 			console.log(this.img.offsetWidth);
 			console.log(this.img.offsetHeight);
