@@ -276,15 +276,15 @@ export default class Note extends superViews{
 			let decalX = -((ImgWidth - this.img.offsetWidth) / 2);
 
 
-	/*		console.log(this.imgObj.naturalHeight);
+			console.log(this.imgObj.naturalHeight);
 			console.log(this.imgObj.naturalWidth);
 		console.log(this.img.offsetWidth);
-			console.log(this.img.offsetHeight);*/
+			console.log(this.img.offsetHeight);
 			let ratioWidth = this.img.offsetWidth / this.imgObj.naturalHeight;
 
 			
 
-	//		console.log(ratioWidth);
+			console.log(ratioWidth);
 			/*this.img.height = this.img.offsetHeight  * ratioWidth;
 			this.img.width = this.img.height  *  RatioPhoto;*/
 
@@ -303,8 +303,8 @@ export default class Note extends superViews{
 
 			this.img.height = this.img.offsetHeight  * ratioWidth;
 
-		//	console.log(this.img.offsetWidth);
-		//	console.log(this.img.offsetHeight);
+			console.log(this.img.offsetWidth);
+			console.log(this.img.offsetHeight);
 
 
 		}
