@@ -12,7 +12,9 @@ export default class Note extends superViews{
 
 		this.init();
 
-		
+		this.note = {};
+		this.note.id = 0;
+		this.firstKey = true;
 	}
 
 
@@ -113,7 +115,59 @@ export default class Note extends superViews{
 
 	}
 
+
+	initNoteLife(e, name){
+
+	//Il faut aussi faire la demande de création si c'est pas déja fait
+
+
+		this.Saver("TEXT");
+
+/*SELECT `objects_infos`.`id`,
+    `objects_infos`.`Name`,
+    `objects_infos`.`object`,
+    `objects_infos`.`my_order`,
+    `objects_infos`.`creator`,
+    `objects_infos`.`objectTree`,
+    `objects_infos`.`ts_update`
+FROM `lifer`.`objects_infos`;*/
+
+
+/*SELECT `objects_infos_resources`.`id`,
+    `objects_infos_resources`.`text`,
+    `objects_infos_resources`.`ts_update`,
+    `objects_infos_resources`.`value`,
+    `objects_infos_resources`.`object`,
+    `objects_infos_resources`.`objectTree`,
+    `objects_infos_resources`.`objectInfos`,
+    `objects_infos_resources`.`type`
+FROM `lifer`.`objects_infos_resources`;
+*/
+	//je dois recuperer l'id de 
+
+
+
+		this.changeTextColor(e, name);
+
+	}
+
+
+
+	Saver(type,value,NoteId,RessourceId){
+
+//il me faut l'id de na note sinon j'en demande une		
+
+
+
+
+
+		this.firstKey = false;
+	}
+
+
+
 	changeTextColor(e,name){
+
 
 	if(this[name].innerHTML === ""){
 		this[name].style.color = "grey";
@@ -149,9 +203,10 @@ export default class Note extends superViews{
 
 		this.PhotoPicto = document.createElement("i");
 		this.PhotoPicto.className = "material-icons";
-		this.PhotoPicto.style.fontSize = "40px";
+		this.PhotoPicto.style.fontSize = "30px";
 		this.PhotoPicto.style.color = "grey";
 		this.PhotoPicto.style.marginLeft = "10px";
+		this.PhotoPicto.style.marginTop = "5px";
 		this.PhotoPicto.append('camera_alt');
 		this.Photo.append(this.PhotoPicto);
 
@@ -254,6 +309,13 @@ export default class Note extends superViews{
 
 			this.imgDiv.style.minHeight = this.img.height+"px";
 		}
+
+
+		//envoyer en sauvegarde background
+
+
 	}
+
+
 
 }
