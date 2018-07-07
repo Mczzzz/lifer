@@ -177,23 +177,19 @@ FROM `lifer`.`objects_infos_resources`;
 	//get Title
 
 
-	if(!this.note.id){
 
 		let formData = new FormData();
 
 		formData.append('ObjectId' , ContainerNode.id);
         formData.append('ObjectLeafId' , LeafNode.id);
         formData.append('titre'  , this.Title.innerHTML);
+        formData.append('noteId'  , this.note.id);
 
 		let res = this.NoteCollection.create(formData);
 
 		if(res.error == 0 && Number.isInteger(res.data)){
 			this.note.id = res.data;
 		}
-
-
-	}
-
 
 
 		this.firstKey = false;

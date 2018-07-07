@@ -103,6 +103,7 @@ class ObjectInfosController extends Controller
         $objectId     = $request->request->get('ObjectId');
         $objectLeafId = $request->request->get('ObjectLeafId');
         $name = $request->request->get('titre');
+        $noteId = $request->request->get('noteId');
 //        $text = $request->request->get('text');         
 
 //        $url = $request->request->get('url');
@@ -163,8 +164,29 @@ class ObjectInfosController extends Controller
 
 
         //on insere les infos d'objects
+        if($noteId == 0){
 
-        $object_infos = new Objects_infos();
+            $object_infos = new Objects_infos();
+            $object_infos->setCreator($user);
+        }else{
+
+            //Objects_infos
+
+            $object_infos = $em->getRepository('AppBundle:Objects_infos')->find($noteId);
+
+            if(!$object_infos){
+
+                $res = new \stdClass();
+                $res->error = 2;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+            }
+
+
+        }
+
         
         $object_infos->setName($name);
 
@@ -172,7 +194,7 @@ class ObjectInfosController extends Controller
 
         $object_infos->setObjectTree($parent);
 
-        $object_infos->setCreator($user);
+        //$object_infos->setCreator($user);
 
         $em->persist($object_infos);
 
