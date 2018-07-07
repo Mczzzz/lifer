@@ -14,7 +14,7 @@ export default class Note extends superViews{
 		super(parent, MyClass , path);
 
 		this.NoteCollection = new LoaderCollection("ObjectInfos");
-		this.ResourcesCollection = new LoaderCollection("xxx");
+		//this.ResourcesCollection = new LoaderCollection("xxx");
 
 
 		this.init();
@@ -204,7 +204,7 @@ FROM `lifer`.`objects_infos_resources`;
 	changeTextColor(e,name){
 
 	this.Synchronizer();
-	
+
 	if(this[name].innerHTML === ""){
 		this[name].style.color = "grey";
 	}else{
