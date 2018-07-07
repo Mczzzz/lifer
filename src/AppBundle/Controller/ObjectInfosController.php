@@ -103,13 +103,15 @@ class ObjectInfosController extends Controller
         $objectId     = $request->request->get('ObjectId');
         $objectLeafId = $request->request->get('ObjectLeafId');
         $name = $request->request->get('titre');
-        $url = $request->request->get('url');
-        $text = $request->request->get('text');         
+//        $text = $request->request->get('text');         
 
-        $em = $this->getDoctrine()->getManager();
+//        $url = $request->request->get('url');
+//        $text = $request->request->get('text');         
+
+    //    $em = $this->getDoctrine()->getManager();
 
 
-        if(strlen($url) > 0){
+/*        if(strlen($url) > 0){
 
 
             $resourceType = $em->getRepository('AppBundle:Object_infos_resources_types')->find(1);
@@ -121,7 +123,7 @@ class ObjectInfosController extends Controller
             $firstLine = explode("\n",$text);
             $name = $firstLine[0];
         }
-
+*/
 
 
         $user = $this->getUser();
@@ -177,7 +179,7 @@ class ObjectInfosController extends Controller
         $em->flush();
 
 
-        //on crée la ressource
+  /*      //on crée la ressource
         $object_infos_resources = new Objects_infos_resources();
 
         $object_infos_resources->setText($url);
@@ -192,7 +194,7 @@ class ObjectInfosController extends Controller
 
         $em->persist($object_infos_resources);
 
-        $em->flush();
+        $em->flush();*/
 
 
         $res = new \stdClass();

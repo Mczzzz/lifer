@@ -1,4 +1,7 @@
 import EXIF from 'exif-orientation';
+
+import LoaderCollection from '../../../../services/LoaderCollection.js';
+
 import Footer from '../sections/footer.js';
 import Header from '../sections/header.js';
 import superViews from "../super/views.js"
@@ -10,10 +13,14 @@ export default class Note extends superViews{
 
 		super(parent, MyClass , path);
 
+		this.NoteCollection = new LoaderCollection("ObjectInfos");
+		this.ResourcesCollection = new LoaderCollection("xxx");
+
+
 		this.init();
 
 		this.note = {};
-		this.note.id = 0;
+		this.note.id = false;
 		this.firstKey = true;
 	}
 
@@ -118,8 +125,6 @@ export default class Note extends superViews{
 
 	initNoteLife(e, name){
 
-	//Il faut aussi faire la demande de création si c'est pas déja fait
-
 
 		this.Saver("TEXT");
 
@@ -153,11 +158,41 @@ FROM `lifer`.`objects_infos_resources`;
 
 
 
-	Saver(type,value,NoteId,RessourceId){
+	Synchronizer(){
+
+
+	//Il faut aussi faire la demande de création si c'est pas déja fait
+	//je récupère les infos du service Lifer (objectId, treeId)
+	//j'initialise à la premiere lettre
+	//ou a linsertion du premier asset
 
 //il me faut l'id de na note sinon j'en demande une		
 
+	//getObjectId
+	let ContainerNode = this.Lifer.getData("app/home/frame/objects","ContainerNode");
+	let LeafNode = this.Lifer.getData("app/home/frame/objects","LeafNode");
+	//getLeafId
 
+
+	//get Title
+
+
+	if(!this.note.id){
+
+		let formData = new FormData();
+
+		formData.append('ObjectId' , ContainerNode.id);
+        formData.append('ObjectLeafId' , LeafNode.id);
+        formData.append('titre'  , this.Title.innerHTML);
+
+		$res = this.NoteCollection.create(formData);
+
+		if($res.error == 0 && Number.isInteger($res.data)){
+			this.note.id = $res.data;
+		}
+
+
+	}
 
 
 
@@ -168,7 +203,8 @@ FROM `lifer`.`objects_infos_resources`;
 
 	changeTextColor(e,name){
 
-
+	this.Synchronizer();
+	
 	if(this[name].innerHTML === ""){
 		this[name].style.color = "grey";
 	}else{
