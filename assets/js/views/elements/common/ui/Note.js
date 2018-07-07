@@ -185,10 +185,10 @@ FROM `lifer`.`objects_infos_resources`;
         formData.append('ObjectLeafId' , LeafNode.id);
         formData.append('titre'  , this.Title.innerHTML);
 
-		$res = this.NoteCollection.create(formData);
+		let res = this.NoteCollection.create(formData);
 
-		if($res.error == 0 && Number.isInteger($res.data)){
-			this.note.id = $res.data;
+		if(res.error == 0 && Number.isInteger(res.data)){
+			this.note.id = res.data;
 		}
 
 
