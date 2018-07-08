@@ -172,6 +172,8 @@ FROM `lifer`.`objects_infos_resources`;
 
 	Synchronizer(name){
 
+		console.log('in Synchronizer');
+		console.log(name);
 		let ContainerNode = this.Lifer.getData("app/home/frame/objects","ContainerNode");
 		let LeafNode = this.Lifer.getData("app/home/frame/objects","LeafNode");
 
@@ -179,6 +181,9 @@ FROM `lifer`.`objects_infos_resources`;
 		formData.append('ObjectId' , ContainerNode.id);
         formData.append('ObjectLeafId' , LeafNode.id);
 
+        console.log("before if");
+        console.log(this.note.id);
+        console.log(name);
 		if (this.note.id == false || name == "Title"){
 
 			//j'init ma note dans tous les cas
