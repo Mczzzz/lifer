@@ -249,8 +249,7 @@ class ObjectInfosController extends Controller
         $texte = $request->request->get('texte');
         $noteId = $request->request->get('noteId');
         $ResourceId = $request->request->get('resourceId');
-        var_dump($ResourceId);
-        die();
+
 
         $em = $this->getDoctrine()->getManager();
 
@@ -273,7 +272,7 @@ class ObjectInfosController extends Controller
               
             $leaf = $em->getRepository('AppBundle:Objects_tree')->find($objectLeafId);
             
-            if(!$parent) {
+            if(!$leaf) {
 
              $res = new \stdClass();
                 $res->error = 2;
