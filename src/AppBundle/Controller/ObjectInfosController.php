@@ -293,7 +293,7 @@ class ObjectInfosController extends Controller
         var_dump($ResourceId);
         die();
 
-        if($ResourceId <){
+        if($ResourceId  == 0){
 
             $object_infos_resources = new Objects_infos_resources();
             //$object_infos->setCreator($user);
