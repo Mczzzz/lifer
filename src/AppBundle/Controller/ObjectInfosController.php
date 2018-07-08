@@ -249,7 +249,8 @@ class ObjectInfosController extends Controller
         $texte = $request->request->get('texte');
         $noteId = $request->request->get('noteId');
         $ResourceId = $request->request->get('resourceId');
-
+        var_dump($ResourceId);
+        die();
 
         $em = $this->getDoctrine()->getManager();
 
@@ -303,7 +304,7 @@ class ObjectInfosController extends Controller
             if(!$object_infos_resources){
 
                 $res = new \stdClass();
-                $res->error = 2;
+                $res->error = 3;
                 $res->data = "";
 
                 return new Response(json_encode($res));
