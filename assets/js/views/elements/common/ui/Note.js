@@ -125,6 +125,7 @@ export default class Note extends superViews{
 
 
 	dispatcher(e,name){
+		console.log('in dispatcher');
 
 		this.Synchronizer(name);
 
