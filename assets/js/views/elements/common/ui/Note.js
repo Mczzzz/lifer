@@ -208,7 +208,7 @@ FROM `lifer`.`objects_infos_resources`;
         	formData.append('noteId'  , this.note.id);
         	formData.append('resourceId'  , this.Texte.id);
 
-        	let res = this.ResourcesCollection.create(formData);
+        	let res = this.ResourcesCollection.createUpdate(formData);
 
 			if(res.error == 0 && Number.isInteger(res.data)){
 				this.Texte.id = res.data;
