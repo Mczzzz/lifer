@@ -288,10 +288,12 @@ class ObjectInfosController extends Controller
          $note = $em->getRepository('AppBundle:Objects_infos')->find($noteId);
 
 
-         var_dump($ResourceId);
-         die();
+        $ResourceId = intval($ResourceId);
 
-        if(!is_int($ResourceId)){
+        var_dump($ResourceId);
+        die();
+
+        if($ResourceId <){
 
             $object_infos_resources = new Objects_infos_resources();
             //$object_infos->setCreator($user);
