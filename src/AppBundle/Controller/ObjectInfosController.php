@@ -231,11 +231,118 @@ class ObjectInfosController extends Controller
 
 
     ////////////////////////////////////////
-    //// API infos ressources type
+    //// API infos ressources
     ////////////////////////////////////////
 
 
- /**
+    /**
+     * @Route("/object/infos/resources/createUpdate", name="object_infos_resources_create_update")
+     */
+    public function getObjectInfosResourcesCreateUpdateAction(Request $request)
+    {
+
+
+        $request = Request::createFromGlobals();
+
+        $objectId     = $request->request->get('ObjectId');
+        $objectLeafId = $request->request->get('ObjectLeafId');
+        $texte = $request->request->get('texte');
+        $noteId = $request->request->get('noteId');
+        $ResourceId = $request->request->get('resourceId');
+
+
+        $em = $this->getDoctrine()->getManager();
+
+
+         $object = $em->getRepository('AppBundle:Objects')->find($objectId);
+        
+        if(!$object) {
+
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }
+
+
+
+         if($objectLeafId > 0 ){ //a voir si on garde ce if ?????
+              
+            $leaf = $em->getRepository('AppBundle:Objects_tree')->find($objectLeafId);
+            
+            if(!$parent) {
+
+             $res = new \stdClass();
+                $res->error = 2;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+            }       
+        }
+
+
+
+         $note = $em->getRepository('AppBundle:Objects_infos')->find($noteId);
+
+
+
+
+        if(!is_int($ResourceId)){
+
+            $object_infos_resources = new Objects_infos_resources();
+            //$object_infos->setCreator($user);
+        }else{
+
+            //Objects_infos
+
+            $object_infos_resources = $em->getRepository('AppBundle:Objects_infos_resources')->find($ResourceId);
+
+            if(!$object_infos_resources){
+
+                $res = new \stdClass();
+                $res->error = 2;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+            }
+
+
+        }
+
+        
+        $object_infos_resources->setText($texte);
+
+        $object_infos_resources->setObject($object);
+
+        $object_infos_resources->setObjectTree($leaf);
+
+        $object_infos_resources->setObjectInfos($note);
+        //$object_infos->setCreator($user);
+
+        $em->persist($object_infos_resources);
+
+        $em->flush();
+
+
+        $res = new \stdClass();
+        $res->error = 0;
+        $res->data = $object_infos_resources->getId();
+
+        return new Response(json_encode($res));
+
+
+
+    }
+
+
+
+
+
+     /**
      * @Route("/object/infos/resources/types", name="object_infos_resources_type")
      */
     public function getObjectInfosResourcesTypeAction(Request $request)

@@ -14,7 +14,7 @@ export default class Note extends superViews{
 		super(parent, MyClass , path);
 
 		this.NoteCollection = new LoaderCollection("ObjectInfos");
-		//this.ResourcesCollection = new LoaderCollection("xxx");
+		this.ResourcesCollection = new LoaderCollection("ObjectInfosResources");
 
 
 		this.init();
@@ -123,10 +123,21 @@ export default class Note extends superViews{
 	}
 
 
-	initNoteLife(e, name){
+
+	dispatcher(e,name){
+
+		this.Synchronizer(name);
+
+		this.changeTextColor(e,name);
+
+	}
 
 
-		this.Saver("TEXT");
+
+/*	initNoteLife(e, name){
+
+
+		this.Saver("TEXT");*/
 
 /*SELECT `objects_infos`.`id`,
     `objects_infos`.`Name`,
@@ -137,8 +148,8 @@ export default class Note extends superViews{
     `objects_infos`.`ts_update`
 FROM `lifer`.`objects_infos`;*/
 
-
-/*SELECT `objects_infos_resources`.`id`,
+/*
+SELECT `objects_infos_resources`.`id`,
     `objects_infos_resources`.`text`,
     `objects_infos_resources`.`ts_update`,
     `objects_infos_resources`.`value`,
@@ -151,55 +162,66 @@ FROM `lifer`.`objects_infos_resources`;
 	//je dois recuperer l'id de 
 
 
-
+/*
 		this.changeTextColor(e, name);
 
-	}
+	}*/
 
 
 
-	Synchronizer(){
+	Synchronizer(name){
 
-
-	//Il faut aussi faire la demande de création si c'est pas déja fait
-	//je récupère les infos du service Lifer (objectId, treeId)
-	//j'initialise à la premiere lettre
-	//ou a linsertion du premier asset
-
-//il me faut l'id de na note sinon j'en demande une		
-
-	//getObjectId
-	let ContainerNode = this.Lifer.getData("app/home/frame/objects","ContainerNode");
-	let LeafNode = this.Lifer.getData("app/home/frame/objects","LeafNode");
-	//getLeafId
-
-
-	//get Title
-
-
+		let ContainerNode = this.Lifer.getData("app/home/frame/objects","ContainerNode");
+		let LeafNode = this.Lifer.getData("app/home/frame/objects","LeafNode");
 
 		let formData = new FormData();
-
 		formData.append('ObjectId' , ContainerNode.id);
         formData.append('ObjectLeafId' , LeafNode.id);
-        formData.append('titre'  , this.Title.innerHTML);
-        formData.append('noteId'  , this.note.id);
 
-		let res = this.NoteCollection.create(formData);
+		if (this.note.id == false || name == "Title"){
 
-		if(res.error == 0 && Number.isInteger(res.data)){
-			this.note.id = res.data;
+			//j'init ma note dans tous les cas
+			formData.append('titre'  , this.Title.innerHTML);
+        	formData.append('noteId'  , this.note.id);
+
+			let res = this.NoteCollection.create(formData);
+
+			if(res.error == 0 && Number.isInteger(res.data)){
+				this.note.id = res.data;
+			}
+
+
+			this.firstKey = false;
+
+
+		}
+
+		if(name == "Texte" && Number.isInteger(this.note.id)){
+
+			formData.append('texte'  , this.Texte.innerHTML);
+        	formData.append('noteId'  , this.note.id);
+        	formData.append('resourceId'  , this.Texte.id);
+
+        	let res = this.ResourcesCollection.create(formData);
+
+			if(res.error == 0 && Number.isInteger(res.data)){
+				this.Texte.id = res.data;
+			}
+
+
 		}
 
 
-		this.firstKey = false;
+
+
+
 	}
 
 
 
 	changeTextColor(e,name){
 
-	this.Synchronizer();
+	//this.Synchronizer();
 
 	if(this[name].innerHTML === ""){
 		this[name].style.color = "grey";
