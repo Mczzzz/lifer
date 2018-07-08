@@ -100,7 +100,7 @@ export default class Note extends superViews{
 		this.Main.append(this.Title);
 		this.Title.focus();
 
-		this.Title.addEventListener("keyup", (e)=>this.changeTextColor(e,"Title"));
+		this.Title.addEventListener("keyup", (e)=>this.dispatcher(e,"Title"));
 
 
 		this.Texte = document.createElement("div");
@@ -117,7 +117,7 @@ export default class Note extends superViews{
 		this.Main.append(this.Texte);
 
 
-		this.Texte.addEventListener("keyup", (e)=>this.changeTextColor(e,"Texte"));
+		this.Texte.addEventListener("keyup", (e)=>this.dispatcher(e,"Texte"));
 
 
 	}
