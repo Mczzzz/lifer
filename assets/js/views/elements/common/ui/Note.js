@@ -53,11 +53,8 @@ export default class Note extends superViews{
 				this.Title.style.color = "black";
 			}
 	
-
-
-
 			//je load mes ressources et je les affichent
-
+			let Ressources = this.ResourcesCollection.getList(this.ContainerNode.id, this.LeafNode.id, this.note.id);
 		}
 
 
