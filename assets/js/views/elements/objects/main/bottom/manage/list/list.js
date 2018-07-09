@@ -30,6 +30,7 @@ export default class list extends superViews{
 
 	showList(){
 		console.log('in show list');
+		console.log(this.container);
 		this.container.style.maxHeight = "150px";
 		this.container.removeAttribute('height');
 		
