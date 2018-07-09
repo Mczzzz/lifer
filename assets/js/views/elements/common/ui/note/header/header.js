@@ -12,7 +12,7 @@ export default class Header extends superViews{
 
 		this.HeaderObject = new HeaderCommon('header');
 
-
+		console.log('inconstructor note header');
 
 
 		this.skin();
