@@ -180,7 +180,7 @@ export default class Note extends superViews{
 
 	dispatcher(e,name, value){
 		console.log('in dispatcher');
-
+		console.log(value);
 		this.Synchronizer(name,value);
 
 		this.changeTextColor(e,name);
