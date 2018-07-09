@@ -44,7 +44,7 @@ export default class Note extends superViews{
 
 			console.log('in init noteAsked Id');
 			//load ma node pour récupérer le titre et la date
-			let res = this.NoteCollection.get(this.ContainerNode.id,this.LeafNode.id,this.NodeAskedId);
+			let res = this.NoteCollection.get(this.ContainerNode.id,this.LeafNode.id,this.note.id);
 
 			console.log(res);
 			console.log(this.Title);
