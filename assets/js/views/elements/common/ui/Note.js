@@ -48,7 +48,11 @@ export default class Note extends superViews{
 
 			console.log(res);
 			console.log(this.Title);
-			this.Title.append(res.name);
+			if(res.name.length > 0){
+				this.Title.append(res.name);
+				this.Title.style.color = "black";
+			}
+	
 
 
 
