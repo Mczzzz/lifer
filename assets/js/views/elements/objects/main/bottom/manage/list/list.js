@@ -1,6 +1,8 @@
 import LoaderCollection from '../../../../../../../services/LoaderCollection.js';
 import superViews from "../../../../../../elements/common/super/views.js"
 
+import popNote from "../../../../../../elements/common/ui/Note.js"
+
 export default class list extends superViews{
 
 
@@ -74,8 +76,8 @@ export default class list extends superViews{
 			li.append(i);
 
 			let a = document.createElement("a");
-				a.href = ListInfos[k].resources.text;
-				a.target = "_blank";
+				//a.href = ListInfos[k].resources.text;
+				//a.target = "_blank";
 				a.style.textDecoration = "none";
 				a.style.color = "white";
 				a.style.verticalAlign =  "super";
@@ -83,7 +85,10 @@ export default class list extends superViews{
 
 			a.append(ListInfos[k].infos.name);
 
+			a.addEventListener("click", (e)=>this.openPopNote(e));
+
 			li.append(a);
+
 
 
 	    }
@@ -92,6 +97,11 @@ export default class list extends superViews{
 
 	}
 
+	openPopNote(e){
+
+		let ThePopNote = new popNote(this.container,"popNote",this.path);
+
+	}
 
 /*	constructor(HTMLParent){
 
