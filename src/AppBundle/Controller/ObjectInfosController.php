@@ -413,12 +413,12 @@ class ObjectInfosController extends Controller
      /**
      * @Route("/object/infos/resources/getAllResources/{objectId}/{leafId}/{noteId}", name="object_infos_resources_all")
      */
-    public function getObjectInfosGetAllResourcesTypeAction(Request $request,$objectId,$leafId,$NoteId)
+    public function getObjectInfosGetAllResourcesAction(Request $request,$objectId,$leafId,$noteId)
     {
 
         $em = $this->getDoctrine()->getManager();
 
-        $resources = $em->getRepository('AppBundle:Object_infos_resources')->findBy(array('object' => $objectId,'objectTree' => $leafId,'objectInfos' => $NoteId));
+        $resources = $em->getRepository('AppBundle:Object_infos_resources')->findBy(array('object' => $objectId,'objectTree' => $leafId,'objectInfos' => $noteId));
         //if(!$resources) return new Response("Pas d'objet ya un truc chelou dans le tree");
 
 
