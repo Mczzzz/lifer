@@ -13,6 +13,8 @@ export default class Note extends superViews{
 
 		super(parent, MyClass , path);
 
+		console.log(id);
+
 		this.NodeAskedId = id;
 
 		this.NoteCollection = new LoaderCollection("ObjectInfos");
@@ -40,9 +42,11 @@ export default class Note extends superViews{
 
 		if(this.NodeAskedId){
 
+			console.log('in init noteAsked Id');
 			//load ma node pour récupérer le titre et la date
 			let res = this.NoteCollection.get(this.ContainerNode.id,this.LeafNode.id,this.NodeAskedId);
 
+			console.log(res);
 			this.Title.innerHTML(res.name);
 
 
