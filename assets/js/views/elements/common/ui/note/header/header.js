@@ -8,7 +8,7 @@ export default class Header extends superViews{
 
 		super(parent, MyClass,path);
 	
-		this.bkgdHF = 'linear-gradient(45deg, #43A047 0%, #1de9b6 100%)';
+		this.bkgdHF = 'linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)';
 
 		this.HeaderObject = new HeaderCommon('header');
 
@@ -32,3 +32,4 @@ export default class Header extends superViews{
 
 
 }
+

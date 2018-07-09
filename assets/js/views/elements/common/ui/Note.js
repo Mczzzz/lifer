@@ -3,7 +3,7 @@ import EXIF from 'exif-orientation';
 import LoaderCollection from '../../../../services/LoaderCollection.js';
 
 import Footer from '../sections/footer.js';
-import Header from '../sections/header.js';
+import Header from './note/header/header.js';
 import superViews from "../super/views.js"
 
 export default class Note extends superViews{
@@ -52,12 +52,10 @@ export default class Note extends superViews{
 	}
 
 
+
 	addHeader(){
 
-		let Note = new Header(this.MyClass);
-		Note.setBkgdColor("linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)");
-		Note.setHeight(60);
-		Note.setBack();
+		this.Header = new Header(this.container,"headerNote",this.path);
 		
 	}
 
