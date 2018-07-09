@@ -173,7 +173,7 @@ export default class Note extends superViews{
 		Texte.style.color = "grey";
 		Texte.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
 
-		Texte.append(text);
+		Texte.prepend(text);
 		this.Main.append(Texte);
 
 	}
