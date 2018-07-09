@@ -189,41 +189,6 @@ export default class Note extends superViews{
 
 
 
-/*	initNoteLife(e, name){
-
-
-		this.Saver("TEXT");*/
-
-/*SELECT `objects_infos`.`id`,
-    `objects_infos`.`Name`,
-    `objects_infos`.`object`,
-    `objects_infos`.`my_order`,
-    `objects_infos`.`creator`,
-    `objects_infos`.`objectTree`,
-    `objects_infos`.`ts_update`
-FROM `lifer`.`objects_infos`;*/
-
-/*
-SELECT `objects_infos_resources`.`id`,
-    `objects_infos_resources`.`text`,
-    `objects_infos_resources`.`ts_update`,
-    `objects_infos_resources`.`value`,
-    `objects_infos_resources`.`object`,
-    `objects_infos_resources`.`objectTree`,
-    `objects_infos_resources`.`objectInfos`,
-    `objects_infos_resources`.`type`
-FROM `lifer`.`objects_infos_resources`;
-*/
-	//je dois recuperer l'id de 
-
-
-/*
-		this.changeTextColor(e, name);
-
-	}*/
-
-
-
 	Synchronizer(name,value){
 
 		console.log('in Synchronizer');
@@ -238,7 +203,7 @@ FROM `lifer`.`objects_infos_resources`;
 /*        console.log("before if");
         console.log(this.note.id);
         console.log(name);*/
-		if (this.note.id == false || name == "Title"){
+		if (this.note.id == false || (name == "text" && value.id == "title" ){
 
 			//j'init ma note dans tous les cas
 			formData.append('titre'  , this.Title.innerHTML);
