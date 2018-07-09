@@ -22,12 +22,13 @@ export default class Note extends superViews{
 		this.ContainerNode = this.Lifer.getData("app/home/frame/objects","ContainerNode");
 		this.LeafNode = this.Lifer.getData("app/home/frame/objects","LeafNode");
 
-
-		this.init();
-
 		this.note = {};
 		this.note.id = id;
 		this.firstKey = true;
+
+		this.init();
+
+
 	}
 
 
