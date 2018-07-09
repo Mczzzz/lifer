@@ -15,12 +15,20 @@ export default class ObjectInfosCollection {
 
   getList(objectId,leafId){
 
-    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get/'+ objectId + '/' + leafId);
+    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'getListe/'+ objectId + '/' + leafId);
 
     return result;
 
   }
 
+
+  get(objectId,leafId,NoteId){
+
+    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get/'+ objectId + '/' + leafId + '/' + NoteId);
+
+    return result;
+
+  }
 
 
   rename(data){

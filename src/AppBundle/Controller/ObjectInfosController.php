@@ -23,7 +23,34 @@ class ObjectInfosController extends Controller
 
 
     /**
-     * @Route("/object/infos/get/{objectId}/{leafId}", name="object_infos_get_objid_leafid")
+     * @Route("/object/infos/get/{objectId}/{leafId}/{noteId}", name="object_infos_get_objid_leafid")
+     */
+    public function getObjectInfosNoteAction(Request $request,$objectId,$leafId,$noteId)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $object = $em->getRepository('AppBundle:Objects_infos')->find($noteId);        
+
+
+
+
+            $res = new \stdClass();
+
+            $res->id = $object->getId();
+            $res->name = $object->getName();
+            $res->update = $object->getUpdate();
+   
+
+        return new response(json_encode($res));
+
+
+
+    }
+
+
+    /**
+     * @Route("/object/infos/getListe/{objectId}/{leafId}", name="object_infos_get_objid_leafid")
      */
     public function getObjectInfosAction(Request $request,$objectId,$leafId)
     {

@@ -9,12 +9,17 @@ import superViews from "../super/views.js"
 export default class Note extends superViews{
 	
 
-	constructor(parent,MyClass,path){
+	constructor(parent,MyClass,path,id = false){
 
 		super(parent, MyClass , path);
 
+		this.NodeAskedId = id;
+
 		this.NoteCollection = new LoaderCollection("ObjectInfos");
 		this.ResourcesCollection = new LoaderCollection("ObjectInfosResources");
+
+		this.ContainerNode = this.Lifer.getData("app/home/frame/objects","ContainerNode");
+		this.LeafNode = this.Lifer.getData("app/home/frame/objects","LeafNode");
 
 
 		this.init();
@@ -32,6 +37,21 @@ export default class Note extends superViews{
 		this.addHeader();
 		this.addMain();
 		this.addFooter();
+
+		if(this.NodeAskedId){
+
+			//load ma node pour récupérer le titre et la date
+			let res = this.NoteCollection.get(this.ContainerNode.id,this.LeafNode.id,this.NodeAskedId);
+
+			this.Title.innerHTML(res.name);
+
+
+
+			//je load mes ressources et je les affichent
+
+		}
+
+
 	}
 
 
@@ -171,13 +191,13 @@ FROM `lifer`.`objects_infos_resources`;
 	Synchronizer(name){
 
 		console.log('in Synchronizer');
-		console.log(name);
+/*		console.log(name);
 		let ContainerNode = this.Lifer.getData("app/home/frame/objects","ContainerNode");
-		let LeafNode = this.Lifer.getData("app/home/frame/objects","LeafNode");
+		let LeafNode = this.Lifer.getData("app/home/frame/objects","LeafNode");*/
 
 		let formData = new FormData();
-		formData.append('ObjectId' , ContainerNode.id);
-        formData.append('ObjectLeafId' , LeafNode.id);
+		formData.append('ObjectId' , this.ContainerNode.id);
+        formData.append('ObjectLeafId' , this.LeafNode.id);
 
         console.log("before if");
         console.log(this.note.id);

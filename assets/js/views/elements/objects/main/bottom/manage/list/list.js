@@ -85,7 +85,7 @@ export default class list extends superViews{
 
 			a.append(ListInfos[k].infos.name);
 
-			a.addEventListener("click", (e)=>this.openPopNote(e));
+			a.addEventListener("click", (e)=>this.openPopNote(e,ListInfos[k].id));
 
 			li.append(a);
 
@@ -97,9 +97,9 @@ export default class list extends superViews{
 
 	}
 
-	openPopNote(e){
+	openPopNote(e,id){
 
-		let ThePopNote = new popNote(this.container,"popNote",this.path);
+		let ThePopNote = new popNote(this.container,"popNote",this.path,id);
 
 	}
 
