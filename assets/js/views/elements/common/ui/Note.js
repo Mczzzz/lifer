@@ -203,7 +203,7 @@ export default class Note extends superViews{
 /*        console.log("before if");
         console.log(this.note.id);
         console.log(name);*/
-		if (this.note.id == false || (name == "text" && value.id == "title" ){
+		if (this.note.id == false || (name == "text" && value.id == "title" )){
 
 			//j'init ma note dans tous les cas
 			formData.append('titre'  , this.Title.innerHTML);
