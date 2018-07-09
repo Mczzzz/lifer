@@ -48,7 +48,7 @@ export default class Note extends superViews{
 
 			console.log(res);
 			console.log(this.Title);
-			this.Title.innerHTML(res.name);
+			this.Title.append(res.name);
 
 
 
