@@ -56,7 +56,7 @@ export default class Note extends superViews{
 			//je load mes ressources et je les affichent
 			let Ressources = this.ResourcesCollection.getList(this.ContainerNode.id, this.LeafNode.id, this.note.id);
 	
-			for (let Ressource in Ressources){
+			for (let Ressource of Ressources){
 
 				console.log(Ressource);
 				this.textElement(Ressource.text);
