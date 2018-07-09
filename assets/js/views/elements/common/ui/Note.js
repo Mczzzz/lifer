@@ -126,7 +126,7 @@ export default class Note extends superViews{
 			for (let Ressource of Ressources){
 
 				console.log(Ressource);
-				this.textElement(Ressource.text);
+				this.textElement(Ressource.text,Ressource.id,"15px","","black","");
 
 
 
