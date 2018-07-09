@@ -24,7 +24,7 @@ export default class ObjectInfosResourcesCollection {
 
   getList(objectId, leafId, noteId){
 
-    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + '/getAllResources/'+ objectId + '/'+ leafId + '/'+ noteId);
+    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'getAllResources/'+ objectId + '/'+ leafId + '/'+ noteId);
 
     return result;
 
