@@ -23,7 +23,7 @@ export default class Header extends superViews{
 	skin(){
 
 		this.HeaderObject.setBkgdColor(this.bkgdHF);
-    	this.HeaderObject.setBackToHome();
+    	this.HeaderObject.setBackToHome(this.parent);
     	this.HeaderObject.setIconPage();
     	this.HeaderObject.setHeight(56);
 

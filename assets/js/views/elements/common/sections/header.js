@@ -90,7 +90,7 @@ export default class Header {
 
 
 
-	setBackToHome(){
+	setBackToHome(parent = false){
 
 		let headerBackHome = document.createElement("div");
 		headerBackHome.className = "headerBackHome";
@@ -106,7 +106,12 @@ export default class Header {
 		headerBackHome.append(i);
 	
 
-		i.addEventListener("click", (e)=>this.linkBackToHome(e));
+		if(!parent){
+			i.addEventListener("click", (e)=>this.linkBackToHome(e));
+		}else{
+			i.addEventListener("click", (e)=>this.closeParent(parent));
+		}
+		
 
 	}
 
@@ -117,6 +122,12 @@ export default class Header {
 
 	}
 
+
+	closeParent(parent){
+
+		parent.remove();
+
+	}
 
 
 	setIconPage(){
