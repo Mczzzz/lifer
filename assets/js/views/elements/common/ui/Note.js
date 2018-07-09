@@ -167,7 +167,7 @@ export default class Note extends superViews{
 		Texte.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
 		Texte.id = id;
 		Texte.append(text);
-		this.Main.prepend(Texte);
+		this.Main.append(Texte);
 
 		Texte.addEventListener("keyup", (e)=>this.dispatcher(e,"text",Texte));
 
