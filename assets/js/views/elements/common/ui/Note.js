@@ -221,7 +221,7 @@ export default class Note extends superViews{
 
 		}
 
-		if(name == "text" && Number.isInteger(this.note.id)){
+		if(name == "text" && Number.isInteger(this.note.id) && value.id != "title"){
 
 			formData.append('texte'  , value.innerHTML);
         	formData.append('noteId'  , this.note.id);
