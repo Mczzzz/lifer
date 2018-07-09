@@ -418,7 +418,7 @@ class ObjectInfosController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $resources = $em->getRepository('AppBundle:Object_infos_resources')->findBy(array('object' => $objectId,'objectTree' => $leafId,'objectInfos' => $noteId));
+        $resources = $em->getRepository('AppBundle:Objects_infos_resources')->findBy(array('object' => $objectId,'objectTree' => $leafId,'objectInfos' => $noteId));
         //if(!$resources) return new Response("Pas d'objet ya un truc chelou dans le tree");
 
 
