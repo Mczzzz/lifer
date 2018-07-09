@@ -166,7 +166,7 @@ export default class Note extends superViews{
 		Texte.setAttribute("placeholder", "Texte...");
 		Texte.style.fontSize = "15px";
 		Texte.style.margin = "10px";
-		Texte.style.flex = "1";
+		//Texte.style.flex = "1";
 		Texte.style.border = "none";
 		Texte.style.outline = "none";
 		Texte.style.background = "transparent";
