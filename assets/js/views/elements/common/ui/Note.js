@@ -47,6 +47,7 @@ export default class Note extends superViews{
 			let res = this.NoteCollection.get(this.ContainerNode.id,this.LeafNode.id,this.NodeAskedId);
 
 			console.log(res);
+			console.log(this.Title);
 			this.Title.innerHTML(res.name);
 
 
