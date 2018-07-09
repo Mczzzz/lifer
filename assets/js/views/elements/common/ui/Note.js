@@ -55,6 +55,17 @@ export default class Note extends superViews{
 	
 			//je load mes ressources et je les affichent
 			let Ressources = this.ResourcesCollection.getList(this.ContainerNode.id, this.LeafNode.id, this.note.id);
+	
+			for (let Ressource in Ressources){
+
+				this.textElement(Ressource.text);
+
+
+
+			}
+
+
+
 		}
 
 
@@ -145,6 +156,27 @@ export default class Note extends superViews{
 
 
 	}
+
+
+
+	textElement(text){
+		let Texte = document.createElement("div");
+		Texte.contentEditable  = "true";
+		Texte.setAttribute("placeholder", "Texte...");
+		Texte.style.fontSize = "15px";
+		Texte.style.margin = "10px";
+		Texte.style.flex = "1";
+		Texte.style.border = "none";
+		Texte.style.outline = "none";
+		Texte.style.background = "transparent";
+		Texte.style.color = "grey";
+		Texte.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
+
+		Texte.append(text);
+		this.Main.append(Texte);
+
+	}
+
 
 
 
