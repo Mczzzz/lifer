@@ -62,7 +62,7 @@ export default class list extends superViews{
 
 		console.log('listInfos');
 		console.log(ListInfos);
-		
+
 	    for (let k in ListInfos){
 
 	    let li = document.createElement("li");
@@ -89,7 +89,7 @@ export default class list extends superViews{
 
 			a.append(ListInfos[k].infos.name);
 
-			a.addEventListener("click", (e)=>this.openPopNote(e,ListInfos[k].id));
+			a.addEventListener("click", (e)=>this.openPopNote(e,ListInfos[k].infos.id));
 
 			li.append(a);
 
