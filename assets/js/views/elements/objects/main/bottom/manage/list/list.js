@@ -59,6 +59,10 @@ export default class list extends superViews{
 		ul.style.padding = "15px";
 		this.container.append(ul);
 
+
+		console.log('listInfos');
+		console.log(ListInfos);
+		
 	    for (let k in ListInfos){
 
 	    let li = document.createElement("li");
