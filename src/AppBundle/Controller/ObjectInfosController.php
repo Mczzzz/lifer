@@ -23,7 +23,7 @@ class ObjectInfosController extends Controller
 
 
     /**
-     * @Route("/object/infos/get/{objectId}/{leafId}/{noteId}", name="object_infos_get_objid_leafid")
+     * @Route("/object/infos/get/{objectId}/{leafId}/{noteId}", name="object_infos_get_objid_leafid_noteId")
      */
     public function getObjectInfosNoteAction(Request $request,$objectId,$leafId,$noteId)
     {
