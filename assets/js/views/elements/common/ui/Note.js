@@ -183,7 +183,7 @@ export default class Note extends superViews{
 		console.log(value);
 		this.Synchronizer(name,value);
 
-		this.changeTextColor(e,name);
+		this.changeTextColor(e,value);
 
 	}
 
@@ -244,20 +244,20 @@ export default class Note extends superViews{
 
 
 
-	changeTextColor(e,name){
+	changeTextColor(e,value){
 
 	//this.Synchronizer();
 
-	if(this[name].innerHTML === ""){
-		this[name].style.color = "grey";
+	if(value.innerHTML === ""){
+		value.style.color = "grey";
 	}else{
-		this[name].style.color = "black";
+		value.style.color = "black";
 	}
 	
-	if(name == 'Title' && e.key == "Enter"){
+	if(value.id == 'title' && e.key == "Enter"){
 
-		this.Title.innerHTML = this.Title.innerHTML.replace(/<div><br><\/div>/i, '');
-		this.Texte.focus();
+		value.innerHTML = value.innerHTML.replace(/<div><br><\/div>/i, '');
+		value.focus();
 
 	}
 
