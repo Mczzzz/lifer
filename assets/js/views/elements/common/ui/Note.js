@@ -454,7 +454,7 @@ export default class Note extends superViews{
 
 
 		//envoyer en sauvegarde background
-		this.dispatcher("","photo",pict);
+		this.dispatcher("","photo",this.camLauncher.files[0]);
 
 	}
 
