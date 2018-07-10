@@ -67,6 +67,7 @@ export default class Layout {
 			css.innerHTML = `	body{
 									margin:0px;
 									background-color: blue;
+									overscroll-behavior: contain;
 								}
 
 								.container{
