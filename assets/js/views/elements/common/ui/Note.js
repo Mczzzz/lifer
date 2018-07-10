@@ -117,8 +117,9 @@ export default class Note extends superViews{
 			console.log(res);
 			console.log(this.Title);
 			if(res.name.length > 0){
-				document.getElementsById('title').append(res.name);
-				document.getElementsById('title').style.color = "black";
+				let title = document.getElementsById('title')
+				title.append(res.name);
+				title.style.color = "black";
 			}
 	
 			//je load mes ressources et je les affichent
