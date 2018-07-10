@@ -112,6 +112,8 @@ export default class Note extends superViews{
 		divCore.style.overflowY = "scroll";
 		this.Main.append(divCore);
 
+		this.divCore = divCore;
+
 		if(this.note.id){
 
 			console.log('in init noteAsked Id');
@@ -396,7 +398,7 @@ export default class Note extends superViews{
 
 
 		this.imgDiv = document.createElement("div");
-		this.Main.prepend(this.imgDiv);
+		this.divCore.append(this.imgDiv);
 		this.imgDiv.style.display = "flex";
 
 		this.img = document.createElement("img");
