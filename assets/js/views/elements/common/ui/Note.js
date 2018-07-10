@@ -164,6 +164,11 @@ export default class Note extends superViews{
 
 		let card = document.createElement("div");
 		card.style.marginBottom = "20px";
+		card.style.borderWidth  =  "1px";
+    	card.style.borderStyle  =  "dashed";
+    	card.style.borderColor  = "#b7b7b7";
+    	card.style.margin       = "10px";
+    	card.style.borderRadius = "8px";
 		//card.style.display = "flex";
 		//card.style.flexDirection = "column";
 
