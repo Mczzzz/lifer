@@ -161,7 +161,7 @@ export default class Note extends superViews{
 
 		let header = document.createElement("div");
 		header.style.display = "flex";
-		header.style.justifyContent = "right";
+		header.style.justifyContent = "flex-end";
 		card.append(header);
 
 		if(update){
