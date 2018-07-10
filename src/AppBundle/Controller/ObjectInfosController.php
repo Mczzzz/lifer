@@ -380,10 +380,7 @@ class ObjectInfosController extends Controller
     }
 
 
-
-
-
-     /**
+    /**
      * @Route("/object/infos/resources/types", name="object_infos_resources_type")
      */
     public function getObjectInfosResourcesTypeAction(Request $request)
@@ -404,6 +401,39 @@ class ObjectInfosController extends Controller
             $res->name = $types->getName();
             $res->picto = $types->getPicto();
             $res->color = $types->getColor();
+
+            array_push($test,$res);
+
+        }
+
+        return new response(json_encode($test));
+
+    }
+
+
+
+     /**
+     * @Route("/object/infos/resources/getAllResources/{objectId}/{leafId}/{noteId}", name="object_infos_resources_all")
+     */
+    public function getObjectInfosGetAllResourcesAction(Request $request,$objectId,$leafId,$noteId)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $resources = $em->getRepository('AppBundle:Objects_infos_resources')->findBy(array('object' => $objectId,'objectTree' => $leafId,'objectInfos' => $noteId));
+        //if(!$resources) return new Response("Pas d'objet ya un truc chelou dans le tree");
+
+
+           $test = array();
+
+        foreach($resources as $resource){
+
+            $res = new \stdClass();
+            $res->id = $resource->getId();
+            $res->text = $resource->getText();
+            $res->update = $resource->getTsUpdate();
+            $res->value = $resource->getValue();
+           // $res->type = $resource->getType();
 
             array_push($test,$res);
 

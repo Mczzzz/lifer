@@ -22,9 +22,15 @@ export default class ObjectInfosResourcesCollection {
   }
 
 
+<<<<<<< HEAD
   getListe(id){
 
     let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'getListe/'+ id);
+=======
+  getList(objectId, leafId, noteId){
+
+    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'getAllResources/'+ objectId + '/'+ leafId + '/'+ noteId);
+>>>>>>> 5390e8ddff07ae24ec1d7fef8f523e8ab05b14bd
 
     return result;
 

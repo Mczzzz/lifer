@@ -40,25 +40,6 @@ export default class Note extends superViews{
 		this.addMain();
 		this.addFooter();
 
-		if(this.note.id){
-
-			console.log('in init noteAsked Id');
-			//load ma node pour récupérer le titre et la date
-			let res = this.NoteCollection.get(this.ContainerNode.id,this.LeafNode.id,this.note.id);
-
-			console.log(res);
-			console.log(this.Title);
-			this.Title.append(res.name);
-
-			//je load mes ressources et je les affichent
-
-			//let revivalResources = this.ResourcesCollection
-
-
-
-		}
-
-
 	}
 
 
@@ -111,48 +92,96 @@ export default class Note extends superViews{
 		this.Main.style.flex = 1;
 
 
-		this.Title = document.createElement("div");
-		this.Title.contentEditable  = "true";
-		this.Title.setAttribute("placeholder", "Titre...");
-		this.Title.style.fontSize   = "20px";
-		this.Title.style.fontWeight = "bold";
-		this.Title.style.margin     = "10px";
-		this.Title.style.border     = "none";
-		this.Title.style.outline    = "none";
-		this.Title.style.background = "transparent";
-		this.Title.style.color      = "grey";
-		this.Title.style.fontFamily = "'Titillium Web',sans-serif,Arial,sans-serif";
-		this.Main.append(this.Title);
-		this.Title.focus();
-
-		this.Title.addEventListener("keyup", (e)=>this.dispatcher(e,"Title"));
+		
+		this.addTitle();
 
 
-		this.Texte = document.createElement("div");
-		this.Texte.contentEditable  = "true";
-		this.Texte.setAttribute("placeholder", "Texte...");
-		this.Texte.style.fontSize = "15px";
-		this.Texte.style.margin = "10px";
-		this.Texte.style.flex = "1";
-		this.Texte.style.border = "none";
-		this.Texte.style.outline = "none";
-		this.Texte.style.background = "transparent";
-		this.Texte.style.color = "grey";
-		this.Texte.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
-		this.Main.append(this.Texte);
+		this.addRessources();
 
 
-		this.Texte.addEventListener("keyup", (e)=>this.dispatcher(e,"Texte"));
+		this.addEmpty();
 
 
 	}
 
 
+	addRessources(){
 
-	dispatcher(e,name){
+		if(this.note.id){
+
+			console.log('in init noteAsked Id');
+			//load ma node pour récupérer le titre et la date
+			let res = this.NoteCollection.get(this.ContainerNode.id,this.LeafNode.id,this.note.id);
+
+			console.log(res);
+			console.log(this.Title);
+			if(res.name.length > 0){
+				this.Title.append(res.name);
+				this.Title.style.color = "black";
+			}
+	
+			//je load mes ressources et je les affichent
+			let Ressources = this.ResourcesCollection.getList(this.ContainerNode.id, this.LeafNode.id, this.note.id);
+	
+			for (let Ressource of Ressources){
+
+				console.log(Ressource);
+				this.textElement(Ressource.text,Ressource.id,"15px","","black","");
+
+
+
+			}
+
+
+
+		}
+
+	}
+
+
+	addTitle(){
+
+		this.Title = this.textElement('','title',"20px","bold","grey","Titre...");
+
+	}
+
+	addEmpty(){
+
+		this.Texte = this.textElement('','text',"15px","","grey","Texte...");
+
+	}
+
+
+	textElement(text,id,size,weight,color,holder){
+		let Texte = document.createElement("div");
+		Texte.contentEditable  = "true";
+		Texte.setAttribute("placeholder", holder);
+		Texte.style.fontSize = size;
+		Texte.style.margin = "10px";
+		Texte.style.fontWeight = weight;
+		//Texte.style.flex = flex;
+		Texte.style.border = "none";
+		Texte.style.outline = "none";
+		Texte.style.background = "transparent";
+		Texte.style.color = color;
+		Texte.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
+		Texte.id = id;
+		Texte.append(text);
+		this.Main.append(Texte);
+
+		Texte.addEventListener("keyup", (e)=>this.dispatcher(e,"text",Texte));
+
+		return Texte;
+
+	}
+
+
+
+
+	dispatcher(e,name, value){
 		console.log('in dispatcher');
-
-		this.Synchronizer(name);
+		console.log(value);
+		this.Synchronizer(name,value);
 
 		this.changeTextColor(e,name);
 
@@ -160,42 +189,7 @@ export default class Note extends superViews{
 
 
 
-/*	initNoteLife(e, name){
-
-
-		this.Saver("TEXT");*/
-
-/*SELECT `objects_infos`.`id`,
-    `objects_infos`.`Name`,
-    `objects_infos`.`object`,
-    `objects_infos`.`my_order`,
-    `objects_infos`.`creator`,
-    `objects_infos`.`objectTree`,
-    `objects_infos`.`ts_update`
-FROM `lifer`.`objects_infos`;*/
-
-/*
-SELECT `objects_infos_resources`.`id`,
-    `objects_infos_resources`.`text`,
-    `objects_infos_resources`.`ts_update`,
-    `objects_infos_resources`.`value`,
-    `objects_infos_resources`.`object`,
-    `objects_infos_resources`.`objectTree`,
-    `objects_infos_resources`.`objectInfos`,
-    `objects_infos_resources`.`type`
-FROM `lifer`.`objects_infos_resources`;
-*/
-	//je dois recuperer l'id de 
-
-
-/*
-		this.changeTextColor(e, name);
-
-	}*/
-
-
-
-	Synchronizer(name){
+	Synchronizer(name,value){
 
 		console.log('in Synchronizer');
 /*		console.log(name);
@@ -206,10 +200,10 @@ FROM `lifer`.`objects_infos_resources`;
 		formData.append('ObjectId' , this.ContainerNode.id);
         formData.append('ObjectLeafId' , this.LeafNode.id);
 
-        console.log("before if");
+/*        console.log("before if");
         console.log(this.note.id);
-        console.log(name);
-		if (this.note.id == false || name == "Title"){
+        console.log(name);*/
+		if (this.note.id == false || (name == "text" && value.id == "title" )){
 
 			//j'init ma note dans tous les cas
 			formData.append('titre'  , this.Title.innerHTML);
@@ -227,16 +221,16 @@ FROM `lifer`.`objects_infos_resources`;
 
 		}
 
-		if(name == "Texte" && Number.isInteger(this.note.id)){
+		if(name == "text" && Number.isInteger(this.note.id) && value.id != "title"){
 
-			formData.append('texte'  , this.Texte.innerHTML);
+			formData.append('texte'  , value.innerHTML);
         	formData.append('noteId'  , this.note.id);
-        	formData.append('resourceId'  , this.Texte.id);
+        	formData.append('resourceId'  , value.id);
 
         	let res = this.ResourcesCollection.createUpdate(formData);
 
 			if(res.error == 0 && Number.isInteger(res.data)){
-				this.Texte.id = res.data;
+				value.id = res.data;
 			}
 
 
