@@ -139,7 +139,7 @@ export default class Note extends superViews{
 			}
 
 			console.log(divCore.scrollTop);
-			console.log(scrollHeight);
+			console.log(divCore.scrollHeight);
 			divCore.scrollTop = divCore.scrollHeight;
 
 		}
