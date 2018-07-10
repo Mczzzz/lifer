@@ -155,8 +155,8 @@ export default class Note extends superViews{
 	textElement(text,id,size,weight,color,holder,update = false){
 
 		let card = document.createElement("div");
-		card.style.display = "flex";
-		card.style.flexDirection = "column";
+		//card.style.display = "flex";
+		//card.style.flexDirection = "column";
 		this.Main.append(card);
 
 		let header = document.createElement("div");
