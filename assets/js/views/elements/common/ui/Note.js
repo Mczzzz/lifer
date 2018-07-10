@@ -138,7 +138,8 @@ export default class Note extends superViews{
 
 			}
 
-			divCore.scrollTop = divCore.scrollHeight;
+
+			divCore.scrollTop = divCore.scrollHeight + 500;
 
 		}
 
