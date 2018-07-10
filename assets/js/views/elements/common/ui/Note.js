@@ -168,7 +168,7 @@ export default class Note extends superViews{
 			let date = document.createElement("div");
 			date.innerHTML = update;
 			date.style.fontSize = "9px";
-			date.color = "grey";
+			date.style.color = "grey";
 
 			header.append(date);
 
