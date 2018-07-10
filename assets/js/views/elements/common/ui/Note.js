@@ -164,12 +164,16 @@ export default class Note extends superViews{
 		header.style.justifyContent = "right";
 		card.append(header);
 
-		let date = document.createElement("div");
-		date.innerHTML = update;
-		date.style.fontSize = "9px";
-		date.color = "grey";
+		if(update){
+			let date = document.createElement("div");
+			date.innerHTML = update;
+			date.style.fontSize = "9px";
+			date.color = "grey";
 
-		header.append(date);
+			header.append(date);
+
+		}
+
 		
 
 
