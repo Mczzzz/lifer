@@ -285,8 +285,10 @@ class ObjectInfosController extends Controller
         $objectId     = $request->request->get('ObjectId');
         $objectLeafId = $request->request->get('ObjectLeafId');
         $texte = $request->request->get('texte');
+        $data = $request->request->get('data');
         $noteId = $request->request->get('noteId');
         $ResourceId = $request->request->get('resourceId');
+        $TypeId = $request->request->get('typeId');
 
 
         $em = $this->getDoctrine()->getManager();
@@ -353,10 +355,10 @@ class ObjectInfosController extends Controller
         }
 
 
-        $cleanText = str_replace('<div>', '<br>', $texte);
-        $cleanText = str_replace('</div>', '', $cleanText);
-        
-        $object_infos_resources->setText($cleanText);
+        //$cleanText = str_replace('<div>', '<br>', $texte);
+        //$cleanText = str_replace('</div>', '', $cleanText);
+
+        $object_infos_resources->setText($texte);
 
         $object_infos_resources->setObject($object);
 

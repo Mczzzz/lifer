@@ -243,6 +243,7 @@ export default class Note extends superViews{
 		let formData = new FormData();
 		formData.append('ObjectId' , this.ContainerNode.id);
         formData.append('ObjectLeafId' , this.LeafNode.id);
+        formData.append('noteId'  , this.note.id);
 
 /*        console.log("before if");
         console.log(this.note.id);
@@ -251,7 +252,6 @@ export default class Note extends superViews{
 
 			//j'init ma note dans tous les cas
 			formData.append('titre'  , document.getElementById('title').innerHTML);
-        	formData.append('noteId'  , this.note.id);
 
 			let res = this.NoteCollection.create(formData);
 
@@ -268,8 +268,8 @@ export default class Note extends superViews{
 		if(name == "text" && Number.isInteger(this.note.id) && value.id != "title"){
 
 			formData.append('texte'  , value.innerHTML);
-        	formData.append('noteId'  , this.note.id);
         	formData.append('resourceId'  , value.id);
+        	formData.append('typeId'  , 2);
 
         	let res = this.ResourcesCollection.createUpdate(formData);
 
@@ -280,6 +280,22 @@ export default class Note extends superViews{
 
 		}
 
+
+
+		if(name == "photo" && Number.isInteger(this.note.id) && value.id != "title"){
+
+			formData.append('data'  , value);
+        	formData.append('resourceId'  , value.id);
+        	formData.append('typeId'  , 3);
+
+        	let res = this.ResourcesCollection.createUpdate(formData);
+
+			if(res.error == 0 && Number.isInteger(res.data)){
+				value.id = res.data;
+			}
+
+
+		}
 
 
 
@@ -438,7 +454,7 @@ export default class Note extends superViews{
 
 
 		//envoyer en sauvegarde background
-
+		this.dispatcher(e,"photo",pict);
 
 	}
 
