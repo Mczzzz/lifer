@@ -156,11 +156,20 @@ export default class Note extends superViews{
 
 		let card = document.createElement("div");
 		card.style.display = "flex";
+		card.style.flexDirection = "column";
 		this.Main.append(card);
+
+		let header = document.createElement("div");
+		header.style.display = "flex";
+		header.style.justifyContent = "right";
+		card.append(header);
 
 		let date = document.createElement("div");
 		date.innerHTML = update;
-		card.append(date);
+		date.style.fontSize = "9px";
+		date.color = "grey";
+
+		header.append(date);
 		
 
 
