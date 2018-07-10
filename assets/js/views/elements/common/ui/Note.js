@@ -108,6 +108,9 @@ export default class Note extends superViews{
 
 	addRessources(){
 
+		let divCore = document.createElement("div");
+		this.Main.append(divCore);
+
 		if(this.note.id){
 
 			console.log('in init noteAsked Id');
@@ -128,9 +131,9 @@ export default class Note extends superViews{
 			for (let Ressource of Ressources){
 
 				console.log(Ressource);
-				this.textElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
+				let cardElement = this.textElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
 
-
+				divCore.append(cardElement);
 
 			}
 
