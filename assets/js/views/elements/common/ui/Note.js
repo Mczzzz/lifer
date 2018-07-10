@@ -411,6 +411,7 @@ export default class Note extends superViews{
 
 		this.img.src = pict;
 		this.img.style.width  = "100%";
+		this.img.style.borderRadius = "8px";
 		this.img.height = this.img.offsetWidth  / RatioPhoto;
 		
 
