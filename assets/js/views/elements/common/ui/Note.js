@@ -126,7 +126,7 @@ export default class Note extends superViews{
 			for (let Ressource of Ressources){
 
 				console.log(Ressource);
-				this.textElement(Ressource.text,Ressource.id,"15px","","black","");
+				this.textElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
 
 
 
@@ -152,7 +152,18 @@ export default class Note extends superViews{
 	}
 
 
-	textElement(text,id,size,weight,color,holder){
+	textElement(text,id,size,weight,color,holder,update = false){
+
+		let card = document.createElement("div");
+		card.style.display = "flex";
+		this.Main.append(card);
+
+		let date = document.createElement("div");
+		date.innerHTML = update;
+		card.append(date);
+		
+
+
 		let Texte = document.createElement("div");
 		Texte.contentEditable  = "true";
 		Texte.setAttribute("placeholder", holder);
@@ -167,7 +178,7 @@ export default class Note extends superViews{
 		Texte.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
 		Texte.id = id;
 		Texte.innerHTML = text;
-		this.Main.append(Texte);
+		card.append(Texte);
 
 		Texte.addEventListener("keyup", (e)=>this.dispatcher(e,"text",Texte));
 
