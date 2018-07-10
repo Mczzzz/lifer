@@ -237,7 +237,7 @@ export default class Note extends superViews{
 		if (this.note.id == false || (name == "text" && value.id == "title" )){
 
 			//j'init ma note dans tous les cas
-			formData.append('titre'  , this.Title.innerHTML);
+			formData.append('titre'  , document.getElementById('title').innerHTML);
         	formData.append('noteId'  , this.note.id);
 
 			let res = this.NoteCollection.create(formData);
