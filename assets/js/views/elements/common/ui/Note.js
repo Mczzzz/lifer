@@ -50,9 +50,11 @@ export default class Note extends superViews{
 			console.log(this.Title);
 			this.Title.append(res.name);
 
-
-
 			//je load mes ressources et je les affichent
+
+			//let revivalResources = this.ResourcesCollection
+
+
 
 		}
 

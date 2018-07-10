@@ -352,6 +352,8 @@ class ObjectInfosController extends Controller
 
         }
 
+
+        $cleanText = str_replace('<div><br></div>', '<br>', $texte);
         
         $object_infos_resources->setText($texte);
 
