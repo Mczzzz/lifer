@@ -173,7 +173,7 @@ export default class Note extends superViews{
     	card.style.borderColor  = "#b7b7b7";
     	card.style.margin       = "10px";
     	card.style.borderRadius = "8px";
-    	card.style.background   = "#9592ff24";
+    	card.style.background   = "rgba(149, 146, 255, 0.14)";
 		//card.style.display = "flex";
 		//card.style.flexDirection = "column";
 
