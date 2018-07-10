@@ -89,7 +89,7 @@ export default class Note extends superViews{
 
 		this.Main.style.background = "white";
 		this.Main.style.display = "flex";
-		this.Main.style.overflowY = "scroll";
+		//this.Main.style.overflowY = "scroll";
 		this.Main.style.flexDirection = "column";
 		this.Main.style.flex = 1;
 
@@ -109,6 +109,7 @@ export default class Note extends superViews{
 	addRessources(){
 
 		let divCore = document.createElement("div");
+		divCore.style.overflowY = "scroll";
 		this.Main.append(divCore);
 
 		if(this.note.id){
