@@ -83,6 +83,8 @@ export default class Note extends superViews{
 
 		this.Main = document.createElement("div");
 		this.Main.className = "mainNote";
+		this.Main.style.display = "flex";
+		this.Main.style.flexDirection = "column";
 		this.container.append(this.Main);
 
 		this.Main.style.background = "white";
@@ -92,7 +94,6 @@ export default class Note extends superViews{
 		this.Main.style.flex = 1;
 
 
-		
 		this.addTitle();
 
 
@@ -140,15 +141,17 @@ export default class Note extends superViews{
 
 
 	addTitle(){
-
-		this.Title = this.textElement('','title',"20px","bold","grey","Titre...");
-
+		let divTitle = document.createElement("div");
+		let cardTitle = this.textElement('','title',"20px","bold","grey","Titre...");
+		divTitle.append(cardTitle);
+		this.Main.append(divTitle);
 	}
 
 	addEmpty(){
-
-		this.Texte = this.textElement('','text',"15px","","grey","Texte...");
-
+		let divEmpty = document.createElement("div");
+		let cardEmpty = this.textElement('','text',"15px","","grey","Texte...");
+		divEmpty.append(cardEmpty);
+		this.Main.append(divEmpty);
 	}
 
 
@@ -157,7 +160,6 @@ export default class Note extends superViews{
 		let card = document.createElement("div");
 		//card.style.display = "flex";
 		//card.style.flexDirection = "column";
-		this.Main.append(card);
 
 		let header = document.createElement("div");
 		header.style.display = "flex";
@@ -195,7 +197,7 @@ export default class Note extends superViews{
 
 		Texte.addEventListener("keyup", (e)=>this.dispatcher(e,"text",Texte));
 
-		return Texte;
+		return card;
 
 	}
 
