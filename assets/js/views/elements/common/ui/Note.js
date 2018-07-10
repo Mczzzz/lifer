@@ -400,6 +400,8 @@ export default class Note extends superViews{
 		this.imgDiv = document.createElement("div");
 		this.divCore.append(this.imgDiv);
 		this.imgDiv.style.display = "flex";
+		this.imgDiv.style.borderRadius = "8px";
+		this.imgDiv.style.margin = "10px";
 
 		this.img = document.createElement("img");
 		this.img.classList.add("obj");
@@ -409,8 +411,6 @@ export default class Note extends superViews{
 
 		this.img.src = pict;
 		this.img.style.width  = "100%";
-		this.img.style.margin = "10px";
-    	this.img.style.borderRadius = "8px";
 		this.img.height = this.img.offsetWidth  / RatioPhoto;
 		
 
