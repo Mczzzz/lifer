@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 use AppBundle\Entity\Objects;
 use AppBundle\Entity\Objects_tree;
@@ -490,9 +491,10 @@ class ObjectInfosController extends Controller
 
       $image = $dataPath.$user->getId().DIRECTORY_SEPARATOR.$objectId.DIRECTORY_SEPARATOR.$leafId.DIRECTORY_SEPARATOR.$noteId.DIRECTORY_SEPARATOR.$resources->getText();
 
-      var_dump($image);
-      if(is_file($image)) die('image trouvée');
-        return new response(json_encode($test));
+
+      if(!is_file($image)) die('pas d images');
+
+        $response = new BinaryFileResponse($image);
 
     }
 
