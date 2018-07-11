@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use AppBundle\Entity\Objects;
 use AppBundle\Entity\Objects_tree;
+use AppBundle\Entity\Objects_infos;
 use AppBundle\Entity\Humans;
 
 class ObjectController extends Controller
@@ -28,7 +29,17 @@ class ObjectController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $objet = $em->getRepository('AppBundle:Objects')->find($id);
-        if(!$objet) return new Response("Pas d'objet ya un truc chelou");
+        
+        if(!$objet) {
+
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }
+
 
 
         $objects_tree = $em->getRepository('AppBundle:Objects_tree')->findBy(array('object' => $objet->getId()));
@@ -36,20 +47,12 @@ class ObjectController extends Controller
 
         $test = array();
 
-        $res = new \stdClass();
-            $res->id = "root_".$objet->getId();
-            $res->parent = "#";
-            $res->text = $objet->getName();
-            $res->type = (strlen($objet->getType()) > 0)? $objet->getType() : "default";
-            
-            array_push($test,$res);
-
-
+ 
         foreach($objects_tree as $object){
 
             $res = new \stdClass();
             $res->id = $object->getId();
-            $res->parent = (!$object->getParent())?  "root_".$objet->getId() : $object->getParent()->getId() ;
+            $res->parent = (!$object->getParent())?  "#" : $object->getParent()->getId() ;
             $res->text = $object->getName();
             $res->type = (strlen($object->getType()) > 0)? $object->getType() : "default";
             
@@ -87,13 +90,36 @@ class ObjectController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $objet = $em->getRepository('AppBundle:Objects')->find($objectId);
-        if(!$objet) return new Response("Pas d'objet ya un truc chelou dans le tree");
+        
+        if(!$objet) {
+
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }
 
 
-         if(is_bool(strpos($parentId,'root_'))){
+         if($parentId > 0){
               
             $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
-            if(!$parent) return new Response("Pas de parents truc chelou");       
+
+             if(!$parent) {
+
+             $res = new \stdClass();
+                $res->error = 2;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }      
+         
+         }else{
+         
+            $parent = null;
+         
          }
 
 
@@ -107,10 +133,10 @@ class ObjectController extends Controller
 
         $object_tree->setObject($objet);
 
-        if(is_bool(strpos($parentId,'root_'))){
+        
               
-            $object_tree->setParent($parent);
-        }
+        $object_tree->setParent($parent);
+        
 
         $object_tree->setCreator($user);
 
@@ -160,7 +186,15 @@ class ObjectController extends Controller
 
          $object = $em->getRepository('AppBundle:Objects_tree')->find($node);
 
-        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+        if(!$object) {
+
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }
          
         $object->setName($name);
 
@@ -183,9 +217,10 @@ class ObjectController extends Controller
 
 
 
+    //TODO : il faut supprimer avant les infos relatives
 
 
-/**
+    /**
      * @Route("/object/tree/delete", name="object_tree_delete")
      * @Method("POST")
      */
@@ -203,11 +238,30 @@ class ObjectController extends Controller
 
 
          $object = $em->getRepository('AppBundle:Objects_tree')->find($node);
-        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+         
+         if(!$object){
 
-        if(is_bool(strpos($parentId,'root_'))){
+            $res->error = 1;
+            $res->data = "No Container";
+            return new Response(json_encode($res));
+
+        }
+
+        if($parentId > 0){
+
             $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
-            if(!$parent) return new Response("Pas de parents truc chelou");
+           
+           if(!$parent){
+
+            $res->error = 2;
+            $res->data = "No Container";
+            return new Response(json_encode($res));
+
+        }
+        
+        }else{
+
+            $parent = null;
         }
 
         //on va chercher les enfants accrochés pour les remettre au parent direct
@@ -218,18 +272,31 @@ class ObjectController extends Controller
 
             foreach($childs as $child){
 
-                if(is_bool(strpos($parentId,'root_'))){
-                    $child->setParent($parent);
+
+                $child->setParent($parent);
                     
-                }else{
-                    $child->setParent(null);
-                }
 
                 $em->persist($child);
             }
 
             $em->flush();
         }
+
+
+        //s'il y a des infos on les détruits
+         $childsInfos = $em->getRepository('AppBundle:Objects_infos')->findBy(array('objectTree' => $node));
+
+         if($childsInfos){
+
+            foreach($childsInfos as $childI){
+
+                $em->remove($childI);
+
+            }
+
+            $em->flush();
+        }
+
 
 
         //maintenant on peut detruire la node sans se prendre de probleme de clef etrangere
@@ -249,5 +316,58 @@ class ObjectController extends Controller
     }
 
 
+
+    /**
+     * @Route("/object/tree/dnd", name="object_tree_dnd")
+     * @Method("POST")
+     */
+    public function MoveAction(Request $request)
+    {
+        $request = Request::createFromGlobals();
+        $node = $request->request->get('node');
+        $parent = $request->request->get('parent');
+
+        $em = $this->getDoctrine()->getManager();
+
+        $res = new \stdClass();
+        $res->error = 0;
+
+        $object = $em->getRepository('AppBundle:Objects_tree')->find($node);
+
+        if(!$object){
+
+            $res->error = 1;
+            $res->data = "No Container";
+            return new Response(json_encode($res));
+
+        }
+
+        if($parent > 0){
+
+            $parent = $em->getRepository('AppBundle:Objects_tree')->find($parent);
+
+            if(!$parent){
+                $res->error = 2;
+                $res->data = "Orphelin";
+                return new Response(json_encode($res));
+                
+            }
+
+        }else{
+            $parent = null;
+        }
+
+        $object->setParent($parent);
+
+        $em->persist($object);
+
+        // actually executes the queries (i.e. the INSERT query)
+        $em->flush();
+
+
+        return new Response(json_encode($res));
+
+
+    }
 
 }

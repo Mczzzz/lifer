@@ -24,23 +24,26 @@ class Objects_infos_resources
     /**
      * @var int
      *
-     * @ORM\Column(name="objectId", type="integer")
+     * @ORM\ManyToOne(targetEntity="Objects", inversedBy="objects")
+     * @ORM\JoinColumn(name="object", referencedColumnName="id")
      */
-    private $objectId;
+    private $object;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="ObjectTreeId", type="integer")
+     * @ORM\ManyToOne(targetEntity="Objects_tree", inversedBy="objects_tree")
+     * @ORM\JoinColumn(name="objectTree", referencedColumnName="id")
      */
-    private $objectTreeId;
+    private $objectTree;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="ObjectInfosId", type="integer")
+     * @ORM\ManyToOne(targetEntity="Objects_infos", inversedBy="objects_infos")
+     * @ORM\JoinColumn(name="objectInfos", referencedColumnName="id")
      */
-    private $objectInfosId;
+    private $objectInfos;
 
     /**
      * @var string
@@ -52,14 +55,15 @@ class Objects_infos_resources
     /**
      * @var int
      *
-     * @ORM\Column(name="typeId", type="integer")
+     * @ORM\ManyToOne(targetEntity="Object_infos_resources_types", inversedBy="object_infos_resources_types")
+     * @ORM\JoinColumn(name="type", referencedColumnName="id")
      */
-    private $typeId;
+    private $type;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="ts_update", type="datetimetz")
+     * @ORM\Column(name="ts_update", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
      */
     private $tsUpdate;
 
@@ -71,9 +75,10 @@ class Objects_infos_resources
     private $value;
 
 
+
+  
+
     /**
-     * Get id
-     *
      * @return int
      */
     public function getId()
@@ -82,94 +87,78 @@ class Objects_infos_resources
     }
 
     /**
-     * Set objectId
+     * @param int $id
      *
-     * @param integer $objectId
-     *
-     * @return Objects_infos_resources
+     * @return self
      */
-    public function setObjectId($objectId)
+    public function setId($id)
     {
-        $this->objectId = $objectId;
+        $this->id = $id;
 
         return $this;
     }
 
     /**
-     * Get objectId
-     *
      * @return int
      */
-    public function getObjectId()
+    public function getObject()
     {
-        return $this->objectId;
+        return $this->object;
     }
 
     /**
-     * Set objectTreeId
+     * @param int $object
      *
-     * @param integer $objectTreeId
-     *
-     * @return Objects_infos_resources
+     * @return self
      */
-    public function setObjectTreeId($objectTreeId)
+    public function setObject($object)
     {
-        $this->objectTreeId = $objectTreeId;
+        $this->object = $object;
 
         return $this;
     }
 
     /**
-     * Get objectTreeId
-     *
      * @return int
      */
-    public function getObjectTreeId()
+    public function getObjectTree()
     {
-        return $this->objectTreeId;
+        return $this->objectTree;
     }
 
     /**
-     * Set objectInfosId
+     * @param int $objectTree
      *
-     * @param integer $objectInfosId
-     *
-     * @return Objects_infos_resources
+     * @return self
      */
-    public function setObjectInfosId($objectInfosId)
+    public function setObjectTree($objectTree)
     {
-        $this->objectInfosId = $objectInfosId;
+        $this->objectTree = $objectTree;
 
         return $this;
     }
 
     /**
-     * Get objectInfosId
-     *
      * @return int
      */
-    public function getObjectInfosId()
+    public function getObjectInfos()
     {
-        return $this->objectInfosId;
+        return $this->objectInfos;
     }
 
     /**
-     * Set text
+     * @param int $objectInfos
      *
-     * @param string $text
-     *
-     * @return Objects_infos_resources
+     * @return self
      */
-    public function setText($text)
+    public function setObjectInfos($objectInfos)
     {
-        $this->text = $text;
+        $this->objectInfos = $objectInfos;
 
         return $this;
     }
 
     /**
-     * Get text
-     *
      * @return string
      */
     public function getText()
@@ -178,46 +167,19 @@ class Objects_infos_resources
     }
 
     /**
-     * Set typeId
+     * @param string $text
      *
-     * @param integer $typeId
-     *
-     * @return Objects_infos_resources
+     * @return self
      */
-    public function setTypeId($typeId)
+    public function setText($text)
     {
-        $this->typeId = $typeId;
+        $this->text = $text;
 
         return $this;
     }
 
+  
     /**
-     * Get typeId
-     *
-     * @return int
-     */
-    public function getTypeId()
-    {
-        return $this->typeId;
-    }
-
-    /**
-     * Set tsUpdate
-     *
-     * @param \DateTime $tsUpdate
-     *
-     * @return Objects_infos_resources
-     */
-    public function setTsUpdate($tsUpdate)
-    {
-        $this->tsUpdate = $tsUpdate;
-
-        return $this;
-    }
-
-    /**
-     * Get tsUpdate
-     *
      * @return \DateTime
      */
     public function getTsUpdate()
@@ -226,11 +188,29 @@ class Objects_infos_resources
     }
 
     /**
-     * Set value
+     * @param \DateTime $tsUpdate
      *
+     * @return self
+     */
+    public function setTsUpdate(\DateTime $tsUpdate)
+    {
+        $this->tsUpdate = $tsUpdate;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
      * @param string $value
      *
-     * @return Objects_infos_resources
+     * @return self
      */
     public function setValue($value)
     {
@@ -240,13 +220,23 @@ class Objects_infos_resources
     }
 
     /**
-     * Get value
-     *
-     * @return string
+     * @return int
      */
-    public function getValue()
+    public function getType()
     {
-        return $this->value;
+        return $this->type;
+    }
+
+    /**
+     * @param int $type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
     }
 }
 

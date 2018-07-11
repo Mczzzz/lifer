@@ -105,6 +105,13 @@ class Objects
     private $type;
 
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="active", type="boolean", nullable=true)
+     */
+    private $active;
+
 
     /**
      * Get id
@@ -353,6 +360,27 @@ class Objects
     public function setType($type)
     {
         $this->type = $type;
+
+        return $this;
+    }
+    
+
+    /**
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * @param boolean $active
+     *
+     * @return self
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
 
         return $this;
     }

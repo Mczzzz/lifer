@@ -20,7 +20,11 @@ export default class BackendComm {
 		    });
 
 
-			return AjaxSender;
+
+
+
+
+			return JSON.parse(AjaxSender.responseText);
 
 	}
 

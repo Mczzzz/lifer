@@ -66,10 +66,10 @@ class Objects_infos
     /**
      * @var int
      *
-     * @ORM\ManyToOne(targetEntity="Objects_tree", inversedBy="objects_infos")
-     * @ORM\JoinColumn(name="leaf", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Objects_tree", inversedBy="objects_tree")
+     * @ORM\JoinColumn(name="objectTree", referencedColumnName="id")
      */
-    private $leaf;
+    private $objectTree;
 
 
 
@@ -196,24 +196,27 @@ class Objects_infos
         return $this;
     }
 
+ 
+
     /**
      * @return int
      */
-    public function getLeaf()
+    public function getObjectTree()
     {
-        return $this->leaf;
+        return $this->objectTree;
     }
 
     /**
-     * @param int $leaf
+     * @param int $objectTree
      *
      * @return self
      */
-    public function setLeaf($leaf)
+    public function setObjectTree($objectTree)
     {
-        $this->leaf = $leaf;
+        $this->objectTree = $objectTree;
 
         return $this;
     }
+    
 }
 

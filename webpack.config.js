@@ -1,5 +1,6 @@
 // webpack.config.js
 var Encore = require('@symfony/webpack-encore');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 Encore
     // the project directory where all compiled assets will be stored
@@ -27,6 +28,9 @@ Encore
 
     // create hashed filenames (e.g. app.abc123.css)
     // .enableVersioning()
+/*    .configureUglifyJsPlugin(function(options) {
+        // options already has our default values
+    });*/
 ;
 
 // export the final configuration

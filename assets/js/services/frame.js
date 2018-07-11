@@ -1,38 +1,40 @@
-import Home from '../views/layout/home.js';
-import Objects from '../views/layout/objects.js';
+import { Lifer } from '../services/Lifer.js';
+import Home from '../views/frames/home.js';
+import Objects from '../views/frames/objects.js';
 
 export default class Frame {
 
 
-	constructor(){
+	constructor(path){
 
-	
-		this.Home();
-		//this.active = "";
+		let Me = 'frame';
+		this.path = path+"/"+Me;
+
+		Lifer.addMe(this.path);
+
 
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
-
-
 
 	}
 
 
+	
 
 	Home(){
 
 		//this.active = "Home";
-		let home = new Home();
-		let res = home.getHTMLPage();
-		document.body.innerHTML = res;
-		home.activeJs();
+		$('body').empty();
+		let home = new Home(this.path);
 
 	}
 
 
 	Objects(){
 
+		//on vide le body
+		$('body').empty();
 		//on recharge le body
-		let objects = new Objects();
+		let objects = new Objects(this.path);
 
 	}
 

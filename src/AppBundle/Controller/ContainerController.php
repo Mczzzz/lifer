@@ -21,12 +21,12 @@ class ContainerController extends Controller
     /**
      * @Route("/container/all", name="children")
      */
-    public function getAllAction(Request $request)
+    public function getContainerAllAction(Request $request)
     {
 
         $em = $this->getDoctrine()->getManager();
 
-        $objects = $em->getRepository('AppBundle:Objects')->findAll();
+        $objects = $em->getRepository('AppBundle:Objects')->findBy(array('creator' => $this->getUser()));
 
 
         $test = array();
@@ -35,7 +35,9 @@ class ContainerController extends Controller
 
             $res = new \stdClass();
             $res->id = $object->getId();
-            $res->parent = ($object->getContainerIn()->getId() == 2 && $object->getId() == 2)?  "#" : $object->getContainerIn()->getId() ;
+         
+            $res->parent = (!is_object($object->getContainerIn()))?  "#" : $object->getContainerIn()->getId() ;
+          
             $res->text = $object->getName();
             $res->type = (strlen($object->getType()) > 0)? $object->getType() : "default";
             
@@ -73,14 +75,19 @@ class ContainerController extends Controller
 
         }
 
+        if($parent > 0){
 
-        $parent = $em->getRepository('AppBundle:Objects')->find($parent);
+            $parent = $em->getRepository('AppBundle:Objects')->find($parent);
 
-        if(!$parent){
-            $res->error = 2;
-            $res->data = "Orphelin";
-            return new Response(json_encode($res));
-            
+            if(!$parent){
+                $res->error = 2;
+                $res->data = "Orphelin";
+                return new Response(json_encode($res));
+                
+            }
+
+        }else{
+            $parent = null;
         }
 
         $object->setContainerIn($parent);
@@ -113,20 +120,40 @@ class ContainerController extends Controller
 
         $object = $em->getRepository('AppBundle:Objects_tree')->find($node);
 
-        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+        if(!$object) {
 
-       if(is_bool(strpos($parentId,'root_'))){
-        $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
-        if(!$parent) return new Response("Pas de parents truc chelou");
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
         }
 
 
-        if(is_bool(strpos($parentId,'root_'))){
-               $object->setParent($parent);
+       if($parentId > 0){
 
-            }else{
-                 $object->setParent(null);
-           }
+            $parent = $em->getRepository('AppBundle:Objects_tree')->find($parentId);
+            
+
+            if(!$parent) {
+
+                 $res = new \stdClass();
+                    $res->error = 2;
+                    $res->data = "";
+
+                    return new Response(json_encode($res));
+
+            }
+
+        }else{
+
+            $parent = null;
+
+        }
+
+
+        $object->setParent($parent);
 
         $em->persist($object);
 
@@ -154,12 +181,36 @@ class ContainerController extends Controller
 
          $em = $this->getDoctrine()->getManager();
 
+         if($parent > 0){
+            $parent = $em->getRepository('AppBundle:Objects')->find($parent);
 
-        $parent = $em->getRepository('AppBundle:Objects')->find($parent);
-        if(!$parent) return new Response("Pas de parents truc chelou");
+           if(!$parent) {
+
+                 $res = new \stdClass();
+                    $res->error = 2;
+                    $res->data = "";
+
+                    return new Response(json_encode($res));
+
+            }
+         }else{
+
+            $parent = null;
+
+         }
+
 
        $human = $em->getRepository('AppBundle:Humans')->findOneBy(array('idLifer' => $user->getId()));
-        if(!$human) return new Response("Pas d'humain truc chelou");
+
+        if(!$human) {
+
+                 $res = new \stdClass();
+                    $res->error = 3;
+                    $res->data = "";
+
+                    return new Response(json_encode($res));
+
+            }
 
          
 
@@ -169,8 +220,11 @@ class ContainerController extends Controller
 
         $object->setOwner($human);
         $object->setUsufruct($human);
+
         $object->setContainerStore($parent);
         $object->setContainerIn($parent);
+
+
         $object->setCreator($user);
 
         $em->persist($object);
@@ -207,7 +261,15 @@ class ContainerController extends Controller
 
          $object = $em->getRepository('AppBundle:Objects')->find($node);
 
-        if(!$object) return new Response("Pas d'objet ya un truc chelou");
+        if(!$object) {
+
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }
          
         $object->setName($name);
 
@@ -238,7 +300,11 @@ class ContainerController extends Controller
      */
     public function containerDeleteAction(Request $request)
     {
-
+        
+//TODO : Que fais t'on de l'arbre interne de l'objet ?
+// renvoi au parent
+// chutier d'infos
+// déplacement vers une autre node
 
         $request = Request::createFromGlobals();
         $node = $request->request->get('node');
@@ -250,14 +316,37 @@ class ContainerController extends Controller
 
 
          $object = $em->getRepository('AppBundle:Objects')->find($node);
-        if(!$object) return new Response("Pas d'objet ya un truc chelou");
 
-        $parent = $em->getRepository('AppBundle:Objects')->find($parent);
-        if(!$parent) return new Response("Pas de parents truc chelou");
+        if(!$object) {
 
+             $res = new \stdClass();
+                $res->error = 1;
+                $res->data = "";
+
+                return new Response(json_encode($res));
+
+        }
+
+        if($parent > 0){
+            $parent = $em->getRepository('AppBundle:Objects')->find($parent);
+
+                if(!$parent) {
+
+                 $res = new \stdClass();
+                    $res->error = 2;
+                    $res->data = "";
+
+                    return new Response(json_encode($res));
+
+            }
+         }else{
+            $parent = null;
+         }
         //on va chercher les enfants accrochés pour les remettre au parent direct
         $childs = $em->getRepository('AppBundle:Objects')->findBy(array('containerIn' => $node));
          
+
+
         if($childs){
 
             foreach($childs as $child){
@@ -270,6 +359,8 @@ class ContainerController extends Controller
 
             $em->flush();
         }
+
+
 
 
         //on verifie s'il y a aussi des containerStore seulement
@@ -296,6 +387,7 @@ class ContainerController extends Controller
 
         $res = new \stdClass();
         $res->error = 0;
+
         return new Response(json_encode($res));
 
 
