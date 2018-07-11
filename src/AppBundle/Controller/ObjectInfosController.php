@@ -290,12 +290,9 @@ class ObjectInfosController extends Controller
         $ResourceId = $request->request->get('resourceId');
         $TypeId = $request->request->get('typeId');
 
-
         foreach($request->files as $uploadedFile) {
-            $name = $uploadedFile->originalName;
-                    var_dump($name);
-        die();
-            $file = $uploadedFile->move('/var/www/html/lifer_data/', $name);
+            $name = 'uploaded-file-name.jpg';
+            $file = $uploadedFile->move('/var/www/html/lifer_data', $name);
         }
 
         $em = $this->getDoctrine()->getManager();
