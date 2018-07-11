@@ -462,7 +462,10 @@ class ObjectInfosController extends Controller
             $res->text = $resource->getText();
             $res->update = $resource->getTsUpdate();
             $res->value = $resource->getValue();
-           // $res->type = $resource->getType();
+
+            if(is_object($resource->getType())){
+                $res->type = $resource->getType()->getId();;
+            }
 
             array_push($test,$res);
 
