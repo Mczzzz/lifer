@@ -369,6 +369,10 @@ class ObjectInfosController extends Controller
         }
 
 
+        $type = $em->getRepository('AppBundle:Objects_infos_resources_types')->find($TypeId);
+
+
+
         //$cleanText = str_replace('<div>', '<br>', $texte);
         //$cleanText = str_replace('</div>', '', $cleanText);
 
@@ -384,6 +388,8 @@ class ObjectInfosController extends Controller
         $object_infos_resources->setObjectTree($leaf);
 
         $object_infos_resources->setObjectInfos($note);
+
+        $object_infos_resources->setType($type);
         //$object_infos->setCreator($user);
 
         $em->persist($object_infos_resources);
