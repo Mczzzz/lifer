@@ -279,6 +279,10 @@ class ObjectInfosController extends Controller
     public function getObjectInfosResourcesCreateUpdateAction(Request $request)
     {
 
+        $dataPath = "/var/www/html/lifer_data/";
+
+        $user = $this->getUser();
+
 
         $request = Request::createFromGlobals();
 
@@ -291,8 +295,13 @@ class ObjectInfosController extends Controller
         $TypeId = $request->request->get('typeId');
 
         foreach($request->files as $uploadedFile) {
-            $name = 'uploaded-file-name.jpg';
-            $file = $uploadedFile->move('/var/www/html/lifer_data', $name);
+
+            $storePath = $dataPath.$user->getId().DIRECTORY_SEPARATOR.$objectId.DIRECTORY_SEPARATOR.$objectLeafId.DIRECTORY_SEPARATOR.$noteId;
+
+            if(!is_dir($storePath)) mkdir($storePath, 0755, true);
+
+            $name = $uploadedFile->getClientOriginalName();
+            $file = $uploadedFile->move($storePath, $name);
         }
 
         $em = $this->getDoctrine()->getManager();
