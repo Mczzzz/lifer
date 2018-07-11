@@ -475,7 +475,7 @@ class ObjectInfosController extends Controller
 
 
     /**
-     * @Route("/object/infos/resources/object/{objectId}/{leafId}/{noteId}/{resourceId}", name="object_get_thumb")
+     * @Route("/object/infos/resources/{objectId}/{leafId}/{noteId}/{resourceId}", name="object_get_thumb")
      *@Method("GET")
      */
     public function getObjectThumbResourcesAction(Request $request,$objectId,$leafId,$noteId,$resourceId)
