@@ -474,7 +474,7 @@ class ObjectInfosController extends Controller
 
 
     /**
-     * @Route("/object/infos/resources/object/{objectId}/{leafId}/{noteId}/{ResourceId}", name="object_get_thumb")
+     * @Route("/object/infos/resources/object/{objectId}/{leafId}/{noteId}/{resourceId}", name="object_get_thumb")
      *@Method("GET")
      */
     public function getObjectThumbResourcesAction(Request $request,$objectId,$leafId,$noteId,$resourceId)
@@ -482,11 +482,13 @@ class ObjectInfosController extends Controller
 
       $dataPath = "/var/www/html/lifer_data/object/";
 
+      $user = $this->getUser();
+
       $em = $this->getDoctrine()->getManager();
 
       $resources = $em->getRepository('AppBundle:Objects_infos_resources')->find($resourceId);
 
-      $image = $dataPath.DIRECTORY_SEPARATOR.$objectId.DIRECTORY_SEPARATOR.$leafId.DIRECTORY_SEPARATOR.$noteId.DIRECTORY_SEPARATOR.$resources->getText();
+      $image = $dataPath.$user->getId().DIRECTORY_SEPARATOR.$objectId.DIRECTORY_SEPARATOR.$leafId.DIRECTORY_SEPARATOR.$noteId.DIRECTORY_SEPARATOR.$resources->getText();
 
       var_dump($image);
       if(is_file($image)) die('image trouvée');
