@@ -371,7 +371,8 @@ class ObjectInfosController extends Controller
 
         $type = $em->getRepository('AppBundle:Objects_infos_resources_types')->find($TypeId);
 
-
+        var_dump($type);
+        die();
 
         //$cleanText = str_replace('<div>', '<br>', $texte);
         //$cleanText = str_replace('</div>', '', $cleanText);
