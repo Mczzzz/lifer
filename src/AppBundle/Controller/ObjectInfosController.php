@@ -279,7 +279,7 @@ class ObjectInfosController extends Controller
     public function getObjectInfosResourcesCreateUpdateAction(Request $request)
     {
 
-        $dataPath = "/var/www/html/lifer_data/";
+        $dataPath = "/var/www/html/lifer_data/object/";
 
         $user = $this->getUser();
 
@@ -293,6 +293,7 @@ class ObjectInfosController extends Controller
         $noteId = $request->request->get('noteId');
         $ResourceId = $request->request->get('resourceId');
         $TypeId = $request->request->get('typeId');
+
 
         foreach($request->files as $uploadedFile) {
 
@@ -371,7 +372,12 @@ class ObjectInfosController extends Controller
         //$cleanText = str_replace('<div>', '<br>', $texte);
         //$cleanText = str_replace('</div>', '', $cleanText);
 
-        $object_infos_resources->setText($texte);
+        if($TypeId == 3){
+            $object_infos_resources->setText($uploadedFile->getClientOriginalName());
+        }else{
+            $object_infos_resources->setText($texte);
+        }
+        
 
         $object_infos_resources->setObject($object);
 
