@@ -492,8 +492,7 @@ class ObjectInfosController extends Controller
     // create an image manager instance with favored driver
     $manager = new ImageManager();
 
-    // to finally create image instances
-    $image = $manager->make('public/foo.jpg')->resize(300, 200);
+ 
 
       $dataPath = "/var/www/html/lifer_data/object/";
 
