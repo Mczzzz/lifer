@@ -494,7 +494,7 @@ class ObjectInfosController extends Controller
 
       if(!is_file($image)) die('pas d images');
 
-        $response = new BinaryFileResponse($image);
+        return new BinaryFileResponse($image);
 
     }
 
