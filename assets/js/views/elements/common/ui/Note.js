@@ -133,8 +133,14 @@ export default class Note extends superViews{
 	
 			for (let Ressource of Ressources){
 
-				console.log(Ressource);
-				let cardElement = this.textElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
+				if(Ressource.type == 3){
+
+					let cardElement = this.photoElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
+
+				}else{
+
+					let cardElement = this.textElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
+				}
 
 				divCore.append(cardElement);
 
@@ -166,7 +172,7 @@ export default class Note extends superViews{
 	}
 
 
-	photoElement(){
+	photoElement(text,id,size,weight,color,holder,update = false){
 
 		let card = document.createElement("div");
 		card.style.marginBottom = "20px";
@@ -194,8 +200,12 @@ export default class Note extends superViews{
 
 		}
 
+		let img = document.createElement("img");
+		img.src = "/object/infos/resources/"+this.ContainerNode.id+"/"+this.LeafNode.id+"/"+this.note.id+"/"+id;
+		card.append(img);
 
-	//infos/resources/30/15/22/97
+		return card;
+
 	}
 
 	textElement(text,id,size,weight,color,holder,update = false){
