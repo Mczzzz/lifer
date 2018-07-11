@@ -511,7 +511,7 @@ class ObjectInfosController extends Controller
     // to finally create image instances
     $IMimage = $manager->make($image)->resize(300, 200);
 
-        return new Response($IMimage);
+        return new Response($IMimage->response('jpg', 70));
 
     }
 
