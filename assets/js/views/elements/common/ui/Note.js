@@ -133,13 +133,15 @@ export default class Note extends superViews{
 	
 			for (let Ressource of Ressources){
 
+					let cardElement = "";
+
 				if(Ressource.type == 3){
 
-					let cardElement = this.photoElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
+					cardElement = this.photoElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
 
 				}else{
 
-					let cardElement = this.textElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
+					cardElement = this.textElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
 				}
 
 				divCore.append(cardElement);
