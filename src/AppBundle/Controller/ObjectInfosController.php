@@ -484,6 +484,15 @@ class ObjectInfosController extends Controller
     public function getObjectThumbResourcesAction(Request $request,$objectId,$leafId,$noteId,$resourceId)
     {
 
+        // import the Intervention Image Manager Class
+        use Intervention\Image\ImageManager;
+
+    // create an image manager instance with favored driver
+    $manager = new ImageManager();
+
+    // to finally create image instances
+    $image = $manager->make('public/foo.jpg')->resize(300, 200);
+
       $dataPath = "/var/www/html/lifer_data/object/";
 
       $user = $this->getUser();
@@ -497,7 +506,11 @@ class ObjectInfosController extends Controller
 
       if(!is_file($image)) die('pas d images');
 
-        return new BinaryFileResponse($image);
+
+    // to finally create image instances
+    $IMimage = $manager->make($image)->resize(300, 200);
+
+        return new BinaryFileResponse( $IMimage);
 
     }
 
