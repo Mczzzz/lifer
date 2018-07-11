@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
+use Intervention\Image\ImageManager;
+
 use AppBundle\Entity\Objects;
 use AppBundle\Entity\Objects_tree;
 use AppBundle\Entity\Objects_infos;
@@ -485,7 +487,7 @@ class ObjectInfosController extends Controller
     {
 
         // import the Intervention Image Manager Class
-        use Intervention\Image\ImageManager;
+
 
     // create an image manager instance with favored driver
     $manager = new ImageManager();
