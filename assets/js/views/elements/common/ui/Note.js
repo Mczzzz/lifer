@@ -206,7 +206,8 @@ export default class Note extends superViews{
 
 		let img = document.createElement("img");
 		img.style.borderRadius = "8px";
-		img.src = "/object/infos/resources/"+this.ContainerNode.id+"/"+this.LeafNode.id+"/"+this.note.id+"/"+id+"/"+this.blocWidth;
+		img.style.margin = "10px";
+		img.src = "/object/infos/resources/"+this.ContainerNode.id+"/"+this.LeafNode.id+"/"+this.note.id+"/"+id+"/"+(this.blocWidth - 20);
 		card.append(img);
 
 		return card;
