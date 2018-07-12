@@ -509,7 +509,9 @@ class ObjectInfosController extends Controller
 
 
     // to finally create image instances
-    $IMimage = $manager->make($image)->resize(300, 200)->orientate();
+    $IMimage = $manager->make($image)->orientate()->resize(300, null, function ($constraint) {
+    $constraint->aspectRatio();
+});
 
     $res = new Response();
     $res->headers->set('Content-Type', 'image/jpeg');
