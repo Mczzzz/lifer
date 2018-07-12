@@ -480,10 +480,10 @@ class ObjectInfosController extends Controller
 
 
     /**
-     * @Route("/object/infos/resources/{objectId}/{leafId}/{noteId}/{resourceId}", name="object_get_thumb")
+     * @Route("/object/infos/resources/{objectId}/{leafId}/{noteId}/{resourceId}/{width}", name="object_get_thumb")
      *@Method("GET")
      */
-    public function getObjectThumbResourcesAction(Request $request,$objectId,$leafId,$noteId,$resourceId)
+    public function getObjectThumbResourcesAction(Request $request,$objectId,$leafId,$noteId,$resourceId,$width)
     {
 
         // import the Intervention Image Manager Class
@@ -509,7 +509,7 @@ class ObjectInfosController extends Controller
 
 
     // to finally create image instances
-    $IMimage = $manager->make($image)->orientate()->resize(300, null, function ($constraint) {
+    $IMimage = $manager->make($image)->orientate()->resize($width, null, function ($constraint) {
     $constraint->aspectRatio();
 });
 
