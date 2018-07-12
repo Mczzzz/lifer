@@ -164,6 +164,8 @@ export default class Note extends superViews{
 		let cardTitle = this.textElement('','title',"20px","bold","grey","Titre...");
 		divTitle.append(cardTitle);
 		this.Main.append(divTitle);
+		console.log('title :');
+		console.log(cardTitle.offsetWidth);
 	}
 
 	addEmpty(){
@@ -204,7 +206,6 @@ export default class Note extends superViews{
 
 		let img = document.createElement("img");
 		img.style.borderRadius = "8px";
-		console.log(card.offsetWidth);
 		img.src = "/object/infos/resources/"+this.ContainerNode.id+"/"+this.LeafNode.id+"/"+this.note.id+"/"+id;
 		card.append(img);
 
