@@ -403,6 +403,22 @@ export default class Note extends superViews{
 		this.Photo.append(this.PhotoPicto);
 
 		this.PhotoPicto.addEventListener("click", (e)=>this.launchCam(e));
+
+
+		this.Pict = document.createElement("div");
+		this.Footer.append(this.Pict);
+
+		this.PictPicto = document.createElement("i");
+		this.PictPicto.className = "material-icons";
+		this.PictPicto.style.fontSize = "30px";
+		this.PictPicto.style.color = "grey";
+		this.PictPicto.style.marginLeft = "10px";
+		this.PictPicto.style.marginTop = "5px";
+		this.PictPicto.append('photo');
+		this.Pict.append(this.PictPicto);
+
+		this.PictPicto.addEventListener("click", (e)=>this.launchGallery(e));
+
 	}
 
 
@@ -418,6 +434,19 @@ export default class Note extends superViews{
 
 		this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
 	}	
+
+	launchGallery(){
+
+		this.camLauncher = document.createElement("input");
+		this.camLauncher.type = "file";
+		this.camLauncher.accept = "image/*";
+		this.camLauncher.style.display = "none";
+		this.Footer.append(this.camLauncher);
+		this.camLauncher.click();
+
+		this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
+	}
+
 
 	importPict(e){
 
