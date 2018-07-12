@@ -204,10 +204,15 @@ export default class Note extends superViews{
 
 		}
 
+
+
 		let img = document.createElement("img");
 		img.style.borderRadius = "8px";
-		img.style.margin = "10px";
-		img.src = "/object/infos/resources/"+this.ContainerNode.id+"/"+this.LeafNode.id+"/"+this.note.id+"/"+id+"/"+(this.blocWidth - 20);
+
+		let theMarge = 8;
+		img.style.margin = heMarge+"px";
+		let width = this.blocWidth - (theMarge * 2);
+		img.src = "/object/infos/resources/"+this.ContainerNode.id+"/"+this.LeafNode.id+"/"+this.note.id+"/"+id+"/"+width;
 		card.append(img);
 
 		return card;
