@@ -5,6 +5,7 @@ import LoaderCollection from '../../../../services/LoaderCollection.js';
 import Footer from '../sections/footer.js';
 import Header from './note/header/header.js';
 import superViews from "../super/views.js"
+import Button from "./button.js"
 
 export default class Note extends superViews{
 	
@@ -172,8 +173,20 @@ export default class Note extends superViews{
 		let divEmpty = document.createElement("div");
 		let cardEmpty = this.textElement('','text',"15px","","grey","Texte...");
 		divEmpty.append(cardEmpty);
+
+		let validEmpty = document.createElement("div");
+		divEmpty.append(validEmpty);
+		
+		let  button = new Button(divEmpty,"buttonValid",this.path);
 		this.Main.append(divEmpty);
+	
 	}
+
+
+
+
+
+
 
 
 	photoElement(text,id,size,weight,color,holder,update = false){
