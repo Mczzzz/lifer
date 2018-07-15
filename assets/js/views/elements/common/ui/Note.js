@@ -174,10 +174,11 @@ export default class Note extends superViews{
 		let cardEmpty = this.textElement('','text',"15px","","grey","Texte...");
 		divEmpty.append(cardEmpty);
 
-		let validEmpty = document.createElement("div");
-		divEmpty.append(validEmpty);
+		//let validEmpty = document.createElement("div");
+		
 		
 		let  button = new Button(divEmpty,"buttonValid",this.path);
+		divEmpty.append(button);
 		this.Main.append(divEmpty);
 	
 	}
