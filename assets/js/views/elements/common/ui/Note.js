@@ -178,7 +178,7 @@ export default class Note extends superViews{
 		
 		
 		let  button = new Button(divEmpty,"buttonValid",this.path);
-		divEmpty.append(button);
+		//divEmpty.append(button);
 		this.Main.append(divEmpty);
 	
 	}
