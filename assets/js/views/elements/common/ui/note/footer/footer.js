@@ -53,14 +53,14 @@ export default class Footer extends superViews{
 		Photo.setPicto("camera_alt");
 		Photo.setMarginLeft(15);
 
-		Photo.addEventListener("click", (e)=>this.launchPict(true));
+		Photo.getElement.addEventListener("click", (e)=>this.launchPict(true));
 
 
 
 		let Gallery = new Button(this.container,"inputGallery",this.path);
 		Gallery.setPicto("photo");
 
-		Gallery.addEventListener("click", (e)=>this.launchPict());
+		Gallery.getElement.addEventListener("click", (e)=>this.launchPict());
 
 
 
@@ -79,7 +79,7 @@ export default class Footer extends superViews{
 		this.camLauncher = document.createElement("input");
 		this.camLauncher.type = "file";
 		this.camLauncher.accept = "image/*";
-		
+
 		if(capture){
 			this.camLauncher.capture = "camera";	
 		}
