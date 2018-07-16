@@ -2,7 +2,7 @@ import EXIF from 'exif-orientation';
 
 import LoaderCollection from '../../../../services/LoaderCollection.js';
 
-import Footer from '../sections/footer.js';
+import Footer from './note/footer/footer.js';
 import Header from './note/header/header.js';
 import superViews from "../super/views.js"
 import Button from "./button.js"
@@ -400,6 +400,9 @@ export default class Note extends superViews{
 
 	addFooter(){
 
+		let theFooter = new Footer(this.parent, 'NoteFooter' , this.path);
+/*
+
 		this.Footer = document.createElement("div");
 		this.Footer.className = "footerNote";
 		this.container.append(this.Footer);
@@ -437,7 +440,7 @@ export default class Note extends superViews{
 		this.PictPicto.append('photo');
 		this.Pict.append(this.PictPicto);
 
-		this.PictPicto.addEventListener("click", (e)=>this.launchGallery(e));
+		this.PictPicto.addEventListener("click", (e)=>this.launchGallery(e));*/
 
 	}
 
@@ -466,6 +469,12 @@ export default class Note extends superViews{
 
 		this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
 	}
+
+
+
+
+
+
 
 
 	importPict(e){
