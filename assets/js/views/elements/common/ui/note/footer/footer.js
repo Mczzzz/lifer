@@ -50,7 +50,7 @@ export default class Footer extends superViews{
 		addNumber();
 		addText();*/
 		let Photo  = new Button(this.container,"inputPhoto",this.path);
-		Photos.setPicto("camera_alt");
+		Photo.setPicto("camera_alt");
 
 		let Gallery = new Button(this.container,"inputGallery",this.path);
 		Gallery.setPicto("photo");
