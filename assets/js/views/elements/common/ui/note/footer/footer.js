@@ -53,43 +53,45 @@ export default class Footer extends superViews{
 		Photo.setPicto("camera_alt");
 		Photo.setMarginLeft(15);
 
+		Photo.addEventListener("click", (e)=>this.launchPict(true));
+
+
+
 		let Gallery = new Button(this.container,"inputGallery",this.path);
 		Gallery.setPicto("photo");
+
+		Gallery.addEventListener("click", (e)=>this.launchPict());
+
+
+
 
 		let OneNumber = new Button(this.container,"inputNumber",this.path);
 		OneNumber.setPicto("looks_5");
 
-/*		this.Photo = document.createElement("div");
-		this.Footer.append(this.Photo);
-
-		this.PhotoPicto = document.createElement("i");
-		this.PhotoPicto.className = "material-icons";
-		this.PhotoPicto.style.fontSize = "30px";
-		this.PhotoPicto.style.color = "grey";
-		this.PhotoPicto.style.marginLeft = "10px";
-		this.PhotoPicto.style.marginTop = "5px";
-		this.PhotoPicto.append('camera_alt');
-		this.Photo.append(this.PhotoPicto);
-*/
-/*		this.PhotoPicto.addEventListener("click", (e)=>this.launchCam(e));
-
-
-		this.Pict = document.createElement("div");
-		this.Footer.append(this.Pict);
-
-		this.PictPicto = document.createElement("i");
-		this.PictPicto.className = "material-icons";
-		this.PictPicto.style.fontSize = "30px";
-		this.PictPicto.style.color = "grey";
-		this.PictPicto.style.marginLeft = "10px";
-		this.PictPicto.style.marginTop = "5px";
-		this.PictPicto.append('photo');
-		this.Pict.append(this.PictPicto);
-
-		this.PictPicto.addEventListener("click", (e)=>this.launchGallery(e));*/
-
 
 	}
+
+
+
+
+	launchPict(capture = false){
+
+		this.camLauncher = document.createElement("input");
+		this.camLauncher.type = "file";
+		this.camLauncher.accept = "image/*";
+		
+		if(capture){
+			this.camLauncher.capture = "camera";	
+		}
+
+		this.camLauncher.style.display = "none";
+		this.container.append(this.camLauncher);
+		this.camLauncher.click();
+
+		this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
+	}	
+
+
 
 
 

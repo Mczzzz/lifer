@@ -401,51 +401,11 @@ export default class Note extends superViews{
 	addFooter(){
 
 		let theFooter = new Footer(this.container, 'FooterNote' , this.path);
-/*
-
-		this.Footer = document.createElement("div");
-		this.Footer.className = "footerNote";
-		this.container.append(this.Footer);
-
-		this.Footer.style.background = "linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)";
-		this.Footer.style.height = "40px";
-		this.Footer.style.display = "flex";
-		this.Footer.style.alignItems = "center";
-		this.Footer.style.color = "";
-
-		this.Photo = document.createElement("div");
-		this.Footer.append(this.Photo);
-
-		this.PhotoPicto = document.createElement("i");
-		this.PhotoPicto.className = "material-icons";
-		this.PhotoPicto.style.fontSize = "30px";
-		this.PhotoPicto.style.color = "grey";
-		this.PhotoPicto.style.marginLeft = "10px";
-		this.PhotoPicto.style.marginTop = "5px";
-		this.PhotoPicto.append('camera_alt');
-		this.Photo.append(this.PhotoPicto);
-
-		this.PhotoPicto.addEventListener("click", (e)=>this.launchCam(e));
-
-
-		this.Pict = document.createElement("div");
-		this.Footer.append(this.Pict);
-
-		this.PictPicto = document.createElement("i");
-		this.PictPicto.className = "material-icons";
-		this.PictPicto.style.fontSize = "30px";
-		this.PictPicto.style.color = "grey";
-		this.PictPicto.style.marginLeft = "10px";
-		this.PictPicto.style.marginTop = "5px";
-		this.PictPicto.append('photo');
-		this.Pict.append(this.PictPicto);
-
-		this.PictPicto.addEventListener("click", (e)=>this.launchGallery(e));*/
 
 	}
 
 
-	launchCam(){
+/*	launchCam(){
 
 		this.camLauncher = document.createElement("input");
 		this.camLauncher.type = "file";
@@ -468,7 +428,7 @@ export default class Note extends superViews{
 		this.camLauncher.click();
 
 		this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
-	}
+	}*/
 
 
 
@@ -479,26 +439,11 @@ export default class Note extends superViews{
 
 	importPict(e){
 
-
-/*		let img = document.createElement("img");
-		img.classList.add("obj");
-			
-
-		this.Main.prepend(img); */
-
-
 		let reader = new FileReader();
 		reader.readAsDataURL(this.camLauncher.files[0]);
 
 		reader.onloadend = ()=> this.loadPict(reader.result);
-		//reader.onloadend => this.insertPict(reader.result);
 
-
-		//console.log(reader.result);
-		
-
-
-		
 	}
 
 	loadPict(pict){
