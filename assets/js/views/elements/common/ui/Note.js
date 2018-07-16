@@ -111,6 +111,7 @@ export default class Note extends superViews{
 
 		let divCore = document.createElement("div");
 		divCore.style.overflowY = "scroll";
+		divCore.style.flex = "1";
 		this.Main.append(divCore);
 
 		this.divCore = divCore;
@@ -162,6 +163,7 @@ export default class Note extends superViews{
 
 	addTitle(){
 		let divTitle = document.createElement("div");
+
 		let cardTitle = this.textElement('','title',"20px","bold","grey","Titre...");
 		divTitle.append(cardTitle);
 		this.Main.append(divTitle);
@@ -171,9 +173,11 @@ export default class Note extends superViews{
 
 	addEmpty(){
 		let divEmpty = document.createElement("div");
+		divEmpty.style.display = "flex";
 		let cardEmpty = this.textElement('','text',"15px","","grey","Texte...");
 		divEmpty.append(cardEmpty);
 
+		cardEmpty.style.flex  = "1";
 		//let validEmpty = document.createElement("div");
 		
 		
