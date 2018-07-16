@@ -161,6 +161,8 @@ export default class Note extends superViews{
 	}
 
 
+
+
 	addTitle(){
 		let divTitle = document.createElement("div");
 
