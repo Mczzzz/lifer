@@ -53,14 +53,14 @@ export default class Footer extends superViews{
 		Photo.setPicto("camera_alt");
 		Photo.setMarginLeft(15);
 
-		Photo.getElement.addEventListener("click", (e)=>this.launchPict(true));
+		Photo.getElement().addEventListener("click", (e)=>this.launchPict(true));
 
 
 
 		let Gallery = new Button(this.container,"inputGallery",this.path);
 		Gallery.setPicto("photo");
 
-		Gallery.getElement.addEventListener("click", (e)=>this.launchPict());
+		Gallery.getElement().addEventListener("click", (e)=>this.launchPict());
 
 
 
