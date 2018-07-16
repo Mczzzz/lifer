@@ -55,6 +55,9 @@ export default class Footer extends superViews{
 		let Gallery = new Button(this.container,"inputGallery",this.path);
 		Gallery.setPicto("photo");
 
+		let OneNumber = new Button(this.container,"inputNumber",this.path);
+		OneNumber.setPicto("looks_5");
+
 /*		this.Photo = document.createElement("div");
 		this.Footer.append(this.Photo);
 
