@@ -405,36 +405,6 @@ export default class Note extends superViews{
 	}
 
 
-/*	launchCam(){
-
-		this.camLauncher = document.createElement("input");
-		this.camLauncher.type = "file";
-		this.camLauncher.accept = "image/*";
-		this.camLauncher.capture = "camera";
-		this.camLauncher.style.display = "none";
-		this.Footer.append(this.camLauncher);
-		this.camLauncher.click();
-
-		this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
-	}	
-
-	launchGallery(){
-
-		this.camLauncher = document.createElement("input");
-		this.camLauncher.type = "file";
-		this.camLauncher.accept = "image/*";
-		this.camLauncher.style.display = "none";
-		this.Footer.append(this.camLauncher);
-		this.camLauncher.click();
-
-		this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
-	}*/
-
-
-
-
-
-
 
 
 	importPict(e){
