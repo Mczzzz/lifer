@@ -400,7 +400,7 @@ export default class Note extends superViews{
 
 	addFooter(){
 
-		let theFooter = new Footer(this.parent, 'NoteFooter' , this.path);
+		let theFooter = new Footer(this.container, 'FooterNote' , this.path);
 /*
 
 		this.Footer = document.createElement("div");
