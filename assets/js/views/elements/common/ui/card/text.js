@@ -1,6 +1,6 @@
 import superViews from "../../super/views.js"
 
-export default class text extends superViews{ 
+export default class Text extends superViews{ 
      
 
      constructor(parent, MyClass,path,prepend = false){
