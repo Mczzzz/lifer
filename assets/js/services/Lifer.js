@@ -51,9 +51,6 @@ addMe(path){
 
 	addData(path,dataArray){
 
-		console.log('in add data');
-		console.log(path);
-		console.log(dataArray);
 		if(path.length == 0) return false;
 
 		let arrayPath = path.split("/");
@@ -78,11 +75,9 @@ addMe(path){
 			dataRepresentation._datas = {};
 
 		}			
-		console.log('beforeFor');
-		console.log(dataArray);
+
 		for(let myData of dataArray ){
-			console.log('myData');
-			console.log(myData);
+
 			dataRepresentation._datas[Object.keys(myData)[0]] = myData[Object.keys(myData)[0]];
 
 		}
