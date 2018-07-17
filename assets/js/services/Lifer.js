@@ -78,7 +78,7 @@ addMe(path){
 			dataRepresentation._datas = {};
 
 		}			
-
+		console.log('beforeFor');
 		console.log(dataArray);
 		for(let myData of dataArray ){
 			console.log('myData');
