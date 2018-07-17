@@ -51,7 +51,9 @@ addMe(path){
 
 	addData(path,dataArray){
 
-
+		console.log('in add data');
+		console.log(path);
+		console.log(dataArray);
 		if(path.length == 0) return false;
 
 		let arrayPath = path.split("/");
