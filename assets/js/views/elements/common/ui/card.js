@@ -1,6 +1,7 @@
 import superViews from "../super/views.js"
 
 import Header     from "./card/header.js"
+import Text       from "./card/text.js"
 
 export default class card extends superViews{ 
      
@@ -36,6 +37,7 @@ export default class card extends superViews{
           this.container.style.background   = "rgba(149, 146, 255, 0.14)";
 
           let header = new Header(this.container,'cardHeader',this.path);
+          let text   = new Text(this.container,'cardHeader',this.path);
 
 
 

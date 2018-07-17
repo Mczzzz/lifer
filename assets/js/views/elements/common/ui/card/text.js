@@ -18,13 +18,24 @@ export default class text extends superViews{
 
           this.container.contentEditable  = "true";
           this.container.setAttribute("placeholder", holder);
+          this.container.style.fontSize = size;
+          this.container.style.margin = "10px";
+          this.container.style.fontWeight = weight;
+          //Texte.style.flex = flex;
+          this.container.style.border = "none";
+          this.container.style.outline = "none";
+          this.container.style.background = "transparent";
+          this.container.style.color = color;
+          this.container.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
+          this.container.id = id;
+          this.container.innerHTML = text;
 
      }
 
 
 }
 
-
+/*
  let Texte = document.createElement("div");
           Texte.contentEditable  = "true";
           Texte.setAttribute("placeholder", holder);
@@ -41,4 +52,4 @@ export default class text extends superViews{
           Texte.innerHTML = text;
           card.append(Texte);
  
-          Texte.addEventListener("keyup", (e)=>this.dispatcher(e,"text",Texte));
+          Texte.addEventListener("keyup", (e)=>this.dispatcher(e,"text",Texte));*/
