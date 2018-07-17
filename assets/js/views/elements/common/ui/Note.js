@@ -1,10 +1,14 @@
-import EXIF from 'exif-orientation';
+import EXIF             from 'exif-orientation';
 
 import LoaderCollection from '../../../../services/LoaderCollection.js';
 
-import Footer from './note/footer/footer.js';
-import Header from './note/header/header.js';
-import superViews from "../super/views.js"
+import superViews       from "../super/views.js"
+
+import Header           from './note/header.js';
+import Main             from './note/main.js';
+import Footer           from './note/footer.js';
+
+
 import Button from "./button.js"
 
 export default class Note extends superViews{
@@ -29,12 +33,10 @@ export default class Note extends superViews{
 
 		this.init();
 
-
 	}
 
 
 	init(){
-
 
 		this.background();
 		this.addHeader();
@@ -42,7 +44,6 @@ export default class Note extends superViews{
 		this.addFooter();
 
 	}
-
 
 
 	background(){
@@ -57,56 +58,25 @@ export default class Note extends superViews{
 		this.container.style.background = "white";
 		this.container.style.boxShadow = "0px 0px 10px 10px green";
 
-
 	}
 
 
-
 	addHeader(){
-
-		this.Header = new Header(this.container,"headerNote",this.path);
-		
+		this.Header = new Header(this.container,"headerNote",this.path);	
 	}
 
 
 	addMain(){
-
-		//add css for placeholder div
-		let css = document.createElement("style");
-			css.type = "text/css";
-			css.id = "divContentEditable_css_style";
-			css.innerHTML = `[contenteditable=true]:empty::before {
-			  					content: attr(placeholder);
-								}
-							`;
-			document.body.appendChild(css);
-		
-
-		this.Main = document.createElement("div");
-		this.Main.className = "mainNote";
-		this.Main.style.display = "flex";
-		this.Main.style.flexDirection = "column";
-		this.container.append(this.Main);
-
-		this.Main.style.background = "white";
-		this.Main.style.display = "flex";
-		//this.Main.style.overflowY = "scroll";
-		this.Main.style.flexDirection = "column";
-		this.Main.style.flex = 1;
-
-
-		this.addTitle();
-
-
-		this.addRessources();
-
-
-		this.addEmpty();
-
-
+		this.Main   = new Main(this.container,"mainNote",this.path);
 	}
 
 
+	addFooter(){
+		this.Footer = new Footer(this.container, 'footerNote' , this.path);
+	}
+
+
+/*
 	addRessources(){
 
 		let divCore = document.createElement("div");
@@ -188,6 +158,7 @@ export default class Note extends superViews{
 		this.Main.append(divEmpty);
 	
 	}
+*/
 
 
 
@@ -195,103 +166,7 @@ export default class Note extends superViews{
 
 
 
-
-	photoElement(text,id,size,weight,color,holder,update = false){
-
-		let card = document.createElement("div");
-		card.style.marginBottom = "20px";
-		card.style.borderWidth  =  "1px";
-    	card.style.borderStyle  =  "dashed";
-    	card.style.borderColor  = "#b7b7b7";
-    	card.style.margin       = "10px";
-    	card.style.borderRadius = "8px";
-    	card.style.background   = "rgba(149, 146, 255, 0.14)";
-		//card.style.display = "flex";
-		//card.style.flexDirection = "column";
-
-		let header = document.createElement("div");
-		header.style.display = "flex";
-		header.style.justifyContent = "space-around";
-		card.append(header);
-
-		if(update){
-			let date = document.createElement("div");
-			date.innerHTML = update;
-			date.style.fontSize = "9px";
-			date.style.color = "grey";
-
-			header.append(date);
-
-		}
-
-
-
-		let img = document.createElement("img");
-		img.style.borderRadius = "8px";
-
-		let theMarge = 8;
-		img.style.margin = theMarge+"px";
-		let width = this.blocWidth - (theMarge * 2);
-		img.src = "/object/infos/resources/"+this.ContainerNode.id+"/"+this.LeafNode.id+"/"+this.note.id+"/"+id+"/"+width;
-		card.append(img);
-
-		return card;
-
-	}
-
-	textElement(text,id,size,weight,color,holder,update = false){
-
-		let card = document.createElement("div");
-		card.style.marginBottom = "20px";
-		card.style.borderWidth  =  "1px";
-    	card.style.borderStyle  =  "dashed";
-    	card.style.borderColor  = "#b7b7b7";
-    	card.style.margin       = "10px";
-    	card.style.borderRadius = "8px";
-    	card.style.background   = "rgba(149, 146, 255, 0.14)";
-		//card.style.display = "flex";
-		//card.style.flexDirection = "column";
-
-		let header = document.createElement("div");
-		header.style.display = "flex";
-		header.style.justifyContent = "space-around";
-		card.append(header);
-
-		if(update){
-			let date = document.createElement("div");
-			date.innerHTML = update;
-			date.style.fontSize = "9px";
-			date.style.color = "grey";
-
-			header.append(date);
-
-		}
-
-		
-
-
-		let Texte = document.createElement("div");
-		Texte.contentEditable  = "true";
-		Texte.setAttribute("placeholder", holder);
-		Texte.style.fontSize = size;
-		Texte.style.margin = "10px";
-		Texte.style.fontWeight = weight;
-		//Texte.style.flex = flex;
-		Texte.style.border = "none";
-		Texte.style.outline = "none";
-		Texte.style.background = "transparent";
-		Texte.style.color = color;
-		Texte.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
-		Texte.id = id;
-		Texte.innerHTML = text;
-		card.append(Texte);
-
-		Texte.addEventListener("keyup", (e)=>this.dispatcher(e,"text",Texte));
-
-		return card;
-
-	}
-
+	
 
 
 
@@ -398,11 +273,7 @@ export default class Note extends superViews{
 
 
 
-	addFooter(){
 
-		let theFooter = new Footer(this.container, 'FooterNote' , this.path);
-
-	}
 
 
 
