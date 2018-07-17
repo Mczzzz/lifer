@@ -21,7 +21,7 @@ export default class BackendComm {
 
 
 
-			console.log(JSON.parse(AjaxSender.responseText));
+			//console.log(JSON.parse(AjaxSender.responseText));
 
 
 			return JSON.parse(AjaxSender.responseText);
