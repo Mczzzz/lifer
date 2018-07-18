@@ -54,10 +54,10 @@ export default class card extends superViews{
      }
 
 
-     setHeader(text,size,color){
-          
+     setHeader(text,size,color,margin){
+
           let header = new Header(this.container,'cardHeader',this.path);
-          header.addText(text,size,color);
+          header.addText(text,size,color,margin);
           header.setJustify("flex-end");
 
      }

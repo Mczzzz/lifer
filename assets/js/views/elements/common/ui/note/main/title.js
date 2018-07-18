@@ -24,7 +24,8 @@ export default class Title extends superViews{
 		this.card = new Card(this.container,'NoteTitleCard', this.path);
 		this.card.setId(this.data.id);
 
-		this.card.setHeader(this.data.update,9,"grey");
+		//text, size, color,margin
+		this.card.setHeader(this.data.update,9,"grey","0px 5px 2px 0px");
 
 		this.card.setMain(this.data.name,20,"black");
 

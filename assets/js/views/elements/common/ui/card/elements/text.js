@@ -47,12 +47,9 @@ export default class Text extends superViews{
 
      setSize(size){
 
-          console.log('in set size');
-          console.log(size);
           this.size = size;
-          console.log(this.size);
           this.container.style.fontSize = this.size + "px";
-     
+
      }
 
      setColor(color){
@@ -62,11 +59,21 @@ export default class Text extends superViews{
 
      }
 
+     setMargin(margin){
+          //TRBL
+          this.margin = margin;
+          this.container.style.margin = this.margin;
+
+     }
+
+
      setWeight(weight){
 
           this.weight = weight;
           this.container.style.fontWeight = this.weight;
      }
+
+
 
 }
 
