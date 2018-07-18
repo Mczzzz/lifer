@@ -106,6 +106,8 @@ addMe(path){
 
 		if(level > 0){
 
+			console.log(arrayPath.length);
+			console.log(arrayPath);
 			arrayPath.splice(arrayPath.length, level);
 		}
 
