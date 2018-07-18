@@ -26,10 +26,13 @@ export default class header extends superViews{
      }
 
 
-     addText(text){
+     addText(text,size,color){
 
      	let TheText = new Text(this.container,"noteHeaderText", this.path);
      	TheText.addText(text);
+     	TheText.addSize(size);
+     	TheText.addColor(color);
+
      }
 
      setJustify(justify){
