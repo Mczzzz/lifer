@@ -27,13 +27,14 @@ export default class main extends superViews{
 
 
 
-     addText(text){
+     addText(text,size = false, color = false,margin = false,weight =false){
 
-     	this.TheText = new Text(this.container,"noteMainText", this.path);
-     	this.TheText.setText(text);
-     	console.log("setSize");
-     	this.TheText.setSize(20);
-     	this.TheText.setWeight("bold");
+     	let TheText = new Text(this.container,"noteMainText", this.path);
+     	TheText.setText(text);
+     	if (size)   TheText.setSize(size);
+     	if (color)  TheText.setColor(color);
+     	if (margin) TheText.setMargin(margin);
+     	if (weight) TheText.setWeight(weight);
      }
 
 
