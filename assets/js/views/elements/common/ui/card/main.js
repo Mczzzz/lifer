@@ -26,4 +26,12 @@ export default class main extends superViews{
      }
 
 
+
+     addText(text){
+
+     	let TheText = new Text(this.container,"noteMainText", this.path);
+     	TheText.addText(text);
+     }
+
+
 }
