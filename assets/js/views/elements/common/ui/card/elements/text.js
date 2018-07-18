@@ -47,6 +47,8 @@ export default class Text extends superViews{
 
      setSize(size){
 
+          console.log('in set size');
+          console.log(size);
           this.size = size;
           this.container.style.fontSize = this.size + "px";
 
