@@ -52,6 +52,12 @@ export default class Text extends superViews{
 
      }
 
+     setWeight(weight){
+
+          this.weight = weight;
+          this.container.style.fontWeight = this.weight;
+     }
+
 }
 
 /*

@@ -33,6 +33,7 @@ export default class main extends superViews{
      	this.TheText.addText(text);
      	console.log("setSize");
      	this.TheText.setSize(20);
+     	this.TheText.setWeight("bold");
      }
 
 
