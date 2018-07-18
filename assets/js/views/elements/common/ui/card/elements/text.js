@@ -31,6 +31,7 @@ export default class Text extends superViews{
           this.container.style.outline = "none";
           this.container.style.background = "transparent";
           this.container.style.color = this.color;
+          this.container.style.lineHeight = 1;
           this.container.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
           //this.container.id = id;
           
