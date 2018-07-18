@@ -31,6 +31,7 @@ export default class main extends superViews{
 
      	this.TheText = new Text(this.container,"noteMainText", this.path);
      	this.TheText.addText(text);
+     	console.log("setSize");
      	this.TheText.setSize(20);
      }
 
