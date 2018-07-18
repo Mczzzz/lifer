@@ -54,7 +54,7 @@ export default class card extends superViews{
      }
 
 
-     setHeader(text,size,color,margin){
+     setHeader(text,size,color,margin,weight){
 
           let header = new Header(this.container,'cardHeader',this.path);
           header.addText(text,size,color,margin,weight);
@@ -63,7 +63,7 @@ export default class card extends superViews{
      }
 
 
-     setMain(text){
+     setMain(text,size,color,margin,weight){
 
            let main = new Main(this.container,'cardMain',this.path);
            main.addText(text,size,color,margin,weight);
