@@ -9,6 +9,11 @@ export default class Title extends superViews{
 
 		super(parent, MyClass , path);
 
+		console.log(path);
+
+		this.data = this.Lifer.getData("app/home/frame/objects/main/bottom/manage/list/popNote","Title");
+
+
 		this.init();
 		
 	}
@@ -17,6 +22,9 @@ export default class Title extends superViews{
 	init(){
 
 		this.card = new Card(this.container,'NoteTitleCard', this.path);
+		console.log('data in title main');
+
+		console.log(this.data)
 		//let cardTitle = this.textElement('','title',"20px","bold","grey","Titre...");
 
 	}
