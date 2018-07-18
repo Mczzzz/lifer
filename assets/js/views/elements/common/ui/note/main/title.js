@@ -9,9 +9,9 @@ export default class Title extends superViews{
 
 		super(parent, MyClass , path);
 
-		console.log(path);
+		//console.log(path);
 
-		this.data = this.Lifer.getData("app/home/frame/objects/main/bottom/manage/list/popNote","Title");
+		this.data = this.Lifer.getData(this.path,"Title",2);
 
 
 		this.init();

@@ -97,12 +97,17 @@ addMe(path){
 
 
 
-	getData(path,Key){
+	getData(path,Key, level = 0){
 
 
 		if(path.length == 0) return false;
 
 		let arrayPath = path.split("/");
+
+		if(level > 0){
+
+			arrayPath.splice(arrayPath.length, level);
+		}
 
 		let dataRepresentation = this.dataCenter;
 
