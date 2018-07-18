@@ -282,7 +282,7 @@ class ObjectInfosController extends Controller
     public function getObjectInfosResourcesCreateUpdateAction(Request $request)
     {
 
-        $dataPath = "/var/www/html/lifer_data/object/";
+        $dataPath = "/var/www/data/lifer_data/object/";
 
         $user = $this->getUser();
 
@@ -494,7 +494,7 @@ class ObjectInfosController extends Controller
 
  
 
-      $dataPath = "/var/www/html/lifer_data/object/";
+      $dataPath = "/var/www/data/lifer_data/object/";
 
       $user = $this->getUser();
 
