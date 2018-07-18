@@ -47,9 +47,16 @@ export default class card extends superViews{
 
      }
 
+     setId(id){
 
-     setHeader(){
+          this.container.id = id;
+
+     }
+
+
+     setHeader(ts){
           let header = new Header(this.container,'cardHeader',this.path);
+          header.addText(ts);
      }
 
 

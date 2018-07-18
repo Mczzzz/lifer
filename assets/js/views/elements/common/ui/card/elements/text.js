@@ -8,6 +8,11 @@ export default class Text extends superViews{
           super(parent, MyClass , path);
 
 
+          this.holder = "Texte...";
+          this.size   = "10px";
+          this.weight = "normal";
+          this.color  = "black";
+
           this.init();
 
      }
@@ -17,21 +22,27 @@ export default class Text extends superViews{
 
 
           this.container.contentEditable  = "true";
-          this.container.setAttribute("placeholder", holder);
-          this.container.style.fontSize = size;
+          this.container.setAttribute("placeholder", this.holder);
+          this.container.style.fontSize = this.size;
           this.container.style.margin = "10px";
-          this.container.style.fontWeight = weight;
+          this.container.style.fontWeight = this.weight;
           //Texte.style.flex = flex;
           this.container.style.border = "none";
           this.container.style.outline = "none";
           this.container.style.background = "transparent";
-          this.container.style.color = color;
+          this.container.style.color = this.color;
           this.container.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
-          this.container.id = id;
-          this.container.innerHTML = text;
+          //this.container.id = id;
+          
 
      }
 
+
+     addText(text){
+
+          this.container.innerHTML = text;
+
+     }
 
 }
 

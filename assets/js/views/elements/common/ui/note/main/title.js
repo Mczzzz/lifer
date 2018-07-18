@@ -22,7 +22,11 @@ export default class Title extends superViews{
 	init(){
 
 		this.card = new Card(this.container,'NoteTitleCard', this.path);
-		console.log('data in title main');
+		this.card.setId(this.data.id);
+
+		this.card.setHeader(this.data.update);
+
+		this.card.setMain(this.data.name);
 
 		console.log(this.data)
 		//let cardTitle = this.textElement('','title',"20px","bold","grey","Titre...");

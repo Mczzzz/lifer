@@ -106,10 +106,8 @@ addMe(path){
 
 		if(level > 0){
 
-			console.log(arrayPath.length);
-			console.log(arrayPath);
 			arrayPath.splice(arrayPath.length - level, level);
-			console.log(arrayPath);
+
 		}
 
 		let dataRepresentation = this.dataCenter;
