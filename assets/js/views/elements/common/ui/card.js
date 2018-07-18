@@ -61,10 +61,10 @@ export default class card extends superViews{
      }
 
 
-     setMain(){
+     setMain(text){
 
            let main = new Main(this.container,'cardMain',this.path);
-           main.addText(ts);
+           main.addText(text);
 
      }
 
