@@ -9,7 +9,7 @@ export default class Text extends superViews{
 
 
           this.holder = "Texte...";
-          this.size   = "10px";
+          this.size   = 10;
           this.weight = "normal";
           this.color  = "black";
 
@@ -23,7 +23,7 @@ export default class Text extends superViews{
 
           this.container.contentEditable  = "true";
           this.container.setAttribute("placeholder", this.holder);
-          this.container.style.fontSize = this.size;
+          this.container.style.fontSize = this.size + "px";
           this.container.style.margin = "10px";
           this.container.style.fontWeight = this.weight;
           //Texte.style.flex = flex;
@@ -41,6 +41,14 @@ export default class Text extends superViews{
      addText(text){
 
           this.container.innerHTML = text;
+
+     }
+
+
+     setSize(size){
+
+          this.size = size;
+          //this.container.style.fontSize = this.size;
 
      }
 

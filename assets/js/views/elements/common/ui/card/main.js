@@ -29,9 +29,16 @@ export default class main extends superViews{
 
      addText(text){
 
-     	let TheText = new Text(this.container,"noteMainText", this.path);
-     	TheText.addText(text);
+     	this.TheText = new Text(this.container,"noteMainText", this.path);
+     	this.TheText.addText(text);
+     	this.TheText.setSize(20);
      }
 
+
+     setJustify(justify){
+
+     	this.container.style.justifyContent = justify;
+     
+     }
 
 }

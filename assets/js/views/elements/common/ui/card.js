@@ -65,6 +65,7 @@ export default class card extends superViews{
 
            let main = new Main(this.container,'cardMain',this.path);
            main.addText(text);
+           main.setJustify("flex-start");
 
      }
 
