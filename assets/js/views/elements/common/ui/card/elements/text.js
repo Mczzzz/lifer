@@ -38,7 +38,7 @@ export default class Text extends superViews{
      }
 
 
-     addText(text){
+     setText(text){
 
           this.container.innerHTML = text;
 
