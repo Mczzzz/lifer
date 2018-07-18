@@ -1,11 +1,12 @@
 import superViews from "../super/views.js"
 
-import Header     from "./card/header.js"
+import Elements     from "./card/elements.js"
+/*import Header     from "./card/header.js"
 import Main     from "./card/main.js"
-import Footer     from "./card/footer.js"
+import Footer     from "./card/footer.js"*/
 
-import Text       from "./card/elements/text.js"
-import Image       from "./card/elements/image.js"
+/*import Text       from "./card/elements/text.js"
+import Image       from "./card/elements/image.js"*/
 
 export default class card extends superViews{ 
      
@@ -54,7 +55,14 @@ export default class card extends superViews{
      }
 
 
-     setHeader(text,size,color,margin,weight){
+
+     setElement(text,size,color,margin,weight,justify){
+          Elements
+          let Element = new Elements(this.container,'cardHeader',this.path);
+          header.addText(text,size,color,margin,weight,justify);
+     }
+
+    /* setHeader(text,size,color,margin,weight){
 
           let header = new Header(this.container,'cardHeader',this.path);
           header.addText(text,size,color,margin,weight);
@@ -76,7 +84,7 @@ export default class card extends superViews{
 
           let footer   = new Footer(this.container,'cardFooter',this.path);
 
-     }
+     }*/
 
 
 
