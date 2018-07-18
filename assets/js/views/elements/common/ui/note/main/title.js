@@ -28,7 +28,7 @@ export default class Title extends superViews{
 
 		this.card.setMain(this.data.name);
 
-		console.log(this.data)
+		//console.log(this.data)
 		//let cardTitle = this.textElement('','title',"20px","bold","grey","Titre...");
 
 	}
