@@ -1,6 +1,6 @@
 import superViews from "../../super/views.js"
 
-import Text       from "./text.js"
+import Text       from "./elements/text.js"
 
 export default class footer extends superViews{ 
      

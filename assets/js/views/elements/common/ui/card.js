@@ -4,8 +4,8 @@ import Header     from "./card/header.js"
 import Main     from "./card/main.js"
 import Footer     from "./card/footer.js"
 
-import Text       from "./card/text.js"
-import Image       from "./card/image.js"
+import Text       from "./card/elements/text.js"
+import Image       from "./card/elements/image.js"
 
 export default class card extends superViews{ 
      
