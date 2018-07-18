@@ -32,4 +32,10 @@ export default class header extends superViews{
      	TheText.addText(text);
      }
 
+     setJustify(justify){
+
+     	this.container.style.justifyContent = justify;
+     
+     }
+
 }
