@@ -41,10 +41,10 @@ export default class Main extends superViews{
 		this.addTitle();
 
 
-		this.addRessources();
+		//this.addRessources();
 
 
-		this.addEmpty();
+		//this.addEmpty();
 
 
 	}
