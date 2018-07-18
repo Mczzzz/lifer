@@ -58,9 +58,9 @@ export default class card extends superViews{
 
 
 
-     setElement(text,size,color,margin,weight,justify){
-          Elements
-          let Element = new Elements(this.container,'cardHeader',this.path);
+     setElement(text,size,color,margin,weight,justify,suffixe){
+       
+          let Element = new Elements(this.container,'cardElement'+suffixe,this.path);
           Element.addText(text,size,color,margin,weight,justify);
      }
 

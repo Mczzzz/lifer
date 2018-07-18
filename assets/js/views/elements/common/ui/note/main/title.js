@@ -24,13 +24,11 @@ export default class Title extends superViews{
 		this.card = new Card(this.container,'NoteTitleCard', this.path);
 		this.card.setId(this.data.id);
 
-		//text, size, color,margin,weight
-		this.card.setElement(this.data.update,9,"grey","0px 5px 2px 0px","normal","flex-end");
+		//text, size, color,margin,weight,justify, suffixe
+		this.card.setElement(this.data.update,9,"grey","0px 5px 2px 0px","normal","flex-end","header");
 
-		this.card.setElement(this.data.name,20,"black","0px 5px 5px 5px","bold","flex-start");
+		this.card.setElement(this.data.name,20,"black","0px 5px 5px 5px","bold","flex-start","main");
 
-		//console.log(this.data)
-		//let cardTitle = this.textElement('','title',"20px","bold","grey","Titre...");
 
 	}
 
