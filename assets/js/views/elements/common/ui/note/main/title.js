@@ -26,7 +26,8 @@ export default class Title extends superViews{
 
 		//text, size, color,margin,weight,justify, suffixe
 		let HeaderElement = this.card.setElement("header");
-		this.card.pushElement(HeaderElement,this.data.update,9,"grey","0px 5px 2px 0px","normal","flex-end","header");
+		this.card.pushElement(HeaderElement,this.data.update,9,"grey","0px 5px 2px 0px","normal","flex-end","update");
+		this.card.pushElement(HeaderElement,this.data.update,9,"grey","0px 5px 2px 0px","normal","flex-end","test");
 
 
 		let MainElement   = this.card.setElement("main");
