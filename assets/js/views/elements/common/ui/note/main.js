@@ -1,6 +1,7 @@
 import superViews from "../../super/views.js"
 
-import Title from "./main/title.js"
+import Title      from "./main/title.js"
+import Resources  from "./main/resources.js"
 
 
 export default class Main extends superViews{
@@ -61,8 +62,17 @@ export default class Main extends superViews{
 
 
 
+	addResources(){
 
-	addRessources(){
+		this.Resources = new Resources(this.container,"noteMainResources",this.path);
+	}
+
+
+
+
+
+
+	_addRessources(){
 
 		let divCore = document.createElement("div");
 		divCore.style.overflowY = "scroll";
