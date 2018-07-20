@@ -30,6 +30,8 @@ export default class Title extends superViews{
 
 
 		let MainElement   = this.card.setElement("main");
+		console.log('DEBUG');
+		console.log(this.data);
 		this.card.pushText(MainElement,this.data.name,20,"black","0px 5px 5px 5px","bold","flex-start","main");
 
 
