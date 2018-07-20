@@ -13,6 +13,9 @@ export default class Resources extends superViews{
 
 		this.data = this.Lifer.getData(this.path,"Resources",2);
 
+		this.container.style.overflowY = "scroll";
+		this.container.style.flex = "1";
+
 
 		this.init();
 		
@@ -42,7 +45,7 @@ export default class Resources extends superViews{
 
 				}else{
 
-					card.pushElement(MainElement,Resource.text,15,"black","0px 5px 5px 5px","bold","flex-start","main_"+Resource.id);
+					card.pushElement(MainElement,Resource.text,15,"black","0px 5px 5px 5px","normal","flex-start","main_"+Resource.id);
 
 				}
 
