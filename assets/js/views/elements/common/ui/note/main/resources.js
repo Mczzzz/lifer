@@ -36,7 +36,7 @@ export default class Resources extends superViews{
 
 			let MainElement = card.setElement("main"+Resource.id);
 
-			if(Ressource.type == 3){
+			if(Resource.type == 3){
 
 	//					cardElement = this.photoElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
 
