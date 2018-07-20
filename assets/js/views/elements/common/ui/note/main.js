@@ -2,6 +2,7 @@ import superViews from "../../super/views.js"
 
 import Title      from "./main/title.js"
 import Resources  from "./main/resources.js"
+import Empty      from "./main/empty.js"
 
 
 export default class Main extends superViews{
@@ -41,11 +42,9 @@ export default class Main extends superViews{
 
 		this.addTitle();
 
-
 		this.addResources();
 
-
-		//this.addEmpty();
+		this.addEmpty();
 
 
 	}
@@ -67,6 +66,12 @@ export default class Main extends superViews{
 		this.Resources = new Resources(this.container,"noteMainResources",this.path);
 	}
 
+
+	addEmpty(){
+
+		this.Empty = new Empty(this.container,"noteMainEmpty",this.path);
+
+	}
 
 
 
@@ -130,7 +135,7 @@ export default class Main extends superViews{
 
 
 
-	addEmpty(){
+	_addEmpty(){
 		let divEmpty = document.createElement("div");
 		divEmpty.style.display = "flex";
 		let cardEmpty = this.textElement('','text',"15px","","grey","Texte...");

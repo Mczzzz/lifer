@@ -34,7 +34,7 @@ export default class Resources extends superViews{
 			card.setId(Resource.id);
 
 			let HeaderElement = card.setElement("header_"+Resource.id);
-			card.pushElement(HeaderElement,Resource.update,9,"grey","0px 5px 2px 0px","normal","flex-end","update_"+Resource.id);
+			card.pushText(HeaderElement,Resource.update,9,"grey","0px 5px 2px 0px","normal","flex-end","update_"+Resource.id);
 
 
 			let MainElement = card.setElement("main"+Resource.id);
@@ -45,7 +45,7 @@ export default class Resources extends superViews{
 
 				}else{
 
-					card.pushElement(MainElement,Resource.text,15,"black","0px 5px 5px 5px","normal","flex-start","main_"+Resource.id);
+					card.pushText(MainElement,Resource.text,15,"black","0px 5px 5px 5px","normal","flex-start","main_"+Resource.id);
 
 				}
 

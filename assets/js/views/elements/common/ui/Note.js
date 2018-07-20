@@ -43,7 +43,7 @@ export default class Note extends superViews{
 
 		this.Lifer.addData(this.path,[{"Resources" : noteResources}]);
 
-		this.Lifer.dumpMe();
+		//this.Lifer.dumpMe();
 		this.init();
 
 	}
