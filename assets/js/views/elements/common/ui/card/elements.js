@@ -28,7 +28,8 @@ export default class header extends superViews{
 
 
      addText(text,size = false, color = false,margin = false,weight =false,justify = false,suffixe = false){
-
+     	console.log('IN ADD TEXT');
+     	console.log(text);
      	let TheText = new Text(this.container,"noteElement" + suffixe, this.path);
      	TheText.setText(text);
      	if (size)   TheText.setSize(size);
@@ -44,6 +45,7 @@ export default class header extends superViews{
 
      	let button = new Button(this.container,"buttonValid",this.path);
      }
+
 
      setJustify(justify){
 
