@@ -26,6 +26,27 @@ export default class Resources extends superViews{
 
 			console.log(Resource);
 
+
+			let card = new Card(this.container,'NoteCardResource_'+Resource.id, this.path);
+			card.setId(Resource.id);
+
+			let HeaderElement = card.setElement("header_"+Resource.id);
+			this.card.pushElement(HeaderElement,Resource.update,9,"grey","0px 5px 2px 0px","normal","flex-end","update");
+
+
+			let MainElement = card.setElement("main"+Resource.id);
+
+			if(Ressource.type == 3){
+
+	//					cardElement = this.photoElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
+
+				}else{
+
+					card.pushElement(MainElement,Resource.text,15,"black","0px 5px 5px 5px","bold","flex-start","main");
+
+				}
+
+
 /*			this.card = new Card(this.container,'NoteTitleCard', this.path);
 			this.card.setId(this.data.id);
 
