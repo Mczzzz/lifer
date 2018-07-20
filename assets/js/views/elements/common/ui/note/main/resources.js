@@ -31,7 +31,7 @@ export default class Resources extends superViews{
 			card.setId(Resource.id);
 
 			let HeaderElement = card.setElement("header_"+Resource.id);
-			this.card.pushElement(HeaderElement,Resource.update,9,"grey","0px 5px 2px 0px","normal","flex-end","update");
+			card.pushElement(HeaderElement,Resource.update,9,"grey","0px 5px 2px 0px","normal","flex-end","update");
 
 
 			let MainElement = card.setElement("main"+Resource.id);
