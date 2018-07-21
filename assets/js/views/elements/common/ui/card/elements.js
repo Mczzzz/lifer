@@ -32,10 +32,10 @@ export default class header extends superViews{
      	console.log(text);
      	let TheText = new Text(this.container,"noteElement" + suffixe, this.path);
      	TheText.setText(text);
-     	if (size)   TheText.setSize(size);
-     	if (color)  TheText.setColor(color);
-     	if (margin) TheText.setMargin(margin);
-     	if (weight) TheText.setWeight(weight);
+     	if (size)    TheText.setSize(size);
+     	if (color)   TheText.setColor(color);
+     	if (margin)  TheText.setMargin(margin);
+     	if (weight)  TheText.setWeight(weight);
      	if (justify) this.setJustify(justify);
 
      }
