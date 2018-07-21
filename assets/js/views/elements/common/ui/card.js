@@ -59,8 +59,8 @@ export default class card extends superViews{
           
      }
 
-     pushText(element,text,size,color,margin,weight,justify,suffixe){
-          element.addText(text,size,color,margin,weight,justify,suffixe);
+     pushText(element,text,size,color,margin,weight,justify,suffixe,flex){
+          element.addText(text,size,color,margin,weight,justify,suffixe,flex);
      }
 
      pushButton(element,text,size,color,margin,weight,justify,suffixe){
