@@ -27,7 +27,7 @@ export default class header extends superViews{
      }
 
 
-     addText(text,size = false, color = false,margin = false,weight =false,justify = false,suffixe = false){
+     addText(text,size = false, color = false,margin = false,weight =false,justify = false,suffixe = false,flex = false){
      	console.log('IN ADD TEXT');
      	console.log(text);
      	let TheText = new Text(this.container,"noteElement" + suffixe, this.path);
@@ -37,6 +37,7 @@ export default class header extends superViews{
      	if (margin)  TheText.setMargin(margin);
      	if (weight)  TheText.setWeight(weight);
      	if (justify) this.setJustify(justify);
+     	if (flex)    TheText.setFlex(flex);
 
      }
 

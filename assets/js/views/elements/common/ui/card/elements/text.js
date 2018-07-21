@@ -76,6 +76,11 @@ export default class Text extends superViews{
      }
 
 
+     setFlex(flex){
+          
+          this.container.style.flex = flex;
+
+     }
 
 }
 
