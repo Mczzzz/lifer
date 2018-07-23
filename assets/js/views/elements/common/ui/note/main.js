@@ -32,6 +32,7 @@ export default class Main extends superViews{
 
 		this.container.style.display = "flex";
 		this.container.style.flexDirection = "column";
+		this.container.style.flex = 1;
 
 /*		this.Main.style.background = "white";
 		this.Main.style.display = "flex";
