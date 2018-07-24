@@ -62,7 +62,7 @@ export default class card extends superViews{
      }
 
 
-     pushImage(element,path,margin,width){
+     pushImage(element,path,suffixe,margin,width){
           element.addImage(path,suffixe,margin,width);
      }
 
