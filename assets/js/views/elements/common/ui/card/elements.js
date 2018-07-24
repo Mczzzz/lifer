@@ -28,8 +28,8 @@ export default class header extends superViews{
 
 
      addText(text,size = false, color = false,margin = false,weight =false,justify = false,suffixe = false,flex = false){
-     	console.log('IN ADD TEXT');
-     	console.log(text);
+  //   	console.log('IN ADD TEXT');
+  //   	console.log(text);
      	let TheText = new Text(this.container,"noteElement" + suffixe, this.path);
      	TheText.setText(text);
      	if (size)    TheText.setSize(size);
@@ -42,19 +42,11 @@ export default class header extends superViews{
      }
 
 
-     addImage(path,suffixe){
-     	console.log('IN ADD IMAGE');
-     	console.log(path);
-     	let TheImage = new Image(this.container,"noteElement" + suffixe, this.path);
-     	/*let img = document.createElement("img");
-          img.style.borderRadius = "8px";
- 
-          let theMarge = 8;
-          img.style.margin = theMarge+"px";
-          let width = this.blocWidth - (theMarge * 2);
-          img.src = "/object/infos/resources/"+this.ContainerNode.id+"/"+this.LeafNode.id+"/"+this.note.id+"/"+id+"/"+width;
-          card.append(img);*/
+     addImage(path,suffixe,margin, width){
 
+	   	console.log('IN ADD IMAGE');
+     	let TheImage = new Image(this.container,"noteElImg" + suffixe, this.path);
+     	TheImage.setPict(path,margin,width);
      }
 
 

@@ -27,21 +27,21 @@ export default class Image extends superViews{
           this.container.style.background = "transparent";
           //this.container.style.color = color;
           //this.container.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
-          this.container.id = id;
+          //this.container.id = id;
           //this.container.innerHTML = text;
 
      }
 
 
-     setPict(){
+     setPict(path,borderRadius,cardWidth){
 
           let img = document.createElement("img");
-          img.style.borderRadius = "8px";
+          img.style.borderRadius = borderRadius + "px";
  
-          let theMarge = 8;
-          img.style.margin = theMarge+"px";
-          let width = this.blocWidth - (theMarge * 2);
-          img.src = "/object/infos/resources/"+this.ContainerNode.id+"/"+this.LeafNode.id+"/"+this.note.id+"/"+id+"/"+width;
+          //let theMarge = 8;
+          img.style.margin = borderRadius+"px";
+          let width = cardWidth - (borderRadius * 2);
+          img.src = path+"/"+width;
 
      }
 

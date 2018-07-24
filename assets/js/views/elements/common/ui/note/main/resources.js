@@ -44,7 +44,7 @@ export default class Resources extends superViews{
 					let path = "/object/infos/resources/"+Resource.objectId+"/"+Resource.objectTreeId+"/"+Resource.objectInfoId+"/"+Resource.id;
 
 	//					cardElement = this.photoElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
-					card.pushImage(MainElement,path,"main_"+Resource.id);
+					card.pushImage(MainElement,path,"main_"+Resource.id,8,300);
 
 				}else{
 
