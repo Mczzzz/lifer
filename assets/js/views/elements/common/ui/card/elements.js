@@ -1,6 +1,7 @@
 import superViews from "../../super/views.js"
 
 import Text       from "./elements/text.js"
+import Image      from "./elements/image.js"
 import Button     from "../button.js"
 
 export default class header extends superViews{ 
