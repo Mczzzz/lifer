@@ -36,6 +36,7 @@ export default class Image extends superViews{
      setPict(path,borderRadius,cardWidth){
 
           let img = document.createElement("img");
+          this.container.append(img);
           img.style.borderRadius = borderRadius + "px";
  
           //let theMarge = 8;
