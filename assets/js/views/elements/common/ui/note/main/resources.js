@@ -33,6 +33,8 @@ export default class Resources extends superViews{
 			let card = new Card(this.container,'NoteCardResource_'+Resource.id, this.path);
 			card.setId(Resource.id);
 
+			let carWidth = card.getWidth();
+
 			let HeaderElement = card.setElement("header_"+Resource.id);
 			card.pushText(HeaderElement,Resource.update,9,"grey","0px 5px 2px 0px","normal","flex-end","update_"+Resource.id);
 
@@ -44,7 +46,7 @@ export default class Resources extends superViews{
 					let path = "/object/infos/resources/"+Resource.objectId+"/"+Resource.objectTreeId+"/"+Resource.objectInfoId+"/"+Resource.id;
 
 	//					cardElement = this.photoElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
-					card.pushImage(MainElement,path,"main_"+Resource.id,8,300);
+					card.pushImage(MainElement,path,"main_"+Resource.id,8,carWidth);
 
 				}else{
 

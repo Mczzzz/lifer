@@ -48,6 +48,12 @@ export default class card extends superViews{
 
      }
 
+     getWidth(){
+
+          return this.container.offsetWidth;
+
+     }
+
      setElement(suffixe){
        
           let Element = new Elements(this.container,'cardElement'+suffixe,this.path);
