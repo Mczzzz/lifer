@@ -42,6 +42,7 @@ export default class Resources extends superViews{
 			if(Resource.type == 3){
 
 	//					cardElement = this.photoElement(Ressource.text,Ressource.id,"15px","","black","",Ressource.update);
+					card.pushImage(MainElement,Resource.text,15,"black","0px 5px 5px 5px","normal","flex-start","main_"+Resource.id);
 
 				}else{
 

@@ -48,10 +48,6 @@ export default class card extends superViews{
 
      }
 
-
-
-
-
      setElement(suffixe){
        
           let Element = new Elements(this.container,'cardElement'+suffixe,this.path);
@@ -59,15 +55,23 @@ export default class card extends superViews{
           
      }
 
+
+
      pushText(element,text,size,color,margin,weight,justify,suffixe,flex){
           element.addText(text,size,color,margin,weight,justify,suffixe,flex);
+     }
+
+
+     pushImage(element,path,margin,justify,suffixe,flex){
+          element.addImage();
      }
 
      pushButton(element,text,size,color,margin,weight,justify,suffixe){
           element.addButton();
      }
 
-     setText(){
+
+/*     setText(){
 
           let text   = new Text(this.container,'cardHeader',this.path);
 
@@ -77,7 +81,7 @@ export default class card extends superViews{
 
           let Image   = new Image(this.container,'cardHeader',this.path);
 
-     }
+     }*/
 
 
 
