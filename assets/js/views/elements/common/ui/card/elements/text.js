@@ -34,10 +34,11 @@ export default class Text extends superViews{
           this.container.style.lineHeight = 1;
           this.container.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
           //this.container.id = id;
+          this.changeColor();
 
           this.container.addEventListener("keyup", ()=>this.changeColor());
 
-          this.changeColor();       
+                
 
      }
 
