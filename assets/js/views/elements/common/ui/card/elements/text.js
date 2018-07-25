@@ -42,7 +42,7 @@ export default class Text extends superViews{
 
      changeColor(e){
 
-          console.log(this.container.length);
+          console.log(this.container.innerHTML.length);
           //if(this.container.innerHTML)
 
      }
