@@ -34,6 +34,7 @@ export default class Text extends superViews{
           this.container.style.lineHeight = 1;
           this.container.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
           //this.container.id = id;
+          console.log("changeColor");
           this.changeColor();
 
           this.container.addEventListener("keyup", ()=>this.changeColor());
@@ -45,6 +46,9 @@ export default class Text extends superViews{
 
      changeColor(){
 
+          console.log("this.container.innerHTML.length");
+          console.log(this.container.innerHTML.length);
+          
           if(this.container.innerHTML.length == 0){
 
                this.container.style.color = "#e0e0e0";               
