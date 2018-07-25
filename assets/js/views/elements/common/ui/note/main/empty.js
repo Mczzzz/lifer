@@ -29,6 +29,7 @@ export default class Empty extends superViews{
 		this.card.setProperty("padding", "10px");
 		this.card.setProperty("boxShadow", "0px -2px 12px #BBB");
 		this.card.setProperty("background", "white");
+		this.card.setProperty("fontSize", "17.5px");
 
 		
 		//text, size, color,margin,weight,justify, suffixe
