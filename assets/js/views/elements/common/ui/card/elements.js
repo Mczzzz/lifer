@@ -51,9 +51,14 @@ export default class header extends superViews{
      }
 
 
-     addButton(){
+     addButton(size,color,justify){
 
      	let button = new Button(this.container,"buttonValid",this.path);
+
+     	if (size)    button.setSize(size);
+     	if (color)   button.setColor(color);
+     	if (justify) button.setAlign(justify);
+
      }
 
 

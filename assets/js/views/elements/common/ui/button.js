@@ -7,8 +7,12 @@ export default class button extends superViews{
 
 		super(parent, MyClass , path);
 
+		this.color = "green";
+		this.size  = 25;
+		this.picto = "arrow_forward";
 
 		this.init();
+
 
 	}
 
@@ -36,11 +40,11 @@ export default class button extends superViews{
 		this.i = document.createElement("i");
 
 		this.i.className         = "material-icons";
-		this.i.style.fontSize    = "25px";
-		this.i.style.color       = "green";
+		this.i.style.fontSize    = this.size+"px";
+		this.i.style.color       = this.color;
 		this.i.style.marginRight = "15px";
 
-		this.i.append("arrow_forward");
+		this.i.append(this.picto);
 
 		this.container.append(this.i);
 
@@ -57,7 +61,16 @@ export default class button extends superViews{
 
 	setColor(color){
 
-		this.i.style.color = color;
+		this.color = color;
+		this.i.style.color = this.color;
+
+	}
+
+
+	setSize(size){
+
+		this.size = size;
+		this.i.style.fontSize    = this.size+"px";
 
 	}
 
@@ -69,6 +82,13 @@ export default class button extends superViews{
 
 	}
 
+
+	setAlign(align){
+
+
+		this.container.style.alignItems = align;
+
+	}
 
 	setMarginLeft(size){
 
