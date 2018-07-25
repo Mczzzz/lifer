@@ -37,7 +37,6 @@ export default class Empty extends superViews{
 
 
 		let EmptyElement = this.card.setElement("Empty");
-		this.
 		this.card.pushText(EmptyElement,"",20,"black","0px 5px 5px 5px","normal","flex-start","mainNewInput",1);
 		this.card.pushButton(EmptyElement,25,"green","flex-end");
 		
