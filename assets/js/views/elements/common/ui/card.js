@@ -74,11 +74,22 @@ export default class card extends superViews{
 
      setElement(suffixe){
        
-          let Element = new Elements(this.container,'cardElement'+suffixe,this.path);
-          return Element;
+         let ClassName = 'cardElement' + suffixe;
+
+         this[ClassName] = new Elements(this.container,ClassName,this.path);
+
+         return ClassName;
           
      }
 
+
+     setPropertyElement(element,property,value){
+
+          this[property] = value;
+          this.container.style[property] = this[property];
+          //this.refresh();
+
+     }
 
 
      pushText(element,text,size,color,margin,weight,justify,suffixe,flex){
