@@ -35,16 +35,18 @@ export default class Text extends superViews{
           this.container.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
           //this.container.id = id;
 
-          this.container.addEventListener("keyup", (e)=>this.changeColor(e));       
+          this.container.addEventListener("keyup", ()=>this.changeColor());
+
+          this.changeColor();       
 
      }
 
 
-     changeColor(e){
+     changeColor(){
 
           if(this.container.innerHTML.length == 0){
 
-               this.container.style.color = "grey";               
+               this.container.style.color = "#e0e0e0";               
           }else{
                this.container.style.color = "black"; 
           }
