@@ -29,7 +29,6 @@ export default class Empty extends superViews{
 		this.card.setProperty("padding", "10px");
 		this.card.setProperty("boxShadow", "0px -2px 12px #BBB");
 		this.card.setProperty("background", "white");
-		this.card.setProperty("fontSize", "17.5px");
 
 		
 		//text, size, color,margin,weight,justify, suffixe
@@ -38,7 +37,7 @@ export default class Empty extends superViews{
 
 
 		let EmptyElement = this.card.setElement("Empty");
-		this.card.pushText(EmptyElement,"",20,"black","0px 5px 5px 5px","normal","flex-start","mainNewInput",1);
+		this.card.pushText(EmptyElement,"",17.5,"black","0px 5px 5px 5px","normal","flex-start","mainNewInput",1);
 		this.card.pushButton(EmptyElement,25,"green","flex-end");
 		
 
