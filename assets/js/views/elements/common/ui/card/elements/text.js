@@ -48,12 +48,12 @@ export default class Text extends superViews{
 
           console.log("this.container.innerHTML.length");
           console.log(this.container.innerHTML.length);
-          
+
           if(this.container.innerHTML.length == 0){
 
                this.container.style.color = "#e0e0e0";               
           }else{
-               this.container.style.color = "black"; 
+               this.container.style.color = this.color; 
           }
           //if(this.container.innerHTML)
 
@@ -77,8 +77,9 @@ export default class Text extends superViews{
 
      setColor(color){
 
+
           this.color = color;
-          this.container.style.color = this.color;
+          this.changeColor();
 
      }
 
