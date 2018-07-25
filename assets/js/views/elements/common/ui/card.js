@@ -10,6 +10,15 @@ export default class card extends superViews{
           super(parent, MyClass , path);
 
 
+          this.borderWidth     = "1px";
+          this.marginBottom    = "20px";
+          this.borderStyle     = "dashed";
+          this.borderColor     = "#b7b7b7";
+          this.margin          = "10px";
+          this.borderRadius    = "8px";
+          this.backgroundColor = "rgba(149, 146, 255, 0.14)";
+
+
           this.init();
 
      }
@@ -18,29 +27,33 @@ export default class card extends superViews{
      init(){
 
 
-          this.defaultCustomCard();
+          this.refresh();
 
      }
 
 
 
-     defaultCustomCard(){
+     refresh(){
 
           
-          this.container.style.marginBottom = "20px";
-          this.container.style.borderWidth  =  "1px";
-          this.container.style.borderStyle  =  "dashed";
-          this.container.style.borderColor  = "#b7b7b7";
-          this.container.style.margin       = "10px";
-          this.container.style.borderRadius = "8px";
-          this.container.style.background   = "rgba(149, 146, 255, 0.14)";
-
-         
-          
-
+          this.container.style.marginBottom = this.marginBottom;
+          this.container.style.borderWidth  = this.borderWidth;
+          this.container.style.borderStyle  = this.borderStyle;
+          this.container.style.borderColor  = this.borderColor;
+          this.container.style.margin       = this.margin;
+          this.container.style.borderRadius = this.borderRadius;
+          this.container.style.background   = this.backgroundColor;
 
 
      }
+
+
+     getWidth(){
+
+          return this.container.offsetWidth;
+
+     }
+
 
      setId(id){
 
@@ -48,11 +61,16 @@ export default class card extends superViews{
 
      }
 
-     getWidth(){
 
-          return this.container.offsetWidth;
+     setProperty(property,value){
+
+          this[property] = value;
+          this.container.style[property] = this[property];
+          //this.refresh();
 
      }
+
+
 
      setElement(suffixe){
        
