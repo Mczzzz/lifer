@@ -11,8 +11,6 @@ export default class Elements extends superViews{
 
           super(parent, MyClass , path);
 
-          //this.classPart
-          console.log(this.constructor.name);
 
           this.init();
 

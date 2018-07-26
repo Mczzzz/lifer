@@ -8,7 +8,7 @@ export default class views {
 
 		this.parent = parent;
 
-		this.MyClass = MyClass;
+		this.MyClass = (MyClass !== false)? MyClass : this.constructor.name;
 
 		this.path = path+"/"+this.MyClass;
 		this.Lifer = Lifer;
