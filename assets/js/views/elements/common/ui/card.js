@@ -93,7 +93,7 @@ export default class card extends superViews{
 
 
      pushText(element,text,size,color,margin,weight,justify,suffixe,flex){
-          element.addText(text,size,color,margin,weight,justify,suffixe,flex);
+          this[element].addText(text,size,color,margin,weight,justify,suffixe,flex);
      }
 
 
