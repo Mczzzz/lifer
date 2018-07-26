@@ -59,10 +59,10 @@ export default class Resources extends superViews{
 
 					card.pushText(MainElement,"main_"+Resource.id, Resource.text);
 
-					card.setStyleComponent(MainElement,"title","fontSize","15px");
-					card.setStyleComponent(MainElement,"title","color","black");
-					card.setStyleComponent(MainElement,"title","margin","0px 5px 5px 5px");
-					card.setStyleComponent(MainElement,"title","fontWeight","normal");
+					card.setStyleComponent(MainElement,"main_"+Resource.id,"fontSize","15px");
+					card.setStyleComponent(MainElement,"main_"+Resource.id,"color","black");
+					card.setStyleComponent(MainElement,"main_"+Resource.id,"margin","0px 5px 5px 5px");
+					card.setStyleComponent(MainElement,"main_"+Resource.id,"fontWeight","normal");
 
 					card.pushText(MainElement,Resource.text,15,"black","0px 5px 5px 5px","normal","flex-start","main_"+Resource.id);
 
