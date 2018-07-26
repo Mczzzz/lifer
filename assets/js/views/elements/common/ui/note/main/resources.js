@@ -37,12 +37,12 @@ export default class Resources extends superViews{
 			let HeaderElement = card.setElement("header_"+Resource.id);
 			card.setStyleElement(HeaderElement,"justifyContent","flex-end");
 
-					card.pushText(HeaderElement,"update",Resource.update);
+					card.pushText(HeaderElement,"update_"+Resource.id,Resource.update);
 
-					card.setStyleComponent(HeaderElement,"update","fontSize","9px");
-					card.setStyleComponent(HeaderElement,"update","color","grey");
-					card.setStyleComponent(HeaderElement,"update","margin","0px 5px 2px 0px");
-					card.setStyleComponent(HeaderElement,"update","fontWeight","normal");
+					card.setStyleComponent(HeaderElement,"update_"+Resource.id,"fontSize","9px");
+					card.setStyleComponent(HeaderElement,"update_"+Resource.id,"color","grey");
+					card.setStyleComponent(HeaderElement,"update_"+Resource.id,"margin","0px 5px 2px 0px");
+					card.setStyleComponent(HeaderElement,"update_"+Resource.id,"fontWeight","normal");
 
 			let MainElement = card.setElement("main"+Resource.id);
 
