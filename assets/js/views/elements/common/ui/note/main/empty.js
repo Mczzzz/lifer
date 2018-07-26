@@ -23,17 +23,12 @@ export default class Empty extends superViews{
 
 		this.card = new Card(this.container,'NoteEmptyCardText', this.path);
 		this.card.setId(0);
-		this.card.setProperty("borderWidth", "0px");
-		this.card.setProperty("borderRadius", "0px");
-		this.card.setProperty("margin", "0px");
-		this.card.setProperty("padding", "10px");
-		this.card.setProperty("boxShadow", "0px -2px 12px #BBB");
-		this.card.setProperty("background", "white");
-
-		
-		//text, size, color,margin,weight,justify, suffixe
-/*		let HeaderElement = this.card.setElement("header");
-		this.card.pushElement(HeaderElement,this.data.update,9,"grey","0px 5px 2px 0px","normal","flex-end","update");*/
+		this.card.setStyle("borderWidth", "0px");
+		this.card.setStyle("borderRadius", "0px");
+		this.card.setStyle("margin", "0px");
+		this.card.setStyle("padding", "10px");
+		this.card.setStyle("boxShadow", "0px -2px 12px #BBB");
+		this.card.setStyle("background", "white");
 
 
 		let EmptyElement = this.card.setElement("Empty");
