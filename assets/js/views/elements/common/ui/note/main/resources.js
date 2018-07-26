@@ -27,7 +27,6 @@ export default class Resources extends superViews{
 
 		for(let Resource of this.data){
 
-			console.log(Resource);
 
 
 			let card = new Card(this.container,'NoteCardResource_'+Resource.id, this.path);
@@ -38,7 +37,7 @@ export default class Resources extends superViews{
 			let HeaderElement = card.setElement("header_"+Resource.id);
 			card.setStyleElement(HeaderElement,"justifyContent","flex-end");
 
-					card.pushText(HeaderElement,"update",this.data.update);
+					card.pushText(HeaderElement,"update",Resource.update);
 
 					card.setStyleComponent(HeaderElement,"update","fontSize","9px");
 					card.setStyleComponent(HeaderElement,"update","color","grey");
