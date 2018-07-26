@@ -46,10 +46,15 @@ export default class Title extends superViews{
 
 
 
-		let MainElement   = this.card.setElement("main");
-		console.log('DEBUG');
-		console.log(this.data);
-		this.card.pushText(MainElement,this.data.name,20,"black","0px 5px 5px 5px","bold","flex-start","main");
+			let MainElement   = this.card.setElement("main");
+			this.card.setStyleElement(MainElement,"justifyContent","flex-start");
+
+					this.card.pushText(MainElement,"title", this.data.name);
+
+					this.card.setStyleComponent(MainElement,"title","fontSize","20px");
+					this.card.setStyleComponent(MainElement,"title","color","black");
+					this.card.setStyleComponent(MainElement,"update","margin","0px 5px 5px 5px");
+					this.card.setStyleComponent(MainElement,"update","fontWeight","bold");
 
 
 	}
