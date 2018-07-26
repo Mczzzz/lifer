@@ -28,22 +28,19 @@ export default class header extends superViews{
      }
 
 
+     setStyleComponent(component, property, value){
+
+     	this[component].setStyle(property, value);
 
 
+     }
 
-     addText(text,size = false, color = false,margin = false,weight =false,justify = false,suffixe = false,flex = false){
 
-     	let TheText = new Text(this.container,"noteElement" + suffixe, this.path);
-     	TheText.setText(text);
-     	if (size)    TheText.setStyle("fontSize", size);
-     	if (color)   TheText.setStyle("color", color);
-     	if (margin)  TheText.setStyle("margin", margin);
-     	if (weight)  TheText.setStyle("fontWeight", weight);
-     	if (flex)    TheText.setStyle("flex", flex);
+     addText(text,classsSuffixe){
 
-     	if (justify) this.setJustify(justify);
-     	
-
+     	this[className] = new Text(this.container,"noteElement" + classsSuffixe, this.path);
+     	this[className].setText(text);
+    	
      }
 
 

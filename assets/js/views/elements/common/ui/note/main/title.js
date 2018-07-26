@@ -22,16 +22,28 @@ export default class Title extends superViews{
 	init(){
 
 		this.card = new Card(this.container,'NoteTitleCard', this.path);
+
 		this.card.setId(this.data.id);
-		this.card.setProperty("borderWidth", "0px");
-		this.card.setProperty("borderRadius", "0px");
-		this.card.setProperty("margin", "0px");
-		this.card.setProperty("padding", "10px");
-		this.card.setProperty("boxShadow", "0px 2px 12px #BBB");
-		this.card.setProperty("background", "white");
-		//text, size, color,margin,weight,justify, suffixe
-		let HeaderElement = this.card.setElement("header");
-		this.card.pushText(HeaderElement,this.data.update,9,"grey","0px 5px 2px 0px","normal","flex-end","update");
+		
+		this.card.setStyle("borderWidth", "0px");
+		this.card.setStyle("borderRadius", "0px");
+		this.card.setStyle("margin", "0px");
+		this.card.setStyle("padding", "10px");
+		this.card.setStyle("boxShadow", "0px 2px 12px #BBB");
+		this.card.setStyle("background", "white");
+
+
+
+			let HeaderElement = this.card.setElement("header");
+			this.card.setStyleElement(HeaderElement,"justifyContent","flex-end");
+
+					this.card.pushText(HeaderElement,"update",this.data.update);
+
+					this.card.setStyleComponent(HeaderElement,"update","fontSize","9px");
+					this.card.setStyleComponent(HeaderElement,"update","color","grey");
+					this.card.setStyleComponent(HeaderElement,"update","margin","0px 5px 2px 0px");
+					this.card.setStyleComponent(HeaderElement,"update","fontWeight","normal");
+
 
 
 		let MainElement   = this.card.setElement("main");
