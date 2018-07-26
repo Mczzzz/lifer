@@ -4,13 +4,15 @@ import Text       from "./elements/text.js"
 import Image      from "./elements/image.js"
 import Button     from "../button.js"
 
-export default class header extends superViews{ 
+export default class Elements extends superViews{ 
      
 
      constructor(parent, MyClass,path,prepend = false){
 
           super(parent, MyClass , path);
 
+          //this.classPart
+          console.log(this.constructor.name);
 
           this.init();
 
@@ -36,9 +38,9 @@ export default class header extends superViews{
      }
 
 
-     addText(text,classsSuffixe){
+     addText(text,className){
 
-     	this[className] = new Text(this.container,"noteElement" + classsSuffixe, this.path);
+     	this[className] = new Text(this.container,"noteElement" + className, this.path);
      	this[className].setText(text);
     	
      }
