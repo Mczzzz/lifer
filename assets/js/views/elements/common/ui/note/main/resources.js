@@ -63,8 +63,6 @@ export default class Resources extends superViews{
 					card.setStyleComponent(MainElement,"main_"+Resource.id,"margin","0px 5px 5px 5px");
 					card.setStyleComponent(MainElement,"main_"+Resource.id,"fontWeight","normal");
 
-					card.pushText(MainElement,Resource.text,15,"black","0px 5px 5px 5px","normal","flex-start","main_"+Resource.id);
-
 				}
 
 
