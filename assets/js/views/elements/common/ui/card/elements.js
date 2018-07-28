@@ -46,20 +46,20 @@ export default class Elements extends superViews{
 
                case 'Text':
 
-                    this[className] = new Text(this.container, "noteEltText" + classSuffixe, this.path);
-     				this[className].setText(data);
+                    this[classSuffixe] = new Text(this.container, "noteEltText" + classSuffixe, this.path);
+     				this[classSuffixe].setText(data);
                     break;
 
                case 'Image':
 
-                    this[className] = new Image(this.container, "noteEltImg" + classSuffixe, this.path);
-     				this[className].setPict(data);
+                    this[classSuffixe] = new Image(this.container, "noteEltImg" + classSuffixe, this.path);
+     				this[classSuffixe].setPict(data);
                     break;
 
                case 'Button':
 
-                    this[className] = new Button(this.container, "noteEltButton" + classSuffixe, this.path);
-                    this[className].setPicto(data);
+                    this[classSuffixe] = new Button(this.container, "noteEltButton" + classSuffixe, this.path);
+                    this[classSuffixe].setPicto(data);
                     break;
 
                default:
