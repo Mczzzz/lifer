@@ -51,7 +51,7 @@ export default class Footer extends superViews{
 		addText();*/
 		let Photo  = new Button(this.container,"inputPhoto",this.path);
 		Photo.setPicto("camera_alt");
-		Photo.setMarginLeft(15);
+		Photo.setStyle("marginLeft",15);
 
 		Photo.getElement().addEventListener("click", (e)=>this.launchPict(true));
 
