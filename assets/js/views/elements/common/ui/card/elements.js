@@ -36,10 +36,6 @@ export default class Elements extends superViews{
      }
 
 
-
-
-
-
     add(type, classSuffixe, data){
 
           switch (type) {
@@ -73,7 +69,7 @@ export default class Elements extends superViews{
 
 
 
-     addText(text,className){
+/*     addText(text,className){
 
      	this[className] = new Text(this.container,"noteElement" + className, this.path);
      	this[className].setText(text);
@@ -97,7 +93,7 @@ export default class Elements extends superViews{
      	if (color)   button.setColor(color);
      	if (justify) button.setAlign(justify);
 
-     }
+     }*/
 
 
 /*     setJustify(justify){
