@@ -37,7 +37,7 @@ export default class Resources extends superViews{
 			let HeaderElement = card.setElement("header_"+Resource.id);
 			card.setStyleElement(HeaderElement,"justifyContent","flex-end");
 
-					card.pushText(HeaderElement,"update_"+Resource.id,Resource.update);
+					card.push("Text",HeaderElement,"update_"+Resource.id,Resource.update);
 
 					card.setStyleComponent(HeaderElement,"update_"+Resource.id,"fontSize","9px");
 					card.setStyleComponent(HeaderElement,"update_"+Resource.id,"color","grey");
@@ -50,13 +50,13 @@ export default class Resources extends superViews{
 
 					let path = "/object/infos/resources/"+Resource.objectId+"/"+Resource.objectTreeId+"/"+Resource.objectInfoId+"/"+Resource.id;
 
-					card.pushImage(MainElement,path,"main_"+Resource.id,8,carWidth);
+					card.push("Image", MainElement, path, "main_"+Resource.id, 8, carWidth);
 
 				}else{
 
 					card.setStyleElement(MainElement,"justifyContent","flex-start");
 
-					card.pushText(MainElement,"main_"+Resource.id, Resource.text);
+					card.push("Text",MainElement,"main_"+Resource.id, Resource.text);
 
 					card.setStyleComponent(MainElement,"main_"+Resource.id,"fontSize","15px");
 					card.setStyleComponent(MainElement,"main_"+Resource.id,"color","black");

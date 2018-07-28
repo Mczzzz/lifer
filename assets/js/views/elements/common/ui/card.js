@@ -100,11 +100,11 @@ export default class card extends superViews{
 
 
 
-               pushText(element,classSuffixe,text){
+/*               pushText(element,classSuffixe,text){
 
                     this[classSuffixe] = this[element].addText(text,classSuffixe);
 
-               }
+               }*/
 
 
                pushImage(element,classSuffixe,path){
