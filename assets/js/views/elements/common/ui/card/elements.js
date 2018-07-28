@@ -36,6 +36,43 @@ export default class Elements extends superViews{
      }
 
 
+
+
+
+
+    add(type, classSuffixe, data){
+
+          switch (type) {
+
+               case 'Text':
+
+                    this[className] = new Text(this.container, "noteEltText" + classSuffixe, this.path);
+     				this[className].setText(data);
+                    break;
+
+               case 'Image':
+
+                    this[className] = new Image(this.container, "noteEltImg" + classSuffixe, this.path);
+     				this[className].setPict(data);
+                    break;
+
+               case 'Button':
+
+                    this[className] = new Button(this.container, "noteEltButton" + classSuffixe, this.path);
+                    this[className].setPicto(data);
+                    break;
+
+               default:
+          
+               console.log('Sorry, we are out of ' + expr + '.');
+
+          }
+
+
+     }
+
+
+
      addText(text,className){
 
      	this[className] = new Text(this.container,"noteElement" + className, this.path);
@@ -63,10 +100,10 @@ export default class Elements extends superViews{
      }
 
 
-     setJustify(justify){
+/*     setJustify(justify){
 
      	this.container.style.justifyContent = justify;
      
-     }
+     }*/
 
 }

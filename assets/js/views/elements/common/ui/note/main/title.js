@@ -37,7 +37,7 @@ export default class Title extends superViews{
 			let HeaderElement = this.card.setElement("header");
 			this.card.setStyleElement(HeaderElement,"justifyContent","flex-end");
 
-					this.card.pushText(HeaderElement,"update",this.data.update);
+					this.card.push("Text", HeaderElement,"update",this.data.update);
 
 					this.card.setStyleComponent(HeaderElement,"update","fontSize","9px");
 					this.card.setStyleComponent(HeaderElement,"update","color","grey");
@@ -49,7 +49,7 @@ export default class Title extends superViews{
 			let MainElement   = this.card.setElement("main");
 			this.card.setStyleElement(MainElement,"justifyContent","flex-start");
 
-					this.card.pushText(MainElement,"title", this.data.name);
+					this.card.push("Text", MainElement,"title", this.data.name);
 
 					this.card.setStyleComponent(MainElement,"title","fontSize","20px");
 					this.card.setStyleComponent(MainElement,"title","color","black");

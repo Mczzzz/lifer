@@ -90,28 +90,35 @@ export default class card extends superViews{
      }
 
 
-     pushText(element,classSuffixe,text){
 
-          this[classSuffixe] = this[element].addText(text,classSuffixe);
+     push(type,element,classSuffixe,data){
 
-     }
-
-
-
-
-
-
-
-     pushImage(element,path,suffixe,margin,width){
-
-          this[element].addImage(path,suffixe,margin,width);
-     }
-
-     pushButton(element,size,color,justify){
-
-          this[element].addButton(size,color,justify);
+           this[classSuffixe] = this[element].add(type, classSuffixe, data);
      
      }
+
+
+
+
+               pushText(element,classSuffixe,text){
+
+                    this[classSuffixe] = this[element].addText(text,classSuffixe);
+
+               }
+
+
+               pushImage(element,classSuffixe,path){
+
+                    this[classSuffixe] = this[element].addImage(path,classSuffixe);
+               }
+
+               pushButton(element,classSuffixe,picto){
+
+                    this[classSuffixe] = this[element].addButton(picto,classSuffixe);
+               
+               }
+
+
 
 
 }

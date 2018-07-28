@@ -59,20 +59,7 @@ export default class button extends superViews{
 
 
 
-	setColor(color){
 
-		this.color = color;
-		this.i.style.color = this.color;
-
-	}
-
-
-	setSize(size){
-
-		this.size = size;
-		this.i.style.fontSize    = this.size+"px";
-
-	}
 
 
 	setPicto(picto){
@@ -83,18 +70,7 @@ export default class button extends superViews{
 	}
 
 
-	setAlign(align){
 
-
-		this.container.style.alignItems = align;
-
-	}
-
-	setMarginLeft(size){
-
-		this.i.style.marginLeft = size + "px";
-
-	}
 
 
 }
