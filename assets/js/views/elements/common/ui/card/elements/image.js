@@ -26,18 +26,18 @@ export default class Image extends superViews{
      }
 
 
-     setPict(path,borderRadius,cardWidth){
+     setPict(path){
 
           let img = document.createElement("img");
           this.container.append(img);
-          img.style.borderRadius = borderRadius + "px";
  
-          //let theMarge = 8;
-          img.style.margin = borderRadius+"px";
-          let width = cardWidth - (borderRadius * 2);
-          img.src = path+"/"+width;
+          img.src = path;
 
      }
+
+
+
+
 
 }
 

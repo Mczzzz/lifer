@@ -4,7 +4,7 @@ export default class Header {
 	constructor(parent){
 
 		this.header = document.getElementsByClassName(parent)[0];
-		console.log(this.header);
+//		console.log(this.header);
 		this.backGroundColor =  '';
 		this.initContainer();
 
@@ -55,8 +55,8 @@ export default class Header {
 		this.headerGlobal.style.height = height+"px";
 		this.margeSize = this.headerGlobal.offsetHeight - this.headerGlobal.offsetHeight * 0.9;
 		this.headerContainer.style.margin = "0px";
-		console.log(this.headerGlobal.offsetHeight);
-		console.log(this.margeSize);
+//		console.log(this.headerGlobal.offsetHeight);
+//		console.log(this.margeSize);
 		this.headerContainer.style.width = (this.headerGlobal.offsetWidth - this.margeSize * 2 ) +"px";
 		this.headerContainer.style.height = (this.headerGlobal.offsetHeight - this.margeSize * 2 ) +"px";
 

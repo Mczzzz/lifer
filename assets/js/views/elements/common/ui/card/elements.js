@@ -83,7 +83,7 @@ export default class Elements extends superViews{
 
      addImage(path,suffixe,margin, width){
 
-	   	console.log('IN ADD IMAGE');
+//	   	console.log('IN ADD IMAGE');
      	let TheImage = new Image(this.container,"noteElImg" + suffixe, this.path);
      	TheImage.setPict(path,margin,width);
      }
