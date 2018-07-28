@@ -107,16 +107,16 @@ export default class card extends superViews{
                }*/
 
 
-               pushImage(element,classSuffixe,path){
+/*               pushImage(element,classSuffixe,path){
 
                     this[classSuffixe] = this[element].addImage(path,classSuffixe);
                }
-
-               pushButton(element,classSuffixe,picto){
+*/
+/*               pushButton(element,classSuffixe,picto){
 
                     this[classSuffixe] = this[element].addButton(picto,classSuffixe);
                
-               }
+               }*/
 
 
 
