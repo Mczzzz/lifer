@@ -43,8 +43,11 @@ export default class Empty extends superViews{
 		this.card.setStyleComponent(EmptyElement,"mainNewInput","flex",1);
 
 		this.card.push("Button", EmptyElement,"mainNewButton");
+		
+		this.card.setStyleComponent(EmptyElement,"mainNewButton","fontSize","25px");
+		this.card.setStyleComponent(EmptyElement,"mainNewButton","color","green");
+		this.card.setStyleComponent(EmptyElement,"mainNewButton","alignItems","flex-end");
 
-		//25,"green","flex-end"
 
 
 	}
