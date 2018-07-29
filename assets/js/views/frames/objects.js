@@ -18,6 +18,9 @@ export default class Objects extends layout{
     this.path = path+"/"+Me;
     Lifer.addMe(this.path);
 
+    let level = Lifer.getData(path,"Level",1);
+    Lifer.addData(this.path,[{"Level" : level + 1}]);
+
 
     this.container = document.getElementsByClassName("container")[0];
     

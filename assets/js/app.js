@@ -1,8 +1,10 @@
 import { Lifer } from './services/Lifer.js';
-import Main from './controller/home.js';
+import Main from './controller/appController.js';
 
-Lifer.addMe('','app');
+let name = "app";
+Lifer.addMe('',name);
+Lifer.addData(name,[{"Level" : 0}]);
 
-const LiferApp = new Main('app');
+const LiferApp = new Main(name);
 
 

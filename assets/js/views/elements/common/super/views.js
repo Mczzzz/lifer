@@ -18,6 +18,8 @@ export default class views {
 		this.superInit(prepend);
 
 		this.Lifer.addData(this.path,[{"ThisContainer" : this.container}]);
+		let level = this.Lifer.getData(this.path,"Level",1);
+		this.Lifer.addData(this.path,[{"Level" : level + 1}]);
 
 	}
 

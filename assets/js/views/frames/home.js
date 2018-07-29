@@ -16,9 +16,14 @@ export default class Home extends layout{
 
 		let Me = 'home';
 
+		this.path = path+"/"+Me;
+
 		Lifer.addMe(path+"/"+Me);
 
-		
+		let level = Lifer.getData(path,"Level",1);
+		Lifer.addData(this.path,[{"Level" : level + 1}]);
+
+
 		this.bkgdHF = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
 		this.headerCustom();
 		this.mainCustom();
