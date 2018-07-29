@@ -42,7 +42,7 @@ export default class Elements extends superViews{
     	this[classSuffixe] = new loaderComponent(type, this.container, "noteElt" + type + classSuffixe, this.path);
     	this[classSuffixe].setData(data);
 
-     return this[classSuffixe];
+     return this[classSuffixe].getContainer();
      }
 
 

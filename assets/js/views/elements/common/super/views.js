@@ -44,6 +44,12 @@ export default class views {
 	}
 
 
+	getContainer(){
+
+		return this.container;
+		
+	}
+
 
 	setStyle(property,value){
 
