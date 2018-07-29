@@ -68,7 +68,7 @@ export default class Footer extends superViews{
 
 
 
-	launchPict(capture = false){
+/*	launchPict(capture = false){
 
 		this.camLauncher = document.createElement("input");
 		this.camLauncher.type = "file";
@@ -83,7 +83,7 @@ export default class Footer extends superViews{
 		this.camLauncher.click();
 
 		this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
-	}	
+	}	*/
 
 
 
