@@ -29,7 +29,7 @@ export default class Header extends superViews{
 	background(){
 
 		this.container.style.background = "linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)";
-		this.container.style.height = "40px";
+		//this.container.style.height = "40px";
 		//this.container.style.display = "flex";
 		this.container.style.alignItems = "center";
 		this.container.style.color = "";
