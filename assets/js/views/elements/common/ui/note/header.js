@@ -1,6 +1,6 @@
 import superViews from "../../super/views.js"
 
-import ActionButton from "./header/headerButtons.js"
+import HeaderButton from "./header/headerButtons.js"
 
 export default class Header extends superViews{
 	
@@ -39,7 +39,7 @@ export default class Header extends superViews{
 
 	addActionButtons(){
 
-		this.headerButton = new headerButton(this.container,"noteHeaderActionButton",this.path);
+		this.HeaderButton = new HeaderButton(this.container,"noteHeaderActionButton",this.path);
 
 	}
 
