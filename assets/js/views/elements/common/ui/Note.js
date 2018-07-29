@@ -14,7 +14,7 @@ export default class Note extends superViews{
 
 	constructor(parent,MyClass,path,id = false){
 
-		super(parent, MyClass , path);
+		super(parent, MyClass , "app");
 
 		console.log(id);
 
