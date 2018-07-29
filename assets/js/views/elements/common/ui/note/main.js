@@ -136,7 +136,7 @@ export default class Main extends superViews{
 
 
 
-	_addEmpty(){
+/*	_addEmpty(){
 		let divEmpty = document.createElement("div");
 		divEmpty.style.display = "flex";
 		let cardEmpty = this.textElement('','text',"15px","","grey","Texte...");
@@ -150,7 +150,7 @@ export default class Main extends superViews{
 		//divEmpty.append(button);
 		this.Main.append(divEmpty);
 	
-	}
+	}*/
 
 
 

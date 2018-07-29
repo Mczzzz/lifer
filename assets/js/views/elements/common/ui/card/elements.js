@@ -1,8 +1,8 @@
 import superViews from "../../super/views.js"
-
-import Text       from "./elements/text.js"
+import loaderComponent from "../../../../../services/LoaderComponent.js"
+/*import Text       from "./elements/text.js"
 import Image      from "./elements/image.js"
-import Button     from "../button.js"
+import Button     from "./elements/button.js"*/
 
 export default class Elements extends superViews{ 
      
@@ -38,7 +38,15 @@ export default class Elements extends superViews{
 
     add(type, classSuffixe, data){
 
-          switch (type) {
+
+    	this[classSuffixe] = new loaderComponent(type, this.container, "noteEltText" + classSuffixe, this.path);
+    	this[classSuffixe].setData(data);
+
+/*  		this[classSuffixe] = new Text(this.container, "noteEltText" + classSuffixe, this.path);
+     	this[classSuffixe].setText(data);*/
+
+
+/*          switch (type) {
 
                case 'Text':
 
@@ -64,42 +72,8 @@ export default class Elements extends superViews{
 
           }
 
-
+*/
      }
 
-
-
-/*     addText(text,className){
-
-     	this[className] = new Text(this.container,"noteElement" + className, this.path);
-     	this[className].setText(text);
-    	
-     }
-
-
-     addImage(path,suffixe,margin, width){
-
-//	   	console.log('IN ADD IMAGE');
-     	let TheImage = new Image(this.container,"noteElImg" + suffixe, this.path);
-     	TheImage.setPict(path,margin,width);
-     }
-
-
-     addButton(size,color,justify){
-
-     	let button = new Button(this.container,"buttonValid",this.path);
-
-     	if (size)    button.setSize(size);
-     	if (color)   button.setColor(color);
-     	if (justify) button.setAlign(justify);
-
-     }*/
-
-
-/*     setJustify(justify){
-
-     	this.container.style.justifyContent = justify;
-     
-     }*/
 
 }

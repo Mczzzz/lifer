@@ -27,7 +27,7 @@ export default class Image extends superViews{
      }
 
 
-     setPict(path){
+     setData(path){
 
           let img = document.createElement("img");
           this.container.append(img);
