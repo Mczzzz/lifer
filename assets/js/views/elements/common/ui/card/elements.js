@@ -42,37 +42,7 @@ export default class Elements extends superViews{
     	this[classSuffixe] = new loaderComponent(type, this.container, "noteElt" + type + classSuffixe, this.path);
     	this[classSuffixe].setData(data);
 
-/*  		this[classSuffixe] = new Text(this.container, "noteEltText" + classSuffixe, this.path);
-     	this[classSuffixe].setText(data);*/
-
-
-/*          switch (type) {
-
-               case 'Text':
-
-                    this[classSuffixe] = new Text(this.container, "noteEltText" + classSuffixe, this.path);
-     				this[classSuffixe].setText(data);
-                    break;
-
-               case 'Image':
-
-                    this[classSuffixe] = new Image(this.container, "noteEltImg" + classSuffixe, this.path);
-     				this[classSuffixe].setPict(data);
-                    break;
-
-               case 'Button':
-
-                    this[classSuffixe] = new Button(this.container, "noteEltButton" + classSuffixe, this.path);
-                    this[classSuffixe].setPicto(data);
-                    break;
-
-               default:
-          
-               console.log('Sorry, we are out of ' + expr + '.');
-
-          }
-
-*/
+     return this[classSuffixe];
      }
 
 
