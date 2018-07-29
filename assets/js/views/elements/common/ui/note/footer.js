@@ -1,7 +1,6 @@
 import superViews from "../../super/views.js"
 
-//import Footer from '../../../sections/footer.js';
-import Button from "../button.js"
+import ActionButton from "./footer/actionButtons.js"
 
 export default class Footer extends superViews{
 	
@@ -20,7 +19,7 @@ export default class Footer extends superViews{
 
 		this.background();
 
-		this.addButtons();
+		this.addActionsButtons();
 
 
 	}
@@ -29,27 +28,22 @@ export default class Footer extends superViews{
 
 	background(){
 
-/*		this.container.style.position = "absolute";
-		this.container.style.height = "100%";
-		this.container.style.width = "100%";*/
 		this.container.style.background = "linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)";
 		this.container.style.height = "40px";
 		this.container.style.display = "flex";
 		this.container.style.alignItems = "center";
 		this.container.style.color = "";
 
-
 	}
 
 
-	addButtons(){
+	addActionButtons(){
 
+		this.ActionButton = new ActionButton(this.container,"noteFooterActionButton",this.path);
 
-/*		addPhoto();
-		addGallery();
-		addNumber();
-		addText();*/
-		let Photo  = new Button(this.container,"inputPhoto",this.path);
+	}
+
+/*		let Photo  = new Button(this.container,"inputPhoto",this.path);
 		Photo.setPicto("camera_alt");
 		Photo.setStyle("marginLeft",15);
 
@@ -66,10 +60,10 @@ export default class Footer extends superViews{
 
 
 		let OneNumber = new Button(this.container,"inputNumber",this.path);
-		OneNumber.setPicto("looks_5");
+		OneNumber.setPicto("looks_5");*/
 
 
-	}
+
 
 
 

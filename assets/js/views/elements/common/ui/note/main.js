@@ -34,12 +34,6 @@ export default class Main extends superViews{
 		this.container.style.flexDirection = "column";
 		this.container.style.flex = 1;
 
-/*		this.Main.style.background = "white";
-		this.Main.style.display = "flex";
-		//this.Main.style.overflowY = "scroll";
-		this.Main.style.flexDirection = "column";
-		this.Main.style.flex = 1;*/
-
 
 		this.addTitle();
 
@@ -55,9 +49,6 @@ export default class Main extends superViews{
 
 		this.Title = new Title(this.container,"noteMainTitle",this.path);
 
-		//let cardTitle = this.textElement('','title',"20px","bold","grey","Titre...");
-
-		//this.blocWidth = cardTitle.offsetWidth;
 	}
 
 
@@ -78,7 +69,7 @@ export default class Main extends superViews{
 
 
 
-	_addRessources(){
+/*	_addRessources(){
 
 		let divCore = document.createElement("div");
 		divCore.style.overflowY = "scroll";
@@ -129,7 +120,7 @@ export default class Main extends superViews{
 
 
 
-	}
+	}*/
 
 
 

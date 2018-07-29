@@ -9,11 +9,6 @@ export default class Empty extends superViews{
 
 		super(parent, MyClass , path);
 
-		//console.log(path);
-
-		//this.data = this.Lifer.getData(this.path,"Title",2);
-
-
 		this.init();
 		
 	}

@@ -9,8 +9,6 @@ import Main             from './note/main.js';
 import Footer           from './note/footer.js';
 
 
-import Button from "./button.js"
-
 export default class Note extends superViews{
 	
 
