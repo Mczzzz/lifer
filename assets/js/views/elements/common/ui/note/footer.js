@@ -19,7 +19,7 @@ export default class Footer extends superViews{
 
 		this.background();
 
-		this.addActionsButtons();
+		this.addActionButtons();
 
 
 	}
