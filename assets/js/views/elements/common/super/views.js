@@ -10,11 +10,14 @@ export default class views {
 
 		this.MyClass = (MyClass !== false)? MyClass : this.constructor.name;
 
+
 		this.path = path+"/"+this.MyClass;
 		this.Lifer = Lifer;
 		this.Lifer.addMe(this.path);
 
 		this.superInit(prepend);
+
+		this.Lifer.addData(this.path,[{"ThisContainer" : this.container}]);
 
 	}
 
@@ -47,7 +50,7 @@ export default class views {
 	getContainer(){
 
 		return this.container;
-		
+
 	}
 
 
