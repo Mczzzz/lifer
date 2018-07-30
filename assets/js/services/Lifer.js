@@ -30,6 +30,8 @@ addMe(path){
 
 			let arrayPath = path.split("/");
 
+			console.log(arrayPath);
+
 			let dataRepresentation = this.dataCenter;
 
 			for(let myPath of arrayPath ){
