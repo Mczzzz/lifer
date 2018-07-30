@@ -7,7 +7,7 @@ export default class Frame {
 
 	constructor(path){
 
-		let Me = 'frame';
+		let Me = this.constructor.name;
 		this.path = path+"/"+Me;
 
 		Lifer.addMe(this.path);
@@ -24,14 +24,14 @@ export default class Frame {
 
 	Home(){
 
-		let home = new Home(this.container,"Home",this.path);
+		let home = new Home(this.container,false,this.path);
 
 	}
 
 
 	Objects(){
 
-		let objects = new Objects(this.container,"Objects",this.path);
+		let objects = new Objects(this.container,false,this.path);
 
 	}
 
