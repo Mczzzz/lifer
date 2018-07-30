@@ -66,6 +66,7 @@ addMe(path){
 		for(let myPath of arrayPath ){
 
 			console.log(myPath);
+			console.log(dataRepresentation);
 			console.log(dataRepresentation[myPath]);
 
 			if(!(dataRepresentation[myPath] instanceof Object)){
@@ -160,32 +161,6 @@ addMe(path){
 
 
 	}
-
-
-
-/*	removeTarget(el){
-
-		let it = 0;
-		for(let target of this.targets){
-			console.log(it);
-			console.log(el);
-			if(target.me == el){
-
-				this.targets.splice(it,1);
-
-			}
-
-			break;
-			it++;
-			
-		}
-
-		console.log(it);
-		console.log(this.targets);
-
-	}*/
-
-
 
 
 
