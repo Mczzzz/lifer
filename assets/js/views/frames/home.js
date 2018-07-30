@@ -1,12 +1,12 @@
 import { Lifer } from '../../services/Lifer.js';
-import layout from '../layout/layout.js';
+import superViews from "../elements/common/super/views.js"
 
 import Header from '../elements/common/sections/header.js';
 import Main from '../elements/common/sections/main.js';
 import Tools from '../elements/home/main/bottom/tools/tools.js';
 import Footer from '../elements/common/sections/footer.js';
 
-export default class Home extends layout{
+export default class Home extends superViews{
 
 
 

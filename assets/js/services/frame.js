@@ -12,6 +12,8 @@ export default class Frame {
 
 		Lifer.addMe(this.path);
 
+		this.container = document.body;
+
 
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
 
@@ -22,19 +24,14 @@ export default class Frame {
 
 	Home(){
 
-		//this.active = "Home";
-		$('body').empty();
-		let home = new Home(this.path);
+		let home = new Home(this.container,"Home",this.path);
 
 	}
 
 
 	Objects(){
 
-		//on vide le body
-		$('body').empty();
-		//on recharge le body
-		let objects = new Objects(this.path);
+		let objects = new Objects(this.container,"Objects",this.path);
 
 	}
 

@@ -29,15 +29,6 @@ export default class Objects extends layout{
     this.footerInit();
 
 
-/*
-    this.in = "Container";
-
-    this.breadcrumb();
-    this.mainTopUp();
-    this.mainTopBottom();
-    this.mainBottomTools();
-    this.elementAnimation();*/
-
 	}
 
 
