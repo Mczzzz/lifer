@@ -58,6 +58,8 @@ addMe(path){
 
 		let arrayPath = path.split("/");
 
+		console.log(arrayPath);
+
 		let dataRepresentation = this.dataCenter;
 
 
