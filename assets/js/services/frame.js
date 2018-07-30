@@ -7,7 +7,7 @@ export default class Frame {
 
 	constructor(path){
 
-		let Me = this.constructor.name;
+		let Me = 'frame';
 		this.path = path+"/"+Me;
 		console.log(this.path);
 		Lifer.addMe(this.path);
