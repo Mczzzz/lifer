@@ -23,7 +23,6 @@ export default class Frame {
 
 	Home(){
 
-		console.log(this.container);
 		let home = new Home(this.container,false,this.path);
 
 	}

@@ -13,9 +13,6 @@ export default class Controller {
 
 		Lifer.addMe(this.path);
 
-/*		let level = Lifer.getData(path,"Level",1);
-		Lifer.addData(this.path,[{"Level" : level + 1}]);*/
-
 		this.frame = new Frame(this.path);
 		this.frame.Home();
 	}

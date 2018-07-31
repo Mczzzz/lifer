@@ -1,3 +1,4 @@
+
 import { Lifer } from '../../services/Lifer.js';
 import superViews from "../elements/common/super/views.js"
 
@@ -10,18 +11,10 @@ export default class Home extends superViews{
 
 
 
-	constructor(path){
+	constructor(parent, MyClass,path){
 
-		super();
+		super(parent, MyClass,path);
 
-		let Me = 'home';
-
-		this.path = path+"/"+Me;
-
-		Lifer.addMe(path+"/"+Me);
-
-		let level = Lifer.getData(path,"Level",1);
-		Lifer.addData(this.path,[{"Level" : level + 1}]);
 
 
 		this.bkgdHF = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
