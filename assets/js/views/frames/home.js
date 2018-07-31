@@ -16,12 +16,21 @@ export default class Home extends superViews{
 		super(parent, MyClass,path);
 
 
+		this.init();
 
-		this.bkgdHF = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
+		
 		this.headerCustom();
 		this.mainCustom();
 		this.toolsCustom();
 		this.footerCustom();
+
+	}
+
+
+	init(){
+
+		this.container.style.background = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
+
 
 	}
 
