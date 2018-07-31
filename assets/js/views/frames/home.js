@@ -28,6 +28,7 @@ export default class Home extends superViews{
 		this.container.style.display = "flex";
 		this.container.style.flexDirection = "column";
 		this.container.style.height = "100vh";
+		
 		this.addHeader();
 		this.addMain();
 		this.addFooter();
@@ -49,7 +50,7 @@ export default class Home extends superViews{
 
 	addFooter(){
 
-		this.Footer = new Footer(this.container,"FooterMain",this.path);
+		this.Footer = new Footer(this.container,"HomeFooter",this.path);
 
 	}
 
