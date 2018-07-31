@@ -35,8 +35,16 @@ export default class FooterButtons extends superViews{
 					this.card.setStyleComponent(FooterElement,"toObjects","color","green");
 					this.card.setStyleComponent(FooterElement,"toObjects","alignItems","center");
 
-					FooterObjectButton.addEventListener("click",()=>this.parent.remove());
+					FooterObjectButton.addEventListener("click",()=>this.goToObject());
 
+
+	}
+
+
+	goToObject(){
+
+		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
+		window.dispatchEvent(LinkEvent);
 
 	}
 
