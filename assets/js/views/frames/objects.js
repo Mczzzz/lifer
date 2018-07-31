@@ -20,6 +20,7 @@ export default class Objects extends superViews{
 
   init(){
 
+    this.container.style.height = "100vh";
     this.addHeader();
     this.addMain();
     this.addFooter();
