@@ -2,7 +2,7 @@ import superViews from "../../common/super/views.js"
 
 import Card from "../../common/ui/card.js"
 
-export default class HeaderButtons extends superViews{
+export default class FooterButtons extends superViews{
 	
 
 	constructor(parent, MyClass , path){
@@ -17,7 +17,7 @@ export default class HeaderButtons extends superViews{
 
 	init(){
 
-		this.card = new Card(this.container,'HomeHeaderCard', this.path);
+		this.card = new Card(this.container,'HomeFooterCard', this.path);
 	
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");
@@ -26,7 +26,7 @@ export default class HeaderButtons extends superViews{
 		this.card.setStyle("background", "transparent");
 
 
-			let HeaderElement   = this.card.setElement("HomeHeaderElement");
+			let HeaderElement   = this.card.setElement("HomeFooterElement");
 			this.card.setStyleElement(HeaderElement,"justifyContent","space-between");
 
 /*					let HeaderBackButton = this.card.push("Button", HeaderElement,"headerBack", "keyboard_backspace");

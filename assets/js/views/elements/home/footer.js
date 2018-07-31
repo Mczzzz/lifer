@@ -1,5 +1,6 @@
 import superViews from "../common/super/views.js"
 
+import FooterButton from "./footer/footerButtons.js"
 
 export default class Footer extends superViews{
 	
@@ -18,7 +19,7 @@ export default class Footer extends superViews{
 
 		this.background();
 
-	//	this.addActionButtons();
+		this.addActionButtons();
 
 
 	}
@@ -35,10 +36,10 @@ export default class Footer extends superViews{
 	}
 
 
-/*	addActionButtons(){
+	addActionButtons(){
 
-		this.HeaderButton = new HeaderButton(this.container,"HomeHeaderActionButton",this.path);
+	this.FooterButton = new FooterButton(this.container,"HomeFooterActionButton",this.path);
 
-	}*/
+}
 
 }
