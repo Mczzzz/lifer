@@ -28,6 +28,8 @@ addMe(path){
 
 		if(path.length > 0){
 
+			let level = 0;
+
 			let arrayPath = path.split("/");
 
 			let dataRepresentation = this.dataCenter;
@@ -36,6 +38,12 @@ addMe(path){
 
 				if(!(dataRepresentation[myPath] instanceof Object)){
 					dataRepresentation[myPath] = {};
+					dataRepresentation[myPath]._datas = {};
+					dataRepresentation[myPath]._datas.level = level;
+				}else{
+
+					level = dataRepresentation[myPath]._datas.level;
+
 				}
 
 				dataRepresentation = dataRepresentation[myPath];
