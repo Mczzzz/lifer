@@ -39,7 +39,7 @@ addMe(path){
 				if(!(dataRepresentation[myPath] instanceof Object)){
 					dataRepresentation[myPath] = {};
 					dataRepresentation[myPath]._datas = {};
-					dataRepresentation[myPath]._datas.level = level;
+					dataRepresentation[myPath]._datas.level = level + 1;
 				}else{
 
 					level = dataRepresentation[myPath]._datas.level;
