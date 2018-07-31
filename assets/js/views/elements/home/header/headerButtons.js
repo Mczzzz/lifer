@@ -39,7 +39,7 @@ export default class HeaderButtons extends superViews{
 					HeaderBackButton.addEventListener("click",()=>this.parent.remove());
 
 
-					this.card.push("Button", HeaderElement,"headerLogo", "widgets");
+					this.card.push("Button", HeaderElement,"headerLogo", "sentiment_satisfied_alt");
 
 					this.card.setStyleComponent(HeaderElement,"headerLogo","fontSize","25px");
 					this.card.setStyleComponent(HeaderElement,"headerLogo","color","green");
