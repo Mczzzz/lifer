@@ -64,7 +64,7 @@ addMe(path){
 
 
 		for(let myPath of arrayPath ){
-
+			console.log("in for");
 			console.log(myPath);
 			console.log(dataRepresentation);
 			console.log(dataRepresentation[myPath]);
