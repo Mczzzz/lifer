@@ -1,5 +1,5 @@
-import superViews from "../../../../../../elements/common/super/views.js"
-import { SearchServices } from '../../../../../../../services/search.js';
+import superViews from "../../../../common/super/views.js"
+import { SearchServices } from '../../../../../../services/search.js';
 
 export default class search extends superViews{
 

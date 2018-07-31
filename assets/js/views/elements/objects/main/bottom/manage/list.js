@@ -1,7 +1,7 @@
-import LoaderCollection from '../../../../../../../services/LoaderCollection.js';
-import superViews from "../../../../../../elements/common/super/views.js"
+import LoaderCollection from '../../../../../../services/LoaderCollection.js';
+import superViews from "../../../../common/super/views.js"
 
-import popNote from "../../../../../../elements/common/ui/Note.js"
+import popNote from "../../../../common/ui/Note.js"
 
 export default class list extends superViews{
 

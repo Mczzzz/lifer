@@ -1,6 +1,6 @@
-import superViews from "../../../../../elements/common/super/views.js"
-import Search from './search/search.js';
-import Note from './note/note.js';
+import superViews from "../../../common/super/views.js"
+import Search from './tools/search.js';
+import Note from './tools/note.js';
 
 export default class tools extends superViews{
 

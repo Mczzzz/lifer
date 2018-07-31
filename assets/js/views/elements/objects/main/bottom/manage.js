@@ -1,5 +1,5 @@
-import superViews from "../../../../../elements/common/super/views.js"
-import List from './list/list.js';
+import superViews from "../../../common/super/views.js"
+import List from './manage/list.js';
 
 export default class manage extends superViews{
 

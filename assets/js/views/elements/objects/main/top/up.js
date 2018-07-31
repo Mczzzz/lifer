@@ -1,6 +1,6 @@
-import { SearchServices } from '../../../../../../services/search.js';
-import superViews from "../../../../../elements/common/super/views.js"
-import jsTreeContainer from '../../../../../elements/common/ui/jsTreeContainer.js';
+import { SearchServices } from '../../../../../services/search.js';
+import superViews from "../../../common/super/views.js"
+import jsTreeContainer from '../../../common/ui/jsTreeContainer.js';
 
 
 export default class up extends superViews{
