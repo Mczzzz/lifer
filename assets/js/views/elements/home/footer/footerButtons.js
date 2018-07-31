@@ -26,25 +26,16 @@ export default class FooterButtons extends superViews{
 		this.card.setStyle("background", "transparent");
 
 
-			let HeaderElement   = this.card.setElement("HomeFooterElement");
-			this.card.setStyleElement(HeaderElement,"justifyContent","space-between");
+			let FooterElement = this.card.setElement("HomeFooterElement");
+			this.card.setStyleElement(FooterElement,"justifyContent","space-between");
 
-/*					let HeaderBackButton = this.card.push("Button", HeaderElement,"headerBack", "keyboard_backspace");
+					let FooterObjectButton = this.card.push("Button", FooterElement,"toObjects", "widgets");
 
-					this.card.setStyleComponent(HeaderElement,"headerBack","fontSize","25px");
-					this.card.setStyleComponent(HeaderElement,"headerBack","color","green");
-					this.card.setStyleComponent(HeaderElement,"headerBack","alignItems","center");
+					this.card.setStyleComponent(FooterElement,"toObjects","fontSize","25px");
+					this.card.setStyleComponent(FooterElement,"toObjects","color","green");
+					this.card.setStyleComponent(FooterElement,"toObjects","alignItems","center");
 
-					this.Lifer.dumpMe();
-					HeaderBackButton.addEventListener("click",()=>this.parent.remove());
-
-
-					this.card.push("Button", HeaderElement,"headerLogo", "sentiment_satisfied_alt");
-
-					this.card.setStyleComponent(HeaderElement,"headerLogo","fontSize","25px");
-					this.card.setStyleComponent(HeaderElement,"headerLogo","color","green");
-					this.card.setStyleComponent(HeaderElement,"headerLogo","alignItems","center");*/
-
+					FooterObjectButton.addEventListener("click",()=>this.parent.remove());
 
 
 	}
