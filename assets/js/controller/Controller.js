@@ -11,11 +11,10 @@ export default class Controller {
 
 		this.path = path+"/"+Me;
 
-		console.log(this.path);
 		Lifer.addMe(this.path);
 
-		let level = Lifer.getData(path,"Level",1);
-		Lifer.addData(this.path,[{"Level" : level + 1}]);
+/*		let level = Lifer.getData(path,"Level",1);
+		Lifer.addData(this.path,[{"Level" : level + 1}]);*/
 
 		this.frame = new Frame(this.path);
 		this.frame.Home();

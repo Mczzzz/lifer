@@ -18,7 +18,7 @@ class Brain {
 
 	dumpMe(){
 
-		console.log(JSON.stringify(this.dataCenter));
+		console.log(this.dataCenter);
 
 	}
 
@@ -29,8 +29,6 @@ addMe(path){
 		if(path.length > 0){
 
 			let arrayPath = path.split("/");
-
-			console.log(arrayPath);
 
 			let dataRepresentation = this.dataCenter;
 
@@ -48,7 +46,7 @@ addMe(path){
 		}
 
 
-		this.dumpMe();
+		
 	}
 
 
@@ -58,16 +56,16 @@ addMe(path){
 
 		let arrayPath = path.split("/");
 
-		console.log(arrayPath);
+	/*	console.log(arrayPath);*/
 
 		let dataRepresentation = this.dataCenter;
 
 
 		for(let myPath of arrayPath ){
-			console.log("in for");
+/*			console.log("in for");
 			console.log(myPath);
 			console.log(dataRepresentation);
-			console.log(dataRepresentation[myPath]);
+			console.log(dataRepresentation[myPath]);*/
 
 			if(!(dataRepresentation[myPath] instanceof Object)){
 				console.log('aie '+myPath+' not exist');

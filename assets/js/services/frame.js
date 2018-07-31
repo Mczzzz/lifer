@@ -9,7 +9,6 @@ export default class Frame {
 
 		let Me = 'frame';
 		this.path = path+"/"+Me;
-		console.log(this.path);
 		Lifer.addMe(this.path);
 
 		this.container = document.body;
