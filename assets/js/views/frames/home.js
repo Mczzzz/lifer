@@ -3,6 +3,7 @@ import superViews from "../elements/common/super/views.js"
 
 import Header from '../elements/home/header.js';
 import Main from '../elements/home/main.js';
+import Footer from '../elements/home/footer.js';
 /*import Main from '../elements/common/sections/main.js';
 import Tools from '../elements/home/main/bottom/tools/tools.js';
 import Footer from '../elements/common/sections/footer.js';*/
@@ -27,11 +28,7 @@ export default class Home extends superViews{
 
 		this.addHeader();
 		this.addMain();
-/*		this.headerCustom();
-		this.mainCustom();
-		this.toolsCustom();
-		this.footerCustom();
-*/
+		this.addFooter();
 
 	}
 
@@ -48,39 +45,27 @@ export default class Home extends superViews{
 
 	}
 
-/*	headerCustom(){
+	addFooter(){
 
-		let HomeHeader = new Header('header');
-		
-		HomeHeader.setBkgdColor(this.bkgdHF);
-
-	}*/
-
-
-	mainCustom(){
-
-		let HomeMain = new Main();
-
-		HomeMain.setBkgdTopColor('#e8eff7');
-		HomeMain.setBkgdBottomColor('#e8eff7');
+		this.Footer = new Footer(this.container,"FooterMain",this.path);
 
 	}
 
-	toolsCustom(){
+/*	toolsCustom(){
 
 		let HomeTools = new Tools();
 
 
 
-	}
+	}*/
 
-	footerCustom(){
+/*	footerCustom(){
 
 		let HomeFooter = new Footer('footer');
 		
 		HomeFooter.setBkgdColor(this.bkgdHF);
 
-	}
+	}*/
 
 
 }
