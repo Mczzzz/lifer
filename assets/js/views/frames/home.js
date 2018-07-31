@@ -2,6 +2,7 @@ import { Lifer } from '../../services/Lifer.js';
 import superViews from "../elements/common/super/views.js"
 
 import Header from '../elements/home/header.js';
+import Main from '../elements/home/main.js';
 /*import Main from '../elements/common/sections/main.js';
 import Tools from '../elements/home/main/bottom/tools/tools.js';
 import Footer from '../elements/common/sections/footer.js';*/
