@@ -25,7 +25,8 @@ export default class Home extends superViews{
 	init(){
 
 		this.container.style.background = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
-
+		this.container.style.display = "flex";
+		this.container.style.flexDirection = "column";
 		this.addHeader();
 		this.addMain();
 		this.addFooter();
