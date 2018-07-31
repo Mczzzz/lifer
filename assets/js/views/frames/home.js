@@ -1,11 +1,10 @@
-
 import { Lifer } from '../../services/Lifer.js';
 import superViews from "../elements/common/super/views.js"
 
-import Header from '../elements/common/sections/header.js';
-import Main from '../elements/common/sections/main.js';
+import Header from '../elements/home/header.js';
+/*import Main from '../elements/common/sections/main.js';
 import Tools from '../elements/home/main/bottom/tools/tools.js';
-import Footer from '../elements/common/sections/footer.js';
+import Footer from '../elements/common/sections/footer.js';*/
 
 export default class Home extends superViews{
 
@@ -18,12 +17,6 @@ export default class Home extends superViews{
 
 		this.init();
 
-		
-		this.headerCustom();
-		this.mainCustom();
-		this.toolsCustom();
-		this.footerCustom();
-
 	}
 
 
@@ -31,17 +24,31 @@ export default class Home extends superViews{
 
 		this.container.style.background = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
 
+		this.Header(this.container,"HomeHeader",this.path);
+
+/*		this.headerCustom();
+		this.mainCustom();
+		this.toolsCustom();
+		this.footerCustom();
+*/
 
 	}
 
 
-	headerCustom(){
+	Header(){
+
+
+
+	}
+
+
+/*	headerCustom(){
 
 		let HomeHeader = new Header('header');
 		
 		HomeHeader.setBkgdColor(this.bkgdHF);
 
-	}
+	}*/
 
 
 	mainCustom(){
