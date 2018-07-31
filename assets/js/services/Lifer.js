@@ -54,7 +54,7 @@ addMe(path){
 		}
 
 
-		
+		this.dumpMe();
 	}
 
 
