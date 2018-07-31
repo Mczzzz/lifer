@@ -1,7 +1,7 @@
-import superViews from "../../../elements/common/super/views.js"
-import Breadcrumb from './breadcrumb/breadcrumb.js';
-import Top from './top/top.js';
-import Bottom from './bottom/bottom.js';
+import superViews from "../../elements/common/super/views.js"
+import Breadcrumb from './main/breadcrumb/breadcrumb.js';
+import Top from './main/top/top.js';
+import Bottom from './main/bottom/bottom.js';
 
 export default class main extends superViews{
 	

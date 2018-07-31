@@ -1,51 +1,45 @@
 import { Lifer } from '../../services/Lifer.js';
-import layout from '../layout/layout.js';
+import superViews from "../elements/common/super/views.js"
 
-import Header from '../elements/objects/header/header.js';
-import Main   from '../elements/objects/main/main.js'; 
-import Footer from '../elements/objects/footer/footer.js';
-
-
-export default class Objects extends layout{
+import Header from '../elements/objects/header.js';
+import Main   from '../elements/objects/main.js'; 
+import Footer from '../elements/objects/footer.js';
 
 
-	constructor(path){
+export default class Objects extends superViews{
 
 
-    super(); 
+  constructor(parent, MyClass,path){
 
-    let Me = 'objects';
-    this.path = path+"/"+Me;
-    Lifer.addMe(this.path);
-
-    let level = Lifer.getData(path,"Level",1);
-    Lifer.addData(this.path,[{"Level" : level + 1}]);
-
-
-    this.container = document.getElementsByClassName("container")[0];
+    super(parent, MyClass,path);
     
-    this.headerInit();
-    this.mainInit();
-    this.footerInit();
-
+    this.init();
 
 	}
 
 
-  headerInit(){
+  init(){
+
+    this.addHeader();
+    this.addMain();
+    this.addFooter();
+
+  }
+
+  addHeader(){
 
     this.Header = new Header(this.container,"header",this.path);
     
   }
 
-  mainInit(){
+  addMain(){
 
     this.Main = new Main(this.container,"main",this.path);
     
   }
 
 
-  footerInit(){
+  addFooter(){
 
     this.Footer = new Footer(this.container,"footer",this.path);
     

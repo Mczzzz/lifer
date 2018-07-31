@@ -1,5 +1,5 @@
-import superViews from "../../../elements/common/super/views.js"
-import HeaderCommon from '../../common/sections/header.js';
+import superViews from "../../elements/common/super/views.js"
+import HeaderCommon from '../common/sections/header.js';
 
 export default class Header extends superViews{
 	

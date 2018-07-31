@@ -1,6 +1,6 @@
-import superViews from "../../../../elements/common/super/views.js"
-import Manage from './manage/manage.js';
-import Tools from './tools/tools.js';
+import superViews from "../../../elements/common/super/views.js"
+import Manage from './bottom/manage/manage.js';
+import Tools from './bottom/tools/tools.js';
 
 export default class bottom extends superViews{
 	

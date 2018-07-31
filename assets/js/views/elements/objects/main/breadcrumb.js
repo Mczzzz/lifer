@@ -1,5 +1,5 @@
-import superViews from "../../../../elements/common/super/views.js"
-import BreadcrumbCommon from '../../../../elements/common/ui/breadcrumb.js';
+import superViews from "../../../elements/common/super/views.js"
+import BreadcrumbCommon from '../../../elements/common/ui/breadcrumb.js';
 
 
 export default class breadcrumb extends superViews{

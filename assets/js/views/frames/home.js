@@ -4,9 +4,7 @@ import superViews from "../elements/common/super/views.js"
 import Header from '../elements/home/header.js';
 import Main from '../elements/home/main.js';
 import Footer from '../elements/home/footer.js';
-/*import Main from '../elements/common/sections/main.js';
-import Tools from '../elements/home/main/bottom/tools/tools.js';
-import Footer from '../elements/common/sections/footer.js';*/
+
 
 export default class Home extends superViews{
 
@@ -28,7 +26,7 @@ export default class Home extends superViews{
 		this.container.style.display = "flex";
 		this.container.style.flexDirection = "column";
 		this.container.style.height = "100vh";
-		
+
 		this.addHeader();
 		this.addMain();
 		this.addFooter();
@@ -53,22 +51,6 @@ export default class Home extends superViews{
 		this.Footer = new Footer(this.container,"HomeFooter",this.path);
 
 	}
-
-/*	toolsCustom(){
-
-		let HomeTools = new Tools();
-
-
-
-	}*/
-
-/*	footerCustom(){
-
-		let HomeFooter = new Footer('footer');
-		
-		HomeFooter.setBkgdColor(this.bkgdHF);
-
-	}*/
 
 
 }
