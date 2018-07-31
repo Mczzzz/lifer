@@ -18,7 +18,7 @@ class Brain {
 
 	dumpMe(){
 
-		console.log(this.dataCenter);
+		console.log(JSON.stringify(this.dataCenter));
 
 	}
 
