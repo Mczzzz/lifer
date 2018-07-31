@@ -11,13 +11,18 @@ export default class Frame {
 		this.path = path+"/"+Me;
 		Lifer.addMe(this.path);
 
-		this.container = document.body;
-
+		this.init();
 
 		window.addEventListener('changeFrame', (e) => this[e.detail.frame](e));
 
 	}
 
+	init(){
+
+		this.container = document.body;
+		this.container.style.margin = "0px";
+
+	}
 
 	
 
