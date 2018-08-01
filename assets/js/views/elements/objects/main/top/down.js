@@ -22,6 +22,7 @@ export default class down extends superViews{
 	init(){
 
 		this.container.style.overflowY = "scroll";
+		this.container.style.minHeight = "40px";
 
 		this.initTree();
 		this.initListener();
