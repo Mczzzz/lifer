@@ -148,7 +148,7 @@ addMe(path){
 
 		if(!(dataRepresentation._datas[Key] instanceof Object)){
 
-			console.log(key);
+			console.log(Key);
 			console.log("Cette clef de data n'existe pas");
 			return false;
 
