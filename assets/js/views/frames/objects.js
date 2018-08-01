@@ -24,7 +24,7 @@ export default class Objects extends superViews{
     this.container.style.flexDirection = "column";
 
     this.addHeader();
-    this.addMain();
+    //this.addMain();
     this.addFooter();
 
   }
