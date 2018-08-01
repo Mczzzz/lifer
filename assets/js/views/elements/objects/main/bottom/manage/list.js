@@ -1,7 +1,7 @@
 import LoaderCollection from '../../../../../../services/LoaderCollection.js';
 import superViews from "../../../../common/super/views.js"
 
-import popNote from "../../../../common/ui/Note.js"
+//import popNote from "../../../../common/ui/Note.js"
 
 export default class list extends superViews{
 
@@ -101,13 +101,13 @@ export default class list extends superViews{
 
 	}
 
-	openPopNote(e,id){
+/*	openPopNote(e,id){
 
 		console.log('openPopNote');
 		console.log('id: '+id);
 		let ThePopNote = new popNote(this.container,"popNote",this.path,id);
 
-	}
+	}*/
 
 /*	constructor(HTMLParent){
 
