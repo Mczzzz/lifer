@@ -29,21 +29,11 @@ export default class FooterButtons extends superViews{
 			let ObjectsFooterElement   = this.card.setElement("ObjectsFooterElement");
 			this.card.setStyleElement(ObjectsFooterElement,"justifyContent","space-between");
 
-/*					let HeaderBackButton = this.card.push("Button", HeaderElement,"headerBack", "keyboard_backspace");
+					let ObjectsFooterElementButton = this.card.push("Button", ObjectsFooterElement,"addChild", "add_circle");
 
-					this.card.setStyleComponent(HeaderElement,"headerBack","fontSize","25px");
-					this.card.setStyleComponent(HeaderElement,"headerBack","color","green");
-					this.card.setStyleComponent(HeaderElement,"headerBack","alignItems","center");
-
-					this.Lifer.dumpMe();
-					HeaderBackButton.addEventListener("click",()=>this.parent.remove());
-
-
-					this.card.push("Button", HeaderElement,"headerLogo", "sentiment_satisfied_alt");
-
-					this.card.setStyleComponent(HeaderElement,"headerLogo","fontSize","25px");
-					this.card.setStyleComponent(HeaderElement,"headerLogo","color","green");
-					this.card.setStyleComponent(HeaderElement,"headerLogo","alignItems","center");*/
+					this.card.setStyleComponent(ObjectsFooterElement,"addChild","fontSize","25px");
+					this.card.setStyleComponent(ObjectsFooterElement,"addChild","color","green");
+					this.card.setStyleComponent(ObjectsFooterElement,"addChild","alignItems","center");
 
 
 
