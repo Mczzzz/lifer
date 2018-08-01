@@ -1,4 +1,3 @@
-import { Lifer } from '../../services/Lifer.js';
 import superViews from "../elements/common/super/views.js"
 
 import Header from '../elements/objects/header.js';
@@ -21,6 +20,9 @@ export default class Objects extends superViews{
   init(){
 
     this.container.style.height = "100vh";
+    this.container.style.display = "flex";
+    this.container.style.flexDirection = "column";
+
     this.addHeader();
     this.addMain();
     this.addFooter();
@@ -29,20 +31,20 @@ export default class Objects extends superViews{
 
   addHeader(){
 
-    this.Header = new Header(this.container,"header",this.path);
+    this.Header = new Header(this.container,"ObjectsHeader",this.path);
     
   }
 
   addMain(){
 
-    this.Main = new Main(this.container,"main",this.path);
+    this.Main = new Main(this.container,"ObjectsMain",this.path);
     
   }
 
 
   addFooter(){
 
-    this.Footer = new Footer(this.container,"footer",this.path);
+    this.Footer = new Footer(this.container,"ObjectsFooter",this.path);
     
   }
 

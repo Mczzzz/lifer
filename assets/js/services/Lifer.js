@@ -50,9 +50,7 @@ addMe(path){
 
 			}
 
-
 		}
-
 
 		//this.dumpMe();
 	}
@@ -64,16 +62,10 @@ addMe(path){
 
 		let arrayPath = path.split("/");
 
-	/*	console.log(arrayPath);*/
-
 		let dataRepresentation = this.dataCenter;
 
 
 		for(let myPath of arrayPath ){
-/*			console.log("in for");
-			console.log(myPath);
-			console.log(dataRepresentation);
-			console.log(dataRepresentation[myPath]);*/
 
 			if(!(dataRepresentation[myPath] instanceof Object)){
 				console.log('aie '+myPath+' not exist');
@@ -97,13 +89,11 @@ addMe(path){
 
 		}
 
-
+/*
 		if((dataRepresentation._trigger instanceof Object)){
 
 //TODO : il faut controller s'il y a des objets a prevenirs
-
-
-		}	
+		}*/	
 
 
 

@@ -1,4 +1,3 @@
-import { Lifer } from '../../services/Lifer.js';
 import superViews from "../elements/common/super/views.js"
 
 import Header from '../elements/home/header.js';

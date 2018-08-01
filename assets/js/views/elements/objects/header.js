@@ -1,34 +1,45 @@
-import superViews from "../../elements/common/super/views.js"
-import HeaderCommon from '../common/sections/header.js';
+import superViews from "../common/super/views.js"
+
+import HeaderButton from "./header/headerButtons.js"
 
 export default class Header extends superViews{
 	
 
-	constructor(parent, MyClass,path){
+	constructor(parent, MyClass , path){
 
-		super(parent, MyClass,path);
-	
-		this.bkgdHF = 'linear-gradient(45deg, #43A047 0%, #1de9b6 100%)';
+		super(parent, MyClass , path)
 
-		this.HeaderObject = new HeaderCommon('header');
-
-
-
-
-		this.skin();
-
+		this.init();
+		
 	}
 
 
-	skin(){
+	init(){
 
-		this.HeaderObject.setBkgdColor(this.bkgdHF);
-    	this.HeaderObject.setBackToHome();
-    	this.HeaderObject.setIconPage();
+
+		this.background();
+
+		this.addActionButtons();
 
 
 	}
 
 
+
+	background(){
+
+		this.container.style.background = "linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)";
+
+		this.container.style.alignItems = "center";
+		this.container.style.color = "";
+
+	}
+
+
+	addActionButtons(){
+
+		this.HeaderButton = new HeaderButton(this.container,"ObjectsHeaderActionButton",this.path);
+
+	}
 
 }
