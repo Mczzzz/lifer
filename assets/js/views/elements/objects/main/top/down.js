@@ -67,7 +67,7 @@ export default class down extends superViews{
 	}
 
 	minForceFlex(){
-		this.container.style.flex = "0";
+		this.container.style.flex = null;
 	}
 
 
