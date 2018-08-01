@@ -73,7 +73,7 @@ export default class top extends superViews{
 
 		this.down.loadData(data.data.node);
 		this.down.show();
-		this.down.minForceFlex();
+		//this.down.minForceFlex();
 
 
 	}
