@@ -1,30 +1,45 @@
-import superViews from "../../elements/common/super/views.js"
-import FooterCommon from '../common/sections/footer.js';
+import superViews from "../common/super/views.js"
+
+import FooterButton from "./footer/footerButtons.js"
 
 export default class Footer extends superViews{
 	
 
-	constructor(parent, MyClass,path){
+	constructor(parent, MyClass , path){
 
-		super(parent, MyClass,path);
-	
-		this.bkgdHF = 'linear-gradient(45deg, #43A047 0%, #1de9b6 100%)';
+		super(parent, MyClass , path)
 
-		this.FooterObject = new FooterCommon('footer');
+		this.init();
+		
+	}
 
 
-		this.skin();
+	init(){
+
+
+		this.background();
+
+		this.addActionButtons();
+
 
 	}
 
 
-	skin(){
 
-		this.FooterObject.setBkgdColor(this.bkgdHF);
+	background(){
 
+		this.container.style.background = "linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)";
+
+		this.container.style.alignItems = "center";
+		this.container.style.color = "";
 
 	}
 
 
+	addActionButtons(){
+
+	this.FooterButton = new FooterButton(this.container,"ObjectsFooterActionButton",this.path);
+
+}
 
 }
