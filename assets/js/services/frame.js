@@ -29,7 +29,7 @@ export default class Frame {
 	Home(){
 
 		this.container.innerHTML = "";
-		let home = new Home(this.container,"Home","");
+		let home = new Home(this.container,"Home",false);
 
 	}
 
@@ -37,7 +37,7 @@ export default class Frame {
 	Objects(){
 
 		this.container.innerHTML = "";
-		let objects = new Objects(this.container,"Objects","");
+		let objects = new Objects(this.container,"Objects",false);
 
 	}
 
