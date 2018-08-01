@@ -69,6 +69,8 @@ addMe(path){
 
 		for(let myPath of arrayPath ){
 
+			if (myPath == "null") continue;
+
 			if(!(dataRepresentation[myPath] instanceof Object)){
 				console.log('aie '+myPath+' not exist');
 				return false;
