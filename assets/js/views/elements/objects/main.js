@@ -18,25 +18,49 @@ export default class main extends superViews{
 	init(){
 
 		this.container.style.flex = 1;
+		this.container.style.display = "flex";
+		this.container.style.flexDirection = "column";
 
-		this.initListener();
+	//	this.addBreadCrumb();
+		this.addMainTop();
+		this.addMainDown();
 
-		this.breadcrumb = new Breadcrumb(this.container,"breadcrumb",this.path);
-		this.top = new Top(this.container,"top",this.path);
-		this.bottom = new Bottom(this.container,"bottom",this.path);
-
+//		this.initListener();
 
 	}
 
 
-	initListener(){
+	addBreadCrumb(){
+
+		this.breadcrumb = new Breadcrumb(this.container,"breadcrumb",this.path);
+
+	}
+		
+	addMainTop(){
+
+		this.top = new Top(this.container,"top",this.path);
+	}
+
+	addMainDown(){
+
+		this.bottom = new Bottom(this.container,"bottom",this.path);
+
+	}
+		
+		
+
+
+
+
+
+/*	initListener(){
   
 	    this.container.addEventListener('callBack', (data) => this.callBack(data));
 
-	}
+	}*/
 
 
-	callBack(data){
+/*	callBack(data){
 
 		console.log(data);
 
@@ -65,7 +89,7 @@ export default class main extends superViews{
 		this.bottom.hideManage();
 		this.bottom.hideNodeTools()
 	}
-	
+	*/
 
 
 }

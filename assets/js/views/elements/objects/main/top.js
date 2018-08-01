@@ -16,6 +16,11 @@ export default class top extends superViews{
 
 	init(){
 
+
+		this.container.style.flex = 1;
+
+
+
 		this.initListener();
 
 		this.initUp();
