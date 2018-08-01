@@ -35,11 +35,10 @@ export default class HeaderButtons extends superViews{
 					this.card.setStyleComponent(HeaderElement,"headerBack","color","green");
 					this.card.setStyleComponent(HeaderElement,"headerBack","alignItems","center");
 
-					this.Lifer.dumpMe();
-					HeaderBackButton.addEventListener("click",()=>this.parent.remove());
+					HeaderBackButton.addEventListener("click",()=>this.BackToHome());
 
 
-					this.card.push("Button", HeaderElement,"headerLogo", "sentiment_satisfied_alt");
+					this.card.push("Button", HeaderElement,"headerLogo", "widgets");
 
 					this.card.setStyleComponent(HeaderElement,"headerLogo","fontSize","25px");
 					this.card.setStyleComponent(HeaderElement,"headerLogo","color","green");
@@ -48,6 +47,15 @@ export default class HeaderButtons extends superViews{
 
 
 	}
+
+
+	BackToHome(){
+
+		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Home'}});
+		window.dispatchEvent(LinkEvent);
+
+	}
+
 
 
 }
