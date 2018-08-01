@@ -27,7 +27,7 @@ export default class FooterButtons extends superViews{
 
 
 			let ObjectsFooterElement   = this.card.setElement("ObjectsFooterElement");
-			this.card.setStyleElement(ObjectsFooterElement,"justifyContent","space-between");
+			this.card.setStyleElement(ObjectsFooterElement,"justifyContent","flex-start");
 
 					this.card.push("Button", ObjectsFooterElement,"addChild", "add_circle");
 
@@ -36,10 +36,21 @@ export default class FooterButtons extends superViews{
 					this.card.setStyleComponent(ObjectsFooterElement,"addChild","alignItems","center");
 
 
+
+					this.card.push("Button", ObjectsFooterElement,"renameChild", "create");
+
+					this.card.setStyleComponent(ObjectsFooterElement,"renameChild","fontSize","25px");
+					this.card.setStyleComponent(ObjectsFooterElement,"renameChild","color","orange");
+					this.card.setStyleComponent(ObjectsFooterElement,"renameChild","alignItems","center");
+
+
+
+
+
 					this.card.push("Button", ObjectsFooterElement,"removeChild", "remove_circle");
 
 					this.card.setStyleComponent(ObjectsFooterElement,"removeChild","fontSize","25px");
-					this.card.setStyleComponent(ObjectsFooterElement,"removeChild","color","green");
+					this.card.setStyleComponent(ObjectsFooterElement,"removeChild","color","red");
 					this.card.setStyleComponent(ObjectsFooterElement,"removeChild","alignItems","center");
 
 
