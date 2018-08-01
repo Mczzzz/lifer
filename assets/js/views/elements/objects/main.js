@@ -17,6 +17,8 @@ export default class main extends superViews{
 
 	init(){
 
+		this.container.style.flex = 1;
+
 		this.initListener();
 
 		this.breadcrumb = new Breadcrumb(this.container,"breadcrumb",this.path);
