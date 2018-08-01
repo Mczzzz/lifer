@@ -13,15 +13,24 @@ export default class up extends superViews{
 
 		this.container.style.background = "#e8eff7";
 
+
+
+	}
+	
+	init(){
+
+		this.container.style.flex = 1;
+		this.container.style.overflowY = "scroll";
+
 		this.initTree();	    
 		this.initListener();
 
 	}
-	
+
+
 	initTree(){
 
-		this.container.style.flex = 1;
-		this.container.style.overflowY = "scroll";
+
 
 		this.jsTree = new jsTreeContainer(this.container,'Container','JsTreeContainer');
 
