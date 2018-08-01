@@ -20,6 +20,8 @@ export default class up extends superViews{
 	
 	initTree(){
 
+		this.container.style.flex = 1;
+
 		this.jsTree = new jsTreeContainer(this.container,'Container','JsTreeContainer');
 
     	SearchServices.addTarget(this.jsTree.getSearchElements());

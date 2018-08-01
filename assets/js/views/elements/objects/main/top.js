@@ -16,8 +16,9 @@ export default class top extends superViews{
 
 	init(){
 
-
 		this.container.style.flex = 1;
+		this.container.style.display = "flex";
+		this.container.style.flexDirection = "column";
 
 
 
