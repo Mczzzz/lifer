@@ -21,6 +21,7 @@ export default class up extends superViews{
 	initTree(){
 
 		this.container.style.flex = 1;
+		this.container.style.overflowY = "scroll";
 
 		this.jsTree = new jsTreeContainer(this.container,'Container','JsTreeContainer');
 
