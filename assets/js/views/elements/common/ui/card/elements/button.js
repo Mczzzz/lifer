@@ -70,6 +70,13 @@ export default class button extends superViews{
 	}
 
 
+	setStyle(property,value){
+
+     	this[property] = value;
+
+        this.i.style[property] = this[property];
+
+    }
 
 
 
