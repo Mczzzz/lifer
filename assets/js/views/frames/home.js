@@ -13,7 +13,6 @@ export default class Home extends superViews{
 
 		super(parent, MyClass,path);
 
-
 		this.init();
 
 	}
@@ -21,7 +20,7 @@ export default class Home extends superViews{
 
 	init(){
 
-		this.container.style.background = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
+		//this.container.style.background = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
 		this.container.style.display = "flex";
 		this.container.style.flexDirection = "column";
 		this.container.style.height = "100vh";
