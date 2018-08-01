@@ -13,7 +13,7 @@ export default class up extends superViews{
 
 		this.container.style.background = "#e8eff7";
 
-
+		this.init();
 
 	}
 	

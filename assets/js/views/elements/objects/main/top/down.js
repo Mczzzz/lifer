@@ -15,7 +15,7 @@ export default class down extends superViews{
 		//this.container.style.transition	   = '0.4s cubic-bezier(0, 0.87, 0.01, 0.87)';
 
 
-
+		this.init();
 
 	}
 
