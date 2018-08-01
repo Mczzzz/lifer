@@ -26,7 +26,7 @@ class Brain {
 
 addMe(path){
 
-		if(path.length > 0){
+		if(path.length > 0 ){
 
 			let level = 0;
 
@@ -35,6 +35,8 @@ addMe(path){
 			let dataRepresentation = this.dataCenter;
 
 			for(let myPath of arrayPath ){
+
+				if (myPath == "null") continue; 
 
 				if(!(dataRepresentation[myPath] instanceof Object)){
 					dataRepresentation[myPath] = {};
