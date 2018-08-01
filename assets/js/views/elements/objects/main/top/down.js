@@ -50,7 +50,7 @@ export default class down extends superViews{
 	hide(){
 
 		this.container.style.display = "none";
-		this.container.style.flex = "";
+		this.container.style.flex = null;
 		this.container.style.padding = "0px";
 		this.jsTree.hide();
 
