@@ -22,7 +22,7 @@ export default class FooterButtons extends superViews{
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");
 		this.card.setStyle("margin", "0px");
-		this.card.setStyle("padding", "20px");
+		this.card.setStyle("padding", "10px");
 		this.card.setStyle("background", "transparent");
 
 
