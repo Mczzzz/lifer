@@ -54,7 +54,7 @@ addMe(path){
 		}
 
 
-		this.dumpMe();
+		//this.dumpMe();
 	}
 
 
@@ -148,7 +148,6 @@ addMe(path){
 
 		if(!(dataRepresentation._datas[Key] instanceof Object)){
 
-			console.log(Key);
 			console.log("Cette clef de data n'existe pas");
 			return false;
 
