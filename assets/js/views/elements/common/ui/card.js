@@ -89,9 +89,9 @@ export default class card extends superViews{
 
 
 
-     push(type,element,classSuffixe,data){
+     push(type,element,classSuffixe,data,prepend = false){
 
-           this[classSuffixe] = this[element].add(type, classSuffixe, data);
+           this[classSuffixe] = this[element].add(type, classSuffixe, data,prepend);
 
            return this[classSuffixe];
      

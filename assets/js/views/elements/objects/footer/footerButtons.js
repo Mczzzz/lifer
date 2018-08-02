@@ -26,49 +26,59 @@ export default class FooterButtons extends superViews{
 		this.card.setStyle("background", "transparent");
 
 
-			let ObjectsFooterElement   = this.card.setElement("ObjectsFooterElement");
-			this.card.setStyleElement(ObjectsFooterElement,"justifyContent","flex-start");
+			this.ObjectsFooterElement   = this.card.setElement("ObjectsFooterElement");
+			this.card.setStyleElement(this.ObjectsFooterElement,"justifyContent","flex-start");
 
 
-					this.card.push("Button", ObjectsFooterElement,"addNote", "note_add");
+					this.card.push("Button", this.ObjectsFooterElement,"addNote", "note_add");
 
-					this.card.setStyleComponent(ObjectsFooterElement,"addNote","fontSize","25px");
-					this.card.setStyleComponent(ObjectsFooterElement,"addNote","color","green");
-					this.card.setStyleComponent(ObjectsFooterElement,"addNote","alignItems","center");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"addNote","fontSize","25px");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"addNote","color","green");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"addNote","alignItems","center");
 
-					this.card.push("Button", ObjectsFooterElement,"separator", "more_vert");
+					HeaderBackButton.addEventListener("click",()=>this.StartNote());
 
-					this.card.setStyleComponent(ObjectsFooterElement,"separator","fontSize","25px");
-					this.card.setStyleComponent(ObjectsFooterElement,"separator","color","grey");
-					this.card.setStyleComponent(ObjectsFooterElement,"separator","alignItems","center");
 
+					///////////////
+					this.card.push("Button", this.ObjectsFooterElement,"separator", "more_vert");
+
+					this.card.setStyleComponent(this.ObjectsFooterElement,"separator","fontSize","25px");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"separator","color","#e9e9e9");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"separator","alignItems","center");
+					//////////////
 
 
 					this.card.push("Button", ObjectsFooterElement,"addChild", "add_circle");
 
-					this.card.setStyleComponent(ObjectsFooterElement,"addChild","fontSize","25px");
-					this.card.setStyleComponent(ObjectsFooterElement,"addChild","color","green");
-					this.card.setStyleComponent(ObjectsFooterElement,"addChild","alignItems","center");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"addChild","fontSize","25px");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"addChild","color","green");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"addChild","alignItems","center");
 
 
 
-					this.card.push("Button", ObjectsFooterElement,"renameChild", "create");
+					this.card.push("Button", this.ObjectsFooterElement,"renameChild", "create");
 
-					this.card.setStyleComponent(ObjectsFooterElement,"renameChild","fontSize","25px");
-					this.card.setStyleComponent(ObjectsFooterElement,"renameChild","color","orange");
-					this.card.setStyleComponent(ObjectsFooterElement,"renameChild","alignItems","center");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"renameChild","fontSize","25px");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"renameChild","color","orange");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"renameChild","alignItems","center");
 
 
-					this.card.push("Button", ObjectsFooterElement,"removeChild", "remove_circle");
+					this.card.push("Button", this.ObjectsFooterElement,"removeChild", "remove_circle");
 
-					this.card.setStyleComponent(ObjectsFooterElement,"removeChild","fontSize","25px");
-					this.card.setStyleComponent(ObjectsFooterElement,"removeChild","color","red");
-					this.card.setStyleComponent(ObjectsFooterElement,"removeChild","alignItems","center");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"removeChild","fontSize","25px");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"removeChild","color","red");
+					this.card.setStyleComponent(this.ObjectsFooterElement,"removeChild","alignItems","center");
 
 
 
 
 	}
 
+	StartNote(){
+
+		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Note'}});
+		window.dispatchEvent(LinkEvent);
+
+	}
 
 }

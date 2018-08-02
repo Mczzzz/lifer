@@ -40,10 +40,10 @@ export default class Elements extends superViews{
      }
 
 
-    add(type, classSuffixe, data){
+    add(type, classSuffixe, data,prepend = false){
 
 
-    	this[classSuffixe] = new loaderComponent(type, this.container, "noteElt" + type + classSuffixe, this.path);
+    	this[classSuffixe] = new loaderComponent(type, this.container, "noteElt" + type + classSuffixe, this.path,prepend);
     	this[classSuffixe].setData(data);
 
      return this[classSuffixe].getContainer();
