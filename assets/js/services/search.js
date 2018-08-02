@@ -57,6 +57,8 @@ class search {
 
 	match(e,el){
 
+		console.log("match");
+		console.log(el.textContent);
 		for(let target of this.targets){
 
 
