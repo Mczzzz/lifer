@@ -6,10 +6,10 @@ import Card from "../../../../common/ui/card.js";
 export default class list extends superViews{
 
 
-	constructor(parent,MyClass,path,prepend){
+	constructor(parent,MyClass,path){
 
 
-		super(parent,MyClass,path,prepend);
+		super(parent,MyClass,path);
 		
 		this.init();
 

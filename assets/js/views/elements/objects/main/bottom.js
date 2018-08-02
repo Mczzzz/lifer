@@ -22,9 +22,10 @@ export default class bottom extends superViews{
 	}
 
 	initChilds(){
-
-		this.Tools  = new Tools(this.container,"tools",this.path);
+		
 		this.Manage = new Manage(this.container,"manage",this.path);
+		this.Tools  = new Tools(this.container,"tools",this.path);
+
 	
 	}
 
