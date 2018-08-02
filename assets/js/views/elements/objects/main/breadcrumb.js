@@ -47,6 +47,7 @@ export default class breadcrumb extends superViews{
 
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"fontSize","15px");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"fontFamily","'Titillium Web',sans-serif,Arial,sans-serif");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"whiteSpace","nowrap");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"color","white");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"alignItems","center");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"borderRadius","4px 12px 4px 4px");
