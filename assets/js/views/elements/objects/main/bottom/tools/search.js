@@ -52,6 +52,7 @@ export default class search extends superViews{
 							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","border","1px solid silver");
 							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","borderRadius","5px");
 							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","background","white");
+							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","margin","0px");
 							//card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","alignItems","center");
 							//card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","color","white");
 							//card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","alignItems","center");
