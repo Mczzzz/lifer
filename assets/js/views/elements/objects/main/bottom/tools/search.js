@@ -65,15 +65,8 @@ export default class search extends superViews{
 
 	linkSearch(){
 
-		console.log("linkSearch");
-		console.log(this.input);
-		console.log(this.input.innerHTML);
-		console.log(this.input.innerText);
-		let res = {};
-
-		res.element = this.input;
-
-		SearchServices.addInput(res);
+		SearchServices.addInput(this.input);
+		
 	}
 
 
