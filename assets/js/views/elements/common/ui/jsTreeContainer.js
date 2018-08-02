@@ -283,10 +283,11 @@ export default class jsTreeContainer {
 	initCallBackEvents(){
 
 		let parent = this.HTMLParent;
+		let Me = this.MyClass;
 
 		$('.'+this.MyClass).on("select_node.jstree", function(e,data){
 
-			data.element = this.MyClass;
+			data.element = Me;
 			let ev = new CustomEvent('callBack', {'detail' : {'data' : data, 'Event' : e}});
             parent.dispatchEvent(ev);
 
