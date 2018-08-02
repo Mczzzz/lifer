@@ -19,16 +19,7 @@ export default class Main extends superViews{
 
 	init(){
 
-		let css = document.createElement("style");
-			css.type = "text/css";
-			css.id = "divContentEditable_css_style";
-			css.innerHTML = `[contenteditable=true]:empty::before {
-			  					content: attr(placeholder);
-								}
-							`;
-
-		document.body.appendChild(css);
-		
+				
 
 		this.container.style.display = "flex";
 		this.container.style.flexDirection = "column";
