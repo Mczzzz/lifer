@@ -16,19 +16,12 @@ export default class breadcrumb extends superViews{
 	init(){
 
 		this.container.style.background = "#ffffff";
+		this.container.style.display = "none";
 		this.initChilds();
 
 	}
 
 	initChilds(){
-
-		//on cree 2 compartiments DIV
-		//container
-		//objects
-
-		//on y ajoute des instances prêtes à l'emploi
-	//	this.BC = new BreadcrumbCommon(this.container,"ObjectsbreadCrumb",this.path);
-
 
 		this.card = new Card(this.container,'ObjectsBreadCrumbCard', this.path);
 	
@@ -42,6 +35,7 @@ export default class breadcrumb extends superViews{
 
 			let ObjectsBreadcrumbElement   = this.card.setElement("ObjectsBreadcrumbElement");
 			this.card.setStyleElement(ObjectsBreadcrumbElement,"justifyContent","flex-start");
+
 
 					this.card.push("TextButton",ObjectsBreadcrumbElement,"addBreadcrumbChild", "mon text");
 
