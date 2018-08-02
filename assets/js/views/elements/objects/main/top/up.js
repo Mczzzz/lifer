@@ -23,7 +23,6 @@ export default class up extends superViews{
 		this.container.style.overflowY = "scroll";
 
 		this.initTree();	    
-		this.initListener();
 
 	}
 
@@ -38,6 +37,32 @@ export default class up extends superViews{
 	}
 
 
+
+	//CALLBACK
+		//?????
+/*	callBack(data){
+
+		
+		this["on_"+data.detail.Event.type](data.detail);
+
+	}*/
+
+
+	on_select_node(data){
+
+		this.Lifer.addData("objects",[{"ContainerNode" : data.data.node}]);
+		
+		data.element = this.MyClass;
+
+        this.callBackToParent(data);
+
+	}
+
+
+
+
+
+	//PUBLICS
 	getObjPathToNode(){
 		return this.jsTree.getObjPathToNode();
 	}
@@ -70,34 +95,6 @@ export default class up extends superViews{
 
 
 	}
-
-
-
-	initListener(){
-
-	    this.container.addEventListener('callBack', (data) => this.callBack(data));
-
-	}
-
-
-	callBack(data){
-		
-		this["on_"+data.detail.Event.type](data.detail);
-
-	}
-
-	on_select_node(data){
-
-		this.Lifer.addData("app/home/frame/objects",[{"ContainerNode" : data.data.node}]);
-		
-		data.element = this.MyClass;
-		let ev = new CustomEvent('callBack', {'detail' : data});
-        this.parent.dispatchEvent(ev);
-
-	}
-
-	
-
 
 
 }

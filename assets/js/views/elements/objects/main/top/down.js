@@ -25,7 +25,6 @@ export default class down extends superViews{
 		this.container.style.display = "none";
 		
 		this.initTree();
-		//this.initListener();
 
 	}
 
@@ -39,6 +38,32 @@ export default class down extends superViews{
        
 	}
 
+
+	//CALLBACK
+/*	callBack(data){
+		
+		this["on_"+data.detail.Event.type](data.detail);
+
+	}*/
+
+	on_select_node(data){
+
+		console.log('on select leaf');
+		console.log(data);
+
+		this.Lifer.addData("objects",[{"LeafNode" : data.data.node}]);
+		this.Lifer.dumpMe();
+		data.element = this.MyClass;
+		
+		this.callBackToParent(data);
+
+	}
+
+
+
+
+
+	//PUBLICS
 	
 	loadData(data){
 
@@ -67,37 +92,10 @@ export default class down extends superViews{
 	}
 
 	minForceFlex(){
+
 		this.container.style.flex = null;
-	}
-
-
-	initListener(){
-
-	    this.container.addEventListener('callBack', (data) => this.callBack(data));
 
 	}
-
-
-	callBack(data){
-		
-		this["on_"+data.detail.Event.type](data.detail);
-
-	}
-
-	on_select_node(data){
-
-		console.log('on select leaf');
-		console.log(data);
-
-		this.Lifer.addData("app/home/frame/objects",[{"LeafNode" : data.data.node}]);
-		this.Lifer.dumpMe();
-		data.element = this.MyClass;
-		let ev = new CustomEvent('callBack', {'detail' : data});
-        this.parent.dispatchEvent(ev);
-
-	}
-
-
 
 
 
