@@ -12,7 +12,7 @@ let css = document.createElement("style");
 								}
 							`;
 
-		document.body.appendChild(css);
+		document.head.appendChild(css);
 
 
 const LiferApp = new Controller(name);
