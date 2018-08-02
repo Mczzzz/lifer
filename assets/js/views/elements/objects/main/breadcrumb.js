@@ -61,7 +61,7 @@ export default class breadcrumb extends superViews{
 
 				let className = "addBreadcrumbChild_"+node.id;
 
-				className = this.card.push("TextButton",ObjectsBreadcrumbElement,className, node.text);
+				let TheClassName = this.card.push("TextButton",ObjectsBreadcrumbElement,className, node.text);
 
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"fontSize","15px");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"fontFamily","'Titillium Web',sans-serif,Arial,sans-serif");
@@ -75,7 +75,7 @@ export default class breadcrumb extends superViews{
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"opacity","1");
 
 
-				className.addEventListener("click",(e)=>this.BackToMe(e,node,className));
+				className.addEventListener("click",(e)=>this.BackToMe(e,node,TheClassName));
 
 			}
 
