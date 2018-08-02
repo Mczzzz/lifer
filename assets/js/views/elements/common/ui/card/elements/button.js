@@ -53,8 +53,9 @@ export default class button extends superViews{
 
 
 	getElement(){
-		this.Lifer.dumpMe();
+
 		return this.container;
+
 	}
 
 

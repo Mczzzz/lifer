@@ -35,7 +35,6 @@ export default class HeaderButtons extends superViews{
 					this.card.setStyleComponent(HeaderElement,"headerBack","color","green");
 					this.card.setStyleComponent(HeaderElement,"headerBack","alignItems","center");
 
-					this.Lifer.dumpMe();
 					HeaderBackButton.addEventListener("click",()=>this.parent.remove());
 
 

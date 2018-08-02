@@ -29,24 +29,6 @@ export default class HeaderButtons extends superViews{
 			let HeaderElement   = this.card.setElement("HomeHeaderElement");
 			this.card.setStyleElement(HeaderElement,"justifyContent","space-between");
 
-/*					let HeaderBackButton = this.card.push("Button", HeaderElement,"headerBack", "keyboard_backspace");
-
-					this.card.setStyleComponent(HeaderElement,"headerBack","fontSize","25px");
-					this.card.setStyleComponent(HeaderElement,"headerBack","color","green");
-					this.card.setStyleComponent(HeaderElement,"headerBack","alignItems","center");
-
-					this.Lifer.dumpMe();
-					HeaderBackButton.addEventListener("click",()=>this.parent.remove());
-
-
-					this.card.push("Button", HeaderElement,"headerLogo", "sentiment_satisfied_alt");
-
-					this.card.setStyleComponent(HeaderElement,"headerLogo","fontSize","25px");
-					this.card.setStyleComponent(HeaderElement,"headerLogo","color","green");
-					this.card.setStyleComponent(HeaderElement,"headerLogo","alignItems","center");*/
-
-
-
 	}
 
 

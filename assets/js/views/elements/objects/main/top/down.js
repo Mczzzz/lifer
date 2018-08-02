@@ -52,7 +52,7 @@ export default class down extends superViews{
 		console.log(data);
 
 		this.Lifer.addData("objects",[{"LeafNode" : data.data.node}]);
-		this.Lifer.dumpMe();
+
 		data.element = this.MyClass;
 		
 		this.callBackToParent(data);
