@@ -26,7 +26,7 @@ export default class manage extends superViews{
 
 	initChilds(){
 
-		this.List = new List(this.container,"list",this.path);
+		this.List = new List(this.container,"list",this.path,true);
 
 	}
 
