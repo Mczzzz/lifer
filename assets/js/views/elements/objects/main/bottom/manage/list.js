@@ -20,6 +20,8 @@ export default class list extends superViews{
 
 		this.collection = new LoaderCollection('ObjectInfos');
 
+		this.container.style.display = "flex";
+		this.container.style.flexDirection = "column";
 		this.container.style.maxHeight = "150px";
 		this.container.style.height = null;
 
