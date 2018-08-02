@@ -40,13 +40,7 @@ export default class down extends superViews{
 
 
 	//CALLBACK
-/*	callBack(data){
-		
-		this["on_"+data.detail.Event.type](data.detail);
-
-	}*/
-
-	on_select_node(data){
+	on_JsTreeObjects_select_node(data){
 
 		console.log('on select leaf');
 		console.log(data);
