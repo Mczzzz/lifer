@@ -86,5 +86,11 @@ export default class views {
 	}
 
 
+	callBackToParent(data){
+
+		let ev = new CustomEvent('callBack', {'detail' : data});
+        this.parent.dispatchEvent(ev);
+
+	}
 
 }

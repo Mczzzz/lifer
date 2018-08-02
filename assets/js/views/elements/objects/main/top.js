@@ -58,8 +58,8 @@ export default class top extends superViews{
 
 		data.element = "top_"+data.element;
 
-		let ev = new CustomEvent('callBack', {'detail' : data});
-        this.parent.dispatchEvent(ev);
+		this.callBackToParent(data);
+
 	}
 
 

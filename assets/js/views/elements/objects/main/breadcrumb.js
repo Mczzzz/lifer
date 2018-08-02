@@ -17,11 +17,10 @@ export default class breadcrumb extends superViews{
 
 		this.container.style.background = "#ffffff";
 		this.container.style.display = "none";
-		this.initChilds();
 
 	}
 
-	initChilds(){
+	populate(datas){
 
 		this.card = new Card(this.container,'ObjectsBreadCrumbCard', this.path);
 	
