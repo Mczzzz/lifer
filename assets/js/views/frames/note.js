@@ -65,7 +65,7 @@ export default class Note extends superViews{
 
 
 
-		this.initchilds();
+		this.initChilds();
 
 	}
 
