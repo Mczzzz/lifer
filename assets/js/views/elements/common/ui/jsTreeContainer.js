@@ -196,36 +196,6 @@ export default class jsTreeContainer {
 
 
 
-
-
-
-/*	linkSearch(element){
-
-		this.searchElement = $('.'+element);
-
-		this.searchElement.on("keyup", (e)=> this.linkSearchEvent(e));
-		this.searchElt = true;
-
-	}*/
-/*
-	unlinkSearch(){
-
-		if(this.searchElt){
-			this.searchElement.off("onkeyup");
-			this.searchElt = false;
-		}
-		
-
-	}
-
-	linkSearchEvent(e){
-
-            $('.'+this.MyClass).jstree(true).search(this.searchElement.val());
-    }*/
-//SEARCH - END
-
-
-
 //BREADCRUMB
 
 	getObjPathToNode(){
@@ -254,14 +224,6 @@ export default class jsTreeContainer {
 
 	}
 
-
-/*	jsTreeEventBreadcrumb(node){
-
-
-		$('#bc_'+node.id).on("click", (e) => this.openNode(e,node));
-
-		
-	}*/
 
 
 	clearSearch(){
@@ -324,6 +286,7 @@ export default class jsTreeContainer {
 
 		$('.'+this.MyClass).on("select_node.jstree", function(e,data){
 
+			data.element = this.MyClass;
 			let ev = new CustomEvent('callBack', {'detail' : {'data' : data, 'Event' : e}});
             parent.dispatchEvent(ev);
 
