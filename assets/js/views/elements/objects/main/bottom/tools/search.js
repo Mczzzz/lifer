@@ -41,7 +41,7 @@ export default class search extends superViews{
 				card.setStyle("background", "transparent");
 
 
-					let ObjectsSearchCardElement  = card.setElement("ObjectsInfosCardElement_" + info.infos.id);
+					let ObjectsSearchCardElement  = card.setElement("ObjectsInfosCardElement");
 					card.setStyleElement(ObjectsInfosCardElement,"justifyContent","flex-start");
 
 							card.push("Text", ObjectsSearchCardElement,"ObjectsSearchCardElementItem", "");
