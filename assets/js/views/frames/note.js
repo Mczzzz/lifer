@@ -24,6 +24,25 @@ export default class Note extends superViews{
 		this.firstKey = true;
 
 
+		this.init();
+
+	}
+
+
+	init(){
+
+
+		this.container.style.position = "absolute";
+		this.container.style.top = "0.5%";
+		this.container.style.left = "0.5%";
+		this.container.style.height = "99%";
+		this.container.style.width = "99%";
+		this.container.style.display = "flex";
+		this.container.style.flexDirection = "column";
+		this.container.style.background = "white";
+		this.container.style.boxShadow = "0px 0px 10px 10px green";
+
+
 
 		this.ContainerNode = this.Lifer.getData("Objects","ContainerNode");
 		this.LeafNode = this.Lifer.getData("Objects","LeafNode");
@@ -46,53 +65,21 @@ export default class Note extends superViews{
 
 
 
-		this.init();
+		this.initchilds();
 
 	}
 
 
-	init(){
 
-		this.background();
-		this.addHeader();
-		this.addMain();
-		this.addFooter();
+	initChilds(){
 
-	}
+		this.Header = new Header(this.container,"headerNote",this.path);
 
-
-	background(){
-
-		this.container.style.position = "absolute";
-		this.container.style.top = "0.5%";
-		this.container.style.left = "0.5%";
-		this.container.style.height = "99%";
-		this.container.style.width = "99%";
-		this.container.style.display = "flex";
-		this.container.style.flexDirection = "column";
-		this.container.style.background = "white";
-		this.container.style.boxShadow = "0px 0px 10px 10px green";
-
-	}
-
-
-	addHeader(){
-		this.Header = new Header(this.container,"headerNote",this.path);	
-	}
-
-
-	addMain(){
 		this.Main   = new Main(this.container,"mainNote",this.path);
-	}
 
-
-	addFooter(){
 		this.Footer = new Footer(this.container, 'footerNote' , this.path);
+
 	}
-
-
-	
-
 
 
 	dispatcher(e,name, value){
