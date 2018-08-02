@@ -57,12 +57,10 @@ class search {
 
 	match(e,el){
 
-		console.log("match");
-		console.log(el.textContent);
+
 		for(let target of this.targets){
 
-
-			target.element[target.methode](el.textContent);
+			target.element[target.methode](el.innerText);
 
 		}
 
