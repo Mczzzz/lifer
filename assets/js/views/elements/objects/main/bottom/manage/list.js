@@ -54,8 +54,8 @@ export default class list extends superViews{
 
 							card.push("Text", ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id, info.infos.name);
 
-							card.setStyleComponent(ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id,"fontSize","25px");
-							card.setStyleComponent(ObjectsInfosCardElementt,"ObjectsInfosCardElementItem_" + info.infos.id,"color","green");
+							card.setStyleComponent(ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id,"fontSize","15px");
+							card.setStyleComponent(ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id,"color","white");
 							card.setStyleComponent(ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id,"alignItems","center");
 
 
