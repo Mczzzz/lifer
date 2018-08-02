@@ -39,16 +39,7 @@ export default class up extends superViews{
 
 
 	//CALLBACK
-		//?????
-/*	callBack(data){
-
-		
-		this["on_"+data.detail.Event.type](data.detail);
-
-	}*/
-
-
-	on_select_node(data){
+	on_JsTreeContainer_select_node(data){
 
 		this.Lifer.addData("objects",[{"ContainerNode" : data.data.node}]);
 		
