@@ -48,7 +48,7 @@ export default class FooterButtons extends superViews{
 					//////////////
 
 
-					this.card.push("Button", ObjectsFooterElement,"addChild", "add_circle");
+					this.card.push("Button", this.ObjectsFooterElement,"addChild", "add_circle");
 
 					this.card.setStyleComponent(this.ObjectsFooterElement,"addChild","fontSize","25px");
 					this.card.setStyleComponent(this.ObjectsFooterElement,"addChild","color","green");
