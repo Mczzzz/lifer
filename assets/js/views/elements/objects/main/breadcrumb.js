@@ -49,8 +49,11 @@ export default class breadcrumb extends superViews{
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","fontFamily","'Titillium Web',sans-serif,Arial,sans-serif");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","color","green");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","alignItems","center");
-
-
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","borderRadius","4px 12px 4px 4px");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","background","#0288d1");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","padding","5px");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","marginRight","5px");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","opacity","1");
 
 
 	}
