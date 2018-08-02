@@ -49,7 +49,7 @@ export default class list extends superViews{
 				card.setStyle("background", "transparent");
 
 
-					let ObjectsInfosCardElement   = this.card.setElement("ObjectsInfosCardElement");
+					let ObjectsInfosCardElement   = card.setElement("ObjectsInfosCardElement");
 					card.setStyleElement(ObjectsInfosCardElement,"justifyContent","flex-start");
 
 							card.push("Text", ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id, info.infos.name);
