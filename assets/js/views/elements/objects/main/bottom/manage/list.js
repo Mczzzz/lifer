@@ -1,6 +1,8 @@
 import LoaderCollection from '../../../../../../services/LoaderCollection.js';
 import superViews from "../../../../common/super/views.js";
 
+import Card from "../../../../common/ui/card.js";
+
 export default class list extends superViews{
 
 
@@ -18,25 +20,11 @@ export default class list extends superViews{
 
 		this.collection = new LoaderCollection('ObjectInfos');
 
-	}
-
-
-
-	//PUBLICS
-
-	showList(){
-		console.log('in show list');
-		console.log(this.container);
 		this.container.style.maxHeight = "150px";
 		this.container.style.height = null;
-		
+
 	}
 
-	hideList(){
-		console.log('in hide list');
-		this.container.style.height = "0px";
-		
-	}
 
 	getList(){
 
@@ -44,29 +32,46 @@ export default class list extends superViews{
 
 		let ContainerNode = this.Lifer.getData("Objects","ContainerNode");
 		let LeafNode = this.Lifer.getData("Objects","LeafNode");
-		this.Lifer.dumpMe();
+
 		let ListInfos = this.collection.getList(ContainerNode.id,LeafNode.id);
 
-		let ul = document.createElement("ul");
-		ul.style.listStyleType = "none";
-		ul.style.margin = "0px";
-		ul.style.padding = "15px";
-		this.container.append(ul);
+
+	    for (let info of ListInfos){
 
 
-		console.log('listInfos');
-		console.log(ListInfos);
 
-	    for (let k in ListInfos){
+			let card = new Card(this.container,'ObjectsInfosCard_'+info.infos.id, this.path);
+				
+				card.setStyle("borderWidth", "0px");
+				card.setStyle("borderRadius", "0px");
+				card.setStyle("margin", "0px");
+				card.setStyle("padding", "5px");
+				card.setStyle("background", "transparent");
 
-	    let li = document.createElement("li");
+
+					let ObjectsInfosCardElement   = this.card.setElement("ObjectsInfosCardElement");
+					card.setStyleElement(ObjectsInfosCardElement,"justifyContent","flex-start");
+
+							card.push("Text", ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id, info.infos.name);
+
+							card.setStyleComponent(ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id,"fontSize","25px");
+							card.setStyleComponent(ObjectsInfosCardElementt,"ObjectsInfosCardElementItem_" + info.infos.id,"color","green");
+							card.setStyleComponent(ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id,"alignItems","center");
+
+
+		}
+
+
+
+
+	  /*  let li = document.createElement("li");
 	    ul.append(li);
 
 	    	let i = document.createElement("i");
 				i.className = "material-icons";
 				i.style.fontSize = "25px";
 				i.style.color = "white";
-				//i.style.marginLeft = "0px";
+
 				i.style.marginRight = "15px";
 
 			i.append(ListInfos[k].resources.type.picto);
@@ -74,8 +79,7 @@ export default class list extends superViews{
 			li.append(i);
 
 			let a = document.createElement("a");
-				//a.href = ListInfos[k].resources.text;
-				//a.target = "_blank";
+
 				a.style.textDecoration = "none";
 				a.style.color = "white";
 				a.style.verticalAlign =  "super";
@@ -90,10 +94,22 @@ export default class list extends superViews{
 
 
 	    }
-
+*/
 
 
 	}
+
+
+	//PUBLICS
+
+
+	hideList(){
+		console.log('in hide list');
+		this.container.style.height = "0px";
+		
+	}
+
+
 
 
 }
