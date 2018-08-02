@@ -81,6 +81,13 @@ export default class card extends superViews{
      }
 
 
+     setAttributeComponent(element,component, property, value){
+
+          this[element].setAttributeComponent(component, property, value);
+
+     }
+
+
 
      push(type,element,classSuffixe,data){
 
