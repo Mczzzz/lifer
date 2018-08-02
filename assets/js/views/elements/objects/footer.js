@@ -38,8 +38,8 @@ export default class Footer extends superViews{
 
 	addActionButtons(){
 
-	this.FooterButton = new FooterButton(this.container,"ObjectsFooterActionButton",this.path);
+		this.FooterButton = new FooterButton(this.container,"ObjectsFooterActionButton",this.path);
 
-}
+	}
 
 }

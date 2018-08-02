@@ -28,7 +28,7 @@ export default class main extends superViews{
 
 	initChilds(){
 
-		//this.breadcrumb = new Breadcrumb(this.container,"breadcrumb",this.path);
+		this.breadcrumb = new Breadcrumb(this.container,"breadcrumb",this.path);
 
 		this.top = new Top(this.container,"top",this.path);
 
@@ -61,6 +61,6 @@ export default class main extends superViews{
 	}
 
 
-	
+
 
 }
