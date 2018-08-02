@@ -102,8 +102,14 @@ export default class list extends superViews{
 
 	//PUBLICS
 
+	show(){
+		console.log('in show list');
+		this.container.style.height = null;
+		
+	}
 
-	hideList(){
+
+	hide(){
 		console.log('in hide list');
 		this.container.style.height = "0px";
 		

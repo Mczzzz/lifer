@@ -36,14 +36,14 @@ export default class manage extends superViews{
 	
 	open(){
 
-		this.List.showList();
+		this.List.show();
 
 		this.List.getList();
 	}
 
 	close(){
 
-		this.List.hideList();
+		this.List.hide();
 	}
 
 
