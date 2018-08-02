@@ -22,7 +22,7 @@ class search {
 	addInput(el){
 
 		this.inputs.push(el);	
-		el.element.addEventListener("keyup", (e)=> this.match(e,el.element));
+		el.element.addEventListener("keyup", (e)=> this.match(e,el));
 
 	}
 
@@ -60,7 +60,7 @@ class search {
 		for(let target of this.targets){
 
 
-			target.element[target.methode](el.value);
+			target.element[target.methode](el.textContent);
 
 		}
 
