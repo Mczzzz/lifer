@@ -30,13 +30,13 @@ export default class FooterButtons extends superViews{
 			this.card.setStyleElement(this.ObjectsFooterElement,"justifyContent","flex-start");
 
 
-					this.card.push("Button", this.ObjectsFooterElement,"addNote", "note_add");
+					let StartNote = this.card.push("Button", this.ObjectsFooterElement,"addNote", "note_add");
 
 					this.card.setStyleComponent(this.ObjectsFooterElement,"addNote","fontSize","25px");
 					this.card.setStyleComponent(this.ObjectsFooterElement,"addNote","color","green");
 					this.card.setStyleComponent(this.ObjectsFooterElement,"addNote","alignItems","center");
 
-					HeaderBackButton.addEventListener("click",()=>this.StartNote());
+					StartNote.addEventListener("click",()=>this.StartNote());
 
 
 					///////////////
