@@ -45,7 +45,7 @@ export default class down extends superViews{
 		console.log('on select leaf');
 		console.log(data);
 
-		this.Lifer.addData("objects",[{"LeafNode" : data.data.node}]);
+		this.Lifer.addData("Objects",[{"LeafNode" : data.data.node}]);
 
 		data.element = this.MyClass;
 		

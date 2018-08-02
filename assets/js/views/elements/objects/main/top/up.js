@@ -41,7 +41,7 @@ export default class up extends superViews{
 	//CALLBACK
 	on_JsTreeContainer_select_node(data){
 
-		this.Lifer.addData("objects",[{"ContainerNode" : data.data.node}]);
+		this.Lifer.addData("Objects",[{"ContainerNode" : data.data.node}]);
 		
 		data.element = this.MyClass;
 
