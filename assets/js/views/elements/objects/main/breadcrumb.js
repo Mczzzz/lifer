@@ -39,17 +39,25 @@ export default class breadcrumb extends superViews{
 			this.card.setStyleElement(ObjectsBreadcrumbElement,"justifyContent","flex-start");
 
 
-					this.card.push("TextButton",ObjectsBreadcrumbElement,"addBreadcrumbChild", "mon text");
+			for(let node of datas) {
 
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","fontSize","15px");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","fontFamily","'Titillium Web',sans-serif,Arial,sans-serif");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","color","white");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","alignItems","center");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","borderRadius","4px 12px 4px 4px");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","background","#0288d1");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","padding","5px");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","marginRight","5px");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","opacity","1");
+				let className = "addBreadcrumbChild_"+node.id;
+
+				this.card.push("TextButton",ObjectsBreadcrumbElement,className, node.text);
+
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"fontSize","15px");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"fontFamily","'Titillium Web',sans-serif,Arial,sans-serif");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"color","white");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"alignItems","center");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"borderRadius","4px 12px 4px 4px");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"background","#0288d1");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"padding","5px");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"marginRight","5px");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"opacity","1");
+
+
+			}
+
 
 
 	}
