@@ -45,7 +45,7 @@ export default class breadcrumb extends superViews{
 
 					this.card.push("TextButton",ObjectsBreadcrumbElement,"addBreadcrumbChild", "mon text");
 
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","fontSize","10px");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","fontSize","15px");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","fontSFamily","'Titillium Web',sans-serif,Arial,sans-serif");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","color","green");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","alignItems","center");
