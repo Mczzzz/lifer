@@ -1,4 +1,4 @@
-import superViews from "../../../common/super/views.js"
+import superViews from "../../../common/super/views.js";
 import List from './manage/list.js';
 
 export default class manage extends superViews{

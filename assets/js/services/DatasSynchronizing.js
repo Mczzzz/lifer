@@ -5,14 +5,6 @@ class DatasSynchronizing {
 
 		this.dataCenter = {}; 
 
-		//app.views.objects.footer.
-/*							main.
-							header.
-							data[containerId
-								 leafId]
-							tigger[]*/
-		
-
 	}
 
 

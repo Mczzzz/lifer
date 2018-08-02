@@ -1,8 +1,8 @@
-import superViews from "../../super/views.js"
+import superViews from "../../super/views.js";
 
-import Title      from "./main/title.js"
-import Resources  from "./main/resources.js"
-import Empty      from "./main/empty.js"
+import Title      from "./main/title.js";
+import Resources  from "./main/resources.js";
+import Empty      from "./main/empty.js";
 
 
 export default class Main extends superViews{

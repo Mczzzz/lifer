@@ -1,4 +1,4 @@
-import superViews from "../../../elements/common/super/views.js"
+import superViews from "../../../elements/common/super/views.js";
 import BreadcrumbCommon from '../../../elements/common/ui/breadcrumb.js';
 
 
@@ -27,7 +27,7 @@ export default class breadcrumb extends superViews{
 		//objects
 
 		//on y ajoute des instances prêtes à l'emploi
-		this.BC = new BreadcrumbCommon(this.container);
+		this.BC = new BreadcrumbCommon(this.container,"ObjectsbreadCrumb",this.path);
 	}
 
 

@@ -1,4 +1,4 @@
-import superViews from "../elements/common/super/views.js"
+import superViews from "../elements/common/super/views.js";
 
 import Header from '../elements/home/header.js';
 import Main from '../elements/home/main.js';

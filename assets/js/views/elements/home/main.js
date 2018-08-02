@@ -1,4 +1,4 @@
-import superViews from "../common/super/views.js"
+import superViews from "../common/super/views.js";
 
 
 export default class Main extends superViews{

@@ -1,6 +1,6 @@
-import superViews from "../../../elements/common/super/views.js"
-import Up   from './top/up.js'
-import Down from './top/down.js'
+import superViews from "../../../elements/common/super/views.js";
+import Up   from './top/up.js';
+import Down from './top/down.js';
 
 export default class top extends superViews{
 	

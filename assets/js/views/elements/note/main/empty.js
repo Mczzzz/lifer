@@ -1,6 +1,6 @@
-import superViews from "../../../super/views.js"
+import superViews from "../../../super/views.js";
 
-import Card from "../../card.js"
+import Card from "../../card.js";
 
 export default class Empty extends superViews{
 	

@@ -1,4 +1,4 @@
-import superViews from "../../../super/views.js"
+import superViews from "../../../super/views.js";
 
 export default class button extends superViews{ 
 	

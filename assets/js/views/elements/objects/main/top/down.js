@@ -1,5 +1,5 @@
 import { SearchServices } from '../../../../../services/search.js';
-import superViews from "../../../common/super/views.js"
+import superViews from "../../../common/super/views.js";
 import jsTreeContainer from '../../../common/ui/jsTreeContainer.js';
 
 

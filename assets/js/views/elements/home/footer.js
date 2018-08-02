@@ -1,6 +1,6 @@
-import superViews from "../common/super/views.js"
+import superViews from "../common/super/views.js";
 
-import FooterButton from "./footer/footerButtons.js"
+import FooterButton from "./footer/footerButtons.js";
 
 export default class Footer extends superViews{
 	

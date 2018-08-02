@@ -8,6 +8,10 @@ class search {
 	}
 
 
+
+
+
+	//PUBLICS
 	addTarget(elMethode){
 
 		this.targets.push(elMethode);

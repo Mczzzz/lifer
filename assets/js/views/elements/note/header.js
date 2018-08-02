@@ -1,6 +1,6 @@
-import superViews from "../../super/views.js"
+import superViews from "../../super/views.js";
 
-import HeaderButton from "./header/headerButtons.js"
+import HeaderButton from "./header/headerButtons.js";
 
 export default class Header extends superViews{
 	

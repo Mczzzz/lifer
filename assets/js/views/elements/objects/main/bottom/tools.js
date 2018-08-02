@@ -1,4 +1,4 @@
-import superViews from "../../../common/super/views.js"
+import superViews from "../../../common/super/views.js";
 import Search from './tools/search.js';
 import Note from './tools/note.js';
 

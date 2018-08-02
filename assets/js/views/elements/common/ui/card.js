@@ -1,6 +1,6 @@
-import superViews from "../super/views.js"
+import superViews from "../super/views.js";
 
-import Elements     from "./card/elements.js"
+import Elements     from "./card/elements.js";
 
 export default class card extends superViews{ 
      
@@ -33,7 +33,6 @@ export default class card extends superViews{
      }
 
 
-
      refresh(){
 
           
@@ -48,6 +47,8 @@ export default class card extends superViews{
 
      }
 
+
+     //PUBLICS
 
      getWidth(){
 

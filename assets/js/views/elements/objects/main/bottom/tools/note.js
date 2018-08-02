@@ -1,5 +1,4 @@
-import superViews from "../../../../common/super/views.js"
-//import popNote from "../../../../common/ui/Note.js"
+import superViews from "../../../../common/super/views.js";
 
 export default class note extends superViews{
 
