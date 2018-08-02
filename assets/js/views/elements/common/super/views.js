@@ -19,6 +19,7 @@ export default class views {
 
 		this.Lifer.addData(this.path,[{"ThisContainer" : this.container}]);
 
+
 	}
 
 
@@ -44,6 +45,9 @@ export default class views {
 
 		}
 
+
+		this.initListener();
+
 	}
 
 
@@ -61,6 +65,26 @@ export default class views {
         this.container.style[property] = this[property];
 
     }
+
+
+
+	initListener(){
+  
+	    this.container.addEventListener('callBack', (data) => this.callBack(data));
+
+	}
+
+
+    callBack(data){
+
+		console.log(data);
+
+		let methode = "on_"+data.detail.element+"_"+data.detail.Event.type;
+		console.log(methode);
+		this[methode](data.detail);
+
+	}
+
 
 
 }

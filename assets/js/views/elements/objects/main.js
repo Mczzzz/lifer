@@ -25,8 +25,6 @@ export default class main extends superViews{
 		this.addMainTop();
 		this.addMainDown();
 
-//		this.initListener();
-
 	}
 
 
@@ -52,23 +50,7 @@ export default class main extends superViews{
 
 
 
-
-/*	initListener(){
-  
-	    this.container.addEventListener('callBack', (data) => this.callBack(data));
-
-	}*/
-
-
-/*	callBack(data){
-
-		console.log(data);
-
-		let methode = "on_"+data.detail.element+"_"+data.detail.Event.type;
-		console.log(methode);
-		this[methode](data.detail);
-
-	}
+	//CALLBACKS
 
 	on_top_topDown_select_node(data){
 
@@ -89,7 +71,7 @@ export default class main extends superViews{
 		this.bottom.hideManage();
 		this.bottom.hideNodeTools()
 	}
-	*/
+	
 
 
 }
