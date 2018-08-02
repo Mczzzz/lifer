@@ -287,8 +287,7 @@ export default class jsTreeContainer {
 
 		$('.'+this.MyClass).on("select_node.jstree", function(e,data){
 
-			data.element = Me;
-			let ev = new CustomEvent('callBack', {'detail' : {'data' : data, 'Event' : e}});
+			let ev = new CustomEvent('callBack', {'detail' : {'data' : data, 'Event' : e,'element' : Me}});
             parent.dispatchEvent(ev);
 
 		});
