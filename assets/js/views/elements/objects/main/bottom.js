@@ -17,12 +17,19 @@ export default class bottom extends superViews{
 
 	init(){
 
-		//this.Manage = new Manage(this.container);
+		this.initChilds();
+
+	}
+
+	initChilds(){
 
 		this.Tools  = new Tools(this.container,"tools",this.path);
 		this.Manage = new Manage(this.container,"manage",this.path);
+	
 	}
 
+
+	//PUBLICS
 
 	openManage(){
 
@@ -41,4 +48,5 @@ export default class bottom extends superViews{
 	hideNodeTools(){
 		this.Tools.hideNoteTools();
 	}
+
 }

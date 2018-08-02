@@ -20,26 +20,15 @@ export default class top extends superViews{
 		this.container.style.display = "flex";
 		this.container.style.flexDirection = "column";
 
+		this.initChilds();
 
-
-		this.initListener();
-
-		this.initUp();
-		this.up.loadData();
-
-		this.initDown();
-	
 	}
 
-	initUp(){
+	initChilds(){
 
 		this.up = new Up(this.container,"topUp",this.path);
 		this.up.show();
-
-	}
-
-
-	initDown(){
+		this.up.loadData();
 
 		this.down = new Down(this.container,"topDown",this.path);
 
@@ -47,26 +36,7 @@ export default class top extends superViews{
 
 
 
-
-	initListener(){
-  
-	    this.container.addEventListener('callBack', (data) => this.callBack(data));
-
-	}
-
-
-	callBack(data){
-
-		let methode = "on_"+data.detail.element+"_"+data.detail.Event.type;
-
-		this[methode](data.detail);
-
-	}
-
-
-
-
-
+	//CALLBACKS
 
 	on_topUp_select_node(data){
 
@@ -94,16 +64,12 @@ export default class top extends superViews{
 
 
 
-
+	//PUBLICS
+	
 	focusUp(data){
 
 		this.up.show(data);
 		this.down.hide();
 	}
-
-
-
-
-
 
 }

@@ -18,18 +18,22 @@ export default class manage extends superViews{
 		this.container.style.overflowY= "scroll";
 		this.container.style.fontFamily = "'Titillium Web',sans-serif,Arial,sans-serif"
 		this.container.style.background = "#17802d";
-		this.initContainer();
+
+		this.initChilds();
 
 	}
 
 
-	initContainer(){
+	initChilds(){
 
 		this.List = new List(this.container,"list",this.path);
 
 	}
 
 
+
+	//PUBLICS
+	
 	open(){
 
 		this.List.showList();

@@ -35,36 +35,22 @@ export default class Main extends superViews{
 		this.container.style.flex = 1;
 
 
-		this.addTitle();
 
-		this.addResources();
-
-		this.addEmpty();
+		this.initChilds();
 
 
 	}
 
 
-	addTitle(){
+	initChilds(){
 
-		this.Title = new Title(this.container,"noteMainTitle",this.path);
-
-	}
-
-
-
-	addResources(){
+		this.Title     = new Title(this.container,"noteMainTitle",this.path);
 
 		this.Resources = new Resources(this.container,"noteMainResources",this.path);
-	}
 
-
-	addEmpty(){
-
-		this.Empty = new Empty(this.container,"noteMainEmpty",this.path);
+		this.Empty     = new Empty(this.container,"noteMainEmpty",this.path);
 
 	}
-
 
 
 

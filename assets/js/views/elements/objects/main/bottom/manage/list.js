@@ -11,8 +11,6 @@ export default class list extends superViews{
 
 		super(parent,MyClass,path);
 		
-
-		this.collection = new LoaderCollection('ObjectInfos');
 		this.init();
 
 	}
@@ -20,15 +18,15 @@ export default class list extends superViews{
 
 	init(){
 
-		this.initContainer();
-
-	}
-
-
-	initContainer(){
+		this.collection = new LoaderCollection('ObjectInfos');
 
 		
+
 	}
+
+
+
+	//PUBLICS
 
 	showList(){
 		console.log('in show list');

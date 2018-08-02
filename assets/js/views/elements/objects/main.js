@@ -21,35 +21,23 @@ export default class main extends superViews{
 		this.container.style.display = "flex";
 		this.container.style.flexDirection = "column";
 
-	//	this.addBreadCrumb();
-		this.addMainTop();
-		this.addMainDown();
+		this.initChilds();
 
 	}
 
 
-	addBreadCrumb(){
+	initChilds(){
 
-		this.breadcrumb = new Breadcrumb(this.container,"breadcrumb",this.path);
-
-	}
-		
-	addMainTop(){
+		//this.breadcrumb = new Breadcrumb(this.container,"breadcrumb",this.path);
 
 		this.top = new Top(this.container,"top",this.path);
-	}
-
-	addMainDown(){
 
 		this.bottom = new Bottom(this.container,"bottom",this.path);
 
 	}
+
 		
-		
-
-
-
-
+	
 	//CALLBACKS
 
 	on_top_topDown_select_node(data){
@@ -71,7 +59,8 @@ export default class main extends superViews{
 		this.bottom.hideManage();
 		this.bottom.hideNodeTools()
 	}
-	
 
+
+	
 
 }

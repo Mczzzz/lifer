@@ -17,29 +17,22 @@ export default class Footer extends superViews{
 	init(){
 
 
-		this.background();
-
-		this.addActionButtons();
-
-
-	}
-
-
-
-	background(){
-
 		this.container.style.background = "linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)";
 
 		this.container.style.alignItems = "center";
 		this.container.style.color = "";
 
+		this.initChilds();
+
+
 	}
 
 
-	addActionButtons(){
 
-	this.FooterButton = new FooterButton(this.container,"HomeFooterActionButton",this.path);
+	initChilds(){
 
-}
+		this.FooterButton = new FooterButton(this.container,"HomeFooterActionButton",this.path);
+
+	}
 
 }
