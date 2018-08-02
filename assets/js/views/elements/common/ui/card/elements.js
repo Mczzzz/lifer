@@ -28,8 +28,14 @@ export default class Elements extends superViews{
 
      setStyleComponent(component, property, value){
 
-     	this[component].setStyle(property, value);
+        this[component].setStyle(property, value);
 
+
+     }
+
+     setAttributeComponent(component, property, value){
+
+        this[component].setAttribute(property, value);
 
      }
 

@@ -66,6 +66,13 @@ export default class views {
 
     }
 
+	setAttribute(property,value){
+
+     	this[property] = value;
+
+        this.container[property] = this[property];
+
+    }
 
 
 
