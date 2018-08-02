@@ -29,7 +29,7 @@ export default class Frame {
 
 	Home(){
 
-		this.container.innerHTML = "";
+		this.cleanBody();
 		let home = new Home(this.container,"Home",null);
 
 	}
@@ -37,7 +37,7 @@ export default class Frame {
 
 	Objects(){
 
-		this.container.innerHTML = "";
+		this.cleanBody();
 		let objects = new Objects(this.container,"Objects",null);
 
 	}
@@ -46,7 +46,25 @@ export default class Frame {
 	Note(){
 
 		//this.container.innerHTML = "";
-		let note = new Note(this.container,"Note",null);
+		this.note = new Note(this.container,"Note",null);
+
+	}
+
+
+	NoteRemove(){
+
+		this.note.destroyMe();
+		this.note = null;
+
+	}
+
+
+
+
+
+	cleanBody(){
+
+		this.container.innerHTML = "";
 
 	}
 

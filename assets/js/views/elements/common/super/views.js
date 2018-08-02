@@ -68,6 +68,14 @@ export default class views {
 
 
 
+
+    destroyMe(){
+
+    	this.container.remove();
+
+    }
+
+
 	initListener(){
   
 	    this.container.addEventListener('callBack', (data) => this.callBack(data));

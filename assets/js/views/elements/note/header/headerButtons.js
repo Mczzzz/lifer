@@ -35,7 +35,7 @@ export default class HeaderButtons extends superViews{
 					this.card.setStyleComponent(HeaderElement,"NoteHeaderBack","color","green");
 					this.card.setStyleComponent(HeaderElement,"NoteHeaderBack","alignItems","center");
 
-					//HeaderBackButton.addEventListener("click",()=>this.parent.remove());
+					HeaderBackButton.addEventListener("click",()=>this.CloseMe());
 
 
 					this.card.push("Button", HeaderElement,"NoteHeaderLogo", "widgets");
@@ -45,6 +45,15 @@ export default class HeaderButtons extends superViews{
 					this.card.setStyleComponent(HeaderElement,"NoteHeaderLogo","alignItems","center");
 
 
+
+	}
+
+
+
+	CloseMe(){
+
+		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'NoreRemove'}});
+		window.dispatchEvent(LinkEvent);
 
 	}
 
