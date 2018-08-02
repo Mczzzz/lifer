@@ -27,23 +27,13 @@ export default class card extends superViews{
 
      init(){
 
-
-          this.refresh();
-
-     }
-
-
-     refresh(){
-
-          
-          this.container.style.marginBottom = this.marginBottom;
-          this.container.style.borderWidth  = this.borderWidth;
-          this.container.style.borderStyle  = this.borderStyle;
-          this.container.style.borderColor  = this.borderColor;
-          this.container.style.margin       = this.margin;
-          this.container.style.borderRadius = this.borderRadius;
-          this.container.style.background   = this.backgroundColor;
-
+      this.container.style.marginBottom = this.marginBottom;
+      this.container.style.borderWidth  = this.borderWidth;
+      this.container.style.borderStyle  = this.borderStyle;
+      this.container.style.borderColor  = this.borderColor;
+      this.container.style.margin       = this.margin;
+      this.container.style.borderRadius = this.borderRadius;
+      this.container.style.background   = this.backgroundColor;
 
      }
 
@@ -57,13 +47,12 @@ export default class card extends superViews{
      }
 
 
+
      setId(id){
 
           this.container.id = id;
 
      }
-
-
 
 
      setElement(classSuffixe){
@@ -82,6 +71,7 @@ export default class card extends superViews{
           this[element].setStyle(property,value);
 
      }
+
 
 
      setStyleComponent(element,component, property, value){

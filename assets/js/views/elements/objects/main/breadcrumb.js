@@ -20,6 +20,24 @@ export default class breadcrumb extends superViews{
 
 	}
 
+
+
+	BackToMe(e, data,element){
+
+		let res = {};
+		res.element = element;
+		res.Event = {};
+		res.Event.type = "click";
+		res.data = data
+		
+		this.callBackToParent(res);
+
+	}
+
+
+
+	//PUBLICS
+
 	populate(datas){
 
 
@@ -43,7 +61,7 @@ export default class breadcrumb extends superViews{
 
 				let className = "addBreadcrumbChild_"+node.id;
 
-				this.card.push("TextButton",ObjectsBreadcrumbElement,className, node.text);
+				className = this.card.push("TextButton",ObjectsBreadcrumbElement,className, node.text);
 
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"fontSize","15px");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"fontFamily","'Titillium Web',sans-serif,Arial,sans-serif");
@@ -57,40 +75,11 @@ export default class breadcrumb extends superViews{
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"opacity","1");
 
 
+				className.addEventListener("click",(e)=>this.BackToMe(e,node,className));
+
 			}
 
 
-
-	}
-
-
-
-
-	//CALLBACKS
-
-	on_click(data){
-
-		console.log('in on_click');
-
-		let res = {};
-		res.element = "breadcrumb";
-		res.Event = {};
-		res.Event.type = "select";
-		res.data = data.data;
-		let NodeEvent = new CustomEvent('callBack', {'detail' : res });
-       	this.parent.dispatchEvent(NodeEvent);
-
-	}
-
-
-
-
-
-	//PUBLICS
-
-	loadData(data,element){
-
-//		this.BC.init(element, data ,true);
 	}
 
 
