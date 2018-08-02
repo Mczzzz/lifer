@@ -35,7 +35,7 @@ export default class breadcrumb extends superViews{
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");
 		this.card.setStyle("margin", "0px");
-		this.card.setStyle("padding", "10px");
+		this.card.setStyle("padding", "5px");
 		this.card.setStyle("background", "transparent");
 		this.card.setStyle("overflowX", "scroll");
 
@@ -47,7 +47,7 @@ export default class breadcrumb extends superViews{
 
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","fontSize","15px");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","fontFamily","'Titillium Web',sans-serif,Arial,sans-serif");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","color","green");
+					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","color","white");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","alignItems","center");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","borderRadius","4px 12px 4px 4px");
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,"addBreadcrumbChild","background","#0288d1");
