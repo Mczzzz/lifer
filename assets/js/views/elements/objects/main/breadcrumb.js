@@ -1,6 +1,6 @@
 import superViews from "../../../elements/common/super/views.js";
-import BreadcrumbCommon from '../../../elements/common/ui/breadcrumb.js';
-
+//import BreadcrumbCommon from '../../../elements/common/ui/breadcrumb.js';
+import Card from "../../common/ui/card.js";
 
 export default class breadcrumb extends superViews{
 	
@@ -27,7 +27,7 @@ export default class breadcrumb extends superViews{
 		//objects
 
 		//on y ajoute des instances prêtes à l'emploi
-		this.BC = new BreadcrumbCommon(this.container,"ObjectsbreadCrumb",this.path);
+	//	this.BC = new BreadcrumbCommon(this.container,"ObjectsbreadCrumb",this.path);
 
 
 		this.card = new Card(this.container,'ObjectsBreadCrumbCard', this.path);
@@ -81,7 +81,7 @@ export default class breadcrumb extends superViews{
 
 	loadData(data,element){
 
-		this.BC.init(element, data ,true);
+//		this.BC.init(element, data ,true);
 	}
 
 
