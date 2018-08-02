@@ -1,4 +1,4 @@
-import superViews from "../../super/views.js";
+import superViews from "../common/super/views.js";
 
 import HeaderButton from "./header/headerButtons.js";
 

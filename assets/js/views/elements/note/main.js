@@ -1,4 +1,4 @@
-import superViews from "../../super/views.js";
+import superViews from "../common/super/views.js";
 
 import Title      from "./main/title.js";
 import Resources  from "./main/resources.js";

@@ -64,41 +64,6 @@ export default class list extends superViews{
 		}
 
 
-
-
-	  /*  let li = document.createElement("li");
-	    ul.append(li);
-
-	    	let i = document.createElement("i");
-				i.className = "material-icons";
-				i.style.fontSize = "25px";
-				i.style.color = "white";
-
-				i.style.marginRight = "15px";
-
-			i.append(ListInfos[k].resources.type.picto);
-
-			li.append(i);
-
-			let a = document.createElement("a");
-
-				a.style.textDecoration = "none";
-				a.style.color = "white";
-				a.style.verticalAlign =  "super";
-				a.style.fontSize = "20px";
-
-			a.append(ListInfos[k].infos.name);
-
-			a.addEventListener("click", (e)=>this.openPopNote(e,ListInfos[k].infos.id));
-
-			li.append(a);
-
-
-
-	    }
-*/
-
-
 	}
 
 

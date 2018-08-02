@@ -1,6 +1,6 @@
-import superViews from "../../../super/views.js";
+import superViews from "../../common/super/views.js";
 
-import Card from "../../card.js";
+import Card from "../../common/ui/card.js";
 
 export default class Title extends superViews{
 	

@@ -1,6 +1,7 @@
 import { Lifer } from '../services/Lifer.js';
 import Home from '../views/frames/home.js';
 import Objects from '../views/frames/objects.js';
+import Note from '../views/frames/note.js';
 
 export default class Frame {
 
@@ -41,6 +42,13 @@ export default class Frame {
 
 	}
 
+
+	Note(){
+
+		//this.container.innerHTML = "";
+		let note = new Note(this.container,"Note",null);
+
+	}
 
 
 }

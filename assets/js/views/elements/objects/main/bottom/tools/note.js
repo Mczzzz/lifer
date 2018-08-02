@@ -72,9 +72,12 @@ export default class note extends superViews{
 
 	openPopNote(e){
 
-		let ThePopNote = new popNote(this.container,"popNote",this.path);
+		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Note'}});
+		window.dispatchEvent(LinkEvent);
+
 
 	}
+
 
 
 }

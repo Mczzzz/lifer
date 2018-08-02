@@ -25,8 +25,8 @@ export default class Note extends superViews{
 
 
 
-		this.ContainerNode = this.Lifer.getData("app/home/frame/objects","ContainerNode");
-		this.LeafNode = this.Lifer.getData("app/home/frame/objects","LeafNode");
+		this.ContainerNode = this.Lifer.getData("Objects","ContainerNode");
+		this.LeafNode = this.Lifer.getData("Objects","LeafNode");
 
 		this.NoteCollection = new LoaderCollection("ObjectInfos");
 		this.ResourcesCollection = new LoaderCollection("ObjectInfosResources");
