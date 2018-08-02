@@ -52,7 +52,7 @@ export default class HeaderButtons extends superViews{
 
 	CloseMe(){
 
-		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'NoreRemove'}});
+		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'NoteRemove'}});
 		window.dispatchEvent(LinkEvent);
 
 	}
