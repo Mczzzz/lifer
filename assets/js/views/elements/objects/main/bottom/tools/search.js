@@ -55,28 +55,18 @@ export default class search extends superViews{
 							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","margin","0px");
 							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","padding","10px");
 							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","width","100%");
-							//card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","alignItems","center");
-							//card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","color","white");
-							//card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","alignItems","center");
-
-
-/*		this.input = document.createElement("input");
-		this.input.className = "toolsInput";
-		this.input.type = "text";
-		this.input.placeholder   = 'Recherche...';
-		this.input.style.padding   = '5px';
-		this.input.style.borderRadius   = '5px';
-		this.input.style.border   = '1px solid silver';
-		this.input.style.height   = '40px';
-		this.input.style.boxSizing = 'border-box';
-		this.input.style.width   = '100%';
-
-		this.container.append(this.input);*/
+							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","width","100%");
+							//limiter la largeur
+							//limiter a une ligne
+							//changer la couleur du texte
 
 	}
 
 
 	linkSearch(){
+
+		console.log("linkSearch");
+		console.log(this.input);
 
 		let res = {};
 
