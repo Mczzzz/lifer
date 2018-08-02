@@ -27,7 +27,7 @@ export default class breadcrumb extends superViews{
 		let res = {};
 		res.element = element;
 		res.Event = {};
-		res.Event.type = "click";
+		res.Event.type = "select";
 		res.data = data
 		
 		this.callBackToParent(res);
@@ -75,7 +75,7 @@ export default class breadcrumb extends superViews{
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"opacity","1");
 
 
-				TheClassName.addEventListener("click",(e)=>this.BackToMe(e,node,TheClassName));
+				TheClassName.addEventListener("click",(e)=>this.BackToMe(e,node,"breadcrumb"));
 
 			}
 
