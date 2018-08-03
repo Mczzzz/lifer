@@ -113,14 +113,69 @@ export default class ActionButtons extends superViews{
 					///////////////
 
 
-					this.card.push("Button", FooterElement,"footerNumbers", "looks_5");
+					let number = this.card.push("Button", FooterElement,"footerNumbers", "looks_5");
 
 					this.card.setStylePictoComponent(FooterElement,"footerNumbers","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"footerNumbers","color","blue");
 					this.card.setStylePictoComponent(FooterElement,"footerNumbers","alignItems","center");
 
+					number.addEventListener("click",()=>this.StartNumber("range"));
+/*
+button	Defines a clickable button (mostly used with a JavaScript to activate a script)
+checkbox	Defines a checkbox
+-color	Defines a color picker
+-date	Defines a date control (year, month, day (no time))
+-datetime-local	Defines a date and time control (year, month, day, time (no timezone)
+-email	Defines a field for an e-mail address
+file	Defines a file-select field and a "Browse" button (for file uploads)
+hidden	Defines a hidden input field
+image	Defines an image as the submit button
+-month	Defines a month and year control (no timezone)
+-number	Defines a field for entering a number
+-password	Defines a password field
+radio	Defines a radio button
+-range	Defines a range control (like a slider control)
+reset	Defines a reset button
+-search	Defines a text field for entering a search string
+submit	Defines a submit button
+-tel	Defines a field for entering a telephone number
+-text	Default. Defines a single-line text field
+-time	Defines a control for entering a time (no timezone)
+-url	Defines a field for entering a URL
+-week	Defines a week and year control (no timezone)
+
+*/
+
+
+
 
 	}
+
+
+StartNumber(type){
+
+
+		this.numberLauncher = document.createElement("input");
+		this.numberLauncher.type = type;
+
+		this.numberLauncher.min = 5;
+		this.numberLauncher.max = 98;
+		this.numberLauncher.step = 3;
+		this.numberLauncher.value = 53;
+
+		this.numberLauncher.style.display = "none";
+		this.container.append(this.numberrLauncher);
+		this.numberLauncher.click();
+
+		//this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
+
+
+/*		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'NoteRemove'}});
+		window.dispatchEvent(LinkEvent);
+*/
+	}
+
+
 
 
 	StartCamera(type,capture = false){
@@ -138,7 +193,7 @@ export default class ActionButtons extends superViews{
 		this.container.append(this.camLauncher);
 		this.camLauncher.click();
 
-		this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
+		//this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
 
 
 /*		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'NoteRemove'}});
