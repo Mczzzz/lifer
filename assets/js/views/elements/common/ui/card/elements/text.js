@@ -44,22 +44,20 @@ export default class Text extends superViews{
 
 
 
-     setStyle(property,value){
+/*     setStyle(property,value){
 
           this[property] = value;
 
           this.container.style[property] = this[property];
           
           if(property == "color") this.changeColor();
-     }
+     }*/
 
 
 
 
      changeColor(){
-          console.log("inchangeColor");
-          console.log(this.color);
-          console.log(this.container.innerHTML.length);
+
           this.container.style.color = (this.container.innerHTML.length == 0)? "#e0e0e0" : this.color; 
 
      }
