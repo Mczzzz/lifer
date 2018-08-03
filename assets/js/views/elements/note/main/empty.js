@@ -33,7 +33,7 @@ export default class Empty extends superViews{
 		this.card.push("Text", EmptyElement,"mainNewInput", "");
 
 		this.card.setStyleComponent(EmptyElement,"mainNewInput","fontSize","18.5px");
-		this.card.setStyleComponent(EmptyElement,"mainNewInput","color","black");
+		this.card.setStyleComponent(EmptyElement,"mainNewInput","color","black",true);
 		this.card.setStyleComponent(EmptyElement,"mainNewInput","margin","0px 5px 5px 5px");
 		this.card.setStyleComponent(EmptyElement,"mainNewInput","fontWeight","normal");
 		this.card.setStyleComponent(EmptyElement,"mainNewInput","flex",1);
@@ -41,6 +41,7 @@ export default class Empty extends superViews{
 		this.card.push("Button", EmptyElement,"mainNewButton","arrow_forward");
 
 		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","fontSize","25px");
+		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","marginRight","0px");
 		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","color","green");
 		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","alignItems","flex-end");
 
