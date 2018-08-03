@@ -26,7 +26,6 @@ export default class button extends superViews{
 
 
 
-
 	createPicto(){
 
 		this.Picto = {};
@@ -66,6 +65,7 @@ export default class button extends superViews{
 	}
 
 
+
 	setStylePicto(property,value){
 
      	this.Picto[property] = value;
@@ -73,7 +73,6 @@ export default class button extends superViews{
         this.i.style[property] = this.Picto[property];
 
     }
-
 
 
 }

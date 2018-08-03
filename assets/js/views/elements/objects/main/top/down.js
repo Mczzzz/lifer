@@ -80,7 +80,7 @@ export default class down extends superViews{
 
 	show(){
 
-		this.setStyle("display" , "none");
+		this.setStyle("display" , "");
 		this.setStyle("flex" , 1);
 		this.setStyle("padding" , "10px");
 		this.jsTree.show();
