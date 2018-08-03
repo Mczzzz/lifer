@@ -33,6 +33,7 @@ export default class FooterButtons extends superViews{
 					let StartNote = this.card.push("Button", this.ObjectsFooterElement,"addNote", "note_add");
 
 					this.card.setStylePictoComponent(this.ObjectsFooterElement,"addNote","fontSize","25px");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"separator","marginRight","0px");
 					this.card.setStylePictoComponent(this.ObjectsFooterElement,"addNote","color","green");
 					this.card.setStylePictoComponent(this.ObjectsFooterElement,"addNote","alignItems","center");
 
