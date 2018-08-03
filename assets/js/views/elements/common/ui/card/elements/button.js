@@ -7,9 +7,6 @@ export default class button extends superViews{
 
 		super(parent, MyClass , path);
 
-		this.color = "green";
-		this.size  = 25;
-		this.picto = "arrow_forward";
 
 		this.init();
 
@@ -18,6 +15,7 @@ export default class button extends superViews{
 
 
 	init(){
+
 
 		this.setStyle("display" , "flex");
 		this.setStyle("alignItems" , "center");
@@ -31,14 +29,17 @@ export default class button extends superViews{
 
 	createPicto(){
 
+		this.Picto = {};
+		this.Picto.Symbol = "arrow_forward";
+
 		this.i = document.createElement("i");
-
 		this.i.className         = "material-icons";
-		this.i.style.fontSize    = this.size+"px";
-		this.i.style.color       = this.color;
-		this.i.style.marginRight = "15px";
 
-		this.i.append(this.picto);
+		this.setStylePicto("color","green");
+		this.setStylePicto("fontSize","25px");
+		this.setStylePicto("marginRight","15px");
+
+		this.setData(this.Picto.Symbol);
 
 		this.container.append(this.i);
 
@@ -54,13 +55,13 @@ export default class button extends superViews{
 
 
 
-
-
-
 	setData(picto){
 
 		this.i.innerHTML = "";
-		this.i.append(picto);
+
+		this.Picto.Symbol = picto;
+
+		this.i.append(this.Picto.Symbol);
 
 	}
 
