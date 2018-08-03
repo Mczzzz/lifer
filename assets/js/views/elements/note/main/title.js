@@ -19,7 +19,7 @@ export default class Title extends superViews{
 
 		let TheNote = this.Lifer.getData("Note","This");
 		
-		if(TheNote.note.id !== false){
+		if(TheNote.note.id === false){
 
 			this.data = {};
 			this.data.update = "";
