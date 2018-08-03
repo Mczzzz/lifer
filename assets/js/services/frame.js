@@ -60,7 +60,7 @@ export default class Frame {
 
 	NoteRemove(){
 
-		let note = this.Lifer.getData("Note","This");
+		let note = Lifer.getData("Note","This");
 		note.destroyMe();
 
 	}
