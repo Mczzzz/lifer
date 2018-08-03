@@ -155,12 +155,9 @@ addMe(path){
 
 
 
-	addTrigger(path,data,callBack){
+/*	addTrigger(path,data,callBack){
 
-
-
-
-	}
+	}*/
 
 
 
