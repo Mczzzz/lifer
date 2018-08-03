@@ -75,7 +75,7 @@ export default class Note extends superViews{
 
 		this.Header = new Header("headerNote",this.path);
 
-		//this.Main   = new Main("mainNote",this.path);
+		this.Main   = new Main("mainNote",this.path);
 
 		this.Footer = new Footer('footerNote' , this.path);
 
