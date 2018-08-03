@@ -17,11 +17,11 @@ export default class Image extends superViews{
      init(){
 
 
-          this.container.style.margin = "10px";
+          this.setStyle("margin" , "10px");
 
-          this.container.style.border = "none";
-          this.container.style.outline = "none";
-          this.container.style.background = "transparent";
+          this.setStyle("border" , "none");
+          this.setStyle("outline" , "none");
+          this.setStyle("background" , "transparent");
 
 
      }

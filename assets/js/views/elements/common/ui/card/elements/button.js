@@ -31,6 +31,7 @@ export default class button extends superViews{
 
 		this.container.style.display = "flex";
 		this.container.style.alignItems = "center";
+		
 
 	}
 

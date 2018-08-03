@@ -14,8 +14,8 @@ export default class TextButton extends superViews{
 
 	init(){
 
-		this.container.style.display = "flex";
-		this.container.style.alignItems = "center";
+		this.setStyle("display" , "flex");
+		this.setStyle("alignItems" , "center");
 
 
 	}

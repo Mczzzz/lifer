@@ -19,8 +19,8 @@ export default class search extends superViews{
 
 	init(){
 
-		this.container.style.background = "#e8eff7";
-		this.container.style.padding = "5px";
+		this.setStyle("background","#e8eff7");
+		this.setStyle("padding","5px");
 
 		this.addInput();
 		this.linkSearch();
@@ -49,7 +49,6 @@ export default class search extends superViews{
 							card.setAttributeComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","placeholder","Recherche...");
 
 							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","fontSize","15px");
-							//card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","color","black");
 							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","border","1px solid silver");
 							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","borderRadius","5px");
 							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","background","white");
