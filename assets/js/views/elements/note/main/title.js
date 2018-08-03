@@ -26,6 +26,8 @@ export default class Title extends superViews{
 			this.data.update = this.Moment.format('llll');
 			this.data.name = "";
 
+			this.setStyle("flex", 1);
+
 		}else{
 
 			this.data = this.Lifer.getData(this.path,"Title",2);
