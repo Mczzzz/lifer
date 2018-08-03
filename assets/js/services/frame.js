@@ -25,7 +25,15 @@ export default class Frame {
 
 	}
 
-	
+	cleanBody(){
+
+		this.container.innerHTML = "";
+
+	}
+
+
+
+	//CALLBACKS
 
 	Home(){
 
@@ -45,27 +53,15 @@ export default class Frame {
 
 	Note(){
 
-		//this.container.innerHTML = "";
-		this.note = new Note(this.container,"Note",null);
+		let note = new Note(this.container,"Note",null);
 
 	}
 
 
 	NoteRemove(){
 
-		this.note = this.Lifer.getData("Note","This");
-		this.note.destroyMe();
-		this.note = null;
-
-	}
-
-
-
-
-
-	cleanBody(){
-
-		this.container.innerHTML = "";
+		let note = this.Lifer.getData("Note","This");
+		note.destroyMe();
 
 	}
 
