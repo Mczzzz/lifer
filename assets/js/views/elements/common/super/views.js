@@ -22,9 +22,10 @@ export default class views {
 			this.path = path+"/"+this.MyClass;
 
 			console.log(path);
-			console.log(this.parentThis);
 
 			this.parentThis = this.Lifer.getData(path,"This");
+
+			console.log(this.parentThis);
 
 			this.parent = this.parentThis.getContainer();
 
