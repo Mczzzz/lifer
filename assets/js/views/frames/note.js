@@ -75,7 +75,7 @@ export default class Note extends superViews{
 
 		this.Header = new Header(this.container,"headerNote",this.path);
 
-		this.Main   = new Main(this.container,"mainNote",this.path);
+		//this.Main   = new Main(this.container,"mainNote",this.path);
 
 		this.Footer = new Footer(this.container, 'footerNote' , this.path);
 
@@ -100,18 +100,14 @@ export default class Note extends superViews{
 	Synchronizer(name,value){
 
 		console.log('in Synchronizer');
-/*		console.log(name);
-		let ContainerNode = this.Lifer.getData("app/home/frame/objects","ContainerNode");
-		let LeafNode = this.Lifer.getData("app/home/frame/objects","LeafNode");*/
+
 
 		let formData = new FormData();
 		formData.append('ObjectId' , this.ContainerNode.id);
         formData.append('ObjectLeafId' , this.LeafNode.id);
         formData.append('noteId'  , this.note.id);
 
-/*        console.log("before if");
-        console.log(this.note.id);
-        console.log(name);*/
+
 		if (this.note.id == false || (name == "text" && value.id == "title" )){
 
 			//j'init ma note dans tous les cas

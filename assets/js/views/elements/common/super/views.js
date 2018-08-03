@@ -6,19 +6,24 @@ export default class views {
 	constructor(parent, MyClass,path,prepend = false){
 
 
-		this.parent = parent;
+		//this.parent = parent;
 
 		this.MyClass = (MyClass !== false)? MyClass : this.constructor.name;
 
 
 		this.path = path+"/"+this.MyClass;
 		this.Lifer = Lifer;
+
 		this.Lifer.addMe(this.path);
+
+		this.parentThis = this.Lifer.getData(path,"This");
+		this.parent = this.parentThis.getContainer();
+
 
 		this.superInit(prepend);
 
 		this.Lifer.addData(this.path,[{"This" : this}]);
-		this.Lifer.dumpMe();
+
 
 	}
 
