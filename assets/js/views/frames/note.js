@@ -43,16 +43,16 @@ export default class Note extends superViews{
 		this.setStyle("boxShadow" , "0px 0px 10px 10px green");
 
 
-
-		this.ContainerNode = this.Lifer.getData("Objects","ContainerNode");
-		this.LeafNode = this.Lifer.getData("Objects","LeafNode");
-
-		this.NoteCollection = new LoaderCollection("ObjectInfos");
-		this.ResourcesCollection = new LoaderCollection("ObjectInfosResources");
-
-		//A REVOIR MAIS MIEUX QU'AVANT
-
 		if(this.note.id !== false){
+
+
+			this.ContainerNode = this.Lifer.getData("Objects","ContainerNode");
+			this.LeafNode = this.Lifer.getData("Objects","LeafNode");
+
+			this.NoteCollection = new LoaderCollection("ObjectInfos");
+			this.ResourcesCollection = new LoaderCollection("ObjectInfosResources");
+
+			//A REVOIR MAIS MIEUX QU'AVANT
 
 			let noteInfos = this.NoteCollection.get(this.ContainerNode.id,this.LeafNode.id,this.note.id);
 			this.Lifer.addData(this.path,[{"Title" : noteInfos}]);
