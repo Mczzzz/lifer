@@ -5,9 +5,9 @@ import FooterButton from "./footer/footerButtons.js";
 export default class Footer extends superViews{
 	
 
-	constructor(parent, MyClass , path){
+	constructor( MyClass , path){
 
-		super(parent, MyClass , path)
+		super( MyClass , path)
 
 		this.init();
 		
@@ -34,7 +34,7 @@ export default class Footer extends superViews{
 
 	addActionButtons(){
 
-		this.FooterButton = new FooterButton(this.container,"ObjectsFooterActionButton",this.path);
+		this.FooterButton = new FooterButton("ObjectsFooterActionButton",this.path);
 
 	}
 

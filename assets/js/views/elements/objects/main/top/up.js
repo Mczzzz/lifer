@@ -6,9 +6,9 @@ import jsTreeContainer from '../../../common/ui/jsTreeContainer.js';
 export default class up extends superViews{
 	
 
-	constructor(parent, MyClass,path){
+	constructor( MyClass,path){
 
-		super(parent, MyClass,path);
+		super( MyClass,path);
 
 		this.init();
 

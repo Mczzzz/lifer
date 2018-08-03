@@ -5,9 +5,9 @@ import Elements     from "./card/elements.js";
 export default class card extends superViews{ 
      
 
-     constructor(parent, MyClass,path,prepend = false){
+     constructor(MyClass,path,prepend = false){
 
-          super(parent, MyClass , path);
+          super( MyClass , path);
 
           this.init();
 
@@ -50,7 +50,7 @@ export default class card extends superViews{
        
          let ClassName   = this.prefixElement + classSuffixe;
 
-         this[ClassName] = new Elements(this.container,ClassName,this.path);
+         this[ClassName] = new Elements(ClassName,this.path);
          
          return ClassName;
           

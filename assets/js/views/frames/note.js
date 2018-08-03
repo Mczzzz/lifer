@@ -12,9 +12,9 @@ import Footer           from '../elements/note/footer.js';
 export default class Note extends superViews{
 	
 
-	constructor(parent,MyClass,path,id = false){
+	constructor(MyClass,path,id = false){
 
-		super(parent, MyClass , path);
+		super( MyClass , path);
 
 		console.log(id);
 
@@ -73,11 +73,11 @@ export default class Note extends superViews{
 
 	initChilds(){
 
-		this.Header = new Header(this.container,"headerNote",this.path);
+		this.Header = new Header("headerNote",this.path);
 
-		//this.Main   = new Main(this.container,"mainNote",this.path);
+		//this.Main   = new Main("mainNote",this.path);
 
-		this.Footer = new Footer(this.container, 'footerNote' , this.path);
+		this.Footer = new Footer('footerNote' , this.path);
 
 	}
 

@@ -8,9 +8,9 @@ import Footer from '../elements/objects/footer.js';
 export default class Objects extends superViews{
 
 
-  constructor(parent, MyClass,path){
+  constructor(MyClass,path){
 
-    super(parent, MyClass,path);
+    super(MyClass,path);
     
     this.init();
 
@@ -29,11 +29,11 @@ export default class Objects extends superViews{
 
   initChilds(){
 
-   this.Header = new Header(this.container,"ObjectsHeader",this.path);
+   this.Header = new Header("ObjectsHeader",this.path);
 
-   this.Main = new Main(this.container,"ObjectsMain",this.path);
+   this.Main = new Main("ObjectsMain",this.path);
 
-   this.Footer = new Footer(this.container,"ObjectsFooter",this.path);
+   this.Footer = new Footer("ObjectsFooter",this.path);
     
   }
 

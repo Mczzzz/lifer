@@ -6,9 +6,9 @@ import Card from "../../../../common/ui/card.js";
 export default class search extends superViews{
 
 
-	constructor(parent,MyClass,path){
+	constructor(MyClass,path){
 
-		super(parent,MyClass,path);
+		super(MyClass,path);
 
 		this.init();
 
@@ -32,7 +32,7 @@ export default class search extends superViews{
 	addInput(){
 
 
-	let card = new Card(this.container,'ObjectsSearchCard', this.path);
+	let card = new Card('ObjectsSearchCard', this.path);
 				
 				card.setStyle("borderWidth", "0px");
 				card.setStyle("borderRadius", "0px");

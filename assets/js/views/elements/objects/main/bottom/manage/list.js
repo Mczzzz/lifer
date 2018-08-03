@@ -6,10 +6,10 @@ import Card from "../../../../common/ui/card.js";
 export default class list extends superViews{
 
 
-	constructor(parent,MyClass,path){
+	constructor(MyClass,path){
 
 
-		super(parent,MyClass,path);
+		super(MyClass,path);
 		
 		this.init();
 
@@ -42,7 +42,7 @@ export default class list extends superViews{
 
 
 
-			let card = new Card(this.container,'ObjectsInfosCard_'+info.infos.id, this.path);
+			let card = new Card('ObjectsInfosCard_'+info.infos.id, this.path);
 				
 				card.setStyle("borderWidth", "0px");
 				card.setStyle("borderRadius", "0px");

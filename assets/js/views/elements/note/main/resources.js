@@ -5,9 +5,9 @@ import Card from "../../common/ui/card.js";
 export default class Resources extends superViews{
 	
 
-	constructor(parent, MyClass , path){
+	constructor( MyClass , path){
 
-		super(parent, MyClass , path);
+		super( MyClass , path);
 
 		this.init();
 		
@@ -27,7 +27,7 @@ export default class Resources extends superViews{
 
 
 
-			let card = new Card(this.container,'NoteCardResource_'+Resource.id, this.path);
+			let card = new Card('NoteCardResource_'+Resource.id, this.path);
 			card.setId(Resource.id);
 
 			let carWidth = card.getWidth();

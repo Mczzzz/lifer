@@ -8,9 +8,9 @@ import Empty      from "./main/empty.js";
 export default class Main extends superViews{
 	
 
-	constructor(parent, MyClass , path){
+	constructor( MyClass , path){
 
-		super(parent, MyClass , path);
+		super( MyClass , path);
 
 		this.init();
 		
@@ -35,11 +35,11 @@ export default class Main extends superViews{
 
 	initChilds(){
 
-		this.Title     = new Title(this.container,"noteMainTitle",this.path);
+		this.Title     = new Title("noteMainTitle",this.path);
 
-		this.Resources = new Resources(this.container,"noteMainResources",this.path);
+		this.Resources = new Resources("noteMainResources",this.path);
 
-		this.Empty     = new Empty(this.container,"noteMainEmpty",this.path);
+		this.Empty     = new Empty("noteMainEmpty",this.path);
 
 	}
 

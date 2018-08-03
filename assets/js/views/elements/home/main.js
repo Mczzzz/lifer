@@ -4,9 +4,9 @@ import superViews from "../common/super/views.js";
 export default class Main extends superViews{
 	
 
-	constructor(parent, MyClass , path){
+	constructor( MyClass , path){
 
-		super(parent, MyClass , path)
+		super( MyClass , path)
 
 		this.init();
 		

@@ -6,9 +6,9 @@ import Card from "../../common/ui/card.js";
 export default class Empty extends superViews{
 	
 
-	constructor(parent, MyClass , path){
+	constructor( MyClass , path){
 
-		super(parent, MyClass , path);
+		super( MyClass , path);
 
 		this.init();
 		
@@ -17,7 +17,7 @@ export default class Empty extends superViews{
 
 	init(){
 
-		this.card = new Card(this.container,'NoteEmptyCardText', this.path);
+		this.card = new Card('NoteEmptyCardText', this.path);
 		this.card.setId(0);
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");

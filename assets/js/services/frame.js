@@ -38,7 +38,7 @@ export default class Frame {
 	Home(){
 
 		this.cleanBody();
-		let home = new Home(this.container,"Home",null);
+		let home = new Home("Home",null);
 
 	}
 
@@ -46,14 +46,14 @@ export default class Frame {
 	Objects(){
 
 		this.cleanBody();
-		let objects = new Objects(this.container,"Objects",null);
+		let objects = new Objects("Objects",null);
 
 	}
 
 
 	Note(){
 
-		let note = new Note(this.container,"Note",null);
+		let note = new Note("Note",null);
 
 	}
 

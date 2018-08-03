@@ -3,9 +3,9 @@ import superViews from "../../../super/views.js";
 export default class Image extends superViews{ 
      
 
-     constructor(parent, MyClass,path,prepend = false){
+     constructor( MyClass,path,prepend = false){
 
-          super(parent, MyClass , path);
+          super( MyClass , path);
 
 
 

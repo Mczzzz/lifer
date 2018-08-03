@@ -3,10 +3,8 @@ import { Lifer } from '../../../../services/Lifer.js';
 export default class views {
 	
 
-	constructor(parent, MyClass,path,prepend = false){
+	constructor(MyClass,path,prepend = false){
 
-
-		//this.parent = parent;
 
 		this.MyClass = (MyClass !== false)? MyClass : this.constructor.name;
 

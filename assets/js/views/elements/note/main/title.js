@@ -5,9 +5,9 @@ import Card from "../../common/ui/card.js";
 export default class Title extends superViews{
 	
 
-	constructor(parent, MyClass , path){
+	constructor( MyClass , path){
 
-		super(parent, MyClass , path);
+		super( MyClass , path);
 
 		this.init();
 		
@@ -18,7 +18,7 @@ export default class Title extends superViews{
 
 		this.data = this.Lifer.getData(this.path,"Title",2);
 
-		this.card = new Card(this.container,'NoteTitleCard', this.path);
+		this.card = new Card('NoteTitleCard', this.path);
 
 		this.card.setId(this.data.id);
 		

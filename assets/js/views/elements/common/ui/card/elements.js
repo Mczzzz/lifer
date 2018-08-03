@@ -5,9 +5,9 @@ import loaderComponent from "../../../../../services/LoaderComponent.js";
 export default class Elements extends superViews{ 
      
 
-     constructor(parent, MyClass,path,prepend = false){
+     constructor(MyClass,path,prepend = false){
 
-          super(parent, MyClass , path);
+          super(MyClass , path);
 
 
           this.init();
@@ -53,7 +53,7 @@ export default class Elements extends superViews{
     add(type, classSuffixe, data,prepend = false){
 
 
-    	this[classSuffixe] = new loaderComponent(type, this.container, "noteElt" + type + classSuffixe, this.path,prepend);
+    	this[classSuffixe] = new loaderComponent(type, "noteElt" + type + classSuffixe, this.path,prepend);
     	this[classSuffixe].setData(data);
 
      return this[classSuffixe].getContainer();

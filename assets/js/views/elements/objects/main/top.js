@@ -5,9 +5,9 @@ import Down from './top/down.js';
 export default class top extends superViews{
 	
 
-	constructor(parent,MyClass,path){
+	constructor(MyClass,path){
 
-		super(parent,MyClass,path);
+		super(MyClass,path);
 
 		this.init();
 
@@ -26,11 +26,11 @@ export default class top extends superViews{
 
 	initChilds(){
 
-		this.up = new Up(this.container,"topUp",this.path);
+		this.up = new Up("topUp",this.path);
 		this.up.show();
 		this.up.loadData();
 
-		this.down = new Down(this.container,"topDown",this.path);
+		this.down = new Down("topDown",this.path);
 
 	}
 

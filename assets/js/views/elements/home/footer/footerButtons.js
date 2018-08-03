@@ -5,9 +5,9 @@ import Card from "../../common/ui/card.js";
 export default class FooterButtons extends superViews{
 	
 
-	constructor(parent, MyClass , path){
+	constructor( MyClass , path){
 
-		super(parent, MyClass , path);
+		super( MyClass , path);
 
 
 		this.init();
@@ -17,7 +17,7 @@ export default class FooterButtons extends superViews{
 
 	init(){
 
-		this.card = new Card(this.container,'HomeFooterCard', this.path);
+		this.card = new Card('HomeFooterCard', this.path);
 	
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");
