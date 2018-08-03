@@ -9,20 +9,18 @@ export default class Resources extends superViews{
 
 		super(parent, MyClass , path);
 
-		//console.log(path);
-
-		this.data = this.Lifer.getData(this.path,"Resources",2);
-
-		this.container.style.overflowY = "scroll";
-		this.container.style.flex = "1";
-
-
 		this.init();
 		
 	}
 
 
 	init(){
+
+
+		this.data = this.Lifer.getData(this.path,"Resources",2);
+
+		this.setStyle("overflowY" , "scroll");
+		this.setStyle("flex" , 1);
 
 
 		for(let Resource of this.data){

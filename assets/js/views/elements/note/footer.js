@@ -17,11 +17,11 @@ export default class Footer extends superViews{
 	init(){
 
 
-		this.container.style.background = "linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)";
-		this.container.style.height = "40px";
-		this.container.style.display = "flex";
-		this.container.style.alignItems = "center";
-		this.container.style.color = "";
+		this.setStyle("background" , "linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)");
+		this.setStyle("height" , "40px");
+		this.setStyle("display", "flex");
+		this.setStyle("alignItems" , "center");
+		this.setStyle("color" , "");
 
 		this.initChilds();
 

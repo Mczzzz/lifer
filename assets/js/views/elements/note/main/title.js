@@ -9,17 +9,14 @@ export default class Title extends superViews{
 
 		super(parent, MyClass , path);
 
-		//console.log(path);
-
-		this.data = this.Lifer.getData(this.path,"Title",2);
-
-
 		this.init();
 		
 	}
 
 
 	init(){
+
+		this.data = this.Lifer.getData(this.path,"Title",2);
 
 		this.card = new Card(this.container,'NoteTitleCard', this.path);
 
