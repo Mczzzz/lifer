@@ -16,8 +16,17 @@ export default class views {
 
 		this.Lifer.addMe(this.path);
 
-		this.parentThis = this.Lifer.getData(path,"This");
-		this.parent = this.parentThis.getContainer();
+		if(path === null){
+
+			this.parent = document.body;
+
+		}else{
+
+			this.parentThis = this.Lifer.getData(path,"This");
+			this.parent = this.parentThis.getContainer();
+
+		}
+
 
 
 		this.superInit(prepend);
