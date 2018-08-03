@@ -35,7 +35,29 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerPhoto","color","green");
 					this.card.setStylePictoComponent(FooterElement,"footerPhoto","alignItems","center");
 
-					camera.addEventListener("click",()=>this.StartCamera(true));
+					camera.addEventListener("click",()=>this.StartCamera("image",true));
+
+
+
+					let video = this.card.push("Button", FooterElement,"footerVideocam", "videocam");
+
+					this.card.setStylePictoComponent(FooterElement,"footerVideocam","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"footerVideocam","color","green");
+					this.card.setStylePictoComponent(FooterElement,"footerVideocam","alignItems","center");
+
+					video.addEventListener("click",()=>this.StartCamera("video",true));
+
+
+
+					let micro = this.card.push("Button", FooterElement,"footerMic", "mic");
+
+					this.card.setStylePictoComponent(FooterElement,"footerMic","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"footerMic","color","green");
+					this.card.setStylePictoComponent(FooterElement,"footerMic","alignItems","center");
+
+					micro.addEventListener("click",()=>this.StartCamera("audio",true));
+
+
 
 
 					this.card.push("Button", FooterElement,"footerGallery", "photo");
@@ -43,6 +65,8 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerGallery","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"footerGallery","color","green");
 					this.card.setStylePictoComponent(FooterElement,"footerGallery","alignItems","center");
+
+					camera.addEventListener("click",()=>this.StartCamera("image"));
 
 
 					this.card.push("Button", FooterElement,"footerNumbers", "looks_5");
@@ -55,12 +79,12 @@ export default class ActionButtons extends superViews{
 	}
 
 
-	StartCamera(capture){
+	StartCamera(type,capture = false){
 
 
 		this.camLauncher = document.createElement("input");
 		this.camLauncher.type = "file";
-		this.camLauncher.accept = "image/*";
+		this.camLauncher.accept = type+"/*";
 
 		if(capture){
 			this.camLauncher.capture = "camera";	
