@@ -60,12 +60,12 @@ export default class ActionButtons extends superViews{
 
 
 
-					this.card.push("Button", FooterElement,"separator", "more_vert");
+					this.card.push("Button", FooterElement,"separator1", "more_vert");
 
-					this.card.setStylePictoComponent(FooterElement,"separator","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"separator","margin","5px");
-					this.card.setStylePictoComponent(FooterElement,"separator","color","#cfcfcf");
-					this.card.setStylePictoComponent(FooterElement,"separator","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"separator1","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"separator1","margin","5px");
+					this.card.setStylePictoComponent(FooterElement,"separator1","color","#cfcfcf");
+					this.card.setStylePictoComponent(FooterElement,"separator1","alignItems","center");
 
 
 
