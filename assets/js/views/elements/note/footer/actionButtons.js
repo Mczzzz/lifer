@@ -49,6 +49,7 @@ export default class ActionButtons extends superViews{
 
 
 
+
 					let micro = this.card.push("Button", FooterElement,"footerMic", "mic");
 
 					this.card.setStylePictoComponent(FooterElement,"footerMic","fontSize","25px");
@@ -56,6 +57,26 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerMic","alignItems","center");
 
 					micro.addEventListener("click",()=>this.StartCamera("audio",true));
+
+
+
+					this.card.push("Button", FooterElement,"separator", "more_vert");
+
+					this.card.setStylePictoComponent(FooterElement,"separator","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"separator","margin","5px");
+					this.card.setStylePictoComponent(FooterElement,"separator","color","#cfcfcf");
+					this.card.setStylePictoComponent(FooterElement,"separator","alignItems","center");
+
+
+
+
+					let photo = this.card.push("Button", FooterElement,"footerGallery", "photo");
+
+					this.card.setStylePictoComponent(FooterElement,"footerGallery","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"footerGallery","color","orange");
+					this.card.setStylePictoComponent(FooterElement,"footerGallery","alignItems","center");
+
+					photo.addEventListener("click",()=>this.StartCamera("image"));
 
 
 
@@ -69,14 +90,13 @@ export default class ActionButtons extends superViews{
 
 
 
+					this.card.push("Button", FooterElement,"separator2", "more_vert");
 
-					let photo = this.card.push("Button", FooterElement,"footerGallery", "photo");
+					this.card.setStylePictoComponent(FooterElement,"separator2","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"separator2","margin","5px");
+					this.card.setStylePictoComponent(FooterElement,"separator2","color","#cfcfcf");
+					this.card.setStylePictoComponent(FooterElement,"separator2","alignItems","center");
 
-					this.card.setStylePictoComponent(FooterElement,"footerGallery","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"footerGallery","color","orange");
-					this.card.setStylePictoComponent(FooterElement,"footerGallery","alignItems","center");
-
-					photo.addEventListener("click",()=>this.StartCamera("image"));
 
 
 					this.card.push("Button", FooterElement,"footerNumbers", "looks_5");
