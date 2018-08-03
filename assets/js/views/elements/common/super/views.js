@@ -11,16 +11,15 @@ export default class views {
 		this.MyClass = (MyClass !== false)? MyClass : this.constructor.name;
 
 
-		this.path = path+"/"+this.MyClass;
-		this.Lifer = Lifer;
-
-		this.Lifer.addMe(this.path);
-
+		
 		if(path == null){
 
 			this.parent = document.body;
+			this.path = this.MyClass;
 
 		}else{
+
+			this.path = path+"/"+this.MyClass;
 
 			this.parentThis = this.Lifer.getData(path,"This");
 			console.log(path);
@@ -29,6 +28,10 @@ export default class views {
 
 		}
 
+
+		this.Lifer = Lifer;
+
+		this.Lifer.addMe(this.path);
 
 
 		this.superInit(prepend);
