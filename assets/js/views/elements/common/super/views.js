@@ -68,6 +68,9 @@ export default class views {
 
 	setAttribute(property,value){
 
+		console.log("in set Attribute");
+		console.log(property);
+		console.log(value);
      	this[property] = value;
 
         this.container[property] = this[property];
