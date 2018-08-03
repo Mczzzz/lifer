@@ -22,7 +22,7 @@ export default class Title extends superViews{
 		if(TheNote.note.id === false){
 
 			this.data = {};
-			this.data.update = "";
+			this.data.update = Moment().format('llll');
 			this.data.name = "";
 
 		}else{
