@@ -18,7 +18,7 @@ export default class views {
 		this.superInit(prepend);
 
 		this.Lifer.addData(this.path,[{"This" : this}]);
-
+		this.Lifer.dumpMe();
 
 	}
 
