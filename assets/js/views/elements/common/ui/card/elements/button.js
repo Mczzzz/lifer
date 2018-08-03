@@ -19,8 +19,8 @@ export default class button extends superViews{
 
 	init(){
 
-		this.container.style.display = "flex";
-		this.container.style.alignItems = "center";
+		this.setStyle("display" , "flex");
+		this.setStyle("alignItems" , "center");
 		
 		this.createPicto();
 
@@ -65,11 +65,11 @@ export default class button extends superViews{
 	}
 
 
-	setStyle(property,value){
+	setStylePicto(property,value){
 
-     	this[property] = value;
+     	this.Picto[property] = value;
 
-        this.i.style[property] = this[property];
+        this.i.style[property] = this.Picto[property];
 
     }
 

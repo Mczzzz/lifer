@@ -36,31 +36,21 @@ export default class Text extends superViews{
      }
 
 
+     changeColor(){
+
+          this.container.style.color = (this.container.innerHTML.length == 0)? "#e0e0e0" : this.color; 
+
+     }
+
+
+
+     //PUBLICS
      setData(text){
 
           this.container.innerHTML = text;
 
      }
 
-
-
-/*     setStyle(property,value){
-
-          this[property] = value;
-
-          this.container.style[property] = this[property];
-          
-          if(property == "color") this.changeColor();
-     }*/
-
-
-
-
-     changeColor(){
-
-          this.container.style.color = (this.container.innerHTML.length == 0)? "#e0e0e0" : this.color; 
-
-     }
 
 
 }

@@ -71,6 +71,13 @@ export default class card extends superViews{
 
      }
 
+     setStylePictoComponent(element,component, property, value){
+
+          this[element].setStylePictoComponent(component, property, value);
+
+     }
+
+
 
      setAttributeComponent(element,component, property, value){
 

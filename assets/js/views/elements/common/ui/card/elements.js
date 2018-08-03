@@ -33,6 +33,16 @@ export default class Elements extends superViews{
 
      }
 
+
+     setStylePictoComponent(component, property, value){
+
+        this[component].setStylePicto(property, value);
+
+
+     }
+
+
+
      setAttributeComponent(component, property, value){
 
         this[component].setAttribute(property, value);
