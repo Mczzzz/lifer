@@ -11,6 +11,8 @@ export default class views {
 		this.MyClass = (MyClass !== false)? MyClass : this.constructor.name;
 
 
+		this.Lifer = Lifer;
+		
 		
 		if(path == null){
 
@@ -32,7 +34,7 @@ export default class views {
 		}
 
 
-		this.Lifer = Lifer;
+
 
 		this.Lifer.addMe(this.path);
 
