@@ -74,8 +74,8 @@ export default class views {
      	this[property] = value;
 
      	console.log(this.placeholder);
-
-        this.container[property] = this[property];
+     	this.container.placeholder = "toto";
+        //this.container[property] = this[property];
 
     }
 
