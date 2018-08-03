@@ -13,7 +13,7 @@ export default class views {
 
 		this.Lifer = Lifer;
 		
-		
+
 		if(path == null){
 
 			this.parent = document.body;
@@ -23,26 +23,17 @@ export default class views {
 
 			this.path = path+"/"+this.MyClass;
 
-			console.log(path);
-
 			this.parentThis = this.Lifer.getData(path,"This");
-
-			console.log(this.parentThis);
 
 			this.parent = this.parentThis.getContainer();
 
 		}
 
-
-
-
 		this.Lifer.addMe(this.path);
-
 
 		this.superInit(prepend);
 
 		this.Lifer.addData(this.path,[{"This" : this}]);
-		this.Lifer.dumpMe();
 
 	}
 
