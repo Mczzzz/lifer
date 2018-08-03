@@ -16,7 +16,22 @@ export default class Title extends superViews{
 
 	init(){
 
-		this.data = this.Lifer.getData(this.path,"Title",2);
+
+		let TheNote = this.Lifer.getData("Note","This");
+		
+		if(TheNote.note.id !== false){
+
+			this.data = {};
+			this.data.update = "";
+			this.data.name = "";
+
+		}else{
+
+			this.data = this.Lifer.getData(this.path,"Title",2);
+
+		}
+
+		
 
 		this.card = new Card('NoteTitleCard', this.path);
 
