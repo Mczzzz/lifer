@@ -73,6 +73,8 @@ export default class views {
 		console.log(value);
      	this[property] = value;
 
+     	console.log(this.placeholder);
+
         this.container[property] = this[property];
 
     }
