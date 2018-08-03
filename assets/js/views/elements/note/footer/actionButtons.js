@@ -31,23 +31,23 @@ export default class ActionButtons extends superViews{
 
 					this.card.push("Button", FooterElement,"footerPhoto", "camera_alt");
 
-					this.card.setStyleComponent(FooterElement,"footerPhoto","fontSize","25px");
-					this.card.setStyleComponent(FooterElement,"footerPhoto","color","green");
-					this.card.setStyleComponent(FooterElement,"footerPhoto","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"footerPhoto","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"footerPhoto","color","green");
+					this.card.setStylePictoComponent(FooterElement,"footerPhoto","alignItems","center");
 
 
 					this.card.push("Button", FooterElement,"footerGallery", "photo");
 
-					this.card.setStyleComponent(FooterElement,"footerGallery","fontSize","25px");
-					this.card.setStyleComponent(FooterElement,"footerGallery","color","green");
-					this.card.setStyleComponent(FooterElement,"footerGallery","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"footerGallery","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"footerGallery","color","green");
+					this.card.setStylePictoComponent(FooterElement,"footerGallery","alignItems","center");
 
 
 					this.card.push("Button", FooterElement,"footerNumbers", "looks_5");
 
-					this.card.setStyleComponent(FooterElement,"footerNumbers","fontSize","25px");
-					this.card.setStyleComponent(FooterElement,"footerNumbers","color","green");
-					this.card.setStyleComponent(FooterElement,"footerNumbers","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"footerNumbers","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"footerNumbers","color","green");
+					this.card.setStylePictoComponent(FooterElement,"footerNumbers","alignItems","center");
 
 
 	}

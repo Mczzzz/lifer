@@ -32,9 +32,9 @@ export default class FooterButtons extends superViews{
 
 					let StartNote = this.card.push("Button", this.ObjectsFooterElement,"addNote", "note_add");
 
-					this.card.setStyleComponent(this.ObjectsFooterElement,"addNote","fontSize","25px");
-					this.card.setStyleComponent(this.ObjectsFooterElement,"addNote","color","green");
-					this.card.setStyleComponent(this.ObjectsFooterElement,"addNote","alignItems","center");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"addNote","fontSize","25px");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"addNote","color","green");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"addNote","alignItems","center");
 
 					StartNote.addEventListener("click",()=>this.StartNote());
 
@@ -42,33 +42,33 @@ export default class FooterButtons extends superViews{
 					///////////////
 					this.card.push("Button", this.ObjectsFooterElement,"separator", "more_vert");
 
-					this.card.setStyleComponent(this.ObjectsFooterElement,"separator","fontSize","25px");
-					this.card.setStyleComponent(this.ObjectsFooterElement,"separator","margin","5px");
-					this.card.setStyleComponent(this.ObjectsFooterElement,"separator","color","#cfcfcf");
-					this.card.setStyleComponent(this.ObjectsFooterElement,"separator","alignItems","center");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"separator","fontSize","25px");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"separator","margin","5px");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"separator","color","#cfcfcf");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"separator","alignItems","center");
 					//////////////
 
 
 					this.card.push("Button", this.ObjectsFooterElement,"addChild", "add_circle");
 
-					this.card.setStyleComponent(this.ObjectsFooterElement,"addChild","fontSize","25px");
-					this.card.setStyleComponent(this.ObjectsFooterElement,"addChild","color","green");
-					this.card.setStyleComponent(this.ObjectsFooterElement,"addChild","alignItems","center");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"addChild","fontSize","25px");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"addChild","color","green");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"addChild","alignItems","center");
 
 
 
 					this.card.push("Button", this.ObjectsFooterElement,"renameChild", "create");
 
-					this.card.setStyleComponent(this.ObjectsFooterElement,"renameChild","fontSize","25px");
-					this.card.setStyleComponent(this.ObjectsFooterElement,"renameChild","color","orange");
-					this.card.setStyleComponent(this.ObjectsFooterElement,"renameChild","alignItems","center");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"renameChild","fontSize","25px");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"renameChild","color","orange");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"renameChild","alignItems","center");
 
 
 					this.card.push("Button", this.ObjectsFooterElement,"removeChild", "remove_circle");
 
-					this.card.setStyleComponent(this.ObjectsFooterElement,"removeChild","fontSize","25px");
-					this.card.setStyleComponent(this.ObjectsFooterElement,"removeChild","color","red");
-					this.card.setStyleComponent(this.ObjectsFooterElement,"removeChild","alignItems","center");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"removeChild","fontSize","25px");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"removeChild","color","red");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"removeChild","alignItems","center");
 
 
 

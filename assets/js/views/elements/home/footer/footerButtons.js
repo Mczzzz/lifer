@@ -31,9 +31,9 @@ export default class FooterButtons extends superViews{
 
 					let FooterObjectButton = this.card.push("Button", FooterElement,"toObjects", "widgets");
 
-					this.card.setStyleComponent(FooterElement,"toObjects","fontSize","25px");
-					this.card.setStyleComponent(FooterElement,"toObjects","color","green");
-					this.card.setStyleComponent(FooterElement,"toObjects","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"toObjects","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"toObjects","color","green");
+					this.card.setStylePictoComponent(FooterElement,"toObjects","alignItems","center");
 
 					FooterObjectButton.addEventListener("click",()=>this.goToObject());
 
