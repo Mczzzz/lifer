@@ -75,11 +75,15 @@ export default class Note extends superViews{
 
 		this.Header = new Header(this.container,"headerNote",this.path);
 
-		//this.Main   = new Main(this.container,"mainNote",this.path);
+		this.Main   = new Main(this.container,"mainNote",this.path);
 
 		this.Footer = new Footer(this.container, 'footerNote' , this.path);
 
 	}
+
+
+
+
 
 
 	dispatcher(e,name, value){
@@ -168,12 +172,12 @@ export default class Note extends superViews{
 
 	//this.Synchronizer();
 
-	if(value.innerHTML === ""){
+/*	if(value.innerHTML === ""){
 		value.style.color = "grey";
 	}else{
 		value.style.color = "black";
 	}
-	
+	*/
 	if(value.id == 'title' && e.key == "Enter"){
 
 		value.innerHTML = value.innerHTML.replace(/<div><br><\/div>/i, '');

@@ -55,7 +55,6 @@ export default class search extends superViews{
 							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","margin","0px");
 							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","padding","10px");
 							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","width","100%");
-							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","width","100%");
 							//limiter la largeur
 							//limiter a une ligne
 							//changer la couleur du texte
