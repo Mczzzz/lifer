@@ -16,6 +16,10 @@ export default class Resources extends superViews{
 
 	init(){
 
+		let TheNote = this.Lifer.getData("Note","This");
+		
+		if(TheNote.note.id === false) return false;
+
 
 		this.data = this.Lifer.getData(this.path,"Resources",2);
 
