@@ -39,13 +39,13 @@ export default class ActionButtons extends superViews{
 
 
 
-					let video = this.card.push("Button", FooterElement,"footerVideocam", "videocam");
+					let videocam = this.card.push("Button", FooterElement,"footerVideocam", "videocam");
 
 					this.card.setStylePictoComponent(FooterElement,"footerVideocam","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"footerVideocam","color","green");
 					this.card.setStylePictoComponent(FooterElement,"footerVideocam","alignItems","center");
 
-					video.addEventListener("click",()=>this.StartCamera("video",true));
+					videocam.addEventListener("click",()=>this.StartCamera("video",true));
 
 
 
@@ -55,18 +55,19 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerMic","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"footerMic","color","green");
 					this.card.setStylePictoComponent(FooterElement,"footerMic","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"footerMic","marginRight","0px");
 
 					micro.addEventListener("click",()=>this.StartCamera("audio",true));
 
 
-
+					////////////
 					this.card.push("Button", FooterElement,"separator1", "more_vert");
 
 					this.card.setStylePictoComponent(FooterElement,"separator1","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"separator1","margin","5px");
 					this.card.setStylePictoComponent(FooterElement,"separator1","color","#cfcfcf");
 					this.card.setStylePictoComponent(FooterElement,"separator1","alignItems","center");
-
+					//////////////
 
 
 
@@ -80,23 +81,36 @@ export default class ActionButtons extends superViews{
 
 
 
+					let video = this.card.push("Button", FooterElement,"footerVideo", "movie");
+
+					this.card.setStylePictoComponent(FooterElement,"footerVideo","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"footerVideo","color","green");
+					this.card.setStylePictoComponent(FooterElement,"footerVideo","alignItems","center");
+
+					video.addEventListener("click",()=>this.StartCamera("video"));
+
+
+
+
 					let musique = this.card.push("Button", FooterElement,"footerMusique", "music_video");
 
 					this.card.setStylePictoComponent(FooterElement,"footerMusique","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"footerMusique","color","orange");
 					this.card.setStylePictoComponent(FooterElement,"footerMusique","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"footerMusique","marginRight","0px");
 
 					musique.addEventListener("click",()=>this.StartCamera("audio"));
 
 
 
+					///////////////
 					this.card.push("Button", FooterElement,"separator2", "more_vert");
 
 					this.card.setStylePictoComponent(FooterElement,"separator2","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"separator2","margin","5px");
 					this.card.setStylePictoComponent(FooterElement,"separator2","color","#cfcfcf");
 					this.card.setStylePictoComponent(FooterElement,"separator2","alignItems","center");
-
+					///////////////
 
 
 					this.card.push("Button", FooterElement,"footerNumbers", "looks_5");
