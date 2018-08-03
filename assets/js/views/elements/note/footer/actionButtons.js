@@ -158,13 +158,13 @@ StartNumber(type){
 		this.numberLauncher = document.createElement("input");
 		this.numberLauncher.type = type;
 
-/*		this.numberLauncher.min = 5;
+		this.numberLauncher.min = 5;
 		this.numberLauncher.max = 98;
 		this.numberLauncher.step = 3;
-		this.numberLauncher.value = 53;*/
+		this.numberLauncher.value = 53;
 
 		this.numberLauncher.style.display = "none";
-		this.container.append(this.numberrLauncher);
+		this.container.append(this.numberLauncher);
 		this.numberLauncher.click();
 
 		//this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
