@@ -84,7 +84,7 @@ export default class ActionButtons extends superViews{
 					let video = this.card.push("Button", FooterElement,"footerVideo", "movie");
 
 					this.card.setStylePictoComponent(FooterElement,"footerVideo","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"footerVideo","color","green");
+					this.card.setStylePictoComponent(FooterElement,"footerVideo","color","orange");
 					this.card.setStylePictoComponent(FooterElement,"footerVideo","alignItems","center");
 
 					video.addEventListener("click",()=>this.StartCamera("video"));
