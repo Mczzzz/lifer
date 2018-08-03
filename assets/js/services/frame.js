@@ -53,6 +53,7 @@ export default class Frame {
 
 	NoteRemove(){
 
+		this.note = this.Lifer.getData("Note","This");
 		this.note.destroyMe();
 		this.note = null;
 
