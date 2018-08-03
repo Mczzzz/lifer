@@ -17,17 +17,17 @@ export default class Text extends superViews{
 
           this.container.contentEditable  = "true";
 
-          this.container.setAttribute("placeholder", "Texte...");
+          this.setAttribute("placeholder", "Texte...");
 
-          this.container.style.fontSize = "10px";
-          this.container.style.margin = "10px";
-          this.container.style.fontWeight = "normal";
-          this.container.style.border = "none";
-          this.container.style.outline = "none";
-          this.container.style.background = "transparent";
-          this.container.style.color = "black";
-          this.container.style.lineHeight = 1;
-          this.container.style.fontFamily   = "'Titillium Web',sans-serif,Arial,sans-serif";
+          this.setStyle("fontSize"   , "10px");
+          this.setStyle("margin"     , "10px");
+          this.setStyle("fontWeight" , "normal");
+          this.setStyle("border"     , "none");
+          this.setStyle("outline"    , "none");
+          this.setStyle("background" , "transparent");
+          this.setStyle("color"      , "black");
+          this.setStyle("lineHeight" , 1);
+          this.setStyle("fontFamily" , "'Titillium Web',sans-serif,Arial,sans-serif");
 
           this.changeColor();
 
