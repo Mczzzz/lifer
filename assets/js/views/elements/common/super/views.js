@@ -23,6 +23,8 @@ export default class views {
 		}else{
 
 			this.parentThis = this.Lifer.getData(path,"This");
+			console.log(path);
+			console.log(this.parentThis);
 			this.parent = this.parentThis.getContainer();
 
 		}
