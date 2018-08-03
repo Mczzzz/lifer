@@ -9,17 +9,6 @@ export default class card extends superViews{
 
           super(parent, MyClass , path);
 
-          this.prefixElement   = "cardElement";
-
-          this.borderWidth     = "1px";
-          this.marginBottom    = "20px";
-          this.borderStyle     = "dashed";
-          this.borderColor     = "#b7b7b7";
-          this.margin          = "10px";
-          this.borderRadius    = "8px";
-          this.backgroundColor = "rgba(149, 146, 255, 0.14)";
-
-
           this.init();
 
      }
@@ -27,13 +16,15 @@ export default class card extends superViews{
 
      init(){
 
-      this.container.style.marginBottom = this.marginBottom;
-      this.container.style.borderWidth  = this.borderWidth;
-      this.container.style.borderStyle  = this.borderStyle;
-      this.container.style.borderColor  = this.borderColor;
-      this.container.style.margin       = this.margin;
-      this.container.style.borderRadius = this.borderRadius;
-      this.container.style.background   = this.backgroundColor;
+      this.prefixElement   = "cardElement";
+
+      this.setStyle("marginBottom" , "20px");
+      this.setStyle("borderWidth " , "1px");
+      this.setStyle("borderStyle " , "dashed");
+      this.setStyle("borderColor " , "#b7b7b7");
+      this.setStyle("margin      " , "10px");
+      this.setStyle("borderRadius" , "8px");
+      this.setStyle("background  " , "rgba(149, 146, 255, 0.14)");
 
      }
 

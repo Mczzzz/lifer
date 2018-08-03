@@ -15,9 +15,9 @@ export default class Main extends superViews{
 
 	init(){
 
-		this.container.style.background = "linear-gradient(45deg, rgb(199, 28, 28) 0%, rgb(216, 216, 216) 100%)";
-		this.container.style.flex = 1;
-		this.container.style.alignItems = "center";
+		this.setStyle("background" , "linear-gradient(45deg, rgb(199, 28, 28) 0%, rgb(216, 216, 216) 100%)");
+		this.setStyle("flex" , 1);
+		this.setStyle("alignItems" , "center");
 
 
 	}

@@ -18,8 +18,8 @@ export default class Elements extends superViews{
      init(){
 
 
-          this.container.style.display = "flex";
-          this.container.style.justifyContent = "space-around";
+          this.setStyle("display" , "flex");
+          this.setStyle("justifyContent" , "space-around");
 
           
 
