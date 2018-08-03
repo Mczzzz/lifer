@@ -1,3 +1,5 @@
+import Moment from 'moment';
+
 import superViews from "../../common/super/views.js";
 
 import Card from "../../common/ui/card.js";

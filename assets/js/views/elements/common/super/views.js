@@ -1,7 +1,5 @@
 import { Lifer } from '../../../../services/Lifer.js';
 
-import Moment from 'moment';
-
 export default class views {
 	
 
