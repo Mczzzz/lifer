@@ -163,7 +163,7 @@ StartNumber(type){
 		this.numberLauncher.step = 3;
 		this.numberLauncher.value = 53;
 
-		this.numberLauncher.style.display = "none";
+		//this.numberLauncher.style.display = "none";
 		this.container.append(this.numberLauncher);
 		this.numberLauncher.click();
 
