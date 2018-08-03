@@ -29,11 +29,11 @@ export default class Objects extends superViews{
 
   initChilds(){
 
-    this.Header = new Header(this.container,"ObjectsHeader",this.path);
+   this.Header = new Header(this.container,"ObjectsHeader",this.path);
 
-    this.Main = new Main(this.container,"ObjectsMain",this.path);
+   // this.Main = new Main(this.container,"ObjectsMain",this.path);
 
-    this.Footer = new Footer(this.container,"ObjectsFooter",this.path);
+   // this.Footer = new Footer(this.container,"ObjectsFooter",this.path);
     
   }
 
