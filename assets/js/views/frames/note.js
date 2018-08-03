@@ -63,7 +63,7 @@ export default class Note extends superViews{
 
 		}
 
-
+		this.Lifer.dumpMe();
 
 		this.initChilds();
 
