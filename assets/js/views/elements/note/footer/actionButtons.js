@@ -29,11 +29,13 @@ export default class ActionButtons extends superViews{
 			let FooterElement   = this.card.setElement("footer");
 			this.card.setStyleElement(FooterElement,"justifyContent","flex-start");
 
-					this.card.push("Button", FooterElement,"footerPhoto", "camera_alt");
+					let camera = this.card.push("Button", FooterElement,"footerPhoto", "camera_alt");
 
 					this.card.setStylePictoComponent(FooterElement,"footerPhoto","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"footerPhoto","color","green");
 					this.card.setStylePictoComponent(FooterElement,"footerPhoto","alignItems","center");
+
+					camera.addEventListener("click",()=>this.StartCamera(true));
 
 
 					this.card.push("Button", FooterElement,"footerGallery", "photo");
@@ -51,6 +53,31 @@ export default class ActionButtons extends superViews{
 
 
 	}
+
+
+	StartCamera(capture){
+
+
+		this.camLauncher = document.createElement("input");
+		this.camLauncher.type = "file";
+		this.camLauncher.accept = "image/*";
+
+		if(capture){
+			this.camLauncher.capture = "camera";	
+		}
+
+		this.camLauncher.style.display = "none";
+		this.container.append(this.camLauncher);
+		this.camLauncher.click();
+
+		this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
+
+
+/*		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'NoteRemove'}});
+		window.dispatchEvent(LinkEvent);
+*/
+	}
+
 
 
 }
