@@ -41,6 +41,7 @@ export default class HeaderButtons extends superViews{
 					this.card.push("Button", HeaderElement,"NoteHeaderLogo", "widgets");
 
 					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderLogo","fontSize","25px");
+					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderLogo","marginRight","0px");
 					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderLogo","color","green");
 					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderLogo","alignItems","center");
 

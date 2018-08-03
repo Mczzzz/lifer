@@ -41,6 +41,7 @@ export default class HeaderButtons extends superViews{
 					this.card.push("Button", HeaderElement,"headerLogo", "widgets");
 
 					this.card.setStylePictoComponent(HeaderElement,"headerLogo","fontSize","25px");
+					this.card.setStylePictoComponent(HeaderElement,"headerLogo","marginRight","0px");
 					this.card.setStylePictoComponent(HeaderElement,"headerLogo","color","green");
 					this.card.setStylePictoComponent(HeaderElement,"headerLogo","alignItems","center");
 
