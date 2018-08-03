@@ -19,36 +19,23 @@ export default class Objects extends superViews{
 
   init(){
 
-    this.container.style.display = "flex";
-    this.container.style.flexDirection = "column";
-    this.container.style.height = "100vh";
+    this.setStyle("display" , "flex");
+    this.setStyle("flexDirection" , "column");
+    this.setStyle("height" , "100vh");
 
-    this.addHeader();
-    this.addMain();
-    this.addFooter();
+    this.initChilds();
 
   }
 
-  addHeader(){
+  initChilds(){
 
     this.Header = new Header(this.container,"ObjectsHeader",this.path);
-    
-  }
-
-  addMain(){
 
     this.Main = new Main(this.container,"ObjectsMain",this.path);
-    
-  }
-
-
-  addFooter(){
 
     this.Footer = new Footer(this.container,"ObjectsFooter",this.path);
     
   }
-
-
 
 
 

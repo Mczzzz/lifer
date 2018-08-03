@@ -10,17 +10,17 @@ export default class up extends superViews{
 
 		super(parent, MyClass,path);
 
-
-		this.container.style.background = "#e8eff7";
-
 		this.init();
 
 	}
 	
 	init(){
 
-		this.container.style.flex = 1;
-		this.container.style.overflowY = "scroll";
+
+		this.setStyle("background" , "#e8eff7");
+
+		this.setStyle("flex" , 1);
+		this.setStyle("overflowY" , "scroll");
 
 		this.initTree();	    
 
@@ -67,18 +67,18 @@ export default class up extends superViews{
 
 	hide(){
 
-		this.container.style.display = "none";
-		this.container.style.padding = "0px";
-		this.container.style.flex = "0";
+		this.setStyle("flex" , 0);
+		this.setStyle("padding" , "0px");
+		this.setStyle("display" , "none");
 
 
 	}
 
 	show(data = false){
 
-		this.container.style.display = "";
-		this.container.style.padding = "10px";
-		this.container.style.flex = "1";
+		this.setStyle("flex" , 1);
+		this.setStyle("padding" , "10px");
+		this.setStyle("display" , "");
 
 		if(data){
 			this.jsTree.openNode(data.data);

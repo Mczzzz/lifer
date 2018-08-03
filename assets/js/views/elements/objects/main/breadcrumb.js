@@ -15,8 +15,8 @@ export default class breadcrumb extends superViews{
 	
 	init(){
 
-		this.container.style.background = "#ffffff";
-		this.container.style.display = "none";
+		this.setStyle("background" , "#ffffff");
+		this.setStyle("display" , "none");
 
 	}
 
@@ -85,13 +85,13 @@ export default class breadcrumb extends superViews{
 
 	hide(){
 
-		this.container.style.display = "none";
+		this.setStyle("display" , "none");
 
 	}
 
 	show(){
 
-		this.container.style.display = "";
+		this.setStyle("display" , "");
 
 	}
 

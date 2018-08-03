@@ -19,21 +19,14 @@ export default class button extends superViews{
 
 	init(){
 
-		this.containerStyle();
+		this.container.style.display = "flex";
+		this.container.style.alignItems = "center";
+		
 		this.createPicto();
 
 	}
 
 
-
-
-	containerStyle(){
-
-		this.container.style.display = "flex";
-		this.container.style.alignItems = "center";
-		
-
-	}
 
 
 	createPicto(){

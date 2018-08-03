@@ -11,8 +11,7 @@ export default class down extends superViews{
 	
 		super(parent, MyClass,path);
 
-		this.container.style.background = "#a5dc86";
-		//this.container.style.transition	   = '0.4s cubic-bezier(0, 0.87, 0.01, 0.87)';
+
 
 
 		this.init();
@@ -21,8 +20,11 @@ export default class down extends superViews{
 
 	init(){
 
-		this.container.style.overflowY = "scroll";
-		this.container.style.display = "none";
+		this.setStyle("background" , "#a5dc86");
+		//this.container.style.transition	   = '0.4s cubic-bezier(0, 0.87, 0.01, 0.87)';
+
+		this.setStyle("overflowY" , "scroll");
+		this.setStyle("display" , "none");
 		
 		this.initTree();
 
@@ -68,9 +70,9 @@ export default class down extends superViews{
 
 	hide(){
 
-		this.container.style.display = "none";
-		this.container.style.flex = null;
-		this.container.style.padding = "0px";
+		this.setStyle("display" , "none");
+		this.setStyle("flex" , null);
+		this.setStyle("padding" , "0px");
 		this.jsTree.hide();
 
 	}
@@ -78,16 +80,16 @@ export default class down extends superViews{
 
 	show(){
 
-		this.container.style.display = "";
-		this.container.style.flex = "1";
-		this.container.style.padding = "10px";
+		this.setStyle("display" , "none");
+		this.setStyle("flex" , 1);
+		this.setStyle("padding" , "10px");
 		this.jsTree.show();
 
 	}
 
 	minForceFlex(){
 
-		this.container.style.flex = null;
+		this.setStyle("flex" , null);
 
 	}
 

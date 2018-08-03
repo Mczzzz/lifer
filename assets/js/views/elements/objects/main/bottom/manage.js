@@ -15,9 +15,9 @@ export default class manage extends superViews{
 
 	init(){
 
-		this.container.style.overflowY= "scroll";
-		this.container.style.fontFamily = "'Titillium Web',sans-serif,Arial,sans-serif"
-		this.container.style.background = "#17802d";
+		this.setStyle("overflowY" , "scroll");
+		this.setStyle("fontFamily" , "'Titillium Web',sans-serif,Arial,sans-serif");
+		this.setStyle("background" , "#17802d");
 
 		this.initChilds();
 

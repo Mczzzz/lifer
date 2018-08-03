@@ -20,10 +20,10 @@ export default class list extends superViews{
 
 		this.collection = new LoaderCollection('ObjectInfos');
 
-		this.container.style.display = "flex";
-		this.container.style.flexDirection = "column";
-		this.container.style.maxHeight = "150px";
-		this.container.style.height = null;
+		this.setStyle("display" , "flex");
+		this.setStyle("flexDirection" , "column");
+		this.setStyle("maxHeight" , "150px");
+		this.setStyle("height" , null);
 
 	}
 
@@ -70,15 +70,15 @@ export default class list extends superViews{
 	//PUBLICS
 
 	show(){
-		console.log('in show list');
-		this.container.style.height = null;
+
+		this.setStyle("height" , null);
 		
 	}
 
 
 	hide(){
-		console.log('in hide list');
-		this.container.style.height = "0px";
+
+		this.setStyle("height" , "0px");
 		
 	}
 
