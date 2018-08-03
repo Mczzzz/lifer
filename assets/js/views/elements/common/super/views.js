@@ -1,5 +1,7 @@
 import { Lifer } from '../../../../services/Lifer.js';
 
+import Moment from 'moment';
+
 export default class views {
 	
 
@@ -10,7 +12,7 @@ export default class views {
 
 
 		this.Lifer = Lifer;
-		
+		this.Moment = Moment();		
 
 		if(path == null){
 

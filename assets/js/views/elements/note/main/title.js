@@ -1,4 +1,3 @@
-import Moment from 'moment';
 
 import superViews from "../../common/super/views.js";
 
@@ -24,7 +23,7 @@ export default class Title extends superViews{
 		if(TheNote.note.id === false){
 
 			this.data = {};
-			this.data.update = Moment().format('llll');
+			this.data.update = this.Moment.format('llll');
 			this.data.name = "";
 
 		}else{
