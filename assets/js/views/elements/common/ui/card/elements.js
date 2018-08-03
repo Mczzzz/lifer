@@ -26,9 +26,9 @@ export default class Elements extends superViews{
      }
 
 
-     setStyleComponent(component, property, value){
+     setStyleComponent(component, property, value,justClassVar = false){
 
-        this[component].setStyle(property, value);
+        this[component].setStyle(property, value,justClassVar);
 
 
      }

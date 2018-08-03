@@ -76,11 +76,14 @@ export default class views {
 	}
 
 
-	setStyle(property,value){
+	setStyle(property,value,justClassVar = false){
 
      	this[property] = value;
 
-        this.container.style[property] = this[property];
+     	if(!justClassVar){
+     		this.container.style[property] = this[property];
+     	}
+        
 
     }
 

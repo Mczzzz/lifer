@@ -57,7 +57,7 @@ export default class card extends superViews{
      }
 
 
-     setStyleElement(element,property,value){
+     setStyleElement(element,property,value,){
 
           this[element].setStyle(property,value);
 
@@ -65,9 +65,9 @@ export default class card extends superViews{
 
 
 
-     setStyleComponent(element,component, property, value){
+     setStyleComponent(element,component, property, value,justClassVar = false){
 
-          this[element].setStyleComponent(component, property, value);
+          this[element].setStyleComponent(component, property, value,justClassVar);
 
      }
 
