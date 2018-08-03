@@ -16,7 +16,7 @@ export default class views {
 
 		this.Lifer.addMe(this.path);
 
-		if(path === null){
+		if(path == null){
 
 			this.parent = document.body;
 
