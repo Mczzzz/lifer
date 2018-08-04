@@ -18,11 +18,12 @@ let css = document.createElement("style");
 
 
 //GROS HACK POUR ANDROID
-alert(navigator.appName);
+//alert(navigator.appName);
 
 window.addEventListener("click", function(e){
 
 	document.documentElement.webkitRequestFullscreen();
+	alert(document.fullscreenEnabled);
 
 });
 
