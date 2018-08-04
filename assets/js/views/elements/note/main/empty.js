@@ -40,10 +40,12 @@ export default class Empty extends superViews{
 
 		this.card.push("Button", EmptyElement,"mainNewButton","arrow_forward");
 
+		this.card.setStyleComponent(EmptyElement,"mainNewButton","alignItems","flex-end");
+
 		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","fontSize","25px");
 		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","marginRight","0px");
 		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","color","green");
-		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","alignItems","flex-end");
+
 
 
 
