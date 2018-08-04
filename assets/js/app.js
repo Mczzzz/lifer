@@ -17,18 +17,26 @@ let css = document.createElement("style");
 
 
 
-//GROS HACK POUR ANDROID
-//alert(navigator.appName);
+////////////////////////////////////////////////////////
+//GROS HACK POUR FAIRE DU FULL SCREEN
 
 window.addEventListener("click", function(e){
 
+	//Chrome, Opéra, Safari
 	document.documentElement.webkitRequestFullscreen();
-	alert(document.webkitFullscreenEnabled);
+
+	if(!document.webkitFullscreenEnabled){
+
+		//Firefox
+		document.documentElement.mozRequestFullScreen();
+
+	}
 
 });
 
-let LinkEvent = new CustomEvent('click', {'detail' : {'frame' : 'Home'}});
+let LinkEvent = new CustomEvent('click', {'detail' : {}});
  window.dispatchEvent(LinkEvent);
+///////////////////////////////////////////////////////////
 
 
 
