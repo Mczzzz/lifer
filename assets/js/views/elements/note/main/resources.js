@@ -85,7 +85,7 @@ export default class Resources extends superViews{
 
 	createCard(Resource){
 
-
+		this.setStyle("flex" , "");
 
 		let card = new Card('NoteCardResource_New', this.path);
 		
