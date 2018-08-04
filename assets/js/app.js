@@ -23,7 +23,7 @@ let css = document.createElement("style");
 window.addEventListener("click", function(e){
 
 	document.documentElement.webkitRequestFullscreen();
-	alert(document.fullscreenEnabled);
+	alert(document.webkitFullscreenEnabled);
 
 });
 
