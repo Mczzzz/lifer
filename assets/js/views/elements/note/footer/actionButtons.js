@@ -197,7 +197,7 @@ StartNumber(type){
 		this.container.append(this.camLauncher);
 		this.camLauncher.click();
 
-		this.camLauncher.addEventListener("change", ()=>this.ServImgLoader(this.camLauncher.files[0]));
+		this.camLauncher.addEventListener("change", ()=>this.ServImgLoader.importPict(this.camLauncher.files[0]));
 
 
 /*		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'NoteRemove'}});
