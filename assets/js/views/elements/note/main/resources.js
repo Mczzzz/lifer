@@ -87,25 +87,28 @@ export default class Resources extends superViews{
 
 		this.setStyle("flex" , "");
 //Mise a jour du Title update
+		let date = new Date();
+		let timestamp = date.getTime();
 
-		let card = new Card('NoteCardResource_New', this.path);
+
+		let card = new Card('NoteCardResource_New_'+timestamp, this.path);
 		
 //A ne pas oublié sinon ca va merder
 //card.setId();
 
 		let carWidth = card.getWidth();
 
-		let HeaderElement = card.setElement("header_new");
+		let HeaderElement = card.setElement("header_new_"+timestamp);
 		card.setStyleElement(HeaderElement,"justifyContent","flex-end");
 
-				card.push("Text",HeaderElement,"update_new",this.Moment.format('llll'));
+				card.push("Text",HeaderElement,"update_new_"+timestamp,this.Moment.format('llll'));
 
-				card.setStyleComponent(HeaderElement,"update_new","fontSize","9px");
-				card.setStyleComponent(HeaderElement,"update_new","color","grey");
-				card.setStyleComponent(HeaderElement,"update_new","margin","0px 5px 2px 0px");
-				card.setStyleComponent(HeaderElement,"update_new","fontWeight","normal");
+				card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"fontSize","9px");
+				card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"color","grey");
+				card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"margin","0px 5px 2px 0px");
+				card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"fontWeight","normal");
 
-		let MainElement = card.setElement("main_new");
+		let MainElement = card.setElement("main_new_"+timestamp);
 
 		if(Resource.type == 3){
 
@@ -117,12 +120,12 @@ export default class Resources extends superViews{
 
 			card.setStyleElement(MainElement,"justifyContent","flex-start");
 
-			card.push("Text",MainElement,"main_new", Resource.text);
+			card.push("Text",MainElement,"main_new_"+timestamp, Resource.text);
 
-			card.setStyleComponent(MainElement,"main_new","fontSize","15px");
-			card.setStyleComponent(MainElement,"main_new","color","black");
-			card.setStyleComponent(MainElement,"main_new","margin","0px 5px 5px 5px");
-			card.setStyleComponent(MainElement,"main_new","fontWeight","normal");
+			card.setStyleComponent(MainElement,"main_new_"+timestamp,"fontSize","15px");
+			card.setStyleComponent(MainElement,"main_new_"+timestamp,"color","black");
+			card.setStyleComponent(MainElement,"main_new_"+timestamp,"margin","0px 5px 5px 5px");
+			card.setStyleComponent(MainElement,"main_new_"+timestamp,"fontWeight","normal");
 
 		}
 
