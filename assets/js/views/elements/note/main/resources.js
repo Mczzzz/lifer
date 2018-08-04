@@ -85,8 +85,8 @@ export default class Resources extends superViews{
 
 	createCard(Resource){
 
-//
-		//on s'assure que le flex de noteMainTitle est bien supprimé sinon on le fait.
+		//on s'assure que le flex de noteMainTitle est bien supprimé sinon on le fait
+		//car sinon le Title déborde sur le header de la Note.
 		let NoteMainTitle = this.Lifer.getData("Note/mainNote/noteMainTitle", "This");
 		if(NoteMainTitle.getContainer().style.display == "flex"){
 			NoteMainTitle.getContainer().style.display = null;
@@ -122,10 +122,7 @@ export default class Resources extends superViews{
 
 				//let path = "/object/infos/resources/"+Resource.objectId+"/"+Resource.objectTreeId+"/"+Resource.objectInfoId+"/"+Resource.id;
 
-				let DataImage = {};
-				DataImage.data = Resource.data;
-				DataImage.capture = true;
-				card.push("Image", MainElement, "main_"+timestamp, DataImage);
+				card.push("Image", MainElement, "main_"+timestamp, Resource);
 
 		}else{
 

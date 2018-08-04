@@ -36,28 +36,26 @@ class ImageLoader {
 
 	getOrientation(pict){
 
-		EXIF(this.elt,(err,orientation) => this.rotateImg(err,orientation,pict));
+		EXIF(this.elt,(err,orientation) => this.sendImg(err,orientation,pict));
 
 	}
 
 
 
-	rotateImg(err,orientation,pict){
+	sendImg(err,orientation,pict){
 
-
-		//j'envoi à ressource l'image ainsi que les infos necessaires
-		//tous le code en dessous vas passé côté card
+		let res = {};
+		res.data = {};
+		res.data.pict = pict;
+		res.data.ObjImg = this.imgObj;
+		res.data.orientation = orientation;
+		res.type = 3;
+		res.capture = true;
 
 
 		let NoteResource = Lifer.getData("Note/mainNote/noteMainResources", "This");
 
-		let res = {};
-		res.data = pict;
-		res.type = 3;
-
 		NoteResource.createCard(res);
-		//envoyer en sauvegarde background
-		//this.dispatcher("","photo",this.camLauncher.files[0]);
 
 	}
 

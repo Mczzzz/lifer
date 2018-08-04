@@ -158,7 +158,7 @@ submit	Defines a submit button
 
 StartNumber(type){
 
-		//document.documentElement.webkitRequestFullscreen();
+//il faut changer le type de empty
 		this.numberLauncher = document.createElement("input");
 		this.numberLauncher.type = type;
 
@@ -171,12 +171,7 @@ StartNumber(type){
 		this.container.append(this.numberLauncher);
 		this.numberLauncher.click();
 
-		//this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
 
-
-/*		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'NoteRemove'}});
-		window.dispatchEvent(LinkEvent);
-*/
 	}
 
 
@@ -200,9 +195,6 @@ StartNumber(type){
 		this.camLauncher.addEventListener("change", ()=>this.ServImgLoader.importPict(this.camLauncher.files[0]));
 
 
-/*		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'NoteRemove'}});
-		window.dispatchEvent(LinkEvent);
-*/
 	}
 
 

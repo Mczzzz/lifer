@@ -35,52 +35,5 @@ export default class Footer extends superViews{
 
 	}
 
-/*		let Photo  = new Button(this.container,"inputPhoto",this.path);
-		Photo.setPicto("camera_alt");
-		Photo.setStyle("marginLeft",15);
-
-		Photo.getElement().addEventListener("click", (e)=>this.launchPict(true));
-
-
-
-		let Gallery = new Button(this.container,"inputGallery",this.path);
-		Gallery.setPicto("photo");
-
-		Gallery.getElement().addEventListener("click", (e)=>this.launchPict());
-
-
-
-
-		let OneNumber = new Button(this.container,"inputNumber",this.path);
-		OneNumber.setPicto("looks_5");*/
-
-
-
-
-
-
-
-/*	launchPict(capture = false){
-
-		this.camLauncher = document.createElement("input");
-		this.camLauncher.type = "file";
-		this.camLauncher.accept = "image/*";
-
-		if(capture){
-			this.camLauncher.capture = "camera";	
-		}
-
-		this.camLauncher.style.display = "none";
-		this.container.append(this.camLauncher);
-		this.camLauncher.click();
-
-		this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
-	}	*/
-
-
-
-
-
-
 
 }
