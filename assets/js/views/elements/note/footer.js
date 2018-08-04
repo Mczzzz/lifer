@@ -22,7 +22,7 @@ export default class Footer extends superViews{
 		this.setStyle("display", "flex");
 		this.setStyle("alignItems" , "center");
 		this.setStyle("color" , "");
-
+		
 		this.initChilds();
 
 	}
