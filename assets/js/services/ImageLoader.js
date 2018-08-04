@@ -1,5 +1,7 @@
 import EXIF             from 'exif-orientation';
 
+import { Lifer } from './Lifer.js';
+
 class ImageLoader {
 	
 
@@ -12,7 +14,7 @@ class ImageLoader {
 	importPict(elt){
 
 		this.elt = elt;
-		
+
 		let reader = new FileReader();
 		reader.readAsDataURL(elt);
 
@@ -43,46 +45,17 @@ class ImageLoader {
 	rotateImg(err,orientation,pict){
 
 
-		this.imgDiv = document.createElement("div");
-		this.divCore.append(this.imgDiv);
-		this.imgDiv.style.display = "flex";
-		this.imgDiv.style.borderRadius = "8px";
-		this.imgDiv.style.margin = "10px";
-
-		this.img = document.createElement("img");
-		this.img.classList.add("obj");
-		this.imgDiv.prepend(this.img); 
-
-		let RatioPhoto = this.imgObj.naturalWidth / this.imgObj.naturalHeight;
-
-		this.img.src = pict;
-		this.img.style.width  = "100%";
-		this.img.style.borderRadius = "8px";
-		this.img.height = this.img.offsetWidth  / RatioPhoto;
-		
-
-		if(orientation.rotate == 90){
-
-			let ImgHeight = this.img.offsetWidth;
-			let ImgWidth = this.img.offsetWidth * RatioPhoto;
-
-			let decalX = ((ImgWidth - this.img.offsetWidth) / 2);
-			//let decalY = ((ImgWidth - this.img.offsetWidth) / 2);
-
-			this.img.style.width = "";
-			this.img.width = ImgWidth;
-			this.img.height = ImgHeight;
-
-			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg) translate('+decalX+'px,'+decalX+'px)';
-
-			this.imgDiv.style.minHeight = ImgWidth+"px";
-
-		}else{
-
-			this.imgDiv.style.minHeight = this.img.height+"px";
-		}
+		//j'envoi à ressource l'image ainsi que les infos necessaires
+		//tous le code en dessous vas passé côté card
 
 
+		let NoteResource = this.Lifer.getData("Note/mainNote/noteMainResources", "This");
+
+		let res = {};
+		res.data = pict;
+		res.type = 3;
+
+		NoteResource.createCard(res);
 		//envoyer en sauvegarde background
 		//this.dispatcher("","photo",this.camLauncher.files[0]);
 
