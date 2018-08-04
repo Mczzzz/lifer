@@ -55,6 +55,7 @@ export default class Empty extends superViews{
 	saveResource(TheSaveButton){
 
 		console.log("in save Resource");
+		console.log(TheSaveButton);
 		let NoteResource = this.Lifer.getData("Note/mainNote/noteMainResources", "This");
 
 		let res = {};
