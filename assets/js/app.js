@@ -4,7 +4,6 @@ import Controller from './controller/Controller.js';
 let name = "app";
 Lifer.addMe(name);
 
-
 let css = document.createElement("style");
 			css.type = "text/css";
 			css.id = "divContentEditable_css_style";
@@ -14,6 +13,17 @@ let css = document.createElement("style");
 							`;
 
 		document.head.appendChild(css);
+
+
+window.addEventListener("click", function(e){
+
+	document.documentElement.webkitRequestFullscreen();
+
+});
+
+let LinkEvent = new CustomEvent('click', {'detail' : {'frame' : 'Home'}});
+ window.dispatchEvent(LinkEvent);
+
 
 
 const LiferApp = new Controller(name);
