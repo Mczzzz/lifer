@@ -93,10 +93,10 @@ export default class Title extends superViews{
 
 		if (e.key === "Enter") {
 
-			let toFocus = document.getElementsByClassName("noteEltTextmainNewInput");
+			let toFocus = this.Lifer.getData("Note/mainNote/noteMainEmpty/NoteEmptyCardText/cardElementEmpty/noteEltTextmainNewInput", "This");
 
 			toFocus[0].focus();
-
+			this.setStyle("display" , "");
 			//Il faut gérer le saut de ligne maintenant
 
     	}
