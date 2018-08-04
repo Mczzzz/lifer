@@ -15,6 +15,11 @@ let css = document.createElement("style");
 		document.head.appendChild(css);
 
 
+
+
+//GROS HACK POUR ANDROID
+alert(navigator.appName);
+
 window.addEventListener("click", function(e){
 
 	document.documentElement.webkitRequestFullscreen();
