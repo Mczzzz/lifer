@@ -85,6 +85,12 @@ export default class Resources extends superViews{
 
 	createCard(Resource){
 
+//
+		//on s'assure que le flex de noteMainTitle est bien supprimé sinon on le fait.
+		let NoteMainTitle = this.Lifer.getData("Note/mainNote/noteMainTitle", "This");
+		console.log(NoteMainTitle.getContainer().style.display);
+
+
 		this.setStyle("flex" , "");
 //Mise a jour du Title update
 		let date = new Date();
