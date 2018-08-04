@@ -97,7 +97,7 @@ export default class Title extends superViews{
 
 			toFocus.getContainer().focus();
 			this.setStyle("display" , "");
-			//Il faut gérer le saut de ligne maintenant
+//Il faut gérer le saut de ligne maintenant
 
     	}
 
