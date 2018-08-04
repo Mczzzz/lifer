@@ -119,7 +119,7 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerNumbers","color","blue");
 					this.card.setStylePictoComponent(FooterElement,"footerNumbers","alignItems","center");
 
-					//number.addEventListener("click",()=>this.StartNumber("range"));
+					number.addEventListener("click",()=>this.StartNumber("range"));
 /*
 button	Defines a clickable button (mostly used with a JavaScript to activate a script)
 checkbox	Defines a checkbox
@@ -154,8 +154,8 @@ submit	Defines a submit button
 
 StartNumber(type){
 
-
-		this.numberLauncher = document.createElement("input");
+		document.documentElement.webkitRequestFullscreen();
+/*		this.numberLauncher = document.createElement("input");
 		this.numberLauncher.type = type;
 
 		this.numberLauncher.min = 5;
@@ -165,7 +165,7 @@ StartNumber(type){
 
 		//this.numberLauncher.style.display = "none";
 		this.container.append(this.numberLauncher);
-		this.numberLauncher.click();
+		this.numberLauncher.click();*/
 
 		//this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
 
