@@ -32,7 +32,8 @@ export default class Image extends superViews{
           let img = document.createElement("img");
           this.container.append(img);
  
-          img.src = path +  "/" + this.parent.offsetWidth;
+          img.src = path;
+          //img.src = path +  "/" + this.parent.offsetWidth;
 
      }
 
