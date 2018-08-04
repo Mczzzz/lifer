@@ -49,7 +49,7 @@ class ImageLoader {
 		//tous le code en dessous vas passé côté card
 
 
-		let NoteResource = this.Lifer.getData("Note/mainNote/noteMainResources", "This");
+		let NoteResource = Lifer.getData("Note/mainNote/noteMainResources", "This");
 
 		let res = {};
 		res.data = pict;
