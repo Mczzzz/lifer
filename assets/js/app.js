@@ -4,6 +4,7 @@ import Controller from './controller/Controller.js';
 let name = "app";
 Lifer.addMe(name);
 
+let webkit = document.getElementById("webkit");
 document.documentElement.webkitrequestFullscreen();
 
 let css = document.createElement("style");
