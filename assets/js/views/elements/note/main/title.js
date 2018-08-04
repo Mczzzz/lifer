@@ -17,6 +17,10 @@ export default class Title extends superViews{
 
 	init(){
 
+		this.setStyle("display" , "flex");
+		this.setStyle("flexDirection" , "column");
+		this.setStyle("alignItems" , "flex-end");
+
 
 		let TheNote = this.Lifer.getData("Note","This");
 		
