@@ -79,6 +79,12 @@ export default class Title extends superViews{
 					this.card.setStyleComponent(MainElement,"title","fontWeight","bold");
 
 					TheTitle.addEventListener("keydown", (e)=>this.changeFocus(e));
+
+
+
+		if(TheNote.note.id === false){
+			MainElement.focus();
+		}
 	}
 
 
