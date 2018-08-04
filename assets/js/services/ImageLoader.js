@@ -7,10 +7,10 @@ class ImageLoader {
 
 
 
-	importPict(e){
+	importPict(elt){
 
 		let reader = new FileReader();
-		reader.readAsDataURL(this.camLauncher.files[0]);
+		reader.readAsDataURL(elt);
 
 		reader.onloadend = ()=> this.loadPict(reader.result);
 

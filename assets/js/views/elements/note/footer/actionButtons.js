@@ -2,6 +2,8 @@ import superViews from "../../common/super/views.js";
 
 import Card from "../../common/ui/card.js";
 
+import { ImgLoader } from '../../../../services/ImageLoader.js';
+
 export default class ActionButtons extends superViews{
 	
 
@@ -9,8 +11,10 @@ export default class ActionButtons extends superViews{
 
 		super( MyClass , path);
 
+		this.ServImgLoader = ImgLoader;
 
 		this.init();
+
 		
 	}
 
@@ -193,7 +197,7 @@ StartNumber(type){
 		this.container.append(this.camLauncher);
 		this.camLauncher.click();
 
-		this.camLauncher.addEventListener("change", (e)=>this.importPict(e));
+		this.camLauncher.addEventListener("change", ()=>this.ServImgLoader(this.camLauncher.files[0]));
 
 
 /*		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'NoteRemove'}});
