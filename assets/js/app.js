@@ -5,7 +5,7 @@ let name = "app";
 Lifer.addMe(name);
 
 let webkit = document.getElementById("webkit");
-document.documentElement.webkitrequestFullscreen();
+document.documentElement.webkitRequestFullscreen();
 
 let css = document.createElement("style");
 			css.type = "text/css";
