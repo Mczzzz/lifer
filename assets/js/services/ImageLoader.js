@@ -1,3 +1,5 @@
+import EXIF             from 'exif-orientation';
+
 class ImageLoader {
 	
 
@@ -9,6 +11,8 @@ class ImageLoader {
 
 	importPict(elt){
 
+		this.elt = elt;
+		
 		let reader = new FileReader();
 		reader.readAsDataURL(elt);
 
@@ -30,7 +34,7 @@ class ImageLoader {
 
 	getOrientation(pict){
 
-		EXIF(this.camLauncher.files[0],(err,orientation) => this.rotateImg(err,orientation,pict));
+		EXIF(this.elt,(err,orientation) => this.rotateImg(err,orientation,pict));
 
 	}
 
@@ -80,7 +84,7 @@ class ImageLoader {
 
 
 		//envoyer en sauvegarde background
-		this.dispatcher("","photo",this.camLauncher.files[0]);
+		//this.dispatcher("","photo",this.camLauncher.files[0]);
 
 	}
 

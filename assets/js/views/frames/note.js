@@ -1,4 +1,4 @@
-import EXIF             from 'exif-orientation';
+
 
 import LoaderCollection from '../../services/LoaderCollection.js';
 
