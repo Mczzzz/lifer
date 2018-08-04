@@ -17,9 +17,7 @@ export default class Title extends superViews{
 
 	init(){
 
-		this.setStyle("display" , "flex");
-		this.setStyle("flexDirection" , "column");
-		this.setStyle("alignItems" , "flex-end");
+
 
 
 		let TheNote = this.Lifer.getData("Note","This");
@@ -30,6 +28,8 @@ export default class Title extends superViews{
 			this.data.update = this.Moment.format('llll');
 			this.data.name = "";
 
+			this.setStyle("display" , "flex");
+			this.setStyle("alignItems" , "flex-end");
 			this.setStyle("flex", 1);
 
 		}else{
@@ -50,6 +50,7 @@ export default class Title extends superViews{
 		this.card.setStyle("padding", "10px");
 		this.card.setStyle("boxShadow", "0px 2px 12px #BBB");
 		this.card.setStyle("background", "white");
+		this.card.setStyle("flex", "1");
 
 
 
