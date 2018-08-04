@@ -86,11 +86,12 @@ export default class Resources extends superViews{
 	createCard(Resource){
 
 		this.setStyle("flex" , "");
+//Mise a jour du Title update
 
 		let card = new Card('NoteCardResource_New', this.path);
 		
-		//A ne pas oublié sinon ca va merder
-		//card.setId();
+//A ne pas oublié sinon ca va merder
+//card.setId();
 
 		let carWidth = card.getWidth();
 

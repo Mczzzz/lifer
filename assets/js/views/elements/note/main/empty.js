@@ -30,7 +30,7 @@ export default class Empty extends superViews{
 		let EmptyElement = this.card.setElement("Empty");
 		this.card.setStyleElement(EmptyElement,"justifyContent","flex-start");
 
-		let MyText = this.card.push("Text", EmptyElement,"mainNewInput", "");
+		let TheTextElt = this.card.push("Text", EmptyElement,"mainNewInput", "");
 
 		this.card.setStyleComponent(EmptyElement,"mainNewInput","fontSize","18.5px");
 		this.card.setStyleComponent(EmptyElement,"mainNewInput","color","black",true);
@@ -46,20 +46,20 @@ export default class Empty extends superViews{
 		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","marginRight","0px");
 		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","color","green");
 
-		TheSaveButton.addEventListener("click",()=>this.saveResource(MyText));
+		TheSaveButton.addEventListener("click",()=>this.saveResource(TheTextElt));
 
 
 	}
 
 
-	saveResource(TheSaveButton){
+	saveResource(TheTextElt){
 
-		console.log("in save Resource");
-		console.log(TheSaveButton);
 		let NoteResource = this.Lifer.getData("Note/mainNote/noteMainResources", "This");
 
 		let res = {};
-		res.text = TheSaveButton.innerHTML;
+		res.text = TheTextElt.innerHTML;
+
+		TheTextElt.innerHTML = "";
 
 		NoteResource.createCard(res);
 
