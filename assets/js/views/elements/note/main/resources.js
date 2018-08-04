@@ -60,18 +60,18 @@ export default class Resources extends superViews{
 
 					card.push("Image", MainElement, "main_"+Resource.id, path);
 
-				}else{
+			}else{
 
-					card.setStyleElement(MainElement,"justifyContent","flex-start");
+				card.setStyleElement(MainElement,"justifyContent","flex-start");
 
-					card.push("Text",MainElement,"main_"+Resource.id, Resource.text);
+				card.push("Text",MainElement,"main_"+Resource.id, Resource.text);
 
-					card.setStyleComponent(MainElement,"main_"+Resource.id,"fontSize","15px");
-					card.setStyleComponent(MainElement,"main_"+Resource.id,"color","black");
-					card.setStyleComponent(MainElement,"main_"+Resource.id,"margin","0px 5px 5px 5px");
-					card.setStyleComponent(MainElement,"main_"+Resource.id,"fontWeight","normal");
+				card.setStyleComponent(MainElement,"main_"+Resource.id,"fontSize","15px");
+				card.setStyleComponent(MainElement,"main_"+Resource.id,"color","black");
+				card.setStyleComponent(MainElement,"main_"+Resource.id,"margin","0px 5px 5px 5px");
+				card.setStyleComponent(MainElement,"main_"+Resource.id,"fontWeight","normal");
 
-				}
+			}
 
 
 
@@ -81,6 +81,66 @@ export default class Resources extends superViews{
 
 
 	}
+
+
+	createCard(Resource){
+
+
+
+		let card = new Card('NoteCardResource_New', this.path);
+		
+		//A ne pas oublié sinon ca va merder
+		//card.setId();
+
+		let carWidth = card.getWidth();
+
+		let HeaderElement = card.setElement("header_new");
+		card.setStyleElement(HeaderElement,"justifyContent","flex-end");
+
+				card.push("Text",HeaderElement,"update_new",this.Moment.format('llll'));
+
+				card.setStyleComponent(HeaderElement,"update_new","fontSize","9px");
+				card.setStyleComponent(HeaderElement,"update_new","color","grey");
+				card.setStyleComponent(HeaderElement,"update_new","margin","0px 5px 2px 0px");
+				card.setStyleComponent(HeaderElement,"update_new","fontWeight","normal");
+
+		let MainElement = card.setElement("main_new");
+
+		if(Resource.type == 3){
+
+/*				let path = "/object/infos/resources/"+Resource.objectId+"/"+Resource.objectTreeId+"/"+Resource.objectInfoId+"/"+Resource.id;
+
+				card.push("Image", MainElement, "main_"+Resource.id, path);*/
+
+		}else{
+
+			card.setStyleElement(MainElement,"justifyContent","flex-start");
+
+			card.push("Text",MainElement,"main_new", Resource.text);
+
+			card.setStyleComponent(MainElement,"main_new","fontSize","15px");
+			card.setStyleComponent(MainElement,"main_new","color","black");
+			card.setStyleComponent(MainElement,"main_new","margin","0px 5px 5px 5px");
+			card.setStyleComponent(MainElement,"main_new","fontWeight","normal");
+
+		}
+
+
+
+	}
+
+
+
+
+
+	//PUBLICS
+	addResource(){
+
+
+	}
+
+
+
 
 
 }

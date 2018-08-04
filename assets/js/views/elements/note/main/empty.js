@@ -46,15 +46,21 @@ export default class Empty extends superViews{
 		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","marginRight","0px");
 		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","color","green");
 
-		TheSaveButton.addEventListener("click",()=>this.saveRessource());
+		TheSaveButton.addEventListener("click",()=>this.saveResource(TheSaveButton));
 
 
 	}
 
 
-	saveRessource(){
+	saveResource(TheSaveButton){
 
-		
+		let NoteResource = this.Lifer.getData("Note/mainNote/noteMainResources", "This");
+
+		let res = {};
+		res.text = TheSaveButton.innerHTML;
+
+		NoteResource.createCard(res);
+
 	}
 
 
