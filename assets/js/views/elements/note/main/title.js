@@ -69,7 +69,7 @@ export default class Title extends superViews{
 			let MainElement   = this.card.setElement("main");
 			this.card.setStyleElement(MainElement,"justifyContent","flex-start");
 
-					this.card.push("Text", MainElement,"title", this.data.name);
+					let TheTitle = this.card.push("Text", MainElement,"title", this.data.name);
 
 					this.card.setAttributeComponent(MainElement,"title","placeholder","Titre...");
 
@@ -77,6 +77,20 @@ export default class Title extends superViews{
 					this.card.setStyleComponent(MainElement,"title","color","black",true);
 					this.card.setStyleComponent(MainElement,"title","margin","0px 5px 5px 5px");
 					this.card.setStyleComponent(MainElement,"title","fontWeight","bold");
+
+					TheTitle.addEventListener("keyup", (e)=>this.changeFocus(e));
+	}
+
+
+
+	changeFocus(e){
+
+		if (e.key === "Enter") {
+
+			let toFocus = document.getElementsByClassName("noteEltTextmainNewInput");
+
+			toFocus[0].focus();
+    	}
 
 
 	}
