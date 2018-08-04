@@ -38,7 +38,7 @@ export default class Empty extends superViews{
 		this.card.setStyleComponent(EmptyElement,"mainNewInput","fontWeight","normal");
 		this.card.setStyleComponent(EmptyElement,"mainNewInput","flex",1);
 
-		this.card.push("Button", EmptyElement,"mainNewButton","arrow_forward");
+		let TheSaveButton = this.card.push("Button", EmptyElement,"mainNewButton","arrow_forward");
 
 		this.card.setStyleComponent(EmptyElement,"mainNewButton","alignItems","flex-end");
 
@@ -46,9 +46,15 @@ export default class Empty extends superViews{
 		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","marginRight","0px");
 		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","color","green");
 
+		TheSaveButton.addEventListener("click",()=>this.saveRessource());
 
 
+	}
 
+
+	saveRessource(){
+
+		
 	}
 
 

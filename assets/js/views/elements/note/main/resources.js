@@ -16,6 +16,10 @@ export default class Resources extends superViews{
 
 	init(){
 
+		this.setStyle("overflowY" , "scroll");
+		this.setStyle("flex" , 1);
+
+
 		let TheNote = this.Lifer.getData("Note","This");
 		
 		if(TheNote.note.id === false) return false;
@@ -23,8 +27,7 @@ export default class Resources extends superViews{
 
 		this.data = this.Lifer.getData(this.path,"Resources",2);
 
-		this.setStyle("overflowY" , "scroll");
-		this.setStyle("flex" , 1);
+
 
 
 		for(let Resource of this.data){
