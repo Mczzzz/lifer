@@ -90,7 +90,7 @@ export default class Title extends superViews{
 			let toFocus = document.getElementsByClassName("noteEltTextmainNewInput");
 
 			toFocus[0].focus();
-			toFocus[0].innertHTML = "";
+			toFocus[0].innerHTML = "";
     	}
 
 
