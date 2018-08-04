@@ -88,7 +88,9 @@ export default class Resources extends superViews{
 //
 		//on s'assure que le flex de noteMainTitle est bien supprimé sinon on le fait.
 		let NoteMainTitle = this.Lifer.getData("Note/mainNote/noteMainTitle", "This");
-		console.log(NoteMainTitle.getContainer().style.display);
+		if(NoteMainTitle.getContainer().style.display == "flex"){
+			NoteMainTitle.getContainer().style.display = null;
+		}
 
 
 		this.setStyle("flex" , "");
