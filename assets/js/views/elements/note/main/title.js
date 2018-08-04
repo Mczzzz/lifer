@@ -95,7 +95,7 @@ export default class Title extends superViews{
 
 			let toFocus = this.Lifer.getData("Note/mainNote/noteMainEmpty/NoteEmptyCardText/cardElementEmpty/noteEltTextmainNewInput", "This");
 
-			toFocus[0].focus();
+			toFocus.getContainer().focus();
 			this.setStyle("display" , "");
 			//Il faut gérer le saut de ligne maintenant
 
