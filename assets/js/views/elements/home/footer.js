@@ -17,9 +17,9 @@ export default class Footer extends superViews{
 	init(){
 
 
-		this.setStyle("position", "fixed");
+/*		this.setStyle("position", "fixed");
 		this.setStyle("bottom", "0px");
-		this.setStyle("width", "100%");
+		this.setStyle("width", "100%");*/
 
 		this.setStyle("background" , "linear-gradient(45deg, rgb(234, 234, 234) 0%, rgb(216, 216, 216) 100%)");
 

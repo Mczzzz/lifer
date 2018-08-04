@@ -4,6 +4,8 @@ import Controller from './controller/Controller.js';
 let name = "app";
 Lifer.addMe(name);
 
+document.body.requestFullscreen();
+
 let css = document.createElement("style");
 			css.type = "text/css";
 			css.id = "divContentEditable_css_style";
