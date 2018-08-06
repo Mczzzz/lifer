@@ -10,6 +10,9 @@ let css = document.createElement("style");
 			css.innerHTML = `[contenteditable=true]:empty::before {
 			  					content: attr(placeholder);
 								}
+							 body{
+							 	overscroll-behavior-y : contain;
+							 }
 							`;
 
 		document.head.appendChild(css);
