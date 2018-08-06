@@ -141,7 +141,14 @@ export default class Resources extends superViews{
 
 		}
 
+		//calcul de la nouvelle hauteur du container
+		let containerHeight = this.container.scrollHeight;
+		console.log(this.container.height);
+		console.log(this.container.style.height);
+		console.log(this.container.scrollHeight);
 
+
+		this.setStyle("scrollTop",containerHeight);
 
 	}
 
