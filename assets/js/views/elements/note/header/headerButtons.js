@@ -35,7 +35,7 @@ export default class HeaderButtons extends superViews{
 					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderBack","color","green");
 					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderBack","alignItems","center");
 
-					HeaderBackButton.addEventListener("click",()=>this.CloseMe());
+					HeaderBackButton.getContainer().addEventListener("click",()=>this.CloseMe());
 
 
 					this.card.push("Button", HeaderElement,"NoteHeaderLogo", "widgets");
