@@ -41,13 +41,14 @@ let LinkEvent = new CustomEvent('click', {'detail' : {}});
 
 
 //////////////////////////////////////////////////////////
-screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+/*let screen.lockOrientationUniversal = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
 
 if (screen.lockOrientationUniversal("portrait-primary")) {
   // orientation was locked
 } else {
   // orientation lock failed
-}
+}*/
+ScreenOrientation.lock("portrait-primary");
 //////////////////////////////////////////////////////////
 
 
