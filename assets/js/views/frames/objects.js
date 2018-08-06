@@ -21,7 +21,7 @@ export default class Objects extends superViews{
 
     this.setStyle("display" , "flex");
     this.setStyle("flexDirection" , "column");
-    this.setStyle("height" , "100vh");
+    this.setStyle("height" , "100%");
 
     this.initChilds();
 
