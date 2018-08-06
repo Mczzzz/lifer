@@ -70,7 +70,7 @@ export default class Empty extends superViews{
 
 		}else{
 
-			TheTextElt.focus();
+			TheTextElt.getContainer().focus();
 			this.card.setAttributeComponent(this.EmptyElement,"mainNewInput","placeholder","Tapes un truc :) ...");
 			this.card.setStyleComponent(this.EmptyElement,"mainNewInput","color","red","element");
 
