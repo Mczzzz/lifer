@@ -65,7 +65,7 @@ export default class card extends superViews{
 
 
 
-     setStyleComponent(element,component, property, value,justClassVar = false){
+     setStyleComponent(element,component, property, value,justClassVar = "all"){
 
           this[element].setStyleComponent(component, property, value,justClassVar);
 
