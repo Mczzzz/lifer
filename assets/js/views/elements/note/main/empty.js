@@ -46,7 +46,7 @@ export default class Empty extends superViews{
 		this.card.setStylePictoComponent(this.EmptyElement,"mainNewButton","marginRight","0px");
 		this.card.setStylePictoComponent(this.EmptyElement,"mainNewButton","color","green");
 
-		TheSaveButton.addEventListener("click",()=>this.saveResource(TheTextElt));
+		TheSaveButton.getContainer().addEventListener("click",()=>this.saveResource(TheTextElt.getContainer()));
 
 
 	}

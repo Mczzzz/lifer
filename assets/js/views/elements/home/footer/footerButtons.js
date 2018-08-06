@@ -35,7 +35,7 @@ export default class FooterButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"toObjects","color","green");
 					this.card.setStylePictoComponent(FooterElement,"toObjects","alignItems","center");
 
-					FooterObjectButton.addEventListener("click",()=>this.goToObject());
+					FooterObjectButton.getContainer().addEventListener("click",()=>this.goToObject());
 
 
 	}

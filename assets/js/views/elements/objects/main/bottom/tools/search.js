@@ -64,7 +64,7 @@ export default class search extends superViews{
 
 	linkSearch(){
 
-		SearchServices.addInput(this.input);
+		SearchServices.addInput(this.input.getContainer());
 		
 	}
 

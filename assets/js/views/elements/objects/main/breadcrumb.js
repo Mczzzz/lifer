@@ -75,7 +75,7 @@ export default class breadcrumb extends superViews{
 					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"opacity","1");
 
 
-				TheClassName.addEventListener("click",(e)=>this.BackToMe(e,node,"breadcrumb"));
+				TheClassName.getContainer().addEventListener("click",(e)=>this.BackToMe(e,node,"breadcrumb"));
 
 			}
 

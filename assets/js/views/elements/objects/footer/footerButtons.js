@@ -37,7 +37,7 @@ export default class FooterButtons extends superViews{
 					this.card.setStylePictoComponent(this.ObjectsFooterElement,"addNote","color","green");
 					this.card.setStylePictoComponent(this.ObjectsFooterElement,"addNote","alignItems","center");
 
-					StartNote.addEventListener("click",()=>this.StartNote());
+					StartNote.getContainer().addEventListener("click",()=>this.StartNote());
 
 
 					///////////////
