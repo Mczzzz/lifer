@@ -33,7 +33,7 @@ export default class Empty extends superViews{
 		let TheTextElt = this.card.push("Text", this.EmptyElement,"mainNewInput", "");
 
 		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","fontSize","18.5px");
-		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","color","black","property");
+		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","color","blue","property");
 		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","margin","0px 5px 5px 5px");
 		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","fontWeight","normal");
 		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","flex",1);
@@ -62,6 +62,7 @@ export default class Empty extends superViews{
 			res.text = TheTextElt.innerHTML;
 
 			TheTextElt.innerHTML = "";
+			TheTextElt.focus();
 
 			NoteResource.createCard(res);
 
