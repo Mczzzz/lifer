@@ -91,18 +91,18 @@ export default class Title extends superViews{
 
 	changeFocus(e,TheTitle){
 
-		console.log(TheTitle.innerHTML);
-		//TheTitle.innerHTML.replace(/<div><br><\/div>/i, '');
-		TheTitle.innerHTML = TheTitle.innerHTML.replace(/<div><br><\/div>/i, '');
+
 
 		if (e.key === "Enter") {
+
+			TheTitle.innerHTML = TheTitle.innerHTML.replace(/<div><br><\/div>/i, '');
 
 			let toFocus = this.Lifer.getData("Note/mainNote/noteMainEmpty/NoteEmptyCardText/cardElementEmpty/noteEltTextmainNewInput", "This");
 
 			toFocus.getContainer().focus();
 			this.setStyle("display" , "");
 
-//Il faut gérer le saut de ligne maintenant
+
 
     	}
 
