@@ -100,6 +100,7 @@ export default class Resources extends superViews{
 
 
 		let card = new Card('NoteCardResource_New_'+timestamp, this.path);
+		card.setStyle("boder","1px solid red");
 		
 //A ne pas oublié sinon ca va merder
 //card.setId();
