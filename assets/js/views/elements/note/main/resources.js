@@ -18,7 +18,7 @@ export default class Resources extends superViews{
 
 		this.setStyle("overflowY" , "scroll");
 		this.setStyle("overflowX", "hidden");
-		this.setStyle("overscrollBehavior","contain");
+		this.setStyle("overscrollBehavior","none");
 		
 		let TheNote = this.Lifer.getData("Note","This");
 		
