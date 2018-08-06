@@ -92,7 +92,8 @@ export default class Title extends superViews{
 	changeFocus(e,TheTitle){
 
 		console.log(TheTitle.innerHTML);
-		TheTitle.innerHTML.replace(/<div><br><\/div>/i, '');
+		//TheTitle.innerHTML.replace(/<div><br><\/div>/i, '');
+		TheTitle.innerHTML.replace(/div/i, 'grr');
 
 		if (e.key === "Enter") {
 
