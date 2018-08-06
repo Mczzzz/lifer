@@ -78,7 +78,7 @@ export default class Title extends superViews{
 					this.card.setStyleComponent(MainElement,"title","margin","0px 5px 5px 5px");
 					this.card.setStyleComponent(MainElement,"title","fontWeight","bold");
 
-					TheTitle.getContainer().addEventListener("keydown", (e)=>this.changeFocus(e));
+					TheTitle.getContainer().addEventListener("keyup", (e)=>this.changeFocus(e));
 
 
 
@@ -97,7 +97,7 @@ export default class Title extends superViews{
 
 			toFocus.getContainer().focus();
 			this.setStyle("display" , "");
-			toFocus.getContainer().innerHTML = "";
+
 //Il faut gérer le saut de ligne maintenant
 
     	}
