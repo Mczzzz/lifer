@@ -162,7 +162,7 @@ export default class Note extends superViews{
 
 
 
-	changeTextColor(e,value){
+/*	changeTextColor(e,value){
 
 	//this.Synchronizer();
 
@@ -173,7 +173,7 @@ export default class Note extends superViews{
 
 		}
 
-	}
+	}*/
 
 
 }
