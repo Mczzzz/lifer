@@ -52,13 +52,15 @@ export default class Image extends superViews{
                     let ImgWidth = img.offsetWidth * RatioPhoto;
 
                     //let decalX = ((ImgWidth - img.offsetWidth) / 2);
+                    console.log(ImgWidth);
+                    console.log(img.offsetWidth);
                     let decalX = 0;
 
                     img.style.width = "";
                     img.width = ImgWidth;
                     img.height = ImgHeight;
 
-                    img.style.transform = 'rotate(' + data.data.orientation.rotate + 'deg) translate('+decalX+'px,'+decalX+'px)';
+                    img.style.transform = 'rotate(' + data.data.orientation.rotate + 'deg) translate('+'80'+'px, 0 px)';
 
                     this.container.style.minHeight = ImgWidth+"px";
 
