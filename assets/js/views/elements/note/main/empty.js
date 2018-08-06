@@ -56,13 +56,17 @@ export default class Empty extends superViews{
 
 		let NoteResource = this.Lifer.getData("Note/mainNote/noteMainResources", "This");
 
-		console.log(TheTextElt.innerHTML);
-		let res = {};
-		res.text = TheTextElt.innerHTML;
+		if(TheTextElt.innerHTML.length > 0){
 
-		TheTextElt.innerHTML = "";
+			let res = {};
+			res.text = TheTextElt.innerHTML;
 
-		NoteResource.createCard(res);
+			TheTextElt.innerHTML = "";
+
+			NoteResource.createCard(res);
+
+		}
+		
 
 	}
 

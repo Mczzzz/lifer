@@ -19,6 +19,8 @@ export default class Text extends superViews{
 
           this.setAttribute("placeholder", "Texte...");
 
+          this.placeHodelColor = "#e0e0e0";
+
           this.setStyle("fontSize"   , "10px");
           this.setStyle("margin"     , "10px");
           this.setStyle("fontWeight" , "normal");
@@ -31,17 +33,24 @@ export default class Text extends superViews{
 
           this.changeColor();
 
-          this.container.addEventListener("keyup", ()=>this.changeColor());
+          this.container.addEventListener("change", ()=>this.changeColor());
 
      }
 
 
      changeColor(){
-
-          this.container.style.color = (this.container.innerHTML.length == 0)? "#e0e0e0" : this.color; 
+          console.log("changecolor");
+          console.log(this.container.innerHTML.length);
+          this.container.style.color = (this.container.innerHTML.length == 0)? this.placeHodelColor : this.color; 
 
      }
 
+
+     setpleceHolderColor(color){
+
+          this.placeHodelColor = color;          
+
+     }
 
 
      //PUBLICS
