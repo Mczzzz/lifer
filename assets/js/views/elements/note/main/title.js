@@ -77,6 +77,7 @@ export default class Title extends superViews{
 					this.card.setStyleComponent(MainElement,"title","color","black","property");
 					this.card.setStyleComponent(MainElement,"title","margin","0px 5px 5px 5px");
 					this.card.setStyleComponent(MainElement,"title","fontWeight","bold");
+					this.card.setStyleComponent(MainElement,"title","width","100%");
 
 
 					TheTitle.getContainer().addEventListener("keyup", (e)=>this.changeFocus(e,TheTitle.getContainer()));
