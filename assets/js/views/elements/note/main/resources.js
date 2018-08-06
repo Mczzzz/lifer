@@ -87,8 +87,6 @@ export default class Resources extends superViews{
 
 	createCard(Resource){
 
-		//pas le bon endroit mais toujours mieux que rien	
-		screen.orientation.lock("portrait-primary");
 
 		//on s'assure que le flex de noteMainTitle est bien supprimé sinon on le fait
 		//car sinon le Title déborde sur le header de la Note.
@@ -146,71 +144,6 @@ export default class Resources extends superViews{
 
 
 	}
-
-
-
-
-	ImageFromCapture(){
-
-
-		/*this.imgDiv = document.createElement("div");
-		this.divCore.append(this.imgDiv);
-		this.imgDiv.style.display = "flex";
-		this.imgDiv.style.borderRadius = "8px";
-		this.imgDiv.style.margin = "10px";
-
-		this.img = document.createElement("img");
-		this.img.classList.add("obj");
-		this.imgDiv.prepend(this.img)*/; 
-
-		let RatioPhoto = this.imgObj.naturalWidth / this.imgObj.naturalHeight;
-
-		this.img.src = pict;
-		this.img.style.width  = "100%";
-		this.img.style.borderRadius = "8px";
-		this.img.height = this.img.offsetWidth  / RatioPhoto;
-		
-		console.log(orientation);
-
-		if(orientation.rotate == 90){
-
-			let ImgHeight = this.img.offsetWidth;
-			let ImgWidth = this.img.offsetWidth * RatioPhoto;
-
-			console.log(ImgWidth);
-			console.log(this.img.offsetWidth);
-			let decalY = ((ImgWidth - this.img.offsetWidth) / 2);
-			//let decalY = ((ImgWidth - this.img.offsetWidth) / 2);
-
-			this.img.style.width = "";
-			this.img.width = ImgWidth;
-			this.img.height = ImgHeight;
-
-			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg) translate('+'80'+'px, 0px)';
-
-			this.imgDiv.style.minHeight = ImgWidth+"px";
-
-		}else{
-
-			this.imgDiv.style.minHeight = this.img.height+"px";
-		}
-
-
-
-
-
-	}
-
-
-
-
-	//PUBLICS
-	addResource(){
-
-
-	}
-
-
 
 
 
