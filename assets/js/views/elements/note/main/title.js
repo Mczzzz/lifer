@@ -83,7 +83,7 @@ export default class Title extends superViews{
 
 
 		if(TheNote.note.id === false){
-			TheTitle.focus();
+			TheTitle.getContainer().focus();
 		}
 	}
 
