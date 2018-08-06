@@ -171,14 +171,16 @@ export default class Resources extends superViews{
 			let ImgHeight = this.img.offsetWidth;
 			let ImgWidth = this.img.offsetWidth * RatioPhoto;
 
-			let decalX = ((ImgWidth - this.img.offsetWidth) / 2);
+			console.log(ImgWidth);
+			console.log(this.img.offsetWidth);
+			let decalY = ((ImgWidth - this.img.offsetWidth) / 2);
 			//let decalY = ((ImgWidth - this.img.offsetWidth) / 2);
 
 			this.img.style.width = "";
 			this.img.width = ImgWidth;
 			this.img.height = ImgHeight;
 
-			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg) translate('+decalX+'px,'+decalX+'px)';
+			this.img.style.transform = 'rotate(' + orientation.rotate + 'deg) translate('+'80'+'px, 0px)';
 
 			this.imgDiv.style.minHeight = ImgWidth+"px";
 
