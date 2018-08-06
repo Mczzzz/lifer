@@ -56,6 +56,7 @@ export default class Empty extends superViews{
 
 		let NoteResource = this.Lifer.getData("Note/mainNote/noteMainResources", "This");
 
+		console.log(TheTextElt.innerHTML);
 		let res = {};
 		res.text = TheTextElt.innerHTML;
 
