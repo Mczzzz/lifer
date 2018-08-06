@@ -70,7 +70,7 @@ export default class button extends superViews{
 
 		if(scope == "property" || scope == "all") this.Picto[property] = value;
      	
-     	if(scope == "element" || scope == "all" ) this.i.style[property] = this.Picto[property];
+     	if(scope == "element" || scope == "all" ) this.i.style[property] = value;
 
      	
 

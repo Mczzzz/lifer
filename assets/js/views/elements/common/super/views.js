@@ -81,7 +81,7 @@ Moment.locale('fr');
 
 		if(scope == "property" || scope == "all") this[property] = value;
      	
-     	if(scope == "element" || scope == "all" ) this.container.style[property] = this[property];
+     	if(scope == "element" || scope == "all" ) this.container.style[property] = value;
      		       
 
     }
@@ -90,7 +90,7 @@ Moment.locale('fr');
 
 		if(scope == "property" || scope == "all") this[property] = value;
 
-		if(scope == "element" || scope == "all" )  this.container.setAttribute(property,this[property]);
+		if(scope == "element" || scope == "all" )  this.container.setAttribute(property,value);
     }
 
 
