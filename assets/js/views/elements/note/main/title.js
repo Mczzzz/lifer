@@ -94,6 +94,7 @@ export default class Title extends superViews{
 		console.log(TheTitle.innerHTML);
 		//TheTitle.innerHTML.replace(/<div><br><\/div>/i, '');
 		TheTitle.innerHTML.replace(/div/i, 'grr');
+		console.log(TheTitle.innerHTML);
 
 		if (e.key === "Enter") {
 
