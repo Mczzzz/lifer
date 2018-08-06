@@ -38,7 +38,7 @@ export default class Empty extends superViews{
 		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","fontWeight","normal");
 		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","flex",1);
 
-		let TheSaveButton = this.card.push("Button", EmptyElement,"mainNewButton","arrow_forward");
+		let TheSaveButton = this.card.push("Button", this.EmptyElement,"mainNewButton","arrow_forward");
 
 		this.card.setStyleComponent(EmptyElement,"mainNewButton","alignItems","flex-end");
 
