@@ -25,7 +25,7 @@ export default class Title extends superViews{
 		if(TheNote.note.id === false){
 
 			this.data = {};
-			this.data.update = this.Moment().format('llll');
+			this.data.update = this.Moment().format('Do MMMM YYYY, h:mm:ss');
 			this.data.name = "";
 
 			this.setStyle("display" , "flex");
