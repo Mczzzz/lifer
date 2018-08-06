@@ -39,7 +39,7 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerPhoto","color","green");
 					this.card.setStylePictoComponent(FooterElement,"footerPhoto","alignItems","center");
 
-					camera.addEventListener("click",()=>this.StartCamera("image",true));
+					camera.getContainer().addEventListener("click",()=>this.StartCamera("image",true));
 
 
 
@@ -49,7 +49,7 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerVideocam","color","green");
 					this.card.setStylePictoComponent(FooterElement,"footerVideocam","alignItems","center");
 
-					videocam.addEventListener("click",()=>this.StartCamera("video",true));
+					videocam.getContainer().addEventListener("click",()=>this.StartCamera("video",true));
 
 
 
@@ -61,7 +61,7 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerMic","alignItems","center");
 					this.card.setStylePictoComponent(FooterElement,"footerMic","marginRight","0px");
 
-					micro.addEventListener("click",()=>this.StartCamera("audio",true));
+					micro.getContainer().addEventListener("click",()=>this.StartCamera("audio",true));
 
 
 					////////////
@@ -81,7 +81,7 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerGallery","color","orange");
 					this.card.setStylePictoComponent(FooterElement,"footerGallery","alignItems","center");
 
-					photo.addEventListener("click",()=>this.StartCamera("image"));
+					photo.getContainer().addEventListener("click",()=>this.StartCamera("image"));
 
 
 
@@ -91,7 +91,7 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerVideo","color","orange");
 					this.card.setStylePictoComponent(FooterElement,"footerVideo","alignItems","center");
 
-					video.addEventListener("click",()=>this.StartCamera("video"));
+					video.getContainer().addEventListener("click",()=>this.StartCamera("video"));
 
 
 
@@ -103,7 +103,7 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerMusique","alignItems","center");
 					this.card.setStylePictoComponent(FooterElement,"footerMusique","marginRight","0px");
 
-					musique.addEventListener("click",()=>this.StartCamera("audio"));
+					musique.getContainer().addEventListener("click",()=>this.StartCamera("audio"));
 
 
 
@@ -123,7 +123,7 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerNumbers","color","blue");
 					this.card.setStylePictoComponent(FooterElement,"footerNumbers","alignItems","center");
 
-					number.addEventListener("click",()=>this.StartNumber("time"));
+					number.getContainer().addEventListener("click",()=>this.StartNumber("time"));
 /*
 button	Defines a clickable button (mostly used with a JavaScript to activate a script)
 checkbox	Defines a checkbox
