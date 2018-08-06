@@ -165,6 +165,7 @@ export default class Resources extends superViews{
 		this.img.style.borderRadius = "8px";
 		this.img.height = this.img.offsetWidth  / RatioPhoto;
 		
+		console.log(orientation);
 
 		if(orientation.rotate == 90){
 
