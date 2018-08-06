@@ -77,14 +77,12 @@ Moment.locale('fr');
 	}
 
 
-	setStyle(property,value,justClassVar = false){
+	setStyle(property,value,justClassVar = "all"){
 
-     	this[property] = value;
-
-     	if(!justClassVar){
-     		this.container.style[property] = this[property];
-     	}
-        
+		if(justClassVar == "property" || justClassVar == "all") this[property] = value;
+     	
+     	if(justClassVar == "element" || justClassVar == "all" ) this.container.style[property] = this[property];
+     		       
 
     }
 

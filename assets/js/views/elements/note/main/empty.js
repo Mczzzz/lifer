@@ -27,24 +27,24 @@ export default class Empty extends superViews{
 		this.card.setStyle("background", "white");
 
 
-		let EmptyElement = this.card.setElement("Empty");
-		this.card.setStyleElement(EmptyElement,"justifyContent","flex-start");
+		this.EmptyElement = this.card.setElement("Empty");
+		this.card.setStyleElement(this.EmptyElement,"justifyContent","flex-start");
 
-		let TheTextElt = this.card.push("Text", EmptyElement,"mainNewInput", "");
+		let TheTextElt = this.card.push("Text", this.EmptyElement,"mainNewInput", "");
 
-		this.card.setStyleComponent(EmptyElement,"mainNewInput","fontSize","18.5px");
-		this.card.setStyleComponent(EmptyElement,"mainNewInput","color","black",true);
-		this.card.setStyleComponent(EmptyElement,"mainNewInput","margin","0px 5px 5px 5px");
-		this.card.setStyleComponent(EmptyElement,"mainNewInput","fontWeight","normal");
-		this.card.setStyleComponent(EmptyElement,"mainNewInput","flex",1);
+		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","fontSize","18.5px");
+		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","color","black","property");
+		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","margin","0px 5px 5px 5px");
+		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","fontWeight","normal");
+		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","flex",1);
 
 		let TheSaveButton = this.card.push("Button", EmptyElement,"mainNewButton","arrow_forward");
 
 		this.card.setStyleComponent(EmptyElement,"mainNewButton","alignItems","flex-end");
 
-		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","fontSize","25px");
-		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","marginRight","0px");
-		this.card.setStylePictoComponent(EmptyElement,"mainNewButton","color","green");
+		this.card.setStylePictoComponent(this.EmptyElement,"mainNewButton","fontSize","25px");
+		this.card.setStylePictoComponent(this.EmptyElement,"mainNewButton","marginRight","0px");
+		this.card.setStylePictoComponent(this.EmptyElement,"mainNewButton","color","green");
 
 		TheSaveButton.addEventListener("click",()=>this.saveResource(TheTextElt));
 
@@ -64,6 +64,12 @@ export default class Empty extends superViews{
 			TheTextElt.innerHTML = "";
 
 			NoteResource.createCard(res);
+
+		}else{
+
+			TheTextElt.focus();
+			this.card.setAttributeComponent(this.EmptyElement,"mainNewInput","placeholder","Tapes un truc :) ...");
+			this.card.setStyleComponent(this.EmptyElement,"mainNewInput","color","red","element");
 
 		}
 		
