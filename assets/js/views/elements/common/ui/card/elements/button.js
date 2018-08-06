@@ -66,11 +66,15 @@ export default class button extends superViews{
 
 
 
-	setStylePicto(property,value){
+	setStylePicto(property,value,scope = "all"){
 
-     	this.Picto[property] = value;
+		if(scope == "property" || scope == "all") this.Picto[property] = value;
+     	
+     	if(scope == "element" || scope == "all" ) this.i.style[property] = this.Picto[property];
 
-        this.i.style[property] = this.Picto[property];
+     	
+
+        
 
     }
 

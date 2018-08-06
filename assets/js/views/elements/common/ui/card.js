@@ -57,31 +57,31 @@ export default class card extends superViews{
      }
 
 
-     setStyleElement(element,property,value,){
+     setStyleElement(element,property,value,scope = "all"){
 
-          this[element].setStyle(property,value);
-
-     }
-
-
-
-     setStyleComponent(element,component, property, value,justClassVar = "all"){
-
-          this[element].setStyleComponent(component, property, value,justClassVar);
-
-     }
-
-     setStylePictoComponent(element,component, property, value){
-
-          this[element].setStylePictoComponent(component, property, value);
+          this[element].setStyle(property,value,scope);
 
      }
 
 
 
-     setAttributeComponent(element,component, property, value){
+     setStyleComponent(element,component, property, value,scope = "all"){
 
-          this[element].setAttributeComponent(component, property, value);
+          this[element].setStyleComponent(component, property, value,scope);
+
+     }
+
+     setStylePictoComponent(element,component, property, value,scope = "all"){
+
+          this[element].setStylePictoComponent(component, property, value,scope);
+
+     }
+
+
+
+     setAttributeComponent(element,component, property, value,scope = "all"){
+
+          this[element].setAttributeComponent(component, property, value,scope);
 
      }
 

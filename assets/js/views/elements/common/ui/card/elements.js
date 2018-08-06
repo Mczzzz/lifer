@@ -26,26 +26,26 @@ export default class Elements extends superViews{
      }
 
 
-     setStyleComponent(component, property, value,justClassVar = "all"){
+     setStyleComponent(component, property, value,scope = "all"){
 
-        this[component].setStyle(property, value,justClassVar);
-
-
-     }
-
-
-     setStylePictoComponent(component, property, value){
-
-        this[component].setStylePicto(property, value);
+        this[component].setStyle(property, value,scope);
 
 
      }
 
 
+     setStylePictoComponent(component, property, value,scope = "all"){
 
-     setAttributeComponent(component, property, value){
+        this[component].setStylePicto(property, value,scope);
 
-        this[component].setAttribute(property, value);
+
+     }
+
+
+
+     setAttributeComponent(component, property, value,scope = "all"){
+
+        this[component].setAttribute(property, value,scope);
 
      }
 

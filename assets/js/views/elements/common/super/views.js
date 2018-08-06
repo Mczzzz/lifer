@@ -77,21 +77,20 @@ Moment.locale('fr');
 	}
 
 
-	setStyle(property,value,justClassVar = "all"){
+	setStyle(property,value,scope = "all"){
 
-		if(justClassVar == "property" || justClassVar == "all") this[property] = value;
+		if(scope == "property" || scope == "all") this[property] = value;
      	
-     	if(justClassVar == "element" || justClassVar == "all" ) this.container.style[property] = this[property];
+     	if(scope == "element" || scope == "all" ) this.container.style[property] = this[property];
      		       
 
     }
 
-	setAttribute(property,value){
+	setAttribute(property,value,scope = "all"){
 
-     	this[property] = value;
+		if(scope == "property" || scope == "all") this[property] = value;
 
-        this.container.setAttribute(property,this[property]);
-
+		if(scope == "element" || scope == "all" )  this.container.setAttribute(property,this[property]);
     }
 
 
