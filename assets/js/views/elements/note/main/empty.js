@@ -46,7 +46,7 @@ export default class Empty extends superViews{
 		this.card.setStylePictoComponent(this.EmptyElement,"mainNewButton","marginRight","0px");
 		this.card.setStylePictoComponent(this.EmptyElement,"mainNewButton","color","green");
 
-		TheSaveButton.getContainer().addEventListener("click",()=>this.saveResource(TheTextElt.getContainer()));
+		TheSaveButton.getContainer().addEventListener("click",()=>this.saveResource(TheTextElt));
 
 
 	}
@@ -56,13 +56,15 @@ export default class Empty extends superViews{
 
 		let NoteResource = this.Lifer.getData("Note/mainNote/noteMainResources", "This");
 
-		if(TheTextElt.innerHTML.length > 0){
+		if(TheTextElt.getContainer().innerHTML.length > 0){
 
 			let res = {};
-			res.text = TheTextElt.innerHTML;
+			res.text = TheTextElt.getContainer().innerHTML;
 
-			TheTextElt.innerHTML = "";
-			TheTextElt.focus();
+			TheTextElt.getContainer().innerHTML = "";
+			TheTextElt.getContainer().focus();
+//a revoir car pas très propre, l'objet texte devrait comprendre qu'il est vide et il devrait se setter tous seul.
+			this.card.setStyleComponent(this.EmptyElement,"mainNewInput","color",TheTextElt.placeHodelColor,"element");
 
 			NoteResource.createCard(res);
 
