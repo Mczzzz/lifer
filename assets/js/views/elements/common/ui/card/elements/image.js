@@ -60,7 +60,7 @@ export default class Image extends superViews{
                     img.width = ImgWidth;
                     img.height = ImgHeight;
 
-                    img.style.transform = 'rotate(' + data.data.orientation.rotate + 'deg) translate('+'80'+'px, 0 px)';
+                    img.style.transform = 'rotate(' + data.data.orientation.rotate + 'deg)'+' translate('+'80'+'px, 0px)';
 
                     this.container.style.minHeight = ImgWidth+"px";
 
