@@ -87,6 +87,9 @@ export default class Resources extends superViews{
 
 	createCard(Resource){
 
+		//pas le bon endroit mais toujours mieux que rien	
+		screen.orientation.lock("portrait-primary");
+
 		//on s'assure que le flex de noteMainTitle est bien supprimé sinon on le fait
 		//car sinon le Title déborde sur le header de la Note.
 		let NoteMainTitle = this.Lifer.getData("Note/mainNote/noteMainTitle", "This");

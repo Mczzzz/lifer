@@ -14,10 +14,6 @@ class ImageLoader {
 	importPict(elt){
 
 
-//pas le bon endroit mais toujours mieux que rien
-screen.orientation.lock("portrait-primary");
-
-
 
 		this.elt = elt;
 
