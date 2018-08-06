@@ -191,7 +191,7 @@ StartNumber(type){
 		this.camLauncher.style.display = "none";
 		this.container.append(this.camLauncher);
 		this.camLauncher.click();
-
+	
 		this.camLauncher.addEventListener("change", ()=>this.ServImgLoader.importPict(this.camLauncher.files[0]));
 
 

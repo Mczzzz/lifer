@@ -14,8 +14,9 @@ export default class views {
 
 		this.Lifer = Lifer;
 
-		Moment.locale('fr');
-		this.Moment = Moment();		
+Moment.locale('fr');
+
+		this.Moment = Moment;		
 
 		if(path == null){
 
