@@ -105,7 +105,7 @@ export default class Note extends superViews{
         formData.append('resourceText'  , "");
 
 
-        this.NoteCollection.push(formData);
+        this.NoteCollection.Push(formData);
 
 	}
 
