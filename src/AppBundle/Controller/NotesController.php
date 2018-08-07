@@ -40,7 +40,7 @@ class NotesController extends Controller
         $request = Request::createFromGlobals();
 
         //SERIALIZED OBJECT
-        var_dump($request->request->getContent());
+        var_dump($request->getContent());
         die();
         $RequestData = $request->request->get('RequestData');
 
