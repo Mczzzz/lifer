@@ -105,7 +105,10 @@ export default class Note extends superViews{
         formData.append('resourceText'  , "");
 
 
-        this.NoteCollection.Push(formData);
+        let res = {};
+        res.coucou = "yeahhhh";
+
+        this.NoteCollection.Push(res);
 
 	}
 
