@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Objects_infos
+ * Notes
  *
- * @ORM\Table(name="objects_infos")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\Objects_infosRepository")
+ * @ORM\Table(name="Notes")
+ *
  */
-class Objects_infos
+class Notes
 {
     /**
      * @var int
@@ -22,28 +22,36 @@ class Objects_infos
     private $id;
 
     /**
-     * @var int
-     *
-     * @ORM\ManyToOne(targetEntity="Objects", inversedBy="objects")
-     * @ORM\JoinColumn(name="object", referencedColumnName="id")
-     */
-    private $object;
-
-
-    /**
      * @var string
      *
      * @ORM\Column(name="Name", type="string", length=255)
      */
     private $name;
 
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="createBDD", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+     */
+    private $createBDD;
+
   
     /**
      * @var datetime
      *
-     * @ORM\Column(name="ts_update", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+     * @ORM\Column(name="updateBDD", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
      */
-    private $update;
+    private $updateBDD;
+
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="updateAPP", type="datetime")
+     */
+    private $updateAPP;
+
 
 
     /**
@@ -57,23 +65,14 @@ class Objects_infos
     /**
      * @var int
      *
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="objects_infos") 
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="notes") 
      * @ORM\JoinColumn(name="creator", referencedColumnName="id")
      */
     private $creator;
 
 
-    /**
-     * @var int
-     *
-     * @ORM\ManyToOne(targetEntity="Objects_tree", inversedBy="objects_tree")
-     * @ORM\JoinColumn(name="objectTree", referencedColumnName="id")
-     */
-    private $objectTree;
 
-
-
-  
+    
 
     /**
      * @return int
@@ -91,26 +90,6 @@ class Objects_infos
     public function setId($id)
     {
         $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getObject()
-    {
-        return $this->object;
-    }
-
-    /**
-     * @param int $object
-     *
-     * @return self
-     */
-    public function setObject($object)
-    {
-        $this->object = $object;
 
         return $this;
     }
@@ -135,23 +114,62 @@ class Objects_infos
         return $this;
     }
 
+    /**
+     * @return datetime
+     */
+    public function getCreateBDD()
+    {
+        return $this->createBDD;
+    }
+
+    /**
+     * @param datetime $createBDD
+     *
+     * @return self
+     */
+    public function setCreateBDD(datetime $createBDD)
+    {
+        $this->createBDD = $createBDD;
+
+        return $this;
+    }
 
     /**
      * @return datetime
      */
-    public function getUpdate()
+    public function getUpdateBDD()
     {
-        return $this->update;
+        return $this->updateBDD;
     }
 
     /**
-     * @param datetime $update
+     * @param datetime $updateBDD
      *
      * @return self
      */
-    public function setUpdate($update)
+    public function setUpdateBDD(datetime $updateBDD)
     {
-        $this->update = $update;
+        $this->updateBDD = $updateBDD;
+
+        return $this;
+    }
+
+    /**
+     * @return datetime
+     */
+    public function getUpdateAPP()
+    {
+        return $this->updateAPP;
+    }
+
+    /**
+     * @param datetime $updateAPP
+     *
+     * @return self
+     */
+    public function setUpdateAPP(datetime $updateAPP)
+    {
+        $this->updateAPP = $updateAPP;
 
         return $this;
     }
@@ -195,28 +213,5 @@ class Objects_infos
 
         return $this;
     }
-
- 
-
-    /**
-     * @return int
-     */
-    public function getObjectTree()
-    {
-        return $this->objectTree;
-    }
-
-    /**
-     * @param int $objectTree
-     *
-     * @return self
-     */
-    public function setObjectTree($objectTree)
-    {
-        $this->objectTree = $objectTree;
-
-        return $this;
-    }
-    
 }
 
