@@ -89,9 +89,4 @@ class NotesController extends Controller
 
 
 
-
-
-    private function 
-
-
 }
