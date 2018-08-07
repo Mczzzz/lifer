@@ -138,6 +138,7 @@ export default class Resources extends superViews{
 			card.setStyleComponent(MainElement,"main_new_"+timestamp,"color","black");
 			card.setStyleComponent(MainElement,"main_new_"+timestamp,"margin","0px 5px 5px 5px");
 			card.setStyleComponent(MainElement,"main_new_"+timestamp,"fontWeight","normal");
+			card.setStyleComponent(MainElement,"main_new_"+timestamp,"width","100%");
 
 		}
 
