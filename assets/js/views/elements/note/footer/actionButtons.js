@@ -11,7 +11,7 @@ export default class ActionButtons extends superViews{
 
 		super( MyClass , path);
 
-		this.ServImgLoader = ImgLoader;
+		this.ServImgLoader = LoaderImage;
 
 		this.init();
 
