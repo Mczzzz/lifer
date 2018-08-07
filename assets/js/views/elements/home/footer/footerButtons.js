@@ -29,6 +29,21 @@ export default class FooterButtons extends superViews{
 			let FooterElement = this.card.setElement("HomeFooterElement");
 			this.card.setStyleElement(FooterElement,"justifyContent","space-between");
 
+
+
+				let StartNote = this.card.push("Button", FooterElement,"HomeAddNote", "note_add");
+
+					this.card.setStylePictoComponent(FooterElement,"HomeAddNote","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"HomeAddNote","marginRight","0px");
+					this.card.setStylePictoComponent(FooterElement,"HomeAddNote","color","green");
+					this.card.setStylePictoComponent(FooterElement,"HomeAddNote","alignItems","center");
+
+					StartNote.getContainer().addEventListener("click",()=>this.StartNote());
+
+
+
+
+
 					let FooterObjectButton = this.card.push("Button", FooterElement,"toObjects", "widgets");
 
 					this.card.setStylePictoComponent(FooterElement,"toObjects","fontSize","25px");
@@ -37,6 +52,14 @@ export default class FooterButtons extends superViews{
 
 					FooterObjectButton.getContainer().addEventListener("click",()=>this.goToObject());
 
+
+	}
+
+
+	StartNote(){
+
+		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Note'}});
+		window.dispatchEvent(LinkEvent);
 
 	}
 
