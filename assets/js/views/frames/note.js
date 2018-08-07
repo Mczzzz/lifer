@@ -108,7 +108,7 @@ export default class Note extends superViews{
         let res = {};
         res.coucou = "yeahhhh";
 
-        this.NoteCollection.Push(res);
+        this.NoteCollection.Push(JSON.stringify(res));
 
 	}
 
