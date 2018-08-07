@@ -13,7 +13,7 @@ export default class NoteCollection {
 	}
 
 
-  pushResource(){
+  Push(){
 
     let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'push');
 
