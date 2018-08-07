@@ -44,6 +44,11 @@ class NotesController extends Controller
 
         $dataArray = json_decode($RequestData);
 
+
+        
+
+
+
         //NOTE
         $idNote      = $request->request->get('idNote');
 
