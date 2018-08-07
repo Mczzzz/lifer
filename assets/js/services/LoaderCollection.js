@@ -1,13 +1,16 @@
-import Container from '../collections/ContainerCollection.js';
+/*import Container from '../collections/ContainerCollection.js';
 import ObjectInfos from '../collections/ObjectInfosCollection.js';
 import ObjectInfosResources from '../collections/ObjectInfosResourcesCollection.js';
-import ObjectTree from '../collections/ObjectTreeCollection.js';
+import ObjectTree from '../collections/ObjectTreeCollection.js';*/
+
+import Note from '../collections/NoteCollection.js';
 
 const classes = {
-    Container,
+/*    Container,
     ObjectInfos,
     ObjectInfosResources,
-    ObjectTree
+    ObjectTree*/
+    Note
 };
 
 class LoaderCollection  {

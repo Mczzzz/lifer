@@ -147,7 +147,8 @@ export default class Resources extends superViews{
 
 
 		//et hop on envoi en sauvegarde la data mon gars
-		
+		let Sync = this.Lifer.getData("Note", "This");
+		Sync.Push();
 
 	}
 

@@ -19,9 +19,12 @@ export default class Note extends superViews{
 		console.log(id);
 
 		this.note = {};
+
 		this.note.id = id;
+		this.note.Title = "";
+		this.note.Ts = this.Moment().format('YYYY-MM-DD h:mm:ss');
 		
-		this.firstKey = true;
+		//this.firstKey = true;
 
 
 		this.init();
@@ -42,8 +45,9 @@ export default class Note extends superViews{
 		this.setStyle("background" , "white");
 		this.setStyle("boxShadow" , "0px 0px 10px 10px green");
 
+		this.NoteCollection = new LoaderCollection("Note");
 
-		if(this.note.id !== false){
+/*		if(this.note.id !== false){
 
 
 			this.ContainerNode = this.Lifer.getData("Objects","ContainerNode");
@@ -61,7 +65,7 @@ export default class Note extends superViews{
 			this.Lifer.addData(this.path,[{"Resources" : noteResources}]);
 
 
-		}
+		}*/
 
 		this.Lifer.dumpMe();
 
@@ -84,20 +88,31 @@ export default class Note extends superViews{
 
 
 
+	Push(){
+
+		console.log('in Synchronizer');
+
+		let formData = new FormData();
+        
+        formData.append('noteId'  , this.note.id);
+        
+        formData.append('noteTitle'  , this.note.Title);
+        formData.append('noteTs'  , this.note.Ts);
+
+        formData.append('resourceId'  , "");
+
+        formData.append('resourceTypeId'  , "");
+        formData.append('resourceText'  , "");
 
 
-	dispatcher(e,name, value){
-		console.log('in dispatcher');
-		console.log(value);
-		this.Synchronizer(name,value);
-
-		this.changeTextColor(e,value);
+        this.NoteCollection.push(formData);
 
 	}
 
 
 
-	Synchronizer(name,value){
+
+	_Synchronizer(name,value){
 
 		console.log('in Synchronizer');
 
@@ -162,18 +177,7 @@ export default class Note extends superViews{
 
 
 
-/*	changeTextColor(e,value){
 
-	//this.Synchronizer();
-
-		if(value.id == 'title' && e.key == "Enter"){
-
-			value.innerHTML = value.innerHTML.replace(/<div><br><\/div>/i, '');
-			value.focus();
-
-		}
-
-	}*/
 
 
 }
