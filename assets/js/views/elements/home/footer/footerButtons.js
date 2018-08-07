@@ -27,7 +27,7 @@ export default class FooterButtons extends superViews{
 
 
 			let FooterElement = this.card.setElement("HomeFooterElement");
-			this.card.setStyleElement(FooterElement,"justifyContent","s");
+			this.card.setStyleElement(FooterElement,"justifyContent","flex-start");
 
 
 
@@ -39,6 +39,7 @@ export default class FooterButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"HomeAddNote","alignItems","center");
 
 					StartNote.getContainer().addEventListener("click",()=>this.StartNote());
+
 
 
 					///////////////
