@@ -27,7 +27,7 @@ class NotesController extends Controller
     public function pushAction(Request $request)
     {
 
-    	$res = {};
+    //	$res = {};
 
         // is it an Ajax request?
         //$isAjax = $request->isXmlHttpRequest();
@@ -45,7 +45,7 @@ class NotesController extends Controller
         $dataArray = json_decode($RequestData);
 
 
-        
+
 
 
 
