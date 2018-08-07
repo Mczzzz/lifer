@@ -127,7 +127,7 @@ class Notes
      *
      * @return self
      */
-    public function setCreateBDD(datetime $createBDD)
+    public function setCreateBDD($createBDD)
     {
         $this->createBDD = $createBDD;
 
@@ -147,7 +147,7 @@ class Notes
      *
      * @return self
      */
-    public function setUpdateBDD(datetime $updateBDD)
+    public function setUpdateBDD($updateBDD)
     {
         $this->updateBDD = $updateBDD;
 
@@ -167,7 +167,7 @@ class Notes
      *
      * @return self
      */
-    public function setUpdateAPP(datetime $updateAPP)
+    public function setUpdateAPP( $updateAPP)
     {
         $this->updateAPP = $updateAPP;
 
