@@ -43,12 +43,12 @@ export default class FooterButtons extends superViews{
 
 
 					///////////////
-					this.card.push("Button", this.ObjectsFooterElement,"HomeSep1", "more_vert");
+					this.card.push("Button", FooterElement,"HomeSep1", "more_vert");
 
-					this.card.setStylePictoComponent(this.ObjectsFooterElement,"HomeSep1","fontSize","25px");
-					this.card.setStylePictoComponent(this.ObjectsFooterElement,"HomeSep1","margin","5px");
-					this.card.setStylePictoComponent(this.ObjectsFooterElement,"HomeSep1","color","#cfcfcf");
-					this.card.setStylePictoComponent(this.ObjectsFooterElement,"HomeSep1","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"HomeSep1","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"HomeSep1","margin","5px");
+					this.card.setStylePictoComponent(FooterElement,"HomeSep1","color","#cfcfcf");
+					this.card.setStylePictoComponent(FooterElement,"HomeSep1","alignItems","center");
 					//////////////
 
 
