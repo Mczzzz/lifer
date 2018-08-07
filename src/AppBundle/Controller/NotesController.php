@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Notes controller.
  *
- * @Route("notes")
+ * @Route("api_v1/notes")
  */
 
 class NotesController extends Controller
@@ -38,8 +38,43 @@ class NotesController extends Controller
 
         //accueil de la requete
         $request = Request::createFromGlobals();
-        $text = $request->request->get('text');
-        $id = $request->request->get('id');
+
+        //SERIALIZED OBJECT
+        $RequestData = $request->request->get('RequestData');
+
+        $dataArray = json_decode($RequestData);
+
+        //NOTE
+        $idNote      = $request->request->get('idNote');
+
+        $noteTitle   = $request->request->get('noteTitle');
+
+        $noteAppTs   = $request->request->get('noteTs');
+
+        //RESOURCE
+        $idRessource = $request->request->get('idNote');
+
+        $DataType    = $request->request->get('dataType'); //obligatoire
+
+        $Data        = $request->request->get('data');
+
+        $text        = $request->request->get('text');
+        
+/*        $value       = $request->request->get('value');
+
+        $dateTime       = $request->request->get('dateTime');
+
+        $unit        = $request->request->get('unit');*/
+
+
+
+
+        //si pas d'id de note j'en crée une note
+        //si pas de titre c'est pas grave
+
+
+
+
         // j'enregistre en base ma note
         $entityManager = $this->getDoctrine()->getManager();
 
