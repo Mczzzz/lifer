@@ -27,7 +27,7 @@ export default class FooterButtons extends superViews{
 
 
 			let FooterElement = this.card.setElement("HomeFooterElement");
-			this.card.setStyleElement(FooterElement,"justifyContent","space-between");
+			this.card.setStyleElement(FooterElement,"justifyContent","s");
 
 
 
@@ -41,10 +41,20 @@ export default class FooterButtons extends superViews{
 					StartNote.getContainer().addEventListener("click",()=>this.StartNote());
 
 
+					///////////////
+					this.card.push("Button", this.ObjectsFooterElement,"HomeSep1", "more_vert");
+
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"HomeSep1","fontSize","25px");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"HomeSep1","margin","5px");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"HomeSep1","color","#cfcfcf");
+					this.card.setStylePictoComponent(this.ObjectsFooterElement,"HomeSep1","alignItems","center");
+					//////////////
 
 
 
-					let FooterObjectButton = this.card.push("Button", FooterElement,"toObjects", "widgets");
+
+
+				let FooterObjectButton = this.card.push("Button", FooterElement,"toObjects", "widgets");
 
 					this.card.setStylePictoComponent(FooterElement,"toObjects","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"toObjects","color","green");
