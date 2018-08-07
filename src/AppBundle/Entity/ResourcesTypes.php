@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Object_infos_resources_types
+ * ResourcesTypes
  *
- * @ORM\Table(name="object_infos_resources_types")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\Object_infos_resources_typesRepository")
+ * @ORM\Table(name="ResourcesTypes")
+ * 
  */
-class Object_infos_resources_types
+class ResourcesTypes
 {
     /**
      * @var int
@@ -52,9 +52,8 @@ class Object_infos_resources_types
     private $color;
 
 
+
     /**
-     * Get id
-     *
      * @return int
      */
     public function getId()
@@ -63,22 +62,18 @@ class Object_infos_resources_types
     }
 
     /**
-     * Set name
+     * @param int $id
      *
-     * @param string $name
-     *
-     * @return Object_infos_resources_types
+     * @return self
      */
-    public function setName($name)
+    public function setId($id)
     {
-        $this->name = $name;
+        $this->id = $id;
 
         return $this;
     }
 
     /**
-     * Get name
-     *
      * @return string
      */
     public function getName()
@@ -86,7 +81,17 @@ class Object_infos_resources_types
         return $this->name;
     }
 
+    /**
+     * @param string $name
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
 
+        return $this;
+    }
 
     /**
      * @return string
@@ -108,10 +113,6 @@ class Object_infos_resources_types
         return $this;
     }
 
-
-
-
-
     /**
      * @return boolean
      */
@@ -131,8 +132,6 @@ class Object_infos_resources_types
 
         return $this;
     }
-
-
 
     /**
      * @return string

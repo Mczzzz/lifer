@@ -5,12 +5,12 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Objects_infos_resources
+ * Resources
  *
- * @ORM\Table(name="objects_infos_resources")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\Objects_infos_resourcesRepository")
+ * @ORM\Table(name="Resources")
+ * 
  */
-class Objects_infos_resources
+class Resources
 {
     /**
      * @var int
@@ -24,26 +24,11 @@ class Objects_infos_resources
     /**
      * @var int
      *
-     * @ORM\ManyToOne(targetEntity="Objects", inversedBy="objects")
-     * @ORM\JoinColumn(name="object", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Notes", inversedBy="note")
+     * @ORM\JoinColumn(name="note", referencedColumnName="id")
      */
-    private $object;
+    private $note;
 
-    /**
-     * @var int
-     *
-     * @ORM\ManyToOne(targetEntity="Objects_tree", inversedBy="objects_tree")
-     * @ORM\JoinColumn(name="objectTree", referencedColumnName="id")
-     */
-    private $objectTree;
-
-    /**
-     * @var int
-     *
-     * @ORM\ManyToOne(targetEntity="Objects_infos", inversedBy="objects_infos")
-     * @ORM\JoinColumn(name="objectInfos", referencedColumnName="id")
-     */
-    private $objectInfos;
 
     /**
      * @var string
@@ -52,10 +37,27 @@ class Objects_infos_resources
      */
     private $text;
 
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="value", type="decimal", precision=13, scale=3, nullable=true)
+     */
+    private $value;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="text", nullable=true)
+     */
+    private $path;
+
+
     /**
      * @var int
      *
-     * @ORM\ManyToOne(targetEntity="Object_infos_resources_types", inversedBy="object_infos_resources_types")
+     * @ORM\ManyToOne(targetEntity="ResourcesTypes", inversedBy="resources_types")
      * @ORM\JoinColumn(name="type", referencedColumnName="id")
      */
     private $type;
@@ -67,16 +69,10 @@ class Objects_infos_resources
      */
     private $tsUpdate;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="value", type="decimal", precision=13, scale=3, nullable=true)
-     */
-    private $value;
 
 
 
-  
+
 
     /**
      * @return int
@@ -101,59 +97,19 @@ class Objects_infos_resources
     /**
      * @return int
      */
-    public function getObject()
+    public function getNote()
     {
-        return $this->object;
+        return $this->note;
     }
 
     /**
-     * @param int $object
+     * @param int $note
      *
      * @return self
      */
-    public function setObject($object)
+    public function setNote($note)
     {
-        $this->object = $object;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getObjectTree()
-    {
-        return $this->objectTree;
-    }
-
-    /**
-     * @param int $objectTree
-     *
-     * @return self
-     */
-    public function setObjectTree($objectTree)
-    {
-        $this->objectTree = $objectTree;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getObjectInfos()
-    {
-        return $this->objectInfos;
-    }
-
-    /**
-     * @param int $objectInfos
-     *
-     * @return self
-     */
-    public function setObjectInfos($objectInfos)
-    {
-        $this->objectInfos = $objectInfos;
+        $this->note = $note;
 
         return $this;
     }
@@ -174,27 +130,6 @@ class Objects_infos_resources
     public function setText($text)
     {
         $this->text = $text;
-
-        return $this;
-    }
-
-  
-    /**
-     * @return \DateTime
-     */
-    public function getTsUpdate()
-    {
-        return $this->tsUpdate;
-    }
-
-    /**
-     * @param \DateTime $tsUpdate
-     *
-     * @return self
-     */
-    public function setTsUpdate(\DateTime $tsUpdate)
-    {
-        $this->tsUpdate = $tsUpdate;
 
         return $this;
     }
@@ -220,6 +155,26 @@ class Objects_infos_resources
     }
 
     /**
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * @param string $path
+     *
+     * @return self
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
      * @return int
      */
     public function getType()
@@ -238,5 +193,27 @@ class Objects_infos_resources
 
         return $this;
     }
+
+    /**
+     * @return \DateTime
+     */
+    public function getTsUpdate()
+    {
+        return $this->tsUpdate;
+    }
+
+    /**
+     * @param \DateTime $tsUpdate
+     *
+     * @return self
+     */
+    public function setTsUpdate(\DateTime $tsUpdate)
+    {
+        $this->tsUpdate = $tsUpdate;
+
+        return $this;
+    }
+
+    
 }
 
