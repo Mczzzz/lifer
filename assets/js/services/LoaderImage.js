@@ -2,7 +2,7 @@ import EXIF             from 'exif-orientation';
 
 import { Lifer } from './Lifer.js';
 
-class ImageLoader {
+class LoaderImage {
 	
 
 	constructor(){
@@ -67,5 +67,5 @@ class ImageLoader {
 
 }
 
-const instance = new ImageLoader();
-export { instance as ImgLoader };
+const instance = new LoaderImage();
+export { instance as LoaderImage };

@@ -146,6 +146,9 @@ export default class Resources extends superViews{
 		this.container.scrollTop = this.container.scrollHeight;
 
 
+		//et hop on envoi en sauvegarde la data mon gars
+		
+
 	}
 
 

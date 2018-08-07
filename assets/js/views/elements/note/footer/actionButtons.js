@@ -2,7 +2,7 @@ import superViews from "../../common/super/views.js";
 
 import Card from "../../common/ui/card.js";
 
-import { ImgLoader } from '../../../../services/ImageLoader.js';
+import { LoaderImage } from '../../../../services/LoaderImage.js';
 
 export default class ActionButtons extends superViews{
 	
