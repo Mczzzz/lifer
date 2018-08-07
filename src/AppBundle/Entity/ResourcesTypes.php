@@ -5,8 +5,8 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ResourcesTypes
- *
+ * 
+ * @ORM\Entity
  * @ORM\Table(name="ResourcesTypes")
  * 
  */

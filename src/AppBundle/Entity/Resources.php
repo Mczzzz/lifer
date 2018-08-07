@@ -5,8 +5,8 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Resources
- *
+ * 
+ * @ORM\Entity
  * @ORM\Table(name="Resources")
  * 
  */
@@ -214,6 +214,6 @@ class Resources
         return $this;
     }
 
-    
+
 }
 
