@@ -40,6 +40,8 @@ class NotesController extends Controller
         $request = Request::createFromGlobals();
 
         //SERIALIZED OBJECT
+        var_dump($request->request);
+        die();
         $RequestData = $request->request->get('RequestData');
 
         $dataArray = json_decode($RequestData);
@@ -50,20 +52,20 @@ class NotesController extends Controller
 
 
         //NOTE
-        $idNote      = $request->request->get('idNote');
+        $noteId         = $request->request->get('noteId');
 
-        $noteTitle   = $request->request->get('noteTitle');
+        $noteTitle      = $request->request->get('noteTitle');
 
-        $noteAppTs   = $request->request->get('noteTs');
+        $noteAppTs      = $request->request->get('noteTs');
 
         //RESOURCE
-        $idRessource = $request->request->get('idNote');
+        $resourceId     = $request->request->get('resourceId');
 
-        $DataType    = $request->request->get('dataType'); //obligatoire
+        $resourceTypeId = $request->request->get('resourceTypeId'); //obligatoire
 
-        $Data        = $request->request->get('data');
+        $resourceText   = $request->request->get('resourceText');
 
-        $text        = $request->request->get('text');
+        //$resourceData   = $request->request->get('data');
         
 /*        $value       = $request->request->get('value');
 
