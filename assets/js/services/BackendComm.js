@@ -5,7 +5,27 @@ export default class BackendComm {
 	ajaxSend(VERB,url,formData = ""){
 
 
-			let AjaxSender = $.ajax({
+			fetch(url, {
+			  method: VERB,
+			  body: JSON.stringify(formData),
+			  headers: {
+			    "Content-Type": "application/json"
+			  },
+			  credentials: "same-origin"
+			}).then(function(response) {
+			  response.status     //=> number 100–599
+			  response.statusText //=> String
+			  response.headers    //=> Headers
+			  response.url        //=> String
+
+			  return response.text()
+			}, function(error) {
+			  error.message //=> String
+			})
+
+
+
+/*			let AjaxSender = $.ajax({
 
 	          type: VERB,
 	          url: url,
@@ -24,7 +44,7 @@ export default class BackendComm {
 			//console.log(JSON.parse(AjaxSender.responseText));
 
 
-			return JSON.parse(AjaxSender.responseText);
+			return JSON.parse(AjaxSender.responseText);*/
 
 	}
 
