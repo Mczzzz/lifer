@@ -23,7 +23,7 @@ let css = document.createElement("style");
 ////////////////////////////////////////////////////////
 //GROS HACK POUR FAIRE DU FULL SCREEN
 
-window.addEventListener("click", function(e){
+/*window.addEventListener("click", function(e){
 
 	//Chrome, Opéra, Safari
 	document.documentElement.webkitRequestFullscreen();
@@ -38,7 +38,8 @@ window.addEventListener("click", function(e){
 });
 
 let LinkEvent = new CustomEvent('click', {'detail' : {}});
- window.dispatchEvent(LinkEvent);
+ window.dispatchEvent(LinkEvent);*/
+ 
 ///////////////////////////////////////////////////////////
 
 
