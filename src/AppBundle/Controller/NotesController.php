@@ -42,7 +42,7 @@ class NotesController extends Controller
         //SERIALIZED OBJECT
         $test = json_decode($request->getContent());
 
-        var_dump($test);
+        var_dump(json_decode($test));
         die();
         $RequestData = $request->request->get('RequestData');
 
