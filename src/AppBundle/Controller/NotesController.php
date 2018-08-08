@@ -44,6 +44,8 @@ class NotesController extends Controller
 
         var_dump($datas);
         die();
+
+        
         $RequestData = $request->request->get('RequestData');
 
         $dataArray = json_decode($RequestData);
