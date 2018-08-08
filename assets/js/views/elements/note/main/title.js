@@ -20,9 +20,11 @@ export default class Title extends superViews{
 
 
 
-		let TheNote = this.Lifer.getData("Note","This");
+		this.TheNote = this.Lifer.getData("Note","This");
 		
-		if(TheNote.note.id === false){
+
+
+		if(this.TheNote.note.id === false){
 
 			this.data = {};
 			this.data.update = this.Moment().format('Do MMMM YYYY, h:mm:ss');
@@ -38,7 +40,18 @@ export default class Title extends superViews{
 
 		}
 
+
 		
+		this.addCard();			
+
+
+	}
+
+
+
+
+	addCard(){
+
 
 		this.card = new Card('NoteTitleCard', this.path);
 
@@ -87,13 +100,15 @@ export default class Title extends superViews{
 		if(TheNote.note.id === false){
 			TheTitle.getContainer().focus();
 		}
+
+
 	}
 
 
 
 	changeFocus(e,TheTitle){
 
-		TheTitle.scrollIntoView();
+
 
 		if (e.key === "Enter") {
 
@@ -104,9 +119,12 @@ export default class Title extends superViews{
 			toFocus.getContainer().focus();
 			this.setStyle("display" , "");
 
-
-
+			
     	}
+
+
+    	this.TheNote.note.Title = TheTitle.innerHTML;
+    	this.TheNote.Push();
 
 
 	}

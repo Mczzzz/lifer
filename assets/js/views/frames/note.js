@@ -96,23 +96,9 @@ export default class Note extends superViews{
 
 	Push(){
 
-		console.log('in Synchronizer');
-
-		let formData = new FormData();
-        
-        formData.append('noteId'  , this.note.id);
-        
-        formData.append('noteTitle'  , this.note.Title);
-        formData.append('noteTs'  , this.note.Ts);
-
-        formData.append('resourceId'  , "");
-
-        formData.append('resourceTypeId'  , "");
-        formData.append('resourceText'  , "");
-
 
         let res = {};
-        res.coucou = "yeahhhh";
+        res.note = this.note;
 
         this.NoteCollection.Push(JSON.stringify(res));
 
