@@ -43,7 +43,7 @@ class NotesController extends Controller
         $test = json_decode($request->getContent());
         $toto = json_decode($test);
         var_dump($request->getContent());
-        var_dump($toto);
+        var_dump($test);
         die();
         $RequestData = $request->request->get('RequestData');
 
