@@ -87,7 +87,7 @@ export default class Resources extends superViews{
 
 	createCard(Resource){
 
-
+		let updateTs = this.Moment();
 		//on s'assure que le flex de noteMainTitle est bien supprimé sinon on le fait
 		//car sinon le Title déborde sur le header de la Note.
 		let NoteMainTitle = this.Lifer.getData("Note/mainNote/noteMainTitle", "This");
@@ -113,7 +113,7 @@ export default class Resources extends superViews{
 		let HeaderElement = card.setElement("header_new_"+timestamp);
 		card.setStyleElement(HeaderElement,"justifyContent","flex-end");
 
-				card.push("Text",HeaderElement,"update_new_"+timestamp,this.Moment().format('Do MMMM YYYY, hh:mm:ss'));
+				card.push("Text",HeaderElement,"update_new_"+timestamp,updateTs.format('Do MMMM YYYY, HH:mm:ss'));
 
 				card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"fontSize","9px");
 				card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"color","grey");
@@ -147,7 +147,7 @@ export default class Resources extends superViews{
 
 
 		//et hop on envoi en sauvegarde la data mon gars
-		let updateTs = this.Moment();
+
 
 		this.updateNote = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard/cardElementheader/noteEltTextupdate","This");	
     	this.updateNote.getContainer().innerHTML = updateTs.format('Do MMMM YYYY, HH:mm:ss');
