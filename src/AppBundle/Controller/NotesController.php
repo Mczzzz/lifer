@@ -40,10 +40,9 @@ class NotesController extends Controller
         $request = Request::createFromGlobals();
 
         //SERIALIZED OBJECT
-        $test = json_decode($request->getContent());
-        $toto = json_decode($test);
-        var_dump($request->getContent());
-        var_dump($test);
+        $datas = json_decode($request->getContent());
+
+        var_dump($datas);
         die();
         $RequestData = $request->request->get('RequestData');
 
