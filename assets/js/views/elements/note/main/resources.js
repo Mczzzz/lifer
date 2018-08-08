@@ -113,7 +113,7 @@ export default class Resources extends superViews{
 		let HeaderElement = card.setElement("header_new_"+timestamp);
 		card.setStyleElement(HeaderElement,"justifyContent","flex-end");
 
-				card.push("Text",HeaderElement,"update_new_"+timestamp,this.Moment().format('Do MMMM YYYY, h:mm:ss'));
+				card.push("Text",HeaderElement,"update_new_"+timestamp,this.Moment().format('Do MMMM YYYY, hh:mm:ss'));
 
 				card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"fontSize","9px");
 				card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"color","grey");

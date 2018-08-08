@@ -27,7 +27,7 @@ export default class Title extends superViews{
 		if(this.TheNote.note.id === false){
 
 			this.data = {};
-			this.data.update = this.Moment().format('Do MMMM YYYY, h:mm:ss');
+			this.data.update = this.Moment().format('Do MMMM YYYY, hh:mm:ss');
 			this.data.name = "";
 
 			this.setStyle("display" , "flex");
@@ -70,7 +70,7 @@ export default class Title extends superViews{
 			let HeaderElement = this.card.setElement("header");
 			this.card.setStyleElement(HeaderElement,"justifyContent","flex-end");
 
-					this.card.push("Text", HeaderElement,"update",this.data.update);
+					this.updateNote = this.card.push("Text", HeaderElement,"update",this.data.update);
 
 					this.card.setStyleComponent(HeaderElement,"update","fontSize","9px");
 					this.card.setStyleComponent(HeaderElement,"update","color","grey");
@@ -124,6 +124,9 @@ export default class Title extends superViews{
 
 
     	this.TheNote.note.Title = TheTitle.innerHTML;
+    	let updateTs = this.Moment().format('Do MMMM YYYY, hh:mm:ss');
+    	this.updateNote.getContainer().innerHTML = updateTs;
+		this.TheNote.note.Ts = updateTs;
     	this.TheNote.Push();
 
 
