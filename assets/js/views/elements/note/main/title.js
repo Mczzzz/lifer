@@ -124,7 +124,7 @@ export default class Title extends superViews{
 
 
     	this.TheNote.note.Title = TheTitle.innerHTML;
-    	let updateTs = this.Moment().format('Do MMMM YYYY, hh:mm:ss');
+    	let updateTs = this.Moment().format('Do MMMM YYYY, HH:mm:ss');
     	this.updateNote.getContainer().innerHTML = updateTs;
 		this.TheNote.note.Ts = updateTs;
     	this.TheNote.Push();
