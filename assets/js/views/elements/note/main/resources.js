@@ -147,12 +147,12 @@ export default class Resources extends superViews{
 
 
 		//et hop on envoi en sauvegarde la data mon gars
-		let updateTs = this.Moment().format('Do MMMM YYYY, HH:mm:ss');
+		let updateTs = this.Moment();
 
 		this.updateNote = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard/cardElementheader/noteEltTextupdate","This");	
-    	this.updateNote.getContainer().innerHTML = updateTs;
+    	this.updateNote.getContainer().innerHTML = updateTs.format('Do MMMM YYYY, HH:mm:ss');
 
-		this.TheNote.note.Ts = updateTs;
+		this.TheNote.note.Ts = updateTs.format('YYYY-MM-DD HH:mm:ss');
     	this.TheNote.Push();
 
 	}
