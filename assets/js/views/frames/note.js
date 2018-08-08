@@ -35,7 +35,7 @@ export default class Note extends superViews{
 	init(){
 
 
-/*		this.setStyle("position" , "absolute");
+		this.setStyle("position" , "absolute");
 		this.setStyle("top" , "0.5%");
 		this.setStyle("left" , "0.5%");
 		this.setStyle("height" , "99%");
@@ -43,11 +43,11 @@ export default class Note extends superViews{
 		this.setStyle("display" , "flex");
 		this.setStyle("flexDirection" , "column");
 		this.setStyle("background" , "white");
-		this.setStyle("boxShadow" , "0px 0px 10px 10px green");*/
+		this.setStyle("boxShadow" , "0px 0px 10px 10px green");
 
-		this.setStyle("display" , "flex");
+/*		this.setStyle("display" , "flex");
 		this.setStyle("flexDirection" , "column");
-		this.setStyle("height" , "100vh");
+		this.setStyle("height" , "100vh");*/
 
 
 
