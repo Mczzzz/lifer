@@ -7,7 +7,7 @@ export default class BackendComm {
 
 			fetch(url, {
 			  method: VERB,
-			  body: JSON.stringify(formData),
+			  body: formData,
 			  headers: {
 			    "Content-Type": "application/json"
 			  },
