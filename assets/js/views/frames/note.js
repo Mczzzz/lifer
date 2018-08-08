@@ -22,7 +22,7 @@ export default class Note extends superViews{
 
 		this.note.id = id;
 		this.note.Title = "";
-		this.note.Ts = this.Moment().format('YYYY-MM-DD h:mm:ss');
+		this.note.Ts = this.Moment().format('YYYY-MM-DD HH:mm:ss');
 		
 		//this.firstKey = true;
 
