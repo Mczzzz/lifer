@@ -52,18 +52,19 @@ export default class Frame {
 
 
 	Note(){
-
+		
+		this.cleanBody();
 		let note = new Note("Note",null);
 
 	}
 
 
-	NoteRemove(){
+/*	NoteRemove(){
 
 		let note = Lifer.getData("Note","This");
 		note.destroyMe();
 
-	}
+	}*/
 
 
 }
