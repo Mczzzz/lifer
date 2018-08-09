@@ -1,9 +1,12 @@
+import { Lifer } from './Lifer.js';
+
 export default class BackendComm {
 
 
 
 	ajaxSend(VERB,url,formData = ""){
 
+		let Note = this.Lifer.getData("Notes", "This");
 
 			fetch(url, {
 			  method: VERB,
@@ -17,7 +20,7 @@ export default class BackendComm {
 			  response.statusText //=> String
 			  response.headers    //=> Headers
 			  response.url        //=> String
-			  console.log(response.text());
+			  console.log(response);
 			  return response.text();
 			}, function(error) {
 			  error.message //=> String

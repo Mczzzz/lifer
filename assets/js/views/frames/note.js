@@ -100,17 +100,16 @@ export default class Note extends superViews{
         let res = {};
         res.note = this.note;
 
-        let BackRes = this.NoteCollection.Push(JSON.stringify(res));
-        console.log(BackRes);
-        
-        if(this.note.id == false) this.note.id = BackRes.datas.note.id;
+        this.NoteCollection.Push(JSON.stringify(res));
+
+
 
 	}
 
 
 
 
-	_Synchronizer(name,value){
+/*	_Synchronizer(name,value){
 
 		console.log('in Synchronizer');
 
@@ -171,7 +170,7 @@ export default class Note extends superViews{
 		}
 
 
-	}
+	}*/
 
 
 
