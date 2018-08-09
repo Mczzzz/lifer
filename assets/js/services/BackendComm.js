@@ -6,7 +6,7 @@ export default class BackendComm {
 
 	ajaxSend(VERB,url,formData = ""){
 
-		let Note = Lifer.getData("Notes", "This");
+		
 
 			fetch(url, {
 			  method: VERB,
@@ -19,6 +19,8 @@ export default class BackendComm {
 			   	return response.json();
 			}).then(function(json){
 
+				let Note = Lifer.getData("Notes", "This");
+				console.log(Note.note.id);
 				//Note.note.id = json.datas.note.id;
 				console.log(json.datas.note.id);
 
