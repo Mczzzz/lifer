@@ -19,8 +19,8 @@ export default class BackendComm {
 			   	return response.json();
 			}).then(function(json){
 
-				let Note = Lifer.getData("Notes", "This");
-				console.log(Note);
+				let Note = Lifer.getData("Note", "This");
+				console.log(Note.note.id);
 				//Note.note.id = json.datas.note.id;
 				console.log(json.datas.note.id);
 
