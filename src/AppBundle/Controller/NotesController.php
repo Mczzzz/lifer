@@ -105,6 +105,13 @@ class NotesController extends Controller
 
             $Note = new Notes();
             $Note->setCreator($user);
+
+        }else{
+
+            $Note = $em->getRepository('AppBundle:Notes')->find($datas->note->id);
+        
+        }
+
             $Note->setName($datas->note->Title);
 
             if(!$datas->note->Ts){
@@ -119,7 +126,7 @@ class NotesController extends Controller
             $em->persist($Note);
             $em->flush();
 
-        }
+        
 
 
 
