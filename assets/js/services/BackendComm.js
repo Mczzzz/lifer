@@ -6,7 +6,7 @@ export default class BackendComm {
 
 	ajaxSend(VERB,url,formData = ""){
 
-		let Note = this.Lifer.getData("Notes", "This");
+		let Note = Lifer.getData("Notes", "This");
 
 			fetch(url, {
 			  method: VERB,
