@@ -10,6 +10,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+
+use AppBundle\Entity\Notes;
+
 /**
  * Notes controller.
  *
@@ -94,23 +97,39 @@ class NotesController extends Controller
 
 
         // j'enregistre en base ma note
-        $entityManager = $this->getDoctrine()->getManager();
+        $em = $this->getDoctrine()->getManager();
 
 
-        var_dump($datas->note->id);
-        var_dump($datas->note->Title);
-        die();
+
+        if($datas->note->id === false){
+
+            $Note = new Notes();
+            $Note->setCreator($user);
+            $Note->setName($datas->note->Title);
+            $Note->setUpdateAPP($datas->note->Ts);
+
+            $em->persist($Note);
+            $em->flush();
+
+        }
+
+
+
+            $res->error = "0";
+            $res->msg   = "SUCCESS";
+            $res->datas = new \stdClass();
+            $res->datas->note = new \stdClass();
+            $res->datas->note->id = $Note->getId();
+
+            return new response(json_encode($res));
 
         
-        $RequestData = $request->request->get('RequestData');
-
-        $dataArray = json_decode($RequestData);
 
 
 
 
 
-
+/* 
         //NOTE
         $noteId         = $request->request->get('noteId');
 
@@ -127,7 +146,7 @@ class NotesController extends Controller
 
         //$resourceData   = $request->request->get('data');
         
-/*        $value       = $request->request->get('value');
+       $value       = $request->request->get('value');
 
         $dateTime       = $request->request->get('dateTime');
 
@@ -136,8 +155,6 @@ class NotesController extends Controller
 
 
 
-        //si pas d'id de note j'en crée une note
-        //si pas de titre c'est pas grave
 
 
 
