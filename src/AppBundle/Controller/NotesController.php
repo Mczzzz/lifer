@@ -93,11 +93,12 @@ class NotesController extends Controller
         }
 
 
+        // j'enregistre en base ma note
+        $entityManager = $this->getDoctrine()->getManager();
 
 
-
-
-        var_dump($datas);
+        var_dump($datas->note->id);
+        var_dump($datas->note->Title);
         die();
 
         
@@ -141,8 +142,7 @@ class NotesController extends Controller
 
 
 
-        // j'enregistre en base ma note
-        $entityManager = $this->getDoctrine()->getManager();
+
 
     }
 
