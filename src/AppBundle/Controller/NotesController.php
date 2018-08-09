@@ -106,7 +106,15 @@ class NotesController extends Controller
             $Note = new Notes();
             $Note->setCreator($user);
             $Note->setName($datas->note->Title);
-            $Note->setUpdateAPP($datas->note->Ts);
+
+            if(!$datas->note->Ts){
+                $ndt = new \Datetime('now');
+            }else{
+                $ndt = new \Datetime($datas->note->Ts);
+            }
+
+            
+            $Note->setUpdateAPP($ndt);
 
             $em->persist($Note);
             $em->flush();
