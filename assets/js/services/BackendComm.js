@@ -18,7 +18,7 @@ export default class BackendComm {
 			  response.headers    //=> Headers
 			  response.url        //=> String
 
-			  return JSON.parse(response.text());
+			  return response.text();
 			}, function(error) {
 			  error.message //=> String
 			})
