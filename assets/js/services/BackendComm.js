@@ -20,7 +20,7 @@ export default class BackendComm {
 			}).then(function(json){
 
 				//Note.note.id = json.datas.note.id;
-				console.log(json.datas.note);
+				console.log(json.datas.note.id);
 
 			}, function(error) {
 			  error.message //=> String
