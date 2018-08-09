@@ -21,22 +21,28 @@ class NotesController extends Controller
 
     /**
      * @Route("/push", name="api_notes_push")
-     * @Method("GET")
+     * @Method("POST")
     */
 
     public function pushAction(Request $request)
     {
 
+/*        Errors:
+        1 : Security
+        2 : Data Problem
+        3 : Crash*/
+
         $res = new \stdClass();
         $res->error = "";
         $res->msg = "";
+
 
         // is it an Ajax request?
         $isAjax = $request->isXmlHttpRequest();
  
         if(!$isAjax){
 
-            $res->error = "1";
+            $res->error = "1.1";
             $res->msg = "UnAuthorized Request Method";
 
             return new response(json_encode($res));
@@ -44,15 +50,52 @@ class NotesController extends Controller
         }
 
 
-        //users infos
-        //$user = $this->getUser();
-
-
         //accueil de la requete
         $request = Request::createFromGlobals();
 
+        if(!$request){
+
+            $res->error = "2.1";
+            $res->msg = "UnAuthorized Request Method";
+
+            return new response(json_encode($res));
+
+
+        }
+
+
+
+        //users infos
+        $user = $this->getUser();
+
+        if(!$user){
+
+            $res->error = "1.2";
+            $res->msg = "User Unknown";
+
+            return new response(json_encode($res));
+
+        }
+
+
+
+
         //SERIALIZED OBJECT
         $datas = json_decode($request->getContent());
+
+        if(!$datas || !is_object($datas)){
+
+            $res->error = "2.2";
+            $res->msg = "Datas Corrupted";
+
+            return new response(json_encode($res));
+
+        }
+
+
+
+
+
 
         var_dump($datas);
         die();
