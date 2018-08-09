@@ -27,10 +27,22 @@ class NotesController extends Controller
     public function pushAction(Request $request)
     {
 
-    //	$res = {};
+        $res = new \stdClass();
+        $res->error = "";
+        $res->msg = "";
 
         // is it an Ajax request?
-        //$isAjax = $request->isXmlHttpRequest();
+        $isAjax = $request->isXmlHttpRequest();
+ 
+        if(!$isAjax){
+
+            $res->error = "1";
+            $res->msg = "UnAuthorized Request Method";
+
+            return new response(json_encode($res));
+
+        }
+
 
         //users infos
         //$user = $this->getUser();
