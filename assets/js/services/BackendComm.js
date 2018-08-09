@@ -16,12 +16,11 @@ export default class BackendComm {
 			  },
 			  credentials: "same-origin"
 			}).then(function(response) {
-			  response.status     //=> number 100–599
-			  response.statusText //=> String
-			  response.headers    //=> Headers
-			  response.url        //=> String
-			  console.log(response.json());
-			  return response.text();
+			   	return response.json();
+			}).then(function(json){
+
+				console.log(json);
+
 			}, function(error) {
 			  error.message //=> String
 			})
