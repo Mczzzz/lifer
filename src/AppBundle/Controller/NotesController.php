@@ -37,7 +37,7 @@ class NotesController extends Controller
         $res->msg = "";
 
 
-        // is it an Ajax request?
+/*        // is it an Ajax request?
         $isAjax = $request->isXmlHttpRequest();
  
         if(!$isAjax){
@@ -47,7 +47,7 @@ class NotesController extends Controller
 
             return new response(json_encode($res));
 
-        }
+        }*/
 
 
         //accueil de la requete
