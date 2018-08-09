@@ -101,7 +101,8 @@ export default class Note extends superViews{
         res.note = this.note;
 
         let BackRes = this.NoteCollection.Push(JSON.stringify(res));
-
+        console.log(BackRes);
+        
         if(this.note.id == false) this.note.id = BackRes.datas.note.id;
 
 	}
