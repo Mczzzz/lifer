@@ -21,7 +21,7 @@ class NotesController extends Controller
 
     /**
      * @Route("/push", name="api_notes_push")
-     * @Method("POST")
+     * @Method("GET")
     */
 
     public function pushAction(Request $request)
