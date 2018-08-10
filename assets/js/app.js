@@ -67,7 +67,7 @@ screen.orientation.lock("portrait-primary");
 ////////////////////////////////////////////////////////////
 //Init service worker
 navigator.serviceWorker.register('build/ws.js', {
-  scope: './controlled'
+  scope: './build'
 });
 
 navigator.serviceWorker.ready.then(console.log('ready to use'));
