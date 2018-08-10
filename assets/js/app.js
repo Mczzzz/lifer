@@ -68,7 +68,7 @@ screen.orientation.lock("portrait-primary");
 //Init service worker
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/workers/sw.js').then(function(registration) {
+    navigator.serviceWorker.register('./workers/ws.js').then(function(registration) {
       // Registration was successful
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
     }, function(err) {
