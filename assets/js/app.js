@@ -1,6 +1,8 @@
 import { Lifer } from './services/Lifer.js';
 import Controller from './controller/Controller.js';
 
+import MyWorker from "worker-loader!./workers/ws.js";
+
 let name = "app";
 Lifer.addMe(name);
 
@@ -66,18 +68,7 @@ screen.orientation.lock("portrait-primary");
 
 ////////////////////////////////////////////////////////////
 //Init service worker
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/workers/ws.js').then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-
+const worker = new MyWorker();
 
 ////////////////////////////////////////////////////////////
 
