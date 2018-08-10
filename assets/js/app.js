@@ -1,8 +1,6 @@
 import { Lifer } from './services/Lifer.js';
 import Controller from './controller/Controller.js';
 
-import MyWorker from "worker-loader!./workers/ws.js";
-
 let name = "app";
 Lifer.addMe(name);
 
@@ -68,7 +66,7 @@ screen.orientation.lock("portrait-primary");
 
 ////////////////////////////////////////////////////////////
 //Init service worker
-const worker = new MyWorker();
+navigator.serviceWorker.register('build/ws.js');
 
 ////////////////////////////////////////////////////////////
 
