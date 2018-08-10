@@ -21,7 +21,7 @@ export default class BackendComm {
 
 				let Note = Lifer.getData("Note", "This");
 				Note.note.id = json.datas.note.id;
-				console.log(Note.note.id);
+				//console.log(Note.note.id);
 				//Note.note.id = json.datas.note.id;
 				console.log(json.datas.note.id);
 
