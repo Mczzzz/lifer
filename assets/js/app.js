@@ -70,9 +70,14 @@ navigator.serviceWorker.register('build/ws.js', {
   scope: 'build/'
 });
 
-navigator.serviceWorker.ready.then(console.log('ready to use'));
+navigator.serviceWorker.ready.then(function(){
+
+	console.log('ready to use');
 let msg = "coucou c'est mouah";
-navigator.serviceWorker.controller.postMessage("Client 1 says '"+msg+"'");
+navigator.serviceWorker.controller.postMessage("Client 1 says '"+msg+"'");	
+
+	});
+
 ////////////////////////////////////////////////////////////
 
 
