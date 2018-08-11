@@ -85,7 +85,9 @@ if ('serviceWorker' in navigator) {
 }
 
  navigator.serviceWorker.ready.then(function(reg) {
+ 	console.log("in try");
       try {
+
         reg.active.postMessage({
           text: "Hi!",
           port: messageChannel && messageChannel.port2
