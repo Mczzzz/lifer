@@ -66,142 +66,21 @@ screen.orientation.lock("portrait-primary");
 
 ////////////////////////////////////////////////////////////
 //Init service worker
-    function log() {
-      document.body.appendChild(document.createTextNode(Array.prototype.join.call(arguments, ", ") + '\n'));
-      console.log.apply(console, arguments);
-    }
-
-  window.onerror = function(err) {
-      log("Error", err);
-    };
-
-    window.onmessage = function(event) {
-      log("Got reply from serviceworker via window", event.data);
-    };
-
-    navigator.serviceWorker.onmessage = function(event) {
-      log("Got reply from serviceworker via navigator.serviceWorker", event.data);
-    };
-
-    if (window.MessageChannel) {
-      var messageChannel = new MessageChannel();
-
-      messageChannel.port1.onmessage = function(event) {
-        og("Got reply from serviceworker via channel", event.data);
-      };
-    }
-
-
-
-
-if ('serviceWorker' in navigator) {
-
-    navigator.serviceWorker.register('build/ws.js').then(function(sw) {
-      console.log("Registered!");
-    }).catch(function(err) {
-      console.log("Error");
-    });
-
-} else {
-  ChromeSamples.setStatus('This browser does not support service workers.');
-}
-
-if ('serviceWorker' in navigator) {
-	console.log("juste before ready");
-  navigator.serviceWorker.ready
-  .then(function(registration) {
-    console.log('A service worker is active:', registration.active);
-
-    // At this point, you can call methods that require an active
-    // service worker, like registration.pushManager.subscribe()
-  });
-} else {
-  console.log('Service workers are not supported.');
-}
-
-
-/*navigator.serviceWorker.ready.then(function(reg) {
- 	console.log("in try");
-      try {
-
-        reg.active.postMessage({
-          text: "Hi!",
-          port: messageChannel && messageChannel.port2
-        }, [messageChannel && messageChannel.port2]);
-      }
-      catch (e) {
-        // getting a cloning error in Firefox
-        reg.active.postMessage({
-          text: "Hi!"
-        });
-      }
-    });*/
-
-
-/*if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.whenReady
-  .then(function(registration) {
-    console.log('A service worker is active:', registration.active);
-
-    // At this point, you can call methods that require an active
-    // service worker, like registration.pushManager.subscribe()
-  });
-} else {
-  console.log('Service workers are not supported.');
-}
-*/
-
-
-/*navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
-  // Let's see if you have a subscription already
-   console.log('envoi de data au service worker');
-  navigator.serviceWorker.controller.postMessage({'data': dataToServiceWorker});
-
-  return serviceWorkerRegistration.pushManager.getSubscription();
-})
-.then(function(subscription) {
-  if (!subscription) {
-    // You do not have subscription
-  }
-  // You have subscription.
-  // Send data to service worker
-  console.log('envoi de data au service worker');
-  navigator.serviceWorker.controller.postMessage({'data': dataToServiceWorker});
-
-})
-*/
-
-
-/*
-function sendMessage(message) {
-  // This wraps the message posting/response in a promise, which will resolve if the response doesn't
-  // contain an error, and reject with the error if it does. If you'd prefer, it's possible to call
-  // controller.postMessage() and set up the onmessage handler independently of a promise, but this is
-  // a convenient wrapper.
-  return new Promise(function(resolve, reject) {
-    var messageChannel = new MessageChannel();
-    messageChannel.port1.onmessage = function(event) {
-      if (event.data.error) {
-        reject(event.data.error);
-      } else {
-        resolve(event.data);
-      }
-    };
-
-    // This sends the message data as well as transferring messageChannel.port2 to the service worker.
-    // The service worker can then use the transferred port to reply via postMessage(), which
-    // will in turn trigger the onmessage handler on messageChannel.port1.
-    // See https://html.spec.whatwg.org/multipage/workers.html#dom-worker-postmessage
-    navigator.serviceWorker.controller.postMessage(message,
-      [messageChannel.port2]);
-  });
-}*/
-
-
-
 
 ////////////////////////////////////////////////////////////
 
+
+///////////////////////////////////////////////////////////
+//WEB WORKER
+var worker = new Worker('build/ws.js');
+
+worker.addEventListener('message', function(e) {
+  console.log('Worker said: ', e.data);
+}, false);
+
+worker.postMessage('Hello World'); // Send data to our worker.
+
+//////////////////////////////////////////////////////////
 
 
 const LiferApp = new Controller(name);
