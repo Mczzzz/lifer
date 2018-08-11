@@ -1,4 +1,3 @@
-var CACHE = 'network-or-cache';
 
 console.log("on passe la");
 // On install, cache some resource.
@@ -12,7 +11,6 @@ self.addEventListener('install', function(evt) {
 });
 
 
-
 function active() {
 // Service Worker Active
 self.addEventListener('activate', function(event){
@@ -20,3 +18,7 @@ self.addEventListener('activate', function(event){
 });
 }
 
+
+self.addEventListener('message', function(event){
+    console.log("SW Received Message: " + event.data);
+});

@@ -71,8 +71,8 @@ navigator.serviceWorker.register('build/ws.js', {
 });
 
 navigator.serviceWorker.ready.then(console.log('ready to use'));
-
-
+let msg = "coucou c'est mouah";
+navigator.serviceWorker.controller.postMessage("Client 1 says '"+msg+"'");
 ////////////////////////////////////////////////////////////
 
 
