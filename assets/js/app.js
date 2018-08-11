@@ -66,6 +66,29 @@ screen.orientation.lock("portrait-primary");
 
 ////////////////////////////////////////////////////////////
 //Init service worker
+  window.onerror = function(err) {
+      console.log("Error"+ err);
+    };
+
+    window.onmessage = function(event) {
+      console.log("Got reply from serviceworker via window"+ event.data);
+    };
+
+    navigator.serviceWorker.onmessage = function(event) {
+      console.log("Got reply from serviceworker via navigator.serviceWorker"+ event.data);
+    };
+
+    if (window.MessageChannel) {
+      var messageChannel = new MessageChannel();
+
+      messageChannel.port1.onmessage = function(event) {
+        console.log("Got reply from serviceworker via channel"+ event.data);
+      };
+    }
+
+
+
+
 if ('serviceWorker' in navigator) {
 
     navigator.serviceWorker.register('build/ws.js').then(function(sw) {
