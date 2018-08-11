@@ -73,6 +73,10 @@ if ('serviceWorker' in navigator) {
 		console.log(navigator.serviceWorker.ready);
 	      return navigator.serviceWorker.ready;
 	    })
+	.then(function() {;
+		console.log(navigator.serviceWorker.ready);
+	      return navigator.serviceWorker.ready;
+	    })
 		// ...and then show the interface for the commands once it's ready.
 	.catch(function(error) {
 	      // Something went wrong during registration. The service-worker.js file
