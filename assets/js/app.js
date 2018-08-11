@@ -73,13 +73,12 @@ if ('serviceWorker' in navigator) {
 	      return navigator.serviceWorker.ready;
 	    })
 	// ...and then show the interface for the commands once it's ready.
-	.then(showCommands)
 	.catch(function(error) {
 	      // Something went wrong during registration. The service-worker.js file
 	      // might be unavailable or contain a syntax error.
 	    ChromeSamples.setStatus(error);
 	});
-	
+
 } else {
   ChromeSamples.setStatus('This browser does not support service workers.');
 }
