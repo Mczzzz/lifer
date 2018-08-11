@@ -69,7 +69,8 @@ screen.orientation.lock("portrait-primary");
 if ('serviceWorker' in navigator) {
 
 	navigator.serviceWorker.register('build/ws.js', { scope: 'build/'})
-	.then(function() {
+	.then(function() {;
+		console.log(navigator.serviceWorker.ready);
 	      return navigator.serviceWorker.ready;
 	    })
 		// ...and then show the interface for the commands once it's ready.
@@ -89,7 +90,7 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
   // Let's see if you have a subscription already
    console.log('envoi de data au service worker');
   navigator.serviceWorker.controller.postMessage({'data': dataToServiceWorker});
-  
+
   return serviceWorkerRegistration.pushManager.getSubscription();
 })
 .then(function(subscription) {

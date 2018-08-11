@@ -1,22 +1,23 @@
 
-console.log("on passe la");
-// On install, cache some resource.
+/////////////////////////////////////////
+//INIT
+/////////////////////////////////////////
+// Install.
 self.addEventListener('install', function(evt) {
   console.log('The service worker is being installed.');
-
-
-//Ask the service worker to keep installing until the returning promise resolves.
-
   evt.waitUntil(active());
 });
 
-
+// Activate
 function active() {
-// Service Worker Active
 self.addEventListener('activate', function(event){
     console.log('activated!');
 });
 }
+//////////////////////////////////////////////
+
+
+
 
 
 self.addEventListener('message', function(event){
