@@ -86,7 +86,7 @@ if ('serviceWorker' in navigator) {
 
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.ready
+  navigator.serviceWorker.whenReady()
   .then(function(registration) {
     console.log('A service worker is active:', registration.active);
 
