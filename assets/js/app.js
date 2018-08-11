@@ -69,9 +69,9 @@ screen.orientation.lock("portrait-primary");
 if ('serviceWorker' in navigator) {
 
     navigator.serviceWorker.register('build/ws.js').then(function(sw) {
-      log("Registered!", sw);
+      console.log("Registered!");
     }).catch(function(err) {
-      log("Error", err);
+      console.log("Error");
     });
 
 } else {
