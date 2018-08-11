@@ -84,9 +84,24 @@ if ('serviceWorker' in navigator) {
   ChromeSamples.setStatus('This browser does not support service workers.');
 }
 
+ navigator.serviceWorker.ready.then(function(reg) {
+      try {
+        reg.active.postMessage({
+          text: "Hi!",
+          port: messageChannel && messageChannel.port2
+        }, [messageChannel && messageChannel.port2]);
+      }
+      catch (e) {
+        // getting a cloning error in Firefox
+        reg.active.postMessage({
+          text: "Hi!"
+        });
+      }
+    });
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.whenReady()
+
+/*if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.whenReady
   .then(function(registration) {
     console.log('A service worker is active:', registration.active);
 
@@ -96,7 +111,7 @@ if ('serviceWorker' in navigator) {
 } else {
   console.log('Service workers are not supported.');
 }
-
+*/
 
 
 /*navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
