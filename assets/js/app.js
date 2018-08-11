@@ -99,9 +99,9 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 
 })
 
- navigator.serviceWorker.controller.postMessage({'data': dataToServiceWorker});
 
 
+/*
 function sendMessage(message) {
   // This wraps the message posting/response in a promise, which will resolve if the response doesn't
   // contain an error, and reject with the error if it does. If you'd prefer, it's possible to call
@@ -124,7 +124,7 @@ function sendMessage(message) {
     navigator.serviceWorker.controller.postMessage(message,
       [messageChannel.port2]);
   });
-}
+}*/
 
 
 
