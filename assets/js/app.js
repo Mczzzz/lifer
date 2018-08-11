@@ -66,23 +66,28 @@ screen.orientation.lock("portrait-primary");
 
 ////////////////////////////////////////////////////////////
 //Init service worker
+    function log() {
+      document.body.appendChild(document.createTextNode(Array.prototype.join.call(arguments, ", ") + '\n'));
+      console.log.apply(console, arguments);
+    }
+    
   window.onerror = function(err) {
-      console.log("Error"+ err);
+      log("Error", err);
     };
 
     window.onmessage = function(event) {
-      console.log("Got reply from serviceworker via window"+ event.data);
+      log("Got reply from serviceworker via window", event.data);
     };
 
     navigator.serviceWorker.onmessage = function(event) {
-      console.log("Got reply from serviceworker via navigator.serviceWorker"+ event.data);
+      log("Got reply from serviceworker via navigator.serviceWorker", event.data);
     };
 
     if (window.MessageChannel) {
       var messageChannel = new MessageChannel();
 
       messageChannel.port1.onmessage = function(event) {
-        console.log("Got reply from serviceworker via channel"+ event.data);
+        og("Got reply from serviceworker via channel", event.data);
       };
     }
 
@@ -101,7 +106,7 @@ if ('serviceWorker' in navigator) {
   ChromeSamples.setStatus('This browser does not support service workers.');
 }
 
- navigator.serviceWorker.ready.then(function(reg) {
+navigator.serviceWorker.ready.then(function(reg) {
  	console.log("in try");
       try {
 
