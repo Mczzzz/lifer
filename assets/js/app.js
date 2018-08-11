@@ -79,7 +79,7 @@ worker.addEventListener('message', function(e) {
 }, false);
 
 worker.postMessage('Hello World'); // Send data to our worker.
-
+console.log(worker);
 //////////////////////////////////////////////////////////
 
 
