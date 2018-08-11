@@ -72,11 +72,7 @@ if ('serviceWorker' in navigator) {
 	.then(function() {
 	      return navigator.serviceWorker.ready;
 	    })
-	.then(sendMessage({
-      command: 'delete',
-      url: 'test'
-    }))
-	// ...and then show the interface for the commands once it's ready.
+		// ...and then show the interface for the commands once it's ready.
 	.catch(function(error) {
 	      // Something went wrong during registration. The service-worker.js file
 	      // might be unavailable or contain a syntax error.
@@ -86,6 +82,24 @@ if ('serviceWorker' in navigator) {
 } else {
   ChromeSamples.setStatus('This browser does not support service workers.');
 }
+
+
+
+navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+  // Let's see if you have a subscription already
+  return serviceWorkerRegistration.pushManager.getSubscription();
+})
+.then(function(subscription) {
+  if (!subscription) {
+    // You do not have subscription
+  }
+  // You have subscription.
+  // Send data to service worker
+  navigator.serviceWorker.controller.postMessage({'data': dataToServiceWorker});
+
+})
+
+
 
 
 function sendMessage(message) {
