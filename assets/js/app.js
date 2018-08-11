@@ -72,7 +72,7 @@ screen.orientation.lock("portrait-primary");
 
 ///////////////////////////////////////////////////////////
 //WEB WORKER
-let worker = new Worker('build/ws.js');
+let worker = new Worker('build/ww.js');
 console.log(worker);
 worker.addEventListener('message', function(e) {
   console.log('Worker said: ', e.data);
