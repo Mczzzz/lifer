@@ -73,10 +73,6 @@ if ('serviceWorker' in navigator) {
 		console.log(navigator.serviceWorker.ready);
 	      return navigator.serviceWorker.ready;
 	    })
-	.then(function() {;
-		console.log(navigator.serviceWorker.ready);
-	      return navigator.serviceWorker.ready;
-	    })
 		// ...and then show the interface for the commands once it's ready.
 	.catch(function(error) {
 	      // Something went wrong during registration. The service-worker.js file
@@ -89,8 +85,21 @@ if ('serviceWorker' in navigator) {
 }
 
 
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.ready
+  .then(function(registration) {
+    console.log('A service worker is active:', registration.active);
 
-navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
+    // At this point, you can call methods that require an active
+    // service worker, like registration.pushManager.subscribe()
+  });
+} else {
+  console.log('Service workers are not supported.');
+}
+
+
+
+/*navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
   // Let's see if you have a subscription already
    console.log('envoi de data au service worker');
   navigator.serviceWorker.controller.postMessage({'data': dataToServiceWorker});
@@ -107,7 +116,7 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
   navigator.serviceWorker.controller.postMessage({'data': dataToServiceWorker});
 
 })
-
+*/
 
 
 /*
