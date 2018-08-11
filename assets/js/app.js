@@ -99,7 +99,7 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
 
 })
 
-
+ navigator.serviceWorker.controller.postMessage({'data': dataToServiceWorker});
 
 
 function sendMessage(message) {
