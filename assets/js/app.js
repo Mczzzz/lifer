@@ -66,14 +66,23 @@ screen.orientation.lock("portrait-primary");
 
 ////////////////////////////////////////////////////////////
 //Init service worker
-navigator.serviceWorker.register('build/ws.js', {
-  scope: 'build/'
-});
+if ('serviceWorker' in navigator) {
 
-navigator.serviceWorker.ready.then(	console.log('ready to use'));
-
-let msg = "coucou c'est mouah";
-navigator.serviceWorker.controller.postMessage("Client 1 says '"+msg+"'");	
+	navigator.serviceWorker.register('build/ws.js', { scope: 'build/'})
+	.then(function() {
+	      return navigator.serviceWorker.ready;
+	    })
+	// ...and then show the interface for the commands once it's ready.
+	.then(showCommands)
+	.catch(function(error) {
+	      // Something went wrong during registration. The service-worker.js file
+	      // might be unavailable or contain a syntax error.
+	    ChromeSamples.setStatus(error);
+	});
+	
+} else {
+  ChromeSamples.setStatus('This browser does not support service workers.');
+}
 ////////////////////////////////////////////////////////////
 
 
