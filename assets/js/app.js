@@ -95,6 +95,7 @@ navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
   }
   // You have subscription.
   // Send data to service worker
+  console.log('envoi de data au service worker');
   navigator.serviceWorker.controller.postMessage({'data': dataToServiceWorker});
 
 })
