@@ -70,7 +70,7 @@ screen.orientation.lock("portrait-primary");
       document.body.appendChild(document.createTextNode(Array.prototype.join.call(arguments, ", ") + '\n'));
       console.log.apply(console, arguments);
     }
-    
+
   window.onerror = function(err) {
       log("Error", err);
     };
@@ -106,7 +106,21 @@ if ('serviceWorker' in navigator) {
   ChromeSamples.setStatus('This browser does not support service workers.');
 }
 
-navigator.serviceWorker.ready.then(function(reg) {
+if ('serviceWorker' in navigator) {
+	console.log("juste before ready");
+  navigator.serviceWorker.ready
+  .then(function(registration) {
+    console.log('A service worker is active:', registration.active);
+
+    // At this point, you can call methods that require an active
+    // service worker, like registration.pushManager.subscribe()
+  });
+} else {
+  console.log('Service workers are not supported.');
+}
+
+
+/*navigator.serviceWorker.ready.then(function(reg) {
  	console.log("in try");
       try {
 
@@ -121,7 +135,7 @@ navigator.serviceWorker.ready.then(function(reg) {
           text: "Hi!"
         });
       }
-    });
+    });*/
 
 
 /*if ('serviceWorker' in navigator) {
