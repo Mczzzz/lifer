@@ -87,6 +87,9 @@ if ('serviceWorker' in navigator) {
 
 navigator.serviceWorker.ready.then(function(serviceWorkerRegistration) {
   // Let's see if you have a subscription already
+   console.log('envoi de data au service worker');
+  navigator.serviceWorker.controller.postMessage({'data': dataToServiceWorker});
+  
   return serviceWorkerRegistration.pushManager.getSubscription();
 })
 .then(function(subscription) {
