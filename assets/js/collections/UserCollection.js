@@ -15,9 +15,11 @@ export default class UserCollection {
 
   	Get(id){
 
-    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get');
+	    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get');
 
-  }
+	    return result;
+
+  	}
 
 
 
