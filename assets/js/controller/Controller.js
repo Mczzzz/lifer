@@ -36,7 +36,7 @@ export default class Controller {
 
 		let userCollection = new LoaderCollection("User");
 
-		let MyInfos = usercollection.get();
+		let MyInfos = userCollection.get();
 
 		console.log(MyInfos);
 
