@@ -10,10 +10,10 @@ export default class BackendComm {
 
 			fetch(url, {
 			  method: VERB,
-/*			  body: formData,
+/*			  body: formData,*/
 			  headers: {
 			    "Content-Type": "application/json"
-			  },*/
+			  },
 			  credentials: "same-origin"
 			}).then(function(response) {
 			   	return response.json();
