@@ -19,11 +19,11 @@ export default class BackendComm {
 			   	return response.json();
 			}).then(function(json){
 
-				let Note = Lifer.getData("Note", "This");
-				Note.note.id = json.datas.note.id;
+				/*let Note = Lifer.getData("Note", "This");
+				Note.note.id = json.datas.note.id;*/
 				//console.log(Note.note.id);
 				//Note.note.id = json.datas.note.id;
-				console.log(json.datas.note.id);
+				console.log(json);
 
 			}, function(error) {
 			  error.message //=> String
