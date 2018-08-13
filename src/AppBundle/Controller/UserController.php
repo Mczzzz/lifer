@@ -44,7 +44,6 @@ class UserController extends Controller
         //users infos
         $user = $this->getUser();
 
-        var_dump($user);
 
         if(!$user){
 
@@ -59,8 +58,15 @@ class UserController extends Controller
 
         $res->error = "0";
         $res->msg   = "SUCCESS";
+        
         $res->user = new \stdClass();
-        $res->user->id = $user->getId();
+        $res->user->id        = $user->getId();
+        $res->user->username  = $user->getUsername();
+        $res->user->email     = $user->getEmail();
+        $res->user->birthDate = $user->getBirthDate();
+
+        $res->user->infos = new \stdClass();
+        $res->user->infos->lastLogin = $user->getLastLogin();
 
         return new response(json_encode($res));
 
