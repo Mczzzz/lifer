@@ -6,7 +6,7 @@ export default class BackendComm {
 
 	ajaxSend(VERB,url,formData = ""){
 
-		
+		console.log("on passe bien dans ajaxSend");		
 
 			fetch(url, {
 			  method: VERB,

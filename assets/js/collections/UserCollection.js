@@ -15,9 +15,8 @@ export default class UserCollection {
 
   	Get(){
 
+  		console.log("on passe bien dans Get");
 	    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get');
-
-	    return result;
 
   	}
 
