@@ -10,7 +10,7 @@ export default class BackendComm {
 
 			fetch(url, {
 			  method: VERB,
-/*			  body: formData,*/
+			  body: formData,
 			  headers: {
 			    "Content-Type": "application/json"
 			  },
