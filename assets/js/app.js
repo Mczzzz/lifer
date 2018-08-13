@@ -4,10 +4,6 @@ import Controller from './controller/Controller.js';
 let name = "app";
 Lifer.addMe(name);
 
-//Il faut récupérer les préférences users :
-//infos user
-//Prefs User
-
 
 let css = document.createElement("style");
 			css.type = "text/css";

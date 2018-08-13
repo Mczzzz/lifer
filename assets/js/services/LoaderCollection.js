@@ -3,6 +3,7 @@ import ObjectInfos from '../collections/ObjectInfosCollection.js';
 import ObjectInfosResources from '../collections/ObjectInfosResourcesCollection.js';
 import ObjectTree from '../collections/ObjectTreeCollection.js';*/
 
+import User from '../collections/UserCollection.js';
 import Note from '../collections/NoteCollection.js';
 
 const classes = {
@@ -10,6 +11,7 @@ const classes = {
     ObjectInfos,
     ObjectInfosResources,
     ObjectTree*/
+    User,
     Note
 };
 

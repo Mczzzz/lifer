@@ -1,6 +1,9 @@
 import { Lifer } from '../services/Lifer.js';
+
+import LoaderCollection from '../services/LoaderCollection.js';
+
 import Frame from '../services/frame.js';
-//import SearchServices from '../services/search.js';
+
 
 export default class Controller {
 
@@ -13,10 +16,38 @@ export default class Controller {
 
 		Lifer.addMe(this.path);
 
-		this.frame = new Frame(this.path);
-		this.frame.Home();
+		this.init();
+
 	}
 
 
+
+	init(){
+
+		this.loadUser();
+
+		this.frame = new Frame(this.path);
+		this.gotToHome();
+
+	}
+
+
+	loadUser(){
+
+		let userCollection = new LoaderCollection("User");
+
+		let MyInfos = usercollection.get();
+
+		console.log(MyInfos);
+
+	}
+
+
+
+	gotToHome(){
+
+		this.frame.Home();
+
+	}
 
 }
