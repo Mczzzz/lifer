@@ -4,6 +4,11 @@ import Controller from './controller/Controller.js';
 let name = "app";
 Lifer.addMe(name);
 
+//Il faut récupérer les préférences users :
+//infos user
+//Prefs User
+
+
 let css = document.createElement("style");
 			css.type = "text/css";
 			css.id = "divContentEditable_css_style";
@@ -72,14 +77,14 @@ screen.orientation.lock("portrait-primary");
 
 ///////////////////////////////////////////////////////////
 //WEB WORKER
-let worker = new Worker('build/ww.js');
+/*let worker = new Worker('build/ww.js');
 console.log(worker);
 worker.addEventListener('message', function(e) {
   console.log('Worker said: ', e.data);
 }, false);
 
 worker.postMessage('Hello World'); // Send data to our worker.
-console.log(worker);
+console.log(worker);*/
 //////////////////////////////////////////////////////////
 
 
