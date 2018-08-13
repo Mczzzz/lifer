@@ -44,7 +44,7 @@ class UserController extends Controller
         //users infos
         $user = $this->getUser();
 
-        var_dump($user)
+        var_dump($user);
 
         if(!$user){
 
@@ -63,12 +63,6 @@ class UserController extends Controller
         $res->user->id = $user->getId();
 
         return new response(json_encode($res));
-
-        
-
-
-
-
 
 
     }
