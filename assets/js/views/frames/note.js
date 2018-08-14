@@ -173,7 +173,7 @@ export default class Note extends superViews{
 			let who   = { "collection" : "Note"    , "method"   : "Push"  };
 			let datas = { "Note"       : this.note , "Resource" : data    };
 
-    		let orderNumber = dataSynchronizing.add(this.MyClass,PushCollect,datas,true);
+    		let orderNumber = DatasSynchronizing.add(this.MyClass,PushCollect,datas,true);
 
     		//assign le tmpid à la note
     		this.note.id = orderNumber.tmpId;
@@ -186,7 +186,7 @@ export default class Note extends superViews{
     		//actions.push({"object" : updateNoteId, "method" : "This", "value" : "note.id green"});
     		actions.push({"object" : data.card,  "method" : "updateIds", "value" : "%guid%"});
     		actions.push({"object" : data.card, "method" : "setStyle",  "value" : "color blue"});
-    		actions.push({"object" : dataSynchronizing, "method" : "receipt",  "value" : orderNumber});
+    		actions.push({"object" : DatasSynchronizing, "method" : "receipt",  "value" : orderNumber});
 
     		let commande = {};
     		commande.id = orderNumber.order.id;
