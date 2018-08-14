@@ -34,7 +34,7 @@ class DatasSynchronizing {
 		MaCommande.who = who;
 		MaCommande.from = from;
 		MaCommande.datas = datas;
-		this.Stack[stackId] = {}.
+		this.Stack[stackId] = {};
 		this.Stack[stackId].id = stackId;
 		this.Stack[stackId].status = "pending";
 		this.Stack[stackId].order = MaCommande;
