@@ -4,7 +4,7 @@ export default class BackendComm {
 
 
 
-	ajaxSend(VERB,url,from,formData = false){
+	ajaxSend(VERB,url,from=false,formData = false){
 
 		console.log("on passe bien dans ajaxSend");		
 
@@ -23,8 +23,9 @@ export default class BackendComm {
 			fetch(url, params).then(function(response) {
 			   	return response.json();
 			}).then(function(json){
-
-				from.This[from.method](json);
+				
+				if(from !== false) from.This[from.method](json);
+				
 
 	/*			Note.note.id = json.datas.note.id;*/
 				//console.log(Note.note.id);*/
