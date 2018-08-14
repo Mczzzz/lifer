@@ -129,7 +129,8 @@ export default class Note extends superViews{
 
     		let orderNumber = DatasSynchronizing.push(this.MyClass,true,datas);
 
-    		
+    		console.log("orderNumber");
+    		console.log(orderNumber);
     		
     		let actions = [];
     		actions.push({"object" : updateNote, "method" : "setStyle", "value" : "color green"});
