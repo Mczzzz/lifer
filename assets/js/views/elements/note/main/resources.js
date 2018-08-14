@@ -150,7 +150,7 @@ export default class Resources extends superViews{
 		let resp = {};
 		resp.type = "resource";
 		resp.id = timestamp;
-		resp.update = updateTs.format('YYYY-MM-DD HH:mm:ss');
+		resp.update = updateTs;
 		resp.resource = Resource;
 		resp.card = card;
 
