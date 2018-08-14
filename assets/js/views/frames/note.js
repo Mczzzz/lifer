@@ -100,7 +100,8 @@ export default class Note extends superViews{
 
 
 	Push(datas){
-
+		console.log("in Note Push");
+		console.log(datas);
 /*				$res = {};
 		$res.type = "resource";
 		$res.id = timestamp;
