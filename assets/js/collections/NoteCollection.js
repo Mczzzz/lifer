@@ -6,6 +6,7 @@ export default class NoteCollection {
 	constructor(){
 
 		this.apiPrefixe = "/api_v1/notes/";
+		this.targetObject = "Note";
 
     this.SvcBackEndComm = new SvcBackEndComm();
 
@@ -15,7 +16,7 @@ export default class NoteCollection {
 
   Push(data){
 
-    let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'push',data);
+    let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'push',this.targetObject,data);
 
   }
 

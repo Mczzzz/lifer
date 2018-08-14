@@ -98,8 +98,8 @@ export default class Resources extends superViews{
 
 		this.setStyle("flex" , "");
 //Mise a jour du Title update
-		let date = new Date();
-		let timestamp = date.getTime();
+
+		let timestamp = updateTs.format('x');
 
 
 		let card = new Card('NoteCardResource_New_'+timestamp, this.path);
@@ -147,13 +147,15 @@ export default class Resources extends superViews{
 
 
 		//et hop on envoi en sauvegarde la data mon gars
+		$res = {};
+		$res.type = "resource";
+		$res.id = timestamp;
+		$res.update = updateTs.format('YYYY-MM-DD HH:mm:ss');
+		$res.resource = Resource;
+		$res.card = card;
 
 
-		this.updateNote = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard/cardElementheader/noteEltTextupdate","This");	
-    	this.updateNote.getContainer().innerHTML = updateTs.format('Do MMMM YYYY, HH:mm:ss');
-
-		this.TheNote.note.Ts = updateTs.format('YYYY-MM-DD HH:mm:ss');
-    	this.TheNote.Push();
+    	this.TheNote.Push($res);
 
 	}
 

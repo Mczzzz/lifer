@@ -6,6 +6,7 @@ export default class UserCollection {
 	constructor(){
 
 	this.apiPrefixe = "/api_v1/user/";
+	this.targetObject = "User";
 
     this.SvcBackEndComm = new SvcBackEndComm();
 
@@ -15,8 +16,7 @@ export default class UserCollection {
 
   	Get(){
 
-  		console.log("on passe bien dans Get");
-	    let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get');
+    	this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get');
 
   	}
 

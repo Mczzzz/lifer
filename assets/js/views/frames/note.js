@@ -2,7 +2,11 @@
 
 import LoaderCollection from '../../services/LoaderCollection.js';
 
+import { DatasSynchronizing } from '../../services/DatasSynchronizing.js';
+
 import superViews       from '../elements/common/super/views.js';
+
+
 
 import Header           from '../elements/note/header.js';
 import Main             from '../elements/note/main.js';
@@ -24,7 +28,7 @@ export default class Note extends superViews{
 		this.note.Title = "";
 		this.note.Ts = this.Moment().format('YYYY-MM-DD HH:mm:ss');
 		
-		//this.firstKey = true;
+		this.orders = [];
 
 
 		this.init();
@@ -94,15 +98,67 @@ export default class Note extends superViews{
 
 
 
-	Push(){
+
+	Push(datas){
+
+/*				$res = {};
+		$res.type = "resource";
+		$res.id = timestamp;
+		$res.update = updateTs.format('YYYY-MM-DD HH:mm:ss');
+		$res.resource = Resource;
+		*/
 
 
-        let res = {};
-        res.note = this.note;
+		
+		if(datas.type = "resource"){
 
-        this.NoteCollection.Push(JSON.stringify(res));
+			//je met mon IHM à jour
+
+			let updateNote = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard/cardElementheader/noteEltTextupdate","This");	
+    		
+    		updateNote.getContainer().innerHTML = datas.update.format('Do MMMM YYYY, HH:mm:ss');
+    		updateNote.getContainer().style.color = "red";
+
+    		this.note.Ts = updateTs.format('YYYY-MM-DD HH:mm:ss');
+
+    		//il faut passer en rouge les valeurs qui ne sont pas encore validée par le serveur
 
 
+
+
+    		let orderNumber = DatasSynchronizing.push(this.MyClass,true,datas);
+
+    		
+    		
+    		let actions = [];
+    		actions.push({"object" : updateNote, "method" : "setStyle", "value" : "color green"});
+    		actions.push({"object" : card,  "method" : "updateIds", "value" : "%guid%"});
+    		actions.push({"object" : card, "method" : "setStyle",  "value" : "color blue"});
+
+    		let commande = {};
+    		commande.id = orderNumber;
+    		commande.status = "pending"; //backaction //close;
+    		commande.actions = actions;
+
+
+    		this.orders[orderNumber] =  commande;
+
+    		console.log(this.orders);
+    		//action
+    		//remettre l'update en vert
+    		//modifier les ids de l'ensemble des éléments de la resource
+    		//modifier la couleur de la resource
+    		//supprimer la comande
+
+		}
+
+
+
+
+
+		//je récupère un numérode commade
+		//je l'ajoute a mon tableau de demande en attente
+		//j'y insere les action à executer
 
 	}
 

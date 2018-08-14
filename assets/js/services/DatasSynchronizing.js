@@ -9,23 +9,21 @@ class DatasSynchronizing {
 
 	constructor(){
 
-		this.dataCenter = {}; 
 
-
-		this.pushStack = [];
+		this.Stack = [];
 
 	}
 
 
 
 
-	push(){
+	push(from,needTmpId=false){
 
 		//Collection à qui je m'adresse
 		//la péthode dont j'ai besoin
 		//qui suis-je
 
-		add
+		//add
 
 
 		//je retourne un id temporaire si besoin
@@ -33,8 +31,10 @@ class DatasSynchronizing {
 		//id temporaire
 		let res = {};
 		res.status = 0;
-		res.id = Moment().format('x');
-		return
+		res.order = {};
+		res.order.id = from + Moment().format('x');
+		if(needTmpId) res.tmpId = Moment().format('x');
+		return res;
 
 
 	}
