@@ -129,6 +129,9 @@ export default class Note extends superViews{
 
     		let orderNumber = DatasSynchronizing.push(this.MyClass,true,datas);
 
+    		//assign le tmpid à la note
+    		this.note.id = orderNumber.tmpId;
+
     		console.log("orderNumber");
     		console.log(orderNumber);
     		
@@ -138,12 +141,12 @@ export default class Note extends superViews{
     		actions.push({"object" : datas.card, "method" : "setStyle",  "value" : "color blue"});
 
     		let commande = {};
-    		commande.id = orderNumber;
+    		commande.id = orderNumber.order.id;
     		commande.status = "pending"; //backaction //close;
     		commande.actions = actions;
 
 
-    		this.orders[orderNumber] =  commande;
+    		this.orders[orderNumber.tmpId] =  commande;
 
     		console.log(this.orders);
     		//action
