@@ -147,15 +147,15 @@ export default class Resources extends superViews{
 
 
 		//et hop on envoi en sauvegarde la data mon gars
-		$res = {};
-		$res.type = "resource";
-		$res.id = timestamp;
-		$res.update = updateTs.format('YYYY-MM-DD HH:mm:ss');
-		$res.resource = Resource;
-		$res.card = card;
+		let resp = {};
+		resp.type = "resource";
+		resp.id = timestamp;
+		resp.update = updateTs.format('YYYY-MM-DD HH:mm:ss');
+		resp.resource = Resource;
+		resp.card = card;
 
 
-    	this.TheNote.Push($res);
+    	this.TheNote.Push(resp);
 
 	}
 
