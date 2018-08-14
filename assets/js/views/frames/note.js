@@ -130,7 +130,7 @@ export default class Note extends superViews{
     		}
     		
 
-    			
+
 
 			}
 			this.orders[datas.xxx].splice(index,1);
@@ -173,7 +173,7 @@ export default class Note extends superViews{
 			let who   = { "collection" : "Note"    , "method"   : "Push"  };
 			let datas = { "Note"       : this.note , "Resource" : data    };
 
-    		let orderNumber = DatasSynchronizing.add(this.MyClass,PushCollect,datas,true);
+    		let orderNumber = DatasSynchronizing.add(from,who,datas,true);
 
     		//assign le tmpid à la note
     		this.note.id = orderNumber.tmpId;
