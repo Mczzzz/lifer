@@ -4,7 +4,7 @@ export default class BackendComm {
 
 
 
-	ajaxSend(VERB,url,targetObject,formData = false){
+	ajaxSend(VERB,url,from,formData = false){
 
 		console.log("on passe bien dans ajaxSend");		
 
@@ -24,7 +24,7 @@ export default class BackendComm {
 			   	return response.json();
 			}).then(function(json){
 
-				//let tObject = Lifer.getData(targetObject, "This");
+				from.This[from.method](json);
 
 	/*			Note.note.id = json.datas.note.id;*/
 				//console.log(Note.note.id);*/

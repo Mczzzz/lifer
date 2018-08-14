@@ -96,12 +96,51 @@ export default class Note extends superViews{
 	}
 
 
+	Valid(datas){
+
+		//this.orders[datas.xxx]
+		let index = this.orders[datas.xxx].indexOf(datas.xxx);
+
+		if(index == -1){
+			console.log("Commande non trouvée dans Valid Note");
+			return false
+		}else{
+
+
+			for(let actions of this.orders[datas.xxx].actions)
+
+				//faire les actions
+/*    		{"object" : updateNote, "method" : "setStyle", "value" : "color green"}
+    		{"object" : data.card,  "method" : "updateIds", "value" : "%guid%"}
+    		{"object" : data.card, "method" : "setStyle",  "value" : "color blue"}
+    		{"object" : dataSynchronizing, "method" : "receipt",  "value" : orderNumber}*/
+    		let arrayValue = actions.value.split(" ");
+
+    		if(arrayValue.length == 2){
+
+    			actions.object[actions.method](arrayValue[0], arrayValue[1]);
+    		
+    		}else{
+
+    			actions.object[actions.method](arrayValue[0]);
+    		
+    		}
+    		
 
 
 
-	Push(datas){
+			}
+			this.orders[datas.xxx].splice(index,1);
+			return true;	
+		}
+
+
+	}
+
+
+	Push(data){
 		console.log("in Note Push");
-		console.log(datas);
+		console.log(data);
 /*				$res = {};
 		$res.type = "resource";
 		$res.id = timestamp;
@@ -111,23 +150,27 @@ export default class Note extends superViews{
 
 
 		
-		if(datas.type = "resource"){
+		if(data.type = "resource"){
 
 			//je met mon IHM à jour
 
 			let updateNote = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard/cardElementheader/noteEltTextupdate","This");	
     		
-    		updateNote.getContainer().innerHTML = datas.update.format('Do MMMM YYYY, HH:mm:ss');
+			this.note.Ts = data.update; //objet Momentjs à formater a l'utilisation
+
+    		updateNote.getContainer().innerHTML = data.update.format('Do MMMM YYYY, HH:mm:ss');
     		updateNote.getContainer().style.color = "red";
 
-    		this.note.Ts = datas.update.format('YYYY-MM-DD HH:mm:ss');
+			//Passer le background en une autre couleur tant que tout est pas dépiler    		
 
-    		//il faut passer en rouge les valeurs qui ne sont pas encore validée par le serveur
+			//faire un objet
+			//-collection
+			//-methode
+			let from  = { "This"       : this      , "method"   : "Valid" };
+			let who   = { "collection" : "Note"    , "method"   : "Push"  };
+			let datas = { "Note"       : this.note , "Resource" : data    };
 
-
-
-
-    		let orderNumber = DatasSynchronizing.push(this.MyClass,true,datas);
+    		let orderNumber = dataSynchronizing.add(this.MyClass,PushCollect,datas,true);
 
     		//assign le tmpid à la note
     		this.note.id = orderNumber.tmpId;
@@ -137,8 +180,10 @@ export default class Note extends superViews{
     		
     		let actions = [];
     		actions.push({"object" : updateNote, "method" : "setStyle", "value" : "color green"});
-    		actions.push({"object" : datas.card,  "method" : "updateIds", "value" : "%guid%"});
-    		actions.push({"object" : datas.card, "method" : "setStyle",  "value" : "color blue"});
+    		//actions.push({"object" : updateNoteId, "method" : "This", "value" : "note.id green"});
+    		actions.push({"object" : data.card,  "method" : "updateIds", "value" : "%guid%"});
+    		actions.push({"object" : data.card, "method" : "setStyle",  "value" : "color blue"});
+    		actions.push({"object" : dataSynchronizing, "method" : "receipt",  "value" : orderNumber});
 
     		let commande = {};
     		commande.id = orderNumber.order.id;

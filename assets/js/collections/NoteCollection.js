@@ -14,9 +14,9 @@ export default class NoteCollection {
 	}
 
 
-  Push(data){
+  Push(datas,from){
 
-    let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'push',this.targetObject,data);
+    let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'push',from,datas);
 
   }
 

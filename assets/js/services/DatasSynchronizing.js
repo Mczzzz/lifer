@@ -11,31 +11,90 @@ class DatasSynchronizing {
 
 
 		this.Stack = [];
+		this.active = false;
 
 	}
 
 
 
 
-	push(from,needTmpId=false){
+	add(from,who,datas,needTmpId=false){
+	//from : pour le retour
+	//methode de la collection
+	//data a envoyer
 
-		//Collection à qui je m'adresse
-		//la péthode dont j'ai besoin
-		//qui suis-je
-
-		//add
+		
 
 
-		//je retourne un id temporaire si besoin
-		//status
-		//id temporaire
+
+		let stackId = Moment().format('x');
+
+		//Ajout a la stack
+		let MaCommande = {};
+		MaCommande.who = who;
+		MaCommande.from = from;
+		MaCommande.datas = datas;
+		this.Stack[stackId] = {}.
+		this.Stack[stackId].id = stackId;
+		this.Stack[stackId].status = "pending";
+		this.Stack[stackId].order = MaCommande;
+
+		//je demarra le traitement de la stack
+		this.excuteStack;
+
+		//Préparation de la réponse
 		let res = {};
 		res.status = 0;
 		res.order = {};
-		res.order.id = from + Moment().format('x');
-		if(needTmpId) res.tmpId = Moment().format('x');
+		res.order.id = from + stackId;
+		if(needTmpId) res.tmpId = stackId;
+
+
 		return res;
 
+
+	}
+
+
+	executeStack(){
+
+		if(this.Stack.length > 0 && this.active === false){
+
+			this.active = true;
+
+
+			for (let order of this.Stack){
+
+				let collection = new LoaderCollection(order.who.collection);
+				collection[order.who.method](order.datas,order.from);
+
+				this.Stack[order.id].status = "sending";
+
+			}
+
+		}
+
+		if(this.Stack.length > 0){
+			this.executeStack();
+		}else{
+			this.active = false;
+		}
+		
+	}
+
+
+	receipt(orderNumber){
+		//suppresion de la commande de la stack 
+		let index = this.Stack.indexOf(orderNumber);
+
+		if(index == -1){
+			console.log("Commande non trouvée dans receipt datasynchronising");
+			return false
+		}else{
+
+			this.Stack.splice(index,1);
+			return true;	
+		}
 
 	}
 

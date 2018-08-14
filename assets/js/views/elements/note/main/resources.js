@@ -149,6 +149,7 @@ export default class Resources extends superViews{
 		//et hop on envoi en sauvegarde la data mon gars
 		let resp = {};
 		resp.type = "resource";
+		resp.action = "Push";
 		resp.id = timestamp;
 		resp.update = updateTs;
 		resp.resource = Resource;
