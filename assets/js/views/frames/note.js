@@ -107,7 +107,10 @@ export default class Note extends superViews{
 		}else{
 
 
-			for(let actions of this.orders[datas.xxx].actions)
+			for(let actions of this.orders[datas.xxx].actions){
+
+
+			
 
 				//faire les actions
 /*    		{"object" : updateNote, "method" : "setStyle", "value" : "color green"}
@@ -127,7 +130,7 @@ export default class Note extends superViews{
     		}
     		
 
-
+    			
 
 			}
 			this.orders[datas.xxx].splice(index,1);
