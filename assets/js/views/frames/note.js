@@ -120,7 +120,7 @@ export default class Note extends superViews{
     		updateNote.getContainer().innerHTML = datas.update.format('Do MMMM YYYY, HH:mm:ss');
     		updateNote.getContainer().style.color = "red";
 
-    		this.note.Ts = updateTs.format('YYYY-MM-DD HH:mm:ss');
+    		this.note.Ts = datas.update.format('YYYY-MM-DD HH:mm:ss');
 
     		//il faut passer en rouge les valeurs qui ne sont pas encore validée par le serveur
 
