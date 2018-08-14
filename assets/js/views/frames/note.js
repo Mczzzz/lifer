@@ -133,8 +133,8 @@ export default class Note extends superViews{
     		
     		let actions = [];
     		actions.push({"object" : updateNote, "method" : "setStyle", "value" : "color green"});
-    		actions.push({"object" : card,  "method" : "updateIds", "value" : "%guid%"});
-    		actions.push({"object" : card, "method" : "setStyle",  "value" : "color blue"});
+    		actions.push({"object" : datas.card,  "method" : "updateIds", "value" : "%guid%"});
+    		actions.push({"object" : datas.card, "method" : "setStyle",  "value" : "color blue"});
 
     		let commande = {};
     		commande.id = orderNumber;
