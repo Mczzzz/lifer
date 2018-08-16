@@ -109,20 +109,19 @@ class NotesController extends Controller
 
         }else{
 
-            $Note = $em->getRepository('AppBundle:Notes')->find($datas->note->id);
+            $Note = $em->getRepository('AppBundle:Notes')->find($datas->Note->id);
         
         }
 
 
-        var_dump('on passe ici');
-        die();
 
-            $Note->setName($datas->note->Title);
+
+            $Note->setName($datas->Note->Title);
 
             if(!$datas->note->Ts){
                 $ndt = new \Datetime('now');
             }else{
-                $ndt = new \Datetime($datas->note->Ts);
+                $ndt = new \Datetime($datas->Note->Ts);
             }
 
             
@@ -138,8 +137,8 @@ class NotesController extends Controller
             $res->error = "0";
             $res->msg   = "SUCCESS";
             $res->datas = new \stdClass();
-            $res->datas->note = new \stdClass();
-            $res->datas->note->id = $Note->getId();
+            $res->datas->Note = new \stdClass();
+            $res->datas->Note->id = $Note->getId();
 
             return new response(json_encode($res));
 
