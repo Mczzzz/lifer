@@ -97,7 +97,9 @@ export default class Note extends superViews{
 
 
 
-
+	setNoteGuid(id){
+		this.note.guid = id;
+	}
 
 
 
@@ -105,7 +107,7 @@ export default class Note extends superViews{
 
 		console.log(dataCallback);
 		console.log(this.orders);
-		console.log(dataCallback.OrderId);
+		console.log(datas);
 		//this.orders[datas.xxx]
 		// je récupère ma commande
 		//let MyOrderToAchieve = 
@@ -121,32 +123,30 @@ export default class Note extends superViews{
 			for(let actions of this.orders[dataCallback.OrderId].actions){
 
 
-			console.log('in for');
-			console.log(actions);
+				console.log('in for');
+				console.log(actions);
 
-				//faire les actions
-/*    		{"object" : updateNote, "method" : "setStyle", "value" : "color green"}
-    		{"object" : data.card,  "method" : "updateIds", "value" : "%guid%"}
-    		{"object" : data.card, "method" : "setStyle",  "value" : "color blue"}
-    		{"object" : dataSynchronizing, "method" : "receipt",  "value" : orderNumber}
-*/
+					//faire les actions
+	/*    		{"object" : updateNote, "method" : "setStyle", "value" : "color green"}
+	    		{"object" : data.card,  "method" : "updateIds", "value" : "%guid%"}
+	    		{"object" : data.card, "method" : "setStyle",  "value" : "color blue"}
+	    		{"object" : dataSynchronizing, "method" : "receipt",  "value" : orderNumber}
+	*/
 
-    		let arrayValue = actions.value.split(" ");
+	    		let arrayValue = actions.value.split(" ");
 
-    		let Myclass = actions.object;
+	    		let Myclass = actions.object;
 
-    		if(arrayValue.length == 2){
+	    		if(arrayValue.length == 2){
 
-    			Myclass[actions.method](arrayValue[0], arrayValue[1]);
+	    			Myclass[actions.method](arrayValue[0], arrayValue[1]);
+	    		
+	    		}else{
+
+	    			Myclass[actions.method](arrayValue[0]);
+	    		
+	    		}
     		
-    		}else{
-
-    			Myclass[actions.method](arrayValue[0]);
-    		
-    		}
-    		
-
-
 
 			}
 			this.orders[datas.xxx].splice(index,1);
@@ -193,7 +193,7 @@ export default class Note extends superViews{
 		this._PushExectuteOrder(order,purchaseOrder);
 
 		//on set l'id temporaire à la Note
-		this.note.guid = order.tmpId;
+		this.setNoteGuid(order.tmpId);
 
 
 
@@ -217,8 +217,8 @@ export default class Note extends superViews{
 	_PushPrepareOrder(data, purchaseOrder){
 
 		let fromBack  = { "This"       : this      , "method"   : "Valid"};
-		let to   = { "collection" : "Note"    , "method"   : "Push"  };
-		let datas = { "Note"       : this.note , "Resource" : data  , "OrderId" :  purchaseOrder.id  };
+		let to        = { "collection" : "Note"    , "method"   : "Push"  };
+		let datas     = { "Note"       : this.note , "Resource" : data  , "OrderId" :  purchaseOrder.id  };
 
 		let res = {};
 		res.fromBack = fromBack;
@@ -232,11 +232,15 @@ export default class Note extends superViews{
 	_PushPreparePostOrderAction(updFieldElt,order,data,purchaseOrder){
 
 	    let actions = [];
+
+	    if(this.Note.guid === false){
+	    	actions.push({"object" : this, "method" : "setNoteGuid", "value" : "%guid%"});
+	    }
+
 		actions.push({"object" : updFieldElt, "method" : "setStyle", "value" : "color green"});
-		//actions.push({"object" : updateNoteId, "method" : "This", "value" : "note.id green"});
-		actions.push({"object" : data.card,  "method" : "updateIds", "value" : "%guid%"});
-		actions.push({"object" : data.card, "method" : "setStyle",  "value" : "color blue"});
-		actions.push({"object" : DatasSynchronizing, "method" : "receipt",  "value" : purchaseOrder});
+//actions.push({"object" : data.card,  "method" : "updateIds", "value" : "%guid%"});
+//actions.push({"object" : data.card, "method" : "setStyle",  "value" : "color blue"});
+//actions.push({"object" : DatasSynchronizing, "method" : "receipt",  "value" : purchaseOrder});
 
 		let commande = {};
 		commande.id = purchaseOrder.id;
