@@ -110,19 +110,19 @@ export default class Note extends superViews{
 		// je récupère ma commande
 		//let MyOrderToAchieve = 
 
-		let index = this.orders.indexOf(dataCallback.OrderId);
-		console.log(index);
+		if(!this.orders.hasOwnProperty(dataCallback.OrderId)){
 
-		if(index == -1){
-			console.log("Commande non trouvée dans Valid Note");
 			return false
+		
 		}else{
 
 
-			for(let actions of this.orders[datas.xxx].actions){
+
+			for(let actions of this.orders[dataCallback.OrderId].actions){
 
 
-			
+			console.log('in for');
+			console.log(actions);
 
 				//faire les actions
 /*    		{"object" : updateNote, "method" : "setStyle", "value" : "color green"}
