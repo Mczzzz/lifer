@@ -95,7 +95,7 @@ class DatasSynchronizing {
 
 				console.log("in for");
 				let collection = new LoaderCollection(this.Stack[key].order.to.collection);
-				collection[this.Stack[key].order.to.method](this.Stack[key].order.datas,order.order.from);
+				collection[this.Stack[key].order.to.method](this.Stack[key].order.datas,this.Stack[key].order.from);
 
 				this.Stack[key].status = "sending";
 
