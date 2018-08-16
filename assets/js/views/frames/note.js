@@ -101,9 +101,14 @@ export default class Note extends superViews{
 
 
 
-	Valid(datas,formData){
+	Valid(datas,dataCallback){
+
+		console.log(this.orders);
 
 		//this.orders[datas.xxx]
+		// je récupère ma commande
+		//let MyOrderToAchieve = 
+
 		let index = this.orders[datas.xxx].indexOf(datas.xxx);
 
 		if(index == -1){
@@ -168,13 +173,11 @@ export default class Note extends superViews{
 		//Je fais les pré-actions sur la note
 		let updFieldElt = this._PushPreOrderAction(data.update);
 
-		//Je prépare la commande
-		let order = this._PushPrepareOrder(data);
-
-
+		//Je demande un numerode commande a mon fournisseur
 		let purchaseOrder = DatasSynchronizing.purchaseOrder();
 
-		console.log(purchaseOrder);
+		//Je prépare la commande
+		let order = this._PushPrepareOrder(data,purchaseOrder);
 
 		// Je prépare les actions à la livraison de la commande
 		this._PushPreparePostOrderAction(updFieldElt,order,data,purchaseOrder);
@@ -205,9 +208,9 @@ export default class Note extends superViews{
 	}
 
 
-	_PushPrepareOrder(data){
+	_PushPrepareOrder(data, purchaseOrder){
 
-		let fromBack  = { "This"       : this      , "method"   : "Valid" };
+		let fromBack  = { "This"       : this      , "method"   : "Valid" , "orderId" :  purchaseOrder.id};
 		let to   = { "collection" : "Note"    , "method"   : "Push"  };
 		let datas = { "Note"       : this.note , "Resource" : data    };
 
@@ -235,7 +238,7 @@ export default class Note extends superViews{
 		commande.actions = actions;
 
 
-		this.orders[order.tmpId] =  commande;
+		this.orders[purchaseOrder.id] =  commande;
 
 		
 
