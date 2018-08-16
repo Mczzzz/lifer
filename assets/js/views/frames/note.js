@@ -108,9 +108,8 @@ export default class Note extends superViews{
 		console.log(dataCallback);
 		console.log(this.orders);
 		console.log(datas);
-		//this.orders[datas.xxx]
+
 		// je récupère ma commande
-		//let MyOrderToAchieve = 
 
 		if(!this.orders.hasOwnProperty(dataCallback.OrderId)){
 
@@ -149,7 +148,11 @@ export default class Note extends superViews{
     		
 
 			}
-			this.orders[datas.xxx].splice(index,1);
+
+			//on informe datassynchronig que tous c'est bien passé.
+			DatasSynchronizing.receipt(dataCallback.OrderId);
+
+			this.orders[dataCallback.OrderId].splice(index,1);
 			return true;	
 		}
 
