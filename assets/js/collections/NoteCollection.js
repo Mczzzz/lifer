@@ -32,7 +32,7 @@ export default class NoteCollection {
 
 	let dataCallback = datas;
 	let dataSend = datas;
-	delete datasend.Resource.card;
+	delete dataSend.Resource.card;
 
 
     let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'push',from,dataCallBack,dataSend);
