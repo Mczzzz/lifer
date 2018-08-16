@@ -31,7 +31,11 @@ class DatasSynchronizing {
 			this.Stack[stackId].id = stackId;
 			this.Stack[stackId].status = "waiting";
 
+			console.log("this.Stack");
+			console.log(this.Stack);
+
 			return this.Stack[stackId];
+
 		}else{
 			console.log('purshaseOrder Allready exist');
 		}
@@ -45,7 +49,8 @@ class DatasSynchronizing {
 	//from : pour le retour
 	//methode de la collection
 	//data a envoyer
-
+			console.log("this.Stack in add");
+			console.log(this.Stack);
 	
 		//Ajout a la stack
 		let MaCommande = {};
