@@ -86,7 +86,7 @@ class NotesController extends Controller
         //SERIALIZED OBJECT
         $datas = json_decode($request->getContent());
 
-        var_dump($datas);
+        var_dump($datas->Note);
         die();
 //ok
         if(!$datas || !is_object($datas)){
