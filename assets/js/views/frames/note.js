@@ -110,7 +110,8 @@ export default class Note extends superViews{
 		// je récupère ma commande
 		//let MyOrderToAchieve = 
 
-		let index = this.orders[datas.xxx].indexOf(datas.xxx);
+		let index = this.orders.indexOf(dataCallback.OrderId);
+		console.log(index);
 
 		if(index == -1){
 			console.log("Commande non trouvée dans Valid Note");
