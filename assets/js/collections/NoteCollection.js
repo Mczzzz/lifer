@@ -30,12 +30,12 @@ export default class NoteCollection {
 				resource:
 					text*/
 
-	console.log(JSON.stringify(datas.Note));
-	delete datas.Resource.card;
-	console.log(JSON.stringify(datas.Resource));
+	let dataCallback = datas;
+	let dataSend = datas;
+	delete datasend.Resource.card;
 
 
-    let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'push',from,datas);
+    let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'push',from,dataCallBack,dataSend);
 
   }
 

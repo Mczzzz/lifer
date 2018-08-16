@@ -4,11 +4,11 @@ export default class BackendComm {
 
 
 
-	ajaxSend(VERB,url,from=false,formData = false){
+	ajaxSend(VERB,url,from=false,dataCallback = false,dataSend = false){
 
 		console.log("on passe bien dans ajaxSend");		
 
-			let params = this._BuildParams(VERB,formData);
+			let params = this._BuildParams(VERB,dataSend);
 
 
 			fetch(url, params).then(function(response) {
@@ -17,7 +17,7 @@ export default class BackendComm {
 
 			}).then(function(json){
 				
-				if(from !== false) from.This[from.method](json);
+				if(from !== false) from.This[from.method](json,dataCallback);
 				
 				console.log(json);
 
@@ -35,15 +35,15 @@ export default class BackendComm {
 
 
 
-	_BuildParams(VERB,formData){
+	_BuildParams(VERB,dataSend){
 
 		let params = {};
 			params.method = VERB;
 			params.credentials = "same-origin";
 
 			if(VERB != "GET"){
-				console.log(formData);
-				params.body = JSON.stringify(formData);
+				console.log(dataSend);
+				params.body = JSON.stringify(dataSend);
 
 				params.headers = {};
 				params.headers["Content-Type"] = "application/json";

@@ -101,7 +101,7 @@ export default class Note extends superViews{
 
 
 
-	Valid(datas){
+	Valid(datas,formData){
 
 		//this.orders[datas.xxx]
 		let index = this.orders[datas.xxx].indexOf(datas.xxx);
