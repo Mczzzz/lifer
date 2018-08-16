@@ -52,15 +52,15 @@ class DatasSynchronizing {
 			console.log("this.Stack in add");
 			console.log(this.Stack);
 			console.log(purchaseOrder);
-			console.log(this.Stack[purchaseOrder]);
+			console.log(this.Stack[purchaseOrder.id]);
 	
 		//Ajout a la stack
 		let MaCommande = {};
 		MaCommande.to = to;
 		MaCommande.from = from;
 		MaCommande.datas = datas;
-		this.Stack[purchaseOrder].status = "pending";
-		this.Stack[purchaseOrder].order = MaCommande;
+		this.Stack[purchaseOrder.id].status = "pending";
+		this.Stack[purchaseOrder.id].order = MaCommande;
 
 		//je demarra le traitement de la stack
 		this.excuteStack;
