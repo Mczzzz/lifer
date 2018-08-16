@@ -93,7 +93,6 @@ class NotesController extends Controller
 
             $res->error = "2.2";
             $res->msg = "Datas Corrupted";
-            $res
 
             return new response(json_encode($res));
 
