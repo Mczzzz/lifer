@@ -184,7 +184,7 @@ export default class Note extends superViews{
 		this._PushExectuteOrder(order,purchaseOrder);
 
 		//on set l'id temporaire à la Note
-		this.note.id = order.tmpId;
+		this.note.guid = order.tmpId;
 
 
 
