@@ -86,9 +86,7 @@ class NotesController extends Controller
         //SERIALIZED OBJECT
         $datas = json_decode($request->getContent());
 
-        var_dump($datas);
-        die();
-
+//ok
         if(!$datas || !is_object($datas)){
 
             $res->error = "2.2";
@@ -114,6 +112,10 @@ class NotesController extends Controller
             $Note = $em->getRepository('AppBundle:Notes')->find($datas->note->id);
         
         }
+
+
+        var_dump('on passe ici');
+        die();
 
             $Note->setName($datas->note->Title);
 
