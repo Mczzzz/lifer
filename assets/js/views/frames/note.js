@@ -103,7 +103,7 @@ export default class Note extends superViews{
 
 	Valid(datas,dataCallback){
 
-		console.log(dataCallBack);
+		console.log(dataCallback);
 		console.log(this.orders);
 
 		//this.orders[datas.xxx]
