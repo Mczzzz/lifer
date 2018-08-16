@@ -24,7 +24,7 @@ export default class Note extends superViews{
 
 		this.note = {};
 
-		this.note.id = id;
+		this.note.guid = id;
 		this.note.Title = "";
 		this.note.Ts = this.Moment().format('YYYY-MM-DD HH:mm:ss');
 		
