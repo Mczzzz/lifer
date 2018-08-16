@@ -96,6 +96,11 @@ export default class Note extends superViews{
 	}
 
 
+
+
+
+
+
 	Valid(datas){
 
 		//this.orders[datas.xxx]
@@ -141,149 +146,96 @@ export default class Note extends superViews{
 	}
 
 
+
+
 	Push(data){
+
 		console.log("in Note Push");
 		console.log(data);
-/*				$res = {};
-		$res.type = "resource";
-		$res.id = timestamp;
-		$res.update = updateTs.format('YYYY-MM-DD HH:mm:ss');
-		$res.resource = Resource;
+
+
+		/*
+
+			$res = {};
+			$res.type = "resource";
+			$res.id = timestamp;
+			$res.update = updateTs.format('YYYY-MM-DD HH:mm:ss');
+			$res.resource = Resource;
+		
 		*/
 
 
-		
-		if(data.type = "resource"){
+		//Je fais les pré-actions sur la note
+		let updFieldElt = this._PushPreOrderAction(data.update);
 
-			//je met mon IHM à jour
+		//Je prépare la commande
+		let order = this._PushPrepareOrder(data);
 
-			let updateNote = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard/cardElementheader/noteEltTextupdate","This");	
-    		
-			this.note.Ts = data.update; //objet Momentjs à formater a l'utilisation
+		// Je prépare les actions à la livraison de la commande
+		this._PushPreparePostOrderAction(updFieldElt,order);
 
-    		updateNote.getContainer().innerHTML = data.update.format('Do MMMM YYYY, HH:mm:ss');
-    		updateNote.getContainer().style.color = "red";
+		//Je passe la commande
+		this._PushExectuteOrder(order);
 
-			//Passer le background en une autre couleur tant que tout est pas dépiler    		
-
-			//faire un objet
-			//-collection
-			//-methode
-			let from  = { "This"       : this      , "method"   : "Valid" };
-			let who   = { "collection" : "Note"    , "method"   : "Push"  };
-			let datas = { "Note"       : this.note , "Resource" : data    };
-
-    		let orderNumber = DatasSynchronizing.add(from,who,datas,true);
-
-    		//assign le tmpid à la note
-    		this.note.id = orderNumber.tmpId;
-
-    		console.log("orderNumber");
-    		console.log(orderNumber);
-    		
-    		let actions = [];
-    		actions.push({"object" : updateNote, "method" : "setStyle", "value" : "color green"});
-    		//actions.push({"object" : updateNoteId, "method" : "This", "value" : "note.id green"});
-    		actions.push({"object" : data.card,  "method" : "updateIds", "value" : "%guid%"});
-    		actions.push({"object" : data.card, "method" : "setStyle",  "value" : "color blue"});
-    		actions.push({"object" : DatasSynchronizing, "method" : "receipt",  "value" : orderNumber});
-
-    		let commande = {};
-    		commande.id = orderNumber.order.id;
-    		commande.status = "pending"; //backaction //close;
-    		commande.actions = actions;
-
-
-    		this.orders[orderNumber.tmpId] =  commande;
-
-    		console.log(this.orders);
-    		//action
-    		//remettre l'update en vert
-    		//modifier les ids de l'ensemble des éléments de la resource
-    		//modifier la couleur de la resource
-    		//supprimer la comande
-
-		}
-
-
-
-
-
-		//je récupère un numérode commade
-		//je l'ajoute a mon tableau de demande en attente
-		//j'y insere les action à executer
+		//on set l'id temporaire à la Note
+		this.note.id = order.tmpId;
 
 	}
 
+	_PushPreOrderAction(update){
+
+		let updateNoteElt = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard/cardElementheader/noteEltTextupdate","This");	
+		
+		this.note.Ts = update; //objet Momentjs à formater a l'utilisation
+
+		updateNoteElt.getContainer().innerHTML = update.format('Do MMMM YYYY, HH:mm:ss');
+		updateNoteElt.getContainer().style.color = "red";
+
+		return updateNoteElt;
+	}
 
 
+	_PushPrepareOrder(data){
 
-/*	_Synchronizer(name,value){
+		let fromBack  = { "This"       : this      , "method"   : "Valid" };
+		let to   = { "collection" : "Note"    , "method"   : "Push"  };
+		let datas = { "Note"       : this.note , "Resource" : data    };
 
-		console.log('in Synchronizer');
+		let res = {};
+		res.fromBack = fromBack;
+		res.to       = to;
+		res.datas    = datas;
 
+		return res;
 
-		let formData = new FormData();
-		formData.append('ObjectId' , this.ContainerNode.id);
-        formData.append('ObjectLeafId' , this.LeafNode.id);
-        formData.append('noteId'  , this.note.id);
+	}
 
+	_PushPreparePostOrderAction(updFieldElt,order){
 
-		if (this.note.id == false || (name == "text" && value.id == "title" )){
+	    let actions = [];
+		actions.push({"object" : updFieldElt, "method" : "setStyle", "value" : "color green"});
+		//actions.push({"object" : updateNoteId, "method" : "This", "value" : "note.id green"});
+		actions.push({"object" : data.card,  "method" : "updateIds", "value" : "%guid%"});
+		actions.push({"object" : data.card, "method" : "setStyle",  "value" : "color blue"});
+		//actions.push({"object" : DatasSynchronizing, "method" : "receipt",  "value" : order});
 
-			//j'init ma note dans tous les cas
-			formData.append('titre'  , document.getElementById('title').innerHTML);
-
-			let res = this.NoteCollection.create(formData);
-
-			if(res.error == 0 && Number.isInteger(res.data)){
-				this.note.id = res.data;
-			}
-
-
-			this.firstKey = false;
-
-
-		}
-
-		if(name == "text" && Number.isInteger(this.note.id) && value.id != "title"){
-
-			formData.append('texte'  , value.innerHTML);
-        	formData.append('resourceId'  , value.id);
-        	formData.append('typeId'  , 2);
-
-        	let res = this.ResourcesCollection.createUpdate(formData);
-
-			if(res.error == 0 && Number.isInteger(res.data)){
-				value.id = res.data;
-			}
+		let commande = {};
+		commande.id = order.order.id;
+		commande.status = "pending"; //backaction //close;
+		commande.actions = actions;
 
 
-		}
+		this.orders[order.tmpId] =  commande;
 
+		
 
+	}
 
-		if(name == "photo" && Number.isInteger(this.note.id) && value.id != "title"){
+	_PushExectuteOrder(order){
 
-			formData.append('data'  , value);
-        	formData.append('resourceId'  , value.id);
-        	formData.append('typeId'  , 3);
+		return DatasSynchronizing.add(order.fromBack,order.to,order.datas,true);
 
-        	let res = this.ResourcesCollection.createUpdate(formData);
-
-			if(res.error == 0 && Number.isInteger(res.data)){
-				value.id = res.data;
-			}
-
-
-		}
-
-
-	}*/
-
-
-
-
+	}
 
 
 }
