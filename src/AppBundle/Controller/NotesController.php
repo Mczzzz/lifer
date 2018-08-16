@@ -102,7 +102,7 @@ class NotesController extends Controller
 
 
 
-        if($datas->note->id === false){
+        if($datas->Note->id === false){
 
             $Note = new Notes();
             $Note->setCreator($user);
