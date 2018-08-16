@@ -42,6 +42,7 @@ export default class BackendComm {
 			params.credentials = "same-origin";
 
 			if(VERB != "GET"){
+				console.log(formData);
 				params.body = JSON.stringify(formData);
 
 				params.headers = {};
