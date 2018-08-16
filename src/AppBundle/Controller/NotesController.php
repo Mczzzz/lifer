@@ -86,10 +86,14 @@ class NotesController extends Controller
         //SERIALIZED OBJECT
         $datas = json_decode($request->getContent());
 
+        var_dump(datas);
+        die();
+
         if(!$datas || !is_object($datas)){
 
             $res->error = "2.2";
             $res->msg = "Datas Corrupted";
+            $res
 
             return new response(json_encode($res));
 
