@@ -128,16 +128,20 @@ export default class Note extends superViews{
 /*    		{"object" : updateNote, "method" : "setStyle", "value" : "color green"}
     		{"object" : data.card,  "method" : "updateIds", "value" : "%guid%"}
     		{"object" : data.card, "method" : "setStyle",  "value" : "color blue"}
-    		{"object" : dataSynchronizing, "method" : "receipt",  "value" : orderNumber}*/
+    		{"object" : dataSynchronizing, "method" : "receipt",  "value" : orderNumber}
+*/
+
     		let arrayValue = actions.value.split(" ");
+
+    		let Myclass = actions.object;
 
     		if(arrayValue.length == 2){
 
-    			actions.object[actions.method](arrayValue[0], arrayValue[1]);
+    			Myclass[actions.method](arrayValue[0], arrayValue[1]);
     		
     		}else{
 
-    			actions.object[actions.method](arrayValue[0]);
+    			Myclass[actions.method](arrayValue[0]);
     		
     		}
     		
