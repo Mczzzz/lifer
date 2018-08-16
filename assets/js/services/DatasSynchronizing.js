@@ -116,24 +116,18 @@ class DatasSynchronizing {
 
 	receipt(orderNumber){
 		//suppresion de la commande de la stack 
-		let index = this.Stack.indexOf(orderNumber);
 
-		if(index == -1){
 
-			console.log("Commande non trouvée dans receipt datasynchronising");
-			return false
-		
-		}else{
+		if(this.Stack[orderNumber].status == "sending"){
 
-			if(this.Stack[key].status == "sending"){
+			delete this.Stack[orderNumber];
+			
+			return true;	
 
-				this.Stack.splice(index,1);
-				return true;	
-
-			}
-
-			return false;
 		}
+
+		return false;
+		
 
 	}
 
