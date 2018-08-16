@@ -171,14 +171,24 @@ export default class Note extends superViews{
 		//Je prépare la commande
 		let order = this._PushPrepareOrder(data);
 
+
+		let purchaseOrder = DatasSynchronizing.purchaseOrder();
+
+		console.log(purchaseOrder);
+
 		// Je prépare les actions à la livraison de la commande
-		this._PushPreparePostOrderAction(updFieldElt,order,data);
+		this._PushPreparePostOrderAction(updFieldElt,order,data,purchaseOrder);
+
 
 		//Je passe la commande
-		this._PushExectuteOrder(order);
+		this._PushExectuteOrder(order,purchaseOrder);
 
 		//on set l'id temporaire à la Note
 		this.note.id = order.tmpId;
+
+
+
+
 
 	}
 
@@ -210,17 +220,17 @@ export default class Note extends superViews{
 
 	}
 
-	_PushPreparePostOrderAction(updFieldElt,order,data){
+	_PushPreparePostOrderAction(updFieldElt,order,data,purchaseOrder){
 
 	    let actions = [];
 		actions.push({"object" : updFieldElt, "method" : "setStyle", "value" : "color green"});
 		//actions.push({"object" : updateNoteId, "method" : "This", "value" : "note.id green"});
 		actions.push({"object" : data.card,  "method" : "updateIds", "value" : "%guid%"});
 		actions.push({"object" : data.card, "method" : "setStyle",  "value" : "color blue"});
-		//actions.push({"object" : DatasSynchronizing, "method" : "receipt",  "value" : order});
+		actions.push({"object" : DatasSynchronizing, "method" : "receipt",  "value" : purchaseOrder});
 
 		let commande = {};
-		commande.id = order.order.id;
+		commande.id = purchaseOrder.id;
 		commande.status = "pending"; //backaction //close;
 		commande.actions = actions;
 
@@ -231,7 +241,7 @@ export default class Note extends superViews{
 
 	}
 
-	_PushExectuteOrder(order){
+	_PushExectuteOrder(order,purchaseOrder){
 
 		return DatasSynchronizing.add(order.fromBack,order.to,order.datas,true);
 

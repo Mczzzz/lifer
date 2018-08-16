@@ -18,7 +18,30 @@ class DatasSynchronizing {
 
 
 
-	add(from,who,datas,needTmpId=false){
+	purchaseOrder(){
+
+		let stackId = Moment().format('x') + "-" + Math.floor(Math.random() * Math.floor(100000));
+
+		//on regarde si le numéro existe déja mais ya peux de chance
+		let index = this.Stack.indexOf(stackId);
+
+		if(index == -1){
+
+			this.Stack[stackId] = {};
+			this.Stack[stackId].id = stackId;
+			this.Stack[stackId].status = "waiting";
+
+			return this.Stack[stackId];
+		}else{
+			console.log('purshaseOrder Allready exist');
+		}
+
+
+	}
+
+
+
+	add(from,to,datas,needTmpId=false){
 	//from : pour le retour
 	//methode de la collection
 	//data a envoyer
@@ -34,8 +57,6 @@ class DatasSynchronizing {
 		MaCommande.who = who;
 		MaCommande.from = from;
 		MaCommande.datas = datas;
-		this.Stack[stackId] = {};
-		this.Stack[stackId].id = stackId;
 		this.Stack[stackId].status = "pending";
 		this.Stack[stackId].order = MaCommande;
 
