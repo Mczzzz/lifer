@@ -24,6 +24,13 @@ class Notes
     /**
      * @var string
      *
+     * @ORM\Column(name="tmpId", type="string", length=255)
+     */
+    private $tmpId;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="Name", type="string", length=255)
      */
     private $name;
@@ -210,6 +217,29 @@ class Notes
     public function setCreator($creator)
     {
         $this->creator = $creator;
+
+        return $this;
+    }
+
+
+    
+
+    /**
+     * @return string
+     */
+    public function getTmpId()
+    {
+        return $this->tmpId;
+    }
+
+    /**
+     * @param string $tmpId
+     *
+     * @return self
+     */
+    public function setTmpId($tmpId)
+    {
+        $this->tmpId = $tmpId;
 
         return $this;
     }
