@@ -70,7 +70,6 @@ class DatasSynchronizing {
 		let res = {};
 		res.status = 0;
 		res.order = {};
-		res.order.id = from + purchaseOrder;
 		if(needTmpId) res.tmpId = purchaseOrder;
 
 
@@ -121,7 +120,7 @@ class DatasSynchronizing {
 		if(this.Stack[orderNumber].status == "sending"){
 
 			delete this.Stack[orderNumber];
-			
+
 			return true;	
 
 		}

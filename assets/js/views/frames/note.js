@@ -187,7 +187,7 @@ export default class Note extends superViews{
 		let purchaseOrder = DatasSynchronizing.purchaseOrder();
 
 		//on set l'id temporaire à la Note
-		this.setNoteGuid("tmp-"+purchaseOrder);
+		this.setNoteGuid("tmp-"+purchaseOrder.id);
 
 		//Je prépare la commande
 		let order = this._PushPrepareOrder(data,purchaseOrder);
