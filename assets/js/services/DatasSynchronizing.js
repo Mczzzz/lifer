@@ -62,6 +62,7 @@ class DatasSynchronizing {
 		this.Stack[purchaseOrder.id].status = "pending";
 		this.Stack[purchaseOrder.id].order = MaCommande;
 
+		console.log("before execute Task");
 		//je demarra le traitement de la stack
 		this.excuteStack;
 
