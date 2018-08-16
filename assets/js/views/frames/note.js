@@ -186,6 +186,9 @@ export default class Note extends superViews{
 		//Je demande un numerode commande a mon fournisseur
 		let purchaseOrder = DatasSynchronizing.purchaseOrder();
 
+		//on set l'id temporaire à la Note
+		this.setNoteGuid("tmp-"+purchaseOrder);
+
 		//Je prépare la commande
 		let order = this._PushPrepareOrder(data,purchaseOrder);
 
@@ -196,8 +199,7 @@ export default class Note extends superViews{
 		//Je passe la commande
 		this._PushExectuteOrder(order,purchaseOrder);
 
-		//on set l'id temporaire à la Note
-		this.setNoteGuid(order.tmpId);
+
 
 
 
@@ -237,9 +239,6 @@ export default class Note extends superViews{
 
 	    let actions = [];
 
-	    if(this.note.guid === false){
-	    	actions.push({"object" : this, "method" : "setNoteGuid", "value" : "%guid%"});
-	    }
 
 		actions.push({"object" : updFieldElt, "method" : "setStyle", "value" : "color green"});
 //actions.push({"object" : data.card,  "method" : "updateIds", "value" : "%guid%"});
