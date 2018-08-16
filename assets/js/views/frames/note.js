@@ -172,7 +172,7 @@ export default class Note extends superViews{
 		let order = this._PushPrepareOrder(data);
 
 		// Je prépare les actions à la livraison de la commande
-		this._PushPreparePostOrderAction(updFieldElt,order);
+		this._PushPreparePostOrderAction(updFieldElt,order,data);
 
 		//Je passe la commande
 		this._PushExectuteOrder(order);
@@ -210,7 +210,7 @@ export default class Note extends superViews{
 
 	}
 
-	_PushPreparePostOrderAction(updFieldElt,order){
+	_PushPreparePostOrderAction(updFieldElt,order,data){
 
 	    let actions = [];
 		actions.push({"object" : updFieldElt, "method" : "setStyle", "value" : "color green"});
