@@ -16,6 +16,23 @@ export default class NoteCollection {
 
   Push(from,datas){
 
+/*	datas =  {Note: {…}, Resource: {…}}
+			Note:
+				Title
+				Ts
+				id
+			Resource:
+				action
+				card
+				id
+				type
+				update
+				resource:
+					text*/
+
+	console.log(JSON.stringify(datas.Note));
+	console.log(JSON.stringify(datas.Resource));
+
     let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'push',from,datas);
 
   }
