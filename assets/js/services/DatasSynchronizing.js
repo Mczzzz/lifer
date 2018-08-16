@@ -91,13 +91,13 @@ class DatasSynchronizing {
 			this.active = true;
 
 
-			for (let order of this.Stack){
+			for (let key in this.Stack){
 
 				console.log("in for");
-				let collection = new LoaderCollection(order.order.to.collection);
-				collection[order.order.to.method](order.order.datas,order.order.from);
+				let collection = new LoaderCollection(this.Stack[key].order.to.collection);
+				collection[this.Stack[key].order.to.method](this.Stack[key].order.datas,order.order.from);
 
-				this.Stack[order.id].status = "sending";
+				this.Stack[key].status = "sending";
 
 			}
 
