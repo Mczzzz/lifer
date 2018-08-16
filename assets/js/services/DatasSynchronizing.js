@@ -83,9 +83,7 @@ class DatasSynchronizing {
 	executeStack(){
 
 		console.log("executeStack");
-		console.log(this.Stack);
-		console.log(Object.keys(this.Stack).length);
-		console.log(this.active);
+
 		if(Object.keys(this.Stack).length > 0 && this.active === false){
 
 			console.log("stack > 0");
@@ -95,8 +93,9 @@ class DatasSynchronizing {
 
 			for (let order of this.Stack){
 
-				let collection = new LoaderCollection(order.who.collection);
-				collection[order.who.method](order.datas,order.from);
+				console.log("in for");
+				let collection = new LoaderCollection(order.order.to.collection);
+				collection[order.order.to.method](order.order.datas,order.order.from);
 
 				this.Stack[order.id].status = "sending";
 
