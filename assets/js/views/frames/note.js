@@ -233,7 +233,7 @@ export default class Note extends superViews{
 
 	    let actions = [];
 
-	    if(this.Note.guid === false){
+	    if(this.note.guid === false){
 	    	actions.push({"object" : this, "method" : "setNoteGuid", "value" : "%guid%"});
 	    }
 
