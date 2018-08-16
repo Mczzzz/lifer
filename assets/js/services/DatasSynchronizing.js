@@ -41,24 +41,19 @@ class DatasSynchronizing {
 
 
 
-	add(from,to,datas,needTmpId=false){
+	add(from,to,datas,purchaseOrder,needTmpId=false){
 	//from : pour le retour
 	//methode de la collection
 	//data a envoyer
 
-		
-
-
-
-		let stackId = Moment().format('x');
-
+	
 		//Ajout a la stack
 		let MaCommande = {};
-		MaCommande.who = who;
+		MaCommande.to = who;
 		MaCommande.from = from;
 		MaCommande.datas = datas;
-		this.Stack[stackId].status = "pending";
-		this.Stack[stackId].order = MaCommande;
+		this.Stack[purchaseOrder].status = "pending";
+		this.Stack[purchaseOrder].order = MaCommande;
 
 		//je demarra le traitement de la stack
 		this.excuteStack;
@@ -67,8 +62,8 @@ class DatasSynchronizing {
 		let res = {};
 		res.status = 0;
 		res.order = {};
-		res.order.id = from + stackId;
-		if(needTmpId) res.tmpId = stackId;
+		res.order.id = from + purchaseOrder;
+		if(needTmpId) res.tmpId = purchaseOrder;
 
 
 		return res;
