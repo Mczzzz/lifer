@@ -105,14 +105,14 @@ class NotesController extends Controller
 
 
 
-        if($datas->Note->id === false){
+        if($datas->Note->guid === false){
 
             $Note = new Notes();
             $Note->setCreator($user);
 
         }else{
 
-            $Note = $em->getRepository('AppBundle:Notes')->find($datas->Note->id);
+            $Note = $em->getRepository('AppBundle:Notes')->find($datas->Note->guid);
         
         }
 
