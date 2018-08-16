@@ -152,7 +152,8 @@ export default class Note extends superViews{
 			//on informe datassynchronig que tous c'est bien passé.
 			DatasSynchronizing.receipt(dataCallback.OrderId);
 
-			this.orders[dataCallback.OrderId].splice(index,1);
+			delete this.orders[dataCallback.OrderId];
+			console.log(this.orders);
 			return true;	
 		}
 
