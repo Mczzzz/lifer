@@ -86,7 +86,7 @@ class DatasSynchronizing {
 		console.log(this.Stack);
 		console.log(Object.keys(this.Stack).length);
 		console.log(this.active);
-		if(this.Stack.length > 0 && this.active == false){
+		if(Object.keys(this.Stack).length > 0 && this.active === false){
 
 			console.log("stack > 0");
 
