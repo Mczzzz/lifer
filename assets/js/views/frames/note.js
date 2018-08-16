@@ -211,9 +211,9 @@ export default class Note extends superViews{
 
 	_PushPrepareOrder(data, purchaseOrder){
 
-		let fromBack  = { "This"       : this      , "method"   : "Valid" , "orderId" :  purchaseOrder.id};
+		let fromBack  = { "This"       : this      , "method"   : "Valid"};
 		let to   = { "collection" : "Note"    , "method"   : "Push"  };
-		let datas = { "Note"       : this.note , "Resource" : data    };
+		let datas = { "Note"       : this.note , "Resource" : data  , "OrderId" :  purchaseOrder.id  };
 
 		let res = {};
 		res.fromBack = fromBack;
