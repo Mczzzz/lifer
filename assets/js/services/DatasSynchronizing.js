@@ -64,7 +64,7 @@ class DatasSynchronizing {
 
 		console.log("before execute Task");
 		//je demarra le traitement de la stack
-		this.excuteStack;
+		this.excuteStack();
 
 		//Préparation de la réponse
 		let res = {};
