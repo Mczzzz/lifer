@@ -24,7 +24,7 @@ export default class Title extends superViews{
 		
 
 
-		if(this.TheNote.note.id === false){
+		if(this.TheNote.note.guid === false){
 
 			this.data = {};
 			this.data.update = this.Moment().format('Do MMMM YYYY, HH:mm:ss');
@@ -97,7 +97,7 @@ export default class Title extends superViews{
 
 
 
-		if(this.TheNote.note.id === false){
+		if(this.TheNote.note.guid === false){
 			TheTitle.getContainer().focus();
 		}
 

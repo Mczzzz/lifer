@@ -22,7 +22,7 @@ export default class Resources extends superViews{
 		
 		this.TheNote = this.Lifer.getData("Note","This");
 		
-		if(this.TheNote.note.id === false){
+		if(this.TheNote.note.guid === false){
 
 			this.setStyle("flex" , 0);
 			return false;
