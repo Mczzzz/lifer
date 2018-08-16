@@ -51,6 +51,7 @@ class DatasSynchronizing {
 	//data a envoyer
 			console.log("this.Stack in add");
 			console.log(this.Stack);
+			console.log(purchaseOrder);
 	
 		//Ajout a la stack
 		let MaCommande = {};
