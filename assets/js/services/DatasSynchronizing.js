@@ -94,6 +94,7 @@ class DatasSynchronizing {
 			for (let key in this.Stack){
 
 				console.log("in for");
+				console.log(this.Stack[key].order.datas);
 				let collection = new LoaderCollection(this.Stack[key].order.to.collection);
 				collection[this.Stack[key].order.to.method](this.Stack[key].order.datas,this.Stack[key].order.from);
 
