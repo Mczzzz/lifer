@@ -243,7 +243,7 @@ export default class Note extends superViews{
 
 	_PushExectuteOrder(order,purchaseOrder){
 
-		return DatasSynchronizing.add(order.fromBack,order.to,order.datas,true);
+		return DatasSynchronizing.add(order.fromBack,order.to,order.datas,purchaseOrder,true);
 
 	}
 
