@@ -49,7 +49,7 @@ class DatasSynchronizing {
 	
 		//Ajout a la stack
 		let MaCommande = {};
-		MaCommande.to = who;
+		MaCommande.to = to;
 		MaCommande.from = from;
 		MaCommande.datas = datas;
 		this.Stack[purchaseOrder].status = "pending";
