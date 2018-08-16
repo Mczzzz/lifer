@@ -83,6 +83,7 @@ class DatasSynchronizing {
 	executeStack(){
 
 		console.log("executeStack");
+		console.log(this.Stack);
 		console.log(this.Stack.length);
 		console.log(this.active);
 		if(this.Stack.length > 0 && this.active == false){
