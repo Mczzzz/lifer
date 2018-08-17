@@ -231,7 +231,7 @@ export default class Note extends superViews{
 
 		let res = {};
 		res.to       = to;
-		res.dispatchResponseTo = dispatcheventTo;
+		res.dispatchResponseTo = dispatchResponseTo;
 		res.datas    = datas;
 
 		return res;
