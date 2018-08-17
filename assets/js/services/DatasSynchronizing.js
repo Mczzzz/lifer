@@ -45,7 +45,7 @@ class DatasSynchronizing {
 
 
 
-	add(from,to,datas,purchaseOrder,needTmpId=false){
+	add(dispatchResponseTo,to,datas,purchaseOrder,needTmpId=false){
 	//from : pour le retour
 	//methode de la collection
 	//data a envoyer
@@ -57,7 +57,7 @@ class DatasSynchronizing {
 		//Ajout a la stack
 		let MaCommande = {};
 		MaCommande.to = to;
-		MaCommande.from = from;
+		MaCommande.dispatchResponseTo  = dispatchResponseTo ;
 		MaCommande.datas = datas;
 		this.Stack[purchaseOrder.id].status = "pending";
 		this.Stack[purchaseOrder.id].order = MaCommande;
@@ -96,7 +96,7 @@ class DatasSynchronizing {
 
 				if(this.Stack[key].status == "pending"){
 					let collection = new LoaderCollection(this.Stack[key].order.to.collection);
-					collection[this.Stack[key].order.to.method](this.Stack[key].order.from,this.Stack[key].order.datas);
+					collection[this.Stack[key].order.to.method](this.Stack[key].order.dispatchResponseTo,this.Stack[key].order.datas);
 
 					this.Stack[key].status = "sending";
 				}

@@ -4,7 +4,7 @@ export default class BackendComm {
 
 
 
-	ajaxSend(VERB,url,from=false,dataCallback = false,dataSend = false){
+	ajaxSend(VERB,url,dispatchResponseTo=false,dataCallback = false,dataSend = false){
 
 		console.log("on passe bien dans ajaxSend");		
 
@@ -16,10 +16,23 @@ export default class BackendComm {
 			   	return response.json();
 
 			}).then(function(json){
-				
-				if(from !== false) from.This[from.method](json,dataCallback);
-				
+
 				console.log(json);
+				
+				if(dispatchResponseTo !== false){
+
+					for (let eventToDispatch of dispatchResponseTo){
+
+						eventToDispatch.This[eventToDispatch.method](json,dataCallback);
+
+
+					}
+
+						
+
+				} 
+				
+				
 
 			}, function(error) {
 

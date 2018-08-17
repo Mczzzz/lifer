@@ -222,13 +222,16 @@ export default class Note extends superViews{
 
 	_PushPrepareOrder(data, purchaseOrder){
 
-		let fromBack  = { "This"       : this      , "method"   : "Valid"};
-		let to        = { "collection" : "Note"    , "method"   : "Push"  };
-		let datas     = { "Note"       : this.note , "Resource" : data  , "OrderId" :  purchaseOrder.id  };
+		let to        		= { "collection" : "Note"    , "method"   : "Push"  };
+		
+		let dispatchResponseTo  = [];
+		dispatchResponseTo.push({ "This"       : this      , "method"   : "Valid"});
+
+		let datas     		= { "Note"       : this.note , "Resource" : data  , "OrderId" :  purchaseOrder.id  };
 
 		let res = {};
-		res.fromBack = fromBack;
 		res.to       = to;
+		res.dispatchResponseTo = dispatcheventTo;
 		res.datas    = datas;
 
 		return res;
@@ -259,7 +262,7 @@ export default class Note extends superViews{
 
 	_PushExectuteOrder(order,purchaseOrder){
 
-		return DatasSynchronizing.add(order.fromBack,order.to,order.datas,purchaseOrder,true);
+		return DatasSynchronizing.add(order.dispatchResponseTo,order.to,order.datas,purchaseOrder,true);
 
 	}
 
