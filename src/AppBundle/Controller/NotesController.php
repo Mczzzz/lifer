@@ -121,7 +121,7 @@ class NotesController extends Controller
                     $Note->setTmpId($datas->Note->guid);
              }
 
-        }else{}
+        }else{
 
             $Note = $em->getRepository('AppBundle:Notes')->find($datas->Note->guid);
         
