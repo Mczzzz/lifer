@@ -110,7 +110,18 @@ class NotesController extends Controller
             $Note = new Notes();
             $Note->setCreator($user);
 
-        }else{
+        }elseif(substr($datas->Note->guid,0,3) == "tmp"){
+
+             $Note = $em->getRepository('AppBundle:Notes')->findBy(array('tmpId' => $datas->Note->guid));
+
+             if(!$Note){
+
+                    $Note = new Notes();
+                    $Note->setCreator($user);
+                    $Note->setTmpId($datas->Note->guid);
+             }
+
+        }else{}
 
             $Note = $em->getRepository('AppBundle:Notes')->find($datas->Note->guid);
         
