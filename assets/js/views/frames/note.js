@@ -119,6 +119,13 @@ export default class Note extends superViews{
 
 
 
+			//je set monIddéfinitif à ma note si je suis encore en tmp
+			if(str.indexOf("tmp-") == 0){
+				console.log("on set l'id")
+				this.setNoteGuid(datas.datas.Note.id);
+			}
+
+
 			for(let actions of this.orders[dataCallback.OrderId].actions){
 
 
@@ -186,8 +193,9 @@ export default class Note extends superViews{
 		//Je demande un numerode commande a mon fournisseur
 		let purchaseOrder = DatasSynchronizing.purchaseOrder();
 
+
 		//on set l'id temporaire à la Note
-		this.setNoteGuid("tmp-"+purchaseOrder.id);
+		if(this.note.guid === false) this.setNoteGuid("tmp-"+purchaseOrder.id);
 
 		//Je prépare la commande
 		let order = this._PushPrepareOrder(data,purchaseOrder);
