@@ -120,7 +120,7 @@ export default class Note extends superViews{
 
 
 			//je set monIddéfinitif à ma note si je suis encore en tmp
-			if(str.indexOf("tmp-") == 0){
+			if(this.node.guid.indexOf("tmp-") == 0){
 				console.log("on set l'id")
 				this.setNoteGuid(datas.datas.Note.id);
 			}
