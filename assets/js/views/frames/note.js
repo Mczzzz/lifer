@@ -141,7 +141,7 @@ export default class Note extends superViews{
 
 	    		let arrayValue = actions.value.split(" ");
 
-	    		let Myclass = actions.object;
+	    		let Myclass = this.Lifer.getData(actions.object,"This");	
 
 	    		if(arrayValue.length == 2){
 
@@ -217,14 +217,23 @@ export default class Note extends superViews{
 
 	_PushPreOrderAction(update){
 
-		let updateNoteElt = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard/cardElementheader/noteEltTextupdate","This");	
+		
 		
 		this.note.Ts = update; //objet Momentjs à formater a l'utilisation
 
+		let updateNoteElt = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard","This");	
+		updateNoteElt.getContainer().style.background = "red";
+
+		let updateNoteElt = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard/cardElementheader/noteEltTextupdate","This");	
 		updateNoteElt.getContainer().innerHTML = update.format('Do MMMM YYYY, HH:mm:ss');
 		updateNoteElt.getContainer().style.color = "red";
 
-		return updateNoteElt;
+
+		//faire un tableau des retours daction atten uet envoyé a la comande
+
+
+
+		return "Note/mainNote/noteMainTitle/NoteTitleCard";
 	}
 
 
@@ -233,7 +242,7 @@ export default class Note extends superViews{
 		let to        		= { "collection" : "Note"    , "method"   : "Push"  };
 		
 		let dispatchResponseTo  = [];
-		dispatchResponseTo.push({ "This"       : this      , "method"   : "Valid"});
+		dispatchResponseTo.push({ "This"       : "Note"      , "method"   : "Valid"});
 
 		let datas     		= { "Note"       : this.note , "Resource" : data  , "OrderId" :  purchaseOrder.id  };
 

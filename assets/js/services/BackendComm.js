@@ -23,7 +23,9 @@ export default class BackendComm {
 
 					for (let eventToDispatch of dispatchResponseTo){
 
-						eventToDispatch.This[eventToDispatch.method](json,dataCallback);
+						let Myclass = this.Lifer.getData(eventToDispatch.This,"This");
+
+						Myclass[eventToDispatch.method](json,dataCallback);
 
 
 					}
