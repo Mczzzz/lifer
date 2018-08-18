@@ -221,8 +221,8 @@ export default class Note extends superViews{
 		
 		this.note.Ts = update; //objet Momentjs à formater a l'utilisation
 
-		let updateNoteElt = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard","This");	
-		updateNoteElt.getContainer().style.background = "red";
+		let updateNoteTitleElt = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard","This");	
+		updateNoteTitleElt.getContainer().style.background = "red";
 
 		let updateNoteElt = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard/cardElementheader/noteEltTextupdate","This");	
 		updateNoteElt.getContainer().innerHTML = update.format('Do MMMM YYYY, HH:mm:ss');
@@ -256,7 +256,7 @@ export default class Note extends superViews{
 	_PushPreparePostOrderAction(order,data,purchaseOrder){
 
 	    let actions = [];
-
+	    console.log("_PushPreparePostOrderAction");
 	    console.log("data.card");
 	    console.log(data.card);
 		actions.push({"object" : "Note/mainNote/noteMainTitle/NoteTitleCard", "method" : "setStyle", "value" : "color green"});
