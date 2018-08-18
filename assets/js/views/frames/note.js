@@ -188,7 +188,7 @@ export default class Note extends superViews{
 
 
 		//Je fais les pré-actions sur la note
-		let updFieldElt = this._PushPreOrderAction(data.update);
+		this._PushPreOrderAction(data.update);
 
 		//Je demande un numerode commande a mon fournisseur
 		let purchaseOrder = DatasSynchronizing.purchaseOrder();
@@ -201,7 +201,7 @@ export default class Note extends superViews{
 		let order = this._PushPrepareOrder(data,purchaseOrder);
 
 		// Je prépare les actions à la livraison de la commande
-		this._PushPreparePostOrderAction(updFieldElt,order,data,purchaseOrder);
+		this._PushPreparePostOrderAction(order,data,purchaseOrder);
 
 
 		//Je passe la commande
@@ -232,8 +232,6 @@ export default class Note extends superViews{
 		//faire un tableau des retours daction atten uet envoyé a la comande
 
 
-
-		return "Note/mainNote/noteMainTitle/NoteTitleCard";
 	}
 
 
@@ -255,12 +253,13 @@ export default class Note extends superViews{
 
 	}
 
-	_PushPreparePostOrderAction(updFieldElt,order,data,purchaseOrder){
+	_PushPreparePostOrderAction(order,data,purchaseOrder){
 
 	    let actions = [];
 
-
-		actions.push({"object" : updFieldElt, "method" : "setStyle", "value" : "color green"});
+	    console.log("data.card");
+	    console.log(data.card);
+		actions.push({"object" : "Note/mainNote/noteMainTitle/NoteTitleCard", "method" : "setStyle", "value" : "color green"});
 //actions.push({"object" : data.card,  "method" : "updateIds", "value" : "%guid%"});
 		actions.push({"object" : data.card, "method" : "setStyle",  "value" : "background blue"});
 //actions.push({"object" : DatasSynchronizing, "method" : "receipt",  "value" : purchaseOrder});

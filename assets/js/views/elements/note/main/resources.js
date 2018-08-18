@@ -153,7 +153,7 @@ export default class Resources extends superViews{
 		resp.id = timestamp;
 		resp.update = updateTs;
 		resp.resource = Resource;
-		resp.card = card;
+		resp.card = card.path;
 
 
     	this.TheNote.Push(resp);
