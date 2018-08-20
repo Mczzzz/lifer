@@ -212,7 +212,7 @@ class NotesController extends Controller
             $majResource = new \Datetime($datas->Resource->update);
 
 
-            $Resource->setTsUpdate($majResource);
+            $Resource->setTsUpdateBDD($majResource);
 
 
             $em->persist($Resource);
