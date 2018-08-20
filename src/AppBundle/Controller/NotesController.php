@@ -188,11 +188,12 @@ class NotesController extends Controller
             $Resource->setNote($Note);
 
             //load du type
+//TODO : mettre un unique sur le name please :)            
             $ResourceType = $em->getRepository('AppBundle:ResourcesTypes')->findBy(array("name" => $datas->Resource->type));
 
             if($ResourceType){
 
-                $Resource->setType($ResourceType);
+                $Resource->setType($ResourceType[0]);
 
             }
 
