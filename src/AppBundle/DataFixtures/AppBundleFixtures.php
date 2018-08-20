@@ -21,9 +21,9 @@ class AppBundleFixtures extends Fixture
 
             $RT = new ResourcesTypes();
             $RT->setName($value['Name']);
-            $RT->setPicto($value->Picto);
-            $RT->setEnable($value->Enable);
-            $RT->setColor($value->Color);
+            $RT->setPicto($value['Picto']);
+            $RT->setEnable($value['Enable']);
+            $RT->setColor($value['Color']);
 
             $manager->persist($RT);
 
