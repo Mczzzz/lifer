@@ -77,6 +77,13 @@ class Resources
      */
     private $tsUpdate;
 
+    /**
+     * @var int
+     *
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="creator") 
+     * @ORM\JoinColumn(name="creator", referencedColumnName="id")
+     */
+    private $creator;
 
 
 
@@ -223,5 +230,49 @@ class Resources
     }
 
 
+
+
+
+
+
+    /**
+     * @return string
+     */
+    public function getTmpId()
+    {
+        return $this->tmpId;
+    }
+
+    /**
+     * @param string $tmpId
+     *
+     * @return self
+     */
+    public function setTmpId($tmpId)
+    {
+        $this->tmpId = $tmpId;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCreator()
+    {
+        return $this->creator;
+    }
+
+    /**
+     * @param int $creator
+     *
+     * @return self
+     */
+    public function setCreator($creator)
+    {
+        $this->creator = $creator;
+
+        return $this;
+    }
 }
 

@@ -151,7 +151,7 @@ export default class Resources extends superViews{
 		let resp = {};
 		resp.type = "text";
 		resp.action = "Push";
-		resp.id = card.getId();
+		resp.guid = card.getId();
 		resp.update = updateTs;
 		resp.resource = Resource.text;
 		resp.card = card.path;

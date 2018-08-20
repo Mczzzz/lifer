@@ -144,15 +144,47 @@ class NotesController extends Controller
             $em->persist($Note);
             $em->flush();
 
+            //log de la partie Note
+            $res->datas = new \stdClass();
+            $res->datas->Note = new \stdClass();
+            $res->datas->Note->id = $Note->getId();
+
+
+
+
+
+            //j'attaque le traitement de la ressource
+            if($datas->Resource->guid === false){
+
+                $Resource = new Resources();
+                $Resource->setCreator($user);
+
+            }elseif(substr($datas->Resource->guid,0,10) == "TmpCardId-"){
+
+             $Resource = $em->getRepository('AppBundle:Resources')->findBy(array('tmpId' => $datas->Resource->guid));
+
+             if(!$Resource){
+
+                    $Resource = new Notes();
+                    $Resource->setCreator($user);
+                    $Resource->setTmpId($datas->Resource->guid);
+             }
+
+        }else{
+
+            $Resource = $em->getRepository('AppBundle:Resources')->find($datas->Resource->guid);
         
+        }
+
+
+            $Resource->setNote($Note);
+            $Resource->setType($datas->Resource);
 
 
 
             $res->error = "0";
             $res->msg   = "SUCCESS";
-            $res->datas = new \stdClass();
-            $res->datas->Note = new \stdClass();
-            $res->datas->Note->id = $Note->getId();
+
 
             return new response(json_encode($res));
 
