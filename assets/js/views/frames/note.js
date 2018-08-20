@@ -143,6 +143,8 @@ export default class Note extends superViews{
 
 	    		let Myclass = this.Lifer.getData(actions.object,"This");	
 
+	    		console.log(Myclass.constructor.name);
+
 	    		if(arrayValue.length == 2){
 
 	    			Myclass[actions.method](arrayValue[0], arrayValue[1]);
@@ -256,13 +258,11 @@ export default class Note extends superViews{
 	_PushPreparePostOrderAction(order,data,purchaseOrder){
 
 	    let actions = [];
-	    console.log("_PushPreparePostOrderAction");
+/*	    console.log("_PushPreparePostOrderAction");
 	    console.log("data.card");
-	    console.log(data.card);
+	    console.log(data.card);*/
 		actions.push({"object" : "Note/mainNote/noteMainTitle/NoteTitleCard", "method" : "setStyle", "value" : "color green"});
-//actions.push({"object" : data.card,  "method" : "updateIds", "value" : "%guid%"});
 		actions.push({"object" : data.card, "method" : "setStyle",  "value" : "background blue"});
-//actions.push({"object" : DatasSynchronizing, "method" : "receipt",  "value" : purchaseOrder});
 
 		let commande = {};
 		commande.id = purchaseOrder.id;
