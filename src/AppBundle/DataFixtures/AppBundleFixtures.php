@@ -20,7 +20,7 @@ class AppBundleFixtures extends Fixture
         foreach ($RTArray as $value){
 
             $RT = new ResourcesTypes();
-            $RT->setName($value->Name);
+            $RT->setName($value['Name']);
             $RT->setPicto($value->Picto);
             $RT->setEnable($value->Enable);
             $RT->setColor($value->Color);
