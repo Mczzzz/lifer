@@ -143,7 +143,11 @@ export default class Note extends superViews{
 
 	    		let Myclass = this.Lifer.getData(actions.object,"This");	
 
-	    		console.log(Myclass.constructor.name);
+	    		if(MyClass.indexOf("TmpCardId-") == 0){
+				console.log("on set l'id de la resource")
+					MyClass.setId("grrr");
+
+				}
 
 	    		if(arrayValue.length == 2){
 

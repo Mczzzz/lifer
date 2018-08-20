@@ -15,11 +15,19 @@ class Resources
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id", type="guid")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="UUID")
      */
     private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tmpId", type="string", length=255)
+     */
+    private $tmpId;
+
 
     /**
      * @var int

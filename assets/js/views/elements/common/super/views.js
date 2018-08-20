@@ -128,5 +128,17 @@ Moment.locale('fr');
 	}
 
 
+	setId(id){
+
+          this.container.id = id;
+
+     }
+
+
+    getId(){
+
+    	return this.container.id;
+
+    }
 
 }

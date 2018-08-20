@@ -39,11 +39,6 @@ export default class card extends superViews{
 
 
 
-     setId(id){
-
-          this.container.id = id;
-
-     }
 
 
      setElement(classSuffixe){
