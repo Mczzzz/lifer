@@ -12,6 +12,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 
 use AppBundle\Entity\Notes;
+use AppBundle\Entity\Resources;
+use AppBundle\Entity\ResourcesTypes;
 
 /**
  * Notes controller.
@@ -178,8 +180,35 @@ class NotesController extends Controller
 
 
             $Resource->setNote($Note);
-            $Resource->setType($datas->Resource);
 
+            //load du type
+            $ResourceType = $em->getRepository('AppBundle:ResourcesTypes')->findBy(array("Name" => $datas->Resource->type));
+
+            if($ResourceType){
+
+                $Resource->setType($ResourceType);
+
+            }
+
+            
+
+
+
+
+            if($datas->Resource->type == text){
+
+                $Resource->setText($datas->Resource->resource);
+
+            }
+
+
+
+            $em->persist($Resource);
+            $em->flush();
+
+
+            $res->datas->Resource = new \stdClass();
+            $res->datas->Resource->id = $Resource->getId();
 
 
             $res->error = "0";
