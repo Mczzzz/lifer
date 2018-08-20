@@ -152,7 +152,7 @@ export default class Resources extends superViews{
 		resp.type = "text";
 		resp.action = "Push";
 		resp.guid = card.getId();
-		resp.update = updateTs.format('YYYY-MM-DD HH:mm:ss');
+		resp.update = updateTs;
 		resp.resource = Resource.text;
 		resp.card = card.path;
 
