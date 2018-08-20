@@ -13,8 +13,8 @@ class AppFixtures extends Fixture
 
         //On initialise les datas de fixtures
         $RTArray = array();
-        array_push($RTArray, array( "Name" : "text", "Picto" : "title", "Enable" : true, "Color" : "blue") );
-        array_push($RTArray, array( "Name" : "image", "Picto" : "photo", "Enable" : true, "Color" : "orange") );
+        array_push($RTArray, array( "Name" => "text", "Picto" => "title", "Enable" => true, "Color" => "blue") );
+        array_push($RTArray, array( "Name" => "image", "Picto" => "photo", "Enable" => true, "Color" => "orange") );
 
 
         foreach ($array as $value){
