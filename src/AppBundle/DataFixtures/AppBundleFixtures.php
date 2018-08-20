@@ -17,7 +17,7 @@ class AppBundleFixtures extends Fixture
         array_push($RTArray, array( "Name" => "image", "Picto" => "photo", "Enable" => true, "Color" => "orange") );
 
 
-        foreach ($array as $value){
+        foreach ($RTArray as $value){
 
             $RT = new ResourcesTypes();
             $RT->setName($value->Name);
