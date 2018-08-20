@@ -73,9 +73,19 @@ class Resources
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="ts_update", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+     * @ORM\Column(name="ts_update_BDD", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
      */
-    private $tsUpdate;
+    private $tsUpdateBDD;
+
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="updateAPP", type="datetime")
+     */
+    private $updateAPP;
+
+
 
     /**
      * @var int
@@ -209,25 +219,6 @@ class Resources
         return $this;
     }
 
-    /**
-     * @return \DateTime
-     */
-    public function getTsUpdate()
-    {
-        return $this->tsUpdate;
-    }
-
-    /**
-     * @param \DateTime $tsUpdate
-     *
-     * @return self
-     */
-    public function setTsUpdate(\DateTime $tsUpdate)
-    {
-        $this->tsUpdate = $tsUpdate;
-
-        return $this;
-    }
 
 
 
@@ -271,6 +262,46 @@ class Resources
     public function setCreator($creator)
     {
         $this->creator = $creator;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getTsUpdateBDD()
+    {
+        return $this->tsUpdateBDD;
+    }
+
+    /**
+     * @param \DateTime $tsUpdateBDD
+     *
+     * @return self
+     */
+    public function setTsUpdateBDD( $tsUpdateBDD)
+    {
+        $this->tsUpdateBDD = $tsUpdateBDD;
+
+        return $this;
+    }
+
+    /**
+     * @return datetime
+     */
+    public function getUpdateAPP()
+    {
+        return $this->updateAPP;
+    }
+
+    /**
+     * @param datetime $updateAPP
+     *
+     * @return self
+     */
+    public function setUpdateAPP(datetime $updateAPP)
+    {
+        $this->updateAPP = $updateAPP;
 
         return $this;
     }
