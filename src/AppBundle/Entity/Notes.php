@@ -39,7 +39,7 @@ class Notes
     /**
      * @var datetime
      *
-     * @ORM\Column(name="createBDD", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP", nullable=true)
+     * @ORM\Column(name="createBDD", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP", nullable=false)
      */
     private $createBDD;
 
@@ -47,7 +47,7 @@ class Notes
     /**
      * @var datetime
      *
-     * @ORM\Column(name="updateBDD", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+     * @ORM\Column(name="updateBDD", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP", nullable=false)
      */
     private $updateBDD;
 
