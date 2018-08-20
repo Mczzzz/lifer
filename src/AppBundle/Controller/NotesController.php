@@ -188,7 +188,7 @@ class NotesController extends Controller
             $Resource->setNote($Note);
 
             //load du type
-            $ResourceType = $em->getRepository('AppBundle:ResourcesTypes')->findBy(array("Name" => $datas->Resource->type));
+            $ResourceType = $em->getRepository('AppBundle:ResourcesTypes')->findBy(array("name" => $datas->Resource->type));
 
             if($ResourceType){
 
