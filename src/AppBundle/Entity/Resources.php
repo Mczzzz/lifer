@@ -299,7 +299,7 @@ class Resources
      *
      * @return self
      */
-    public function setUpdateAPP(datetime $updateAPP)
+    public function setUpdateAPP( $updateAPP)
     {
         $this->updateAPP = $updateAPP;
 
