@@ -210,6 +210,9 @@ class NotesController extends Controller
 
 
 
+            $Resource->setTsUpdate($datas->Resource->update);
+
+
             $em->persist($Resource);
             $em->flush();
 
