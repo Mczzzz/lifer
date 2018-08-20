@@ -39,7 +39,7 @@ class Notes
     /**
      * @var datetime
      *
-     * @ORM\Column(name="createBDD", columnDefinition="TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP")
+     * @ORM\Column(name="createBDD", type="datetime", options={"default":0})
      */
     private $createBDD;
 
