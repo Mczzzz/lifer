@@ -135,7 +135,7 @@ class NotesController extends Controller
 
             $Note->setName($datas->Note->Title);
 
-            if(!$datas->note->Ts){
+            if(!$datas->Note->Ts){
                 $ndt = new \Datetime('now');
             }else{
                 $ndt = new \Datetime($datas->Note->Ts);
