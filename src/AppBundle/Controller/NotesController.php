@@ -201,7 +201,7 @@ class NotesController extends Controller
 
 
 
-            if($datas->Resource->type == text){
+            if($datas->Resource->type == "text"){
 
                 $Resource->setText($datas->Resource->resource);
 
