@@ -171,6 +171,7 @@ class NotesController extends Controller
                         $Resource = new Resources();
                         $Resource->setCreator($user);
                         $Resource->setTmpId($datas->Resource->guid);
+                        $Resource->setCreateBDD('CURRENT_TIMESTAMP()');
                  }else{
      
                     $Resource = $ResourceList[0];
