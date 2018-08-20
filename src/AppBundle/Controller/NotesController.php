@@ -121,6 +121,7 @@ class NotesController extends Controller
                     $Note = new Notes();
                     $Note->setCreator($user);
                     $Note->setTmpId($datas->Note->guid);
+                    $Note->setCreateBDD('CURRENT_TIMESTAMP()');
              }else{
 
                 $Note = $NoteList[0];
@@ -171,7 +172,7 @@ class NotesController extends Controller
                         $Resource = new Resources();
                         $Resource->setCreator($user);
                         $Resource->setTmpId($datas->Resource->guid);
-                        $Resource->setCreateBDD('CURRENT_TIMESTAMP()');
+
                  }else{
      
                     $Resource = $ResourceList[0];
