@@ -228,7 +228,7 @@ export default class Note extends superViews{
 
 		
 		
-		this.note.Ts = update; //objet Momentjs à formater a l'utilisation
+		this.note.Ts = update.format("YYYY-MM-DD HH:mm:ss");//objet Momentjs à formater a l'utilisation
 
 		let updateNoteTitleElt = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard","This");	
 		updateNoteTitleElt.getContainer().style.background = "red";
