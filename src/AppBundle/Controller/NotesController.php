@@ -116,7 +116,7 @@ class NotesController extends Controller
 
              $NoteList = $em->getRepository('AppBundle:Notes')->findBy(array('tmpId' => $datas->Note->guid));
 
-             if(!$Note){
+             if(!$NoteList){
 
                     $Note = new Notes();
                     $Note->setCreator($user);
