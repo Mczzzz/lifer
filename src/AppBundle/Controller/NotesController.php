@@ -130,9 +130,6 @@ class NotesController extends Controller
         }
 
 
-            var_dump($datas->Note->Title);
-            die();
-
             $Note->setName($datas->Note->Title);
 
             if(!$datas->note->Ts){
