@@ -114,13 +114,16 @@ class NotesController extends Controller
 
         }elseif(substr($datas->Note->guid,0,3) == "tmp"){
 
-             $Note = $em->getRepository('AppBundle:Notes')->findBy(array('tmpId' => $datas->Note->guid));
+             $NoteList = $em->getRepository('AppBundle:Notes')->findBy(array('tmpId' => $datas->Note->guid));
 
              if(!$Note){
 
                     $Note = new Notes();
                     $Note->setCreator($user);
                     $Note->setTmpId($datas->Note->guid);
+             }else{
+
+                $Note = $NoteList[0];
              }
 
         }else{
@@ -161,13 +164,15 @@ class NotesController extends Controller
 
             }elseif(substr($datas->Resource->guid,0,10) == "TmpCardId-"){
 
-             $Resource = $em->getRepository('AppBundle:Resources')->findBy(array('tmpId' => $datas->Resource->guid));
+             $ResourceList = $em->getRepository('AppBundle:Resources')->findBy(array('tmpId' => $datas->Resource->guid));
 
-             if(!$Resource){
+             if(!$ResourceList){
 
                     $Resource = new Notes();
                     $Resource->setCreator($user);
                     $Resource->setTmpId($datas->Resource->guid);
+             }else{
+                $Resource = $ResourceList[0];
              }
 
         }else{
