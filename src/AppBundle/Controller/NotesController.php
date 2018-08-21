@@ -125,7 +125,9 @@ class NotesController extends Controller
                     $test = new \stdClass();
                     $test->format = 'NOW()';
 
-                    $Note->setCreateBDD(new Toto());
+                    var_dump(new \Toto());
+                    die();
+                    $Note->setCreateBDD(new \Toto());
              }else{
 
                 $Note = $NoteList[0];
