@@ -15,6 +15,8 @@ use AppBundle\Entity\Notes;
 use AppBundle\Entity\Resources;
 use AppBundle\Entity\ResourcesTypes;
 
+use AppBundle\Helper\timestamp;
+
 /**
  * Notes controller.
  *
@@ -125,7 +127,7 @@ class NotesController extends Controller
                     $test = new \stdClass();
                     $test->format = 'NOW()';
 
-                    var_dump(new \Toto());
+                    var_dump(new timestamp());
                     die();
                     $Note->setCreateBDD($test);
              }else{
@@ -290,8 +292,4 @@ class NotesController extends Controller
 
 }
 
-class Toto{
-    static public function format(){
-        return 'NOW()';
-    }
-}
+
