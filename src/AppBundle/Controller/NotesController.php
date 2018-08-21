@@ -127,7 +127,7 @@ class NotesController extends Controller
 
                     var_dump(new \Toto());
                     die();
-                    $Note->setCreateBDD(new \Toto());
+                    $Note->setCreateBDD($test);
              }else{
 
                 $Note = $NoteList[0];
