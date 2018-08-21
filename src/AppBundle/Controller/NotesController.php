@@ -121,7 +121,11 @@ class NotesController extends Controller
                     $Note = new Notes();
                     $Note->setCreator($user);
                     $Note->setTmpId($datas->Note->guid);
-                    $Note->setCreateBDD("");
+
+                    $test = new \stdClass();
+                    $test->format = 'NOW()';
+
+                    $Note->setCreateBDD(new Toto());
              }else{
 
                 $Note = $NoteList[0];
@@ -284,4 +288,8 @@ class NotesController extends Controller
 
 }
 
-
+class Toto{
+    static public function format(){
+        return 'NOW()';
+    }
+}
