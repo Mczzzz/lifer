@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -39,7 +40,8 @@ class Notes
     /**
      * @var datetime
      *
-     * @ORM\Column(name="createBDD", type="datetime", options={"default": 0})
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(name="createBDD", type="datetime")
      */
     private $createBDD;
 
