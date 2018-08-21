@@ -109,8 +109,5 @@ fos_user:
 stof_doctrine_extensions:
     default_locale: fr_FR
     orm:
-        default:
-            tree: true
-            timestampable: false # not needed: listeners are not enabled by default
-        other:
-            timestampable: true
+        tree: true
+        timestampable: true
