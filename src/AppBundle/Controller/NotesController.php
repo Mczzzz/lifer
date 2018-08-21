@@ -127,7 +127,7 @@ class NotesController extends Controller
 /*                    $test = new \stdClass();
                     $test->format = 'NOW()';*/
 
-                    var_dump(new timestamp());
+                    var_dump(new timestamp()->format());
                     die();
                     $Note->setCreateBDD($test);
              }else{
