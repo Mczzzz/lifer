@@ -124,8 +124,8 @@ class NotesController extends Controller
                     $Note->setCreator($user);
                     $Note->setTmpId($datas->Note->guid);
 
-                    $test = new \stdClass();
-                    $test->format = 'NOW()';
+/*                    $test = new \stdClass();
+                    $test->format = 'NOW(*/)';
 
                     var_dump(new timestamp());
                     die();
