@@ -40,8 +40,7 @@ class Notes
     /**
      * @var datetime
      *
-     * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(name="createBDD", type="datetime")
+     * @ORM\Column(type="datetime", options={"default": 0})
      */
     private $createBDD;
 
