@@ -121,7 +121,7 @@ class NotesController extends Controller
                     $Note = new Notes();
                     $Note->setCreator($user);
                     $Note->setTmpId($datas->Note->guid);
-                    $Note->setCreateBDD('default');
+                    $Note->setCreateBDD();
              }else{
 
                 $Note = $NoteList[0];
