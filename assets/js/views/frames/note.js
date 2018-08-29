@@ -128,9 +128,16 @@ export default class Note extends superViews{
 			//Si il y a une ressource je set l'id si ce n'est pas fait
 			if(datas.datas.hasOwnProperty("Resource")){
 
+
+				//TmpCardId-
 				//on reload la Card pour lui assigner son id définitif
 				let CardToSet = this.Lifer.getData(dataCallback.Resource.Card,"This");
-				CardToSet.setId(datas.datas.Resource.id);
+
+				if(CardToSet.getId().indexOf("TmpCardId-") == 0){
+					CardToSet.setId(datas.datas.Resource.id);
+				}
+
+				
 
 
 			}
