@@ -103,7 +103,7 @@ export default class Note extends superViews{
 
 
 
-	Valid(datas,dataCallback){
+	Confirm(datas,dataCallback){
 
 		console.log(dataCallback);
 		console.log(this.orders);
@@ -125,12 +125,23 @@ export default class Note extends superViews{
 				this.setNoteGuid(datas.datas.Note.id);
 			}
 
+			//Si il y a une ressource je set l'id si ce n'est pas fait
+			if(datas.datas.hasOwnProperty("Resource")){
+
+			
+
+			}
+
+
+
+
 
 			for(let actions of this.orders[dataCallback.OrderId].actions){
 
 
 				console.log('in for');
 				console.log(actions);
+
 
 					//faire les actions
 	/*    		{"object" : updateNote, "method" : "setStyle", "value" : "color green"}
@@ -199,7 +210,7 @@ export default class Note extends superViews{
 		//normalisation des dates de la ressource
 		data.update = data.update.format("YYYY-MM-DD HH:mm:ss");
 
-		//Je demande un numerode commande a mon fournisseur
+		//Je demande un numero de commande a mon fournisseur
 		let purchaseOrder = DatasSynchronizing.purchaseOrder();
 
 
@@ -249,7 +260,7 @@ export default class Note extends superViews{
 		let to        		= { "collection" : "Note"    , "method"   : "Push"  };
 		
 		let dispatchResponseTo  = [];
-		dispatchResponseTo.push({ "This"       : "Note"      , "method"   : "Valid"});
+		dispatchResponseTo.push({ "This"       : "Note"      , "method"   : "Confirm"});
 
 		let datas     		= { "Note"       : this.note , "Resource" : data  , "OrderId" :  purchaseOrder.id  };
 
