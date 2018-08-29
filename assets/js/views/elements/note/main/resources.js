@@ -156,7 +156,7 @@ export default class Resources extends superViews{
 		resp.resource = Resource.text;
 		//resp.card = card.path;
 		console.log("card.path");
-		//console.log(card.path);
+		console.log(card.path);
 
 
     	this.TheNote.Push(resp);
