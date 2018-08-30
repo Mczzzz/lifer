@@ -37,16 +37,16 @@ export default class card extends superViews{
 
       console.log(e.changedTouches[0].clientY);
       console.log(this.getContainer().getBoundingClientRect());
+      console.log(this.getContainer());
       console.log(this.getContainer().previousElementSibling);
       console.log(this.getContainer().nextSibling);
-      console.log(this.getContainer().previousSibling.getBoundingClientRect().y);
+     /* console.log(this.getContainer().previousSibling.getBoundingClientRect().y);
       if(e.changedTouches[0].clientY > this.getContainer().previousSibling.getBoundingClientRect().y){
         this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousSibling);
 
-      }
-/*       for (var i=0; i < e.changedTouches.length; i++) {
-     console.log("changedTouches[" + i + "].identifier = " + e.changedTouches[i].identifier);
-   }   */
+      }*/
+
+
 
      }
 
