@@ -35,7 +35,7 @@ export default class card extends superViews{
 
      handleStart(e){
 
-      console.log(e.changedTouches);
+      console.log(e.changedTouches.TouchList);
       console.log(this.getContainer().getBoundingClientRect());
       console.log(this.getContainer().previousSibling);
       console.log(this.getContainer().nextSibling);
