@@ -47,6 +47,7 @@ export default class card extends superViews{
         let MyNode = this.getContainer().cloneNode(true);
         this.getContainer().parentElement.insertBefore(MyNode,this.getContainer().previousElementSibling);
         this.getContainer().remove();
+        this.container = MyNode;
       }
 
 
