@@ -98,7 +98,7 @@ export default class card extends superViews{
      setCallBack(Evt, path, method, args = false){
 
         let objCallBack     = {}.
-        objCallBack.event   = Evt;
+        objCallBack.Evt   = Evt;
         objCallBack.path    = path;
         objCallBack.method  = method;
         objCallBack.args    = args;
