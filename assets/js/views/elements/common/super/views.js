@@ -141,4 +141,10 @@ Moment.locale('fr');
 
     }
 
+    getObjectThisfromPath(path){
+
+    	return this.Lifer.getData(path,"This");
+    }
+    
+
 }

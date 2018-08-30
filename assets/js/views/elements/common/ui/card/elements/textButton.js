@@ -3,7 +3,7 @@ import superViews from "../../../super/views.js";
 export default class TextButton extends superViews{ 
 	
 
-	constructor( MyClass,path,prepend = false){
+	constructor( MyClass,path,prepend = false,callback = false){
 
 		super( MyClass , path);
 

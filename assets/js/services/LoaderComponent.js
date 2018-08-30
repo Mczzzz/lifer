@@ -11,8 +11,8 @@ const classes = {
 };
 
 class LoaderComponent  {
-    constructor (className,MyClass,path) {
-        return new classes[className](MyClass,path);
+    constructor (className,MyClass,path,prepend = false,callback=false) {
+        return new classes[className](MyClass,path,prepend,callback);
     }
 }
 

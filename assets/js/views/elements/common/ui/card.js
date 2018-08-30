@@ -11,7 +11,9 @@ export default class card extends superViews{
 
           this.init();
 
+          this.callBack = [];
      }
+
 
 
      init(){
@@ -52,6 +54,7 @@ export default class card extends superViews{
      }
 
 
+
      setStyleElement(element,property,value,scope = "all"){
 
           this[element].setStyle(property,value,scope);
@@ -82,14 +85,41 @@ export default class card extends superViews{
 
 
 
-     push(type,element,classSuffixe,data,prepend = false){
+     push(type,element,classSuffixe,data,prepend = false,callback = false){
 
-           this[classSuffixe] = this[element].add(type, classSuffixe, data,prepend);
+           this[classSuffixe] = this[element].add(type, classSuffixe, data,prepend,callback);
 
            return this[classSuffixe];
      
      }
 
+
+
+     setCallBack(event, path, method, args = false){
+
+        let objCallBack     = {}.
+        objCallBack.event   = event;
+        objCallBack.path    = path;
+        objCallBack.method  = method;
+        objCallBack.args    = args;
+
+        this.callback.push(objCallBack);
+
+     }
+
+
+
+     dispatchEvent(update){
+
+        for (let eventsToCallBack in this.callback) {
+
+          let objectToCallBack = getObjectThisfromPath(eventsToCallBack.path);
+
+          objectToCallBack[method](this,update);
+
+        }
+
+     }
 
 
 }

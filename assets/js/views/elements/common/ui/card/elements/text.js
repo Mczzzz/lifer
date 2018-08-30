@@ -3,11 +3,13 @@ import superViews from "../../../super/views.js";
 export default class Text extends superViews{ 
      
 
-     constructor( MyClass,path,prepend = false){
+     constructor( MyClass,path,prepend = false,callback = false){
 
           super( MyClass , path);
 
           this.init();
+
+          this.callBack = callback;
 
      }
 
@@ -33,10 +35,21 @@ export default class Text extends superViews{
 
           this.changeColor();
 
-          this.container.addEventListener("keyup", ()=>this.changeColor());
+          this.container.addEventListener("keyup", (e)=>this.dispatchEvents(e));
 
      }
 
+
+     dispatchEvents(e){
+
+          console.log('indispatchEventText');
+          console.log(e);
+          //this.callBack.path
+          //this.callBack.Method
+
+
+         this.changeColor()          
+     }
 
      changeColor(){
 
