@@ -136,7 +136,7 @@ export default class card extends superViews{
 
            let objectToCallBack = this.getObjectThisfromPath(eventsToCallBack.path);
 
-           objectToCallBack[eventsToCallBack.method](this,data);
+           objectToCallBack[eventsToCallBack.method](this.path,data);
 
         }
 
