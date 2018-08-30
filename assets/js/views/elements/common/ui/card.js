@@ -28,14 +28,17 @@ export default class card extends superViews{
       this.setStyle("borderRadius" , "8px");
       this.setStyle("background  " , "rgba(149, 146, 255, 0.14)");
 
-      this.getContainer().addEventListener("touchmove", this.handleStart(), false);
+      this.getContainer().addEventListener("touchmove", this.handleStart(e), false);
 
      }
 
 
-     handleStart(){
+     handleStart(e){
 
       console.log("on passe bien laaaaaaaa");
+       for (var i=0; i < e.changedTouches.length; i++) {
+     console.log("changedTouches[" + i + "].identifier = " + e.changedTouches[i].identifier);
+   }   
 
      }
 
