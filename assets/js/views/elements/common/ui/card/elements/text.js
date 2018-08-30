@@ -37,20 +37,14 @@ export default class Text extends superViews{
 
           this.changeColor();
 
-          if(this.callBack != false){
-          console.log(this.callBack);
                this.container.addEventListener("keyup", (e)=>this.dispatchEvents(e));
-          }
 
      }
 
 
      dispatchEvents(e){
 
-          console.log('indispatchEventText');
-          console.log(e);
-          //this.callBack.path
-          //this.callBack.Method
+
           if(this.callBack != false){
 
                let MyCallBack =  this.getObjectThisfromPath(this.callBack.path);
