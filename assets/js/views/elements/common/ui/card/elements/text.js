@@ -49,6 +49,7 @@ export default class Text extends superViews{
           if(this.callBack != false){
 
                let MyCallBack =  this.getObjectThisfromPath(this.callBack.path);
+               MyCallBack[this.callBack.method]();
 
           }
 
