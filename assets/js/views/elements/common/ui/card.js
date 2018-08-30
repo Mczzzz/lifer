@@ -36,9 +36,12 @@ export default class card extends superViews{
      handleStart(e){
 
       console.log("on passe bien laaaaaaaa");
-       for (var i=0; i < e.changedTouches.length; i++) {
+
+      console.log(this.getContainer().style.top);
+      
+/*       for (var i=0; i < e.changedTouches.length; i++) {
      console.log("changedTouches[" + i + "].identifier = " + e.changedTouches[i].identifier);
-   }   
+   }   */
 
      }
 
