@@ -98,12 +98,12 @@ export default class card extends superViews{
      setCallBack(eventType, path, method, args = false){
 
         let objCallBack     = {};
-        objCallBack.Event     = eventType;
+        objCallBack.Event   = eventType;
         objCallBack.path    = path;
         objCallBack.method  = method;
         objCallBack.args    = args;
 
-        this.callback.push(objCallBack);
+        this.callBack.push(objCallBack);
 
      }
 
