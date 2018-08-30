@@ -105,7 +105,7 @@ export default class Resources extends superViews{
 		let card = new Card('NoteCardResource_New_'+timestamp, this.path);
 		card.setId("TmpCardId-"+timestamp);
 		card.setStyle("border","1px solid red");
-		card.setCallBack(this.path, "Save");
+		card.setCallBack("keyup",this.path, "Save");
 		
 //A ne pas oublié sinon ca va merder
 //card.setId();
@@ -160,7 +160,7 @@ export default class Resources extends superViews{
 		if(updateTs == false){
 			updateTs = this.Moment();
 		}
-		
+
 		let resp = {};
 		resp.type = "text";
 		resp.action = "Push";
