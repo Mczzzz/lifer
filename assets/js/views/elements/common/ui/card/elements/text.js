@@ -46,6 +46,11 @@ export default class Text extends superViews{
           console.log(e);
           //this.callBack.path
           //this.callBack.Method
+          if(this.callBack != false){
+
+               let MyCallBack =  this.getObjectThisfromPath(this.callBack.path);
+
+          }
 
 
          this.changeColor()          

@@ -85,7 +85,12 @@ export default class card extends superViews{
 
 
 
-     push(type,element,classSuffixe,data,prepend = false,callback = false){
+     push(type,element,classSuffixe,data,prepend = false){
+
+
+          let callback = {};
+          callback.path = this.path;
+          calback.method = "CallBackFromItems";
 
            this[classSuffixe] = this[element].add(type, classSuffixe, data,prepend,callback);
 
@@ -104,6 +109,15 @@ export default class card extends superViews{
         objCallBack.args    = args;
 
         this.callBack.push(objCallBack);
+
+     }
+
+
+
+     CallBackFromItems(){
+
+      console.log('in  CallBackFromItems');
+
 
      }
 
