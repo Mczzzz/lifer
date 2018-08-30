@@ -28,6 +28,15 @@ export default class card extends superViews{
       this.setStyle("borderRadius" , "8px");
       this.setStyle("background  " , "rgba(149, 146, 255, 0.14)");
 
+      this.getContainer().addEventListener("touchstart", this.handleStart, false);
+
+     }
+
+
+     handleStart(){
+
+      console.log("on passe bien laaaaaaaa");
+
      }
 
 
