@@ -127,7 +127,11 @@ export default class card extends superViews{
 
      dispatchEvent(path,data){
 
+      console.log('in dispatchEvent');
+
         for (let eventsToCallBack in this.callback) {
+
+           console.log('in FOR');
 
           let objectToCallBack = this.getObjectThisfromPath(eventsToCallBack.path);
 
