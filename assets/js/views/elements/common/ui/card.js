@@ -90,7 +90,7 @@ export default class card extends superViews{
 
           let callback = {};
           callback.path = this.path;
-          calback.method = "CallBackFromItems";
+          callback.method = "CallBackFromItems";
 
            this[classSuffixe] = this[element].add(type, classSuffixe, data,prepend,callback);
 
