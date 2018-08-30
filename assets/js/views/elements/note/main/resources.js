@@ -149,13 +149,13 @@ export default class Resources extends superViews{
 
 
 		//et hop on envoi en sauvegarde la data mon gars
-		this.Save(card,updateTs);
+		this.Save(card, Resource, updateTs);
 
 	}
 
 
 
-	Save(card,updateTs = false){
+	Save(card, Resource, updateTs = false){
 
 		if(updateTs == false){
 			updateTs = this.Moment();
