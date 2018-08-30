@@ -114,22 +114,24 @@ export default class card extends superViews{
 
 
 
-     CallBackFromItems(){
+     CallBackFromItems(path,data){
 
       console.log('in  CallBackFromItems');
+
+      this.dispatchEvent(path,data);
 
 
      }
 
 
 
-     dispatchEvent(update){
+     dispatchEvent(path,data){
 
         for (let eventsToCallBack in this.callback) {
 
-          let objectToCallBack = getObjectThisfromPath(eventsToCallBack.path);
+          let objectToCallBack = this.getObjectThisfromPath(eventsToCallBack.path);
 
-          objectToCallBack[method](this,update);
+          objectToCallBack[method](this,data);
 
         }
 

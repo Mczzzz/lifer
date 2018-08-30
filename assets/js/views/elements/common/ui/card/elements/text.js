@@ -11,6 +11,8 @@ export default class Text extends superViews{
 
           this.callBack = callback;
 
+          this.ItemType = "text";
+
      }
 
 
@@ -49,7 +51,7 @@ export default class Text extends superViews{
           if(this.callBack != false){
 
                let MyCallBack =  this.getObjectThisfromPath(this.callBack.path);
-               MyCallBack[this.callBack.method]();
+               MyCallBack[this.callBack.method](this.path,this.getText());
 
           }
 
@@ -75,6 +77,13 @@ export default class Text extends superViews{
      setData(text){
 
           this.container.innerHTML = text;
+
+     }
+
+
+     getText(){
+
+          return this.container.innerHTML;
 
      }
 

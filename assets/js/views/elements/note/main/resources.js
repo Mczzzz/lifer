@@ -149,13 +149,16 @@ export default class Resources extends superViews{
 
 
 		//et hop on envoi en sauvegarde la data mon gars
-		this.Save(card, Resource, updateTs);
+		this.Save(card.path, Resource.text, updateTs);
 
 	}
 
 
 
-	Save(card, Resource, updateTs = false){
+	Save(Card, Resource, updateTs = false){
+
+		let card = this.getObjectThisfromPath(Card);
+
 
 		if(updateTs == false){
 			updateTs = this.Moment();
@@ -166,7 +169,7 @@ export default class Resources extends superViews{
 		resp.action = "Push";
 		resp.guid = card.getId();
 		resp.update = updateTs;
-		resp.resource = Resource.text;
+		resp.resource = Resource;
 		resp.Card = card.path;
 
     	this.TheNote.Push(resp);
