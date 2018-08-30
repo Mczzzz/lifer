@@ -54,7 +54,7 @@ export default class Empty extends superViews{
 
 	saveResource(TheTextElt){
 
-		let NoteResource = this.Lifer.getData("Note/mainNote/noteMainResources", "This");
+		let NoteResource = this.getObjectThisfromPath("Note/mainNote/noteMainResources");
 
 		if(TheTextElt.getContainer().innerHTML.length > 0){
 

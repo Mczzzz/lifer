@@ -20,7 +20,7 @@ export default class Title extends superViews{
 
 
 
-		this.TheNote = this.Lifer.getData("Note","This");
+		this.TheNote = this.getObjectThisfromPath("Note");
 		
 
 
@@ -114,7 +114,7 @@ export default class Title extends superViews{
 
 			TheTitle.innerHTML = TheTitle.innerHTML.replace(/<div><br><\/div>/i, '');
 
-			let toFocus = this.Lifer.getData("Note/mainNote/noteMainEmpty/NoteEmptyCardText/cardElementEmpty/noteEltTextmainNewInput", "This");
+			let toFocus = this.getObjectThisfromPath("Note/mainNote/noteMainEmpty/NoteEmptyCardText/cardElementEmpty/noteEltTextmainNewInput");
 
 			toFocus.getContainer().focus();
 			this.setStyle("display" , "");

@@ -27,7 +27,7 @@ Moment.locale('fr');
 
 			this.path = path+"/"+this.MyClass;
 
-			this.parentThis = this.Lifer.getData(path,"This");
+			this.parentThis = this.getObjectThisfromPath(path);
 
 			this.parent = this.parentThis.getContainer();
 

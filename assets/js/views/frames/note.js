@@ -131,7 +131,7 @@ export default class Note extends superViews{
 
 				//TmpCardId-
 				//on reload la Card pour lui assigner son id définitif
-				let CardToSet = this.Lifer.getData(dataCallback.Resource.Card,"This");
+				let CardToSet = this.getObjectThisfromPath(dataCallback.Resource.Card);
 
 				if(CardToSet.getId().indexOf("TmpCardId-") == 0){
 					CardToSet.setId(datas.datas.Resource.id);
@@ -162,7 +162,7 @@ export default class Note extends superViews{
 
 	    		let arrayValue = actions.value.split(" ");
 
-	    		let Myclass = this.Lifer.getData(actions.object,"This");	
+	    		let Myclass = this.getObjectThisfromPath(actions.object);	
 
 	    		if(MyClass.indexOf("TmpCardId-") == 0){
 				console.log("on set l'id de la resource")
@@ -251,10 +251,10 @@ export default class Note extends superViews{
 		
 		this.note.Ts = update.format("YYYY-MM-DD HH:mm:ss");//objet Momentjs à formater a l'utilisation
 
-		let updateNoteTitleElt = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard","This");	
+		let updateNoteTitleElt = this.getObjectThisfromPath("Note/mainNote/noteMainTitle/NoteTitleCard");	
 		updateNoteTitleElt.getContainer().style.background = "red";
 
-		let updateNoteElt = this.Lifer.getData("Note/mainNote/noteMainTitle/NoteTitleCard/cardElementheader/noteEltTextupdate","This");	
+		let updateNoteElt = this.getObjectThisfromPath("Note/mainNote/noteMainTitle/NoteTitleCard/cardElementheader/noteEltTextupdate");	
 		updateNoteElt.getContainer().innerHTML = update.format('Do MMMM YYYY, HH:mm:ss');
 		updateNoteElt.getContainer().style.color = "red";
 
