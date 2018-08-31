@@ -29,7 +29,7 @@ export default class card extends superViews{
       this.setStyle("background  " , "rgba(149, 146, 255, 0.14)");
 
       this.getContainer().addEventListener("touchmove", (e)=>this.handleStart(e), false);
-
+      this.getContainer().addEventListener("touchend", (e)=>this.handleStop(e), false);
      }
 
 
@@ -55,6 +55,20 @@ export default class card extends superViews{
 
 
      }
+
+
+
+     handleStop(e){
+
+        this.setStyle("background" , "white","element");
+
+     }
+
+
+
+
+
+
 
 
      //PUBLICS
