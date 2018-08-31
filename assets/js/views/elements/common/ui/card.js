@@ -129,8 +129,28 @@ export default class card extends superViews{
 
 //console.log(e.changedTouches[0].clientY);
 //console.log(this.getContainer().previousElementSibling.getBoundingClientRect().y);
-//
-        if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
+
+        if(this.getContainer().previousElementSibling){
+
+          if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
+
+            this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousElementSibling);
+          
+          }
+
+        }
+
+        if(this.getContainer().nextElementSibling){
+
+          if(e.changedTouches[0].clientY > this.getContainer().nextElementSibling.getBoundingClientRect().y){
+
+            this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().nextElementSibling.nextElementSibling);
+          
+          }
+
+        }
+
+/*        if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
 
           this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousElementSibling);
           
@@ -140,7 +160,7 @@ export default class card extends superViews{
           this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().nextElementSibling.nextElementSibling);
           
         
-        }
+        }*/
       
 
 
