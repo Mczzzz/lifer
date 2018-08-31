@@ -35,19 +35,22 @@ export default class card extends superViews{
 
      handleStart(e){
 
-      console.log(e.changedTouches[0].clientY);
+      this.setStyle("background  " , "red");
+      //je clone et le positionne en absolu pour suivre mon curseur
+
+/*      console.log(e.changedTouches[0].clientY);
       console.log(this.getContainer().getBoundingClientRect());
       console.log(this.getContainer());
       console.log(this.getContainer().previousElementSibling);
       console.log(this.getContainer().nextSibling);
-      console.log(this.getContainer().previousElementSibling.getBoundingClientRect().y);
+      console.log(this.getContainer().previousElementSibling.getBoundingClientRect().y);*/
       if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
-        console.log("on passe dans le if");
-        console.log(this.getContainer().parentElement);
-        let MyNode = this.getContainer().cloneNode(true);
+
         this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousElementSibling);
-       //this.getContainer().remove();
-        //this.container = MyNode;
+        this.setStyle("background  " , "white");
+
+      }else if(e.changedTouches[0].clientY > this.getContainer().nextElementSibling.getBoundingClientRect().y){
+
       }
 
 
