@@ -134,6 +134,11 @@ export default class card extends superViews{
           this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousElementSibling);
           
         
+        }else if(e.changedTouches[0].clientY > this.getContainer().nextElementSibling.getBoundingClientRect().y){
+
+          this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().nextElementSibling);
+          
+        
         }
       
 
