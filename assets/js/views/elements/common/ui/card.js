@@ -34,7 +34,7 @@ export default class card extends superViews{
 
 
      handleStart(e){
-
+      event.preventDefault();
       this.setStyle("background" , "red","element");
       //je clone et le positionne en absolu pour suivre mon curseur
 
