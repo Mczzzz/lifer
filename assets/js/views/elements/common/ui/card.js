@@ -124,7 +124,7 @@ export default class card extends superViews{
         event.preventDefault();
 
 
-        this.Cloned.style.top = e.changedTouches[0].clientY+"px";
+        this.Cloned.style.top = e.changedTouches[0].clientY-(0.5 * this.getContainer().getBoundingClientRect().height)+"px";
         this.setStyle("background" , "red","element");
 
 //console.log(e.changedTouches[0].clientY);
