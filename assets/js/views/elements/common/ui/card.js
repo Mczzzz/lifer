@@ -127,12 +127,25 @@ export default class card extends superViews{
 
         let MiddleCard = 0.5 * this.getContainer().getBoundingClientRect().height;
 
-       
+
+        this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
+
+        if(!this.getContainer().previousElementSibling && (e.changedTouches[0].clientY < this.getContainer().getBoundingClientRect().y)){
+
+          this.Cloned.style.display = "none";
+
+        }else if(!this.getContainer().nextElementSibling && (e.changedTouches[0].clientY > this.getContainer().getBoundingClientRect().y)){
+
+          this.Cloned.style.display = "none";
+
+        }else{
+          this.Cloned.style.display = "";
+        }
+
 
         if(this.getContainer().previousElementSibling){
 
-          this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
-
+          
           if((e.changedTouches[0].clientY - MiddleCard ) < this.getContainer().previousElementSibling.getBoundingClientRect().y){
 
             this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousElementSibling);
@@ -142,8 +155,6 @@ export default class card extends superViews{
         }
 
         if(this.getContainer().nextElementSibling){
-
-          this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
 
           if((e.changedTouches[0].clientY ) > this.getContainer().nextElementSibling.getBoundingClientRect().y){
 
