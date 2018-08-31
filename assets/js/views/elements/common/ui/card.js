@@ -116,6 +116,7 @@ export default class card extends superViews{
 
         if(this.move == false){
 
+          console.log("on passe dans false !!!!!!!!!!!!!!!!!!!!");
           let Cloned = this.getContainer().cloneNode(true);
           document.body.appendChild(Cloned);
 
