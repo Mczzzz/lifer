@@ -116,11 +116,8 @@ export default class card extends superViews{
 
         if(this.move == false){
 
-          let img = document.createElement("img");
-          img.src = "http://kryogenix.org/images/hackergotchi-simpler.png";
-          document.body.appendChild(img);
-          img.style.position = "absolute";
-
+          let Cloned = this.getContainer().cloneNode(true);
+          document.body.appendChild(Cloned);
 
         }
 
