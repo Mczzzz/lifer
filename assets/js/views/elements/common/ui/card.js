@@ -121,7 +121,7 @@ export default class card extends superViews{
           this.Cloned.style.width = "100%";
 
       }else if(type == "move"){
-
+        event.preventDefault();
 
 
         this.Cloned.style.top = e.changedTouches[0].clientY+"px";
