@@ -83,6 +83,9 @@ export default class Resources extends superViews{
 
 			card.setStyleElement(MainElement,"justifyContent","flex-start");
 
+
+			card.push("Button",MainElement,"dragger"+timestamp, "drag_indicator");
+
 			card.push("Text",MainElement,"main_new_"+timestamp, Resource.text);
 
 			card.setStyleComponent(MainElement,"main_new_"+timestamp,"fontSize","15px");
