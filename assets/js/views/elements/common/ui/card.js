@@ -118,10 +118,12 @@ export default class card extends superViews{
 
           let Cloned = this.getContainer().cloneNode(true);
           document.body.appendChild(Cloned);
+
           Cloned.style.position = "absolute";
 
         }
 
+        Cloned.style.top = e.changedTouches[0].clientY;
         this.setStyle("background" , "red","element");
 
         if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
