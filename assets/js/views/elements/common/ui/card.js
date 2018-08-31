@@ -35,7 +35,7 @@ export default class card extends superViews{
 
      handleStart(e){
 
-      this.setStyle("background  " , "red");
+      this.setStyle("background" , "red","element");
       //je clone et le positionne en absolu pour suivre mon curseur
 
 /*      console.log(e.changedTouches[0].clientY);
@@ -47,8 +47,7 @@ export default class card extends superViews{
       if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
 
         this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousElementSibling);
-        this.setStyle("background  " , "white");
-
+        this.setStyle("background" , "white","element");
       }else if(e.changedTouches[0].clientY > this.getContainer().nextElementSibling.getBoundingClientRect().y){
 
       }
