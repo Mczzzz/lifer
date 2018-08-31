@@ -85,6 +85,7 @@ export default class Resources extends superViews{
 
 
 			card.push("Button",MainElement,"dragger"+timestamp, "drag_indicator");
+			card.setAttributeComponent(MainElement,"dragger"+timestamp,"draggable",true);
 
 			card.push("Text",MainElement,"main_new_"+timestamp, Resource.text);
 
