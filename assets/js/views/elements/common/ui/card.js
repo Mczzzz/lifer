@@ -28,46 +28,8 @@ export default class card extends superViews{
       this.setStyle("borderRadius" , "8px");
       this.setStyle("background  " , "rgba(149, 146, 255, 0.14)");
 
-      this.getContainer().addEventListener("touchmove", (e)=>this.handleStart(e), false);
-      this.getContainer().addEventListener("touchend", (e)=>this.handleStop(e), false);
-     }
-
-
-     handleStart(e){
-      event.preventDefault();
-      this.setStyle("background" , "red","element");
-      //je clone et le positionne en absolu pour suivre mon curseur
-
-/*      console.log(e.changedTouches[0].clientY);
-      console.log(this.getContainer().getBoundingClientRect());
-      console.log(this.getContainer());
-      console.log(this.getContainer().previousElementSibling);
-      console.log(this.getContainer().nextSibling);
-      console.log(this.getContainer().previousElementSibling.getBoundingClientRect().y);*/
-      if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
-
-        this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousElementSibling);
-        this.setStyle("background" , "white","element");
-      }else if(e.changedTouches[0].clientY > this.getContainer().nextElementSibling.getBoundingClientRect().y){
-
-      }
-
-
 
      }
-
-
-
-     handleStop(e){
-
-        this.setStyle("background" , "white","element");
-
-     }
-
-
-
-
-
 
 
 
@@ -119,6 +81,13 @@ export default class card extends superViews{
 
      setAttributeComponent(element,component, property, value,scope = "all"){
 
+        if(property == "draggable"){
+
+            value = true;
+            this[element].initTouch(component,this.path,'touchMover');
+        
+        }
+
           this[element].setAttributeComponent(component, property, value,scope);
 
      }
@@ -137,6 +106,32 @@ export default class card extends superViews{
            return this[classSuffixe];
      
      }
+
+
+
+     touchMover(e,type){
+
+      if(type == "move"){
+        this.setStyle("background" , "red","element");
+
+        if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
+
+          this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousElementSibling);
+          
+        
+        }
+      
+      }else if(type == "stop"){
+
+        this.setStyle("background" , "white","element");
+
+      }
+
+
+    }
+
+
+     
 
 
 
