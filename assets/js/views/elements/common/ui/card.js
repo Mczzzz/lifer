@@ -126,7 +126,7 @@ export default class card extends superViews{
 
 
 
-        this.Cloned.style.top = e.changedTouches[0].clientY;
+        this.Cloned.style.top = e.changedTouches[0].clientY+"px";
         this.setStyle("background" , "red","element");
 
         if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
