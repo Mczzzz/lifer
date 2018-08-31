@@ -12,6 +12,7 @@ export default class card extends superViews{
           this.init();
 
           this.callBack = [];
+          this.move = false;
      }
 
 
@@ -112,6 +113,15 @@ export default class card extends superViews{
      touchMover(e,type){
 
       if(type == "move"){
+
+        if(this.move == false){
+
+          let img = document.createElement("img");
+          img.src = "http://kryogenix.org/images/hackergotchi-simpler.png";
+          e.dataTransfer.setDragImage(img, 0, 0);
+
+        }
+
         this.setStyle("background" , "red","element");
 
         if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
@@ -121,9 +131,12 @@ export default class card extends superViews{
         
         }
       
+        this.move = true;
+
       }else if(type == "stop"){
 
         this.setStyle("background" , "white","element");
+        this.move = false;
 
       }
 
@@ -132,8 +145,6 @@ export default class card extends superViews{
 
 
      
-
-
 
      setCallBack(eventType, path, method, args = false){
 
