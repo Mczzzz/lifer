@@ -114,8 +114,6 @@ export default class card extends superViews{
 
       if(type == "start"){
 
-
-          console.log("on passe dans false !!!!!!!!!!!!!!!!!!!!");
           this.Cloned = this.getContainer().cloneNode(true);
           document.body.appendChild(this.Cloned);
 
@@ -128,6 +126,10 @@ export default class card extends superViews{
 
         this.Cloned.style.top = e.changedTouches[0].clientY+"px";
         this.setStyle("background" , "red","element");
+
+console.log(e.changedTouches[0].clientY);
+console.log(this.getContainer().previousElementSibling.getBoundingClientRect().y);
+console.log(this.getContainer().nextElementSibling.getBoundingClientRect().y);
 
         if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
 
