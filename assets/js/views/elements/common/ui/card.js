@@ -121,20 +121,20 @@ export default class card extends superViews{
           this.Cloned.style.width = "100%";
 
       }else if(type == "move"){
+
         event.preventDefault();
-
-
-        if(this.getContainer().previousElementSibling){
-          this.Cloned.style.top = e.changedTouches[0].clientY-(0.5 * this.getContainer().getBoundingClientRect().height)+"px";
-        }
         this.setStyle("background" , "red","element");
 
-//console.log(e.changedTouches[0].clientY);
-//console.log(this.getContainer().previousElementSibling.getBoundingClientRect().y);
+        let MiddleCard = 0.5 * this.getContainer().getBoundingClientRect().height;
+
+        if(this.getContainer().previousElementSibling){
+          this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
+        }
+        
 
         if(this.getContainer().previousElementSibling){
 
-          if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
+          if((e.changedTouches[0].clientY + MiddleCard ) < this.getContainer().previousElementSibling.getBoundingClientRect().y){
 
             this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousElementSibling);
           
