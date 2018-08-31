@@ -118,7 +118,7 @@ export default class card extends superViews{
           document.body.appendChild(this.Cloned);
 
           this.Cloned.style.position = "absolute";
-
+          this.Cloned.style.width = "100%";
 
       }else if(type == "move"){
 
@@ -127,10 +127,9 @@ export default class card extends superViews{
         this.Cloned.style.top = e.changedTouches[0].clientY+"px";
         this.setStyle("background" , "red","element");
 
-console.log(e.changedTouches[0].clientY);
-console.log(this.getContainer().previousElementSibling.getBoundingClientRect().y);
-console.log(this.getContainer().nextSibling.getBoundingClientRect().y);
-
+//console.log(e.changedTouches[0].clientY);
+//console.log(this.getContainer().previousElementSibling.getBoundingClientRect().y);
+//
         if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
 
           this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousElementSibling);
