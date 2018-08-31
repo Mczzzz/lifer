@@ -12,7 +12,7 @@ export default class card extends superViews{
           this.init();
 
           this.callBack = [];
-          this.move = false;
+
      }
 
 
@@ -112,19 +112,21 @@ export default class card extends superViews{
 
      touchMover(e,type){
 
-      if(type == "move"){
+      if(type == "start"){
 
-        if(this.move == false){
 
           console.log("on passe dans false !!!!!!!!!!!!!!!!!!!!");
-          let Cloned = this.getContainer().cloneNode(true);
-          document.body.appendChild(Cloned);
+          this.Cloned = this.getContainer().cloneNode(true);
+          document.body.appendChild(this.Cloned);
 
-          Cloned.style.position = "absolute";
+          this.Cloned.style.position = "absolute";
 
-        }
 
-        Cloned.style.top = e.changedTouches[0].clientY;
+      }else if(type == "move"){
+
+
+
+        this.Cloned.style.top = e.changedTouches[0].clientY;
         this.setStyle("background" , "red","element");
 
         if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
@@ -134,12 +136,12 @@ export default class card extends superViews{
         
         }
       
-        this.move = true;
+
 
       }else if(type == "stop"){
 
         this.setStyle("background" , "white","element");
-        this.move = false;
+
 
       }
 
