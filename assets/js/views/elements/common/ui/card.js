@@ -118,9 +118,9 @@ export default class card extends superViews{
 
           let img = document.createElement("img");
           img.src = "http://kryogenix.org/images/hackergotchi-simpler.png";
-          body.appendChild(img);
+          document.body.appendChild(img);
           img.style.position = "absolute";
-          
+
 
         }
 
