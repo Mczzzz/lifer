@@ -146,7 +146,7 @@ export default class card extends superViews{
       }else if(type == "stop"){
 
         this.setStyle("background" , "white","element");
-
+        this.Cloned.remove();
 
       }
 
