@@ -66,7 +66,7 @@ export default class Empty extends superViews{
 
 		if(this.active != false){
 
-			this.active.remove();
+			this.active.getContainer().remove();
 
 		}
 		
@@ -74,7 +74,7 @@ export default class Empty extends superViews{
 		if(type == "text"){
 
 			this.textField();
-			
+
 		}
 
 
