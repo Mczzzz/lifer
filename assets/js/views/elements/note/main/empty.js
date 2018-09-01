@@ -96,6 +96,7 @@ export default class Empty extends superViews{
 		let TheValueElt = this.card.push("Input", this.EmptyElementValue,"mainNewValue", "");
 
 		this.card.setAttributeInputComponent(this.EmptyElementValue,"mainNewValue","placeholder","0000.000");
+		this.card.setAttributeInputComponent(this.EmptyElementValue,"mainNewValue","type","number");
 
 		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue","fontSize","18.5px");
 		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue","color","black","property");
