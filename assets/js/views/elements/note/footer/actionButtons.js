@@ -127,7 +127,7 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerNumbers","color","blue");
 					this.card.setStylePictoComponent(FooterElement,"footerNumbers","alignItems","center");
 
-					number.getContainer().addEventListener("click",()=>this.StartNumber("time"));
+					text.getContainer().addEventListener("click",()=>this.Start("nimber"));
 
 
 
@@ -185,7 +185,7 @@ Start(type){
 
 
 
-StartNumber(type){
+/*StartNumber(type){
 
 //il faut changer le type de empty
 		this.numberLauncher = document.createElement("input");
@@ -201,7 +201,7 @@ StartNumber(type){
 		this.numberLauncher.click();
 
 
-	}
+	}*/
 
 
 
