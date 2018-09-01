@@ -33,7 +33,7 @@ export default class Input extends superViews{
           this.setStyle("outline"    , "none");
           this.setStyle("background" , "transparent");
 
-          this.setStyleInput("border"   , "none")
+          this.setStyleInput("border"   , "none");
           //this.setStyleInput("fontSize"   , "10px");
          // this.setStyleInput("margin"     , "10px");
           //this.setStyleInput("fontWeight" , "normal");
