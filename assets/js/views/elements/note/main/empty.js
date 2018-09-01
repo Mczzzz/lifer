@@ -74,18 +74,40 @@ export default class Empty extends superViews{
 		this.card.setStyle("background", "white");
 
 
-		this.EmptyElement = this.card.setElement("Empty");
-		this.card.setStyleElement(this.EmptyElement,"justifyContent","flex-start");
+		this.EmptyElementLegend = this.card.setElement("NumberEmptyLegend");
+		this.card.setStyleElement(this.EmptyElementLegend,"justifyContent","flex-start");
 
-		let TheTextElt = this.card.push("Text", this.EmptyElement,"mainNewInput", "");
+		let TheTextElt = this.card.push("Text", this.EmptyElementLegend,"mainNewInput", "");
 
-		this.card.setAttributeComponent(this.EmptyElement,"mainNewInput","placeholder","Légende...");
+		this.card.setAttributeComponent(this.EmptyElementLegend,"mainNewInput","placeholder","Légende...");
 
-		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","fontSize","18.5px");
-		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","color","black","property");
-		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","margin","0px 5px 5px 5px");
-		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","fontWeight","normal");
-		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","flex",1);
+		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput","fontSize","18.5px");
+		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput","color","black","property");
+		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput","margin","0px 5px 5px 5px");
+		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput","fontWeight","normal");
+		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput","flex",1);
+
+
+
+
+		this.EmptyElementValue = this.card.setElement("NumberEmptyValue");
+
+
+		let TheValueElt = this.card.push("Text", this.EmptyElementValue,"mainNewValue", "");
+
+		this.card.setAttributeComponent(this.EmptyElementValue,"mainNewValue","placeholder","0000.000");
+
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewValue","fontSize","18.5px");
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewValue","color","black","property");
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewValue","margin","0px 5px 5px 5px");
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewValue","fontWeight","normal");
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewValue","flex",1);
+
+
+
+
+
+
 
 		let TheSaveButton = this.card.push("Button", this.EmptyElement,"mainNewButton","arrow_forward");
 
