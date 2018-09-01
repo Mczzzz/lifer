@@ -21,6 +21,8 @@ export default class ActionButtons extends superViews{
 
 	init(){
 
+		this.setStyle("overflow-y", "scroll");
+
 		this.card = new Card('NoteFooterCard', this.path);
 	
 		this.card.setStyle("borderWidth", "0px");
@@ -28,7 +30,6 @@ export default class ActionButtons extends superViews{
 		this.card.setStyle("margin", "0px");
 		this.card.setStyle("padding", "10px");
 		this.card.setStyle("background", "transparent");
-		this.card.setStyle("overflow-y", "scroll");
 
 
 			let FooterElement   = this.card.setElement("footer");
