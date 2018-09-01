@@ -29,9 +29,9 @@ export default class Input extends superViews{
           this.MyInput = document.createElement("input");
           this.container.appendChild(this.MyInput);
 
-          this.setStyle("fontSize"   , "10px");
+/*          this.setStyle("fontSize"   , "10px");
           this.setStyle("margin"     , "10px");
-          this.setStyle("fontWeight" , "normal");
+          this.setStyle("fontWeight" , "normal");*/
           this.setStyle("border"     , "none");
           this.setStyle("outline"    , "none");
           this.setStyle("background" , "transparent");
