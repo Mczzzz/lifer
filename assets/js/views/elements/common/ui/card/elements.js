@@ -33,6 +33,15 @@ export default class Elements extends superViews{
 
      }
 
+     setStyleInputComponent(component, property, value,scope = "all"){
+
+        this[component].setStyleInput(property, value,scope);
+
+
+     }
+
+
+
 
      setStylePictoComponent(component, property, value,scope = "all"){
 
@@ -48,6 +57,13 @@ export default class Elements extends superViews{
         this[component].setAttribute(property, value,scope);
 
      }
+
+     setAttributeInputComponent(component, property, value,scope = "all"){
+
+        this[component].setAttributeInput(property, value,scope);
+
+     }
+
 
 
     add(type, classSuffixe, data,prepend = false,callback = false){

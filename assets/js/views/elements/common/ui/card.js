@@ -72,6 +72,9 @@ export default class card extends superViews{
 
      }
 
+
+
+
      setStylePictoComponent(element,component, property, value,scope = "all"){
 
           this[element].setStylePictoComponent(component, property, value,scope);
@@ -92,6 +95,23 @@ export default class card extends superViews{
           this[element].setAttributeComponent(component, property, value,scope);
 
      }
+
+
+////////////////
+     setStyleInputComponent(element,component, property, value,scope = "all"){
+
+          this[element].setStyleInputComponent(component, property, value,scope);
+
+     }
+
+///////////////
+     setAttributeInputComponent(element,component, property, value,scope = "all"){
+
+
+          this[element].setAttributeInputComponent(component, property, value,scope);
+
+     }
+
 
 
 
