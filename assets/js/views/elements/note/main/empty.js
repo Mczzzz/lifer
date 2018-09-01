@@ -17,7 +17,7 @@ export default class Empty extends superViews{
 
 	init(){
 
-		//this.textField();
+		this.active = false;
 
 	}
 
@@ -56,14 +56,25 @@ export default class Empty extends superViews{
 
 		TheSaveButton.getContainer().addEventListener("click",()=>this.saveResource(TheTextElt));
 
+		this.active = this.card;
+
 	}
 
 
 
 	show(type){
 
+		if(this.active != false){
+
+			this.active.remove();
+
+		}
+		
+
 		if(type == "text"){
+
 			this.textField();
+			
 		}
 
 
