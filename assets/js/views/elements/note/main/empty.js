@@ -77,7 +77,9 @@ export default class Empty extends superViews{
 		this.EmptyElement = this.card.setElement("Empty");
 		this.card.setStyleElement(this.EmptyElement,"justifyContent","flex-start");
 
-		let TheTextElt = this.card.push("Text", this.EmptyElement,"mainNewInput", "Légende...");
+		let TheTextElt = this.card.push("Text", this.EmptyElement,"mainNewInput", "");
+
+		this.card.setAttributeComponent(EmptyElement,"mainNewInput","placeholder","Légende...");
 
 		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","fontSize","18.5px");
 		this.card.setStyleComponent(this.EmptyElement,"mainNewInput","color","black","property");
