@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use AppBundle\Service\Human;
+//use AppBundle\Service\Human;
 
 class DefaultController extends Controller
 {

@@ -11,7 +11,16 @@ class AppBundleFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
 
-        //On initialise les datas de fixtures
+        $this->ResourcesTypes($manager);
+
+    }
+
+
+
+    private function ResourcesTypes($manager){
+
+
+            //On initialise les datas de fixtures
         $RTArray = array();
         array_push($RTArray, array( "Name" => "text", "Picto" => "title", "Enable" => true, "Color" => "blue") );
         array_push($RTArray, array( "Name" => "image", "Picto" => "photo", "Enable" => true, "Color" => "orange") );
@@ -30,16 +39,20 @@ class AppBundleFixtures extends Fixture
 
         }
 
-        //on passe les enregistrements
-
-
-
-
-
-
-
-
         $manager->flush();
+
     }
+
+
+
+
+    private function Unity($manager){
+
+
+   //     $UnityType
+
+
+    }
+
 
 }

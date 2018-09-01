@@ -25,6 +25,7 @@ export default class Controller {
 	init(){
 
 		this.loadUser();
+		this.loadUnity();
 
 		this.frame = new Frame(this.path);
 		this.gotToHome();
@@ -40,6 +41,10 @@ export default class Controller {
 
 	}
 
+	loadUnity(){
+
+		
+	}
 
 
 	gotToHome(){
