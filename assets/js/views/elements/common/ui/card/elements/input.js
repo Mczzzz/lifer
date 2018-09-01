@@ -51,7 +51,7 @@ export default class Input extends superViews{
 
      setStyleInput(property,value,scope = "all"){
 
-          if(scope == "property" || scope == "all") this.input[property] = value;
+      //    if(scope == "property" || scope == "all") this.input[property] = value;
           
           if(scope == "element" || scope == "all" ) this.MyInput.style[property] = value;
                       
@@ -61,7 +61,7 @@ export default class Input extends superViews{
 
      setAttributeInput(property,value,scope = "all"){
 
-          if(scope == "property" || scope == "all") this.input[property] = value;
+      //    if(scope == "property" || scope == "all") this.input[property] = value;
 
           if(scope == "element" || scope == "all" )  this.MyInput.setAttribute(property,value);
 
