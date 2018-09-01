@@ -28,6 +28,7 @@ export default class ActionButtons extends superViews{
 		this.card.setStyle("margin", "0px");
 		this.card.setStyle("padding", "10px");
 		this.card.setStyle("background", "transparent");
+		this.card.setStyle("overflow-y", "scroll");
 
 
 			let FooterElement   = this.card.setElement("footer");
