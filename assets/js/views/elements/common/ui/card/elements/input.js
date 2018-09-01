@@ -29,12 +29,14 @@ export default class Input extends superViews{
           this.MyInput = document.createElement("input");
           this.container.appendChild(this.MyInput);
 
-/*          this.setStyle("fontSize"   , "10px");
-          this.setStyle("margin"     , "10px");
-          this.setStyle("fontWeight" , "normal");*/
           this.setStyle("border"     , "none");
           this.setStyle("outline"    , "none");
           this.setStyle("background" , "transparent");
+
+          this.setStyleInput("border"   , "none")
+          //this.setStyleInput("fontSize"   , "10px");
+         // this.setStyleInput("margin"     , "10px");
+          //this.setStyleInput("fontWeight" , "normal");
           ///this.setStyle("color"      , "black");
           //this.setStyle("lineHeight" , 1);
           //this.setStyle("fontFamily" , "'Titillium Web',sans-serif,Arial,sans-serif");
