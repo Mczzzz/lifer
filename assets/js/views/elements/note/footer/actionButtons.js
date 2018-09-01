@@ -124,6 +124,15 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerNumbers","alignItems","center");
 
 					number.getContainer().addEventListener("click",()=>this.StartNumber("time"));
+
+
+
+					let todoList = this.card.push("Button", FooterElement,"todoList", "list");
+
+					this.card.setStylePictoComponent(FooterElement,"todoList","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"todoList","color","blue");
+					this.card.setStylePictoComponent(FooterElement,"todoList","alignItems","center");
+
 /*
 button	Defines a clickable button (mostly used with a JavaScript to activate a script)
 checkbox	Defines a checkbox
