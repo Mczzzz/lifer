@@ -2,12 +2,14 @@ import Text   from '../views/elements/common/ui/card/elements/text.js';
 import Image  from '../views/elements/common/ui/card/elements/image.js';
 import Button from '../views/elements/common/ui/card/elements/button.js';
 import TextButton from '../views/elements/common/ui/card/elements/textButton.js';
+import Input from '../views/elements/common/ui/card/elements/input.js';
 
 const classes = {
     Text,
     Image,
     Button,
-    TextButton
+    TextButton,
+    Input
 };
 
 class LoaderComponent  {

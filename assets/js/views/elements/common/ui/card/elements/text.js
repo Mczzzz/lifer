@@ -63,7 +63,7 @@ export default class Text extends superViews{
      }
 
 
-     setpleceHolderColor(color){
+     setplaceHolderColor(color){
 
           this.placeHodelColor = color;          
 
