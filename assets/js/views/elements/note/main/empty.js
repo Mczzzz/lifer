@@ -92,8 +92,11 @@ export default class Empty extends superViews{
 
 		this.EmptyElementValue = this.card.setElement("NumberEmptyValue");
 
-
+		//////
 		let TheValueElt = this.card.push("Input", this.EmptyElementValue,"mainNewValue", "");
+
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewValue","flex",1);
+
 
 		this.card.setAttributeInputComponent(this.EmptyElementValue,"mainNewValue","placeholder","0000.000");
 		this.card.setAttributeInputComponent(this.EmptyElementValue,"mainNewValue","type","number");
@@ -103,7 +106,15 @@ export default class Empty extends superViews{
 		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue","margin","0px 5px 5px 5px");
 		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue","fontWeight","normal");
 		
-		this.card.setStyleComponent(this.EmptyElementValue,"mainNewValue","flex",1);
+		///
+		let TheSelectElt = this.card.push("Select", this.EmptyElementValue,"mainNewSelect", "");
+
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewSelect","flex",1);
+
+		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewSelect","fontSize","18.5px");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewSelect","color","black","property");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewSelect","margin","0px 5px 5px 5px");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewSelect","fontWeight","normal");
 
 
 
