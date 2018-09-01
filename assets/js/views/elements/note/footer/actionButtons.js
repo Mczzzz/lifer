@@ -16,6 +16,8 @@ export default class ActionButtons extends superViews{
 		this.init();
 
 		
+		this.Empty = this.getObjectThisfromPath("Note/mainNote/noteMainEmpty");
+
 	}
 
 
@@ -143,6 +145,8 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"textElt","color","blue");
 					this.card.setStylePictoComponent(FooterElement,"textElt","alignItems","center");
 
+					text.getContainer().addEventListener("click",()=>this.Start("text"));
+
 /*
 button	Defines a clickable button (mostly used with a JavaScript to activate a script)
 checkbox	Defines a checkbox
@@ -169,10 +173,16 @@ submit	Defines a submit button
 
 */
 
+}
 
 
+Start(type){
 
-	}
+	this.Empty.show(type);
+
+}
+
+
 
 
 StartNumber(type){

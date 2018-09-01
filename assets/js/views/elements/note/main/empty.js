@@ -17,6 +17,14 @@ export default class Empty extends superViews{
 
 	init(){
 
+		//this.textField();
+
+	}
+
+
+
+	textField(){
+
 		this.card = new Card('NoteEmptyCardText', this.path);
 		this.card.setId(0);
 		this.card.setStyle("borderWidth", "0px");
@@ -48,8 +56,21 @@ export default class Empty extends superViews{
 
 		TheSaveButton.getContainer().addEventListener("click",()=>this.saveResource(TheTextElt));
 
+	}
+
+
+
+	show(type){
+
+		if(type == "text"){
+			this.textField();
+		}
+
 
 	}
+
+
+
 
 
 	saveResource(TheTextElt){
@@ -78,6 +99,11 @@ export default class Empty extends superViews{
 		
 
 	}
+
+
+
+
+
 
 
 }
