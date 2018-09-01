@@ -34,6 +34,7 @@ export default class Input extends superViews{
           this.setStyle("background" , "transparent");
 
           this.setStyleInput("border"   , "none");
+          this.setStyleInput("outline"   , "none");
           //this.setStyleInput("fontSize"   , "10px");
          // this.setStyleInput("margin"     , "10px");
           //this.setStyleInput("fontWeight" , "normal");
@@ -51,6 +52,7 @@ export default class Input extends superViews{
 
      setStyleInput(property,value,scope = "all"){
 
+          console.log(this.input);
       //    if(scope == "property" || scope == "all") this.input[property] = value;
           
           if(scope == "element" || scope == "all" ) this.MyInput.style[property] = value;
