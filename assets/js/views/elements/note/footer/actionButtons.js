@@ -127,7 +127,7 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(FooterElement,"footerNumbers","color","blue");
 					this.card.setStylePictoComponent(FooterElement,"footerNumbers","alignItems","center");
 
-					text.getContainer().addEventListener("click",()=>this.Start("nimber"));
+					number.getContainer().addEventListener("click",()=>this.Start("number"));
 
 
 
