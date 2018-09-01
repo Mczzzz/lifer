@@ -109,13 +109,13 @@ export default class Empty extends superViews{
 
 
 
-		let TheSaveButton = this.card.push("Button", this.EmptyElement,"mainNewButton","arrow_forward");
+		let TheSaveButton = this.card.push("Button", this.EmptyElementValue,"mainNewButton","arrow_forward");
 
-		this.card.setStyleComponent(this.EmptyElement,"mainNewButton","alignItems","flex-end");
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewButton","alignItems","flex-end");
 
-		this.card.setStylePictoComponent(this.EmptyElement,"mainNewButton","fontSize","25px");
-		this.card.setStylePictoComponent(this.EmptyElement,"mainNewButton","marginRight","0px");
-		this.card.setStylePictoComponent(this.EmptyElement,"mainNewButton","color","green");
+		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewButton","fontSize","25px");
+		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewButton","marginRight","0px");
+		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewButton","color","green");
 
 		TheSaveButton.getContainer().addEventListener("click",()=>this.saveResource(TheTextElt));
 
