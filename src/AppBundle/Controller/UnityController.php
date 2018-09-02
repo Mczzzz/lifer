@@ -52,6 +52,8 @@ class UnityController extends Controller
 
         $res->data = array();
 
+        $list = array();
+
         foreach($UnitiesTypeList as $UnityType){
 
         $unity = new \stdClass();
@@ -60,10 +62,11 @@ class UnityController extends Controller
         $unity->name   = $UnityType->getName();
         $unity->symbol = $UnityType->getSymbol();
 
-        array_push($res->data,$unity);
-
+        array_push($list,$unity);
 
         }
+
+        array_push($res->data,$list);
 
         $res->error = 0;
         $res->msg = "OK";
