@@ -59,14 +59,18 @@ class UserController extends Controller
         $res->error = "0";
         $res->msg   = "SUCCESS";
         
-        $res->data = new \stdClass();
-        $res->data->id        = $user->getId();
-        $res->data->username  = $user->getUsername();
-        $res->data->email     = $user->getEmail();
-        $res->data->birthDate = $user->getBirthDate();
+        $res->data = array();
 
-        $res->data->infos = new \stdClass();
-        $res->data->infos->lastLogin = $user->getLastLogin();
+        $dataList = new \stdClass();
+        $dataList->id        = $user->getId();
+        $dataList->username  = $user->getUsername();
+        $dataList->email     = $user->getEmail();
+        $dataList->birthDate = $user->getBirthDate();
+
+        $dataList->infos = new \stdClass();
+        $dataList->infos->lastLogin = $user->getLastLogin();
+
+        array_push($res->data, $dataList);
 
         return new response(json_encode($res));
 
