@@ -101,15 +101,14 @@ export default class Select extends superViews{
      //PUBLICS
      setData(array){
 
-      console.log('array');
-      console.log(array);
+
       let opt = false;
 
       for (let item of array) {
         console.log(item);
         opt = document.createElement("option");
-        opt.value = array.id;
-        opt.text = array.name;
+        opt.value = item.id;
+        opt.text = item.name;
 
         this.MyInput.add(opt, null);
 
