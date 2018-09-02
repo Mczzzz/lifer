@@ -37,17 +37,18 @@ export default class Controller {
 
 		let userCollection = new LoaderCollection("User");
 
-		userCollection.Get();
+		Lifer.addMe("User");
+		Lifer.addData("User",[{"infos" : userCollection.Get()}]);
 
 	}
 
 	loadUnity(){
 
-		console.log("controller loadUnity");
-
 		let unityTypeCollection = new LoaderCollection("Unity");
 
-		unityTypeCollection.Get();
+		Lifer.addMe("Unity");
+		Lifer.addData("Unity",[{"Types" : unityTypeCollection.Get()}]);
+		
 
 	}
 
