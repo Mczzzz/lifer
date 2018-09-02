@@ -106,7 +106,7 @@ export default class Select extends superViews{
       let opt = false;
 
       for (let item of array) {
-
+        console.log(item);
         opt = document.createElement("option");
         opt.value = array.id;
         opt.text = array.name;
