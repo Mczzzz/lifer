@@ -86,7 +86,7 @@ addMe(path){
 			dataRepresentation._datas = {};
 
 		}			
-
+		console.log("lfer adddata before for of")
 		for(let myData of dataArray ){
 
 			dataRepresentation._datas[Object.keys(myData)[0]] = myData[Object.keys(myData)[0]];
