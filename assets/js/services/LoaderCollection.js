@@ -5,6 +5,7 @@ import ObjectTree from '../collections/ObjectTreeCollection.js';*/
 
 import User from '../collections/UserCollection.js';
 import Note from '../collections/NoteCollection.js';
+import Unity from '../collections/UnityCollection.js';
 
 const classes = {
 /*    Container,
@@ -12,7 +13,8 @@ const classes = {
     ObjectInfosResources,
     ObjectTree*/
     User,
-    Note
+    Note,
+    Unity
 };
 
 class LoaderCollection  {

@@ -43,7 +43,10 @@ export default class Controller {
 
 	loadUnity(){
 
-		
+		let unityTypeClooection = new LoaderCollection("Unity");
+
+		unityTypeClooection.Get();
+
 	}
 
 
