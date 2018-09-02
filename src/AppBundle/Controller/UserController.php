@@ -70,7 +70,7 @@ class UserController extends Controller
         $dataList->infos = new \stdClass();
         $dataList->infos->lastLogin = $user->getLastLogin();
 
-        array_push($res->data, $dataList);
+        $res->data["User"] = $dataList;
 
         return new response(json_encode($res));
 
