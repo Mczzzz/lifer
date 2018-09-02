@@ -15,7 +15,7 @@ export default class UnityCollection {
 
 
   Get(){
-
+  	console.log("in unityCollection get");
     let result = this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get-all-types');
 
   }

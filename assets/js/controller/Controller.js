@@ -43,9 +43,11 @@ export default class Controller {
 
 	loadUnity(){
 
-		let unityTypeClooection = new LoaderCollection("Unity");
+		console.log("controller loadUnity");
 
-		unityTypeClooection.Get();
+		let unityTypeCollection = new LoaderCollection("Unity");
+
+		unityTypeCollection.Get();
 
 	}
 
