@@ -14,9 +14,9 @@ export default class UserCollection {
 	}
 
 
-  	Get(){
+  	Get(dispatchResponseTo = false){
 
-    	this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get');
+    	this.SvcBackEndComm.ajaxSend('GET',this.apiPrefixe + 'get',dispatchResponseTo);
 
   	}
 
