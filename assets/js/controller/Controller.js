@@ -38,8 +38,7 @@ export default class Controller {
 		let userCollection = new LoaderCollection("User");
 		Lifer.addMe("User");
 
-		let dispatchResponseTo  = [];
-		dispatchResponseTo.push({ "This" : "Lifer" , "method" : "addData", "path" : "User"});
+		let dispatchResponseTo  = [{ "This" : "Lifer" , "method" : "addData", "path" : "User"}];
 
 		userCollection.Get(dispatchResponseTo);
 
@@ -48,9 +47,11 @@ export default class Controller {
 	loadUnity(){
 
 		let unityTypeCollection = new LoaderCollection("Unity");
-
 		Lifer.addMe("Unity");
-		Lifer.addData("Unity",[{"Types" : unityTypeCollection.Get()}]);
+
+		let dispatchResponseTo  = [{ "This" : "Lifer" , "method" : "addData", "path" : "Unity"}];
+
+		unityTypeCollection.Get(dispatchResponseTo);
 		
 
 	}
