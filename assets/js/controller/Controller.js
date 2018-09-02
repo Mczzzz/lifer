@@ -36,9 +36,12 @@ export default class Controller {
 	loadUser(){
 
 		let userCollection = new LoaderCollection("User");
-
 		Lifer.addMe("User");
-		Lifer.addData("User",[{"infos" : userCollection.Get()}]);
+
+		let dispatchResponseTo  = [];
+		dispatchResponseTo.push({ "This" : "Lifer" , "method" : "addData", "path" : "User"});
+
+		userCollection.Get(dispatchResponseTo);
 
 	}
 

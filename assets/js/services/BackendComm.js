@@ -23,9 +23,20 @@ export default class BackendComm {
 
 					for (let eventToDispatch of dispatchResponseTo){
 
-						let Myclass = Lifer.getData(eventToDispatch.This,"This");
+						if(eventToDispatch.This == 'Lifer' && eventToDispatch.method == 'addData'){
 
-						Myclass[eventToDispatch.method](json,dataCallback);
+							//dispatchResponseTo.push({ "This" : "Lifer" , "method" : "addData", "path" : "User"});
+							Lifer[eventToDispatch.method](eventToDispatch.path,json);
+
+
+						}else{
+
+							let Myclass = Lifer.getData(eventToDispatch.This,"This");
+
+							Myclass[eventToDispatch.method](json,dataCallback);
+
+						}
+
 
 
 					}

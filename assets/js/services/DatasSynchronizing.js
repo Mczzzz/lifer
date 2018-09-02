@@ -49,10 +49,10 @@ class DatasSynchronizing {
 	//from : pour le retour
 	//methode de la collection
 	//data a envoyer
-			console.log("this.Stack in add");
+/*			console.log("this.Stack in add");
 			console.log(this.Stack);
 			console.log(purchaseOrder);
-			console.log(this.Stack[purchaseOrder.id]);
+			console.log(this.Stack[purchaseOrder.id]);*/
 	
 		//Ajout a la stack
 		let MaCommande = {};
