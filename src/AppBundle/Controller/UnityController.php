@@ -66,7 +66,7 @@ class UnityController extends Controller
 
         }
 
-        array_push($res->data,$list);
+        $res->data["Types"] = $list;
 
         $res->error = 0;
         $res->msg = "OK";
