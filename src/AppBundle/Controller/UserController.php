@@ -59,14 +59,14 @@ class UserController extends Controller
         $res->error = "0";
         $res->msg   = "SUCCESS";
         
-        $res->user = new \stdClass();
-        $res->user->id        = $user->getId();
-        $res->user->username  = $user->getUsername();
-        $res->user->email     = $user->getEmail();
-        $res->user->birthDate = $user->getBirthDate();
+        $res->data = new \stdClass();
+        $res->data->id        = $user->getId();
+        $res->data->username  = $user->getUsername();
+        $res->data->email     = $user->getEmail();
+        $res->data->birthDate = $user->getBirthDate();
 
-        $res->user->infos = new \stdClass();
-        $res->user->infos->lastLogin = $user->getLastLogin();
+        $res->data->infos = new \stdClass();
+        $res->data->infos->lastLogin = $user->getLastLogin();
 
         return new response(json_encode($res));
 
