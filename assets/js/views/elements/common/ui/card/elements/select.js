@@ -101,6 +101,8 @@ export default class Select extends superViews{
      //PUBLICS
      setData(array){
 
+      console.log('array');
+      console.log(array);
       let opt = false;
 
       for (let item of array) {
