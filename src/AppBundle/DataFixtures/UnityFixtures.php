@@ -5,7 +5,7 @@ namespace AppBundle\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
-use AppBundle\Entity\UnityTypes;
+use AppBundle\Entity\UnityType;
 
 
 class UnityFixtures extends Fixture
@@ -39,7 +39,7 @@ class UnityFixtures extends Fixture
 
         foreach ($UTArray as $value){
 
-            $UT = new UnityTypes();
+            $UT = new UnityType();
             $UT->setName($value['Name']);
             $UT->setSymbol($value['Symbol']);
 
