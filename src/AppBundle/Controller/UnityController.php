@@ -58,9 +58,10 @@ class UnityController extends Controller
 
         $unity = new \stdClass();
 
-        $unity->id   = $UnityType->getId();
+        $unity->id     = $UnityType->getId();
         $unity->name   = $UnityType->getName();
         $unity->symbol = $UnityType->getSymbol();
+        $unity->posix  = $UnityType->getPosix();
 
         array_push($list,$unity);
 
