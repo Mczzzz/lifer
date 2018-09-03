@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * UnityType
  *
- * @ORM\Table(name="unity_type")
+ * @ORM\Table(name="UnityType")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UnityTypeRepository")
  */
 class UnityType
