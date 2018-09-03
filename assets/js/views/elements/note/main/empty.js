@@ -91,6 +91,7 @@ export default class Empty extends superViews{
 
 
 		this.EmptyElementValue = this.card.setElement("NumberEmptyValue");
+		this.card.setStyleElement(this.EmptyElementValue,"justifyContent","");
 
 		//////
 		let TheValueElt = this.card.push("Input", this.EmptyElementValue,"mainNewValue", "");
