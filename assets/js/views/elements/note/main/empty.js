@@ -82,8 +82,7 @@ export default class Empty extends superViews{
 
 
 
-
-	saveResource(TheTextElt,card){
+	saveResource(card,Element, TheTextElt){
 
 		let NoteResource = this.getObjectThisfromPath("Note/mainNote/noteMainResources");
 
@@ -95,15 +94,15 @@ export default class Empty extends superViews{
 			TheTextElt.getContainer().innerHTML = "";
 			TheTextElt.getContainer().focus();
 //a revoir car pas très propre, l'objet texte devrait comprendre qu'il est vide et il devrait se setter tous seul.
-			card.setStyleComponent(this.EmptyElement,"mainNewInput","color",TheTextElt.placeHodelColor,"element");
+			card.setStyleComponent(Element,"mainNewInput","color",TheTextElt.placeHodelColor,"element");
 
 			NoteResource.createCard(res);
 
 		}else{
 
 			TheTextElt.getContainer().focus();
-			card.setAttributeComponent(this.EmptyElement,"mainNewInput","placeholder","Tapes un truc :) ...");
-			card.setStyleComponent(this.EmptyElement,"mainNewInput","color","red","element");
+			card.setAttributeComponent(Element,"mainNewInput","placeholder","Tapes un truc :) ...");
+			card.setStyleComponent(Element,"mainNewInput","color","red","element");
 
 		}
 		
