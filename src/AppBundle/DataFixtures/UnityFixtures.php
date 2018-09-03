@@ -23,26 +23,27 @@ class UnityFixtures extends Fixture
 
 
         $UTArray = array();
-        array_push($UTArray, array( "Name" => "Températures", "Symbol" => null));
-        array_push($UTArray, array( "Name" => "Volume"      , "Symbol" => null));
-        array_push($UTArray, array( "Name" => "Distance"    , "Symbol" => null));
-        array_push($UTArray, array( "Name" => "Poids"       , "Symbol" => null));
-        array_push($UTArray, array( "Name" => "Superficie"  , "Symbol" => null));
-        array_push($UTArray, array( "Name" => "Vitesse"     , "Symbol" => null));
-        array_push($UTArray, array( "Name" => "DataByte"    , "Symbol" => null));
-        array_push($UTArray, array( "Name" => "Temps"       , "Symbol" => null));
-        array_push($UTArray, array( "Name" => "Fréquence"   , "Symbol" => null));
-        array_push($UTArray, array( "Name" => "Pression"    , "Symbol" => null));
-        array_push($UTArray, array( "Name" => "Energie"     , "Symbol" => null));
-        array_push($UTArray, array( "Name" => "Angles"      , "Symbol" => null));
-        array_push($UTArray, array( "Name" => "Monnaie"     , "Symbol" => null));
-        array_push($UTArray, array( "Name" => "Crypto"      , "Symbol" => null));
+        array_push($UTArray, array( "Name" => "Températures", "Posix" => "TEMP"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Volume"      , "Posix" => "VOL"    ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Distance"    , "Posix" => "DIST"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Poids"       , "Posix" => "POID"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Superficie"  , "Posix" => "AREA"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Vitesse"     , "Posix" => "SPEED"  ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "DataByte"    , "Posix" => "DATA"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Temps"       , "Posix" => "TMP"    ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Fréquence"   , "Posix" => "FREQ"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Pression"    , "Posix" => "PRES"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Energie"     , "Posix" => "ENER"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Angles"      , "Posix" => "ANG"    ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Monnaie"     , "Posix" => "CUR"    ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Crypto"      , "Posix" => "CRYPTO" ,"Symbol" => null));
 
 
         foreach ($UTArray as $value){
 
             $UT = new UnityType();
             $UT->setName($value['Name']);
+            $UT->setPosix($value['Posix']);
             $UT->setSymbol($value['Symbol']);
 
 
