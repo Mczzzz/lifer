@@ -132,6 +132,9 @@ export default class card extends superViews{
 
      touchMover(e,type){
 
+      console.log(e.changedTouches[0].clientY);
+      console.log(e.changedTouches[0].clientX);
+
       if(type == "start"){
 
           this.Cloned = this.getContainer().cloneNode(true);
