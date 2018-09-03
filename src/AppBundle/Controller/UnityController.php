@@ -116,13 +116,13 @@ class UnityController extends Controller
         $unity->id     = $UnityList->getId();
         $unity->name   = $UnityList->getDescription();
         $unity->symbol = $UnityList->getSymbol();
-        $unity->type  = $UnityList->getUnityType()->getPosix();
+        $unity->type   = $UnityList->getUnityType()->getPosix();
 
         array_push($list,$unity);
 
         }
 
-        $res->data["Types"] = $list;
+        $res->data["Unit"] = $list;
 
         $res->error = 0;
         $res->msg = "OK";

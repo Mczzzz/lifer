@@ -51,7 +51,8 @@ export default class Controller {
 
 		let dispatchResponseTo  = [{ "This" : "Lifer" , "method" : "addData", "path" : "Unity"}];
 
-		unityTypeCollection.Get(dispatchResponseTo);
+		unityTypeCollection.GetTypes(dispatchResponseTo);
+		unityTypeCollection.GetUnits(dispatchResponseTo);
 		
 
 	}
