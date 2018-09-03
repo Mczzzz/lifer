@@ -14,6 +14,11 @@ export default class Number extends superViews{
 		
 	}
 
+	init(){
+
+		this.form();
+	}
+
 
 	form(){
 
