@@ -25,6 +25,7 @@ class UnityFixtures extends Fixture
 
         $UTArray = array();
         $UArray = array();
+
         array_push($UTArray, array( "Name" => "Températures", "Posix" => "TEMP"   ,"Symbol" => null));
 
             $UArray['TEMP'] = array();
@@ -35,20 +36,207 @@ class UnityFixtures extends Fixture
             array_push($UArray['TEMP'], array( "Symbol" => "°N"  , "Description" => "Newton"     ,"Country" => null));
             array_push($UArray['TEMP'], array( "Symbol" => "°Ra" , "Description" => "Rankine"    ,"Country" => null));
 
-/*        array_push($UTArray, array( "Name" => "Volume"      , "Posix" => "VOL"    ,"Symbol" => null));
-        array_push($UTArray, array( "Name" => "Distance"    , "Posix" => "DIST"   ,"Symbol" => null));
-        array_push($UTArray, array( "Name" => "Poids"       , "Posix" => "POID"   ,"Symbol" => null));
-        array_push($UTArray, array( "Name" => "Superficie"  , "Posix" => "AREA"   ,"Symbol" => null));
-        array_push($UTArray, array( "Name" => "Vitesse"     , "Posix" => "SPEED"  ,"Symbol" => null));
-        array_push($UTArray, array( "Name" => "DataByte"    , "Posix" => "DATA"   ,"Symbol" => null));
-        array_push($UTArray, array( "Name" => "Temps"       , "Posix" => "TMP"    ,"Symbol" => null));
-        array_push($UTArray, array( "Name" => "Fréquence"   , "Posix" => "FREQ"   ,"Symbol" => null));
-        array_push($UTArray, array( "Name" => "Pression"    , "Posix" => "PRES"   ,"Symbol" => null));
-        array_push($UTArray, array( "Name" => "Energie"     , "Posix" => "ENER"   ,"Symbol" => null));
-        array_push($UTArray, array( "Name" => "Angles"      , "Posix" => "ANG"    ,"Symbol" => null));
-        array_push($UTArray, array( "Name" => "Monnaie"     , "Posix" => "CUR"    ,"Symbol" => null));
-        array_push($UTArray, array( "Name" => "Crypto"      , "Posix" => "CRYPTO" ,"Symbol" => null));*/
 
+        array_push($UTArray, array( "Name" => "Volume"      , "Posix" => "VOL"    ,"Symbol" => null));
+
+            $UArray['VOL'] = array();
+            array_push($UArray['VOL'], array( "Symbol" => "m³"          , "Description" => "mètre cube"         ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "dm³"         , "Description" => "décimètre cube"     ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "cm³"         , "Description" => "centimètre cube"    ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "l"           , "Description" => "litre"              ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "dl"          , "Description" => "décilitre"          ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "cl"          , "Description" => "centilitre"         ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "ml"          , "Description" => "millilitre"         ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "fl oz(UK)"   , "Description" => "once liquide(UK)"   ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "fl oz(US)"   , "Description" => "once liquide(US)"   ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "in³"         , "Description" => "inch cube"          ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "ft³"         , "Description" => "foot cube"          ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "yd³"         , "Description" => "yard cube"          ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "gal(UK)"     , "Description" => "gallon uk"          ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "gal(US)"     , "Description" => "gallon us"          ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "bbl"         , "Description" => "baril de pétrole"   ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "pt(Imp)"     , "Description" => "pinte(UK)"          ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "pt(US fl)"   , "Description" => "pinte liquide(US)"  ,"Country" => null));
+            array_push($UArray['VOL'], array( "Symbol" => "pt(US dry)"  , "Description" => "pinte sèche(US)"    ,"Country" => null));
+
+
+        array_push($UTArray, array( "Name" => "Distance"    , "Posix" => "DIST"   ,"Symbol" => null));
+
+            $UArray['DIST'] = array();
+            array_push($UArray['DIST'], array( "Symbol" => "km"           , "Description" => "kilomètre"      ,"Country" => null));
+            array_push($UArray['DIST'], array( "Symbol" => "m"            , "Description" => "mètre"          ,"Country" => null));
+            array_push($UArray['DIST'], array( "Symbol" => "dm"           , "Description" => "décimètre"      ,"Country" => null));
+            array_push($UArray['DIST'], array( "Symbol" => "cm"           , "Description" => "centimètre"     ,"Country" => null));
+            array_push($UArray['DIST'], array( "Symbol" => "mm"           , "Description" => "millimètre"     ,"Country" => null));
+            array_push($UArray['DIST'], array( "Symbol" => "mi"           , "Description" => "mille"          ,"Country" => null));
+            array_push($UArray['DIST'], array( "Symbol" => "in"           , "Description" => "inch"           ,"Country" => null));
+            array_push($UArray['DIST'], array( "Symbol" => "ft"           , "Description" => "foot"           ,"Country" => null));
+            array_push($UArray['DIST'], array( "Symbol" => "yd"           , "Description" => "yard"           ,"Country" => null));
+            array_push($UArray['DIST'], array( "Symbol" => "mille marin"  , "Description" => "mille marin"    ,"Country" => null));
+
+
+        array_push($UTArray, array( "Name" => "Poids"       , "Posix" => "WEIGHT"   ,"Symbol" => null));
+
+            $UArray['WEIGHT'] = array();
+            array_push($UArray['WEIGHT'], array( "Symbol" => "t"        , "Description" => "tonne"              ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "kg"       , "Description" => "kilogramme"         ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "hg"       , "Description" => "hectogramme"        ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "g"        , "Description" => "gramme"             ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "dg"       , "Description" => "décigramme"         ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "cg"       , "Description" => "centigramme"        ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "mg"       , "Description" => "milligramme"        ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "µg"       , "Description" => "microgramme"        ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "carat"    , "Description" => "carat"              ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "grain"    , "Description" => "grain"              ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "oz (av)"  , "Description" => "ounce avoirdupois"  ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "lb (av)"  , "Description" => "pound avoirdupois"  ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "cwt(UK)"  , "Description" => "quintal long"       ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "cwt(US)"  , "Description" => "quintal court"      ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "ton(UK)"  , "Description" => "tonne longue"       ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "°ton(US)" , "Description" => "tonne courte"       ,"Country" => null));
+            array_push($UArray['WEIGHT'], array( "Symbol" => "st(UK)"   , "Description" => "stone"              ,"Country" => null));
+
+
+        array_push($UTArray, array( "Name" => "Superficie"  , "Posix" => "AREA"   ,"Symbol" => null));
+
+            $UArray['AREA'] = array();
+            array_push($UArray['AREA'], array( "Symbol" => "km²"              , "Description" => "kilomètre carré"      ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "m²"               , "Description" => "mètre carré"          ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "dm²"              , "Description" => "décimètre carré"      ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "cm²"              , "Description" => "centimètre carré"     ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "mm²"              , "Description" => "millimètre carré"     ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "ha"               , "Description" => "hectare"              ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "a"                , "Description" => "are"                  ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "ca"               , "Description" => "centiare"             ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "mille²"           , "Description" => "mille carré"          ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "in²"              , "Description" => "inch carré"           ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "yd²"              , "Description" => "yard carré"           ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "ft²"              , "Description" => "foot carré"           ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "ro"               , "Description" => "rood"                 ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "acro"             , "Description" => "acre"                 ,"Country" => null));
+            array_push($UArray['AREA'], array( "Symbol" => "mille nautique²"  , "Description" => "mille nautique carré" ,"Country" => null));
+
+            
+        array_push($UTArray, array( "Name" => "Vitesse"     , "Posix" => "SPEED"  ,"Symbol" => null));
+
+            $UArray['SPEED'] = array();
+            array_push($UArray['SPEED'], array( "Symbol" => "km/h"  , "Description" => "kilomètre par heure"       ,"Country" => null));
+            array_push($UArray['SPEED'], array( "Symbol" => "m/s"   , "Description" => "mètre par seconde"         ,"Country" => null));
+            array_push($UArray['SPEED'], array( "Symbol" => "mi/h"  , "Description" => "mille par heure"           ,"Country" => null));
+            array_push($UArray['SPEED'], array( "Symbol" => "knot"  , "Description" => "mille nautique par heure"  ,"Country" => null));
+            array_push($UArray['SPEED'], array( "Symbol" => "ma"    , "Description" => "mac"                       ,"Country" => null));
+
+
+         
+        array_push($UTArray, array( "Name" => "DataByte"    , "Posix" => "DATA"   ,"Symbol" => null));
+
+            $UArray['DATA'] = array();
+            array_push($UArray['DATA'], array( "Symbol" => "b"   , "Description" => "bit"          ,"Country" => null));
+            array_push($UArray['DATA'], array( "Symbol" => "O"   , "Description" => "Octet"        ,"Country" => null));
+            array_push($UArray['DATA'], array( "Symbol" => "Ko"  , "Description" => "kilobyte"     ,"Country" => null));
+            array_push($UArray['DATA'], array( "Symbol" => "Mo"  , "Description" => "megaoctet"    ,"Country" => null));
+            array_push($UArray['DATA'], array( "Symbol" => "Go"  , "Description" => "gigaoctet"    ,"Country" => null));
+            array_push($UArray['DATA'], array( "Symbol" => "To"  , "Description" => "teraoctet"    ,"Country" => null));
+            array_push($UArray['DATA'], array( "Symbol" => "Po"  , "Description" => "petaoctet"    ,"Country" => null));
+            array_push($UArray['DATA'], array( "Symbol" => "Eo"  , "Description" => "exaoctet"     ,"Country" => null));
+            array_push($UArray['DATA'], array( "Symbol" => "Zo"  , "Description" => "zettaoctet"   ,"Country" => null));
+            array_push($UArray['DATA'], array( "Symbol" => "Yo"  , "Description" => "yottaoctet"   ,"Country" => null));
+
+
+         
+        array_push($UTArray, array( "Name" => "Temps"       , "Posix" => "TIME"    ,"Symbol" => null));
+
+            $UArray['TIME'] = array();
+            array_push($UArray['TIME'], array( "Symbol" => "1an-365days"        , "Description" => "année commune"                ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "1an-366days"        , "Description" => "année bissextile"             ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "1an-365,2425 days"  , "Description" => "moyenne calendrier Grégorien" ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "1an-365,25 days"    , "Description" => "moyenne calendrier Julien"    ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "1an-365,24219 days" , "Description" => "année tropicale"              ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "semestre"           , "Description" => "semestre"                     ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "trimestre"          , "Description" => "trimestre"                    ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "mois"               , "Description" => "mois"                         ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "semaine"            , "Description" => "semaine"                      ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "jour"               , "Description" => "jour"                         ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "heure"              , "Description" => "heure"                        ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "min"                , "Description" => "minute"                       ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "s"                  , "Description" => "seconde"                      ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "ms"                 , "Description" => "milliseconde"                 ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "µs"                 , "Description" => "microseconde"                 ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "nanoseconde"        , "Description" => "nanoseconde"                  ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "picoseconde"        , "Description" => "picoseconde"                  ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "femtoseconde"       , "Description" => "femtoseconde"                 ,"Country" => null));
+            array_push($UArray['TIME'], array( "Symbol" => "attoseconde"        , "Description" => "attoseconde"                  ,"Country" => null));
+
+
+          
+        array_push($UTArray, array( "Name" => "Fréquence"   , "Posix" => "FREQ"   ,"Symbol" => null));
+
+            $UArray['FREQ'] = array();
+            array_push($UArray['FREQ'], array( "Symbol" => "Hz"   , "Description" => "Hertz"        ,"Country" => null));
+            array_push($UArray['FREQ'], array( "Symbol" => "KHz"  , "Description" => "Kilohertz"    ,"Country" => null));
+            array_push($UArray['FREQ'], array( "Symbol" => "MHz"  , "Description" => "Megahertz"    ,"Country" => null));
+            array_push($UArray['FREQ'], array( "Symbol" => "GHz"  , "Description" => "Gigahertz"    ,"Country" => null));
+
+
+          
+        array_push($UTArray, array( "Name" => "Pression"    , "Posix" => "PRES"   ,"Symbol" => null));
+
+            $UArray['PRES'] = array();
+            array_push($UArray['PRES'], array( "Symbol" => "atm"   , "Description" => "Atmosphère"                  ,"Country" => null));
+            array_push($UArray['PRES'], array( "Symbol" => "bar"   , "Description" => "Bar"                         ,"Country" => null));
+            array_push($UArray['PRES'], array( "Symbol" => "mbar"  , "Description" => "Millibar"                    ,"Country" => null));
+            array_push($UArray['PRES'], array( "Symbol" => "Pa"    , "Description" => "Pascal"                      ,"Country" => null));
+            array_push($UArray['PRES'], array( "Symbol" => "hPa"   , "Description" => "Hectopascal"                 ,"Country" => null));
+            array_push($UArray['PRES'], array( "Symbol" => "Psi"   , "Description" => "Livre-force par pouce carré" ,"Country" => null));
+            array_push($UArray['PRES'], array( "Symbol" => "Torr"  , "Description" => "Torr"                        ,"Country" => null));
+
+
+          
+        array_push($UTArray, array( "Name" => "Energie"     , "Posix" => "ENER"   ,"Symbol" => null));
+
+            $UArray['ENER'] = array();
+            array_push($UArray['ENER'], array( "Symbol" => "J"     , "Description" => "Joule"                ,"Country" => null));
+            array_push($UArray['ENER'], array( "Symbol" => "KJ"    , "Description" => "Kilojoule"            ,"Country" => null));
+            array_push($UArray['ENER'], array( "Symbol" => "cal"   , "Description" => "Calorie"              ,"Country" => null));
+            array_push($UArray['ENER'], array( "Symbol" => "kcal"  , "Description" => "Kilocalorie"          ,"Country" => null));
+            array_push($UArray['ENER'], array( "Symbol" => "V"     , "Description" => "Volt"                 ,"Country" => null));
+            array_push($UArray['ENER'], array( "Symbol" => "I"     , "Description" => "Intensité"            ,"Country" => null));
+            array_push($UArray['ENER'], array( "Symbol" => "W"     , "Description" => "Watt"                 ,"Country" => null));
+            array_push($UArray['ENER'], array( "Symbol" => "Wh"    , "Description" => "Watt-heure"           ,"Country" => null));
+            array_push($UArray['ENER'], array( "Symbol" => "kWh"   , "Description" => "Kilowatt-heure"       ,"Country" => null));
+            array_push($UArray['ENER'], array( "Symbol" => "BTU"   , "Description" => "British thermal unit" ,"Country" => null));
+            array_push($UArray['ENER'], array( "Symbol" => "thm"   , "Description" => "Therm américain"      ,"Country" => null));
+            array_push($UArray['ENER'], array( "Symbol" => "ft-lb" , "Description" => "Pied-livre"           ,"Country" => null));
+
+
+          
+        array_push($UTArray, array( "Name" => "Angles"      , "Posix" => "ANG"    ,"Symbol" => null));
+
+            $UArray['ANG'] = array();
+            array_push($UArray['ANG'], array( "Symbol" => "°"              , "Description" => "Degré"           ,"Country" => null));
+            array_push($UArray['ANG'], array( "Symbol" => "grad(gon)"      , "Description" => "Grade"           ,"Country" => null));
+            array_push($UArray['ANG'], array( "Symbol" => "Mil angulaire"  , "Description" => "Mil angulaire"   ,"Country" => null));
+            array_push($UArray['ANG'], array( "Symbol" => "\'"             , "Description" => "Minute d\'arc"   ,"Country" => null));
+            array_push($UArray['ANG'], array( "Symbol" => "rad"            , "Description" => "Radian"          ,"Country" => null));
+            array_push($UArray['ANG'], array( "Symbol" => "\""             , "Description" => "'Seconde d\'arc" ,"Country" => null));
+
+
+/*
+          
+        array_push($UTArray, array( "Name" => "Monnaie"     , "Posix" => "CUR"    ,"Symbol" => null));
+
+            $UArray['CUR'] = array();
+            array_push($UArray['CUR'], array( "Symbol" => "°C"  , "Description" => "Celsius"    ,"Country" => null));
+
+
+          
+        array_push($UTArray, array( "Name" => "Crypto"      , "Posix" => "CRYPTO" ,"Symbol" => null));
+
+            $UArray['CRYPTO'] = array();
+            array_push($UArray['CRYPTO'], array( "Symbol" => "°C"  , "Description" => "Celsius"    ,"Country" => null));
+
+          
+*/
 
         foreach ($UTArray as $value){
 
@@ -80,126 +268,6 @@ class UnityFixtures extends Fixture
         $manager->flush();
 
     }
-
-
-      /*  (7 ,'m³','mètre cube',NULL,1),
-        (8 ,'dm³','décimètre cube',NULL,2),
-        (9 ,'cm³','centimètre cube',NULL,2),
-        (10,'l','litre',NULL,2),
-        (11,'dl','décilitre',NULL,2),
-        (12,'cl','centilitre',NULL,2),
-        (13,'ml','millilitre',NULL,2),
-        (14,'fl oz(UK)','once liquide(UK)',NULL,2),
-        (15,'fl oz(US)','once liquide(US)',NULL,2),
-        (16,'in³','inch cube',NULL,2),
-        (17,'ft³','foot cube',NULL,2),
-        (18,'yd³','yard cube',NULL,2),
-        (19,'gal(UK)','gallon uk',NULL,2),
-        (20,'gal(US)','gallon us',NULL,2),
-        (21,'bbl','baril de pétrole',NULL,2),
-        (22,'pt(Imp)','pinte(UK)',NULL,2),
-        (23,'pt(US fl)','pinte liquide(US)',NULL,2),
-        (24,'pt(US dry)','pinte sèche(US)',NULL,2),
-        (25,'km','kilomètre',NULL,3),
-        (26,'m','mètre',NULL,3),
-        (27,'dm','décimètre',NULL,3),
-        (28,'cm','centimètre',NULL,3),
-        (29,'mm','millimètre',NULL,3),
-        (30,'mi','mille',NULL,3),
-        (31,'in','inch',NULL,3),
-        (32,'ft','foot',NULL,3),
-        (33,'yd','yard',NULL,3),
-        (34,'mille marin','mille marin',NULL,3),
-        (35,'t','tonne',NULL,4),
-        (36,'kg','kilogramme',NULL,4),
-        (37,'hg','hectogramme',NULL,4),
-        (38,'g','gramme',NULL,4),
-        (39,'dg','décigramme',NULL,4),
-        (40,'cg','centigramme',NULL,4),
-        (41,'mg','milligramme',NULL,4),
-        (42,'µg','microgramme',NULL,4),
-        (43,'carat','carat',NULL,4),
-        (44,'grain','grain',NULL,4),
-        (45,'oz (av)','ounce avoirdupois',NULL,4),
-        (46,'lb (av)','pound avoirdupois',NULL,4),
-        (47,'cwt(UK)','quintal long',NULL,4),
-        (48,'cwt(US)','quintal court',NULL,4),
-        (49,'ton(UK)','tonne longue',NULL,4),
-        (50,'ton(US)','tonne courte',NULL,4),
-        (51,'st(UK)','stone',NULL,4),
-        (52,'km²','kilomètre carré',NULL,5),
-        (53,'m²','mètre carré',NULL,5),
-        (54,'dm²','décimètre carré',NULL,5),
-        (55,'cm²','centimètre carré',NULL,5),
-        (56,'mm²','millimètre carré',NULL,5),
-        (57,'ha','hectare',NULL,5),
-        (58,'a','are',NULL,5),
-        (59,'ca','centiare',NULL,5),
-        (60,'mille²','mille carré',NULL,5),
-        (61,'in²','inch carré',NULL,5),
-        (62,'yd²','yard carré',NULL,5),
-        (63,'ft²','foot carré',NULL,5),
-        (64,'ro','rood',NULL,5),
-        (65,'acro','acre',NULL,5),
-        (66,'mille nautique²','mille nautique carré',NULL,5),
-        (67,'kmph = km/h','kilomètre par heure',NULL,6),
-        (68,'mps = m/s','mètre par seconde',NULL,6),
-        (69,'mph = mi/h','mille par heure',NULL,6),
-        (70,'knot','mille nautique par heure',NULL,6),
-        (71,'ma','mac',NULL,6),
-        (72,'1 année = 365 days','année commune',NULL,8),
-        (73,'1 année = 366 days','année bissextile',NULL,8),
-        (74,'1 année = 365,2425 days','moyenne calendrier Grégorien',NULL,8),
-        (75,'1 année = 365,25 days','moyenne calendrier Julien',NULL,8),
-        (76,'1 année = 365,24219 days','année tropicale',NULL,8),
-        (77,'semaine','semaine',NULL,8),
-        (78,'jour','jour',NULL,8),
-        (79,'heure','heure',NULL,8),
-        (80,'min','minute',NULL,8),
-        (81,'s','seconde',NULL,8),
-        (82,'ms','milliseconde',NULL,8),
-        (83,'µs','microseconde',NULL,8),
-        (84,'nanoseconde','nanoseconde',NULL,8),
-        (85,'picoseconde','picoseconde',NULL,8),
-        (86,'femtoseconde','femtoseconde',NULL,8),
-        (87,'attoseconde','attoseconde',NULL,8),
-        (88,'b','bit',NULL,7),
-        (89,'O','Octet',NULL,7),
-        (90,'Ko','kilobyte',NULL,7),
-        (91,'Mo','megaoctet',NULL,7),
-        (92,'Go','gigaoctet',NULL,7),
-        (93,'To','teraoctet',NULL,7),
-        (94,'Po','petaoctet',NULL,7),
-        (95,'Eo','exaoctet',NULL,7),
-        (96,'Zo','zettaoctet',NULL,7),
-        (97,'Yo','yottaoctet',NULL,7),
-        (98,'Hz','Hertz',NULL,9),
-        (99,'KHz','Kilohertz',NULL,9),
-        (100,'MHz','Megahertz',NULL,9),
-        (101,'GHz','Gigahertz',NULL,9),
-        (102,'atm','Atmosphère',NULL,10),
-        (103,'bar','Bar',NULL,10),
-        (104,'mbar','Millibar',NULL,10),
-        (105,'Pa','Pascal',NULL,10),
-        (106,'hPa','Hectopascal',NULL,10),
-        (107,'Psi','Livre-force par pouce carré',NULL,10),
-        (108,'Torr','Torr',NULL,10),
-        (109,'J','Joule',NULL,11),
-        (110,'KJ','Kilojoule',NULL,11),
-        (111,'cal','Calorie',NULL,11),
-        (112,'kcal','Kilocalorie',NULL,11),
-        (113,'Wh','Watt-heure',NULL,11),
-        (114,'kWh','Kilowatt-heure',NULL,11),
-        (115,'BTU','British thermal unit',NULL,11),
-        (116,'thm','Therm américain',NULL,11),
-        (117,'ft-lb','Pied-livre',NULL,11),
-        (118,'°','Degré',NULL,12),
-        (119,'grad(gon)','Grade',NULL,12),
-        (120,'Mil angulaire','Mil angulaire',NULL,12),
-        (121,'\'','Minute d\'arc',NULL,12),
-        (122,'rad','Radian',NULL,12),
-        (123,'\"','Seconde d\'arc',NULL,12);
-*/
 
 
 
