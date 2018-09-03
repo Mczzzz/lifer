@@ -28,12 +28,12 @@ class UnityFixtures extends Fixture
         array_push($UTArray, array( "Name" => "Températures", "Posix" => "TEMP"   ,"Symbol" => null));
 
             $UArray['TEMP'] = array();
-            array_push($UArray['TEMP'], array( "Symbol" => "°C"  , "Description" => "Celsius"    ,"country" => null));
-            array_push($UArray['TEMP'], array( "Symbol" => "°F"  , "Description" => "Fahrenheit" ,"country" => null));
-            array_push($UArray['TEMP'], array( "Symbol" => "K"   , "Description" => "Kelvin"     ,"country" => null));
-            array_push($UArray['TEMP'], array( "Symbol" => "°Ré" , "Description" => "Reaumur"    ,"country" => null));
-            array_push($UArray['TEMP'], array( "Symbol" => "°N"  , "Description" => "Newton"     ,"country" => null));
-            array_push($UArray['TEMP'], array( "Symbol" => "°Ra" , "Description" => "Rankine"    ,"country" => null));
+            array_push($UArray['TEMP'], array( "Symbol" => "°C"  , "Description" => "Celsius"    ,"Country" => null));
+            array_push($UArray['TEMP'], array( "Symbol" => "°F"  , "Description" => "Fahrenheit" ,"Country" => null));
+            array_push($UArray['TEMP'], array( "Symbol" => "K"   , "Description" => "Kelvin"     ,"Country" => null));
+            array_push($UArray['TEMP'], array( "Symbol" => "°Ré" , "Description" => "Reaumur"    ,"Country" => null));
+            array_push($UArray['TEMP'], array( "Symbol" => "°N"  , "Description" => "Newton"     ,"Country" => null));
+            array_push($UArray['TEMP'], array( "Symbol" => "°Ra" , "Description" => "Rankine"    ,"Country" => null));
 
         array_push($UTArray, array( "Name" => "Volume"      , "Posix" => "VOL"    ,"Symbol" => null));
         array_push($UTArray, array( "Name" => "Distance"    , "Posix" => "DIST"   ,"Symbol" => null));
@@ -57,7 +57,6 @@ class UnityFixtures extends Fixture
             $UT->setPosix($value['Posix']);
             $UT->setSymbol($value['Symbol']);
 
-
             $manager->persist($UT);
 
 
@@ -68,7 +67,6 @@ class UnityFixtures extends Fixture
                 $U->setSymbol($val['Symbol']);
                 $U->setDescription($val['Description']);
                 $U->setCountry($val['Country']);
-
 
                 $manager->persist($U);
 
