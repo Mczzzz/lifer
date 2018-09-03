@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Unity
  *
  * @ORM\Table(name="Unity")
- * 
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UnityRepository")
  */
 class Unity
 {
