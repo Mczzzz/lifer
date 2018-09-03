@@ -35,7 +35,7 @@ class UnityFixtures extends Fixture
             array_push($UArray['TEMP'], array( "Symbol" => "°N"  , "Description" => "Newton"     ,"Country" => null));
             array_push($UArray['TEMP'], array( "Symbol" => "°Ra" , "Description" => "Rankine"    ,"Country" => null));
 
-        array_push($UTArray, array( "Name" => "Volume"      , "Posix" => "VOL"    ,"Symbol" => null));
+/*        array_push($UTArray, array( "Name" => "Volume"      , "Posix" => "VOL"    ,"Symbol" => null));
         array_push($UTArray, array( "Name" => "Distance"    , "Posix" => "DIST"   ,"Symbol" => null));
         array_push($UTArray, array( "Name" => "Poids"       , "Posix" => "POID"   ,"Symbol" => null));
         array_push($UTArray, array( "Name" => "Superficie"  , "Posix" => "AREA"   ,"Symbol" => null));
@@ -47,7 +47,7 @@ class UnityFixtures extends Fixture
         array_push($UTArray, array( "Name" => "Energie"     , "Posix" => "ENER"   ,"Symbol" => null));
         array_push($UTArray, array( "Name" => "Angles"      , "Posix" => "ANG"    ,"Symbol" => null));
         array_push($UTArray, array( "Name" => "Monnaie"     , "Posix" => "CUR"    ,"Symbol" => null));
-        array_push($UTArray, array( "Name" => "Crypto"      , "Posix" => "CRYPTO" ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Crypto"      , "Posix" => "CRYPTO" ,"Symbol" => null));*/
 
 
         foreach ($UTArray as $value){
@@ -67,6 +67,7 @@ class UnityFixtures extends Fixture
                 $U->setSymbol($val['Symbol']);
                 $U->setDescription($val['Description']);
                 $U->setCountry($val['Country']);
+                $U->setUnityType($UT);
 
                 $manager->persist($U);
 
