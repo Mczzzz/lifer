@@ -109,7 +109,7 @@ class UnityController extends Controller
 
         $list = array();
 
-        foreach($UnitiesList as $UnityType){
+        foreach($UnitiesList as $UnityList){
 
         $unity = new \stdClass();
 
