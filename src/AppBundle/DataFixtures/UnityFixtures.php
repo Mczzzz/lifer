@@ -83,7 +83,7 @@ class UnityFixtures extends Fixture
     }
 
 
-        (7 ,'m³','mètre cube',NULL,1),
+      /*  (7 ,'m³','mètre cube',NULL,1),
         (8 ,'dm³','décimètre cube',NULL,2),
         (9 ,'cm³','centimètre cube',NULL,2),
         (10,'l','litre',NULL,2),
@@ -200,7 +200,7 @@ class UnityFixtures extends Fixture
         (121,'\'','Minute d\'arc',NULL,12),
         (122,'rad','Radian',NULL,12),
         (123,'\"','Seconde d\'arc',NULL,12);
-
+*/
 
 
 
