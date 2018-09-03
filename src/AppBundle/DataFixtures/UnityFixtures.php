@@ -35,6 +35,8 @@ class UnityFixtures extends Fixture
         array_push($UTArray, array( "Name" => "Pression"    , "Symbol" => null));
         array_push($UTArray, array( "Name" => "Energie"     , "Symbol" => null));
         array_push($UTArray, array( "Name" => "Angles"      , "Symbol" => null));
+        array_push($UTArray, array( "Name" => "Monnaie"     , "Symbol" => null));
+        array_push($UTArray, array( "Name" => "Crypto"      , "Symbol" => null));
 
 
         foreach ($UTArray as $value){
