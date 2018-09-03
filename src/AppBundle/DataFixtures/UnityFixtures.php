@@ -216,24 +216,25 @@ class UnityFixtures extends Fixture
             array_push($UArray['ANG'], array( "Symbol" => "°"              , "Description" => "Degré"           ,"Country" => null));
             array_push($UArray['ANG'], array( "Symbol" => "grad(gon)"      , "Description" => "Grade"           ,"Country" => null));
             array_push($UArray['ANG'], array( "Symbol" => "Mil angulaire"  , "Description" => "Mil angulaire"   ,"Country" => null));
-            array_push($UArray['ANG'], array( "Symbol" => "\'"             , "Description" => "Minute d\'arc"   ,"Country" => null));
+            array_push($UArray['ANG'], array( "Symbol" => "'"             , "Description" => "Minute d'arc"   ,"Country" => null));
             array_push($UArray['ANG'], array( "Symbol" => "rad"            , "Description" => "Radian"          ,"Country" => null));
-            array_push($UArray['ANG'], array( "Symbol" => "\""             , "Description" => "'Seconde d\'arc" ,"Country" => null));
+            array_push($UArray['ANG'], array( "Symbol" => "\""             , "Description" => "'Seconde d'arc" ,"Country" => null));
 
 
-/*
+
           
         array_push($UTArray, array( "Name" => "Monnaie"     , "Posix" => "CUR"    ,"Symbol" => null));
 
             $UArray['CUR'] = array();
-            array_push($UArray['CUR'], array( "Symbol" => "°C"  , "Description" => "Celsius"    ,"Country" => null));
-
+            array_push($UArray['CUR'], array( "Symbol" => "€"  , "Description" => "Euro"    ,"Country" => null));
+            array_push($UArray['CUR'], array( "Symbol" => "$"  , "Description" => "Dollar"    ,"Country" => null));
 
           
         array_push($UTArray, array( "Name" => "Crypto"      , "Posix" => "CRYPTO" ,"Symbol" => null));
 
             $UArray['CRYPTO'] = array();
-            array_push($UArray['CRYPTO'], array( "Symbol" => "°C"  , "Description" => "Celsius"    ,"Country" => null));
+            array_push($UArray['CRYPTO'], array( "Symbol" => "BTC"  , "Description" => "Bitcoin"     ,"Country" => null));
+            array_push($UArray['CRYPTO'], array( "Symbol" => "ETH"  , "Description" => "Ethereum"    ,"Country" => null));
 
           
 */
