@@ -31,6 +31,13 @@ class UnityType
     /**
      * @var string
      *
+     * @ORM\Column(name="posix", type="string", length=10, unique=true)
+     */
+    private $posix;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="symbol", type="string", length=255, nullable=true)
      */
     private $symbol;
@@ -92,6 +99,28 @@ class UnityType
     public function getSymbol()
     {
         return $this->symbol;
+    }
+
+    
+
+    /**
+     * @return string
+     */
+    public function getPosix()
+    {
+        return $this->posix;
+    }
+
+    /**
+     * @param string $posix
+     *
+     * @return self
+     */
+    public function setPosix($posix)
+    {
+        $this->posix = $posix;
+
+        return $this;
     }
 }
 
