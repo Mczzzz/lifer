@@ -52,7 +52,7 @@ export default class Text extends superViews{
 		this.card.setStylePictoComponent(this.EmptyElement,"mainNewButton","marginRight","0px");
 		this.card.setStylePictoComponent(this.EmptyElement,"mainNewButton","color","green");
 
-		TheSaveButton.getContainer().addEventListener("click",()=>this.saveResource(TheTextElt));
+		TheSaveButton.getContainer().addEventListener("click",()=>this.parentThis.saveResource(TheTextElt));
 
 
 	}
