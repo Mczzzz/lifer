@@ -6,8 +6,6 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
 use AppBundle\Entity\ResourcesTypes;
-use AppBundle\Entity\UnityTypes;
-
 
 class ResourcesTypesFixtures extends Fixture
 {

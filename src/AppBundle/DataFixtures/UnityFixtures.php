@@ -5,7 +5,6 @@ namespace AppBundle\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
-use AppBundle\Entity\ResourcesTypes;
 use AppBundle\Entity\UnityTypes;
 
 
@@ -20,24 +19,32 @@ class UnityFixtures extends Fixture
 
 
 
-    private function ResourcesTypes($manager){
+    private function Unity($manager){
 
 
-            //On initialise les datas de fixtures
-        $RTArray = array();
-        array_push($RTArray, array( "Name" => "text", "Picto" => "title", "Enable" => true, "Color" => "blue") );
-        array_push($RTArray, array( "Name" => "image", "Picto" => "photo", "Enable" => true, "Color" => "orange") );
+        $UTArray = array();
+        array_push($UTArray, array( "Name" => "Températures", "Symbol" => null));
+        array_push($UTArray, array( "Name" => "Volume"      , "Symbol" => null));
+        array_push($UTArray, array( "Name" => "Distance"    , "Symbol" => null));
+        array_push($UTArray, array( "Name" => "Poids"       , "Symbol" => null));
+        array_push($UTArray, array( "Name" => "Superficie"  , "Symbol" => null));
+        array_push($UTArray, array( "Name" => "Vitesse"     , "Symbol" => null));
+        array_push($UTArray, array( "Name" => "DataByte"    , "Symbol" => null));
+        array_push($UTArray, array( "Name" => "Temps"       , "Symbol" => null));
+        array_push($UTArray, array( "Name" => "Fréquence"   , "Symbol" => null));
+        array_push($UTArray, array( "Name" => "Pression"    , "Symbol" => null));
+        array_push($UTArray, array( "Name" => "Energie"     , "Symbol" => null));
+        array_push($UTArray, array( "Name" => "Angles"      , "Symbol" => null));
 
 
-        foreach ($RTArray as $value){
+        foreach ($UTArray as $value){
 
-            $RT = new ResourcesTypes();
-            $RT->setName($value['Name']);
-            $RT->setPicto($value['Picto']);
-            $RT->setEnable($value['Enable']);
-            $RT->setColor($value['Color']);
+            $UT = new UnityTypes();
+            $UT->setName($value['Name']);
+            $UT->setSymbol($value['Symbol']);
 
-            $manager->persist($RT);
+
+            $manager->persist($UT);
 
 
         }
