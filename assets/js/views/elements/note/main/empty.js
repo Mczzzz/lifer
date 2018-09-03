@@ -118,7 +118,7 @@ export default class Empty extends superViews{
 		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewSelect","fontWeight","normal");
 
 
-		let TheSelectUnity = this.card.push("Select", this.EmptyElementValue,"mainNewSelectUnity", this.Lifer.getData("Unity","Types"));
+		let TheSelectUnity = this.card.push("Select", this.EmptyElementValue,"mainNewSelectUnity", this.Lifer.getData("Unity","Unit"));
 
 		this.card.setStyleComponent(this.EmptyElementValue,"mainNewSelect","flex",1);
 
