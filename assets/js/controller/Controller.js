@@ -27,16 +27,11 @@ export default class Controller {
 		this.loadUser();
 		this.loadUnity();
 
-		setTimeout(() => this.prepare(), 5000);
-
-
-	}
-
-	prepare(){
-
 		this.frame = new Frame(this.path);
 		this.gotToHome();
+
 	}
+
 
 
 	loadUser(){
