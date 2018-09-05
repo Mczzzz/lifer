@@ -173,6 +173,7 @@ export default class card extends superViews{
         if(this.getContainer().previousElementSibling){
           console.log("touchY:"+e.changedTouches[0].clientY);
           console.log("contHeight:"+ this.getContainer().getBoundingClientRect().height);
+          console.log(this.getContainer().previousElementSibling);
           console.log("previousPosY"+this.getContainer().previousElementSibling.getBoundingClientRect().y);
           console.log("----------------------------------------------");
           
