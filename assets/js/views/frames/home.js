@@ -23,7 +23,7 @@ export default class Home extends superViews{
 		//this.container.style.background = 'linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%)';
 		this.setStyle("display" , "flex");
 		this.setStyle("flexDirection" , "column");
-		this.setStyle("height" , "100vh");
+		this.setStyle("height" , "100%");
 
 		this.initChilds();
 
