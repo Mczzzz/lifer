@@ -76,23 +76,33 @@ export default class button extends superViews{
 
 
 
-	setData(picto,IconClass = "material-icons"){
+	setData(data){
 
-		this.Picto.Symbol = picto;
 
-		if(IconClass == "material-icons"){
+		this.i.innerHTML = "";
 
-			this.i.innerHTML = "";
+
+		if (!(data instanceof Object)){
+
+			this.Picto.Symbol = data;
 
 			this.i.append(this.Picto.Symbol);
 
 		}else{
 
-			this.i.className = "picto";
-		
+			this.Picto.Symbol = data.picto;
+
+			if(data.fontType == "material-icons"){
+
+				this.i.append(this.Picto.Symbol);
+
+			}else{
+
+				this.i.className  = this.Picto.Symbol;
+
+			}
+
 		}
-
-
 
 	}
 

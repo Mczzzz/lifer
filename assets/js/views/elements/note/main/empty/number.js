@@ -67,7 +67,7 @@ export default class Number extends superViews{
 		
 
 		//on crée un bouton
-		let InutiesTool = this.card.push("Button", this.EmptyElementValue,"mainNewUnitButton","straighten");
+		let InutiesTool = this.card.push("Button", this.EmptyElementValue,"mainNewUnitButton",{"picto" : "straighten", "fontType" : "material-icons"});
 
 		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton","flex","1.2");
 		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton","marginLeft","15px");
@@ -112,6 +112,9 @@ export default class Number extends superViews{
 
 
 	Startselect(){
+
+
+		//On crée un popup up
 
 
 		let Types = this.Lifer.getData("Unity","Types");
