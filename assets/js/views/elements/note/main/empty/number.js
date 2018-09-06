@@ -69,7 +69,8 @@ export default class Number extends superViews{
 		//on crée un bouton
 		let InitiesTool = this.card.push("Button", this.EmptyElementValue,"mainNewUnitButton","straighten");
 
-		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton","alignItems","flex-end");
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton","flex","1.2");
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton","marginLeft","15px");
 
 		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton","fontSize","25px");
 		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton","marginRight","0px");
