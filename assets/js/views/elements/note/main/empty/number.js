@@ -136,10 +136,15 @@ export default class Number extends superViews{
 
 		//this.catSelector.style.display = "none";
 		this.container.append(this.catSelector);
-		this.catSelector.focus();
-		this.catSelector.click();
-		this.catSelector.dispatchEvent('onMouseDown');
-	
+/*		this.catSelector.focus();
+		this.catSelector.click();	
+	*/
+
+		var event;
+	    event = document.createEvent('MouseEvents');
+	    event.initMouseEvent('mousedown', true, true, window);
+	    this.catSelector.dispatchEvent(event);
+
 		this.catSelector.addEventListener("change", ()=>this.ServImgLoader.importPict(this.camLauncher.files[0]));
 
 
