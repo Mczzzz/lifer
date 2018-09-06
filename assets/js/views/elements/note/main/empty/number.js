@@ -65,6 +65,22 @@ export default class Number extends superViews{
 		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue","margin","0px 5px 5px 5px");
 		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue","width","100%");
 		
+
+		//on crée un bouton
+		let InitiesTool = this.card.push("Button", this.EmptyElementValue,"mainNewUnitButton","straighten");
+
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton","alignItems","flex-end");
+
+		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton","fontSize","25px");
+		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton","marginRight","0px");
+		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton","color","green");
+
+		//TheSaveButton.getContainer().addEventListener("click",()=>this.saveResource(TheTextElt));
+
+
+
+
+/*
 		///
 		let TheSelectElt = this.card.push("Select", this.EmptyElementValue,"mainNewSelect", this.Lifer.getData("Unity","Types"));
 
@@ -87,10 +103,10 @@ export default class Number extends superViews{
 		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewButton","marginRight","0px");
 		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewButton","color","green");
 
-		TheSaveButton.getContainer().addEventListener("click",()=>this.saveResource(TheTextElt));
+		TheSaveButton.getContainer().addEventListener("click",()=>this.saveResource(TheTextElt));*/
 
-		this.active = this.card;
-
+		/*this.active = this.card;
+*/
 	}
 
 }
