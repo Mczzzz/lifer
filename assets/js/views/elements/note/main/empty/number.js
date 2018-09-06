@@ -67,7 +67,7 @@ export default class Number extends superViews{
 		
 
 		//on crée un bouton
-		let InitiesTool = this.card.push("Button", this.EmptyElementValue,"mainNewUnitButton","straighten");
+		let InutiesTool = this.card.push("Button", this.EmptyElementValue,"mainNewUnitButton","straighten");
 
 		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton","flex","1.2");
 		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton","marginLeft","15px");
@@ -76,7 +76,7 @@ export default class Number extends superViews{
 		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton","marginRight","0px");
 		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton","color","green");
 
-		//TheSaveButton.getContainer().addEventListener("click",()=>this.saveResource(TheTextElt));
+		InutiesTool.getContainer().addEventListener("click",()=>this.Startselect());
 
 
 
@@ -109,5 +109,42 @@ export default class Number extends superViews{
 		/*this.active = this.card;
 */
 	}
+
+
+	Startselect(){
+
+
+		let Types = this.Lifer.getData("Unity","Types");
+
+
+		this.catSelector = document.createElement("select");
+
+		 let opt = false;
+
+	     for (let item of Types) {
+
+	        opt = document.createElement("option");
+	        opt.value = item.id;
+	        opt.text = item.name;
+
+	        this.catSelector.add(opt, null);
+
+	      }
+
+
+
+		this.catSelector.style.display = "none";
+		this.container.append(this.catSelector);
+		this.catSelector.click();
+	
+		this.catSelector.addEventListener("change", ()=>this.ServImgLoader.importPict(this.camLauncher.files[0]));
+
+
+	}
+
+
+
+
+
 
 }
