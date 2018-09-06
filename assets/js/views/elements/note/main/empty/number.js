@@ -136,6 +136,7 @@ export default class Number extends superViews{
 		//this.catSelector.style.display = "none";
 		this.container.append(this.catSelector);
 		this.catSelector.focus();
+		this.catSelector.click();
 	
 		this.catSelector.addEventListener("change", ()=>this.ServImgLoader.importPict(this.camLauncher.files[0]));
 
