@@ -2,6 +2,8 @@ import superViews from "../../../common/super/views.js";
 
 import Card from "../../../common/ui/card.js";
 
+import Unitslector from "./number/UnitSelector.js";
+
 
 export default class Number extends superViews{
 	
@@ -113,46 +115,7 @@ export default class Number extends superViews{
 
 	Startselect(){
 
-
-		//On crée un popup up
-
-
-		let Types = this.Lifer.getData("Unity","Types");
-
-
-		this.catSelector = document.createElement("select");
-
-
-		 let opt = false;
-
-	     for (let item of Types) {
-
-	        opt = document.createElement("option");
-	        opt.value = item.id;
-	        opt.text = item.name;
-
-	        this.catSelector.add(opt, null);
-
-	      }
-
-
-
-		//this.catSelector.style.display = "none";
-		this.container.append(this.catSelector);
-/*		this.catSelector.focus();
-		this.catSelector.click();	
-	*/
-
-		 var evt = new MouseEvent("mousedown", {
-		    bubbles: true,
-		    cancelable: true,
-		    view: window
-		  });
-
-	    this.catSelector.dispatchEvent(evt);
-
-		this.catSelector.addEventListener("change", ()=>this.ServImgLoader.importPict(this.camLauncher.files[0]));
-
+		let US = new Unitslector("popUpUnitSelecter", this.path);
 
 	}
 
