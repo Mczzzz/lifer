@@ -133,7 +133,7 @@ export default class Number extends superViews{
 
 
 
-		this.catSelector.style.display = "none";
+		//this.catSelector.style.display = "none";
 		this.container.append(this.catSelector);
 		this.catSelector.click();
 	
