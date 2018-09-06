@@ -119,6 +119,7 @@ export default class Number extends superViews{
 
 		this.catSelector = document.createElement("select");
 
+
 		 let opt = false;
 
 	     for (let item of Types) {
@@ -137,6 +138,7 @@ export default class Number extends superViews{
 		this.container.append(this.catSelector);
 		this.catSelector.focus();
 		this.catSelector.click();
+		this.catSelector.dispatchEvent('onMouseDown');
 	
 		this.catSelector.addEventListener("change", ()=>this.ServImgLoader.importPict(this.camLauncher.files[0]));
 
