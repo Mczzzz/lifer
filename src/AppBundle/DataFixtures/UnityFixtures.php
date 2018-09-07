@@ -230,7 +230,7 @@ class UnityFixtures extends Fixture
             array_push($UArray['CUR'], array( "Symbol" => "$"  , "Description" => "Dollar"    ,"Country" => null));
 
           
-        array_push($UTArray, array( "Name" => "Crypto"      , "Posix" => "CRYPTO" ,"Symbol" => "fas fa-bitcoin"));
+        array_push($UTArray, array( "Name" => "Crypto"      , "Posix" => "CRYPTO" ,"Symbol" => "fab fa-bitcoin"));
 
             $UArray['CRYPTO'] = array();
             array_push($UArray['CRYPTO'], array( "Symbol" => "BTC"  , "Description" => "Bitcoin"     ,"Country" => null));
