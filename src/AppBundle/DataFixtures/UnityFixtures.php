@@ -128,7 +128,7 @@ class UnityFixtures extends Fixture
 
 
          
-        array_push($UTArray, array( "Name" => "DataByte"    , "Posix" => "DATA"   ,"Symbol" => "fas fa-linode"));
+        array_push($UTArray, array( "Name" => "DataByte"    , "Posix" => "DATA"   ,"Symbol" => "fab fa-linode"));
 
             $UArray['DATA'] = array();
             array_push($UArray['DATA'], array( "Symbol" => "b"   , "Description" => "bit"          ,"Country" => null));
