@@ -26,7 +26,7 @@ class UnityFixtures extends Fixture
         $UTArray = array();
         $UArray = array();
 
-        array_push($UTArray, array( "Name" => "Températures", "Posix" => "TEMP"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Températures", "Posix" => "TEMP"   ,"Symbol" => "fas thermometer-three-quarters"));
 
             $UArray['TEMP'] = array();
             array_push($UArray['TEMP'], array( "Symbol" => "°C"  , "Description" => "Celsius"    ,"Country" => null));
@@ -37,7 +37,7 @@ class UnityFixtures extends Fixture
             array_push($UArray['TEMP'], array( "Symbol" => "°Ra" , "Description" => "Rankine"    ,"Country" => null));
 
 
-        array_push($UTArray, array( "Name" => "Volume"      , "Posix" => "VOL"    ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Volume"      , "Posix" => "VOL"    ,"Symbol" => "fas cube"));
 
             $UArray['VOL'] = array();
             array_push($UArray['VOL'], array( "Symbol" => "m³"          , "Description" => "mètre cube"         ,"Country" => null));
@@ -60,7 +60,7 @@ class UnityFixtures extends Fixture
             array_push($UArray['VOL'], array( "Symbol" => "pt(US dry)"  , "Description" => "pinte sèche(US)"    ,"Country" => null));
 
 
-        array_push($UTArray, array( "Name" => "Distance"    , "Posix" => "DIST"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Distance"    , "Posix" => "DIST"   ,"Symbol" => "fas ruler"));
 
             $UArray['DIST'] = array();
             array_push($UArray['DIST'], array( "Symbol" => "km"           , "Description" => "kilomètre"      ,"Country" => null));
@@ -75,7 +75,7 @@ class UnityFixtures extends Fixture
             array_push($UArray['DIST'], array( "Symbol" => "mille marin"  , "Description" => "mille marin"    ,"Country" => null));
 
 
-        array_push($UTArray, array( "Name" => "Poids"       , "Posix" => "WEIGHT"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Poids"       , "Posix" => "WEIGHT"   ,"Symbol" => "fas fa-weight-hanging"));
 
             $UArray['WEIGHT'] = array();
             array_push($UArray['WEIGHT'], array( "Symbol" => "t"        , "Description" => "tonne"              ,"Country" => null));
@@ -97,7 +97,7 @@ class UnityFixtures extends Fixture
             array_push($UArray['WEIGHT'], array( "Symbol" => "st(UK)"   , "Description" => "stone"              ,"Country" => null));
 
 
-        array_push($UTArray, array( "Name" => "Superficie"  , "Posix" => "AREA"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Superficie"  , "Posix" => "AREA"   ,"Symbol" => "fas ruler-combined"));
 
             $UArray['AREA'] = array();
             array_push($UArray['AREA'], array( "Symbol" => "km²"              , "Description" => "kilomètre carré"      ,"Country" => null));
@@ -117,7 +117,7 @@ class UnityFixtures extends Fixture
             array_push($UArray['AREA'], array( "Symbol" => "mille nautique²"  , "Description" => "mille nautique carré" ,"Country" => null));
 
             
-        array_push($UTArray, array( "Name" => "Vitesse"     , "Posix" => "SPEED"  ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Vitesse"     , "Posix" => "SPEED"  ,"Symbol" => "fas fighter-jet"));
 
             $UArray['SPEED'] = array();
             array_push($UArray['SPEED'], array( "Symbol" => "km/h"  , "Description" => "kilomètre par heure"       ,"Country" => null));
@@ -128,7 +128,7 @@ class UnityFixtures extends Fixture
 
 
          
-        array_push($UTArray, array( "Name" => "DataByte"    , "Posix" => "DATA"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "DataByte"    , "Posix" => "DATA"   ,"Symbol" => "fas linode"));
 
             $UArray['DATA'] = array();
             array_push($UArray['DATA'], array( "Symbol" => "b"   , "Description" => "bit"          ,"Country" => null));
@@ -144,7 +144,7 @@ class UnityFixtures extends Fixture
 
 
          
-        array_push($UTArray, array( "Name" => "Temps"       , "Posix" => "TIME"    ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Temps"       , "Posix" => "TIME"    ,"Symbol" => "fas stopwatch"));
 
             $UArray['TIME'] = array();
             array_push($UArray['TIME'], array( "Symbol" => "1an-365days"        , "Description" => "année commune"                ,"Country" => null));
@@ -169,7 +169,7 @@ class UnityFixtures extends Fixture
 
 
           
-        array_push($UTArray, array( "Name" => "Fréquence"   , "Posix" => "FREQ"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Fréquence"   , "Posix" => "FREQ"   ,"Symbol" => "material-icons waves"));
 
             $UArray['FREQ'] = array();
             array_push($UArray['FREQ'], array( "Symbol" => "Hz"   , "Description" => "Hertz"        ,"Country" => null));
@@ -192,7 +192,7 @@ class UnityFixtures extends Fixture
 
 
           
-        array_push($UTArray, array( "Name" => "Energie"     , "Posix" => "ENER"   ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Energie"     , "Posix" => "ENER"   ,"Symbol" => "fas burn"));
 
             $UArray['ENER'] = array();
             array_push($UArray['ENER'], array( "Symbol" => "J"     , "Description" => "Joule"                ,"Country" => null));
@@ -223,14 +223,14 @@ class UnityFixtures extends Fixture
 
 
           
-        array_push($UTArray, array( "Name" => "Monnaie"     , "Posix" => "CUR"    ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Monnaie"     , "Posix" => "CUR"    ,"Symbol" => "fas money-bill-alt"));
 
             $UArray['CUR'] = array();
             array_push($UArray['CUR'], array( "Symbol" => "€"  , "Description" => "Euro"    ,"Country" => null));
             array_push($UArray['CUR'], array( "Symbol" => "$"  , "Description" => "Dollar"    ,"Country" => null));
 
           
-        array_push($UTArray, array( "Name" => "Crypto"      , "Posix" => "CRYPTO" ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Crypto"      , "Posix" => "CRYPTO" ,"Symbol" => "fas bitcoin"));
 
             $UArray['CRYPTO'] = array();
             array_push($UArray['CRYPTO'], array( "Symbol" => "BTC"  , "Description" => "Bitcoin"     ,"Country" => null));
