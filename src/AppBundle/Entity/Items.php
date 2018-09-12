@@ -84,12 +84,6 @@ class Items
     private $unit;
 
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="value", type="decimal", precision=13, scale=3, nullable=true)
-     */
-    private $value;
 
 
 
