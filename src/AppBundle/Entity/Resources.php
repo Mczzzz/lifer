@@ -62,13 +62,6 @@ class Resources
     private $path;
 
 
-    /**
-     * @var int
-     *
-     * @ORM\ManyToOne(targetEntity="ResourcesTypes", inversedBy="resources_types")
-     * @ORM\JoinColumn(name="type", referencedColumnName="id")
-     */
-    private $type;
 
     /**
      * @var \DateTime
