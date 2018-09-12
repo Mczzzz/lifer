@@ -30,7 +30,7 @@ class ItemsTypesFixtures extends Fixture
 
         foreach ($RTArray as $value){
 
-            $RT = new ResourcesTypes();
+            $RT = new ItemsTypes();
             $RT->setName($value['Name']);
             $RT->setPicto($value['Picto']);
             $RT->setEnable($value['Enable']);
