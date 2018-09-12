@@ -5,20 +5,20 @@ namespace AppBundle\DataFixtures;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
-use AppBundle\Entity\ResourcesTypes;
+use AppBundle\Entity\ItemsTypes;
 
 class ItemsTypesFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
 
-        $this->ResourcesTypes($manager);
+        $this->ItemsTypes($manager);
 
     }
 
 
 
-    private function ResourcesTypes($manager){
+    private function ItemsTypes($manager){
 
 
             //On initialise les datas de fixtures
