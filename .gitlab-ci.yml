@@ -1,2 +1,2 @@
 job1:
-  script: "/var/www/data/lifer_develop.sh"
+  script: "/var/www/data/deploy-develop.sh"
