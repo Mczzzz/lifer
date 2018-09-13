@@ -40,7 +40,7 @@ export default class HeaderButtons extends superViews{
 
 
 
-			let toto = this.Lifer.getData('Note',"This");
+			let toto = this.Lifer.getData('Note',"This").note.guid;
 			console.log("toto");
 			console.log(toto);
 					let TheTitle = this.card.push("Text", HeaderElement,"HeaderNotetitle", "");
