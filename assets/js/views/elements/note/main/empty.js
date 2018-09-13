@@ -47,8 +47,8 @@ export default class Empty extends superViews{
 
 	show(type){
 
-		
-		this.Lifer.getData('Note/mainNote/noteMaintTitle',"This").getcontainer().style.display = "none";
+		console.log("INNNN SHOWWW EMPTY");		
+		this.Lifer.getData('Note/mainNote/noteMaintTitle/NoteTitleCard',"This").setStyle("display", "none");
 
 
 
