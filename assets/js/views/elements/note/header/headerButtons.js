@@ -38,12 +38,25 @@ export default class HeaderButtons extends superViews{
 					HeaderBackButton.getContainer().addEventListener("click",()=>this.CloseMe());
 
 
-					this.card.push("Button", HeaderElement,"NoteHeaderLogo", "widgets");
+
+					let TheTitle = this.card.push("Text", HeaderElement,"HeaderNotetitle", this.data.name);
+
+					this.card.setAttributeComponent(HeaderElement,"HeaderNotetitle","placeholder","Titre...");
+
+					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","fontSize","12px");
+					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","color","black","property");
+					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","margin","0px 5px 5px 5px");
+					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","fontWeight","bold");
+					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","width","100%");
+
+
+
+				/*	this.card.push("Button", HeaderElement,"NoteHeaderLogo", "widgets");
 
 					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderLogo","fontSize","25px");
 					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderLogo","marginRight","0px");
 					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderLogo","color","green");
-					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderLogo","alignItems","center");
+					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderLogo","alignItems","center");*/
 
 
 

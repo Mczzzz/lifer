@@ -41,26 +41,9 @@ class Resources
     /**
      * @var string
      *
-     * @ORM\Column(name="text", type="text", nullable=true)
+     * @ORM\Column(name="title", type="text", nullable=true)
      */
-    private $text;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="value", type="decimal", precision=13, scale=3, nullable=true)
-     */
-    private $value;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="path", type="text", nullable=true)
-     */
-    private $path;
-
+    private $title;
 
 
     /**
@@ -113,113 +96,6 @@ class Resources
     }
 
     /**
-     * @return int
-     */
-    public function getNote()
-    {
-        return $this->note;
-    }
-
-    /**
-     * @param int $note
-     *
-     * @return self
-     */
-    public function setNote($note)
-    {
-        $this->note = $note;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->text;
-    }
-
-    /**
-     * @param string $text
-     *
-     * @return self
-     */
-    public function setText($text)
-    {
-        $this->text = $text;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
-
-    /**
-     * @param string $value
-     *
-     * @return self
-     */
-    public function setValue($value)
-    {
-        $this->value = $value;
-
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
-    public function getPath()
-    {
-        return $this->path;
-    }
-
-    /**
-     * @param string $path
-     *
-     * @return self
-     */
-    public function setPath($path)
-    {
-        $this->path = $path;
-
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
-
-    /**
-     * @param int $type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-
-
-
-
-
-
-
-    /**
      * @return string
      */
     public function getTmpId()
@@ -242,19 +118,39 @@ class Resources
     /**
      * @return int
      */
-    public function getCreator()
+    public function getNote()
     {
-        return $this->creator;
+        return $this->note;
     }
 
     /**
-     * @param int $creator
+     * @param int $note
      *
      * @return self
      */
-    public function setCreator($creator)
+    public function setNote($note)
     {
-        $this->creator = $creator;
+        $this->note = $note;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     *
+     * @return self
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
 
         return $this;
     }
@@ -295,6 +191,26 @@ class Resources
     public function setUpdateAPP( $updateAPP)
     {
         $this->updateAPP = $updateAPP;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCreator()
+    {
+        return $this->creator;
+    }
+
+    /**
+     * @param int $creator
+     *
+     * @return self
+     */
+    public function setCreator($creator)
+    {
+        $this->creator = $creator;
 
         return $this;
     }
