@@ -47,6 +47,11 @@ export default class Empty extends superViews{
 
 	show(type){
 
+		
+		this.Lifer.getData('Note/mainNote/noteMaintTitle',"This").getcontainer().style.display = "none";
+
+
+
 		if(this.active != false){
 
 			this.active.getContainer().remove();
