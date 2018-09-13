@@ -35,7 +35,7 @@ export default class Main extends superViews{
 
 	initChilds(){
 
-		let GUIDNote = this.Lifer.getData("Note/","This").note.guid;
+		let GUIDNote = this.parent.note.guid;
 		console.log("GUIDNote");
 		console.log(GUIDNote);
 
