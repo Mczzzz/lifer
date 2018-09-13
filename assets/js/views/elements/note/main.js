@@ -35,11 +35,14 @@ export default class Main extends superViews{
 
 	initChilds(){
 
-		let GUIDNote = this.parentThis.note.guid;
-		console.log("GUIDNote");
-		console.log(GUIDNote);
 
-		this.Title     = new Title("noteMainTitle",this.path);
+		if(this.parentThis.note.guid == false){
+
+			this.Title     = new Title("noteMainTitle",this.path);
+		
+		}
+
+			
 
 		this.Resources = new Resources("noteMainResources",this.path);
 
