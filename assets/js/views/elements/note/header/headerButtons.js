@@ -42,15 +42,7 @@ export default class HeaderButtons extends superViews{
 
 				if(this.Lifer.getData('Note',"This").note.guid != false){
 
-					let TheTitle = this.card.push("Text", HeaderElement,"HeaderNotetitle", "");
-
-					this.card.setAttributeComponent(HeaderElement,"HeaderNotetitle","placeholder","Titre...");
-
-					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","fontSize","12px");
-					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","color","grey","all");
-					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","margin","0px 5px 5px 5px");
-					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","fontWeight","bold");
-					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","width","100%");
+					this.showTitle();
 
 
 				}
@@ -68,6 +60,28 @@ export default class HeaderButtons extends superViews{
 
 
 	}
+
+
+
+	showTitle(){
+
+
+		let TheTitle = this.card.push("Text", HeaderElement,"HeaderNotetitle", "");
+
+		this.card.setAttributeComponent(HeaderElement,"HeaderNotetitle","placeholder","Titre...");
+
+		this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","fontSize","12px");
+		this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","color","grey","all");
+		this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","margin","0px 5px 5px 5px");
+		this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","fontWeight","bold");
+		this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","width","100%");
+
+
+	}
+
+
+
+
 
 
 
