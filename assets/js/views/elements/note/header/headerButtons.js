@@ -44,7 +44,7 @@ export default class HeaderButtons extends superViews{
 					this.card.setAttributeComponent(HeaderElement,"HeaderNotetitle","placeholder","Titre...");
 
 					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","fontSize","12px");
-					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","color","black","property");
+					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","color","grey","all");
 					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","margin","0px 5px 5px 5px");
 					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","fontWeight","bold");
 					this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","width","100%");
