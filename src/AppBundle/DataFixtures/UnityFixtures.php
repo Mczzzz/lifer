@@ -210,7 +210,7 @@ class UnityFixtures extends Fixture
 
 
           
-        array_push($UTArray, array( "Name" => "Angles"      , "Posix" => "ANG"    ,"Symbol" => null));
+        array_push($UTArray, array( "Name" => "Angles"      , "Posix" => "ANG"    ,"Symbol" => "material-icons signal_wifi_4_bar"));
 
             $UArray['ANG'] = array();
             array_push($UArray['ANG'], array( "Symbol" => "°"              , "Description" => "Degré"           ,"Country" => null));

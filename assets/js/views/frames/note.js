@@ -40,10 +40,10 @@ export default class Note extends superViews{
 
 
 		this.setStyle("position" , "absolute");
-		this.setStyle("top" , "0.5%");
-		this.setStyle("left" , "0.5%");
-		this.setStyle("height" , "99%");
-		this.setStyle("width" , "99%");
+		this.setStyle("top" , "0px");
+		this.setStyle("left" , "0px");
+		this.setStyle("height" , "100%");
+		this.setStyle("width" , "100%");
 		this.setStyle("display" , "flex");
 		this.setStyle("flexDirection" , "column");
 		this.setStyle("background" , "white");
