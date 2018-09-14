@@ -71,7 +71,7 @@ export default class Empty extends superViews{
     	console.log("TitleCard.getContainerRect('height')");
     	console.log(TitleCard.getContainerRect("height"));
     	TitleCard.setStyle("height", TitleCard.getContainerRect("height")+"px");
-    	TitleCard.setStyle("height", "0px");
+    	//TitleCard.setStyle("height", "0px");
 
 
 
