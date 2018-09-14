@@ -54,7 +54,7 @@ export default class Empty extends superViews{
     	let TitleCard = this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This");
     	TitleCard.setStyle("height", TitleCard.getContainerRect("height")+"px");
     	console.log("top");
-    	console.log(TitleCard.getContainerRect("top"));
+    	let top = TitleCard.getContainerRect("top");
 
     	
     	
@@ -66,8 +66,8 @@ export default class Empty extends superViews{
 
 
 		TitleCard.setStyle("position","absolute");
-		TitleCard.setStyle("width", "90%");
-		TitleCard.setStyle("top", TitleCard.getContainerRect("top")+"px");
+		TitleCard.setStyle("width", "100px");
+		TitleCard.setStyle("top", top+"px");
 
     	//TitleCard.setStyle("top","0px");
 
