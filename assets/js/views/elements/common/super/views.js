@@ -80,10 +80,15 @@ Moment.locale('fr');
 	//property : x, y , width, height, top, left, bottom, right ...
 	getContainerRect(property){
 
-/*		let boxShadow = this.container.style.boxShadow;
-		let padding = this.container.style.padding;
-		let margin = this.container.style.margin;
-		let border = this.container.style.border;*/
+		if(property == "height"){
+			
+			let boxShadow = this.container.style.boxShadow;
+			let padding = this.container.style.padding;
+			let margin = this.container.style.margin;
+			let border = this.container.style.border;
+
+		}
+
 		
 		let transDur = this.container.style.transitionDuration;
    		let transDel = this.container.style.transitionDelay;
@@ -96,19 +101,22 @@ Moment.locale('fr');
     	this.container.style.transitionTimingFunction = null;
     	this.container.style.transitionProperty = null;
 
-/*		this.container.style.boxShadow = null;
-		this.container.style.padding = null;
-		this.container.style.margin = null;
-		this.container.style.border = null;					
-*/
+		if(property == "height"){
+			this.container.style.boxShadow = null;
+			this.container.style.padding = null;
+			this.container.style.margin = null;
+			this.container.style.border = null;			
+		}		
+
 
 		let toReturn = this.container.getBoundingClientRect()[property];
 
-/*        this.container.style.boxShadow = boxShadow;
-		this.container.style.padding = padding;
-		this.container.style.margin = margin;
-		this.container.style.border = border;*/
-
+		if(property == "height"){
+        	this.container.style.boxShadow = boxShadow;
+			this.container.style.padding = padding;
+			this.container.style.margin = margin;
+			this.container.style.border = border;
+		}
 		return toReturn;
 
 	}
