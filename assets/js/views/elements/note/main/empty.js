@@ -70,8 +70,8 @@ export default class Empty extends superViews{
     	//TitleCard.setStyle("transitionProperty", "width height background-color font-size left top color");
     	/* property name | duration | timing function | delay */
     	TitleCard.setStyle("transition", `top 0.3s ease-in-out 1s
-    		                           , left 0.3s ease-in-out 0s
-    		                           , height 0.3s ease-in-out 0s
+    		                           , left 0.3s ease-in-out 1s
+    		                           , height 0.3s ease-in-out 1s
     		                           `
     		                           );
 		//transition: margin-right 4s ease-in-out 1s;
