@@ -69,7 +69,7 @@ export default class Empty extends superViews{
     	//TitleCard.setStyle("transitionProperty", "width height background-color font-size left top color");
 
 
-		TitleCard.setStyle("top", "0px");
+		//TitleCard.setStyle("top", "0px");
 
     	//TitleCard.setStyle("top","0px");
 
