@@ -72,7 +72,7 @@ export default class Empty extends superViews{
 		//transition: margin-right 4s ease-in-out 1s;
 
 
-		//TitleCard.setStyle("top", "0px");
+		TitleCard.setStyle("top", "0px");
 
     	//TitleCard.setStyle("top","0px"); 
 
