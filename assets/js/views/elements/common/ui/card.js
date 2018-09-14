@@ -124,9 +124,6 @@ export default class card extends superViews{
 
            this[classSuffixe] = this[element].add(type, classSuffixe, data,prepend,callback);
 
-           console.log(this.getContainerRect("height"));
-          //this.setStyle("height", this.getContainerRect("height")+"px");
-
            return this[classSuffixe];
      
      }
