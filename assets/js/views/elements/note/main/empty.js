@@ -60,7 +60,7 @@ export default class Empty extends superViews{
     	
     	console.log("on passe sur la reactivation de l'animation");
 		TitleCard.setStyle("transitionDuration", "0.5s");
-    	TitleCard.setStyle("transitionDelay", "0.0s");
+    	TitleCard.setStyle("transitionDelay", "0.5s");
     	TitleCard.setStyle("transitionTimingFunction", "cubic-bezier(0.15, -0.35, 0.98, 1.27)");
     	//TitleCard.setStyle("transitionProperty", "width height background-color font-size left top color");
 
