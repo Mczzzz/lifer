@@ -102,8 +102,6 @@ export default class Title extends superViews{
 
 
 
-		this.card.setStyle("height", this.card.getContainerRect().height+"px");
-
 
 		if(this.TheNote.note.guid === false){
 		//	TheTitle.getContainer().focus();
