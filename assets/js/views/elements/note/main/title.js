@@ -60,7 +60,7 @@ export default class Title extends superViews{
 		this.card.setStyle("borderRadius", "0px");
 		this.card.setStyle("margin", "0px");
 		this.card.setStyle("padding", "10px");
-		this.card.setStyle("boxShadow", "0px 2px 12px #BBB");
+		//this.card.setStyle("boxShadow", "0px 2px 12px #BBB");
 		this.card.setStyle("background", "white");
 		this.card.setStyle("flex", "1");
 
