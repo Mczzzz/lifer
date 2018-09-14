@@ -85,10 +85,10 @@ Moment.locale('fr');
 		let margin = this.container.style.margin;
 		let border = this.container.style.border;
 		
-		this.container.style.boxShadow = "";
-		this.container.style.padding = "";
-		this.container.style.margin = "";
-		this.container.style.border = "";					
+		this.container.style.boxShadow = null;
+		this.container.style.padding = "0px";
+		this.container.style.margin = "0px";
+		this.container.style.border = "0px";					
 
 
 		let toReturn = this.container.getBoundingClientRect()[property];
