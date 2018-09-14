@@ -101,7 +101,8 @@ export default class Title extends superViews{
 					TheTitle.getContainer().addEventListener("keyup", (e)=>this.changeFocus(e,TheTitle.getContainer()));
 
 
-		this.card.setStyle("height", this.card.getContainer().getBoundingClientRect().height + "px");
+	    console.log("containerRect");
+		console.log(this.card.getContainerRect(height));
 
 		if(this.TheNote.note.guid === false){
 		//	TheTitle.getContainer().focus();

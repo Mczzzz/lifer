@@ -77,6 +77,22 @@ Moment.locale('fr');
 	}
 
 
+	//property : x, y , width, height, top, left, bottom, right ...
+	getContainerRect(property){
+
+		let escaper = this.container.style.boxShadow;
+
+		this.container.style.boxShadow = "";		
+
+		let toReturn = this.container.getBoundingClientRect()[property];
+
+		this.container.style.boxShadow = escaper;
+
+		return toReturn;
+
+	}
+
+
 	setStyle(property,value,scope = "all"){
 
 		if(scope == "property" || scope == "all") this[property] = value;
