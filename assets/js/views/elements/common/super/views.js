@@ -88,10 +88,13 @@ Moment.locale('fr');
 		let transDur = this.container.style.transitionDuration;
    		let transDel = this.container.style.transitionDelay;
     	let transTim = this.container.style.transitionTimingFunction;
+    	let transProp = this.container.style.transitionProperty;
 
+    	console.log("on annule toutes les transitions");
 		this.container.style.transitionDuration = null;
    		this.container.style.transitionDelay = null;
     	this.container.style.transitionTimingFunction = null;
+    	this.container.style.transitionProperty = null;
 
 		this.container.style.boxShadow = null;
 		this.container.style.padding = null;

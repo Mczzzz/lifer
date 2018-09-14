@@ -55,15 +55,17 @@ export default class Empty extends superViews{
     	TitleCard.setStyle("height", TitleCard.getContainerRect("height")+"px");
     	console.log("top");
     	console.log(TitleCard.getContainerRect("top"));
-    	
 
+    	TitleCard.setStyle("position","absolute");
+    	TitleCard.setStyle("top", TitleCard.getContainerRect("top")+"px");
+    	
+    	console.log("on passe sur la reactivation de l'animation");
 		TitleCard.setStyle("transitionDuration", "0.5s");
     	TitleCard.setStyle("transitionDelay", "0.0s");
     	TitleCard.setStyle("transitionTimingFunction", "cubic-bezier(0.15, -0.35, 0.98, 1.27)");
     	TitleCard.setStyle("transitionProperty", "width height background-color font-size left top color");
 
-    	TitleCard.setStyle("position","absolute");
-    	TitleCard.setStyle("top", TitleCard.getContainerRect("top")+"px");
+
     	TitleCard.setStyle("top","0px");
 
 
