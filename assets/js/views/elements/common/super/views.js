@@ -101,14 +101,15 @@ Moment.locale('fr');
 
 		let toReturn = this.container.getBoundingClientRect()[property];
 
-/*		this.container.style.boxShadow = boxShadow;
+        this.container.style.boxShadow = boxShadow;
 		this.container.style.padding = padding;
 		this.container.style.margin = margin;
 		this.container.style.border = border;
 
+		this.container.style.transitionDuration = transDur;
+   		this.container.style.transitionDelay = transDel;
+    	this.container.style.transitionTimingFunction = transTim;
 
-
-		*/
 
 		return toReturn;
 
