@@ -56,7 +56,11 @@ export default class Empty extends superViews{
     	console.log("top");
     	let top = TitleCard.getContainerRect("top");
 
-    	
+    	TitleCard.setStyle("position","absolute");
+		TitleCard.setStyle("width", "100%");
+		TitleCard.setStyle("top", top+"px");
+		TitleCard.setStyle("top", "0px");
+
     	
     	console.log("on passe sur la reactivation de l'animation");
 		TitleCard.setStyle("transitionDuration", "0.5s");
@@ -65,10 +69,6 @@ export default class Empty extends superViews{
     	//TitleCard.setStyle("transitionProperty", "width height background-color font-size left top color");
 
 
-		TitleCard.setStyle("position","absolute");
-		TitleCard.setStyle("width", "100%");
-		TitleCard.setStyle("top", top+"px");
-		TitleCard.setStyle("top", "0px");
 
     	//TitleCard.setStyle("top","0px");
 
