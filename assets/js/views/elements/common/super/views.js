@@ -85,6 +85,14 @@ Moment.locale('fr');
 		let margin = this.container.style.margin;
 		let border = this.container.style.border;
 		
+		let transDur = this.container.style.transitionDuration;
+   		let transDel = this.container.style.transitionDelay;
+    	let transTim = this.container.style.transitionTimingFunction;
+
+		this.container.style.transitionDuration = null;
+   		this.container.style.transitionDelay = null;
+    	this.container.style.transitionTimingFunction = null;
+
 		this.container.style.boxShadow = null;
 		this.container.style.padding = null;
 		this.container.style.margin = null;
@@ -96,7 +104,11 @@ Moment.locale('fr');
 /*		this.container.style.boxShadow = boxShadow;
 		this.container.style.padding = padding;
 		this.container.style.margin = margin;
-		this.container.style.border = border;*/
+		this.container.style.border = border;
+
+
+
+		*/
 
 		return toReturn;
 
