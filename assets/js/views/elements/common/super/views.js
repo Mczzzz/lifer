@@ -81,17 +81,22 @@ Moment.locale('fr');
 	getContainerRect(property){
 
 		let boxShadow = this.container.style.boxShadow;
-		this.container.style.boxShadow = "";
 		let padding = this.container.style.padding;
-		this.container.style.padding = "";
 		let margin = this.container.style.margin;
-		this.container.style.margin = "";				
+		let border = this.container.style.border;
+		
+		this.container.style.boxShadow = "";
+		this.container.style.padding = "";
+		this.container.style.margin = "";
+		this.container.style.border = "";					
+
 
 		let toReturn = this.container.getBoundingClientRect()[property];
 
 		this.container.style.boxShadow = boxShadow;
 		this.container.style.padding = padding;
 		this.container.style.margin = margin;
+		this.container.style.border = border;
 
 		return toReturn;
 
