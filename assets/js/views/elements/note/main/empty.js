@@ -55,7 +55,7 @@ export default class Empty extends superViews{
     	TitleCard.setStyle("height", TitleCard.getContainerRect("height")+"px");
     	console.log("top");
     	console.log(TitleCard.getContainerRect("top"));
-    	TitleCard.setStyle("top", TitleCard.getContainerRect("top")+"px");
+    	
 
 		TitleCard.setStyle("transitionDuration", "0.5s");
     	TitleCard.setStyle("transitionDelay", "0.0s");
@@ -63,8 +63,9 @@ export default class Empty extends superViews{
     	TitleCard.setStyle("transitionProperty", "width height background-color font-size left top color");
 
     	TitleCard.setStyle("position","absolute");
+    	TitleCard.setStyle("top", TitleCard.getContainerRect("top")+"px");
     	TitleCard.setStyle("top","0px");
-    	TitleCard.setStyle("left","0px");
+
 
 
 
