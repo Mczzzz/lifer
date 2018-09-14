@@ -82,9 +82,9 @@ Moment.locale('fr');
 
 		let boxShadow = this.container.style.boxShadow;
 		this.container.style.boxShadow = "";
-		let padding = this.container.style.padding
+		let padding = this.container.style.padding;
 		this.container.style.padding = "";
-		let margin = this.container.style.margin
+		let margin = this.container.style.margin;
 		this.container.style.margin = "";				
 
 		let toReturn = this.container.getBoundingClientRect()[property];
