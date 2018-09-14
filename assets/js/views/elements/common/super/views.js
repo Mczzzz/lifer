@@ -86,9 +86,9 @@ Moment.locale('fr');
 		let border = this.container.style.border;
 		
 		this.container.style.boxShadow = null;
-		this.container.style.padding = "0px";
-		this.container.style.margin = "0px";
-		this.container.style.border = "0px";					
+		this.container.style.padding = null;
+		this.container.style.margin = null;
+		this.container.style.border = null;					
 
 
 		let toReturn = this.container.getBoundingClientRect()[property];
