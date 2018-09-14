@@ -50,15 +50,18 @@ export default class Empty extends superViews{
 		console.log("INNNN SHOWWW EMPTY");		
 
 
-
+		//on fige la taille pour les transitions
     	let TitleCard = this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This");
-
     	TitleCard.setStyle("height", TitleCard.getContainerRect("height")+"px");
 
-    	
-    	//TitleCard.setStyle("height", "0px");
+		TitleCard.setStyle("transitionDuration", "0.5s");
+    	TitleCard.setStyle("transitionDelay", "0.0s");
+    	TitleCard.setStyle("transitionTimingFunction", "cubic-bezier(0.15, -0.35, 0.98, 1.27)");
+    	TitleCard.setStyle("transitionProperty", "width height background-color font-size left top color");
 
-
+    	TitleCard.setStyle("position","absolute");
+    	TitleCard.setStyle("top","0px");
+    	TitleCard.setStyle("left","0px");
 
 
 
