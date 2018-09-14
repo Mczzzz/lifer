@@ -102,7 +102,7 @@ export default class Title extends superViews{
 
 
 
-		this.card.setStyle("height", this.getContainerRect().height+"px");
+		this.card.setStyle("height", this.card.getContainerRect().height+"px");
 
 
 		if(this.TheNote.note.guid === false){
