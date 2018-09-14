@@ -106,21 +106,10 @@ Moment.locale('fr');
 		this.container.style.margin = margin;
 		this.container.style.border = border;
 
-		this.reviveTransition(transDur,transDel,transTim);
-
-
 		return toReturn;
 
 	}
 
-
-	reviveTransition(transDur,transDel,transTim){
-
-		this.container.style.transitionDuration = transDur;
-   		this.container.style.transitionDelay = transDel;
-    	this.container.style.transitionTimingFunction = transTim;
-
-	}
 
 
 	setStyle(property,value,scope = "all"){

@@ -50,27 +50,12 @@ export default class Empty extends superViews{
 		console.log("INNNN SHOWWW EMPTY");		
 
 
-/*  width: 50px;
-    height: 50px;
-    background-color: blue;
-    color: yellow;
-    font-size: 18px;
-    left: 150px;
-    top:25px;
-    position: absolute;
-     -webkit-transition-property: width height background-color font-size left top color;
-    -webkit-transition-duration: 2s;
-    -webkit-transition-delay: 0.5s;
-    -webkit-transition-timing-function: linear;
-    transition-property: width height background-color font-size left top color;
-    transition-duration: 2s;
-    transition-delay: 0.5s;
-    transition-timing-function: linear;*/
 
     	let TitleCard = this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This");
-    	console.log("TitleCard.getContainerRect('height')");
-    	console.log(TitleCard.getContainerRect("height"));
+
     	TitleCard.setStyle("height", TitleCard.getContainerRect("height")+"px");
+
+    	
     	//TitleCard.setStyle("height", "0px");
 
 
