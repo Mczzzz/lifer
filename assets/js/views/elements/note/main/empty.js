@@ -67,12 +67,8 @@ export default class Empty extends superViews{
     transition-delay: 0.5s;
     transition-timing-function: linear;*/
 
-    	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("transitionDuration", "2s");
-    	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("transitionDelay", "0.5s");
-    	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("transitionTimingFunction", "linear");
-    	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("transitionProperty", "height");
+
     	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("height", "0%");
-    	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("width", "0%");
     	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("height", "100px");
 
 

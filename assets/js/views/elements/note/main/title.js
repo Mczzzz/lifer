@@ -18,6 +18,13 @@ export default class Title extends superViews{
 	init(){
 
 
+    	this.setStyle("transitionDuration", "2s");
+    	this.setStyle("transitionDelay", "0.5s");
+    	this.setStyle("transitionTimingFunction", "linear");
+    	this.setStyle("transitionProperty", "height");
+
+
+
 
 
 		this.TheNote = this.getObjectThisfromPath("Note");
