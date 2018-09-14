@@ -48,7 +48,37 @@ export default class Empty extends superViews{
 	show(type){
 
 		console.log("INNNN SHOWWW EMPTY");		
-		this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("display", "none");
+
+
+/*  width: 50px;
+    height: 50px;
+    background-color: blue;
+    color: yellow;
+    font-size: 18px;
+    left: 150px;
+    top:25px;
+    position: absolute;
+     -webkit-transition-property: width height background-color font-size left top color;
+    -webkit-transition-duration: 2s;
+    -webkit-transition-delay: 0.5s;
+    -webkit-transition-timing-function: linear;
+    transition-property: width height background-color font-size left top color;
+    transition-duration: 2s;
+    transition-delay: 0.5s;
+    transition-timing-function: linear;*/
+
+    	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("transitionDuration", "2s");
+    	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("transitionDelay", "0.5s");
+    	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("transitionTimingFunction", "linear");
+    	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("transitionProperty", "with");
+    	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("width", "10%");
+
+
+		//this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("display", "none");
+
+
+
+
 
 
 
