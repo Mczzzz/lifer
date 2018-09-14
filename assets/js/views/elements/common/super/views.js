@@ -91,7 +91,7 @@ Moment.locale('fr');
 
 		this.container.style.boxShadow = boxShadow;
 		this.container.style.padding = padding;
-		this.container.style.padding = margin;
+		this.container.style.margin = margin;
 
 		return toReturn;
 
