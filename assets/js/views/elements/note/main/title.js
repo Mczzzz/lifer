@@ -103,6 +103,13 @@ export default class Title extends superViews{
 
 	    console.log("containerRect");
 		console.log(this.card.getContainerRect("height"));
+		console.log(this.card.getContainerRect("width"));
+		console.log(this.card.getContainerRect("x"));
+		console.log(this.card.getContainerRect("y"));
+		console.log(this.card.getContainerRect("top"));
+		console.log(this.card.getContainerRect("left"));
+		console.log(this.card.getContainerRect("right"));
+		console.log(this.card.getContainerRect("bottom"));
 
 		if(this.TheNote.note.guid === false){
 		//	TheTitle.getContainer().focus();
