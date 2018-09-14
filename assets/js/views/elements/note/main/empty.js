@@ -77,7 +77,7 @@ export default class Empty extends superViews{
 	   setTimeout(function() {
 	        TitleCard.setStyle("top", "0px");
 	        TitleCard.setStyle("left", "100px");
-	    }, 300);
+	    }, 17);
 		
     	//TitleCard.setStyle("top","0px"); 
 
