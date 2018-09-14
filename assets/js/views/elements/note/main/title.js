@@ -18,14 +18,6 @@ export default class Title extends superViews{
 	init(){
 
 
-    	this.setStyle("transitionDuration", "2s");
-    	this.setStyle("transitionDelay", "0.5s");
-    	this.setStyle("transitionTimingFunction", "linear");
-    	this.setStyle("transitionProperty", "height");
-
-
-
-
 
 		this.TheNote = this.getObjectThisfromPath("Note");
 		
@@ -71,6 +63,12 @@ export default class Title extends superViews{
 		this.card.setStyle("boxShadow", "0px 2px 12px #BBB");
 		this.card.setStyle("background", "white");
 		this.card.setStyle("flex", "1");
+
+		this.card.setStyle("transitionDuration", "2s");
+    	this.card.setStyle("transitionDelay", "0.5s");
+    	this.card.setStyle("transitionTimingFunction", "linear");
+    	this.card.setStyle("transitionProperty", "height");
+
 
 
 
