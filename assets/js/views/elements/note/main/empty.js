@@ -68,14 +68,15 @@ export default class Empty extends superViews{
     	//TitleCard.setStyle("transitionTimingFunction", "cubic-bezier(0.15, -0.35, 0.98, 1.27)");
     	//TitleCard.setStyle("transitionProperty", "width height background-color font-size left top color");
     	/* property name | duration | timing function | delay */
-    	TitleCard.setStyle("transition", "top 0.5s ease-in-out 1s");
+    	TitleCard.setStyle("transition", "top,left 0.5s ease-in-out 0.1s");
 		//transition: margin-right 4s ease-in-out 1s;
 
 
-		TitleCard.setStyle("top", "0px");
+		
 
 	   setTimeout(function() {
-	        TitleCard.setStyle("top", "100px");
+	        TitleCard.setStyle("top", "0px");
+	        TitleCard.setStyle("left", "100px");
 	    }, 17);
 		
     	//TitleCard.setStyle("top","0px"); 
