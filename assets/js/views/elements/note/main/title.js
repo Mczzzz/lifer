@@ -101,6 +101,8 @@ export default class Title extends superViews{
 					TheTitle.getContainer().addEventListener("keyup", (e)=>this.changeFocus(e,TheTitle.getContainer()));
 
 
+		
+
 
 		if(this.TheNote.note.guid === false){
 		//	TheTitle.getContainer().focus();
