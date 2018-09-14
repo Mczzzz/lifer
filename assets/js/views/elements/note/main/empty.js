@@ -58,7 +58,7 @@ export default class Empty extends superViews{
 
     	TitleCard.setStyle("position","absolute");
 		TitleCard.setStyle("width", "100%");
-		TitleCard.setStyle("top", -20+top+"px");
+		TitleCard.setStyle("top", top+"px");
 		TitleCard.setStyle("left", "0px");
 		
 
@@ -69,7 +69,7 @@ export default class Empty extends superViews{
     	//TitleCard.setStyle("transitionTimingFunction", "cubic-bezier(0.15, -0.35, 0.98, 1.27)");
     	//TitleCard.setStyle("transitionProperty", "width height background-color font-size left top color");
     	/* property name | duration | timing function | delay */
-    	TitleCard.setStyle("transition", `top 0.3s ease-in-out 0s
+    	TitleCard.setStyle("transition", `top 0.3s ease-in-out 1s
     		                           , left 0.3s ease-in-out 0s
     		                           , height 0.3s ease-in-out 0s
     		                           `
