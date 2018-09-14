@@ -60,14 +60,14 @@ export default class Title extends superViews{
 		this.card.setStyle("borderRadius", "0px");
 		this.card.setStyle("margin", "0px");
 		this.card.setStyle("padding", "10px");
-		//this.card.setStyle("boxShadow", "0px 2px 12px #BBB");
+		this.card.setStyle("boxShadow", "0px 2px 12px #BBB");
 		this.card.setStyle("background", "white");
 		this.card.setStyle("flex", "1");
 
 		this.card.setStyle("transitionDuration", "0.5s");
     	this.card.setStyle("transitionDelay", "0.0s");
     	this.card.setStyle("transitionTimingFunction", "cubic-bezier(0.15, -0.35, 0.98, 1.27)");
-    	this.card.setStyle("transitionProperty", "height");
+    	this.card.setStyle("transitionProperty", "width height background-color font-size left top color");
 
 
 
@@ -101,15 +101,6 @@ export default class Title extends superViews{
 					TheTitle.getContainer().addEventListener("keyup", (e)=>this.changeFocus(e,TheTitle.getContainer()));
 
 
-	    console.log("containerRect");
-		console.log(this.card.getContainerRect("height"));
-		console.log(this.card.getContainerRect("width"));
-		console.log(this.card.getContainerRect("x"));
-		console.log(this.card.getContainerRect("y"));
-		console.log(this.card.getContainerRect("top"));
-		console.log(this.card.getContainerRect("left"));
-		console.log(this.card.getContainerRect("right"));
-		console.log(this.card.getContainerRect("bottom"));
 
 		if(this.TheNote.note.guid === false){
 		//	TheTitle.getContainer().focus();

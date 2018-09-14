@@ -83,13 +83,16 @@ Moment.locale('fr');
 		let boxShadow = this.container.style.boxShadow;
 		this.container.style.boxShadow = "";
 		let padding = this.container.style.padding
-		this.container.style.padding = "";		
+		this.container.style.padding = "";
+		let margin = this.container.style.margin
+		this.container.style.margin = "";				
 
 		let toReturn = this.container.getBoundingClientRect()[property];
 
 		this.container.style.boxShadow = boxShadow;
 		this.container.style.padding = padding;
-		
+		this.container.style.padding = margin;
+
 		return toReturn;
 
 	}

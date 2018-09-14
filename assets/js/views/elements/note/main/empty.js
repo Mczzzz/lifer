@@ -70,7 +70,7 @@ export default class Empty extends superViews{
 
     	//this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("height", "0%");
     	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("height", "0px");
-    	this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("display", "none");
+    	//this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("display", "none");
 
 		//this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This").setStyle("display", "none");
 
