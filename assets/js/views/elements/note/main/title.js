@@ -66,7 +66,7 @@ export default class Title extends superViews{
 
 		this.card.setStyle("transitionDuration", "2s");
     	this.card.setStyle("transitionDelay", "0.5s");
-    	this.card.setStyle("transitionTimingFunction", "linear");
+    	this.card.setStyle("transitionTimingFunction", "cubic-bezier(0.15, -0.35, 0.98, 1.27)");
     	this.card.setStyle("transitionProperty", "height");
 
 
