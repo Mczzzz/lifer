@@ -88,6 +88,11 @@ export default class Empty extends superViews{
 	        TitleCard.setStyle("opacity", "0.2");
 	    }, 5);
 		
+	   TitleCard.getContainer().animate([ { opacity: 1, easing: 'ease-out' },
+                  { opacity: 0.1, easing: 'ease-in' },
+                  { opacity: 0 } ],
+                2000);
+
     	//TitleCard.setStyle("top","0px"); 
 
 
