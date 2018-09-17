@@ -1,5 +1,7 @@
 import superViews from "../../common/super/views.js";
 
+import Ressource from "../../common/ui/ressource.js";
+
 import Text   from "./empty/text.js";
 import Number from "./empty/number.js";
 
@@ -7,7 +9,7 @@ import Number from "./empty/number.js";
 export default class Empty extends superViews{
 	
 
-	constructor( MyClass , path){
+	constructor( MyClass , path, ressource = false){
 
 		super( MyClass , path);
 
@@ -18,7 +20,8 @@ export default class Empty extends superViews{
 
 	init(){
 
-		this.active = false;
+		//this.active = false;
+		this.Ressource = new Ressource('EmptyResource' , this.path);
 
 	}
 
