@@ -58,7 +58,6 @@ export default class Empty extends superViews{
 
     	TitleCard.setStyle("position","absolute");
 		TitleCard.setStyle("width", "100%");
-		TitleCard.setStyle("top", top+"px");
 		TitleCard.setStyle("left", "0px");
 		TitleCard.setStyle("opacity", "1");
 		
