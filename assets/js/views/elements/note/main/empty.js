@@ -47,8 +47,6 @@ export default class Empty extends superViews{
 
 	show(type){
 
-		console.log("INNNN SHOWWW EMPTY");		
-
 
 		//on fige la taille pour les transitions
     	let TitleCard = this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This");
@@ -58,34 +56,7 @@ export default class Empty extends superViews{
 
     	TitleCard.setStyle("position","absolute");
 	
-
     	
-    	console.log("on passe sur la reactivation de l'animation");
-		//TitleCard.setStyle("transitionDuration", "0.5s");
-    	//TitleCard.setStyle("transitionDelay", "0.5s");
-    	//TitleCard.setStyle("transitionTimingFunction", "cubic-bezier(0.15, -0.35, 0.98, 1.27)");
-    	//TitleCard.setStyle("transitionProperty", "width height background-color font-size left top color");
-    	/* property name | duration | timing function | delay */
-/*    	TitleCard.setStyle("transition", `top 0.3s ease-in-out 0s
-    		                           , left 0.3s ease-in-out 0s
-    		                           , height 0.3s ease-in-out 0s
-    		                           , opacity 0.3s ease-in-out 0s
-    		                           `
-    		                           );*/
-		//transition: margin-right 4s ease-in-out 1s;
-
-
-		
-/*
-	   setTimeout(function() {
-	        TitleCard.setStyle("top", "0px");
-	        TitleCard.setStyle("left", "100px");
-	        TitleCard.setStyle("height", "20px");
-	        TitleCard.setStyle("opacity", "0.2");
-	    }, 5);*/
-
-	    //TitleCard.getContainer().addEventListener("webkitAnimationEnd", (e)=>this.test(e,TitleCard.getContainer())); 
-
 		let animation = TitleCard.getContainer().animate([
 		   {
 		   	// from
@@ -113,18 +84,12 @@ export default class Empty extends superViews{
 
 		animation.onfinish = function(){
 			TitleCard.getContainer().remove();
+			this.Lifer.getData('Note/headerNote/noteHeaderActionButton',"This").showTitle();
+
 		}
 		
 		
 		
-/*	   TitleCard.getContainer().animate([ { opacity: 1, easing: 'ease-out' },
-                  { opacity: 0.1, easing: 'ease-in' },
-                  { opacity: 0 } ],
-                2000);*/
-
-    	//TitleCard.setStyle("top","0px"); 
-
-
 
 
 
@@ -132,7 +97,7 @@ export default class Empty extends superViews{
 
 		if(this.active != false){
 
-			this.active.getContainer().remove();
+			//this.active.getContainer().remove();
 
 		}
 		
