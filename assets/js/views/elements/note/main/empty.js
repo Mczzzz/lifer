@@ -98,7 +98,6 @@ export default class Empty extends superViews{
 		   {
 		   	// to
 		   	width: "50%",
-		   	height: "30px",
 		    opacity: 0.2,
 		    top : "0px",
 		    left: '50px'
