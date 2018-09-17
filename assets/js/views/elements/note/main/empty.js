@@ -89,7 +89,7 @@ export default class Empty extends superViews{
 	        TitleCard.setStyle("opacity", "0.2");
 	    }, 5);*/
 
-	    TitleCard.getContainer().addEventListener("webkitAnimationEnd", (e)=>this.test(e,TitleCard.getContainer())); 
+	    //TitleCard.getContainer().addEventListener("webkitAnimationEnd", (e)=>this.test(e,TitleCard.getContainer())); 
 
 		TitleCard.getContainer().animate([
 		  // keyframes
@@ -101,6 +101,7 @@ export default class Empty extends superViews{
 		  iterations: 1
 		});
 
+		TitleCard.setStyle("left", "100px");
 		
 		
 /*	   TitleCard.getContainer().animate([ { opacity: 1, easing: 'ease-out' },
