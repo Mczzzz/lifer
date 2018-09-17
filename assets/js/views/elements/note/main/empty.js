@@ -100,7 +100,7 @@ export default class Empty extends superViews{
 		  iterations: 1
 		});
 
-
+		TitleCard.getContainer().addEventListener("animationend", (e)=>this.test(e,TitleCard.getContainer())); 
 		
 /*	   TitleCard.getContainer().animate([ { opacity: 1, easing: 'ease-out' },
                   { opacity: 0.1, easing: 'ease-in' },
@@ -148,6 +148,11 @@ export default class Empty extends superViews{
 	}
 
 
+	test(e, elt){
+
+		elt.setStyle("left", "0px");
+
+	}
 
 
 	saveResource(card,Element, TheTextElt){
