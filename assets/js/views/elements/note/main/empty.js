@@ -150,7 +150,7 @@ export default class Empty extends superViews{
 
 	test(e, elt){
 
-		elt.setStyle("left", "0px");
+		elt.setStyle("left", "100px");
 
 	}
 
