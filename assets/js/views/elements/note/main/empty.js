@@ -94,24 +94,14 @@ export default class Empty extends superViews{
 		TitleCard.getContainer().animate([
 		  // keyframes
 		  { transform: 'translateY('+top+'px)',easing: 'ease-in' }, 
-		  { transform: 'translateX(100px)' }
+		  { transform: 'translateX(100px)',easing: 'ease-in' },
+		  { opacity: 0,easing: 'ease-in' }
 		], { 
 		  // timing options
-		  duration: 1000,
+		  duration: 0.3,
 		  iterations: 1
 		});
 
-		Promise.all(
-		  TitleCard.getContainer().getAnimations().map( 
-		    function(animation) { 
-		      return animation.finished 
-		    }
-		  )
-		).then(
-		  function() {
-		    return TitleCard.setStyle("left", "100px");
-		  }
-		);
 
 		
 		
