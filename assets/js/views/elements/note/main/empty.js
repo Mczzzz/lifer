@@ -96,11 +96,13 @@ export default class Empty extends superViews{
 		   	// from
 		  // translateY('+top+'px)'}, 
 		  //{ transform: 'translateX(100px)'},
-		    opacity: 1 
+		    opacity: 1,
+		    top : top+"px" 
 		   },
 		   {
 		   	// to
-		    opacity: 0
+		    opacity: 0,
+		    top : "0px"
 		  }
 
 		], { 
