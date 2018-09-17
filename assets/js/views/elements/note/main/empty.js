@@ -91,7 +91,7 @@ export default class Empty extends superViews{
 
 		TitleCard.getContainer().animate([
 		  // keyframes
-		  { transform: 'translateY('+top+'px)' }, 
+		  { transform: 'translateY(-'+top+'px)' }, 
 		  { transform: 'translateX(100px)' }
 		], { 
 		  // timing options
