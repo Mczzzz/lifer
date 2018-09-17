@@ -89,15 +89,15 @@ export default class Empty extends superViews{
 	    }, 5);*/
 
 
-		/*TitleCard.getContainer().animate([
+		TitleCard.getContainer().animate([
 		  // keyframes
-		  { transform: 'translateY(-'+top+'px)' }, 
+		  { transform: 'translateY('+top+'px)' }, 
 		  { transform: 'translateX(100px)' }
 		], { 
 		  // timing options
 		  duration: 1000,
 		  iterations: 1
-		});*/
+		});
 
 
 		
