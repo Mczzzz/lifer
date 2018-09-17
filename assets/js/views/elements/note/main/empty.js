@@ -93,12 +93,13 @@ export default class Empty extends superViews{
 
 		TitleCard.getContainer().animate([
 		  // keyframes
-		  { transform: 'translateY('+top+'px)',easing: 'ease-in' }, 
-		  { transform: 'translateX(100px)',easing: 'ease-in' },
-		  {  opacity: [1,0] }
+		  { transform: 'translateY('+top+'px)'}, 
+		  { transform: 'translateX(100px)'},
+		  { opacity: 0 }
 		], { 
 		  // timing options
 		  duration: 0.3,
+		  easing: 'ease-in',
 		  iterations: 1
 		});
 
