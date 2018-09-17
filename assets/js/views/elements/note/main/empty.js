@@ -57,9 +57,7 @@ export default class Empty extends superViews{
     	let top = TitleCard.getContainerRect("top");
 
     	TitleCard.setStyle("position","absolute");
-		TitleCard.setStyle("width", "100%");
-		TitleCard.setStyle("width", "100%");
-		
+	
 
     	
     	console.log("on passe sur la reactivation de l'animation");
@@ -91,22 +89,24 @@ export default class Empty extends superViews{
 		let animation = TitleCard.getContainer().animate([
 		   {
 		   	// from
-		  // translateY('+top+'px)'}, 
-		  //{ transform: 'translateX(100px)'},
+
+            width: "100%",
 		    opacity: 1,
 		    top: top+"px",
 		    left:"0px"
 		   },
 		   {
 		   	// to
-		    opacity: 0,
+		   	width: "50%",
+		   	height: "30px",
+		    opacity: 0.2,
 		    top : "0px",
 		    left: '50px'
 		  }
 
 		], { 
 		  // timing options
-		  duration: 300,
+		  duration: 500,
 		  easing: 'ease-in',
 		  iterations: 1
 		});
