@@ -28,7 +28,7 @@ export default class Empty extends superViews{
 
 
 
-	text(){
+/*	text(){
 
 		let text = new Text("EmptyTextForm", this.path);
 		this.active = text;
@@ -43,7 +43,7 @@ export default class Empty extends superViews{
 		this.active = number;
 
 	}
-
+*/
 
 
 
@@ -104,7 +104,7 @@ export default class Empty extends superViews{
 
 
 
-		if(this.active != false){
+	/*	if(this.active != false){
 
 			//this.active.getContainer().remove();
 
@@ -127,7 +127,7 @@ export default class Empty extends superViews{
 
 			//default:
 
-		}
+		}*/
 
 
 
