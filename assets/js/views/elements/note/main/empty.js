@@ -58,7 +58,9 @@ export default class Empty extends superViews{
 
     	TitleCard.setStyle("position","absolute");
 		TitleCard.setStyle("width", "100%");
+		TitleCard.setStyle("width", "100%");
 		TitleCard.setStyle("left", "0px");
+		TitleCard.setStyle("top", "0px");
 		TitleCard.setStyle("opacity", "1");
 		
 
@@ -90,7 +92,7 @@ export default class Empty extends superViews{
 
 		TitleCard.getContainer().animate([
 		  // keyframes
-		  { transform: 'translateY(-'+top+'px)' }, 
+		  { transform: 'translateY('+top+'px)' }, 
 		  { transform: 'translateX(100px)' }
 		], { 
 		  // timing options
