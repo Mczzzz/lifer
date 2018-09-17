@@ -63,10 +63,11 @@ export default class HeaderButtons extends superViews{
 
 
 
-	showTitle(){
+	showTitle(text = ""){
 
 		console.log('in show title');
-		let TheTitle = this.card.push("Text", this.HeaderElement,"HeaderNotetitle", "");
+
+		let TheTitle = this.card.push("Text", this.HeaderElement,"HeaderNotetitle", text);
 
 		this.card.setAttributeComponent(this.HeaderElement,"HeaderNotetitle","placeholder","Titre...");
 

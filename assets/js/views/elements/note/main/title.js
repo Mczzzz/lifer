@@ -119,11 +119,11 @@ export default class Title extends superViews{
 		if (e.key === "Enter") {
 
 			TheTitle.innerHTML = TheTitle.innerHTML.replace(/<div><br><\/div>/i, '');
+			//this.title = "";
+			//let toFocus = this.getObjectThisfromPath("Note/mainNote/noteMainEmpty/NoteEmptyCardText/cardElementEmpty/noteEltTextmainNewInput");
 
-			let toFocus = this.getObjectThisfromPath("Note/mainNote/noteMainEmpty/NoteEmptyCardText/cardElementEmpty/noteEltTextmainNewInput");
-
-			toFocus.getContainer().focus();
-			this.setStyle("display" , "");
+			//toFocus.getContainer().focus();
+			//this.setStyle("display" , "");
 
 			
     	}
