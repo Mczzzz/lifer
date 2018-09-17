@@ -92,13 +92,20 @@ export default class Empty extends superViews{
 	    //TitleCard.getContainer().addEventListener("webkitAnimationEnd", (e)=>this.test(e,TitleCard.getContainer())); 
 
 		TitleCard.getContainer().animate([
-		  // keyframes
-		  { transform: 'translateY('+top+'px)'}, 
-		  { transform: 'translateX(100px)'},
-		  { opacity: 0 }
+		   {
+		   	// from
+		  // translateY('+top+'px)'}, 
+		  //{ transform: 'translateX(100px)'},
+		    opacity: 1 
+		   },
+		   {
+		   	// to
+		    opacity: 0
+		  }
+
 		], { 
 		  // timing options
-		  duration: 0.3,
+		  duration: 2000,
 		  easing: 'ease-in',
 		  iterations: 1
 		});
