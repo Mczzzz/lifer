@@ -112,6 +112,17 @@ export default class Empty extends superViews{
 		});
 
 
+		Promise.all(
+		 TitleCard.getContainer().getAnimations().map( 
+		    function(animation) { 
+		      return animation.finished 
+		    }
+		  )
+		).then(
+		  function() {
+		    return TitleCard.getContainer().remove();
+		  }
+		);
 		
 		
 		
