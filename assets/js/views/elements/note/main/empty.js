@@ -88,7 +88,7 @@ export default class Empty extends superViews{
 
 	    //TitleCard.getContainer().addEventListener("webkitAnimationEnd", (e)=>this.test(e,TitleCard.getContainer())); 
 
-		TitleCard.getContainer().animate([
+		let animation = TitleCard.getContainer().animate([
 		   {
 		   	// from
 		  // translateY('+top+'px)'}, 
@@ -112,17 +112,9 @@ export default class Empty extends superViews{
 		});
 
 
-		Promise.all(
-		 TitleCard.getContainer().getAnimations().map( 
-		    function(animation) { 
-		      return animation.finished 
-		    }
-		  )
-		).then(
-		  function() {
-		    return TitleCard.getContainer().remove();
-		  }
-		);
+		animation.onfinish = function(){
+			TitleCard.getContainer().remove();
+		}
 		
 		
 		
