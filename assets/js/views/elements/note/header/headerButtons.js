@@ -26,14 +26,14 @@ export default class HeaderButtons extends superViews{
 		this.card.setStyle("background", "transparent");
 
 
-			let HeaderElement   = this.card.setElement("headerNote");
-			this.card.setStyleElement(HeaderElement,"justifyContent","space-between");
+			this.HeaderElement   = this.card.setElement("headerNote");
+			this.card.setStyleElement(this.HeaderElement,"justifyContent","space-between");
 
-					let HeaderBackButton = this.card.push("Button", HeaderElement,"NoteHeaderBack", "keyboard_backspace");
+					let HeaderBackButton = this.card.push("Button", this.HeaderElement,"NoteHeaderBack", "keyboard_backspace");
 
-					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderBack","fontSize","25px");
-					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderBack","color","green");
-					this.card.setStylePictoComponent(HeaderElement,"NoteHeaderBack","alignItems","center");
+					this.card.setStylePictoComponent(this.HeaderElement,"NoteHeaderBack","fontSize","25px");
+					this.card.setStylePictoComponent(this.HeaderElement,"NoteHeaderBack","color","green");
+					this.card.setStylePictoComponent(this.HeaderElement,"NoteHeaderBack","alignItems","center");
 
 					HeaderBackButton.getContainer().addEventListener("click",()=>this.CloseMe());
 
@@ -66,15 +66,15 @@ export default class HeaderButtons extends superViews{
 	showTitle(){
 
 		console.log('in show title');
-		let TheTitle = this.card.push("Text", HeaderElement,"HeaderNotetitle", "");
+		let TheTitle = this.card.push("Text", this.HeaderElement,"HeaderNotetitle", "");
 
-		this.card.setAttributeComponent(HeaderElement,"HeaderNotetitle","placeholder","Titre...");
+		this.card.setAttributeComponent(this.HeaderElement,"HeaderNotetitle","placeholder","Titre...");
 
-		this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","fontSize","12px");
-		this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","color","grey","all");
-		this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","margin","0px 5px 5px 5px");
-		this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","fontWeight","bold");
-		this.card.setStyleComponent(HeaderElement,"HeaderNotetitle","width","100%");
+		this.card.setStyleComponent(this.HeaderElement,"HeaderNotetitle","fontSize","12px");
+		this.card.setStyleComponent(this.HeaderElement,"HeaderNotetitle","color","grey","all");
+		this.card.setStyleComponent(this.HeaderElement,"HeaderNotetitle","margin","0px 5px 5px 5px");
+		this.card.setStyleComponent(this.HeaderElement,"HeaderNotetitle","fontWeight","bold");
+		this.card.setStyleComponent(this.HeaderElement,"HeaderNotetitle","width","100%");
 
 
 	}
