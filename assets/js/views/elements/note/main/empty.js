@@ -86,13 +86,14 @@ export default class Empty extends superViews{
 		});
 
 
-		let Lifer = this.Lifer
+		let Lifer = this.Lifer;
+		let MyThis = this;
 
 		animation.onfinish = function(){
 			TitleCard.getContainer().remove();
 			console.log('before show title');
 			Lifer.getData('Note/headerNote/noteHeaderActionButton',"This").showTitle(Lifer.getData('Note',"This").note.Title);
-			this.setStyle("display","");
+			MyThis.setStyle("display","");
 
 		}
 		
