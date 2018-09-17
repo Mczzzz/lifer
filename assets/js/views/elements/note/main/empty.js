@@ -95,7 +95,7 @@ export default class Empty extends superViews{
 		  // keyframes
 		  { transform: 'translateY('+top+'px)',easing: 'ease-in' }, 
 		  { transform: 'translateX(100px)',easing: 'ease-in' },
-		  {  opacity: 0 }
+		  {  opacity: [1,0] }
 		], { 
 		  // timing options
 		  duration: 0.3,
