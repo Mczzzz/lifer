@@ -101,7 +101,19 @@ export default class Empty extends superViews{
 		  iterations: 1
 		});
 
-		TitleCard.setStyle("left", "100px");
+		Promise.all(
+		  TitleCard.getContainer().getAnimations().map( 
+		    function(animation) { 
+		      return animation.finished 
+		    }
+		  )
+		).then(
+		  function() {
+		    return TitleCard.setStyle("left", "100px");
+		  }
+		);
+
+		
 		
 		
 /*	   TitleCard.getContainer().animate([ { opacity: 1, easing: 'ease-out' },
@@ -150,11 +162,6 @@ export default class Empty extends superViews{
 	}
 
 
-	test(e, elt){
-		console.log('in test');
-		elt.setStyle("left", "100px");
-
-	}
 
 
 	saveResource(card,Element, TheTextElt){
