@@ -106,7 +106,7 @@ export default class Empty extends superViews{
 
 		], { 
 		  // timing options
-		  duration: 0.3,
+		  duration: 300,
 		  easing: 'ease-in',
 		  iterations: 1
 		});
