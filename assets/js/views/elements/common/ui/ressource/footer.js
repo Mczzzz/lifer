@@ -1,5 +1,6 @@
 import superViews from "../../super/views.js";
 
+import Card from "../card.js";
 
 export default class FooterRessource extends superViews{ 
      
@@ -18,7 +19,13 @@ export default class FooterRessource extends superViews{
 
      init(){
 
-
+     	this.card = new Card('RessourceFooterCard', this.path);
+	
+		this.card.setStyle("borderWidth", "0px");
+		this.card.setStyle("borderRadius", "0px");
+		this.card.setStyle("margin", "0px");
+		this.card.setStyle("padding", "10px");
+		this.card.setStyle("background", "blue");
 
 
 
