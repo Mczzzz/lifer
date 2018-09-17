@@ -70,28 +70,41 @@ export default class Empty extends superViews{
     	//TitleCard.setStyle("transitionTimingFunction", "cubic-bezier(0.15, -0.35, 0.98, 1.27)");
     	//TitleCard.setStyle("transitionProperty", "width height background-color font-size left top color");
     	/* property name | duration | timing function | delay */
-    	TitleCard.setStyle("transition", `top 0.3s ease-in-out 0s
+/*    	TitleCard.setStyle("transition", `top 0.3s ease-in-out 0s
     		                           , left 0.3s ease-in-out 0s
     		                           , height 0.3s ease-in-out 0s
     		                           , opacity 0.3s ease-in-out 0s
     		                           `
-    		                           );
+    		                           );*/
 		//transition: margin-right 4s ease-in-out 1s;
 
 
 		
-
+/*
 	   setTimeout(function() {
 	        TitleCard.setStyle("top", "0px");
 	        TitleCard.setStyle("left", "100px");
 	        TitleCard.setStyle("height", "20px");
 	        TitleCard.setStyle("opacity", "0.2");
-	    }, 5);
+	    }, 5);*/
+
+
+		TitleCard.getContainer().animate([
+		  // keyframes
+		  { transform: 'translateY(0px)' }, 
+		  { transform: 'translateX(100px)' }
+		], { 
+		  // timing options
+		  duration: 1000,
+		  iterations: 1
+		});
+
+
 		
-	   TitleCard.getContainer().animate([ { opacity: 1, easing: 'ease-out' },
+/*	   TitleCard.getContainer().animate([ { opacity: 1, easing: 'ease-out' },
                   { opacity: 0.1, easing: 'ease-in' },
                   { opacity: 0 } ],
-                2000);
+                2000);*/
 
     	//TitleCard.setStyle("top","0px"); 
 
