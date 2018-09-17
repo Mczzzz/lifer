@@ -84,6 +84,7 @@ export default class Empty extends superViews{
 
 		animation.onfinish = function(){
 			TitleCard.getContainer().remove();
+			console.log(this.Lifer);
 			this.Lifer.getData('Note/headerNote/noteHeaderActionButton',"This").showTitle();
 
 		}
