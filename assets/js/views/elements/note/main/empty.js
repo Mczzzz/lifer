@@ -51,7 +51,7 @@ export default class Empty extends superViews{
 		//on fige la taille pour les transitions
     	let TitleCard = this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This");
     	TitleCard.setStyle("height", TitleCard.getContainerRect("height")+"px");
-    	console.log("top");
+
     	let top = TitleCard.getContainerRect("top");
 
     	TitleCard.setStyle("position","absolute");
@@ -86,7 +86,7 @@ export default class Empty extends superViews{
 
 		animation.onfinish = function(){
 			TitleCard.getContainer().remove();
-			console.log(Lifer);
+			console.log('before show title');
 			Lifer.getData('Note/headerNote/noteHeaderActionButton',"This").showTitle();
 
 		}
