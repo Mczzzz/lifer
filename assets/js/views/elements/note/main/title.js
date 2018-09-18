@@ -89,7 +89,7 @@ export default class Title extends superViews{
 
 					let TheTitle = this.card.push("Text", MainElement,"title", this.data.name);
 
-					this.card.setAttributeComponent(MainElement,"title","placeholder","Titre...");
+					this.card.setAttributeComponent(MainElement,"title","placeholder","Titre Note...");
 
 					this.card.setStyleComponent(MainElement,"title","fontSize","20px");
 					this.card.setStyleComponent(MainElement,"title","color","black","property");

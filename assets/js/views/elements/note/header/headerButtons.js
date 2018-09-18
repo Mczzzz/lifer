@@ -71,7 +71,7 @@ export default class HeaderButtons extends superViews{
 
 		let TheTitle = this.card.push("Text", this.HeaderElement,"Title", text);
 
-		this.card.setAttributeComponent(this.HeaderElement,"Title","placeholder","Titre...");
+		this.card.setAttributeComponent(this.HeaderElement,"Title","placeholder","Titre Note...");
 
 		this.card.setStyleComponent(this.HeaderElement,"Title","fontSize","22px");
 		this.card.setStyleComponent(this.HeaderElement,"Title","color","black","all");
