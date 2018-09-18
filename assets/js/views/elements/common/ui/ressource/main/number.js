@@ -31,7 +31,7 @@ export default class Number extends superViews{
 		this.card.setStyle("margin", "0px");
 		this.card.setStyle("padding", "10px");
 		this.card.setStyle("boxShadow", "0px -2px 12px #BBB");
-		this.card.setStyle("background", "white");
+		this.card.setStyle("background", "transparent");
 
 
 		this.EmptyElementLegend = this.card.setElement("NumberEmptyLegend");
