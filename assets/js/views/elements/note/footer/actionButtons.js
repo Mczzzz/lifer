@@ -16,7 +16,7 @@ export default class ActionButtons extends superViews{
 		this.init();
 
 		
-		this.Empty = this.getObjectThisfromPath("Note/mainNote/noteMainEmpty");
+		this.Empty = this.getObjectThisfromPath("Note/Main/Empty");
 
 	}
 
@@ -25,7 +25,7 @@ export default class ActionButtons extends superViews{
 
 		this.setStyle("overflow-y", "scroll");
 
-		this.card = new Card('NoteFooterCard', this.path);
+		this.card = new Card('Card', this.path);
 	
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");
@@ -37,21 +37,21 @@ export default class ActionButtons extends superViews{
 			let FooterElement   = this.card.setElement("footer");
 			this.card.setStyleElement(FooterElement,"justifyContent","flex-start");
 
-					let camera = this.card.push("Button", FooterElement,"footerPhoto", "camera_alt");
+					let camera = this.card.push("Button", FooterElement,"Photo", "camera_alt");
 
-					this.card.setStylePictoComponent(FooterElement,"footerPhoto","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"footerPhoto","color","green");
-					this.card.setStylePictoComponent(FooterElement,"footerPhoto","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"Photo","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"Photo","color","green");
+					this.card.setStylePictoComponent(FooterElement,"Photo","alignItems","center");
 
 					camera.getContainer().addEventListener("click",()=>this.StartCamera("image",true));
 
 
 
-					let videocam = this.card.push("Button", FooterElement,"footerVideocam", "videocam");
+					let videocam = this.card.push("Button", FooterElement,"Videocam", "videocam");
 
-					this.card.setStylePictoComponent(FooterElement,"footerVideocam","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"footerVideocam","color","green");
-					this.card.setStylePictoComponent(FooterElement,"footerVideocam","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"Videocam","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"Videocam","color","green");
+					this.card.setStylePictoComponent(FooterElement,"Videocam","alignItems","center");
 
 					videocam.getContainer().addEventListener("click",()=>this.StartCamera("video",true));
 
@@ -60,10 +60,10 @@ export default class ActionButtons extends superViews{
 
 					let micro = this.card.push("Button", FooterElement,"footerMic", "mic");
 
-					this.card.setStylePictoComponent(FooterElement,"footerMic","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"footerMic","color","green");
-					this.card.setStylePictoComponent(FooterElement,"footerMic","alignItems","center");
-					this.card.setStylePictoComponent(FooterElement,"footerMic","marginRight","0px");
+					this.card.setStylePictoComponent(FooterElement,"Mic","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"Mic","color","green");
+					this.card.setStylePictoComponent(FooterElement,"Mic","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"Mic","marginRight","0px");
 
 					micro.getContainer().addEventListener("click",()=>this.StartCamera("audio",true));
 
@@ -71,19 +71,19 @@ export default class ActionButtons extends superViews{
 					////////////
 					this.card.push("Button", FooterElement,"separator1", "more_vert");
 
-					this.card.setStylePictoComponent(FooterElement,"separator1","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"separator1","margin","5px");
-					this.card.setStylePictoComponent(FooterElement,"separator1","color","#cfcfcf");
-					this.card.setStylePictoComponent(FooterElement,"separator1","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"sep1","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"sep1","margin","5px");
+					this.card.setStylePictoComponent(FooterElement,"sep1","color","#cfcfcf");
+					this.card.setStylePictoComponent(FooterElement,"sep1","alignItems","center");
 					//////////////
 
 
 
 					let photo = this.card.push("Button", FooterElement,"footerGallery", "photo");
 
-					this.card.setStylePictoComponent(FooterElement,"footerGallery","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"footerGallery","color","orange");
-					this.card.setStylePictoComponent(FooterElement,"footerGallery","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"Gallery","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"Gallery","color","orange");
+					this.card.setStylePictoComponent(FooterElement,"Gallery","alignItems","center");
 
 					photo.getContainer().addEventListener("click",()=>this.StartCamera("image"));
 
@@ -91,21 +91,21 @@ export default class ActionButtons extends superViews{
 
 					let video = this.card.push("Button", FooterElement,"footerVideo", "movie");
 
-					this.card.setStylePictoComponent(FooterElement,"footerVideo","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"footerVideo","color","orange");
-					this.card.setStylePictoComponent(FooterElement,"footerVideo","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"Video","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"Video","color","orange");
+					this.card.setStylePictoComponent(FooterElement,"Video","alignItems","center");
 
 					video.getContainer().addEventListener("click",()=>this.StartCamera("video"));
 
 
 
 
-					let musique = this.card.push("Button", FooterElement,"footerMusique", "music_video");
+					let musique = this.card.push("Button", FooterElement,"Musique", "music_video");
 
-					this.card.setStylePictoComponent(FooterElement,"footerMusique","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"footerMusique","color","orange");
-					this.card.setStylePictoComponent(FooterElement,"footerMusique","alignItems","center");
-					this.card.setStylePictoComponent(FooterElement,"footerMusique","marginRight","0px");
+					this.card.setStylePictoComponent(FooterElement,"Musique","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"Musique","color","orange");
+					this.card.setStylePictoComponent(FooterElement,"Musique","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"Musique","marginRight","0px");
 
 					musique.getContainer().addEventListener("click",()=>this.StartCamera("audio"));
 
@@ -114,18 +114,18 @@ export default class ActionButtons extends superViews{
 					///////////////
 					this.card.push("Button", FooterElement,"separator2", "more_vert");
 
-					this.card.setStylePictoComponent(FooterElement,"separator2","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"separator2","margin","5px");
-					this.card.setStylePictoComponent(FooterElement,"separator2","color","#cfcfcf");
-					this.card.setStylePictoComponent(FooterElement,"separator2","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"sep2","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"sep2","margin","5px");
+					this.card.setStylePictoComponent(FooterElement,"sep2","color","#cfcfcf");
+					this.card.setStylePictoComponent(FooterElement,"sep2","alignItems","center");
 					///////////////
 
 
 					let number = this.card.push("Button", FooterElement,"footerNumbers", "looks_5");
 
-					this.card.setStylePictoComponent(FooterElement,"footerNumbers","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"footerNumbers","color","blue");
-					this.card.setStylePictoComponent(FooterElement,"footerNumbers","alignItems","center");
+					this.card.setStylePictoComponent(FooterElement,"Numbers","fontSize","25px");
+					this.card.setStylePictoComponent(FooterElement,"Numbers","color","blue");
+					this.card.setStylePictoComponent(FooterElement,"Numbers","alignItems","center");
 
 					number.getContainer().addEventListener("click",()=>this.Start("number"));
 
