@@ -71,6 +71,13 @@ addMe(path){
 
 			if (myPath == "null") continue;
 
+			let realName = myPath.split("-");
+
+			if(realName.length == 2){
+				myPath = realName[1];
+			}
+
+
 			if(!(dataRepresentation[myPath] instanceof Object)){
 				console.log('aie '+myPath+' not exist');
 				return false;
