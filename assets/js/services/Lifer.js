@@ -86,7 +86,8 @@ addMe(path){
 			if(realName.length == 2){
 				myPath = realName[1];
 			}
-
+			console.log("dataRepresentation");
+			console.log(dataRepresentation);
 
 			if(!(dataRepresentation[myPath] instanceof Object)){
 				console.log('aie '+myPath+' not exist');
