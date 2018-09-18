@@ -79,15 +79,15 @@ addMe(path){
 			if (myPath == "null") continue;
 
 			let realName = myPath.split("-");
-			console.log("realName");
+/*			console.log("realName");
 			console.log(realName);
-			console.log(realName.length);
+			console.log(realName.length);*/
 
 			if(realName.length == 2){
 				myPath = realName[1];
 			}
-			console.log("dataRepresentation");
-			console.log(dataRepresentation);
+/*			console.log("dataRepresentation");
+			console.log(dataRepresentation);*/
 
 			if(!(dataRepresentation[myPath] instanceof Object)){
 				console.log('aie '+myPath+' not exist');
@@ -140,6 +140,17 @@ addMe(path){
 
 
 		for(let myPath of arrayPath ){
+
+
+			let realName = myPath.split("-");
+/*			console.log("realName");
+			console.log(realName);
+			console.log(realName.length);*/
+
+			if(realName.length == 2){
+				myPath = realName[1];
+			}
+
 
 			if(!(dataRepresentation[myPath] instanceof Object)){
 				console.log('aie '+myPath+' not exist');
