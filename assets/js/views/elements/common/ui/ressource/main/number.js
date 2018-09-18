@@ -36,49 +36,49 @@ export default class Number extends superViews{
 		this.card.setStyle("background", "transparent");
 
 
-		this.EmptyElementLegend = this.card.setElement("NumberEmptyLegend_"+this.ClassId);
+		this.EmptyElementLegend = this.card.setElement("Legend_"+this.ClassId);
 		this.card.setStyleElement(this.EmptyElementLegend,"justifyContent","flex-start");
 
-		let TheTextElt = this.card.push("Text", this.EmptyElementLegend,"mainNewInput_"+this.ClassId, "");
+		let TheTextElt = this.card.push("Text", this.EmptyElementLegend,"Input_"+this.ClassId, "");
 
-		this.card.setAttributeComponent(this.EmptyElementLegend,"mainNewInput_"+this.ClassId,"placeholder","Légende...");
+		this.card.setAttributeComponent(this.EmptyElementLegend,"Input_"+this.ClassId,"placeholder","Légende...");
 
-		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput_"+this.ClassId,"fontSize","18.5px");
-		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput_"+this.ClassId,"color","black","property");
-		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput_"+this.ClassId,"margin","0px 5px 5px 5px");
-		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput_"+this.ClassId,"fontWeight","normal");
-		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput_"+this.ClassId,"flex",1);
-
-
+		this.card.setStyleComponent(this.EmptyElementLegend,"Input_"+this.ClassId,"fontSize","18.5px");
+		this.card.setStyleComponent(this.EmptyElementLegend,"Input_"+this.ClassId,"color","black","property");
+		this.card.setStyleComponent(this.EmptyElementLegend,"Input_"+this.ClassId,"margin","0px 5px 5px 5px");
+		this.card.setStyleComponent(this.EmptyElementLegend,"Input_"+this.ClassId,"fontWeight","normal");
+		this.card.setStyleComponent(this.EmptyElementLegend,"Input_"+this.ClassId,"flex",1);
 
 
-		this.EmptyElementValue = this.card.setElement("NumberEmptyValue_"+this.ClassId);
+
+
+		this.EmptyElementValue = this.card.setElement("Value_"+this.ClassId);
 		this.card.setStyleElement(this.EmptyElementValue,"justifyContent","");
 
 		//////
-		let TheValueElt = this.card.push("Input", this.EmptyElementValue,"mainNewValue_"+this.ClassId, "");
+		let TheValueElt = this.card.push("Input", this.EmptyElementValue,"Value_"+this.ClassId, "");
 
-		this.card.setStyleComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"flex",1);
+		this.card.setStyleComponent(this.EmptyElementValue,"Value_"+this.ClassId,"flex",1);
 
 
-		this.card.setAttributeInputComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"placeholder","0000.000");
-		this.card.setAttributeInputComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"type","number");
+		this.card.setAttributeInputComponent(this.EmptyElementValue,"Value_"+this.ClassId,"placeholder","0000.000");
+		this.card.setAttributeInputComponent(this.EmptyElementValue,"Value_"+this.ClassId,"type","number");
 
-		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"fontSize","18.5px");
-		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"color","black","property");
-		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"margin","0px 5px 5px 5px");
-		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"width","100%");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"Value_"+this.ClassId,"fontSize","18.5px");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"Value_"+this.ClassId,"color","black","property");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"Value_"+this.ClassId,"margin","0px 5px 5px 5px");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"Value_"+this.ClassId,"width","100%");
 		
 
 		//on crée un bouton
-		let InutiesTool = this.card.push("Button", this.EmptyElementValue,"mainNewUnitButton_"+this.ClassId,{"picto" : "fas fa-weight-hanging", "fontType" : "fas"});
+		let InutiesTool = this.card.push("Button", this.EmptyElementValue,"Unit_"+this.ClassId,{"picto" : "fas fa-weight-hanging", "fontType" : "fas"});
 
-		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton_"+this.ClassId,"flex","1.2");
-		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton_"+this.ClassId,"marginLeft","15px");
+		this.card.setStyleComponent(this.EmptyElementValue,"Unit_"+this.ClassId,"flex","1.2");
+		this.card.setStyleComponent(this.EmptyElementValue,"Unit_"+this.ClassId,"marginLeft","15px");
 
-		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton_"+this.ClassId,"fontSize","25px");
-		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton_"+this.ClassId,"marginRight","0px");
-		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton_"+this.ClassId,"color","green");
+		this.card.setStylePictoComponent(this.EmptyElementValue,"Unit_"+this.ClassId,"fontSize","25px");
+		this.card.setStylePictoComponent(this.EmptyElementValue,"Unit_"+this.ClassId,"marginRight","0px");
+		this.card.setStylePictoComponent(this.EmptyElementValue,"Unit_"+this.ClassId,"color","green");
 
 		InutiesTool.getContainer().addEventListener("click",()=>this.Startselect());
 
