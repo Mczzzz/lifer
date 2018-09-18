@@ -87,11 +87,11 @@ export default class Note extends superViews{
 
 	initChilds(){
 
-		this.Header = new Header("headerNote",this.path);
+		this.Header = new Header("Header",this.path);
 
-		this.Main   = new Main("mainNote",this.path);
+		this.Main   = new Main("Main",this.path);
 
-		this.Footer = new Footer('footerNote' , this.path);
+		this.Footer = new Footer('Footer' , this.path);
 
 	}
 

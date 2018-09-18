@@ -19,7 +19,7 @@ export default class card extends superViews{
 
      init(){
 
-      this.prefixElement   = "cardElement";
+      this.prefixElement   = "Element";
 
       this.setStyle("marginBottom" , "20px");
       this.setStyle("borderWidth " , "1px");

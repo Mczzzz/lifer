@@ -36,7 +36,7 @@ Moment.locale('fr');
 
 
 		if(this.parentThis){
-
+			console.log(this.parentThis.MyClass);
 			this.MyClass = this.parentThis.MyClass+"-"+MyClass;
 			this.path = path+"/"+this.MyClass;
 		
@@ -128,7 +128,7 @@ Moment.locale('fr');
     	let transTim = this.container.style.transitionTimingFunction;
     	let transProp = this.container.style.transitionProperty;
 
-    	console.log("on annule toutes les transitions");
+
 		this.container.style.transitionDuration = null;
    		this.container.style.transitionDelay = null;
     	this.container.style.transitionTimingFunction = null;

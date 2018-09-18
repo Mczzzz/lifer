@@ -21,11 +21,11 @@ export default class Ressource extends superViews{
 
      init(){
 
-      this.Header = new Header("headerResource",this.path);
+      this.Header = new Header("Header",this.path);
 
-      this.Main   = new Main("mainResource",this.path);
+      this.Main   = new Main("Main",this.path);
 
-      this.Footer = new Footer('footerResource' , this.path);
+      this.Footer = new Footer('Footer' , this.path);
 
 
 

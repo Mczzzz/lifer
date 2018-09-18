@@ -32,11 +32,11 @@ export default class Home extends superViews{
 
 	initChilds(){
 
-		this.Header = new Header("HomeHeader",this.path);
+		this.Header = new Header("Header",this.path);
 
-		this.Main = new Main("HomeMain",this.path);
+		this.Main = new Main("Main",this.path);
 
-		this.Footer = new Footer("HomeFooter",this.path);
+		this.Footer = new Footer("Footer",this.path);
 
 	}
 
