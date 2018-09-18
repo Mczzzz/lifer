@@ -79,6 +79,9 @@ addMe(path){
 			if (myPath == "null") continue;
 
 			let realName = myPath.split("-");
+			console.log("realName");
+			console.log(realName);
+			console.log(realName.length);
 
 			if(realName.length == 2){
 				myPath = realName[1];
