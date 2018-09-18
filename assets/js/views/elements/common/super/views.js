@@ -28,6 +28,7 @@ Moment.locale('fr');
 
 		}else{
 
+			console.log(path);
 			
 			this.parentThis = this.getObjectThisfromPath(path);
 			this.parent = this.parentThis.getContainer();
