@@ -22,14 +22,11 @@ export default class MainRessource extends superViews{
 
      init(){
 
-
-     	this.card = new Card('RessourceMainCard', this.path);
-	
-		this.card.setStyle("borderWidth", "0px");
-		this.card.setStyle("borderRadius", "0px");
-		this.card.setStyle("margin", "0px");
-		this.card.setStyle("padding", "10px");
-		this.card.setStyle("background", "yellow");
+		this.setStyle("borderWidth", "0px");
+		this.setStyle("borderRadius", "0px");
+		this.setStyle("margin", "0px");
+		this.setStyle("padding", "10px");
+		this.setStyle("background", "yellow");
 
 
 
