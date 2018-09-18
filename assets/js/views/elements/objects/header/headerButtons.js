@@ -17,7 +17,7 @@ export default class HeaderButtons extends superViews{
 
 	init(){
 
-		this.card = new Card('ObjectsHeaderCard', this.path);
+		this.card = new Card('Card', this.path);
 	
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");
@@ -26,24 +26,24 @@ export default class HeaderButtons extends superViews{
 		this.card.setStyle("background", "transparent");
 
 
-			let HeaderElement   = this.card.setElement("ObjectsHeaderElement");
+			let HeaderElement   = this.card.setElement("Element");
 			this.card.setStyleElement(HeaderElement,"justifyContent","space-between");
 
-					let HeaderBackButton = this.card.push("Button", HeaderElement,"headerBack", "keyboard_backspace");
+					let HeaderBackButton = this.card.push("Button", HeaderElement,"Back", "keyboard_backspace");
 
-					this.card.setStylePictoComponent(HeaderElement,"headerBack","fontSize","25px");
-					this.card.setStylePictoComponent(HeaderElement,"headerBack","color","green");
-					this.card.setStylePictoComponent(HeaderElement,"headerBack","alignItems","center");
+					this.card.setStylePictoComponent(HeaderElement,"Back","fontSize","25px");
+					this.card.setStylePictoComponent(HeaderElement,"Back","color","green");
+					this.card.setStylePictoComponent(HeaderElement,"Back","alignItems","center");
 
 					HeaderBackButton.getContainer().addEventListener("click",()=>this.BackToHome());
 
 
 					this.card.push("Button", HeaderElement,"headerLogo", "widgets");
 
-					this.card.setStylePictoComponent(HeaderElement,"headerLogo","fontSize","25px");
-					this.card.setStylePictoComponent(HeaderElement,"headerLogo","marginRight","0px");
-					this.card.setStylePictoComponent(HeaderElement,"headerLogo","color","green");
-					this.card.setStylePictoComponent(HeaderElement,"headerLogo","alignItems","center");
+					this.card.setStylePictoComponent(HeaderElement,"Logo","fontSize","25px");
+					this.card.setStylePictoComponent(HeaderElement,"Logo","marginRight","0px");
+					this.card.setStylePictoComponent(HeaderElement,"Logo","color","green");
+					this.card.setStylePictoComponent(HeaderElement,"Logo","alignItems","center");
 
 
 

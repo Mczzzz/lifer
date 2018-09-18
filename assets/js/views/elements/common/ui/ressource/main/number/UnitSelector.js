@@ -48,7 +48,7 @@ export default class UnitSelector extends superViews{
 	parseType(item){
 
 
-		let card = new Card('PUPUnitselector'+item.id, this.path);
+		let card = new Card('Card_'+item.id, this.path);
 		card.setStyle("width", "30%");
 
 		let ElementUnitPicto = card.setElement("ElementUnitPicto"+item.id);

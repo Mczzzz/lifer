@@ -51,7 +51,7 @@ export default class Resources extends superViews{
 		let timestamp = updateTs.format('x');
 
 
-		let card = new Card('NoteCardResource_New_'+timestamp, this.path);
+		let card = new Card('Card_'+timestamp, this.path);
 		card.setId("TmpCardId-"+timestamp);
 		card.setStyle("border","1px solid red");
 		card.setCallBack("keyup",this.path, "Save");

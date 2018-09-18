@@ -42,7 +42,7 @@ export default class list extends superViews{
 
 
 
-			let card = new Card('ObjectsInfosCard_'+info.infos.id, this.path);
+			let card = new Card('Card_'+info.infos.id, this.path);
 				
 				card.setStyle("borderWidth", "0px");
 				card.setStyle("borderRadius", "0px");

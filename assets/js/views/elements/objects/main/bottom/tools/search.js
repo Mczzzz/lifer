@@ -32,7 +32,7 @@ export default class search extends superViews{
 	addInput(){
 
 
-	let card = new Card('ObjectsSearchCard', this.path);
+	let card = new Card('Card', this.path);
 				
 				card.setStyle("borderWidth", "0px");
 				card.setStyle("borderRadius", "0px");
@@ -41,7 +41,7 @@ export default class search extends superViews{
 				card.setStyle("background", "transparent");
 
 
-					let ObjectsSearchCardElement  = card.setElement("ObjectsInfosCardElement");
+					let ObjectsSearchCardElement  = card.setElement("Element");
 					card.setStyleElement(ObjectsSearchCardElement,"justifyContent","flex-start");
 
 							this.input = card.push("Text", ObjectsSearchCardElement,"ObjectsSearchCardElementItem", "");

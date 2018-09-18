@@ -19,7 +19,7 @@ export default class FooterRessource extends superViews{
 
      init(){
 
-     	this.card = new Card('RessourceFooterCard', this.path);
+     	this.card = new Card('Card', this.path);
 	
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");

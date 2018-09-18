@@ -52,7 +52,7 @@ export default class Title extends superViews{
 	addCard(){
 
 
-		this.card = new Card('NoteTitleCard', this.path);
+		this.card = new Card('Card', this.path);
 
 		this.card.setId(this.data.id);
 		

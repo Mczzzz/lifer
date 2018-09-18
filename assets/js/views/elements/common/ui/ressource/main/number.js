@@ -26,7 +26,7 @@ export default class Number extends superViews{
 
 	form(){
 
-		this.card = new Card('NoteEmptyCardNumber_'+this.ClassId, this.path);
+		this.card = new Card('Card_'+this.ClassId, this.path);
 		this.card.setId(0);
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");

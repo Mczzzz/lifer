@@ -69,7 +69,7 @@ export default class Elements extends superViews{
     add(type, classSuffixe, data,prepend = false,callback = false){
 
 
-    	this[classSuffixe] = new loaderComponent(type, type + classSuffixe, this.path,prepend,callback);
+    	this[classSuffixe] = new loaderComponent(type, type +"-"+ classSuffixe, this.path,prepend,callback);
     	this[classSuffixe].setData(data);
 
     //return this[classSuffixe].getContainer();

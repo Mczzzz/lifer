@@ -43,7 +43,7 @@ export default class breadcrumb extends superViews{
 		this.container.innerHTML = null;
 		console.log(datas);
 
-		this.card = new Card('ObjectsBreadCrumbCard', this.path);
+		this.card = new Card('BreadCrumbCard', this.path);
 	
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");
