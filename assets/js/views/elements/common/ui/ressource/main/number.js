@@ -13,6 +13,8 @@ export default class Number extends superViews{
 		super( MyClass , path);
 
 		this.init();
+
+
 		
 	}
 
@@ -24,7 +26,7 @@ export default class Number extends superViews{
 
 	form(){
 
-		this.card = new Card('NoteEmptyCardNumber', this.path);
+		this.card = new Card('NoteEmptyCardNumber_'+this.ClassId, this.path);
 		this.card.setId(0);
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");
@@ -34,49 +36,49 @@ export default class Number extends superViews{
 		this.card.setStyle("background", "transparent");
 
 
-		this.EmptyElementLegend = this.card.setElement("NumberEmptyLegend");
+		this.EmptyElementLegend = this.card.setElement("NumberEmptyLegend_"+this.ClassId);
 		this.card.setStyleElement(this.EmptyElementLegend,"justifyContent","flex-start");
 
-		let TheTextElt = this.card.push("Text", this.EmptyElementLegend,"mainNewInput", "");
+		let TheTextElt = this.card.push("Text", this.EmptyElementLegend,"mainNewInput_"+this.ClassId, "");
 
-		this.card.setAttributeComponent(this.EmptyElementLegend,"mainNewInput","placeholder","Légende...");
+		this.card.setAttributeComponent(this.EmptyElementLegend,"mainNewInput_"+this.ClassId,"placeholder","Légende...");
 
-		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput","fontSize","18.5px");
-		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput","color","black","property");
-		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput","margin","0px 5px 5px 5px");
-		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput","fontWeight","normal");
-		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput","flex",1);
-
-
+		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput_"+this.ClassId,"fontSize","18.5px");
+		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput_"+this.ClassId,"color","black","property");
+		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput_"+this.ClassId,"margin","0px 5px 5px 5px");
+		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput_"+this.ClassId,"fontWeight","normal");
+		this.card.setStyleComponent(this.EmptyElementLegend,"mainNewInput_"+this.ClassId,"flex",1);
 
 
-		this.EmptyElementValue = this.card.setElement("NumberEmptyValue");
+
+
+		this.EmptyElementValue = this.card.setElement("NumberEmptyValue_"+this.ClassId);
 		this.card.setStyleElement(this.EmptyElementValue,"justifyContent","");
 
 		//////
-		let TheValueElt = this.card.push("Input", this.EmptyElementValue,"mainNewValue", "");
+		let TheValueElt = this.card.push("Input", this.EmptyElementValue,"mainNewValue_"+this.ClassId, "");
 
-		this.card.setStyleComponent(this.EmptyElementValue,"mainNewValue","flex",1);
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"flex",1);
 
 
-		this.card.setAttributeInputComponent(this.EmptyElementValue,"mainNewValue","placeholder","0000.000");
-		this.card.setAttributeInputComponent(this.EmptyElementValue,"mainNewValue","type","number");
+		this.card.setAttributeInputComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"placeholder","0000.000");
+		this.card.setAttributeInputComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"type","number");
 
-		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue","fontSize","18.5px");
-		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue","color","black","property");
-		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue","margin","0px 5px 5px 5px");
-		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue","width","100%");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"fontSize","18.5px");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"color","black","property");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"margin","0px 5px 5px 5px");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"mainNewValue_"+this.ClassId,"width","100%");
 		
 
 		//on crée un bouton
-		let InutiesTool = this.card.push("Button", this.EmptyElementValue,"mainNewUnitButton",{"picto" : "fas fa-weight-hanging", "fontType" : "fas"});
+		let InutiesTool = this.card.push("Button", this.EmptyElementValue,"mainNewUnitButton_"+this.ClassId,{"picto" : "fas fa-weight-hanging", "fontType" : "fas"});
 
-		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton","flex","1.2");
-		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton","marginLeft","15px");
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton_"+this.ClassId,"flex","1.2");
+		this.card.setStyleComponent(this.EmptyElementValue,"mainNewUnitButton_"+this.ClassId,"marginLeft","15px");
 
-		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton","fontSize","25px");
-		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton","marginRight","0px");
-		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton","color","green");
+		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton_"+this.ClassId,"fontSize","25px");
+		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton_"+this.ClassId,"marginRight","0px");
+		this.card.setStylePictoComponent(this.EmptyElementValue,"mainNewUnitButton_"+this.ClassId,"color","green");
 
 		InutiesTool.getContainer().addEventListener("click",()=>this.Startselect());
 
@@ -115,7 +117,7 @@ export default class Number extends superViews{
 
 	Startselect(){
 
-		let US = new Unitslector("popUpUnitSelecter", this.path);
+		let US = new Unitslector("popUpUnitSelecter_"+this.ClassId, this.path);
 
 	}
 

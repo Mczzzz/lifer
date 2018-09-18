@@ -65,6 +65,24 @@ Moment.locale('fr');
 		}
 
 
+
+
+		//auto creation des ids
+		let arrayId = this.MyClass.split("_");
+
+		if(typeof arrayId[1] === 'undefined') {
+
+			this.ClassId = "";
+		}
+		else {
+			this.ClassId = arrayId[1];
+		}
+
+
+
+
+
+
 		this.initListener();
 
 	}
