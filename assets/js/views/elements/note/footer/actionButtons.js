@@ -58,7 +58,7 @@ export default class ActionButtons extends superViews{
 
 
 
-					let micro = this.card.push("Button", FooterElement,"footerMic", "mic");
+					let micro = this.card.push("Button", FooterElement,"Mic", "mic");
 
 					this.card.setStylePictoComponent(FooterElement,"Mic","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"Mic","color","green");
