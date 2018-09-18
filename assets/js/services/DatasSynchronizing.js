@@ -31,8 +31,8 @@ class DatasSynchronizing {
 			this.Stack[stackId].id = stackId;
 			this.Stack[stackId].status = "waiting";
 
-			console.log("this.Stack");
-			console.log(this.Stack);
+//			console.log("this.Stack");
+//			console.log(this.Stack);
 
 			return this.Stack[stackId];
 
@@ -62,7 +62,7 @@ class DatasSynchronizing {
 		this.Stack[purchaseOrder.id].status = "pending";
 		this.Stack[purchaseOrder.id].order = MaCommande;
 
-		console.log("before execute Task");
+	//	console.log("before execute Task");
 		//je demarra le traitement de la stack
 		this.executeStack();
 
@@ -81,18 +81,18 @@ class DatasSynchronizing {
 
 	executeStack(){
 
-		console.log("executeStack");
+	//	console.log("executeStack");
 
 		if(Object.keys(this.Stack).length > 0 && this.active === false){
 
-			console.log("stack > 0");
+	//		console.log("stack > 0");
 
 			this.active = true;
 
 
 			for (let key in this.Stack){
 
-				console.log("in for");
+	//			console.log("in for");
 
 				if(this.Stack[key].status == "pending"){
 					let collection = new LoaderCollection(this.Stack[key].order.to.collection);

@@ -6,7 +6,7 @@ export default class BackendComm {
 
 	ajaxSend(VERB,url,dispatchResponseTo=false,dataCallback = false,dataSend = false){
 
-		console.log("on passe bien dans ajaxSend");		
+//		console.log("on passe bien dans ajaxSend");		
 
 			let params = this._BuildParams(VERB,dataSend);
 
@@ -17,7 +17,7 @@ export default class BackendComm {
 
 			}).then(function(json){
 
-				console.log(json);
+//				console.log(json);
 				
 				if(dispatchResponseTo !== false){
 
@@ -69,7 +69,7 @@ export default class BackendComm {
 			params.credentials = "same-origin";
 
 			if(VERB != "GET"){
-				console.log(dataSend);
+	//			console.log(dataSend);
 				params.body = JSON.stringify(dataSend);
 
 				params.headers = {};

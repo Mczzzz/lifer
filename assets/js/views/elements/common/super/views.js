@@ -28,7 +28,7 @@ Moment.locale('fr');
 
 		}else{
 
-			console.log(path);
+//			console.log(path);
 			
 			this.parentThis = this.getObjectThisfromPath(path);
 			this.parent = this.parentThis.getContainer();
@@ -198,7 +198,7 @@ Moment.locale('fr');
 
     callBack(data){
 
-		console.log(data);
+	//	console.log(data);
 
 		let methode = "on_"+data.detail.element+"_"+data.detail.Event.type;
 		console.log(methode);

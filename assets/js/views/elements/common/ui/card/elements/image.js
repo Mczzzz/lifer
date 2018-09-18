@@ -52,8 +52,8 @@ export default class Image extends superViews{
                     let ImgWidth = img.offsetWidth * RatioPhoto;
 
                     let decalY = ((ImgWidth - img.offsetWidth) / 2);
-                    console.log(ImgWidth);
-                    console.log(img.offsetWidth);
+//                    console.log(ImgWidth);
+//                    console.log(img.offsetWidth);
                     let decalX = 0;
 
                     img.style.width = "";

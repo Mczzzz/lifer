@@ -133,8 +133,8 @@ export default class card extends superViews{
 
      touchMover(e,type){
 
-      console.log(e.changedTouches[0].clientY);
-      console.log(e.changedTouches[0].clientX);
+ //     console.log(e.changedTouches[0].clientY);
+//      console.log(e.changedTouches[0].clientX);
       //this.getContainer().getBoundingClientRect().y;
       //this.getContainer().previousElementSibling.getBoundingClientRect().y;
       //this.getContainer().nextElementSibling.getBoundingClientRect().y;
@@ -245,7 +245,7 @@ export default class card extends superViews{
 
      CallBackFromItems(path,data){
 
-      console.log('in  CallBackFromItems');
+  //    console.log('in  CallBackFromItems');
 
       this.dispatchEvent(path,data);
 
@@ -256,12 +256,12 @@ export default class card extends superViews{
 
      dispatchEvent(path,data){
 
-      console.log('in dispatchEvent');
+ //     console.log('in dispatchEvent');
 
-      console.log(this.callBack);
+  //    console.log(this.callBack);
         for (let eventsToCallBack of this.callBack) {
 
-           console.log('in FOR');
+   //        console.log('in FOR');
 
            let objectToCallBack = this.getObjectThisfromPath(eventsToCallBack.path);
 
