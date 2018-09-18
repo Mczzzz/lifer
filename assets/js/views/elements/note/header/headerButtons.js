@@ -76,6 +76,7 @@ export default class HeaderButtons extends superViews{
 		this.card.setStyleComponent(this.HeaderElement,"Title","fontSize","22px");
 		this.card.setStyleComponent(this.HeaderElement,"Title","color","black","all");
 		this.card.setStyleComponent(this.HeaderElement,"Title","fontWeight","bold");
+		this.card.setStyleComponent(this.HeaderElement,"Title","margin","0px");
 		this.card.setStyleComponent(this.HeaderElement,"Title","width","100%");
 
 
