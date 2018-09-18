@@ -26,21 +26,20 @@ export default class HeaderRessource extends superViews{
 		this.card.setStyle("margin", "0px");
 		this.card.setStyle("padding", "10px");
 		this.card.setStyle("background", "white");
-		this.card.setStyle("border", "1px solid blue");
 
 
 
 
 		let HeaderElement = this.card.setElement("Element");
 		this.card.setStyleElement(HeaderElement,"justifyContent","space-between");
+		this.card.setStyleElement(HeaderElement,"alignItems","center");
 
 				this.card.push("Text",HeaderElement,"Title","");
 
 				this.card.setAttributeComponent(HeaderElement,"Title","placeholder","Titre Ressource...");
 
-				this.card.setStyleComponent(HeaderElement,"Title","fontSize","13px");
+				this.card.setStyleComponent(HeaderElement,"Title","fontSize","18px");
 				this.card.setStyleComponent(HeaderElement,"Title","color","grey");
-				this.card.setStyleComponent(HeaderElement,"Title","margin","0px 5px 2px 0px");
 				this.card.setStyleComponent(HeaderElement,"Title","fontWeight","bold");
 
 
