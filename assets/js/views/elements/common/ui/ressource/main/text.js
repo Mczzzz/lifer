@@ -37,7 +37,7 @@ export default class Text extends superViews{
 		this.EmptyElement = this.card.setElement("Text_"+this.ClassId);
 		this.card.setStyleElement(this.EmptyElement,"justifyContent","flex-start");
 
-		this.card.push("Button",this.EmptyElement,"dragge_"+this.ClassId, "drag_indicator");
+		this.card.push("Button",this.EmptyElement,"dragger_"+this.ClassId, "drag_indicator");
 		this.card.setAttributeComponent(this.EmptyElement,"dragger_"+this.ClassId,"draggable", "y");
 
 		let TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
