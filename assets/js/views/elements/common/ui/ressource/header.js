@@ -33,12 +33,14 @@ export default class HeaderRessource extends superViews{
 		let HeaderElement = this.card.setElement("RessourceHeaderCardElement");
 		this.card.setStyleElement(HeaderElement,"justifyContent","flex-end");
 
-				this.card.push("Text",HeaderElement,"update_new_"+timestamp,updateTs.format('Do MMMM YYYY, HH:mm:ss'));
+				this.card.push("Text",HeaderElement,"");
 
-				this.card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"fontSize","9px");
-				this.card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"color","grey");
-				this.card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"margin","0px 5px 2px 0px");
-				this.card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"fontWeight","normal");
+				this.card.setAttributeComponent(MainElement,"titleRessource","placeholder","Titre Ressource...");
+
+				this.card.setStyleComponent(HeaderElement,"titleRessource","9px");
+				this.card.setStyleComponent(HeaderElement,"titleRessource","color","grey");
+				this.card.setStyleComponent(HeaderElement,"titleRessource","margin","0px 5px 2px 0px");
+				this.card.setStyleComponent(HeaderElement,"titleRessource","fontWeight","normal");
 
 
 
