@@ -69,7 +69,7 @@ export default class ActionButtons extends superViews{
 
 
 					////////////
-					this.card.push("Button", FooterElement,"separator1", "more_vert");
+					this.card.push("Button", FooterElement,"sep1", "more_vert");
 
 					this.card.setStylePictoComponent(FooterElement,"sep1","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"sep1","margin","5px");
@@ -79,7 +79,7 @@ export default class ActionButtons extends superViews{
 
 
 
-					let photo = this.card.push("Button", FooterElement,"footerGallery", "photo");
+					let photo = this.card.push("Button", FooterElement,"Gallery", "photo");
 
 					this.card.setStylePictoComponent(FooterElement,"Gallery","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"Gallery","color","orange");
@@ -89,7 +89,7 @@ export default class ActionButtons extends superViews{
 
 
 
-					let video = this.card.push("Button", FooterElement,"footerVideo", "movie");
+					let video = this.card.push("Button", FooterElement,"Video", "movie");
 
 					this.card.setStylePictoComponent(FooterElement,"Video","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"Video","color","orange");
@@ -112,7 +112,7 @@ export default class ActionButtons extends superViews{
 
 
 					///////////////
-					this.card.push("Button", FooterElement,"separator2", "more_vert");
+					this.card.push("Button", FooterElement,"sep2", "more_vert");
 
 					this.card.setStylePictoComponent(FooterElement,"sep2","fontSize","25px");
 					this.card.setStylePictoComponent(FooterElement,"sep2","margin","5px");
