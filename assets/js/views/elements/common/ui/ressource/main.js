@@ -2,6 +2,9 @@ import superViews from "../../super/views.js";
 
 import Card from "../card.js";
 
+import Text   from "./main/text.js";
+import Number from "./main/number.js";
+
 export default class MainRessource extends superViews{ 
      
 
@@ -33,6 +36,31 @@ export default class MainRessource extends superViews{
      }
 
 
+
+     addRessource(type){
+
+
+
+     }
+
+
+
+
+	text(){
+
+		let text = new Text("EmptyTextForm", this.path);
+		this.active = text;
+
+	}
+
+
+
+	number(){
+
+		let number = new Number("EmptyNumberForm", this.path);
+		this.active = number;
+
+	}
 
 
 

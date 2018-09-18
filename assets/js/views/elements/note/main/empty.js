@@ -2,9 +2,6 @@ import superViews from "../../common/super/views.js";
 
 import Ressource from "../../common/ui/ressource.js";
 
-import Text   from "./empty/text.js";
-import Number from "./empty/number.js";
-
 
 export default class Empty extends superViews{
 	
@@ -25,25 +22,6 @@ export default class Empty extends superViews{
 		this.Ressource = new Ressource('EmptyResource' , this.path);
 
 	}
-
-
-
-/*	text(){
-
-		let text = new Text("EmptyTextForm", this.path);
-		this.active = text;
-
-	}
-
-
-
-	number(){
-
-		let number = new Number("EmptyNumberForm", this.path);
-		this.active = number;
-
-	}
-*/
 
 
 
