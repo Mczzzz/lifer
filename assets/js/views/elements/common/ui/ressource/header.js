@@ -44,12 +44,12 @@ export default class HeaderRessource extends superViews{
 				this.card.setStyleComponent(HeaderElement,"Title","fontWeight","bold");
 
 
-				this.card.push("Button", Elt,"sep1", "more_vert");
+				this.card.push("Button", HeaderElement,"sep1", "more_vert");
 
-				this.card.setStylePictoComponent(Elt,"sep1","fontSize","25px");
-				this.card.setStylePictoComponent(Elt,"sep1","margin","5px");
-				this.card.setStylePictoComponent(Elt,"sep1","color","grey");
-				this.card.setStylePictoComponent(Elt,"sep1","alignItems","center");
+				this.card.setStylePictoComponent(HeaderElement,"sep1","fontSize","25px");
+				this.card.setStylePictoComponent(HeaderElement,"sep1","margin","5px");
+				this.card.setStylePictoComponent(HeaderElement,"sep1","color","grey");
+				this.card.setStylePictoComponent(HeaderElement,"sep1","alignItems","center");
 
 
 
