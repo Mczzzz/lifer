@@ -40,8 +40,8 @@ addMe(path){
 
 				let realName = myPath.split("-");
 
-				if(realName.length == 2){
-					myPath = realName[1];
+				if(realName.length > 1){
+					myPath = realName[realName.length - 1];
 				}
 
 
@@ -83,8 +83,8 @@ addMe(path){
 			console.log(realName);
 			console.log(realName.length);*/
 
-			if(realName.length == 2){
-				myPath = realName[1];
+			if(realName.length > 1){
+				myPath = realName[realName.length - 1];
 			}
 /*			console.log("dataRepresentation");
 			console.log(dataRepresentation);*/
@@ -147,8 +147,8 @@ addMe(path){
 			console.log(realName);
 			console.log(realName.length);*/
 
-			if(realName.length == 2){
-				myPath = realName[1];
+			if(realName.length > 1){
+				myPath = realName[realName.length - 1];
 			}
 
 
