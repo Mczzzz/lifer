@@ -33,7 +33,7 @@ export default class HeaderRessource extends superViews{
 		let HeaderElement = this.card.setElement("RessourceHeaderCardElement");
 		this.card.setStyleElement(HeaderElement,"justifyContent","flex-end");
 
-				this.card.push("Text",HeaderElement,"");
+				this.card.push("Text",HeaderElement,"titleRessource","");
 
 				this.card.setAttributeComponent(HeaderElement,"titleRessource","placeholder","Titre Ressource...");
 
