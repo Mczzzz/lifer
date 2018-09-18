@@ -24,7 +24,7 @@ export default class HeaderRessource extends superViews{
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");
 		this.card.setStyle("margin", "0px");
-		this.card.setStyle("padding", "10px");
+		this.card.setStyle("padding", "0px");
 		this.card.setStyle("background", "white");
 
 
@@ -47,8 +47,11 @@ export default class HeaderRessource extends superViews{
 
 				this.card.setStylePictoComponent(HeaderElement,"sep1","fontSize","25px");
 				this.card.setStylePictoComponent(HeaderElement,"sep1","margin","0px");
+				this.card.setStylePictoComponent(HeaderElement,"sep1","marginRight","10px");
 				this.card.setStylePictoComponent(HeaderElement,"sep1","color","grey");
 				this.card.setStylePictoComponent(HeaderElement,"sep1","alignItems","center");
+
+
 
 
 

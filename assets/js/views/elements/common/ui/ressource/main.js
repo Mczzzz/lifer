@@ -28,8 +28,8 @@ export default class MainRessource extends superViews{
 		this.setStyle("borderRadius", "0px");
 		this.setStyle("margin", "0px");
 		this.setStyle("padding", "10px");
-		this.setStyle("background", "yellow");
-		
+		this.setStyle("background", "linear-gradient(45deg, rgb(250, 250, 250) 0%, rgb(248, 248, 248) 100%)");
+
 
 
 
