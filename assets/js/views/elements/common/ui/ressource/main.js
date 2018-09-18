@@ -29,7 +29,7 @@ export default class MainRessource extends superViews{
 		this.setStyle("margin", "0px");
 		this.setStyle("padding", "10px");
 		this.setStyle("background", "yellow");
-		this.setStyle("overflowY" , "scroll");
+		
 
 
 

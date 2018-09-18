@@ -18,6 +18,7 @@ export default class Empty extends superViews{
 	init(){
 
 		this.setStyle("display","none");
+		this.setStyle("overflowY" , "scroll");
 		//this.active = false;
 		this.Ressource = new Ressource('EmptyResource' , this.path);
 
