@@ -32,16 +32,26 @@ export default class HeaderRessource extends superViews{
 
 
 		let HeaderElement = this.card.setElement("Element");
-		this.card.setStyleElement(HeaderElement,"justifyContent","flex-start");
+		this.card.setStyleElement(HeaderElement,"justifyContent","space-between");
 
-				this.card.push("Text",HeaderElement,"titleRessource","");
+				this.card.push("Text",HeaderElement,"Title","");
 
-				this.card.setAttributeComponent(HeaderElement,"titleRessource","placeholder","Titre Ressource...");
+				this.card.setAttributeComponent(HeaderElement,"Title","placeholder","Titre Ressource...");
 
-				this.card.setStyleComponent(HeaderElement,"titleRessource","fontSize","13px");
-				this.card.setStyleComponent(HeaderElement,"titleRessource","color","grey");
-				this.card.setStyleComponent(HeaderElement,"titleRessource","margin","0px 5px 2px 0px");
-				this.card.setStyleComponent(HeaderElement,"titleRessource","fontWeight","bold");
+				this.card.setStyleComponent(HeaderElement,"Title","fontSize","13px");
+				this.card.setStyleComponent(HeaderElement,"Title","color","grey");
+				this.card.setStyleComponent(HeaderElement,"Title","margin","0px 5px 2px 0px");
+				this.card.setStyleComponent(HeaderElement,"Title","fontWeight","bold");
+
+
+				this.card.push("Button", Elt,"sep1", "more_vert");
+
+				this.card.setStylePictoComponent(Elt,"sep1","fontSize","25px");
+				this.card.setStylePictoComponent(Elt,"sep1","margin","5px");
+				this.card.setStylePictoComponent(Elt,"sep1","color","grey");
+				this.card.setStylePictoComponent(Elt,"sep1","alignItems","center");
+
+
 
 
 
