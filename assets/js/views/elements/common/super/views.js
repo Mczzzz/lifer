@@ -9,7 +9,7 @@ export default class views {
 	constructor(MyClass,path,prepend = false){
 
 
-		this.MyClass = (MyClass !== false)? MyClass : this.constructor.name;
+		
 
 
 		this.Lifer = Lifer;
@@ -22,6 +22,7 @@ Moment.locale('fr');
 
 			this.parent = document.body;
 			this.path = this.MyClass;
+			this.parentThis = false;
 
 		}else{
 
@@ -32,6 +33,18 @@ Moment.locale('fr');
 			this.parent = this.parentThis.getContainer();
 
 		}
+
+		if(this.parentThis){
+
+			this.MyClass = this.parentThis+"-"+MyClass
+		
+		}else{
+
+			this.MyClass = MyClass;
+
+		}
+
+		//this.MyClass = (MyClass !== false)? MyClass : this.constructor.name;
 
 		this.Lifer.addMe(this.path);
 
