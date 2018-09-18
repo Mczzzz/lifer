@@ -31,6 +31,7 @@ export default class Text extends superViews{
 		this.card.setStyle("padding", "10px");
 		this.card.setStyle("boxShadow", "0px -2px 12px #BBB");
 		this.card.setStyle("background", "white");
+		this.card.setStyle("margin", "5px");
 
 
 		this.EmptyElement = this.card.setElement("Text_"+this.ClassId);
