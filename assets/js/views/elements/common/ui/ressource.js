@@ -31,7 +31,11 @@ export default class Ressource extends superViews{
 
      }
 
+     addRessource(type){
 
+      this.Main.addRessource(type);
+
+     }
 
 
 
