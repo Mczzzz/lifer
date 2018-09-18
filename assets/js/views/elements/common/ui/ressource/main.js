@@ -40,6 +40,24 @@ export default class MainRessource extends superViews{
      addRessource(type){
 
 
+		switch (type){
+
+			case 'text':
+
+				this.text();
+
+			break;
+
+			case 'number':
+
+				this.number();
+
+			break;
+
+			//default:
+
+		}
+
 
      }
 
@@ -48,8 +66,8 @@ export default class MainRessource extends superViews{
 
 	text(){
 
-		let text = new Text("EmptyTextForm", this.path);
-		this.active = text;
+		let text = new Text("RessourceTextForm", this.path);
+
 
 	}
 
@@ -57,8 +75,8 @@ export default class MainRessource extends superViews{
 
 	number(){
 
-		let number = new Number("EmptyNumberForm", this.path);
-		this.active = number;
+		let number = new Number("RessourceNumberForm", this.path);
+
 
 	}
 

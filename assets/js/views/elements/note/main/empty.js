@@ -29,7 +29,7 @@ export default class Empty extends superViews{
 
 	show(type){
 
-
+		this.Ressource.addRessource(type);
 		//on fige la taille pour les transitions
     	let TitleCard = this.Lifer.getData('Note/mainNote/noteMainTitle/NoteTitleCard',"This");
     	TitleCard.setStyle("height", TitleCard.getContainerRect("height")+"px");
@@ -69,48 +69,11 @@ export default class Empty extends superViews{
 
 		animation.onfinish = function(){
 			TitleCard.getContainer().remove();
-			console.log('before show title');
 			Lifer.getData('Note/headerNote/noteHeaderActionButton',"This").showTitle(Lifer.getData('Note',"This").note.Title);
 			MyThis.setStyle("display","");
 
 		}
 		
-		
-		
-
-
-
-
-
-	/*	if(this.active != false){
-
-			//this.active.getContainer().remove();
-
-		}
-		
-
-		switch (type){
-
-			case 'text':
-
-				this.text();
-
-			break;
-
-			case 'number':
-
-				this.number();
-
-			break;
-
-			//default:
-
-		}*/
-
-
-
-
-
 
 	}
 
