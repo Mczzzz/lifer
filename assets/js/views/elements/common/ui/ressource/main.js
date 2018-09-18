@@ -66,7 +66,7 @@ export default class MainRessource extends superViews{
 
 	text(){
 
-		let text = new Text("RessourceTextForm_"+this.autoIncrement, this.path);
+		let text = new Text("Text_"+this.autoIncrement, this.path);
 
 		this.autoIncrement++;
 
@@ -76,7 +76,7 @@ export default class MainRessource extends superViews{
 
 	number(){
 
-		let number = new Number("RessourceNumberForm_"+this.autoIncrement, this.path);
+		let number = new Number("Number_"+this.autoIncrement, this.path);
 
 		this.autoIncrement++;
 
