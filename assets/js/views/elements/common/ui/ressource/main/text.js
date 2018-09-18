@@ -37,15 +37,18 @@ export default class Text extends superViews{
 		this.EmptyElement = this.card.setElement("Text_"+this.ClassId);
 		this.card.setStyleElement(this.EmptyElement,"justifyContent","flex-start");
 
+		this.card.push("Button",this.EmptyElement,"dragge_"+this.ClassId, "drag_indicator");
+		this.card.setAttributeComponent(this.EmptyElement,"dragger_"+this.ClassId,"draggable", "y");
+
 		let TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
 
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontSize","18.5px");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"color","black","property");
+		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"color","#626262","all");
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"margin","0px 5px 5px 5px");
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontWeight","normal");
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"flex",1);
 
-		let TheSaveButton = this.card.push("Button", this.EmptyElement,"Button_"+this.ClassId,"arrow_forward");
+	/*	let TheSaveButton = this.card.push("Button", this.EmptyElement,"Button_"+this.ClassId,"arrow_forward");
 
 		this.card.setStyleComponent(this.EmptyElement,"Button_"+this.ClassId,"alignItems","flex-end");
 
@@ -53,7 +56,7 @@ export default class Text extends superViews{
 		this.card.setStylePictoComponent(this.EmptyElement,"Button_"+this.ClassId,"marginRight","0px");
 		this.card.setStylePictoComponent(this.EmptyElement,"Button_"+this.ClassId,"color","green");
 
-		TheSaveButton.getContainer().addEventListener("click",()=>this.parentThis.saveResource(this.card,this.EmptyElement,TheTextElt));
+		TheSaveButton.getContainer().addEventListener("click",()=>this.parentThis.saveResource(this.card,this.EmptyElement,TheTextElt));*/
 
 
 	}
