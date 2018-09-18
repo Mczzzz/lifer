@@ -16,6 +16,8 @@ export default class MainRessource extends superViews{
 
           this.callBack = [];
 
+          this.autoIncrement = 0;
+
      }
 
 
@@ -63,8 +65,9 @@ export default class MainRessource extends superViews{
 
 	text(){
 
-		let text = new Text("RessourceTextForm", this.path);
+		let text = new Text("RessourceTextForm"+this.autoIncrement, this.path);
 
+		this.autoIncrement++;
 
 	}
 
@@ -72,8 +75,9 @@ export default class MainRessource extends superViews{
 
 	number(){
 
-		let number = new Number("RessourceNumberForm", this.path);
+		let number = new Number("RessourceNumberForm"+this.autoIncrement, this.path);
 
+		this.autoIncrement++;
 
 	}
 
