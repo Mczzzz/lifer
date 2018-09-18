@@ -38,15 +38,15 @@ export default class Main extends superViews{
 
 		if(this.parentThis.note.guid == false){
 
-			this.Title     = new Title("noteMainTitle",this.path);
+			this.Title     = new Title("Title",this.path);
 		
 		}
 
 			
 
-		this.Resources = new Resources("noteMainResources",this.path);
+		this.Resources = new Resources("Resources",this.path);
 
-		this.Empty     = new Empty("noteMainEmpty",this.path);
+		this.Empty     = new Empty("Empty",this.path);
 
 	}
 

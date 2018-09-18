@@ -32,7 +32,7 @@ export default class Header extends superViews{
 
 	initChilds(){
 
-		this.HeaderButton = new HeaderButton("ActionButton",this.path);
+		this.HeaderButton = new HeaderButton("Action",this.path);
 
 	}
 

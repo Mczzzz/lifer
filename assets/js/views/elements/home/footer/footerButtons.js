@@ -26,40 +26,40 @@ export default class FooterButtons extends superViews{
 		this.card.setStyle("background", "transparent");
 
 
-			let FooterElement = this.card.setElement("HomeFooterElement");
-			this.card.setStyleElement(FooterElement,"justifyContent","flex-start");
+			let Elt = this.card.setElement("Element");
+			this.card.setStyleElement(Elt,"justifyContent","flex-start");
 
 
 
-				let StartNote = this.card.push("Button", FooterElement,"HomeAddNote", "note_add");
+				let StartNote = this.card.push("Button", Elt,"AddNote", "note_add");
 
-					this.card.setStylePictoComponent(FooterElement,"HomeAddNote","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"HomeAddNote","marginRight","0px");
-					this.card.setStylePictoComponent(FooterElement,"HomeAddNote","color","green");
-					this.card.setStylePictoComponent(FooterElement,"HomeAddNote","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"AddNote","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"AddNote","marginRight","0px");
+					this.card.setStylePictoComponent(Elt,"AddNote","color","green");
+					this.card.setStylePictoComponent(Elt,"AddNote","alignItems","center");
 
 					StartNote.getContainer().addEventListener("click",()=>this.StartNote());
 
 
 
 					///////////////
-					this.card.push("Button", FooterElement,"HomeSep1", "more_vert");
+					this.card.push("Button", Elt,"sep1", "more_vert");
 
-					this.card.setStylePictoComponent(FooterElement,"HomeSep1","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"HomeSep1","margin","5px");
-					this.card.setStylePictoComponent(FooterElement,"HomeSep1","color","#cfcfcf");
-					this.card.setStylePictoComponent(FooterElement,"HomeSep1","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"sep1","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"sep1","margin","5px");
+					this.card.setStylePictoComponent(Elt,"sep1","color","#cfcfcf");
+					this.card.setStylePictoComponent(Elt,"sep1","alignItems","center");
 					//////////////
 
 
 
 
 
-				let FooterObjectButton = this.card.push("Button", FooterElement,"toObjects", "widgets");
+				let FooterObjectButton = this.card.push("Button", Elt,"toObjects", "widgets");
 
-					this.card.setStylePictoComponent(FooterElement,"toObjects","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"toObjects","color","green");
-					this.card.setStylePictoComponent(FooterElement,"toObjects","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"toObjects","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"toObjects","color","green");
+					this.card.setStylePictoComponent(Elt,"toObjects","alignItems","center");
 
 					FooterObjectButton.getContainer().addEventListener("click",()=>this.goToObject());
 
