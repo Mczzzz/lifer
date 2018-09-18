@@ -38,6 +38,13 @@ addMe(path){
 
 				if (myPath == "null") continue; 
 
+				let realName = myPath.split("-");
+
+				if(realName.length == 2){
+					myPath = realName[1];
+				}
+
+
 				if(!(dataRepresentation[myPath] instanceof Object)){
 					dataRepresentation[myPath] = {};
 					dataRepresentation[myPath]._datas = {};
