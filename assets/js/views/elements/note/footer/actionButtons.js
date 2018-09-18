@@ -34,116 +34,116 @@ export default class ActionButtons extends superViews{
 		this.card.setStyle("background", "transparent");
 
 
-			let FooterElement   = this.card.setElement("footer");
-			this.card.setStyleElement(FooterElement,"justifyContent","flex-start");
+			let Elt   = this.card.setElement("footer");
+			this.card.setStyleElement(Elt,"justifyContent","flex-start");
 
-					let camera = this.card.push("Button", FooterElement,"Photo", "camera_alt");
+					let camera = this.card.push("Button", Elt,"Photo", "camera_alt");
 
-					this.card.setStylePictoComponent(FooterElement,"Photo","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"Photo","color","green");
-					this.card.setStylePictoComponent(FooterElement,"Photo","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"Photo","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"Photo","color","green");
+					this.card.setStylePictoComponent(Elt,"Photo","alignItems","center");
 
 					camera.getContainer().addEventListener("click",()=>this.StartCamera("image",true));
 
 
 
-					let videocam = this.card.push("Button", FooterElement,"Videocam", "videocam");
+					let videocam = this.card.push("Button", Elt,"Videocam", "videocam");
 
-					this.card.setStylePictoComponent(FooterElement,"Videocam","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"Videocam","color","green");
-					this.card.setStylePictoComponent(FooterElement,"Videocam","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"Videocam","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"Videocam","color","green");
+					this.card.setStylePictoComponent(Elt,"Videocam","alignItems","center");
 
 					videocam.getContainer().addEventListener("click",()=>this.StartCamera("video",true));
 
 
 
 
-					let micro = this.card.push("Button", FooterElement,"Mic", "mic");
+					let micro = this.card.push("Button", Elt,"Mic", "mic");
 
-					this.card.setStylePictoComponent(FooterElement,"Mic","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"Mic","color","green");
-					this.card.setStylePictoComponent(FooterElement,"Mic","alignItems","center");
-					this.card.setStylePictoComponent(FooterElement,"Mic","marginRight","0px");
+					this.card.setStylePictoComponent(Elt,"Mic","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"Mic","color","green");
+					this.card.setStylePictoComponent(Elt,"Mic","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"Mic","marginRight","0px");
 
 					micro.getContainer().addEventListener("click",()=>this.StartCamera("audio",true));
 
 
 					////////////
-					this.card.push("Button", FooterElement,"sep1", "more_vert");
+					this.card.push("Button", Elt,"sep1", "more_vert");
 
-					this.card.setStylePictoComponent(FooterElement,"sep1","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"sep1","margin","5px");
-					this.card.setStylePictoComponent(FooterElement,"sep1","color","#cfcfcf");
-					this.card.setStylePictoComponent(FooterElement,"sep1","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"sep1","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"sep1","margin","5px");
+					this.card.setStylePictoComponent(Elt,"sep1","color","#cfcfcf");
+					this.card.setStylePictoComponent(Elt,"sep1","alignItems","center");
 					//////////////
 
 
 
-					let photo = this.card.push("Button", FooterElement,"Gallery", "photo");
+					let photo = this.card.push("Button", Elt,"Gallery", "photo");
 
-					this.card.setStylePictoComponent(FooterElement,"Gallery","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"Gallery","color","orange");
-					this.card.setStylePictoComponent(FooterElement,"Gallery","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"Gallery","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"Gallery","color","orange");
+					this.card.setStylePictoComponent(Elt,"Gallery","alignItems","center");
 
 					photo.getContainer().addEventListener("click",()=>this.StartCamera("image"));
 
 
 
-					let video = this.card.push("Button", FooterElement,"Video", "movie");
+					let video = this.card.push("Button", Elt,"Video", "movie");
 
-					this.card.setStylePictoComponent(FooterElement,"Video","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"Video","color","orange");
-					this.card.setStylePictoComponent(FooterElement,"Video","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"Video","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"Video","color","orange");
+					this.card.setStylePictoComponent(Elt,"Video","alignItems","center");
 
 					video.getContainer().addEventListener("click",()=>this.StartCamera("video"));
 
 
 
 
-					let musique = this.card.push("Button", FooterElement,"Musique", "music_video");
+					let musique = this.card.push("Button", Elt,"Musique", "music_video");
 
-					this.card.setStylePictoComponent(FooterElement,"Musique","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"Musique","color","orange");
-					this.card.setStylePictoComponent(FooterElement,"Musique","alignItems","center");
-					this.card.setStylePictoComponent(FooterElement,"Musique","marginRight","0px");
+					this.card.setStylePictoComponent(Elt,"Musique","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"Musique","color","orange");
+					this.card.setStylePictoComponent(Elt,"Musique","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"Musique","marginRight","0px");
 
 					musique.getContainer().addEventListener("click",()=>this.StartCamera("audio"));
 
 
 
 					///////////////
-					this.card.push("Button", FooterElement,"sep2", "more_vert");
+					this.card.push("Button", Elt,"sep2", "more_vert");
 
-					this.card.setStylePictoComponent(FooterElement,"sep2","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"sep2","margin","5px");
-					this.card.setStylePictoComponent(FooterElement,"sep2","color","#cfcfcf");
-					this.card.setStylePictoComponent(FooterElement,"sep2","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"sep2","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"sep2","margin","5px");
+					this.card.setStylePictoComponent(Elt,"sep2","color","#cfcfcf");
+					this.card.setStylePictoComponent(Elt,"sep2","alignItems","center");
 					///////////////
 
 
-					let number = this.card.push("Button", FooterElement,"footerNumbers", "looks_5");
+					let number = this.card.push("Button", Elt,"Numbers", "looks_5");
 
-					this.card.setStylePictoComponent(FooterElement,"Numbers","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"Numbers","color","blue");
-					this.card.setStylePictoComponent(FooterElement,"Numbers","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"Numbers","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"Numbers","color","blue");
+					this.card.setStylePictoComponent(Elt,"Numbers","alignItems","center");
 
 					number.getContainer().addEventListener("click",()=>this.Start("number"));
 
 
 
-					let todoList = this.card.push("Button", FooterElement,"todoList", "list");
+					let todoList = this.card.push("Button", Elt,"todoList", "list");
 
-					this.card.setStylePictoComponent(FooterElement,"todoList","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"todoList","color","blue");
-					this.card.setStylePictoComponent(FooterElement,"todoList","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"todoList","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"todoList","color","blue");
+					this.card.setStylePictoComponent(Elt,"todoList","alignItems","center");
 
 
 
-					let text = this.card.push("Button", FooterElement,"textElt", "text_fields");
+					let text = this.card.push("Button", Elt,"textElt", "text_fields");
 
-					this.card.setStylePictoComponent(FooterElement,"textElt","fontSize","25px");
-					this.card.setStylePictoComponent(FooterElement,"textElt","color","blue");
-					this.card.setStylePictoComponent(FooterElement,"textElt","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"textElt","fontSize","25px");
+					this.card.setStylePictoComponent(Elt,"textElt","color","blue");
+					this.card.setStylePictoComponent(Elt,"textElt","alignItems","center");
 
 					text.getContainer().addEventListener("click",()=>this.Start("text"));
 
