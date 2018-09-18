@@ -56,18 +56,18 @@ export default class Number extends superViews{
 		this.card.setStyleElement(this.EmptyElementValue,"justifyContent","");
 
 		//////
-		let TheValueElt = this.card.push("Input", this.EmptyElementValue,"Value_"+this.ClassId, "");
+		let TheValueElt = this.card.push("Input", this.EmptyElementValue,"Number_"+this.ClassId, "");
 
-		this.card.setStyleComponent(this.EmptyElementValue,"Value_"+this.ClassId,"flex",1);
+		this.card.setStyleComponent(this.EmptyElementValue,"Number_"+this.ClassId,"flex",1);
 
 
-		this.card.setAttributeInputComponent(this.EmptyElementValue,"Value_"+this.ClassId,"placeholder","0000.000");
-		this.card.setAttributeInputComponent(this.EmptyElementValue,"Value_"+this.ClassId,"type","number");
+		this.card.setAttributeInputComponent(this.EmptyElementValue,"Number_"+this.ClassId,"placeholder","0000.000");
+		this.card.setAttributeInputComponent(this.EmptyElementValue,"Number_"+this.ClassId,"type","number");
 
-		this.card.setStyleInputComponent(this.EmptyElementValue,"Value_"+this.ClassId,"fontSize","18.5px");
-		this.card.setStyleInputComponent(this.EmptyElementValue,"Value_"+this.ClassId,"color","black","property");
-		this.card.setStyleInputComponent(this.EmptyElementValue,"Value_"+this.ClassId,"margin","0px 5px 5px 5px");
-		this.card.setStyleInputComponent(this.EmptyElementValue,"Value_"+this.ClassId,"width","100%");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"Number_"+this.ClassId,"fontSize","18.5px");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"Number_"+this.ClassId,"color","black","property");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"Number_"+this.ClassId,"margin","0px 5px 5px 5px");
+		this.card.setStyleInputComponent(this.EmptyElementValue,"Number_"+this.ClassId,"width","100%");
 		
 
 		//on crée un bouton
