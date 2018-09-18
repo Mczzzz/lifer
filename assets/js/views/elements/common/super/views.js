@@ -18,31 +18,36 @@ Moment.locale('fr');
 
 		this.Moment = Moment;		
 
+
+
+
 		if(path == null){
 
 			this.parent = document.body;
-			this.path = this.MyClass;
 			this.parentThis = false;
 
 		}else{
 
-			this.path = path+"/"+this.MyClass;
-
+			
 			this.parentThis = this.getObjectThisfromPath(path);
-
 			this.parent = this.parentThis.getContainer();
 
 		}
 
+
 		if(this.parentThis){
 
-			this.MyClass = this.parentThis+"-"+MyClass
+			this.MyClass = this.parentThis+"-"+MyClass;
+			this.path = path+"/"+this.MyClass;
 		
 		}else{
 
 			this.MyClass = MyClass;
+			this.path = this.MyClass;
 
 		}
+
+
 
 		//this.MyClass = (MyClass !== false)? MyClass : this.constructor.name;
 
