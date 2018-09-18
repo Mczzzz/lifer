@@ -28,6 +28,8 @@ export default class HeaderButtons extends superViews{
 
 			this.HeaderElement   = this.card.setElement("Header");
 			this.card.setStyleElement(this.HeaderElement,"justifyContent","space-between");
+			this.card.setStyleElement(this.HeaderElement,"alignItems","center");
+
 
 					let HeaderBackButton = this.card.push("Button", this.HeaderElement,"Back", "keyboard_backspace");
 
@@ -71,9 +73,8 @@ export default class HeaderButtons extends superViews{
 
 		this.card.setAttributeComponent(this.HeaderElement,"Title","placeholder","Titre...");
 
-		this.card.setStyleComponent(this.HeaderElement,"Title","fontSize","12px");
-		this.card.setStyleComponent(this.HeaderElement,"Title","color","grey","all");
-		this.card.setStyleComponent(this.HeaderElement,"Title","margin","0px 5px 5px 5px");
+		this.card.setStyleComponent(this.HeaderElement,"Title","fontSize","22px");
+		this.card.setStyleComponent(this.HeaderElement,"Title","color","black","all");
 		this.card.setStyleComponent(this.HeaderElement,"Title","fontWeight","bold");
 		this.card.setStyleComponent(this.HeaderElement,"Title","width","100%");
 
