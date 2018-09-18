@@ -19,7 +19,7 @@ export default class card extends superViews{
 
      init(){
 
-      this.prefixElement   = "Element";
+     //this.prefixElement   = "Element";
 
       this.setStyle("marginBottom" , "20px");
       this.setStyle("borderWidth " , "1px");
@@ -48,7 +48,7 @@ export default class card extends superViews{
 
      setElement(classSuffixe){
        
-         let ClassName   = this.prefixElement + classSuffixe;
+         let ClassName   = classSuffixe;
 
          this[ClassName] = new Elements(ClassName,this.path);
          
