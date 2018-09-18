@@ -38,6 +38,11 @@ export default class Number extends superViews{
 
 
 
+		this.Dragger = this.card.setElement("Dragger_"+this.ClassId);
+		this.card.push("Button",this.Dragger,"dragger_"+this.ClassId, "drag_indicator");
+		this.card.setAttributeComponent(this.Dragger,"dragger_"+this.ClassId,"draggable", "y");
+
+
 		this.EmptyElementLegend = this.card.setElement("Legend_"+this.ClassId);
 		this.card.setStyleElement(this.EmptyElementLegend,"justifyContent","flex-start");
 
