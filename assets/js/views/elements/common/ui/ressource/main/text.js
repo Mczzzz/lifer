@@ -32,6 +32,7 @@ export default class Text extends superViews{
 		this.card.setStyle("boxShadow", "0px -2px 12px #BBB");
 		this.card.setStyle("background", "linear-gradient(45deg, #FCE94F 0%, #F4F14C 100%)");
 		this.card.setStyle("margin", "5px");
+		this.card.setStyle("display", "flex");
 
 
 		this.EmptyElement = this.card.setElement("Text_"+this.ClassId);
