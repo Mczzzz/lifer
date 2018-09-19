@@ -160,6 +160,7 @@ export default class card extends superViews{
 
 
         this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
+        console.log(this.Cloned.style.top);
 
         if(!this.getContainer().previousElementSibling && ((e.changedTouches[0].clientY - MiddleCard )< this.getContainer().getBoundingClientRect().y)){
 
