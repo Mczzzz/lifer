@@ -135,7 +135,7 @@ export default class card extends superViews{
 
       console.log(e.changedTouches[0].clientY);
       console.log(e.changedTouches[0].clientX);
-      this.getContainer().getBoundingClientRect().y;
+      //console.log(this.getContainer().getBoundingClientRect().y);
       //this.getContainer().previousElementSibling.getBoundingClientRect().y;
       //this.getContainer().nextElementSibling.getBoundingClientRect().y;
 
@@ -147,6 +147,7 @@ export default class card extends superViews{
 
           this.Cloned.style.position = "absolute";
           this.Cloned.style.width = "100%";
+          this.Cloned.style.top = this.getContainer().getBoundingClientRect().y;
 
       }else if(type == "move"){
 
