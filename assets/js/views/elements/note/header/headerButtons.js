@@ -40,6 +40,21 @@ export default class HeaderButtons extends superViews{
 					HeaderBackButton.getContainer().addEventListener("click",()=>this.CloseMe());
 
 
+							console.log('in show title');
+
+					this.TheTitle = this.card.push("Text", this.HeaderElement,"Title", text);
+
+					this.card.setAttributeComponent(this.HeaderElement,"Title","placeholder","Titre Note...");
+
+					this.card.setStyleComponent(this.HeaderElement,"Title","fontSize","22px");
+					this.card.setStyleComponent(this.HeaderElement,"Title","color","black","all");
+					this.card.setStyleComponent(this.HeaderElement,"Title","fontWeight","bold");
+					this.card.setStyleComponent(this.HeaderElement,"Title","margin","0px");
+					this.card.setStyleComponent(this.HeaderElement,"Title","width","100%");
+
+					this.TheTitle.setStyle("display", "none");
+
+
 					this.card.push("Button", this.HeaderElement,"sep1", "more_vert");
 
 					this.card.setStylePictoComponent(this.HeaderElement,"sep1","fontSize","25px");
@@ -75,17 +90,7 @@ export default class HeaderButtons extends superViews{
 
 	showTitle(text = ""){
 
-		console.log('in show title');
-
-		let TheTitle = this.card.push("Text", this.HeaderElement,"Title", text);
-
-		this.card.setAttributeComponent(this.HeaderElement,"Title","placeholder","Titre Note...");
-
-		this.card.setStyleComponent(this.HeaderElement,"Title","fontSize","22px");
-		this.card.setStyleComponent(this.HeaderElement,"Title","color","black","all");
-		this.card.setStyleComponent(this.HeaderElement,"Title","fontWeight","bold");
-		this.card.setStyleComponent(this.HeaderElement,"Title","margin","0px");
-		this.card.setStyleComponent(this.HeaderElement,"Title","width","100%");
+		this.TheTitle.setStyle("display", "");
 
 
 	}
