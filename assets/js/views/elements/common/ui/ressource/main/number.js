@@ -42,10 +42,13 @@ export default class Number extends superViews{
 		this.Dragger = this.card.setElement("Dragger_"+this.ClassId);
 		this.card.push("Button",this.Dragger,"dragger_"+this.ClassId, "drag_indicator");
 		this.card.setAttributeComponent(this.Dragger,"dragger_"+this.ClassId,"draggable", "y");
+		this.card.setStylePictoComponent(this.Dragger,"dragger_"+this.ClassId,"marginRight","0px");
 
 
 		this.EmptyElement = this.card.setElement("Legend_"+this.ClassId);
 		this.card.setStyleElement(this.EmptyElement,"justifyContent","flex-start");
+		this.card.setStyleElement(this.EmptyElement,"flexWrap","wrap");
+
 
 		let TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
 
@@ -55,13 +58,13 @@ export default class Number extends superViews{
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"color","black","property");
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"margin","0px 5px 5px 5px");
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontWeight","normal");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"flex",1);
+		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"flex","1 1 100%");
 
 
 
 		let TheValueElt = this.card.push("Input", this.EmptyElement,"Number_"+this.ClassId, "");
 
-		this.card.setStyleComponent(this.EmptyElement,"Number_"+this.ClassId,"flex",1);
+		this.card.setStyleComponent(this.EmptyElement,"Number_"+this.ClassId,"flex","1 1 80%");
 
 
 		this.card.setAttributeInputComponent(this.EmptyElement,"Number_"+this.ClassId,"placeholder","0000.000");
