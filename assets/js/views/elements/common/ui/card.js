@@ -133,9 +133,9 @@ export default class card extends superViews{
 
      touchMover(e,type){
 
- //     console.log(e.changedTouches[0].clientY);
-//      console.log(e.changedTouches[0].clientX);
-      //this.getContainer().getBoundingClientRect().y;
+      console.log(e.changedTouches[0].clientY);
+      console.log(e.changedTouches[0].clientX);
+      this.getContainer().getBoundingClientRect().y;
       //this.getContainer().previousElementSibling.getBoundingClientRect().y;
       //this.getContainer().nextElementSibling.getBoundingClientRect().y;
 
@@ -189,10 +189,6 @@ export default class card extends superViews{
 
         if(this.getContainer().nextElementSibling){
 
-/*          console.log("touchY:"+e.changedTouches[0].clientY);
-          console.log("contHeight:"+ this.getContainer().getBoundingClientRect().height);
-          console.log("nextPosY"+this.getContainer().nextElementSibling.getBoundingClientRect().y);
-          console.log("----------------------------------------------");*/
 
           if((e.changedTouches[0].clientY ) > this.getContainer().nextElementSibling.getBoundingClientRect().y){
 
@@ -201,19 +197,7 @@ export default class card extends superViews{
           }
 
         }
-
-/*        if(e.changedTouches[0].clientY < this.getContainer().previousElementSibling.getBoundingClientRect().y){
-
-          this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousElementSibling);
-          
-        
-        }else if(e.changedTouches[0].clientY > this.getContainer().nextElementSibling.getBoundingClientRect().y){
-
-          this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().nextElementSibling.nextElementSibling);
-          
-        
-        }*/
-      
+    
 
 
       }else if(type == "stop"){
