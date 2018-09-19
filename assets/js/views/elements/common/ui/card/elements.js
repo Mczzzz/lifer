@@ -7,7 +7,7 @@ export default class Elements extends superViews{
 
      constructor(MyClass,path,prepend = false){
 
-          super(MyClass , path);
+          super(MyClass , path, prepend);
 
 
           this.init();
