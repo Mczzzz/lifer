@@ -148,6 +148,8 @@ export default class card extends superViews{
           this.Cloned.style.position = "absolute";
           this.Cloned.style.width = "100%";
           this.Cloned.style.top = this.getContainer().getBoundingClientRect().y;
+          console.log("top cloned");
+          console.log(this.Cloned.style.top);
 
       }else if(type == "move"){
 
