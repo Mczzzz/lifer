@@ -29,7 +29,7 @@ export default class Text extends superViews{
 		this.card.setStyle("borderRadius", "0px");
 		this.card.setStyle("margin", "0px");
 		this.card.setStyle("padding", "10px");
-		this.card.setStyle("boxShadow", "0px -2px 12px #BBB");
+		this.card.setStyle("boxShadow", "rgb(212, 212, 212) 2px 2px 2px");
 		this.card.setStyle("background", "linear-gradient(45deg, #FCE94F 0%, #F4F14C 100%)");
 		this.card.setStyle("margin", "5px");
 		this.card.setStyle("display", "flex");
@@ -65,6 +65,7 @@ export default class Text extends superViews{
 
 	draggable(path,ancestorMethod){
 
+		console.log("draggble text");
 		this.dragAncestor = {};
 		this.dragAncestor.path = path;
 		this.dragAncestor.method = ancestorMethod;
@@ -78,6 +79,8 @@ export default class Text extends superViews{
 	}
 
 	dragAncestor(e,type){
+
+		console.log("draggble ancestor");
 
 		let ancestor = this.getObjectThisfromPath(this.dragAncestor.path);
 		ancestor[this.dragAncestor.method](this,type);
