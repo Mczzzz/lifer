@@ -9,9 +9,8 @@ export default class views {
 	constructor(MyClass,path,prepend = false){
 
 
-		
-
-
+		this.Draggable = false;
+S
 		this.Lifer = Lifer;
 
 Moment.locale('fr');

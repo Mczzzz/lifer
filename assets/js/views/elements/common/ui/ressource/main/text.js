@@ -38,8 +38,17 @@ export default class Text extends superViews{
 		this.card.setStyleElement(this.EmptyElement,"justifyContent","flex-start");
 		this.card.setStyleElement(this.EmptyElement,"alignItems","center");
 
-		this.card.push("Button",this.EmptyElement,"dragger_"+this.ClassId, "drag_indicator");
-		this.card.setAttributeComponent(this.EmptyElement,"dragger_"+this.ClassId,"draggable", "y");
+
+		if(this.Draggable){
+
+			let dragButton = this.card.push("Button",this.EmptyElement,"dragger_"+this.ClassId, "drag_indicator");
+
+			console.log("dragButto");
+			console.log(dragButton);
+			//dragButton.setAttributeComponent(this.EmptyElement,"dragger_"+this.ClassId,"draggable", this.Draggable);
+
+		}
+
 
 		let TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
 
@@ -61,5 +70,9 @@ export default class Text extends superViews{
 
 
 	}
+
+
+
+
 
 }
