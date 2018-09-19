@@ -40,9 +40,9 @@ export default class Number extends superViews{
 
 
 		this.Dragger = this.card.setElement("Dragger_"+this.ClassId);
-		this.card.push("Button",this.Dragger,"dragger_"+this.ClassId, "drag_indicator");
+		let drag = this.card.push("Button",this.Dragger,"dragger_"+this.ClassId, "drag_indicator");
 		this.card.setAttributeComponent(this.Dragger,"dragger_"+this.ClassId,"draggable", "y");
-		this.card.setStylePictoComponent(this.Dragger,"dragger_"+this.ClassId,"marginRight","0px");
+		drag.setStyle("marginRight","0px");
 
 
 		this.EmptyElement = this.card.setElement("Legend_"+this.ClassId);
