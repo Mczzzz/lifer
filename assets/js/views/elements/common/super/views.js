@@ -10,7 +10,7 @@ export default class views {
 
 
 		this.Draggable = false;
-S
+
 		this.Lifer = Lifer;
 
 Moment.locale('fr');
