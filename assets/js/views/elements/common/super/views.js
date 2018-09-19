@@ -255,6 +255,7 @@ Moment.locale('fr');
  	touchHandle(e,type){
 
  		console.log("touchhandle superviews");
+ 		console.log(this.touchCaller);
  		this.touchCaller[this.touchCallerMethod](e,type);
 
     }

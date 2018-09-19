@@ -26,7 +26,7 @@ export default class Text extends superViews{
 		this.card = new Card('Card_'+this.ClassId, this.path);
 		this.card.setId(0);
 		this.card.setStyle("borderWidth", "0px");
-		this.card.setStyle("borderRadius", "0px");
+		this.card.setStyle("borderRadius", "12px 0px 6px 12px");
 		this.card.setStyle("margin", "0px");
 		this.card.setStyle("padding", "10px");
 		this.card.setStyle("boxShadow", "rgb(212, 212, 212) 2px 2px 2px");
