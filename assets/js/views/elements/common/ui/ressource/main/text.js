@@ -62,7 +62,7 @@ export default class Text extends superViews{
 	}
 
 
-	Draggable(params){
+	draggable(params){
 
 		let dragButton = this.card.push("Button",this.EmptyElement,"dragger_"+this.ClassId, "drag_indicator");
 

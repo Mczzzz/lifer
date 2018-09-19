@@ -67,7 +67,7 @@ export default class MainRessource extends superViews{
 	text(){
 
 		let text = new Text("Text_"+this.autoIncrement, this.path);
-		text.Draggable("xy");
+		text.draggable("xy");
 
 		this.autoIncrement++;
 
@@ -78,7 +78,6 @@ export default class MainRessource extends superViews{
 	number(){
 
 		let number = new Number("Number_"+this.autoIncrement, this.path);
-		text.Draggable("xy");
 		this.autoIncrement++;
 
 	}
