@@ -9,7 +9,6 @@ export default class views {
 	constructor(MyClass,path,prepend = false){
 
 
-		this.draggable = false;
 
 		this.Lifer = Lifer;
 

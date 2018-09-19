@@ -65,8 +65,9 @@ export default class MainRessource extends superViews{
 
 
 	text(){
-																  //is draggable
-		let text = new Text("Text_"+this.autoIncrement, this.path,true);
+
+		let text = new Text("Text_"+this.autoIncrement, this.path);
+		text.draggable(this.path,onChildMove);
 		this.autoIncrement++;
 
 	}
@@ -79,6 +80,17 @@ export default class MainRessource extends superViews{
 		this.autoIncrement++;
 
 	}
+
+
+
+
+	onChildMove(childContainer){
+
+
+		console.log("on passe dans OnChildMove");
+
+	}
+
 
 
 
