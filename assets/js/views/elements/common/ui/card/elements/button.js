@@ -25,28 +25,6 @@ export default class button extends superViews{
 	}
 
 
-	initTouch(path, callback){
-
-	  this.touchCaller = this.getObjectThisfromPath(path);
-	  this.touchCallerMethod = callback;
-
-	  this.getContainer().addEventListener("touchstart", (e)=>this.handle(e,"start"), false);
-
-      this.getContainer().addEventListener("touchmove", (e)=>this.handle(e,"move"), false);
-
-      this.getContainer().addEventListener("touchend", (e)=>this.handle(e,"stop"), false);
-
-
-	}
-
-
- 	handle(e,type){
-
- 		this.touchCaller[this.touchCallerMethod](e,type);
-
-    }
-
-
 
 	createPicto(){
 

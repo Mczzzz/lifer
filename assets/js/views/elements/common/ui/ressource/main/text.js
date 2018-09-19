@@ -63,16 +63,26 @@ export default class Text extends superViews{
 	}
 
 
-	draggable(path,method){
-																	  //prepend
-		let dragElement = this.card.setElement("dragger_"+this.ClassId,true);
-		this.card.push("Button",dragElement,"dragger_"+this.ClassId, "drag_indicator");
+	draggable(path,ancestorMethod){
 
+		this.dragAncestor = {};
+		this.dragAncestor.path = path;
+		this.dragAncestor.method = ancestorMethod;
+					             									  //prepend
+		let dragElement = this.card.setElement("dragger_"+this.ClassId,true);
+		let button = this.card.push("Button",dragElement,"dragger_"+this.ClassId, "drag_indicator");
+
+		button.initTouch(this.path,"dragAncestor");
 		//dragButton.setAttributeComponent(this.EmptyElement,"dragger_"+this.ClassId,"draggable", params);
 
 	}
 
+	dragAncestor(e,type){
 
+		let ancestor = this.getObjectThisfromPath(this.dragAncestor.path);
+		ancestor[this.dragAncestor.method](this,type);
+
+	}
 
 
 

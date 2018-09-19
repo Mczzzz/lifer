@@ -226,10 +226,38 @@ Moment.locale('fr');
 
     }
 
+
+    //pourquoi ici ce serait plutot une fonction lifer à premiere vue
     getObjectThisfromPath(path){
 
     	return this.Lifer.getData(path,"This");
     }
     
+
+
+
+    initTouch(path, callback){
+
+	  this.touchCaller = this.getObjectThisfromPath(path);
+	  this.touchCallerMethod = callback;
+
+	  this.getContainer().addEventListener("touchstart", (e)=>this.touchHandle(e,"start"), false);
+
+      this.getContainer().addEventListener("touchmove", (e)=>this.touchHandle(e,"move"), false);
+
+      this.getContainer().addEventListener("touchend", (e)=>this.touchHandle(e,"stop"), false);
+
+
+	}
+
+
+ 	touchHandle(e,type){
+
+ 		this.touchCaller[this.touchCallerMethod](e,type);
+
+    }
+
+
+
 
 }
