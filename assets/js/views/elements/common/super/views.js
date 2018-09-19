@@ -238,7 +238,7 @@ Moment.locale('fr');
 
     initTouch(path, callback){
 
-    	console.log("init touch superviews");
+
 	  this.touchCaller = this.getObjectThisfromPath(path);
 	  this.touchCallerMethod = callback;
 
@@ -254,9 +254,6 @@ Moment.locale('fr');
 
  	touchHandle(e,type){
 
- 		console.log("touchhandle superviews");
- 		console.log(this.touchCaller);
- 		console.log(this.touchCallerMethod);
  		this.touchCaller[this.touchCallerMethod](e,type);
 
     }

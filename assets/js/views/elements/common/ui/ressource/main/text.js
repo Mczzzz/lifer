@@ -65,7 +65,7 @@ export default class Text extends superViews{
 
 	draggable(path,ancestorMethod){
 
-		console.log("draggble text");
+
 		this.dragAncestor = {};
 		this.dragAncestor.path = path;
 		this.dragAncestor.method = ancestorMethod;
@@ -79,8 +79,6 @@ export default class Text extends superViews{
 	}
 
 	ancestorCallBack(e,type){
-
-		console.log("draggble ancestor");
 
 		let ancestor = this.getObjectThisfromPath(this.dragAncestor.path);
 		ancestor[this.dragAncestor.method](this,type);
