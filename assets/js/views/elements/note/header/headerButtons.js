@@ -59,7 +59,7 @@ export default class HeaderButtons extends superViews{
 
 					this.card.setStylePictoComponent(this.HeaderElement,"sep1","fontSize","25px");
 					this.card.setStylePictoComponent(this.HeaderElement,"sep1","margin","0px");
-					this.card.setStylePictoComponent(this.HeaderElement,"sep1","marginRight","10px");
+					this.card.setStylePictoComponent(this.HeaderElement,"sep1","marginRight","0px");
 					this.card.setStylePictoComponent(this.HeaderElement,"sep1","color","grey");
 					this.card.setStylePictoComponent(this.HeaderElement,"sep1","alignItems","center");
 
