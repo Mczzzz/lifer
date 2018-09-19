@@ -130,12 +130,12 @@ export default class ActionButtons extends superViews{
 					number.getContainer().addEventListener("click",()=>this.Start("number"));
 
 
-
+/*
 					let todoList = this.card.push("Button", Elt,"todoList", "list");
 
 					this.card.setStylePictoComponent(Elt,"todoList","fontSize","25px");
 					this.card.setStylePictoComponent(Elt,"todoList","color","blue");
-					this.card.setStylePictoComponent(Elt,"todoList","alignItems","center");
+					this.card.setStylePictoComponent(Elt,"todoList","alignItems","center");*/
 
 
 

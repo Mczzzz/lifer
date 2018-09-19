@@ -39,12 +39,6 @@ export default class Number extends superViews{
 
 
 
-		this.Dragger = this.card.setElement("Dragger_"+this.ClassId);
-		let drag = this.card.push("Button",this.Dragger,"dragger_"+this.ClassId, "drag_indicator");
-		this.card.setAttributeComponent(this.Dragger,"dragger_"+this.ClassId,"draggable", "y");
-		//this.card.setStyleComponent(this.Dragger,"dragger_"+this.ClassId,"marginRight", "0px");
-
-
 		this.EmptyElement = this.card.setElement("Legend_"+this.ClassId);
 		this.card.setStyleElement(this.EmptyElement,"justifyContent","flex-start");
 		this.card.setStyleElement(this.EmptyElement,"flexWrap","wrap");
@@ -122,6 +116,18 @@ export default class Number extends superViews{
 		/*this.active = this.card;
 */
 	}
+
+
+	draggable(path,method){
+																	  //prepend
+		let dragElement = this.card.setElement("dragger_"+this.ClassId,true);
+		this.card.push("Button",dragElement,"dragger_"+this.ClassId, "drag_indicator");
+
+		//dragButton.setAttributeComponent(this.EmptyElement,"dragger_"+this.ClassId,"draggable", params);
+
+	}
+
+
 
 
 	Startselect(){
