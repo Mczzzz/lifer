@@ -40,13 +40,13 @@ export default class HeaderButtons extends superViews{
 					HeaderBackButton.getContainer().addEventListener("click",()=>this.CloseMe());
 
 
-					this.card.push("Button", HeaderElement,"sep1", "more_vert");
+					this.card.push("Button", this.HeaderElement,"sep1", "more_vert");
 
-					this.card.setStylePictoComponent(HeaderElement,"sep1","fontSize","25px");
-					this.card.setStylePictoComponent(HeaderElement,"sep1","margin","0px");
-					this.card.setStylePictoComponent(HeaderElement,"sep1","marginRight","10px");
-					this.card.setStylePictoComponent(HeaderElement,"sep1","color","grey");
-					this.card.setStylePictoComponent(HeaderElement,"sep1","alignItems","center");
+					this.card.setStylePictoComponent(this.HeaderElement,"sep1","fontSize","25px");
+					this.card.setStylePictoComponent(this.HeaderElement,"sep1","margin","0px");
+					this.card.setStylePictoComponent(this.HeaderElement,"sep1","marginRight","10px");
+					this.card.setStylePictoComponent(this.HeaderElement,"sep1","color","grey");
+					this.card.setStylePictoComponent(this.HeaderElement,"sep1","alignItems","center");
 
 
 
