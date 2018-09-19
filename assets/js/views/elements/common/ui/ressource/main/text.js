@@ -73,12 +73,12 @@ export default class Text extends superViews{
 		let dragElement = this.card.setElement("dragger_"+this.ClassId,true);
 		let button = this.card.push("Button",dragElement,"dragger_"+this.ClassId, "drag_indicator");
 
-		button.initTouch(this.path,"dragAncestor");
+		button.initTouch(this.path,"ancestorCallBack");
 		//dragButton.setAttributeComponent(this.EmptyElement,"dragger_"+this.ClassId,"draggable", params);
 
 	}
 
-	dragAncestor(e,type){
+	ancestorCallBack(e,type){
 
 		console.log("draggble ancestor");
 
