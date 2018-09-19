@@ -154,14 +154,16 @@ export default class card extends superViews{
       }else if(type == "move"){
 
         event.preventDefault();
-        this.setStyle("background" , "red","element");
+        //this.setStyle("background" , "red","element");
 
         let MiddleCard = 0.5 * this.getContainer().getBoundingClientRect().height;
 
 
         this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
         console.log(this.Cloned.style.top);
-
+        console.log("previous / next");
+        console.log(this.getContainer().previousElementSibling);
+        console.log(this.getContainer().nextElementSibling);
         if(!this.getContainer().previousElementSibling && ((e.changedTouches[0].clientY - MiddleCard )< this.getContainer().getBoundingClientRect().y)){
 
           this.Cloned.style.display = "none";
@@ -206,7 +208,7 @@ export default class card extends superViews{
 
       }else if(type == "stop"){
 
-        this.setStyle("background" , "white","element");
+        //this.setStyle("background" , "white","element");
         this.Cloned.remove();
 
       }
