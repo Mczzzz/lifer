@@ -77,6 +77,7 @@ export default class MainRessource extends superViews{
 	number(){
 
 		let number = new Number("Number_"+this.autoIncrement, this.path);
+		number.draggable(this.path,"onChildMove");
 		this.autoIncrement++;
 
 	}
