@@ -6,9 +6,11 @@ import Card from "../../../ui/card.js";
 export default class Text extends superViews{
 	
 
-	constructor( MyClass , path){
+	constructor( MyClass , path, draggable = false){
 
 		super( MyClass , path);
+
+		this.draggable = draggable;
 
 		this.init();
 		
@@ -23,7 +25,7 @@ export default class Text extends superViews{
 
 	form(){
 
-		this.card = new Card('Card_'+this.ClassId, this.path);
+		this.card = new Card('Card_'+this.ClassId, this.path, false, this.draggable);
 		this.card.setId(0);
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");
@@ -66,12 +68,13 @@ export default class Text extends superViews{
 
 		let dragButton = this.card.push("Button",this.EmptyElement,"dragger_"+this.ClassId, "drag_indicator");
 
-			console.log("dragButto");
-			console.log(dragButton);
 		dragButton.setAttributeComponent(this.EmptyElement,"dragger_"+this.ClassId,"draggable", params);
 
 
 	}
+
+
+
 
 
 

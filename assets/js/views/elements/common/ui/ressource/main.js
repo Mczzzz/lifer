@@ -65,10 +65,8 @@ export default class MainRessource extends superViews{
 
 
 	text(){
-
-		let text = new Text("Text_"+this.autoIncrement, this.path);
-		text.draggable("xy");
-
+																  //is draggable
+		let text = new Text("Text_"+this.autoIncrement, this.path,true);
 		this.autoIncrement++;
 
 	}

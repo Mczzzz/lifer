@@ -5,7 +5,7 @@ import Elements     from "./card/elements.js";
 export default class card extends superViews{ 
      
 
-     constructor(MyClass,path,prepend = false){
+     constructor(MyClass,path,prepend = false, draggable = false){
 
           super( MyClass , path);
 
