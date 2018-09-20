@@ -161,7 +161,7 @@ export default class MainRessource extends superViews{
 
         //le decalage
 
-        if(e.changedTouches[0].clientX > childContainer.getContainer().getBoundingClientRect().x +10){
+        if(e.changedTouches[0].clientX > childContainer.getContainer().getBoundingClientRect().x +20){
 
         	childContainer.setStyle("marginLeft", "30px");
 
