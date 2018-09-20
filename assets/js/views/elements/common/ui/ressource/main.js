@@ -90,7 +90,7 @@ export default class MainRessource extends superViews{
 
 		console.log("on passe dans OnChildMove");
 		console.log(type);
-		
+
 		if(type == "start"){
 
 		  this.Cloned = childContainer.getContainer().cloneNode(true);
@@ -102,7 +102,12 @@ export default class MainRessource extends superViews{
 		  console.log("top cloned");
 		  console.log(this.Cloned.style.top);
 
-		}
+		}else if(type == "stop"){
+
+        //this.setStyle("background" , "white","element");
+        	this.Cloned.remove();
+
+      	}
 
 
 
