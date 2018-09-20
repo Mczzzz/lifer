@@ -175,6 +175,8 @@ export default class MainRessource extends superViews{
 
 
 	        //le decalage
+	        console.log(e.changedTouches[0].clientX);
+	        console.log(childContainer.getContainer().getBoundingClientRect().x);
 
 	        if(e.changedTouches[0].clientX > childContainer.getContainer().getBoundingClientRect().x +30){
 
@@ -274,6 +276,7 @@ export default class MainRessource extends superViews{
             this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().nextElementSibling.nextElementSibling);
           
           }
+
 
         }
     
