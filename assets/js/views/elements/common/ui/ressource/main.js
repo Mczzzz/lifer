@@ -105,6 +105,8 @@ export default class MainRessource extends superViews{
 
 		}else if(type == "move"){
 
+			console.log(childContainer.getContainer().style);
+
         event.preventDefault();
         //this.setStyle("background" , "red","element");
 
