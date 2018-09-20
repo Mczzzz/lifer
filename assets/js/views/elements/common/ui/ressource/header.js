@@ -25,7 +25,7 @@ export default class HeaderRessource extends superViews{
 		this.card.setStyle("borderRadius", "0px");
 		this.card.setStyle("margin", "0px");
 		this.card.setStyle("padding", "0px");
-		this.card.setStyle("background", "white");
+		this.card.setStyle("background", "linear-gradient(45deg, rgb(73, 50, 144) 0%, rgb(43, 46, 144) 100%)");
 
 
 
