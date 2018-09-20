@@ -108,19 +108,19 @@ export default class MainRessource extends superViews{
         event.preventDefault();
         //this.setStyle("background" , "red","element");
 
-        let MiddleCard = 0.5 * this.getContainer().getBoundingClientRect().height;
+        let MiddleCard = 0.5 * childContainer.getContainer().getBoundingClientRect().height;
 
 
         this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
         console.log(this.Cloned.style.top);
         console.log("previous / next");
-        console.log(this.getContainer().previousElementSibling);
-        console.log(this.getContainer().nextElementSibling);
-        if(!this.getContainer().previousElementSibling && ((e.changedTouches[0].clientY - MiddleCard )< this.getContainer().getBoundingClientRect().y)){
+        console.log(childContainer.getContainer().previousElementSibling);
+        console.log(childContainer.getContainer().nextElementSibling);
+        if(!childContainer.getContainer().previousElementSibling && ((e.changedTouches[0].clientY - MiddleCard )< childContainer.getContainer().getBoundingClientRect().y)){
 
           this.Cloned.style.display = "none";
 
-        }else if(!this.getContainer().nextElementSibling && (e.changedTouches[0].clientY > this.getContainer().getBoundingClientRect().y)){
+        }else if(!childContainer.getContainer().nextElementSibling && (e.changedTouches[0].clientY > childContainer.getContainer().getBoundingClientRect().y)){
 
           this.Cloned.style.display = "none";
 
@@ -129,7 +129,7 @@ export default class MainRessource extends superViews{
         }
 
 
-        if(this.getContainer().previousElementSibling){
+        if(childContainer.getContainer().previousElementSibling){
 /*          console.log("touchY:"+e.changedTouches[0].clientY);
           console.log("contHeight:"+ this.getContainer().getBoundingClientRect().height);
           console.log( JSON.stringify(this.getContainer().getBoundingClientRect()));
@@ -137,9 +137,9 @@ export default class MainRessource extends superViews{
           console.log("previousPosY"+this.getContainer().previousElementSibling.getBoundingClientRect().y);
           console.log("----------------------------------------------");*/
           
-          if((e.changedTouches[0].clientY - this.getContainer().getBoundingClientRect().height ) < this.getContainer().previousElementSibling.getBoundingClientRect().y){
+          if((e.changedTouches[0].clientY - childContainer.getContainer().getBoundingClientRect().height ) < childContainer.getContainer().previousElementSibling.getBoundingClientRect().y){
 
-            this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousElementSibling);
+            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling);
           
           }
 
@@ -148,9 +148,9 @@ export default class MainRessource extends superViews{
         if(this.getContainer().nextElementSibling){
 
 
-          if((e.changedTouches[0].clientY ) > this.getContainer().nextElementSibling.getBoundingClientRect().y){
+          if((e.changedTouches[0].clientY ) > childContainer.getContainer().nextElementSibling.getBoundingClientRect().y){
 
-            this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().nextElementSibling.nextElementSibling);
+            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
           
           }
 
