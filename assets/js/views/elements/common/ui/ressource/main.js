@@ -93,16 +93,18 @@ export default class MainRessource extends superViews{
 
 		if(type == "start"){
 
+ 
+
+		  this.Cloned = childContainer.getContainer().cloneNode(true);
+		  document.body.appendChild(this.Cloned);
+
+
+
 		  this.initialStyle = childContainer.getContainer().style;
 
 		  childContainer.setStyle("boxShadow","rgb(121, 193, 206) -2px 1px 11px 9px");
 
 
-
-		  
-
-		  this.Cloned = childContainer.getContainer().cloneNode(true);
-		  document.body.appendChild(this.Cloned);
 
 		  this.Cloned.style.position = "absolute";
 		  this.Cloned.style.width = "100%";
