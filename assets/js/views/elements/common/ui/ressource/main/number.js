@@ -136,7 +136,7 @@ export default class Number extends superViews{
 	ancestorCallBack(e,type){
 
 		let ancestor = this.getObjectThisfromPath(this.dragAncestor.path);
-		ancestor[this.dragAncestor.method](this,type);
+		ancestor[this.dragAncestor.method](this,e,type);
 
 	}
 

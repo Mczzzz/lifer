@@ -85,7 +85,7 @@ export default class MainRessource extends superViews{
 
 
 
-	onChildMove(childContainer, type){
+	onChildMove(childContainer, e, type){
 
 
 		console.log("on passe dans OnChildMove");
