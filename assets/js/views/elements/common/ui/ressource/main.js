@@ -195,7 +195,7 @@ export default class MainRessource extends superViews{
       }else if(type == "stop"){
 
         //this.setStyle("background" , "white","element");
-        childContainer.getContainer().style = this.initialStyle;
+        //childContainer.getContainer().style = this.initialStyle;
         this.Cloned.remove();
 
       }
