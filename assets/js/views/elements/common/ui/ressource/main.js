@@ -93,6 +93,14 @@ export default class MainRessource extends superViews{
 
 		if(type == "start"){
 
+		  this.initialStyle = childContainer.getContainer().style;
+
+		  childContainer.setStyle("boxShadow","rgb(121, 193, 206) -2px 1px 11px 9px");
+
+
+
+		  
+
 		  this.Cloned = childContainer.getContainer().cloneNode(true);
 		  document.body.appendChild(this.Cloned);
 
@@ -105,73 +113,76 @@ export default class MainRessource extends superViews{
 
 		}else if(type == "move"){
 
-			console.log(childContainer.getContainer().style);
+			
 
-        event.preventDefault();
-        //this.setStyle("background" , "red","element");
+	        event.preventDefault();
+	        //this.setStyle("background" , "red","element");
 
-        let MiddleCard = 0.5 * childContainer.getContainer().getBoundingClientRect().height;
-
-
-        this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
-        console.log(this.Cloned.style.top);
-        console.log("previous / next");
-        console.log(childContainer.getContainer().previousElementSibling);
-        console.log(childContainer.getContainer().nextElementSibling);
-
-        if(!childContainer.getContainer().previousElementSibling && ((e.changedTouches[0].clientY - MiddleCard )< childContainer.getContainer().getBoundingClientRect().y)){
-
-          this.Cloned.style.display = "none";
-
-        }else if(!childContainer.getContainer().nextElementSibling && (e.changedTouches[0].clientY > childContainer.getContainer().getBoundingClientRect().y)){
-
-          this.Cloned.style.display = "none";
-
-        }else{
-          this.Cloned.style.display = "";
-        }
+	        let MiddleCard = 0.5 * childContainer.getContainer().getBoundingClientRect().height;
 
 
-        if(childContainer.getContainer().previousElementSibling){
-/*          console.log("touchY:"+e.changedTouches[0].clientY);
-          console.log("contHeight:"+ this.getContainer().getBoundingClientRect().height);
-          console.log( JSON.stringify(this.getContainer().getBoundingClientRect()));
-          console.log( JSON.stringify(this.getContainer().previousElementSibling.getBoundingClientRect()));
-          console.log("previousPosY"+this.getContainer().previousElementSibling.getBoundingClientRect().y);
-          console.log("----------------------------------------------");*/
-          
-          if((e.changedTouches[0].clientY - childContainer.getContainer().getBoundingClientRect().height ) < childContainer.getContainer().previousElementSibling.getBoundingClientRect().y){
-
-            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling);
-          
-          }
-
-        }
-
-        if(this.getContainer().nextElementSibling){
+	        this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
+	        console.log(this.Cloned.style.top);
+	        console.log("previous / next");
+	        console.log(childContainer.getContainer().previousElementSibling);
+	        console.log(childContainer.getContainer().nextElementSibling);
 
 
-          if((e.changedTouches[0].clientY ) > childContainer.getContainer().nextElementSibling.getBoundingClientRect().y){
+	        if(!childContainer.getContainer().previousElementSibling && ((e.changedTouches[0].clientY - MiddleCard )< childContainer.getContainer().getBoundingClientRect().y)){
 
-            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
-          
-          }
+	          this.Cloned.style.display = "none";
 
-        }
-    
+	        }else if(!childContainer.getContainer().nextElementSibling && (e.changedTouches[0].clientY > childContainer.getContainer().getBoundingClientRect().y)){
+
+	          this.Cloned.style.display = "none";
+
+	        }else{
+	          this.Cloned.style.display = "";
+	        }
 
 
-        //le decalage
+	        if(childContainer.getContainer().previousElementSibling){
+	/*          console.log("touchY:"+e.changedTouches[0].clientY);
+	          console.log("contHeight:"+ this.getContainer().getBoundingClientRect().height);
+	          console.log( JSON.stringify(this.getContainer().getBoundingClientRect()));
+	          console.log( JSON.stringify(this.getContainer().previousElementSibling.getBoundingClientRect()));
+	          console.log("previousPosY"+this.getContainer().previousElementSibling.getBoundingClientRect().y);
+	          console.log("----------------------------------------------");*/
+	          
+	          if((e.changedTouches[0].clientY - childContainer.getContainer().getBoundingClientRect().height ) < childContainer.getContainer().previousElementSibling.getBoundingClientRect().y){
 
-        if(e.changedTouches[0].clientX > childContainer.getContainer().getBoundingClientRect().x +30){
+	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling);
+	          
+	          }
 
-        	childContainer.setStyle("marginLeft", "30px");
+	        }
 
-        }else{
 
-        	childContainer.setStyle("marginLeft", "0px");
 
-        }
+	        if(this.getContainer().nextElementSibling){
+
+
+	          if((e.changedTouches[0].clientY ) > childContainer.getContainer().nextElementSibling.getBoundingClientRect().y){
+
+	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
+	          
+	          }
+
+	        }
+	    
+
+
+	        //le decalage
+
+	        if(e.changedTouches[0].clientX > childContainer.getContainer().getBoundingClientRect().x +30){
+
+	        	childContainer.setStyle("marginLeft", "30px");
+
+	        }else{
+
+	        	childContainer.setStyle("marginLeft", "0px");
+
+	        }
 
 
 
@@ -180,6 +191,7 @@ export default class MainRessource extends superViews{
       }else if(type == "stop"){
 
         //this.setStyle("background" , "white","element");
+        childContainer.getContainer().style = this.initialStyle;
         this.Cloned.remove();
 
       }
