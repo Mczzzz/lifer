@@ -1,5 +1,7 @@
 import superViews from "../../super/views.js";
 
+import Dropdown from "../dropdown.js";
+
 import Card from "../card.js";
 
 export default class HeaderRessource extends superViews{ 
@@ -43,7 +45,7 @@ export default class HeaderRessource extends superViews{
 				this.card.setStyleComponent(HeaderElement,"Title","fontWeight","bold");
 
 
-				this.card.push("Button", HeaderElement,"sep1", "more_vert");
+				let ddButton = this.card.push("Button", HeaderElement,"sep1", "more_vert");
 
 				this.card.setStylePictoComponent(HeaderElement,"sep1","fontSize","25px");
 				this.card.setStylePictoComponent(HeaderElement,"sep1","margin","0px");
@@ -52,13 +54,22 @@ export default class HeaderRessource extends superViews{
 				this.card.setStylePictoComponent(HeaderElement,"sep1","alignItems","center");
 
 
-
+				ddButton.getContainer().addEventListener("click",()=>this.initDropDown());
 
 
 
 
      }
 
+
+    initDropDown(){
+
+
+    	let menu = new Dropdown("dropdown",this.path);
+
+
+
+    }
 
 
 
