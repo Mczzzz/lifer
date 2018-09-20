@@ -116,6 +116,7 @@ export default class MainRessource extends superViews{
         console.log("previous / next");
         console.log(childContainer.getContainer().previousElementSibling);
         console.log(childContainer.getContainer().nextElementSibling);
+
         if(!childContainer.getContainer().previousElementSibling && ((e.changedTouches[0].clientY - MiddleCard )< childContainer.getContainer().getBoundingClientRect().y)){
 
           this.Cloned.style.display = "none";
@@ -156,6 +157,22 @@ export default class MainRessource extends superViews{
 
         }
     
+
+
+        //le decalage
+
+        if(e.changedTouches[0].clientX > 100){
+
+        	childContainer.setStyle("marginLeft", "50px");
+
+        }else{
+
+        	childContainer.setStyle("marginLeft", "0px");
+
+        }
+
+
+
 
 
       }else if(type == "stop"){
