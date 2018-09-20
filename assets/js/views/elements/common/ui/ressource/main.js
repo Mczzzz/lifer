@@ -163,7 +163,7 @@ export default class MainRessource extends superViews{
 
         if(e.changedTouches[0].clientX > 100){
 
-        	childContainer.setStyle("marginLeft", "50px");
+        	childContainer.setStyle("marginLeft", "10px");
 
         }else{
 
