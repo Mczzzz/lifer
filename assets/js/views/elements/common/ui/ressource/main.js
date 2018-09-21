@@ -142,7 +142,7 @@ export default class MainRessource extends superViews{
 
 
 	        this.Cloned.style.top = e.changedTouches[0].clientY-this.touchY+"px";
-	        this.Cloned.style.left = e.changedTouches[0].clientX-this.touchX+"px";
+	        this.Cloned.style.left = e.changedTouches[0].clientX-this.touchX-childContainer.getContainer().style.marginLeft+"px";
 
 
 
