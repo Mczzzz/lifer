@@ -187,10 +187,10 @@ export default class MainRessource extends superViews{
 	        console.log(e.changedTouches[0].clientX);
 	        console.log(childContainer.getContainer().getBoundingClientRect().x);
 
-	        if(e.changedTouches[0].clientX > childContainer.getContainer().getBoundingClientRect().x +30){
+	        if(e.changedTouches[0].clientX > childContainer.getContainer().previousElementSibling.getBoundingClientRect().x +30){
 
 	        	childContainer.setStyle("marginLeft", "30px");
-	        	this.Ghost.style.marginLeft = "30px";
+	        	this.Ghost.style.marginLeft = childContainer.getContainer().previousElementSibling.getBoundingClientRect().x+30+"px";
 
 	        }else{
 
