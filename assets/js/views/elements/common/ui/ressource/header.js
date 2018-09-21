@@ -36,13 +36,6 @@ export default class HeaderRessource extends superViews{
 		this.card.setStyleElement(HeaderElement,"justifyContent","space-between");
 		this.card.setStyleElement(HeaderElement,"alignItems","center");
 
-				this.card.push("Text",HeaderElement,"Title","");
-
-				this.card.setAttributeComponent(HeaderElement,"Title","placeholder","Titre Ressource...");
-
-				this.card.setStyleComponent(HeaderElement,"Title","fontSize","18px");
-				this.card.setStyleComponent(HeaderElement,"Title","color","grey");
-				this.card.setStyleComponent(HeaderElement,"Title","fontWeight","bold");
 
 
 				let colButton = this.card.push("Button", HeaderElement,"collapse", "keyboard_arrow_down");
@@ -55,6 +48,18 @@ export default class HeaderRessource extends superViews{
 
 				colButton.getContainer().addEventListener("click",()=>this.colMain(colButton));
 
+
+
+
+
+
+				this.card.push("Text",HeaderElement,"Title","");
+
+				this.card.setAttributeComponent(HeaderElement,"Title","placeholder","Titre Ressource...");
+
+				this.card.setStyleComponent(HeaderElement,"Title","fontSize","18px");
+				this.card.setStyleComponent(HeaderElement,"Title","color","grey");
+				this.card.setStyleComponent(HeaderElement,"Title","fontWeight","bold");
 
 
 

@@ -128,7 +128,7 @@ export default class MainRessource extends superViews{
 
 
 		  childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
-		  //childContainer.setStyle("display","none");
+		  childContainer.setStyle("display","none");
 
 
 		  this.initMarginClone = parseInt(childContainer.getContainer().style.marginLeft, 10);
@@ -224,6 +224,22 @@ export default class MainRessource extends superViews{
 	        	childContainer.setStyle("marginLeft", GoodMargin +"px");
 	        	this.Ghost.style.marginLeft = GoodMargin + "px";
 
+
+/*	        	let nodeTotest = childContainer.getContainer().nextElementSibling;
+	        	while( parseInt(nodeTotest.style.marginLeft, 10) >= GoodMargin){
+
+	        	console.log('in while');
+	        	nodeTotest.style.marginLeft = parseInt(nodeTotest.style.marginLeft, 10) + Pas +"px";
+
+
+	        	nodeTotest = nodeTotest.nextElementSibling;
+	        }*/
+
+
+
+
+
+
 	        }else{
 
 	        	//calcul de la bonne valeur
@@ -239,15 +255,7 @@ export default class MainRessource extends superViews{
 
 	        }
 
-/*	        let nodeTotest = childContainer.getContainer();
-	        while( parseInt(nodeTotest.style.marginLeft, 10) >= GoodMargin){
 
-	        	console.log('in while');
-	        	nodeTotest.style.marginLeft = parseInt(nodeTotest.style.marginLeft, 10) + Pas +"px";
-
-
-	        	nodeTotest = nodeTotest.nextElementSibling;
-	        }*/
 
 
 
