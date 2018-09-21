@@ -195,7 +195,7 @@ export default class MainRessource extends superViews{
 	        }else{
 
 	        	childContainer.setStyle("marginLeft", "0px");
-				this.Ghost.style.marginLeft = "30px";
+				this.Ghost.style.marginLeft = "0px";
 	        }
 
 
