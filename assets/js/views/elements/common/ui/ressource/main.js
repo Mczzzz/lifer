@@ -141,7 +141,7 @@ export default class MainRessource extends superViews{
 
 	        let MiddleCard = 0.5 * childContainer.getContainer().getBoundingClientRect().height;
 
-
+	        this.Cloned.style.marginLeft = "Opx";
 	        this.Cloned.style.top = e.changedTouches[0].clientY-this.touchY+"px";
 	        this.Cloned.style.left = e.changedTouches[0].clientX-this.touchX +"px";
 
