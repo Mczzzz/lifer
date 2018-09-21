@@ -135,11 +135,11 @@ export default class MainRessource extends superViews{
 
 
 
-	        if(!childContainer.getContainer().previousElementSibling && ((e.changedTouches[0].clientY - MiddleCard )< childContainer.getContainer().getBoundingClientRect().y)){
+	        if(!childContainer.getContainer().previousElementSibling.previousElementSibling && (e.changedTouches[0].clientY < this.Ghost.getBoundingClientRect().y)){
 
 	          this.Cloned.style.display = "none";
 
-	        }else if(!childContainer.getContainer().nextElementSibling && (e.changedTouches[0].clientY > this.Ghost.getBoundingClientRect().y)){
+	        }else if(!childContainer.getContainer().nextElementSibling && (e.changedTouches[0].clientY > childContainer.getBoundingClientRect().y)){
 
 	          this.Cloned.style.display = "none";
 
