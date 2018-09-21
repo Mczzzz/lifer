@@ -167,7 +167,7 @@ export default class MainRessource extends superViews{
 
 
 
-	        if(this.getContainer().nextElementSibling.nextElementSibling){
+	        if(childContainer.getContainer().nextElementSibling){
 
 	        	console.log('in next');
 
