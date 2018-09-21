@@ -204,6 +204,7 @@ export default class MainRessource extends superViews{
 
         childContainer.setStyle("display","");
         this.Cloned.remove();
+        this.Ghost.remove();
 
       }
 
