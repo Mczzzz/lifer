@@ -106,7 +106,7 @@ export default class HeaderRessource extends superViews{
 
     	let Main = this.getObjectThisfromPath("Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main");
 
-    	if(Main.getContainer.style.display == "none"){
+    	if(Main.getContainer().style.display == "none"){
 
     		colButton.setData("keyboard_arrow_up");
     		Main.setStyle("display","none");
