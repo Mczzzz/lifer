@@ -129,6 +129,10 @@ export default class Title extends superViews{
     	}
 
 
+    	let Title = this.getObjectThisfromPath("Note/Header/Action/Card/Header/Text/Title");
+    	Title.getContainer().innerHTML(TheTitle.innerHTML);
+
+
     	this.TheNote.note.Title = TheTitle.innerHTML;
     	let updateTs = this.Moment();
     	this.updateNote.getContainer().innerHTML = updateTs.format('Do MMMM YYYY, HH:mm:ss');
