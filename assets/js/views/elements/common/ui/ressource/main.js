@@ -108,8 +108,8 @@ export default class MainRessource extends superViews{
 		  //calcul de la position relative du clone par rapport au touch
 		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x;
 		  this.touchY = e.changedTouches[0].clientY - this.Cloned.getBoundingClientRect().y;
-
-
+		  console.log(this.touchX);
+		  console.log(this.touchY);
 
 		  this.Ghost = childContainer.getContainer().cloneNode(false);
 		  this.Ghost.style.boxShadow  = "inset rgb(121, 193, 206) 0px 0px 19px 3px";
