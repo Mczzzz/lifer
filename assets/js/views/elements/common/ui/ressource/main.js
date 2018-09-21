@@ -156,9 +156,9 @@ export default class MainRessource extends superViews{
 	        if(childContainer.getContainer().previousElementSibling.previousElementSibling){
 	        	console.log('in previous');
 	          
-	          if((e.changedTouches[0].clientY - childContainer.getContainer().getBoundingClientRect().height ) < childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().y){
+	          if((e.changedTouches[0].clientY - this.Ghost.getBoundingClientRect().height ) < this.Ghost.previousElementSibling.previousElementSibling.getBoundingClientRect().y){
 	          	console.log('in previous move node');
-	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling);
+	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling.previousElementSibling);
 	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 	          	
 	          }
