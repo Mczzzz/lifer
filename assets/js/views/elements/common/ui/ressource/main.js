@@ -148,11 +148,16 @@ export default class MainRessource extends superViews{
 	        }
 
 
-	        if(childContainer.getContainer().previousElementSibling.previousElementSibling){
 
+
+
+
+
+	        if(childContainer.getContainer().previousElementSibling.previousElementSibling){
+	        	console.log('in previous');
 	          
 	          if((e.changedTouches[0].clientY - childContainer.getContainer().getBoundingClientRect().height ) < childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().y){
-
+	          	console.log('in previous move node');
 	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling);
 	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 	          	
@@ -164,9 +169,10 @@ export default class MainRessource extends superViews{
 
 	        if(this.getContainer().nextElementSibling.nextElementSibling){
 
+	        	console.log('in next');
 
 	          if((e.changedTouches[0].clientY ) > childContainer.getContainer().nextElementSibling.getBoundingClientRect().y){
-
+	          	console.log('in next move node');
 	          	
 	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
 	          	childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
@@ -174,6 +180,9 @@ export default class MainRessource extends superViews{
 
 	        }
 	    
+
+
+
 
 
 	        //le decalage
