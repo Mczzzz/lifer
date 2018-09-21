@@ -98,19 +98,17 @@ export default class MainRessource extends superViews{
 		  this.Cloned = childContainer.getContainer().cloneNode(true);
 		  document.body.appendChild(this.Cloned);
 
-
-
-		  this.initialStyle = childContainer.getContainer().style;
-
-		  childContainer.setStyle("boxShadow","rgb(121, 193, 206) -2px 1px 11px 9px");
-
-
-
 		  this.Cloned.style.position = "absolute";
 		  this.Cloned.style.width = "100%";
 		  this.Cloned.style.top = childContainer.getContainer().getBoundingClientRect().y+"px";
-		  console.log("top cloned");
-		  console.log(this.Cloned.style.top);
+
+
+
+		  this.Ghost = childContainer.getContainer().cloneNode(false);
+		  this.Ghost.setStyle("boxShadow","rgb(121, 193, 206) -2px 1px 11px 9px");
+		  this.Ghost.setStyle("background","rgb(121, 193, 206)");
+
+
 
 
 		}else if(type == "move"){
@@ -125,10 +123,10 @@ export default class MainRessource extends superViews{
 
 
 	        this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
-	        console.log(this.Cloned.style.top);
+/*	        console.log(this.Cloned.style.top);
 	        console.log("previous / next");
 	        console.log(childContainer.getContainer().previousElementSibling);
-	        console.log(childContainer.getContainer().nextElementSibling);
+	        console.log(childContainer.getContainer().nextElementSibling);*/
 
 
 	        if(!childContainer.getContainer().previousElementSibling && ((e.changedTouches[0].clientY - MiddleCard )< childContainer.getContainer().getBoundingClientRect().y)){
@@ -154,8 +152,10 @@ export default class MainRessource extends superViews{
 	          
 	          if((e.changedTouches[0].clientY - childContainer.getContainer().getBoundingClientRect().height ) < childContainer.getContainer().previousElementSibling.getBoundingClientRect().y){
 
+
 	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling);
-	          
+	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer().previousElementSibling);
+	          	
 	          }
 
 	        }
@@ -168,7 +168,7 @@ export default class MainRessource extends superViews{
 	          if((e.changedTouches[0].clientY ) > childContainer.getContainer().nextElementSibling.getBoundingClientRect().y){
 
 	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
-	          
+	          	childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer().nextElementSibling.nextElementSibling);
 	          }
 
 	        }
@@ -197,7 +197,7 @@ export default class MainRessource extends superViews{
 
         //this.setStyle("background" , "white","element");
         //childContainer.getContainer().style = this.initialStyle;
-        
+
         childContainer.setStyle("display","");
         this.Cloned.remove();
 
