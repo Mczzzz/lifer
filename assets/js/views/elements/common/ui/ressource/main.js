@@ -239,7 +239,7 @@ export default class MainRessource extends superViews{
 
 	        }
 
-	        let nodeTotest = childContainer.getContainer();
+/*	        let nodeTotest = childContainer.getContainer();
 	        while( parseInt(nodeTotest.style.marginLeft, 10) >= GoodMargin){
 
 	        	console.log('in while');
@@ -247,7 +247,7 @@ export default class MainRessource extends superViews{
 
 
 	        	nodeTotest = nodeTotest.nextElementSibling;
-	        }
+	        }*/
 
 
 
