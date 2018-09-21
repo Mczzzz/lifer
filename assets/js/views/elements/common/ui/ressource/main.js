@@ -115,7 +115,7 @@ export default class MainRessource extends superViews{
 		  this.Ghost.style.margin = "5px";
 		  this.Ghost.style.borderRadius = "15px";
 		  this.Ghost.style.height = childContainer.getContainer().getBoundingClientRect().height+"px";
-		  this.Ghost.style.transitionDuration = "0.5s";
+		  this.Ghost.style.transitionDuration = "0.2s";
    		  this.Ghost.style.transitionDelay = "0.0s";
           this.Ghost.style.transitionTimingFunction = "cubic-bezier(0.15, -0.35, 0.98, 1.27)";
           this.Ghost.style.transitionProperty = "margin";
