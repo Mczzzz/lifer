@@ -107,6 +107,7 @@ export default class MainRessource extends superViews{
 		  this.Ghost = childContainer.getContainer().cloneNode(false);
 		  this.Ghost.setStyle("boxShadow","rgb(121, 193, 206) -2px 1px 11px 9px");
 		  this.Ghost.setStyle("background","rgb(121, 193, 206)");
+		  childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 
 
 
