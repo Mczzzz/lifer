@@ -100,7 +100,7 @@ export default class MainRessource extends superViews{
 
 		  this.Cloned.style.position = "absolute";
 		  this.Cloned.style.width = "100%";
-		  this.Cloned.style.marginLeft = "0px";
+		  //this.Cloned.style.marginLeft = "0px";
 		  this.Cloned.style.top = childContainer.getContainer().getBoundingClientRect().y+"px";
 
 
