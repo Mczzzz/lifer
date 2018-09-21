@@ -116,6 +116,7 @@ export default class MainRessource extends superViews{
 		}else if(type == "move"){
 
 			
+			childContainer.setStyle("display","none");
 
 	        event.preventDefault();
 	        //this.setStyle("background" , "red","element");
@@ -196,6 +197,8 @@ export default class MainRessource extends superViews{
 
         //this.setStyle("background" , "white","element");
         //childContainer.getContainer().style = this.initialStyle;
+        
+        childContainer.setStyle("display","");
         this.Cloned.remove();
 
       }
