@@ -37,6 +37,7 @@ export default class button extends superViews{
 		this.setStylePicto("color","green");
 		this.setStylePicto("fontSize","25px");
 		this.setStylePicto("marginRight","15px");
+		this.setStylePicto("userSelect","none");
 
 		this.setData(this.Picto.Symbol);
 
