@@ -45,12 +45,29 @@ export default class HeaderRessource extends superViews{
 				this.card.setStyleComponent(HeaderElement,"Title","fontWeight","bold");
 
 
+				let colButton = this.card.push("Button", HeaderElement,"collapse", "keyboard_arrow_down");
+
+				this.card.setStylePictoComponent(HeaderElement,"collapse","fontSize","25px");
+				this.card.setStylePictoComponent(HeaderElement,"collapse","margin","0px");
+				this.card.setStylePictoComponent(HeaderElement,"collapse","marginRight","10px");
+				this.card.setStylePictoComponent(HeaderElement,"collapse","color","white");
+				this.card.setStylePictoComponent(HeaderElement,"collapse","alignItems","center");
+
+
+				colButton.getContainer().addEventListener("click",()=>this.colMain());
+
+
+
+
+
+
+
 				let ddButton = this.card.push("Button", HeaderElement,"sep1", "more_vert");
 
 				this.card.setStylePictoComponent(HeaderElement,"sep1","fontSize","25px");
 				this.card.setStylePictoComponent(HeaderElement,"sep1","margin","0px");
 				this.card.setStylePictoComponent(HeaderElement,"sep1","marginRight","10px");
-				this.card.setStylePictoComponent(HeaderElement,"sep1","color","grey");
+				this.card.setStylePictoComponent(HeaderElement,"sep1","color","white");
 				this.card.setStylePictoComponent(HeaderElement,"sep1","alignItems","center");
 
 
@@ -86,6 +103,12 @@ export default class HeaderRessource extends superViews{
     }
 
 
+    colMain(){
+
+
+
+
+    }
 
 
 }
