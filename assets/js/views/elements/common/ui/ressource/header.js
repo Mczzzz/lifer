@@ -69,7 +69,7 @@ export default class HeaderRessource extends superViews{
 
     	let position = {};
     	position.top = this.getContainer().getBoundingClientRect().y;
-    	postion.right = 0;
+    	position.right = 0;
 
     	menu.setPosition(position);
 
