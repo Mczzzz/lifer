@@ -130,10 +130,9 @@ export default class MainRessource extends superViews{
 
 	        this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
 	        this.Cloned.style.left = e.changedTouches[0].clientX-MiddleCard+"px";
-/*	        console.log(this.Cloned.style.top);
-	        console.log("previous / next");
-	        console.log(childContainer.getContainer().previousElementSibling);
-	        console.log(childContainer.getContainer().nextElementSibling);*/
+
+
+
 
 
 	        if(!childContainer.getContainer().previousElementSibling && ((e.changedTouches[0].clientY - MiddleCard )< childContainer.getContainer().getBoundingClientRect().y)){
@@ -150,12 +149,7 @@ export default class MainRessource extends superViews{
 
 
 	        if(childContainer.getContainer().previousElementSibling.previousElementSibling){
-	/*          console.log("touchY:"+e.changedTouches[0].clientY);
-	          console.log("contHeight:"+ this.getContainer().getBoundingClientRect().height);
-	          console.log( JSON.stringify(this.getContainer().getBoundingClientRect()));
-	          console.log( JSON.stringify(this.getContainer().previousElementSibling.getBoundingClientRect()));
-	          console.log("previousPosY"+this.getContainer().previousElementSibling.getBoundingClientRect().y);
-	          console.log("----------------------------------------------");*/
+
 	          
 	          if((e.changedTouches[0].clientY - childContainer.getContainer().getBoundingClientRect().height ) < childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().y){
 
@@ -168,7 +162,7 @@ export default class MainRessource extends superViews{
 
 
 
-	        if(this.getContainer().nextElementSibling){
+	        if(this.getContainer().nextElementSibling.nextElementSibling){
 
 
 	          if((e.changedTouches[0].clientY ) > childContainer.getContainer().nextElementSibling.getBoundingClientRect().y){
@@ -183,9 +177,9 @@ export default class MainRessource extends superViews{
 
 
 	        //le decalage
-/*	        console.log(e.changedTouches[0].clientX);
+	        console.log(e.changedTouches[0].clientX);
 	        console.log(childContainer.getContainer().getBoundingClientRect().x);
-*/
+
 	        if((e.changedTouches[0].clientX < childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x +30) &&
 	           (e.changedTouches[0].clientX > childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x -30)){
 
