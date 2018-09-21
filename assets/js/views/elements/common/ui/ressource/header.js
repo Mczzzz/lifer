@@ -53,8 +53,7 @@ export default class HeaderRessource extends superViews{
 				this.card.setStylePictoComponent(HeaderElement,"collapse","color","white");
 				this.card.setStylePictoComponent(HeaderElement,"collapse","alignItems","center");
 
-
-				colButton.getContainer().addEventListener("click",()=>this.colMain());
+				colButton.getContainer().addEventListener("click",()=>this.colMain(colButton));
 
 
 
@@ -103,9 +102,23 @@ export default class HeaderRessource extends superViews{
     }
 
 
-    colMain(){
+    colMain(colButton){
 
+    	let Main = this.getObjectThisfromPath("Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main");
 
+    	if(Main.getContainer.style.display == "none"){
+
+    		colButton.setData("keyboard_arrow_up");
+    		Main.setStyle("display","none");
+
+    	}else{
+    		colButton.setData("keyboard_arrow_down");
+    		Main.setStyle("display","");
+    	}
+    	
+    	
+    	
+    	
 
 
     }
