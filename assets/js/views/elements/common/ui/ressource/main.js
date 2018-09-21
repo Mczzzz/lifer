@@ -107,6 +107,7 @@ export default class MainRessource extends superViews{
 		  this.Ghost = childContainer.getContainer().cloneNode(false);
 		  this.Ghost.style.boxShadow  = "rgb(121, 193, 206) -2px 1px 11px 9px";
 		  this.Ghost.style.background = "rgb(121, 193, 206)";
+		  this.Ghost.style.margin = "5px";
 		  this.Ghost.style.height = childContainer.getContainer().getBoundingClientRect().height+"px";
 
 
@@ -188,11 +189,12 @@ export default class MainRessource extends superViews{
 	        if(e.changedTouches[0].clientX > childContainer.getContainer().getBoundingClientRect().x +30){
 
 	        	childContainer.setStyle("marginLeft", "30px");
+	        	this.Ghost.style.marginLeft = "30px";
 
 	        }else{
 
 	        	childContainer.setStyle("marginLeft", "0px");
-
+				this.Ghost.style.marginLeft = "30px";
 	        }
 
 
