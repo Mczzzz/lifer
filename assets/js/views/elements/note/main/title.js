@@ -129,7 +129,7 @@ export default class Title extends superViews{
     	}
 
 
-    	let Title = this.getObjectThisfromPath("Note/Header/Action/Card/Header/Text/Title");
+    	let Title = this.getObjectThisfromPath("Note/Note-Header/Note-Header-Action/Note-Header-Action-Card/Note-Header-Action-Card-Header/Note-Header-Action-Card-Header-Text-Title");
     	Title.getContainer().innerHTML(TheTitle.innerHTML);
 
 
