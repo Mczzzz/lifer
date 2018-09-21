@@ -132,6 +132,7 @@ export default class MainRessource extends superViews{
 
 	        console.log("this.Cloned.style.left START");
 	        console.log(this.Cloned.style.left);
+	        console.log(childContainer.getContainer().style.marginLeft);
 
 
 
