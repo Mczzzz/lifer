@@ -107,6 +107,7 @@ export default class MainRessource extends superViews{
 		  this.Ghost = childContainer.getContainer().cloneNode(false);
 		  this.Ghost.setStyle("boxShadow","rgb(121, 193, 206) -2px 1px 11px 9px");
 		  this.Ghost.setStyle("background","rgb(121, 193, 206)");
+		  this.Ghost.setStyle("boxShadow","rgb(121, 193, 206) -2px 1px 11px 9px");
 		  childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 
 
@@ -124,6 +125,7 @@ export default class MainRessource extends superViews{
 
 
 	        this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
+	        this.Cloned.style.left = e.changedTouches[0].clientX-MiddleCard+"px";
 /*	        console.log(this.Cloned.style.top);
 	        console.log("previous / next");
 	        console.log(childContainer.getContainer().previousElementSibling);
