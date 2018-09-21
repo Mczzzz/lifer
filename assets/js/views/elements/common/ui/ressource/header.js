@@ -67,6 +67,12 @@ export default class HeaderRessource extends superViews{
 
     	let menu = new Dropdown("dropdown",this.path);
 
+    	let position = {};
+    	position.top = this.getContainer().getBoundingClientRect().y;
+    	postion.right = 0;
+
+    	menu.setPosition(position);
+
 
 
     }
