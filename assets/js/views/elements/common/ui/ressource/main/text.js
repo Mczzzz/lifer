@@ -80,7 +80,7 @@ export default class Text extends superViews{
 
 	ancestorCallBack(e,type){
 
-		if(type == "start"){
+/*		if(type == "start"){
 
 			this.dragButton.setStyle("display","none");
 		
@@ -88,7 +88,7 @@ export default class Text extends superViews{
 
 			this.dragButton.setStyle("display","");
 
-		}
+		}*/
 		
 
 		let ancestor = this.getObjectThisfromPath(this.dragAncestor.path);
