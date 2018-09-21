@@ -128,7 +128,7 @@ export default class MainRessource extends superViews{
 
 
 		  childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
-		  childContainer.setStyle("display","none");
+		  //childContainer.setStyle("display","none");
 
 
 		  this.initMarginClone = parseInt(childContainer.getContainer().style.marginLeft, 10);
