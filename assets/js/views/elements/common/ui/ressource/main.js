@@ -149,7 +149,7 @@ export default class MainRessource extends superViews{
 	        }
 
 
-	        if(childContainer.getContainer().previousElementSibling){
+	        if(childContainer.getContainer().previousElementSibling.previousElementSibling){
 	/*          console.log("touchY:"+e.changedTouches[0].clientY);
 	          console.log("contHeight:"+ this.getContainer().getBoundingClientRect().height);
 	          console.log( JSON.stringify(this.getContainer().getBoundingClientRect()));
