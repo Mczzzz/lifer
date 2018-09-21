@@ -102,7 +102,9 @@ export default class MainRessource extends superViews{
 		  this.Cloned.style.width = "100%";
 		  this.Cloned.style.top = childContainer.getContainer().getBoundingClientRect().y+"px";
 
-
+		  //calcul de la position relative du clone par rapport au touch
+		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x;
+		  this.touchY = e.changedTouches[0].clientY - this.Cloned.getBoundingClientRect().y;
 
 		  this.Ghost = childContainer.getContainer().cloneNode(false);
 		  this.Ghost.style.boxShadow  = "inset rgb(121, 193, 206) 0px 0px 19px 3px";
@@ -128,8 +130,8 @@ export default class MainRessource extends superViews{
 	        let MiddleCard = 0.5 * childContainer.getContainer().getBoundingClientRect().height;
 
 
-	        this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
-	        this.Cloned.style.left = e.changedTouches[0].clientX-MiddleCard+"px";
+	        this.Cloned.style.top = e.changedTouches[0].clientY-this.touchX+"px";
+	        this.Cloned.style.left = e.changedTouches[0].clientX-this.touchY+"px";
 
 
 
