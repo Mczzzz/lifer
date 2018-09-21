@@ -130,10 +130,8 @@ export default class MainRessource extends superViews{
 		  childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 		  childContainer.setStyle("display","none");
 
-/*	        console.log("this.Cloned.style.left START");
-	        console.log(this.Cloned.style.left);
-	        console.log(childContainer.getContainer().style.marginLeft);
-	        console.log();*/
+
+		  this.initMarginClone = parseInt(childContainer.getContainer().style.marginLeft, 10);
 
 
 
@@ -152,7 +150,7 @@ export default class MainRessource extends superViews{
 
 	        this.Cloned.style.marginLeft = "Opx";
 	        this.Cloned.style.top = e.changedTouches[0].clientY-this.touchY+"px";
-	        this.Cloned.style.left = e.changedTouches[0].clientX - ( this.touchX + parseInt(childContainer.getContainer().style.marginLeft, 10)) +"px";
+	        this.Cloned.style.left = e.changedTouches[0].clientX - ( this.touchX + this.initMarginClone) +"px";
 
 /*	        console.log("this.Cloned.style.left move");
 	        console.log(this.Cloned.style.left);*/
