@@ -102,9 +102,12 @@ export default class MainRessource extends superViews{
 		  this.Cloned.style.width = "100%";
 		  this.Cloned.style.top = childContainer.getContainer().getBoundingClientRect().y+"px";
 
+
 		  //calcul de la position relative du clone par rapport au touch
 		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x;
 		  this.touchY = e.changedTouches[0].clientY - this.Cloned.getBoundingClientRect().y;
+
+
 
 		  this.Ghost = childContainer.getContainer().cloneNode(false);
 		  this.Ghost.style.boxShadow  = "inset rgb(121, 193, 206) 0px 0px 19px 3px";
@@ -112,6 +115,13 @@ export default class MainRessource extends superViews{
 		  this.Ghost.style.margin = "5px";
 		  this.Ghost.style.borderRadius = "15px";
 		  this.Ghost.style.height = childContainer.getContainer().getBoundingClientRect().height+"px";
+		  this.Ghost.style.transitionDuration = "0.5s";
+   		  this.Ghost.style.transitionDelay = "0.0s";
+          this.Ghost.style.transitionTimingFunction = "cubic-bezier(0.15, -0.35, 0.98, 1.27)";
+          this.Ghost.style.transitionProperty = "margin";
+
+
+
 
 
 		  childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
