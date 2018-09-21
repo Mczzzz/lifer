@@ -199,11 +199,28 @@ export default class MainRessource extends superViews{
 
 
 	        //le decalage
-	        console.log(e.changedTouches[0].clientX);
-	        console.log(childContainer.getContainer().getBoundingClientRect().x);
+/*	        console.log(e.changedTouches[0].clientX);
+	        console.log(childContainer.getContainer().getBoundingClientRect().x);*/
 
 	        let Pas = 30;
 	        let PreviousContainerX = childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x;
+
+	        if( (e.changedTouches[0].clientX < PreviousContainerX + (Pas / 2)) && (e.changedTouches[0].clientX > PreviousContainerX - (Pas / 2)) ){
+
+	        	childContainer.setStyle("marginLeft", PreviousContainerX + "px");
+	        	this.Ghost.style.marginLeft = PreviousContainerX + "px";
+
+	        }else{
+
+	        	//calcul de la bonne valeur
+	        	let GoodMargin = Math.round(Pas/e.changedTouches[0].clientX);
+	        	childContainer.setStyle("marginLeft", GoodMargin + "px");
+	        	this.Ghost.style.marginLeft = GoodMargin + "px";
+
+	        }
+
+/*
+
 	        if((e.changedTouches[0].clientX < PreviousContainerX - (Pas / 2)) &&
 	           (e.changedTouches[0].clientX > PreviousContainerX - (Pas / 2))){
 
@@ -226,7 +243,7 @@ export default class MainRessource extends superViews{
 
 	        	childContainer.setStyle("marginLeft", "0px");
 				this.Ghost.style.marginLeft = "0px";
-	        }
+	        }*/
 
 
 
