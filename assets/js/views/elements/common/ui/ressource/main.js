@@ -213,8 +213,13 @@ export default class MainRessource extends superViews{
 	        }else{
 
 	        	//calcul de la bonne valeur
-	        	let GoodMargin = Math.round(Pas / e.changedTouches[0].clientX) * Pas;
-	        	console.log("good Margin:"+ GoodMargin);
+	        	let GoodMargin = Math.round(e.changedTouches[0].clientX / Pas ) * Pas;
+	        	//console.log("good Margin:"+ GoodMargin);
+	        	if(GoodMargin < 0){
+
+	        		GoodMargin = 0;
+
+	        	}
 	        	childContainer.setStyle("marginLeft", GoodMargin + "px");
 	        	this.Ghost.style.marginLeft = GoodMargin + "px";
 
