@@ -105,9 +105,10 @@ export default class MainRessource extends superViews{
 
 
 		  this.Ghost = childContainer.getContainer().cloneNode(false);
-		  this.Ghost.style.boxShadow  = "rgb(121, 193, 206) -2px 1px 11px 9px";
+		  this.Ghost.style.boxShadow  = "inset rgb(121, 193, 206) 0px 0px 19px 3px";
 		  this.Ghost.style.background = "rgb(121, 193, 206)";
 		  this.Ghost.style.margin = "5px";
+		  this.setStyle("borderRadius", "15px");
 		  this.Ghost.style.height = childContainer.getContainer().getBoundingClientRect().height+"px";
 
 
