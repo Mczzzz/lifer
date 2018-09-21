@@ -73,6 +73,14 @@ export default class HeaderRessource extends superViews{
 
     	menu.setPosition(position);
 
+    	let items = [];
+    	items.push({'id':0,'picto':"","text":"partage"});
+    	items.push({'id':1,'picto':"","text":"selection"});
+    	items.push({'id':2,'picto':"","text":"supprimer"});
+    	items.push({'id':1,'picto':"","text":"evenement"});
+
+    	menu.setItems(items);
+
 
 
     }
