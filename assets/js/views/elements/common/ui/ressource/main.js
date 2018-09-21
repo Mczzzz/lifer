@@ -116,7 +116,7 @@ export default class MainRessource extends superViews{
 		}else if(type == "move"){
 
 			
-			childContainer.setStyle("display","none");
+			//childContainer.setStyle("display","none");
 
 	        event.preventDefault();
 	        //this.setStyle("background" , "red","element");
