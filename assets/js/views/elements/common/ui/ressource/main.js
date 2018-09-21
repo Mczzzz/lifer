@@ -155,9 +155,9 @@ export default class MainRessource extends superViews{
 	          
 	          if((e.changedTouches[0].clientY - childContainer.getContainer().getBoundingClientRect().height ) < childContainer.getContainer().previousElementSibling.getBoundingClientRect().y){
 
-
+	          	childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer().previousElementSibling);
 	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling);
-	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer().previousElementSibling);
+	            
 	          	
 	          }
 
