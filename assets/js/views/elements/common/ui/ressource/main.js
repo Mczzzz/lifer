@@ -215,15 +215,19 @@ export default class MainRessource extends superViews{
 	        let Pas = 30;
 	        let PreviousContainerX = this.Ghost.previousElementSibling.getBoundingClientRect().x;
 
+	        let GoodMargin = 0;
+
 	        if( e.changedTouches[0].clientX > (PreviousContainerX + (Pas / 2)) ){
 
-	        	childContainer.setStyle("marginLeft", PreviousContainerX + Pas +"px");
-	        	this.Ghost.style.marginLeft = PreviousContainerX + Pas + "px";
+	        	GoodMargin = PreviousContainerX + Pas;
+
+	        	childContainer.setStyle("marginLeft", GoodMargin +"px");
+	        	this.Ghost.style.marginLeft = GoodMargin + "px";
 
 	        }else{
 
 	        	//calcul de la bonne valeur
-	        	let GoodMargin = Math.round(e.changedTouches[0].clientX / Pas ) * Pas;
+	        	GoodMargin = Math.round(e.changedTouches[0].clientX / Pas ) * Pas;
 	        	//console.log("good Margin:"+ GoodMargin);
 	        	if(GoodMargin < 0){
 
@@ -235,6 +239,15 @@ export default class MainRessource extends superViews{
 
 	        }
 
+	        let nodeTotest = childContainer.getContainer().nextElementSibling;
+	        while( nodeTotest >= GoodMargin){
+
+	        	
+	        	nodeTotest.style.marginLeft = parseInt(nodeTotest.style.marginLeft, 10) + Pas +"px";
+
+
+	        	nodeTotest = nodeTotest.nextElementSibling;
+	        }
 
 
 
