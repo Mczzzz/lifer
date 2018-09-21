@@ -142,7 +142,7 @@ export default class MainRessource extends superViews{
 
 
 	        this.Cloned.style.top = e.changedTouches[0].clientY-this.touchY+"px";
-	        this.Cloned.style.left = e.changedTouches[0].clientX-this.touchX+"px";
+	        this.Cloned.style.left = e.changedTouches[0].clientX-this.touchX- this.Cloned.style.marginLeft +"px";
 
 
 
@@ -245,91 +245,6 @@ export default class MainRessource extends superViews{
 
 
 
- touchMover(e,type){
-
-      console.log(e.changedTouches[0].clientY);
-      console.log(e.changedTouches[0].clientX);
-      //console.log(this.getContainer().getBoundingClientRect().y);
-      //this.getContainer().previousElementSibling.getBoundingClientRect().y;
-      //this.getContainer().nextElementSibling.getBoundingClientRect().y;
-
-
-      if(type == "start"){
-
-          this.Cloned = this.getContainer().cloneNode(true);
-          document.body.appendChild(this.Cloned);
-
-          this.Cloned.style.position = "absolute";
-          this.Cloned.style.width = "100%";
-          this.Cloned.style.top = this.getContainer().getBoundingClientRect().y+"px";
-          console.log("top cloned");
-          console.log(this.Cloned.style.top);
-
-      }else if(type == "move"){
-
-        event.preventDefault();
-        //this.setStyle("background" , "red","element");
-
-        let MiddleCard = 0.5 * this.getContainer().getBoundingClientRect().height;
-
-
-        this.Cloned.style.top = e.changedTouches[0].clientY-MiddleCard+"px";
-        console.log(this.Cloned.style.top);
-        console.log("previous / next");
-        console.log(this.getContainer().previousElementSibling);
-        console.log(this.getContainer().nextElementSibling);
-        if(!this.getContainer().previousElementSibling && ((e.changedTouches[0].clientY - MiddleCard )< this.getContainer().getBoundingClientRect().y)){
-
-          this.Cloned.style.display = "none";
-
-        }else if(!this.getContainer().nextElementSibling && (e.changedTouches[0].clientY > this.getContainer().getBoundingClientRect().y)){
-
-          this.Cloned.style.display = "none";
-
-        }else{
-          this.Cloned.style.display = "";
-        }
-
-
-        if(this.getContainer().previousElementSibling){
-/*          console.log("touchY:"+e.changedTouches[0].clientY);
-          console.log("contHeight:"+ this.getContainer().getBoundingClientRect().height);
-          console.log( JSON.stringify(this.getContainer().getBoundingClientRect()));
-          console.log( JSON.stringify(this.getContainer().previousElementSibling.getBoundingClientRect()));
-          console.log("previousPosY"+this.getContainer().previousElementSibling.getBoundingClientRect().y);
-          console.log("----------------------------------------------");*/
-          
-          if((e.changedTouches[0].clientY - this.getContainer().getBoundingClientRect().height ) < this.getContainer().previousElementSibling.getBoundingClientRect().y){
-
-            this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().previousElementSibling);
-          
-          }
-
-        }
-
-        if(this.getContainer().nextElementSibling){
-
-
-          if((e.changedTouches[0].clientY ) > this.getContainer().nextElementSibling.getBoundingClientRect().y){
-
-            this.getContainer().parentElement.insertBefore(this.getContainer(),this.getContainer().nextElementSibling.nextElementSibling);
-          
-          }
-
-
-        }
-    
-
-
-      }else if(type == "stop"){
-
-        //this.setStyle("background" , "white","element");
-        this.Cloned.remove();
-
-      }
-
-
-    }
 
 
 
