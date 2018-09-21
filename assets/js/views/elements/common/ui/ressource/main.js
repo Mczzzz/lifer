@@ -167,7 +167,7 @@ export default class MainRessource extends superViews{
 	          this.Cloned.style.display = "none";
 
 	        }else{
-	          this.Cloned.style.display = "";
+this.Cloned.style.display = "none";
 	        }
 
 
