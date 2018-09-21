@@ -104,6 +104,8 @@ export default class HeaderRessource extends superViews{
 
     colMain(colButton){
 
+    	console.log('inColMain');
+
     	let Main = this.getObjectThisfromPath("Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main");
 
     	if(Main.getContainer().style.display == "none"){
