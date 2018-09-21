@@ -157,7 +157,7 @@ export default class MainRessource extends superViews{
 	          console.log("previousPosY"+this.getContainer().previousElementSibling.getBoundingClientRect().y);
 	          console.log("----------------------------------------------");*/
 	          
-	          if((e.changedTouches[0].clientY - childContainer.getContainer().getBoundingClientRect().height ) < childContainer.getContainer().previousElementSibling.getBoundingClientRect().y){
+	          if((e.changedTouches[0].clientY - childContainer.getContainer().getBoundingClientRect().height ) < childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().y){
 
 	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling);
 	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
