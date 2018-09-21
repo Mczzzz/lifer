@@ -240,7 +240,7 @@ export default class MainRessource extends superViews{
 	        }
 
 	        let nodeTotest = childContainer.getContainer().nextElementSibling;
-	        while( nodeTotest >= GoodMargin){
+	        while( parseInt(nodeTotest.style.marginLeft, 10) >= GoodMargin){
 
 	        	console.log('in while');
 	        	nodeTotest.style.marginLeft = parseInt(nodeTotest.style.marginLeft, 10) + Pas +"px";
