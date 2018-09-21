@@ -141,7 +141,7 @@ export default class MainRessource extends superViews{
 
 	          this.Cloned.style.display = "none";
 
-	        }else if(!childContainer.getContainer().nextElementSibling && (e.changedTouches[0].clientY > childContainer.getBoundingClientRect().y)){
+	        }else if(!childContainer.getContainer().nextElementSibling && (e.changedTouches[0].clientY > (this.Ghost.getBoundingClientRect().y + this.Ghost.getBoundingClientRect().width ))){
 
 	          this.Cloned.style.display = "none";
 
