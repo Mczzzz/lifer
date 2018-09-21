@@ -100,6 +100,7 @@ export default class MainRessource extends superViews{
 
 		  this.Cloned.style.position = "absolute";
 		  this.Cloned.style.width = "100%";
+		  this.Cloned.style.marginLeft = "0px";
 		  this.Cloned.style.top = childContainer.getContainer().getBoundingClientRect().y+"px";
 
 
@@ -142,7 +143,7 @@ export default class MainRessource extends superViews{
 
 
 	        this.Cloned.style.top = e.changedTouches[0].clientY-this.touchY+"px";
-	        this.Cloned.style.left = e.changedTouches[0].clientX-this.touchX- this.Cloned.style.marginLeft +"px";
+	        this.Cloned.style.left = e.changedTouches[0].clientX-this.touchX +"px";
 
 
 
