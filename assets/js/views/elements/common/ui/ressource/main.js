@@ -191,23 +191,25 @@ export default class MainRessource extends superViews{
 	        console.log(e.changedTouches[0].clientX);
 	        console.log(childContainer.getContainer().getBoundingClientRect().x);
 
-	        if((e.changedTouches[0].clientX < childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x +30) &&
-	           (e.changedTouches[0].clientX > childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x -30)){
+	        let Pas = 30;
+
+	        if((e.changedTouches[0].clientX < childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x +(Pas / 2)) &&
+	           (e.changedTouches[0].clientX > childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x -(Pas / 2))){
 
 	        	childContainer.setStyle("marginLeft", childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x+"px");
 	        	this.Ghost.style.marginLeft = childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x+"px";
 
 
 
-	        }else if(e.changedTouches[0].clientX > childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x +30){
+	        }else if(e.changedTouches[0].clientX > childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x +(Pas / 2)){
 
-	        	childContainer.setStyle("marginLeft", childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x+30+"px");
-	        	this.Ghost.style.marginLeft = childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x+30+"px";
+	        	childContainer.setStyle("marginLeft", childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x+Pas+"px");
+	        	this.Ghost.style.marginLeft = childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x+Pas+"px";
 
-	        }else if(e.changedTouches[0].clientX < childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x -30){
+	        }else if(e.changedTouches[0].clientX < childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x -(Pas / 2)){
 
-	        	childContainer.setStyle("marginLeft", childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x-30+"px");
-	        	this.Ghost.style.marginLeft = childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x-30+"px";
+	        	childContainer.setStyle("marginLeft", childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x-Pas+"px");
+	        	this.Ghost.style.marginLeft = childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x-Pas+"px";
 
 	        }else{
 
