@@ -112,7 +112,8 @@ export default class MainRessource extends superViews{
 		  this.Ghost = childContainer.getContainer().cloneNode(false);
 		  this.Ghost.style.boxShadow  = "inset rgb(121, 193, 206) 0px 0px 19px 3px";
 		  //this.Ghost.style.background = "rgb(121, 193, 206)";
-		  this.Ghost.style.margin = "5px";
+		  this.Ghost.style.marginTop = "5px";
+		  this.Ghost.style.marginBottom = "5px";
 		  this.Ghost.style.borderRadius = "15px";
 		  this.Ghost.style.height = childContainer.getContainer().getBoundingClientRect().height+"px";
 		  this.Ghost.style.transitionDuration = "0.2s";
@@ -202,24 +203,24 @@ export default class MainRessource extends superViews{
 	        console.log(childContainer.getContainer().getBoundingClientRect().x);
 
 	        let Pas = 30;
+	        let PreviousContainerX = childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x;
+	        if((e.changedTouches[0].clientX < PreviousContainerX - (Pas / 2)) &&
+	           (e.changedTouches[0].clientX > PreviousContainerX - (Pas / 2))){
 
-	        if((e.changedTouches[0].clientX < childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x +(Pas / 2)) &&
-	           (e.changedTouches[0].clientX > childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x -(Pas / 2))){
-
-	        	childContainer.setStyle("marginLeft", childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x+"px");
-	        	this.Ghost.style.marginLeft = childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x+"px";
+	        	childContainer.setStyle("marginLeft", PreviousContainerX+"px");
+	        	this.Ghost.style.marginLeft = PreviousContainerX+"px";
 
 
 
-	        }else if(e.changedTouches[0].clientX > childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x +(Pas / 2)){
+	        }else if(e.changedTouches[0].clientX > PreviousContainerX +(Pas / 2)){
 
-	        	childContainer.setStyle("marginLeft", childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x+Pas+"px");
-	        	this.Ghost.style.marginLeft = childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x+Pas+"px";
+	        	childContainer.setStyle("marginLeft", PreviousContainerX+Pas+"px");
+	        	this.Ghost.style.marginLeft = PreviousContainerX+Pas+"px";
 
-	        }else if(e.changedTouches[0].clientX < childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x -(Pas / 2)){
+	        }else if(e.changedTouches[0].clientX < PreviousContainerX -(Pas / 2)){
 
-	        	childContainer.setStyle("marginLeft", childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x-Pas+"px");
-	        	this.Ghost.style.marginLeft = childContainer.getContainer().previousElementSibling.previousElementSibling.getBoundingClientRect().x-Pas+"px";
+	        	childContainer.setStyle("marginLeft", PreviousContainerX - Pas + "px");
+	        	this.Ghost.style.marginLeft = PreviousContainerX -Pas + "px";
 
 	        }else{
 
