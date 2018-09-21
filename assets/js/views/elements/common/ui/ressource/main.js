@@ -107,6 +107,7 @@ export default class MainRessource extends superViews{
 		  this.Ghost = childContainer.getContainer().cloneNode(false);
 		  this.Ghost.style.boxShadow  = "rgb(121, 193, 206) -2px 1px 11px 9px";
 		  this.Ghost.style.background = "rgb(121, 193, 206)";
+		  this.Ghost.style.height = childContainer.getContainer().getBoundingClientRect().height+"px";
 
 		  //childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 
@@ -116,7 +117,7 @@ export default class MainRessource extends superViews{
 		}else if(type == "move"){
 
 			
-			//childContainer.setStyle("display","none");
+			childContainer.setStyle("display","none");
 
 	        event.preventDefault();
 	        //this.setStyle("background" , "red","element");
