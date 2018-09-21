@@ -109,15 +109,16 @@ export default class MainRessource extends superViews{
 		  this.Ghost.style.background = "rgb(121, 193, 206)";
 		  this.Ghost.style.height = childContainer.getContainer().getBoundingClientRect().height+"px";
 
-		  childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer().previousElementSibling);
 
+		  childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
+		  childContainer.setStyle("display","none");
 
 
 
 		}else if(type == "move"){
 
 			
-			childContainer.setStyle("display","none");
+			
 
 	        event.preventDefault();
 	        //this.setStyle("background" , "red","element");
