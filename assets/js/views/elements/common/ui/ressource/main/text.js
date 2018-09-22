@@ -100,7 +100,7 @@ export default class Text extends superViews{
 
 	select(){
 
-		this.card.setStyle("dox-shadow", "inset rgb(0, 0, 0) 0px 0px 0px 1px");
+		this.card.setStyle("boxShadow", "inset rgb(0, 0, 0) 0px 0px 0px 1px");
 
 	}
 
