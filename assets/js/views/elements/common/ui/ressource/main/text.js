@@ -57,7 +57,7 @@ export default class Text extends superViews{
 
 	focus(){
 		console.log('in focus');
-		console.log(TheTextElt);
+		console.log(this.TheTextElt);
 		this.TheTextElt.getContainer().focus();
 	}
 
