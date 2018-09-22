@@ -104,7 +104,7 @@ export default class Title extends superViews{
 
 
 		if(this.TheNote.note.guid === false){
-		//	TheTitle.getContainer().focus();
+			TheTitle.getContainer().focus();
 		}
 
 
