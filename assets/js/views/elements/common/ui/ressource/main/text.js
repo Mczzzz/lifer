@@ -100,7 +100,8 @@ export default class Text extends superViews{
 
 	select(){
 
-		this.card.setStyle("border", "1px solid black");
+		this.card.setStyle("dox-shadow", "inset rgb(0, 0, 0) 0px 0px 0px 1px");
+
 	}
 
 
