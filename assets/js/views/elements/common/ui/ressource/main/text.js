@@ -101,7 +101,7 @@ export default class Text extends superViews{
 	select(){
 
 		this.card.setStyle("boxShadow", "inset rgb(0, 0, 0) 0px 0px 0px 1px");
-		console.log(this.card.getContainer.style.boxShadow);
+		console.log(this.card.getContainer().style.boxShadow);
 
 	}
 
