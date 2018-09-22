@@ -91,7 +91,6 @@ export default class HeaderButtons extends superViews{
 	showTitle(text = ""){
 
 		this.TheTitle.setStyle("display", "");
-		console.log(this.TheTitle);
 		this.TheTitle.getContainer().innerHTML = text;
 
 	}

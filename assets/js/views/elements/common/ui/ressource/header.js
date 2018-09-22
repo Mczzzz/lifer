@@ -42,7 +42,7 @@ export default class HeaderRessource extends superViews{
 
 				this.card.setStylePictoComponent(HeaderElement,"collapse","fontSize","25px");
 				this.card.setStylePictoComponent(HeaderElement,"collapse","margin","0px");
-				this.card.setStylePictoComponent(HeaderElement,"collapse","marginRight","10px");
+				this.card.setStylePictoComponent(HeaderElement,"collapse","marginLeft","5px");
 				this.card.setStylePictoComponent(HeaderElement,"collapse","color","white");
 				this.card.setStylePictoComponent(HeaderElement,"collapse","alignItems","center");
 
