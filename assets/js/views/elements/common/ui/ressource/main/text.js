@@ -100,7 +100,17 @@ export default class Text extends superViews{
 
 	select(){
 
-		this.card.setStyle("boxShadow", "inset rgb(0, 0, 0) 0px 0px 0px 1px");
+		let style = "rgb(0, 0, 0) 0px 0px 0px 1px inset";
+
+		if(this.card.getContainer().style.boxShadow == style){
+
+			this.card.setStyle("boxShadow", "");
+
+		}else{
+			this.card.setStyle("boxShadow", style);
+		}
+
+		
 		console.log(this.card.getContainer().style.boxShadow);
 
 	}
