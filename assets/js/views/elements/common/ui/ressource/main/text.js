@@ -42,7 +42,7 @@ export default class Text extends superViews{
 
 
 
-		let TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
+		this.TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
 
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontSize","18.5px");
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"color","#626262","all");
@@ -50,17 +50,13 @@ export default class Text extends superViews{
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontWeight","normal");
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"flex",1);
 
-	/*	let TheSaveButton = this.card.push("Button", this.EmptyElement,"Button_"+this.ClassId,"arrow_forward");
-
-		this.card.setStyleComponent(this.EmptyElement,"Button_"+this.ClassId,"alignItems","flex-end");
-
-		this.card.setStylePictoComponent(this.EmptyElement,"Button_"+this.ClassId,"fontSize","25px");
-		this.card.setStylePictoComponent(this.EmptyElement,"Button_"+this.ClassId,"marginRight","0px");
-		this.card.setStylePictoComponent(this.EmptyElement,"Button_"+this.ClassId,"color","green");
-
-		TheSaveButton.getContainer().addEventListener("click",()=>this.parentThis.saveResource(this.card,this.EmptyElement,TheTextElt));*/
 
 
+	}
+
+
+	focus(){
+		this.TheTextElt.getContainer().focus();
 	}
 
 
