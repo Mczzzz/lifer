@@ -74,11 +74,6 @@ export default class Empty extends superViews{
 			Lifer.getData('Note/Header/Action',"This").showTitle(Lifer.getData('Note',"This").note.Title);
 			MyThis.setStyle("display","");
 
-			let Title = this.getObjectThisfromPath("Note/Header/Action/Card/Header/Title");
-    	console.log("Title");
-    	console.log(Title);
-    		Title.getContainer().innerHTML(TheTitle.innerHTML);
-
 		}
 		
 
