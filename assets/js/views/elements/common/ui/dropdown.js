@@ -13,7 +13,7 @@ export default class dropdown extends superViews{
 
           this.callBack = [];
 
-          this.card = false;
+          this.active = false;
 
      }
 
@@ -36,7 +36,7 @@ export default class dropdown extends superViews{
           this.card.setStyle("padding", "10px");
           this.card.setStyle("background", "blue");
           
-
+          this.active = true;
      
 
      }
@@ -70,7 +70,7 @@ export default class dropdown extends superViews{
 
       console.log("CloseMenu");
       console.log(this.card);
-      if(this.card != false){
+      if(this.active != false){
         console.log("this.card != false");
         this.destroyMe();
       
