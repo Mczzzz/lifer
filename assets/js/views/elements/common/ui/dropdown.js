@@ -41,18 +41,20 @@ export default class dropdown extends superViews{
      bkgdClickOut(){
 
 
-          let bkgCard = new Card('bkgCard', this.path);
-  
-          bkgCard.setStyle("borderWidth", "0px");
-          bkgCard.setStyle("borderRadius", "0px");
-          bkgCard.setStyle("margin", "0px");
-          bkgCard.setStyle("padding", "0px");
-          bkgCard.setStyle("background", "green");
-          bkgCard.setStyle("position", "absolute");
-          bkgCard.setStyle("width", "100%");
-          bkgCard.setStyle("height", "100%");
-          bkgCard.setStyle("top", "0px");
-          bkgCard.setStyle("left", "0px");
+          let bkg = document.createElement('div');
+          document.appendChild(bkg);
+
+ 
+          bkg.setStyle("borderWidth", "0px");
+          bkg.setStyle("borderRadius", "0px");
+          bkg.setStyle("margin", "0px");
+          bkg.setStyle("padding", "0px");
+          bkg.setStyle("background", "green");
+          bkg.setStyle("position", "absolute");
+          bkg.setStyle("width", "100%");
+          bkg.setStyle("height", "100%");
+          bkg.setStyle("top", "0px");
+          bkg.setStyle("left", "0px");
 
 
      }
