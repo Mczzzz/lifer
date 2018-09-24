@@ -65,7 +65,7 @@ export default class dropdown extends superViews{
 //to':"unfold_less","text":"minimize","actionObj":"Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main","method":"collapseAll"});
           if(item.actionObj){
 
-            let obj = this.getObjectThisfromPath();
+            let obj = this.getObjectThisfromPath(item.actionObj);
             ddButton.getContainer().addEventListener("click",()=>obj[item.method]());
 
           }
