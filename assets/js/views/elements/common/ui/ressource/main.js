@@ -238,23 +238,24 @@ this.Cloned.style.display = "none";
 	        	}
 
 
+	        	childContainer.setStyle("marginLeft", GoodMargin + "px");
+	        	this.Ghost.style.marginLeft = GoodMargin + "px";
+
 	        }
 
 
-	        //on force si je me retrouve ne premiere position
-	        console.log(childContainer.getContainer().previousElementSibling.previousElementSibling);
 
-	        	if(childContainer.getContainer().previousElementSibling.previousElementSibling == undefined){
 
-	        	console.log("in undefineddd");
+	        if(childContainer.getContainer().parentElement.firstChild == this.Ghost){
 
-	        		GoodMargin = 0;
+	        	GoodMargin = 0;
 	        	
 
 	        	childContainer.setStyle("marginLeft", GoodMargin + "px");
 	        	this.Ghost.style.marginLeft = GoodMargin + "px";
 
-	        	}
+
+	        }
 
 
 
