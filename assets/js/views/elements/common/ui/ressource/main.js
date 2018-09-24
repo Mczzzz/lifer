@@ -93,7 +93,7 @@ export default class MainRessource extends superViews{
   
   			let childrens = this.getContainer().childNodes;
 
-		  for (child of childrens) {
+		  for (let child of childrens) {
 
 		  	if(parseInt(child.style.marginLeft, 10) > 0){
 
