@@ -30,7 +30,7 @@ export default class dropdown extends superViews{
           this.card.setStyle("borderRadius", "0px");
           this.card.setStyle("margin", "0px");
           this.card.setStyle("padding", "10px");
-          this.card.setStyle("background", "green");
+          this.card.setStyle("background", "blue");
           
 
      
@@ -45,16 +45,16 @@ export default class dropdown extends superViews{
           document.body.appendChild(bkg);
 
  
-          bkg.setStyle("borderWidth", "0px");
-          bkg.setStyle("borderRadius", "0px");
-          bkg.setStyle("margin", "0px");
-          bkg.setStyle("padding", "0px");
-          bkg.setStyle("background", "green");
-          bkg.setStyle("position", "absolute");
-          bkg.setStyle("width", "100%");
-          bkg.setStyle("height", "100%");
-          bkg.setStyle("top", "0px");
-          bkg.setStyle("left", "0px");
+          bkg.style.borderWidth = "0px";
+          bkg.style.borderRadius= "0px";
+          bkg.style.margin= "0px";
+          bkg.style.padding= "0px" ;
+          bkg.style.background= "green";
+          bkg.style.position= "absolute";
+          bkg.style.width= "100%";
+          bkg.style.height= "100%";
+          bkg.style.top= "0px";
+          bkg.style.left= "0px";
 
 
      }
