@@ -87,6 +87,28 @@ export default class MainRessource extends superViews{
 
 
 
+	collapseAll(){
+
+		if (this.getContainer().hasChildNodes()) {
+  
+  			let childrens = this.getContainer().childNodes;
+
+		  for (child of childrens) {
+
+		  	if(parseInt(child.style.marginLeft, 10) > 0){
+
+		  		child.style.display = "none";
+
+		  	}
+		    // faire quelque chose avec chaque enfant[i]
+		    // NOTE: La liste est en ligne, l'ajout ou la suppression des enfants changera la liste
+
+		  }
+		}
+
+
+	}
+
 
 	onChildMove(childContainer, e, type){
 
