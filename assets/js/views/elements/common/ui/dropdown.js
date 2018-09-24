@@ -41,7 +41,7 @@ export default class dropdown extends superViews{
      bkgdClickOut(){
 
 
-          let bkgCard = new Card('Card', this.path);
+          let bkgCard = new Card('bkgCard', this.path);
   
           bkgCard.setStyle("borderWidth", "0px");
           bkgCard.setStyle("borderRadius", "0px");
