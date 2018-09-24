@@ -42,7 +42,7 @@ export default class dropdown extends superViews{
 
 
           this.bkg = document.createElement('div');
-          document.body.appendChild(bkg);
+          document.body.appendChild(this.bkg);
 
  
           this.bkg.style.borderWidth = "0px";
