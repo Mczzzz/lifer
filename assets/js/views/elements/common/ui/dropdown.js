@@ -58,6 +58,7 @@ export default class dropdown extends superViews{
         //this.card.setStyleElement(Element,"justifyContent","space-between");
         this.card.setStyleElement(Element,"alignItems","center");
 
+          let ddPicto = this.card.push("Button", Element,"Button_"+item.id, item.picto);
           let ddButton = this.card.push("TextButton", Element,"Button_"+item.id, item.text);
 
 
