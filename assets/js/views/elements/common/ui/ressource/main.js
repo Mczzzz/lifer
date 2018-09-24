@@ -226,21 +226,6 @@ this.Cloned.style.display = "none";
 	        	this.Ghost.style.marginLeft = GoodMargin + "px";
 
 
-/*	        	let nodeTotest = childContainer.getContainer().nextElementSibling;
-	        	while( parseInt(nodeTotest.style.marginLeft, 10) >= GoodMargin){
-
-	        	console.log('in while');
-	        	nodeTotest.style.marginLeft = parseInt(nodeTotest.style.marginLeft, 10) + Pas +"px";
-
-
-	        	nodeTotest = nodeTotest.nextElementSibling;
-	        }*/
-
-
-
-
-
-
 	        }else{
 
 	        	//calcul de la bonne valeur
@@ -251,6 +236,12 @@ this.Cloned.style.display = "none";
 	        		GoodMargin = 0;
 
 	        	}
+
+	        	if(childContainer.getContainer().previousElementSibling.previousElementSibling == undefined){
+
+	        		GoodMargin = 0;
+	        	}
+
 	        	childContainer.setStyle("marginLeft", GoodMargin + "px");
 	        	this.Ghost.style.marginLeft = GoodMargin + "px";
 

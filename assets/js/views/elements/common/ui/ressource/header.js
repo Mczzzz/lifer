@@ -19,7 +19,6 @@ export default class HeaderRessource extends superViews{
         
         this.clicked = function (event) {
 
-		      console.log('clicks:');
 		      this.closeDropDown();
 
 		}
@@ -131,17 +130,16 @@ export default class HeaderRessource extends superViews{
       console.log("CloseMenu");
 
       if(this.firstClick == false){
-        console.log(this.firstClick);
+
         this.menu.destroyMe();
         document.removeEventListener("click", this.clickHandler);
         this.firstClick = true;
 
       }else{
+
       	this.firstClick = false;
+
       }
-
-      
-
 
     }
 
