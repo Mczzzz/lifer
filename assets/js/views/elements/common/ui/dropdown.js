@@ -50,7 +50,9 @@ export default class dropdown extends superViews{
           bkgCard.setStyle("background", "green");
           bkgCard.setStyle("position", "absolute");
           bkgCard.setStyle("width", "100%");
-          bkgCard.setStyle("height", "100%")
+          bkgCard.setStyle("height", "100%");
+          bkgCard.setStyle("top", "0px");
+          bkgCard.setStyle("left", "0px");
 
 
      }
