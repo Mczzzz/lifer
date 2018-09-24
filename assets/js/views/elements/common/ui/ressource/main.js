@@ -18,6 +18,8 @@ export default class MainRessource extends superViews{
 
           this.autoIncrement = 0;
 
+          let forceZeroMargin = false; 
+
      }
 
 
@@ -189,18 +191,7 @@ this.Cloned.style.display = "none";
 
 	        }else{
 
-	        		        console.log(childContainer.getContainer().parentElement.firstChild);
-	        //if(childContainer.getContainer().parentElement.firstChild == this.Ghost){
-
-	        	console.log("in if");
-	        	GoodMargin = 0;
-	        	
-
-	        	childContainer.setStyle("marginLeft", GoodMargin + "px");
-	        	this.Ghost.style.marginLeft = GoodMargin + "px";
-
-	        	return;
-	        //}
+	        	forceZeroMargin = true;       	
 
 	        }
 
@@ -237,31 +228,27 @@ this.Cloned.style.display = "none";
 
 	        	GoodMargin = PreviousContainerX + Pas;
 
-	        	childContainer.setStyle("marginLeft", GoodMargin +"px");
-	        	this.Ghost.style.marginLeft = GoodMargin + "px";
-
-
 	        }else{
 
 	        	//calcul de la bonne valeur
 	        	GoodMargin = Math.round(e.changedTouches[0].clientX / Pas ) * Pas;
 	        	//console.log("good Margin:"+ GoodMargin);
-	        	if(GoodMargin < 0){
+	        	if(GoodMargin < 0 || forceZeroMargin){
 
 	        		GoodMargin = 0;
 
 	        	}
 
 
-	        	childContainer.setStyle("marginLeft", GoodMargin + "px");
-	        	this.Ghost.style.marginLeft = GoodMargin + "px";
-
 	        }
 
 
+	       	childContainer.setStyle("marginLeft", GoodMargin + "px");
+        	this.Ghost.style.marginLeft = GoodMargin + "px";
 
 
-
+        	forceZeroMargin = false;
+        	
 
       }else if(type == "stop"){
 
