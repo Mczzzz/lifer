@@ -252,7 +252,7 @@ this.Cloned.style.display = "none";
         	this.Ghost.style.marginLeft = GoodMargin + "px";
 
 
-        	forceZeroMargin = false;
+        	this.forceZeroMargin = false;
 
 
       }else if(type == "stop"){
