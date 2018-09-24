@@ -114,7 +114,7 @@ export default class HeaderRessource extends superViews{
     	items.push({'id':2,'picto':"add_alarm","text":"evenement"});
     	items.push({'id':3,'picto':"more_horiz","text":"Item Action"});
     	items.push({'id':4,'picto':"check_box_outline_blank","text":"checkbox"});
-    	items.push({'id':5,'picto':"unfold_less","text":"minimize"});
+    	items.push({'id':5,'picto':"unfold_less","text":"minimize","actionObj":"Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main","method":"collapseAll"});
     	//gerer le maximize : unfold_more
 
 
