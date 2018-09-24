@@ -68,8 +68,9 @@ export default class dropdown extends superViews{
 
      closeMenu(e){
 
+      console.log("CloseMenu");
       if(this.card != false){
-
+        console.log("this.card != false");
         this.destroyMe();
       
       }
