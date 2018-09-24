@@ -109,13 +109,13 @@ export default class HeaderRessource extends superViews{
 
 
 
-		document.addEventListener("click", ()=>this.closeDropdown());
+		document.addEventListener("click",(e)=>this.closeDropdown(e));
 
     }
 
 
 
-    closeDropDown(){
+    closeDropDown(e){
 
 
       console.log("CloseMenu");
