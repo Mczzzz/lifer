@@ -216,12 +216,12 @@ this.Cloned.style.display = "none";
 
 	        let Pas = 30;
 
-	        if(this.Ghost.previousElementSibling){
+	        let GoodMargin = 0;
 
+	        if(this.Ghost.previousElementSibling){
 
 	        	let PreviousContainerX = this.Ghost.previousElementSibling.getBoundingClientRect().x;
 
-	       		let GoodMargin = 0;
 
 	        	if( e.changedTouches[0].clientX > (PreviousContainerX + (Pas / 2)) ){
 
