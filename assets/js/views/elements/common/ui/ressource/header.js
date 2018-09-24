@@ -112,7 +112,10 @@ export default class HeaderRessource extends superViews{
     	//items.push({'id':1,'picto':"","text":"selection"});
     	items.push({'id':2,'picto':"delete","text":"supprimer"});
     	items.push({'id':3,'picto':"add_alarm","text":"evenement"});
-    	items.push({'id':4,'picto':"check_box_outline_blank","text":"checkbox"})
+    	items.push({'id':3,'picto':"more_horiz","text":"Item Action"});
+    	items.push({'id':4,'picto':"check_box_outline_blank","text":"checkbox"});
+    	items.push({'id':4,'picto':"unfold_less","text":"minimize"});
+    	//gerer le maximize : unfold_more
 
 
     	this.menu.setItems(items);
