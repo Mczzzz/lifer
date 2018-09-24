@@ -15,11 +15,16 @@ export default class HeaderRessource extends superViews{
 
           this.callBack = [];
 
+          this.firstClick = false;
+
      }
 
 
 
      init(){
+
+
+     	this.firstClick = true;
 
      	this.card = new Card('Card', this.path);
 	
@@ -103,11 +108,7 @@ export default class HeaderRessource extends superViews{
 
     	this.menu.setItems(items);
 
-    	this.justInit = true;
-
 		document.addEventListener("click", (e)=>this.closeDropDown(e));
-
-		this.justInit = false;
 
     }
 
@@ -118,12 +119,12 @@ export default class HeaderRessource extends superViews{
 
       console.log("CloseMenu");
       console.log(e);
-      if(this.justInit == false){
+      if(this.firstClick == false){
         console.log("this.card != false");
         this.menu.destroyMe();
       }
 
-
+      this.firstClick = false;
 
 
     }
