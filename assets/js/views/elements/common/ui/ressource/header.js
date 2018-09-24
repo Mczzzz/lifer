@@ -121,7 +121,7 @@ export default class HeaderRessource extends superViews{
       if(this.firstClick == false){
         console.log(this.firstClick);
         this.menu.destroyMe();
-        document.removeEventListener("click", (e)=>this.closeDropDown(e),false);
+        document.removeEventListener("click", this.closeDropDown(),true);
         this.firstClick = true;
 
       }else{
