@@ -110,11 +110,11 @@ export default class HeaderRessource extends superViews{
     	let items = [];
     	items.push({'id':0,'picto':"share","text":"partage"});
     	//items.push({'id':1,'picto':"","text":"selection"});
-    	items.push({'id':2,'picto':"delete","text":"supprimer"});
-    	items.push({'id':3,'picto':"add_alarm","text":"evenement"});
+    	items.push({'id':1,'picto':"delete","text":"supprimer"});
+    	items.push({'id':2,'picto':"add_alarm","text":"evenement"});
     	items.push({'id':3,'picto':"more_horiz","text":"Item Action"});
     	items.push({'id':4,'picto':"check_box_outline_blank","text":"checkbox"});
-    	items.push({'id':4,'picto':"unfold_less","text":"minimize"});
+    	items.push({'id':5,'picto':"unfold_less","text":"minimize"});
     	//gerer le maximize : unfold_more
 
 
