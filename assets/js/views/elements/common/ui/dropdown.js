@@ -60,7 +60,7 @@ export default class dropdown extends superViews{
         this.card.setStyleElement(Element,"justifyContent","flex-start");
 
           let ddPicto = this.card.push("Button", Element,"Button_"+item.id, item.picto);
-          let ddButton = this.card.push("TextButton", Element,"Button_"+item.id, item.text);
+          let ddButton = this.card.push("TextButton", Element,"TxtButton_"+item.id, item.text);
 
 
           //ddButton.getContainer().addEventListener("click",()=>this.CloseMe());
