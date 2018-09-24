@@ -49,17 +49,24 @@ export default class dropdown extends superViews{
           bkg.style.borderRadius= "0px";
           bkg.style.margin= "0px";
           bkg.style.padding= "0px" ;
-          bkg.style.background= "green";
+          bkg.style.background= "transparent";
           bkg.style.position= "absolute";
           bkg.style.width= "100%";
           bkg.style.height= "100%";
           bkg.style.top= "0px";
           bkg.style.left= "0px";
 
+          bkg.addEventListener("click", ()=>this.closeMenu());
+
 
      }
 
 
+     closeMenu(){
+
+      this.destroyMe();
+
+     }
 
      setPosition(position){
 
