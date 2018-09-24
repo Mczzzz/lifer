@@ -21,7 +21,6 @@ export default class dropdown extends superViews{
 
      init(){
 
-       // this.bkgdClickOut();
       
           this.setStyle("position", "absolute");
 
@@ -37,34 +36,6 @@ export default class dropdown extends superViews{
     
 
      }
-
-
-    /* bkgdClickOut(){
-
-
-          this.bkg = document.createElement('div');
-          document.body.appendChild(this.bkg);
-
- 
-          this.bkg.style.borderWidth = "0px";
-          this.bkg.style.borderRadius= "0px";
-          this.bkg.style.margin= "0px";
-          this.bkg.style.padding= "0px" ;
-          this.bkg.style.background= "transparent";
-          this.bkg.style.position= "absolute";
-          this.bkg.style.width= "100%";
-          this.bkg.style.height= "100%";
-          this.bkg.style.top= "0px";
-          this.bkg.style.left= "0px";
-
-          this.bkg.addEventListener("click", ()=>this.closeMenu());
-
-
-     }*/
-
-
-      
-      //this.bkg.remove();
 
 
      

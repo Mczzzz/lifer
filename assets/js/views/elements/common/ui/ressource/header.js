@@ -15,7 +15,6 @@ export default class HeaderRessource extends superViews{
 
           this.callBack = [];
 
-          this.firstClick = false;
 
      }
 
@@ -120,7 +119,7 @@ export default class HeaderRessource extends superViews{
       console.log("CloseMenu");
       console.log(e);
       if(this.firstClick == false){
-        console.log("this.card != false");
+        console.log(this.firstClick);
         this.menu.destroyMe();
       }
 
