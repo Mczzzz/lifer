@@ -19,7 +19,9 @@ export default class dropdown extends superViews{
 
      init(){
 
-        this.bkgdClickOut();
+       // this.bkgdClickOut();
+        document.addEventListener("click", (e)=>this.closeMenu(e));
+
 
           this.setStyle("position", "absolute");
 
@@ -38,7 +40,7 @@ export default class dropdown extends superViews{
      }
 
 
-     bkgdClickOut(){
+    /* bkgdClickOut(){
 
 
           this.bkg = document.createElement('div');
@@ -59,13 +61,13 @@ export default class dropdown extends superViews{
           this.bkg.addEventListener("click", ()=>this.closeMenu());
 
 
-     }
+     }*/
 
 
-     closeMenu(){
+     closeMenu(e){
 
       this.destroyMe();
-      this.bkg.remove();
+      //this.bkg.remove();
 
 
      }
