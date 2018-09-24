@@ -18,7 +18,7 @@ export default class MainRessource extends superViews{
 
           this.autoIncrement = 0;
 
-          let forceZeroMargin = false; 
+          this.forceZeroMargin = false; 
 
      }
 
@@ -191,7 +191,7 @@ this.Cloned.style.display = "none";
 
 	        }else{
 
-	        	forceZeroMargin = true;       	
+	        	this.forceZeroMargin = true;       	
 
 	        }
 
@@ -242,7 +242,7 @@ this.Cloned.style.display = "none";
 
 	        }
 
-	        if(forceZeroMargin){
+	        if(this.forceZeroMargin){
 
 	        	GoodMargin = 0;
 
