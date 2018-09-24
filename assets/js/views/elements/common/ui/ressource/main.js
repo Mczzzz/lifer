@@ -237,21 +237,24 @@ this.Cloned.style.display = "none";
 
 	        	}
 
-	        	console.log(childContainer.getContainer().previousElementSibling.previousElementSibling);
+
+	        }
+
+
+	        //on force si je me retrouve ne premiere position
+	        console.log(childContainer.getContainer().previousElementSibling.previousElementSibling);
 
 	        	if(childContainer.getContainer().previousElementSibling.previousElementSibling == undefined){
 
 	        	console.log("in undefineddd");
 
 	        		GoodMargin = 0;
-	        	}
+	        	
 
 	        	childContainer.setStyle("marginLeft", GoodMargin + "px");
 	        	this.Ghost.style.marginLeft = GoodMargin + "px";
 
-	        }
-
-
+	        	}
 
 
 
