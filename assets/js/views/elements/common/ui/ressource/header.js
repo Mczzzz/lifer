@@ -122,9 +122,12 @@ export default class HeaderRessource extends superViews{
         console.log(this.firstClick);
         this.menu.destroyMe();
         this.firstClick = true;
+
+      }else{
+      	this.firstClick = false;
       }
 
-      this.firstClick = false;
+      
 
 
     }
