@@ -85,14 +85,15 @@ export default class HeaderRessource extends superViews{
 
     initDropDown(){
 
+    	
 
-    	let menu = new Dropdown("dropdown",this.path);
+    	this.menu = new Dropdown("dropdown",this.path);
 
     	let position = {};
     	position.top = this.getContainer().getBoundingClientRect().y;
     	position.right = 0;
 
-    	menu.setPosition(position);
+    	this.menu.setPosition(position);
 
     	let items = [];
     	items.push({'id':0,'picto':"","text":"partage"});
@@ -100,11 +101,32 @@ export default class HeaderRessource extends superViews{
     	items.push({'id':2,'picto':"","text":"supprimer"});
     	items.push({'id':1,'picto':"","text":"evenement"});
 
-    	menu.setItems(items);
+    	this.menu.setItems(items);
+
+
+		document.addEventListener("click", (e)=>this.closeDopDown(e));
+
+
+    }
+
+
+
+    closeDropDown(e){
+
+
+      console.log("CloseMenu");
+      console.log(e);
+      if(this.menu != false){
+        console.log("this.card != false");
+        this.menu.destroyMe();
+      }
+
 
 
 
     }
+
+
 
 
     colMain(colButton){

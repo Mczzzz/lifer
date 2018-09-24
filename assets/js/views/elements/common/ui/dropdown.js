@@ -22,9 +22,7 @@ export default class dropdown extends superViews{
      init(){
 
        // this.bkgdClickOut();
-        document.addEventListener("click", (e)=>this.closeMenu(e));
-
-
+      
           this.setStyle("position", "absolute");
 
 
@@ -36,8 +34,7 @@ export default class dropdown extends superViews{
           this.card.setStyle("padding", "10px");
           this.card.setStyle("background", "blue");
           
-          this.active = true;
-     
+    
 
      }
 
@@ -66,20 +63,11 @@ export default class dropdown extends superViews{
      }*/
 
 
-     closeMenu(e){
-
-      console.log("CloseMenu");
-      console.log(this.card);
-      if(this.card != false){
-        console.log("this.card != false");
-        this.destroyMe();
-      
-      }
       
       //this.bkg.remove();
 
 
-     }
+     
 
      setPosition(position){
 
