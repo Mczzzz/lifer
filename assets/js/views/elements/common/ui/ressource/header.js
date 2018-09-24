@@ -103,9 +103,11 @@ export default class HeaderRessource extends superViews{
 
     	this.menu.setItems(items);
 
+    	this.justInit = true;
 
 		document.addEventListener("click", (e)=>this.closeDropDown(e));
 
+		this.justInit = false;
 
     }
 
@@ -116,7 +118,7 @@ export default class HeaderRessource extends superViews{
 
       console.log("CloseMenu");
       console.log(e);
-      if(this.menu != false){
+      if(this.justInit == false){
         console.log("this.card != false");
         this.menu.destroyMe();
       }
