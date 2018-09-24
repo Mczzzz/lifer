@@ -56,7 +56,7 @@ export default class dropdown extends superViews{
           this.bkg.style.top= "0px";
           this.bkg.style.left= "0px";
 
-          bkg.addEventListener("click", ()=>this.closeMenu());
+          this.bkg.addEventListener("click", ()=>this.closeMenu());
 
 
      }
