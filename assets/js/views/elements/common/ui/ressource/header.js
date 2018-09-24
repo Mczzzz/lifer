@@ -16,6 +16,15 @@ export default class HeaderRessource extends superViews{
           this.callBack = [];
 
 
+        
+        this.clicked = function (event) {
+
+		      console.log('clicks:');
+		      this.closeDropDown();
+
+		}
+
+
      }
 
 
@@ -107,24 +116,24 @@ export default class HeaderRessource extends superViews{
 
     	this.menu.setItems(items);
 
+    	this.CDP = 
 
-
-		document.addEventListener("click",(e)=>this.closeDropDown(e));
+    	this.clickHandler = this.clicked.bind(this);
+		document.addEventListener("click",this.clickHandler);
 
     }
 
 
 
-    closeDropDown(e){
+    closeDropDown(){
 
 
       console.log("CloseMenu");
-      if(e == "retour") return;
 
       if(this.firstClick == false){
         console.log(this.firstClick);
         this.menu.destroyMe();
-        document.removeEventListener("click");
+        document.removeEventListener("click", this.clickHandler);
         this.firstClick = true;
 
       }else{
