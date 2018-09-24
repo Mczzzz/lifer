@@ -233,7 +233,7 @@ this.Cloned.style.display = "none";
 	        	//calcul de la bonne valeur
 	        	GoodMargin = Math.round(e.changedTouches[0].clientX / Pas ) * Pas;
 	        	//console.log("good Margin:"+ GoodMargin);
-	        	if(GoodMargin < 0 || forceZeroMargin){
+	        	if(GoodMargin < 0){
 
 	        		GoodMargin = 0;
 
@@ -242,13 +242,18 @@ this.Cloned.style.display = "none";
 
 	        }
 
+	        if(forceZeroMargin){
+
+	        	GoodMargin = 0;
+
+	        }
 
 	       	childContainer.setStyle("marginLeft", GoodMargin + "px");
         	this.Ghost.style.marginLeft = GoodMargin + "px";
 
 
         	forceZeroMargin = false;
-        	
+
 
       }else if(type == "stop"){
 
