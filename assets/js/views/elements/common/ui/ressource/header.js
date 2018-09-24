@@ -117,11 +117,12 @@ export default class HeaderRessource extends superViews{
 
 
       console.log("CloseMenu");
+      if(e == "retour") return;
 
       if(this.firstClick == false){
         console.log(this.firstClick);
         this.menu.destroyMe();
-        document.removeEventListener("click", this.closeDropDown());
+        document.removeEventListener("click", this.closeDropDown('retour'));
         this.firstClick = true;
 
       }else{
