@@ -13,6 +13,8 @@ export default class dropdown extends superViews{
 
           this.callBack = [];
 
+          this.card = false;
+
      }
 
 
@@ -66,7 +68,12 @@ export default class dropdown extends superViews{
 
      closeMenu(e){
 
-      this.destroyMe();
+      if(this.card != false){
+
+        this.destroyMe();
+      
+      }
+      
       //this.bkg.remove();
 
 
