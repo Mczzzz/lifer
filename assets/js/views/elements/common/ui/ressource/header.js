@@ -108,10 +108,10 @@ export default class HeaderRessource extends superViews{
     	this.menu.setPosition(position);
 
     	let items = [];
-    	items.push({'id':0,'picto':"","text":"partage"});
-    	items.push({'id':1,'picto':"","text":"selection"});
-    	items.push({'id':2,'picto':"","text":"supprimer"});
-    	items.push({'id':3,'picto':"","text":"evenement"});
+    	items.push({'id':0,'picto':"share","text":"partage"});
+    	//items.push({'id':1,'picto':"","text":"selection"});
+    	items.push({'id':2,'picto':"delete","text":"supprimer"});
+    	items.push({'id':3,'picto':"add_alarm","text":"evenement"});
     	items.push({'id':4,'picto':"check_box_outline_blank","text":"checkbox"})
 
 
