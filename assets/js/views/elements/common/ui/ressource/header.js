@@ -104,7 +104,7 @@ export default class HeaderRessource extends superViews{
     	this.menu.setItems(items);
 
 
-		document.addEventListener("click", (e)=>this.closeDopDown(e));
+		document.addEventListener("click", (e)=>this.closeDropDown(e));
 
 
     }
