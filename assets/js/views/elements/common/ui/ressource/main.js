@@ -245,9 +245,10 @@ this.Cloned.style.display = "none";
 
 
 
-
+	        console.log(childContainer.getContainer().parentElement.firstChild);
 	        if(childContainer.getContainer().parentElement.firstChild == this.Ghost){
 
+	        	console.log("in if");
 	        	GoodMargin = 0;
 	        	
 
