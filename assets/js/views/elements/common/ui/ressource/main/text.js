@@ -55,12 +55,18 @@ export default class Text extends superViews{
 	}
 
 
-	focus(){
+	focus(first = false){
 		console.log('in focus');
 		console.log(this.TheTextElt);
 		console.log(this.TheTextElt.getContainer());
-		let elt = this.TheTextElt;
-		setTimeout(function(){  console.log('in function settimeout');elt.getContainer().focus(); }, 500);
+
+		this.TheTextElt.getContainer().focus();
+
+/*		if(first){
+			let elt = this.TheTextElt;
+			setTimeout(function(){  console.log('in function settimeout');elt.getContainer().focus(); }, 1000);	
+		}*/
+
 
 	}
 

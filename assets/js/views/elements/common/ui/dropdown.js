@@ -19,6 +19,8 @@ export default class dropdown extends superViews{
 
      init(){
 
+        this.bkgdClickOut();
+
           this.setStyle("position", "absolute");
 
 
@@ -34,6 +36,26 @@ export default class dropdown extends superViews{
      
 
      }
+
+
+     bkgdClickOut(){
+
+
+          let bkgCard = new Card('Card', this.path);
+  
+          bkgCard.setStyle("borderWidth", "0px");
+          bkgCard.setStyle("borderRadius", "0px");
+          bkgCard.setStyle("margin", "0px");
+          bkgCard.setStyle("padding", "0px");
+          bkgCard.setStyle("background", "green");
+          bkgCard.setStyle("position", "absolute");
+          bkgCard.setStyle("width", "100%");
+          bkgCard.setStyle("height", "100%")
+
+
+     }
+
+
 
      setPosition(position){
 
