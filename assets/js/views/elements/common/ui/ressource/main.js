@@ -18,7 +18,7 @@ export default class MainRessource extends superViews{
 
           this.autoIncrement = 0;
 
-          this.forceZeroMargin = false; 
+
 
      }
 
@@ -189,12 +189,7 @@ this.Cloned.style.display = "none";
 	          	
 	          }
 
-	        }else{
-
-	        	this.forceZeroMargin = true;       	
-
 	        }
-
 
 
 	        if(childContainer.getContainer().nextElementSibling){
@@ -220,39 +215,43 @@ this.Cloned.style.display = "none";
 	        console.log(childContainer.getContainer().getBoundingClientRect().x);*/
 
 	        let Pas = 30;
-	        let PreviousContainerX = this.Ghost.previousElementSibling.getBoundingClientRect().x;
 
-	        let GoodMargin = 0;
+	        if(this.Ghost.previousElementSibling){
 
-	        if( e.changedTouches[0].clientX > (PreviousContainerX + (Pas / 2)) ){
 
-	        	GoodMargin = PreviousContainerX + Pas;
+	        	let PreviousContainerX = this.Ghost.previousElementSibling.getBoundingClientRect().x;
+
+	       		let GoodMargin = 0;
+
+	        	if( e.changedTouches[0].clientX > (PreviousContainerX + (Pas / 2)) ){
+
+	        		GoodMargin = PreviousContainerX + Pas;
+
+	       		}else{
+
+		        	//calcul de la bonne valeur
+		        	GoodMargin = Math.round(e.changedTouches[0].clientX / Pas ) * Pas;
+		        	//console.log("good Margin:"+ GoodMargin);
+		        	if(GoodMargin < 0){
+
+		        		GoodMargin = 0;
+
+		        	}
+
+		        }
 
 	        }else{
 
-	        	//calcul de la bonne valeur
-	        	GoodMargin = Math.round(e.changedTouches[0].clientX / Pas ) * Pas;
-	        	//console.log("good Margin:"+ GoodMargin);
-	        	if(GoodMargin < 0){
-
-	        		GoodMargin = 0;
-
-	        	}
-
-
-	        }
-
-	        if(this.forceZeroMargin){
-
 	        	GoodMargin = 0;
 
+	        
 	        }
+	        
 
 	       	childContainer.setStyle("marginLeft", GoodMargin + "px");
         	this.Ghost.style.marginLeft = GoodMargin + "px";
 
 
-        	this.forceZeroMargin = false;
 
 
       }else if(type == "stop"){
