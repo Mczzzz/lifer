@@ -237,7 +237,11 @@ this.Cloned.style.display = "none";
 
 	        	}
 
+	        	console.log(childContainer.getContainer().previousElementSibling.previousElementSibling);
+
 	        	if(childContainer.getContainer().previousElementSibling.previousElementSibling == undefined){
+
+	        	console.log("in undefineddd");
 
 	        		GoodMargin = 0;
 	        	}
