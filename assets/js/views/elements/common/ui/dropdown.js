@@ -41,20 +41,20 @@ export default class dropdown extends superViews{
      bkgdClickOut(){
 
 
-          let bkg = document.createElement('div');
+          this.bkg = document.createElement('div');
           document.body.appendChild(bkg);
 
  
-          bkg.style.borderWidth = "0px";
-          bkg.style.borderRadius= "0px";
-          bkg.style.margin= "0px";
-          bkg.style.padding= "0px" ;
-          bkg.style.background= "transparent";
-          bkg.style.position= "absolute";
-          bkg.style.width= "100%";
-          bkg.style.height= "100%";
-          bkg.style.top= "0px";
-          bkg.style.left= "0px";
+          this.bkg.style.borderWidth = "0px";
+          this.bkg.style.borderRadius= "0px";
+          this.bkg.style.margin= "0px";
+          this.bkg.style.padding= "0px" ;
+          this.bkg.style.background= "transparent";
+          this.bkg.style.position= "absolute";
+          this.bkg.style.width= "100%";
+          this.bkg.style.height= "100%";
+          this.bkg.style.top= "0px";
+          this.bkg.style.left= "0px";
 
           bkg.addEventListener("click", ()=>this.closeMenu());
 
@@ -65,6 +65,8 @@ export default class dropdown extends superViews{
      closeMenu(){
 
       this.destroyMe();
+      this.bkg.remove();
+
 
      }
 
