@@ -107,10 +107,9 @@ export default class HeaderRessource extends superViews{
 
     	this.menu.setItems(items);
 
-    	this.dropDown = false;
-    	this.dropDown.bind(this.closeDropdown());
 
-		document.addEventListener("click", this.dropDown);
+
+		document.addEventListener("click", ()=>this.closeDropdown());
 
     }
 
@@ -125,7 +124,7 @@ export default class HeaderRessource extends superViews{
       if(this.firstClick == false){
         console.log(this.firstClick);
         this.menu.destroyMe();
-        document.removeEventListener("click", this.dropDown );
+        document.removeEventListener("click");
         this.firstClick = true;
 
       }else{
