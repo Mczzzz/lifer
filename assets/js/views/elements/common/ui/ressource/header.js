@@ -89,7 +89,7 @@ export default class HeaderRessource extends superViews{
 
     initDropDown(){
 
-    	
+    	console.log('initDropdown');
 
     	this.menu = new Dropdown("dropdown",this.path);
 
