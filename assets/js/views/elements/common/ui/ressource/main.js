@@ -360,7 +360,13 @@ this.Cloned.style.display = "none";
 
 	        let prevSibling;
 
-	        if(childContainer.getContainer().previousElementSibling && parseInt(childContainer.getContainer().style.marginLeft, 10) > 0){
+	        if(childContainer.getContainer().previousElementSibling &&
+
+	        	parseInt(childContainer.getContainer().style.marginLeft, 10) > 0 && 
+
+	        	parseInt(childContainer.getContainer().style.marginLeft, 10) > parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft, 10)
+
+	          ){
 
 	        	console.log("in if");
 	        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
