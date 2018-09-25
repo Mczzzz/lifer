@@ -89,7 +89,8 @@ export default class HeaderRessource extends superViews{
 
         let obj = this.getObjectThisfromPath("Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main");
         console.log(obj);
-        collapseButton.getContainer().addEventListener("click",()=>obj.collapseAll());
+        setTimeout(collapseButton.getContainer().addEventListener("click",()=>obj.collapseAll()), 500);
+        //collapseButton.getContainer().addEventListener("click",()=>obj.collapseAll());
 
 
 
