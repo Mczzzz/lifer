@@ -119,7 +119,7 @@ export default class MainRessource extends superViews{
 		  			console.log("ThisChild");
 		  			console.log(child.className);
 		  			console.log(ThisChild);
-		  			//ThisChild.addCollapse();
+		  			ThisChild.addCollapse();
 
 		  		}
 
