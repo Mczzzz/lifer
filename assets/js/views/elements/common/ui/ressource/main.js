@@ -114,10 +114,7 @@ export default class MainRessource extends superViews{
 
 		  	}
 
-
-
 		}
-
 
 	}
 
@@ -347,7 +344,7 @@ this.Cloned.style.display = "none";
 
         	if(GoodMargin > 0){
 
-        		let prevSibling = this.Lifer.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.previousElementSibling.className);
+        		let prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.previousElementSibling.className);
         		prevSibling.addCollapse();
 
         	}
