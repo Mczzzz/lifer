@@ -51,11 +51,11 @@ Moment.locale('fr');
 		//this.MyClass = (MyClass !== false)? MyClass : this.constructor.name;
 
 		//this.Lifer.addMe(this.path);
-		this.Lifer.addMe(this.MyClass);
+		this.Lifer.addMe(this.path);
 
 		this.superInit(prepend);
 
-		this.Lifer.addData(this.MyClass,[{"This" : this}]);
+		this.Lifer.addData(this.path,[{"This" : this}]);
 
 	}
 
