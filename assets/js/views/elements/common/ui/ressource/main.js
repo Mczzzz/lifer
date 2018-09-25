@@ -345,6 +345,14 @@ this.Cloned.style.display = "none";
         	this.Ghost.style.marginLeft = GoodMargin + "px";
 
 
+        	if(GoodMargin > 0){
+
+        		let prevSibling = this.Lifer.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.previousElementSibling.className);
+        		prevSibling.addCollapse();
+
+        	}
+
+
 
 
       }else if(type == "stop"){
