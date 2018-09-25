@@ -76,6 +76,20 @@ export default class HeaderRessource extends superViews{
 
 
 
+        let collapseButton = this.card.push("Button", HeaderElement,"fold", "unfold_less");
+
+        this.card.setStylePictoComponent(HeaderElement,"fold","fontSize","25px");
+        this.card.setStylePictoComponent(HeaderElement,"fold","margin","0px");
+        this.card.setStylePictoComponent(HeaderElement,"fold","marginRight","10px");
+        this.card.setStylePictoComponent(HeaderElement,"fold","color","white");
+        this.card.setStylePictoComponent(HeaderElement,"fold","alignItems","center");
+
+
+        //ddButton.getContainer().addEventListener("click",()=>this.initDropDown());
+
+
+
+
 
 
 				let ddButton = this.card.push("Button", HeaderElement,"sep1", "more_vert");
