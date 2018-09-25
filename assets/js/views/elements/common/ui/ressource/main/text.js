@@ -59,6 +59,7 @@ export default class Text extends superViews{
 
 		//console.log(this.card.path+"-collapser_"+this.ClassId);
 
+		console.log('in rmCollapse');
 		let me = this.getObjectThisfromPath(this.card.path+"-collapser_"+this.ClassId);
 
 		if(me){
@@ -86,7 +87,7 @@ export default class Text extends superViews{
 			this.collapseButton = this.card.push("Button",collapseElement,"collapser_"+this.ClassId, "unfold_more");
 			this.collapseButton.setStylePicto("color","grey");
 			this.collapseButton.setStylePicto("marginRight","0px");
-
+			console.log("on passe la");
 			this.collapseButton.getContainer().addEventListener("click",()=>this.parentThis.expandSpecificNode(this.getContainer()));
 
 		}
