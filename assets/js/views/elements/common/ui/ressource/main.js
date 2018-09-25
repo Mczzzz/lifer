@@ -342,13 +342,6 @@ this.Cloned.style.display = "none";
         	this.Ghost.style.marginLeft = GoodMargin + "px";
 
 
-        	if(GoodMargin > 0){
-
-        		let prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.previousElementSibling.className);
-        		prevSibling.addCollapse();
-
-        	}
-
 
 
 
@@ -357,9 +350,18 @@ this.Cloned.style.display = "none";
         //this.setStyle("background" , "white","element");
         //childContainer.getContainer().style = this.initialStyle;
 
+
         childContainer.setStyle("display","");
         this.Cloned.remove();
         this.Ghost.remove();
+
+        if(childContainer.getContainer().previousElementSibling && childContainer.getContainer().style.marginLeft > 0){
+
+        	let prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
+       		prevSibling.addCollapse();
+
+        }
+
 
       }
 
