@@ -79,6 +79,7 @@ export default class Text extends superViews{
 
 		if(!me){
 
+			console.log("on passe ici");
 			let collapseElement = this.card.setElement("collapser_"+this.ClassId,false);
 			this.collapseButton = this.card.push("Button",collapseElement,"collapser_"+this.ClassId, "unfold_more");
 			this.collapseButton.setStylePicto("color","grey");
