@@ -32,10 +32,11 @@ destroy(path){
 
 	for(let myPath of arrayPath ){
 
+		dataRepresentationMe = dataRepresentation;
 		dataRepresentation = dataRepresentation[myPath];
 	}
 
-	console.log(dataRepresentation);
+	console.log(dataRepresentationMe);
 
 }
 
