@@ -100,11 +100,13 @@ export default class MainRessource extends superViews{
 		  		if(!this.collapsed){
 		  			child.style.display = "none";
 		  			this.collapsed = true;
+		  			return true;
 
 		  		}else{
 
 		  			child.style.display = "";
 		  			this.collapsed = false;
+		  			return false;
 
 		  		}
 
