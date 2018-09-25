@@ -160,7 +160,7 @@ export default class MainRessource extends superViews{
 		  console.log(this.touchX);
 		  console.log(this.touchY);
 
-		  this.Ghost = childContainer.getContainer().cloneNode(false);
+		  this.Ghost = childContainer.getContainer().cloneNode(true);
 		  this.Ghost.style.boxShadow  = "inset rgb(121, 193, 206) 0px 0px 19px 3px";
 		  //this.Ghost.style.background = "rgb(121, 193, 206)";
 		  this.Ghost.style.marginTop = "5px";
