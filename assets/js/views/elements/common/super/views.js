@@ -25,8 +25,6 @@ Moment.locale('fr');
 			this.parentThis = false;
 
 		}else{
-			console.log(path);
-			console.log(path);
 			
 			this.parentThis = this.getObjectThisfromPath(path);
 			this.parent = this.parentThis.getContainer();
@@ -51,6 +49,8 @@ Moment.locale('fr');
 		//this.MyClass = (MyClass !== false)? MyClass : this.constructor.name;
 
 		//this.Lifer.addMe(this.path);
+		console.log(this.path);
+
 		this.Lifer.addMe(this.path);
 
 		this.superInit(prepend);
