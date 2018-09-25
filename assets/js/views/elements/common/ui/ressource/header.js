@@ -67,11 +67,12 @@ export default class HeaderRessource extends superViews{
 
 				this.card.push("Text",HeaderElement,"Title","");
 
-				this.card.setAttributeComponent(HeaderElement,"Title","placeholder","Titre Ressource...");
+				this.card.setAttributeComponent(HeaderElement,"Title","placeholder","Ma Ressource...");
 
 				this.card.setStyleComponent(HeaderElement,"Title","fontSize","18px");
 				this.card.setStyleComponent(HeaderElement,"Title","color","grey");
 				this.card.setStyleComponent(HeaderElement,"Title","fontWeight","bold");
+        this.card.setStyleComponent(HeaderElement,"Title","flex","1");
 
 
 
@@ -85,9 +86,9 @@ export default class HeaderRessource extends superViews{
         this.card.setStylePictoComponent(HeaderElement,"fold","alignItems","center");
 
 
-        //ddButton.getContainer().addEventListener("click",()=>this.initDropDown());
 
-
+        let obj = this.getObjectThisfromPath("Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main");
+        ddButton.getContainer().addEventListener("click",()=>obj["collapseAll"]());
 
 
 
@@ -108,6 +109,11 @@ export default class HeaderRessource extends superViews{
 
      }
 
+
+     collapse(){
+
+
+     }
 
     initDropDown(){
 
