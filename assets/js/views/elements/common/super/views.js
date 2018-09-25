@@ -37,7 +37,7 @@ Moment.locale('fr');
 		if(this.parentThis){
 
 			this.MyClass = this.parentThis.MyClass+"-"+MyClass;
-			this.path = path+"/"+this.MyClass;
+			this.path = this.MyClass;
 		
 		}else{
 
