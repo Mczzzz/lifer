@@ -152,6 +152,8 @@ export default class MainRessource extends superViews{
 
 		}
 		
+		console.log("children");
+		console.log(children);
 		//calcul de la différence
 		let diff = (parseInt( node.style.marginLeft ,10) + this.Pas) - (parseInt( children[0].style.marginLeft ,10));
 
