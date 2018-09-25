@@ -86,14 +86,15 @@ export default class MainRessource extends superViews{
 	}
 
 
+	getChilds(node){
 
-	expandSpecificNode(node){
-
-		let childrens = this.getContainer().childNodes;
+		let allNodes = this.getContainer().childNodes;
+		
+		let ArrayChilds = [];
 
 		let begin = false;
 
-		for (let child of childrens) {
+		for (let child of allNodes) {
 
 
 			if(child == node){
@@ -103,9 +104,10 @@ export default class MainRessource extends superViews{
 			}
 
 
-			if((parseInt(child.style.marginLeft, 10) > 0) && begin == true){
+			if((parseInt(child.style.marginLeft, 10) > parseInt(node.style.marginLeft, 10)) && begin == true){
 
-		  			child.style.display = "";
+		  		
+		  		ArrayChilds.push(child);
 
 
 		  	}else{
@@ -113,6 +115,23 @@ export default class MainRessource extends superViews{
 		  		begin = false;
 
 		  	}
+
+
+
+		}
+
+		return ArrayChilds;
+
+	}
+
+
+	expandSpecificNode(node){
+
+		let children = this.getChilds(node);
+
+		for (let child of children) {
+
+				child.style.display = "";
 
 		}
 
