@@ -115,6 +115,7 @@ export default class HeaderRessource extends superViews{
         let obj = this.getObjectThisfromPath("Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main");
         console.log(obj);
         obj.collapseAll();
+        console.log(obj.collapsed);
         if(obj.collapsed){
           this.collapseButton.setData("unfold_more");
         }else{
