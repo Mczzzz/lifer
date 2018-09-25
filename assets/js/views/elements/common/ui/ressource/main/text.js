@@ -59,8 +59,6 @@ export default class Text extends superViews{
 
 
 		let me = this.getObjectThisfromPath(this.card.path+"-collapser_"+this.ClassId);
-		console.log(this.card.path+"-collapser_"+this.ClassId);
-		console.log(me);
 
 		if(!me){
 
@@ -68,6 +66,10 @@ export default class Text extends superViews{
 			this.collapseButton = this.card.push("Button",collapseElement,"collapser_"+this.ClassId, "unfold_more");
 			this.collapseButton.setStylePicto("color","grey");
 			this.collapseButton.setStylePicto("marginRight","0px");
+
+		}else{
+
+			me.destroyMe();
 
 		}
 
