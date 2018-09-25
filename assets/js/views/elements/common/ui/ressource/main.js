@@ -349,7 +349,7 @@ this.Cloned.style.display = "none";
 
         //this.setStyle("background" , "white","element");
         //childContainer.getContainer().style = this.initialStyle;
-
+        console.log('stopppp');
 
         childContainer.setStyle("display","");
         this.Cloned.remove();
@@ -367,11 +367,13 @@ this.Cloned.style.display = "none";
         	console.log(prevSibling);
        		prevSibling.addCollapse();
 
+
+
         }else if(childContainer.getContainer().previousElementSibling && parseInt(childContainer.getContainer().style.marginLeft, 10) <=  parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft, 10))
 
         	console.log("in else if");
-        	console.log(childContainer.getContainer().style.marginLeft);
-        	console.log(childContainer.getContainer().previousElementSibling.style.marginLeft);
+        	console.log(parseInt(childContainer.getContainer().style.marginLeft, 10));
+        	console.log(parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft));
 
         	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
        		prevSibling.rmCollapse();
