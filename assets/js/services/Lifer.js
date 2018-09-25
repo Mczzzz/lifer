@@ -23,8 +23,8 @@ class Brain {
 	}
 
 destroy(path){
-
-
+console.log("in destroy Lifer");
+console.log(path)
 //formater le path
 	let arrayPath = path.split("-");
 
