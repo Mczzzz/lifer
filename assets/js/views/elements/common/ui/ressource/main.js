@@ -152,24 +152,23 @@ export default class MainRessource extends superViews{
 
 		}
 		
-		console.log("children");
-		console.log(children);
-		//calcul de la différence
-		let diff = (parseInt( node.style.marginLeft ,10) + this.Pas) - (parseInt( children[0].style.marginLeft ,10));
+		if(children.length){
+			//calcul de la différence
+			let diff = (parseInt( node.style.marginLeft ,10) + this.Pas) - (parseInt( children[0].style.marginLeft ,10));
 
-		let childPosition;
+			let childPosition;
 
-		for (let child of children) {
+			for (let child of children) {
 
 
-				childPosition = parseInt(child.style.marginLeft ,10) + diff;
+					childPosition = parseInt(child.style.marginLeft ,10) + diff;
 
-				if(childPosition < this.pas) childPosition = this.Pas;
+					if(childPosition < this.pas) childPosition = this.Pas;
 
-				child.style.marginLeft = childPosition + "px";
+					child.style.marginLeft = childPosition + "px";
 
+			}
 		}
-
 
 	}
 
