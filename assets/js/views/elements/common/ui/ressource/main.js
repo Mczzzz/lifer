@@ -358,7 +358,7 @@ this.Cloned.style.display = "none";
         console.log(childContainer.getContainer().previousElementSibling);
         console.log(childContainer.getContainer().style.marginLeft);
 
-        if(childContainer.getContainer().previousElementSibling && childContainer.getContainer().style.marginLeft > 0){
+        if(childContainer.getContainer().previousElementSibling && parseInt(childContainer.getContainer().style.marginLeft, 10) > 0){
 
         	console.log("in if");
         	let prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
