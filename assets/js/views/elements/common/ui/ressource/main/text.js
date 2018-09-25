@@ -39,7 +39,7 @@ export default class Text extends superViews{
 		this.EmptyElement = this.card.setElement("Text_"+this.ClassId);
 		this.card.setStyleElement(this.EmptyElement,"justifyContent","flex-start");
 		this.card.setStyleElement(this.EmptyElement,"alignItems","center");
-
+		this.card.setStyleElement(this.EmptyElement,"flex",1);
 
 
 		this.TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
@@ -48,7 +48,7 @@ export default class Text extends superViews{
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"color","#626262","all");
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"margin","0px");
 		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontWeight","normal");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"flex",1);
+		//this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"flex",1);
 
 
 
@@ -59,7 +59,7 @@ export default class Text extends superViews{
 
 
 		let collapseElement = this.card.setElement("collapser_"+this.ClassId,false);
-		this.collapseButton = this.card.push("Button",collapseElement,"collapser_"+this.ClassId, "fold_more");
+		this.collapseButton = this.card.push("Button",collapseElement,"collapser_"+this.ClassId, "unfold_more");
 		this.collapseButton.setStyle("opacity", "0.3");
 
 
