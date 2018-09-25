@@ -39,7 +39,7 @@ console.log(path)
 		dataRepresentation = dataRepresentation[myPath];
 	}
 
-	console.log(dataRepresentationMe);
+	delete dataRepresentationMe[myPath];
 
 }
 
