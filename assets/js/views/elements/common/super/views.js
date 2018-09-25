@@ -182,8 +182,9 @@ Moment.locale('fr');
 
     destroyMe(){
 
-    	this.container.remove();
     	this.Lifer.destroy(this.path);
+    	this.container.remove();
+    	
 
 
     }

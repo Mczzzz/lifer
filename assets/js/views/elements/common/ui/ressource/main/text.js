@@ -57,8 +57,8 @@ export default class Text extends superViews{
 
 	addCollapse(){
 
-		console.log(this.card.path+"-collapser_"+this.ClassId);
-		
+		//console.log(this.card.path+"-collapser_"+this.ClassId);
+
 		let me = this.getObjectThisfromPath(this.card.path+"-collapser_"+this.ClassId);
 
 		if(!me){
