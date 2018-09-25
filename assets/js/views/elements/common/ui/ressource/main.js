@@ -370,6 +370,9 @@ this.Cloned.style.display = "none";
         }else if(childContainer.getContainer().previousElementSibling && parseInt(childContainer.getContainer().style.marginLeft, 10) <=  parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft, 10))
 
         	console.log("in else if");
+        	console.log(childContainer.getContainer().style.marginLeft);
+        	console.log(childContainer.getContainer().previousElementSibling.style.marginLeft);
+
         	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
        		prevSibling.rmCollapse();
 
