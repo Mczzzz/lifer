@@ -18,7 +18,7 @@ export default class MainRessource extends superViews{
 
           this.autoIncrement = 0;
 
-
+          this.collapsed = false;
 
      }
 
@@ -97,7 +97,19 @@ export default class MainRessource extends superViews{
 
 		  	if(parseInt(child.style.marginLeft, 10) > 0){
 
-		  		child.style.display = "none";
+		  		if(!this.collapsed){
+		  			child.style.display = "none";
+		  			this.collapsed = true;
+
+		  		}else{
+
+		  			child.style.display = "";
+		  			this.collapsed = false;
+
+		  		}
+
+		  			
+
 
 		  	}
 		    // faire quelque chose avec chaque enfant[i]
