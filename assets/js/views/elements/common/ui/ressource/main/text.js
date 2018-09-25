@@ -23,6 +23,8 @@ export default class Text extends superViews{
 
 	form(){
 
+		this.setStyle('marginLeft', '0px');
+
 		this.card = new Card('Card_'+this.ClassId, this.path);
 		this.card.setId(0);
 		this.card.setStyle("borderWidth", "0px");
