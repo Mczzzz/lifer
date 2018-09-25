@@ -364,6 +364,7 @@ this.Cloned.style.display = "none";
 
         	console.log("in if");
         	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
+        	console.log(prevSibling);
        		prevSibling.addCollapse();
 
         }else if(childContainer.getContainer().previousElementSibling && parseInt(childContainer.getContainer().style.marginLeft, 10) <=  parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft, 10))
