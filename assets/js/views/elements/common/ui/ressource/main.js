@@ -109,6 +109,17 @@ export default class MainRessource extends superViews{
 		  			
 
 
+		  	}else{
+
+		  		//si j'ai des enfants je rajoute le logo collapse
+		  		if(child.nextElementSibling && (parseInt(child.nextElementSibling.style.marginLeft,10) > 0)){
+
+		  			//dans ces cas la j'affiche mon logo de collapsion
+		  			let ThisChild = this.getObjectThisfromPath(child.className);
+		  			ThisChild.addCollapse();
+
+		  		}
+
 		  	}
 		    // faire quelque chose avec chaque enfant[i]
 		    // NOTE: La liste est en ligne, l'ajout ou la suppression des enfants changera la liste

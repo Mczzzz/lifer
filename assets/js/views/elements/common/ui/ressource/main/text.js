@@ -55,6 +55,18 @@ export default class Text extends superViews{
 	}
 
 
+	addCollapse(){
+
+
+		let collapseElement = this.card.setElement("collapser_"+this.ClassId,false);
+		this.collapseButton = this.card.push("Button",collapseElement,"collapser_"+this.ClassId, "fold_more");
+		this.collapseButton.setStyle("opacity", "0.3");
+
+
+
+	}
+
+
 	focus(first = false){
 		console.log('in focus');
 		console.log(this.TheTextElt);
