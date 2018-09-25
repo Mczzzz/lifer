@@ -55,7 +55,7 @@ class LoaderImage {
 		res.capture = true;
 
 
-		let NoteResource = Lifer.getData("Note/Main/Resources", "This");
+		let NoteResource = Lifer.getData("Note-Main-Resources", "This");
 
 		NoteResource.createCard(res);
 

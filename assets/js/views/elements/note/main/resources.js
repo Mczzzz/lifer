@@ -39,7 +39,7 @@ export default class Resources extends superViews{
 		let updateTs = this.Moment();
 		//on s'assure que le flex de noteMainTitle est bien supprimé sinon on le fait
 		//car sinon le Title déborde sur le header de la Note.
-		let NoteMainTitle = this.getObjectThisfromPath("Note/Main/Title");
+		let NoteMainTitle = this.getObjectThisfromPath("Note-Main-Title");
 		if(NoteMainTitle.getContainer().style.display == "flex"){
 			NoteMainTitle.getContainer().style.display = null;
 		}

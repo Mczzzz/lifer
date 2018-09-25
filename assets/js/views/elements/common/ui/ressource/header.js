@@ -112,7 +112,7 @@ export default class HeaderRessource extends superViews{
 
      collapse(){
 
-        let obj = this.getObjectThisfromPath("Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main");
+        let obj = this.getObjectThisfromPath("Note-Main-Empty-Resource-Main");
         let doneCollapsed = obj.collapseAll();
 
         if(doneCollapsed){
@@ -143,7 +143,7 @@ export default class HeaderRessource extends superViews{
     	items.push({'id':2,'picto':"add_alarm","text":"evenement"});
     	items.push({'id':3,'picto':"more_horiz","text":"Item Action"});
     	items.push({'id':4,'picto':"check_box_outline_blank","text":"checkbox"});
-    	items.push({'id':5,'picto':"unfold_less","text":"minimize","actionObj":"Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main","method":"collapseAll"});
+    	items.push({'id':5,'picto':"unfold_less","text":"minimize","actionObj":"Note-Main-Empty-Resource-Main","method":"collapseAll"});
     	//gerer le maximize : unfold_more
 
 
@@ -184,7 +184,7 @@ export default class HeaderRessource extends superViews{
 
 
 
-    	let Main = this.getObjectThisfromPath("Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main");
+    	let Main = this.getObjectThisfromPath("Note-Main-Empty-Resource-Main");
 
     	console.log(Main.getContainer().style.display);
     	if(Main.getContainer().style.display == "none"){

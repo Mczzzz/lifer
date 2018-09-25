@@ -251,10 +251,10 @@ export default class Note extends superViews{
 		
 		this.note.Ts = update.format("YYYY-MM-DD HH:mm:ss");//objet Momentjs à formater a l'utilisation
 
-		let updateNoteTitleElt = this.getObjectThisfromPath("Note/Main/Title/Card");	
+		let updateNoteTitleElt = this.getObjectThisfromPath("Note-Main-Title-Card");	
 		updateNoteTitleElt.getContainer().style.background = "red";
 
-		let updateNoteElt = this.getObjectThisfromPath("Note/Main/Title/Card/Element/Textupdate");	
+		let updateNoteElt = this.getObjectThisfromPath("Note-Main-Title-Card-Element-Textupdate");	
 		updateNoteElt.getContainer().innerHTML = update.format('Do MMMM YYYY, HH:mm:ss');
 		updateNoteElt.getContainer().style.color = "red";
 
@@ -289,7 +289,7 @@ export default class Note extends superViews{
 /*	    console.log("_PushPreparePostOrderAction");
 	    console.log("data.card");
 	    console.log(data.card);*/
-		actions.push({"object" : "Note/mainNote/noteMainTitle/NoteTitleCard", "method" : "setStyle", "value" : "color green"});
+		actions.push({"object" : "Note-mainNote-noteMainTitle-NoteTitleCard", "method" : "setStyle", "value" : "color green"});
 		actions.push({"object" : data.card, "method" : "setStyle",  "value" : "background blue"});
 
 		let commande = {};

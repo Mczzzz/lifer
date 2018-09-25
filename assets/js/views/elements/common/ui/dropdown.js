@@ -62,7 +62,7 @@ export default class dropdown extends superViews{
           let ddPicto = this.card.push("Button", Element,"Button_"+item.id, item.picto);
           let ddButton = this.card.push("TextButton", Element,"TxtButton_"+item.id, item.text);
 
-//to':"unfold_less","text":"minimize","actionObj":"Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main","method":"collapseAll"});
+
           if(item.actionObj){
 
             let obj = this.getObjectThisfromPath(item.actionObj);
