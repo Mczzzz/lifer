@@ -126,7 +126,7 @@ export default class HeaderRessource extends superViews{
 
     initDropDown(){
 
-    	console.log('initDropdown');
+//    	console.log('initDropdown');
 
     	this.menu = new Dropdown("dropdown",this.path);
 
@@ -161,7 +161,7 @@ export default class HeaderRessource extends superViews{
     closeDropDown(){
 
 
-      console.log("CloseMenu");
+  //    console.log("CloseMenu");
 
       if(this.firstClick == false){
 
@@ -186,7 +186,7 @@ export default class HeaderRessource extends superViews{
 
     	let Main = this.getObjectThisfromPath("Note-Main-Empty-Resource-Main");
 
-    	console.log(Main.getContainer().style.display);
+  //  	console.log(Main.getContainer().style.display);
     	if(Main.getContainer().style.display == "none"){
 
     		colButton.setData("keyboard_arrow_down");

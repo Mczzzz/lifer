@@ -148,8 +148,8 @@ export default class MainRessource extends superViews{
 	onChildMove(childContainer, e, type){
 
 
-		console.log("on passe dans OnChildMove");
-		console.log(type);
+	//	console.log("on passe dans OnChildMove");
+	//	console.log(type);
 
 		if(type == "start"){
 
@@ -168,8 +168,8 @@ export default class MainRessource extends superViews{
 		  //calcul de la position relative du clone par rapport au touch
 		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x;
 		  this.touchY = e.changedTouches[0].clientY - this.Cloned.getBoundingClientRect().y;
-		  console.log(this.touchX);
-		  console.log(this.touchY);
+	//	  console.log(this.touchX);
+	//	  console.log(this.touchY);
 
 		  this.Ghost = childContainer.getContainer().cloneNode(true);
 		  this.Ghost.style.boxShadow  = "inset rgb(121, 193, 206) 0px 0px 19px 3px";
@@ -237,10 +237,10 @@ this.Cloned.style.display = "none";
 
 
 	        if(childContainer.getContainer().previousElementSibling.previousElementSibling){
-	        	console.log('in previous');
+	 //       	console.log('in previous');
 	          
 	          if(e.changedTouches[0].clientY < (this.Ghost.previousElementSibling.getBoundingClientRect().y + (this.Ghost.previousElementSibling.getBoundingClientRect().height / 2))){
-	          	console.log('in previous move node');
+	 //         	console.log('in previous move node');
 	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling.previousElementSibling);
 	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 	          	
@@ -251,10 +251,10 @@ this.Cloned.style.display = "none";
 
 	        if(childContainer.getContainer().nextElementSibling){
 
-	        	console.log('in next');
+	  //     	console.log('in next');
 
 	          if((e.changedTouches[0].clientY ) > childContainer.getContainer().nextElementSibling.getBoundingClientRect().y){
-	          	console.log('in next move node');
+	   //       	console.log('in next move node');
 	          	
 	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
 	          	childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());

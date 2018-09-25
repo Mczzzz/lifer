@@ -52,7 +52,7 @@ export default class Select extends superViews{
 
      setStyleInput(property,value,scope = "all"){
 
-          console.log(this.input);
+//          console.log(this.input);
       //    if(scope == "property" || scope == "all") this.input[property] = value;
           
           if(scope == "element" || scope == "all" ) this.MyInput.style[property] = value;
@@ -105,7 +105,7 @@ export default class Select extends superViews{
       let opt = false;
 
       for (let item of array) {
-        console.log(item);
+    //    console.log(item);
         opt = document.createElement("option");
         opt.value = item.id;
         opt.text = item.name;

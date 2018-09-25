@@ -49,7 +49,7 @@ Moment.locale('fr');
 		//this.MyClass = (MyClass !== false)? MyClass : this.constructor.name;
 
 		//this.Lifer.addMe(this.path);
-		console.log(this.path);
+		//console.log(this.path);
 
 		this.Lifer.addMe(this.path);
 
@@ -201,7 +201,7 @@ Moment.locale('fr');
 	//	console.log(data);
 
 		let methode = "on_"+data.detail.element+"_"+data.detail.Event.type;
-		console.log(methode);
+		//console.log(methode);
 		this[methode](data.detail);
 
 	}
