@@ -30,7 +30,7 @@ addMe(path){
 
 			let level = 0;
 
-			let arrayPath = path.split("/");
+			let arrayPath = path.split("-");
 
 			let dataRepresentation = this.dataCenter;
 
@@ -38,11 +38,11 @@ addMe(path){
 
 				if (myPath == "null") continue; 
 
-				let realName = myPath.split("-");
+				/*let realName = myPath.split("-");
 
 				if(realName.length > 1){
 					myPath = realName[realName.length - 1];
-				}
+				}*/
 
 
 				if(!(dataRepresentation[myPath] instanceof Object)){
