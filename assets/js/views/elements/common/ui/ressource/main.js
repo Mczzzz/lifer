@@ -115,6 +115,7 @@ export default class MainRessource extends superViews{
 		  		if(child.nextElementSibling && (parseInt(child.nextElementSibling.style.marginLeft,10) > 0)){
 
 		  			//dans ces cas la j'affiche mon logo de collapsion
+		  			console.log(child.className);
 		  			let ThisChild = this.getObjectThisfromPath(child.className);
 		  			ThisChild.addCollapse();
 
