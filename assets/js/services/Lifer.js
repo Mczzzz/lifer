@@ -69,7 +69,7 @@ addMe(path){
 
 		if(path.length == 0) return false;
 
-		let arrayPath = path.split("/");
+		let arrayPath = path.split("-");
 
 		let dataRepresentation = this.dataCenter;
 
@@ -78,16 +78,6 @@ addMe(path){
 
 			if (myPath == "null") continue;
 
-			let realName = myPath.split("-");
-/*			console.log("realName");
-			console.log(realName);
-			console.log(realName.length);*/
-
-			if(realName.length > 1){
-				myPath = realName[realName.length - 1];
-			}
-/*			console.log("dataRepresentation");
-			console.log(dataRepresentation);*/
 
 			if(!(dataRepresentation[myPath] instanceof Object)){
 				console.log('aie '+myPath+' not exist');
