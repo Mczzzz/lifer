@@ -77,7 +77,7 @@ export default class HeaderRessource extends superViews{
 
 
 
-        let collapseButton = this.card.push("Button", HeaderElement,"fold", "unfold_less");
+        this.collapseButton = this.card.push("Button", HeaderElement,"fold", "unfold_less");
 
         this.card.setStylePictoComponent(HeaderElement,"fold","fontSize","25px");
         this.card.setStylePictoComponent(HeaderElement,"fold","margin","0px");
@@ -87,7 +87,7 @@ export default class HeaderRessource extends superViews{
 
 
 
-        collapseButton.getContainer().addEventListener("click",()=>this.collapseAll());
+        this.collapseButton.getContainer().addEventListener("click",()=>this.collapseAll());
         //collapseButton.getContainer().addEventListener("click",()=>obj.collapseAll());
 
 
@@ -115,6 +115,8 @@ export default class HeaderRessource extends superViews{
         let obj = this.getObjectThisfromPath("Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main");
         console.log(obj);
         obj.collapseAll();
+
+        this.collapseButton.setData("unfold_more");
 
      }
 
