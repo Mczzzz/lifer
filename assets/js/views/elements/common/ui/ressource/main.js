@@ -155,9 +155,16 @@ export default class MainRessource extends superViews{
 		//calcul de la différence
 		let diff = (parseInt( node.style.marginLeft ,10) + this.Pas) - (parseInt( children[0].style.marginLeft ,10));
 
+		let childPosition;
+
 		for (let child of children) {
 
-				child.style.marginLeft = parseInt(child.style.marginLeft ,10) + diff + "px";
+
+				childPosition = parseInt(child.style.marginLeft ,10) + diff;
+
+				if(childPosition < this.pas) childPosition = this.Pas;
+
+				child.style.marginLeft = childPosition + "px";
 
 		}
 
