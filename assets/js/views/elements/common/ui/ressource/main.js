@@ -358,14 +358,18 @@ this.Cloned.style.display = "none";
         console.log(childContainer.getContainer().previousElementSibling);
         console.log(childContainer.getContainer().style.marginLeft);
 
+        let prevSibling;
+
         if(childContainer.getContainer().previousElementSibling && parseInt(childContainer.getContainer().style.marginLeft, 10) > 0){
 
         	console.log("in if");
-        	let prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
+        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
        		prevSibling.addCollapse();
 
-        }
+        }else if(childContainer.getContainer().previousElementSibling && parseInt(childContainer.getContainer().style.marginLeft, 10) <=  parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft, 10))
 
+        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
+       		prevSibling.rmCollapse();
 
       }
 

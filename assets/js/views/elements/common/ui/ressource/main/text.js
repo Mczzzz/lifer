@@ -55,6 +55,22 @@ export default class Text extends superViews{
 	}
 
 
+	rmCollapse(){
+
+		//console.log(this.card.path+"-collapser_"+this.ClassId);
+
+		let me = this.getObjectThisfromPath(this.card.path+"-collapser_"+this.ClassId);
+
+		if(me){
+
+			me.destroyMe();
+
+		}
+
+	}
+
+
+
 	addCollapse(){
 
 		//console.log(this.card.path+"-collapser_"+this.ClassId);
@@ -70,12 +86,7 @@ export default class Text extends superViews{
 
 			this.collapseButton.getContainer().addEventListener("click",()=>this.parentThis.expandSpecificNode(this.getContainer()));
 
-		}else{
-
-			me.destroyMe();
-
 		}
-
 
 
 	}
