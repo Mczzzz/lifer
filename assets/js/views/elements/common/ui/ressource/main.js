@@ -117,6 +117,7 @@ export default class MainRessource extends superViews{
 		  			//dans ces cas la j'affiche mon logo de collapsion
 		  			let ThisChild = this.getObjectThisfromPath(child.className);
 		  			console.log("ThisChild");
+		  			console.log(child.className);
 		  			console.log(ThisChild);
 		  			//ThisChild.addCollapse();
 
