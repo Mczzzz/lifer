@@ -361,7 +361,7 @@ this.Cloned.style.display = "none";
 	 //         	console.log('in previous move node');
 	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling.previousElementSibling);
 	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
-	            this.moveChilds(childContainer.getContainer(),this.childrenToMove);
+	            //this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 	          	
 	          }
 
@@ -377,7 +377,7 @@ this.Cloned.style.display = "none";
 	          	
 	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
 	          	childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
-	          	this.moveChilds(childContainer.getContainer(),this.childrenToMove);
+	          	//this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 	          }
 
 	        }
@@ -442,6 +442,8 @@ this.Cloned.style.display = "none";
 	        //this.setStyle("background" , "white","element");
 	        //childContainer.getContainer().style = this.initialStyle;
 	        console.log('stopppp');
+
+	        this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 
 	        childContainer.setStyle("display","");
 	        this.Cloned.remove();
