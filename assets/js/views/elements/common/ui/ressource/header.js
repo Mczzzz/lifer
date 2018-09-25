@@ -87,9 +87,7 @@ export default class HeaderRessource extends superViews{
 
 
 
-        let obj = this.getObjectThisfromPath("Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main");
-        console.log(obj);
-        setTimeout(collapseButton.getContainer().addEventListener("click",()=>obj.collapseAll()), 500);
+        collapseButton.getContainer().addEventListener("click",()=>this.collapseAll());
         //collapseButton.getContainer().addEventListener("click",()=>obj.collapseAll());
 
 
@@ -112,8 +110,11 @@ export default class HeaderRessource extends superViews{
      }
 
 
-     collapse(){
+     collapseAll(){
 
+        let obj = this.getObjectThisfromPath("Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main");
+        console.log(obj);
+        obj.collapseAll();
 
      }
 
