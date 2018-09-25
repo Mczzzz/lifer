@@ -128,7 +128,7 @@ addMe(path){
 
 		if(path.length == 0) return false;
 
-		let arrayPath = path.split("/");
+		let arrayPath = path.split("-");
 
 		if(level > 0){
 
@@ -142,14 +142,14 @@ addMe(path){
 		for(let myPath of arrayPath ){
 
 
-			let realName = myPath.split("-");
-/*			console.log("realName");
+/*			let realName = myPath.split("-");
+			console.log("realName");
 			console.log(realName);
-			console.log(realName.length);*/
+			console.log(realName.length);
 
 			if(realName.length > 1){
 				myPath = realName[realName.length - 1];
-			}
+			}*/
 
 
 			if(!(dataRepresentation[myPath] instanceof Object)){
