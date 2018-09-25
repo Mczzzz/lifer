@@ -99,15 +99,11 @@ export default class MainRessource extends superViews{
 
 		  		if(!this.collapsed){
 		  			child.style.display = "none";
-		  			this.collapsed = true;
-		  			return true;
+
 
 		  		}else{
 
 		  			child.style.display = "";
-		  			this.collapsed = false;
-		  			return false;
-
 		  		}
 
 		  			
@@ -118,6 +114,20 @@ export default class MainRessource extends superViews{
 		    // NOTE: La liste est en ligne, l'ajout ou la suppression des enfants changera la liste
 
 		  }
+
+
+		  if(!this.collapsed){
+
+		  	this.collapsed = true;
+
+		  }else{
+
+		  	this.collapsed = false;
+
+		  }
+
+		  return this.collapsed;
+
 		}
 
 
