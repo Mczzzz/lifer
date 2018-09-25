@@ -30,8 +30,11 @@ console.log(path)
 
 	let dataRepresentation = this.dataCenter;
 
-	for(let myPath of arrayPath ){
+	let dataRepresentationMe;
 
+	for(let myPath of arrayPath ){
+		console.log(myPath);
+		console.log(dataRepresentation);
 		dataRepresentationMe = dataRepresentation;
 		dataRepresentation = dataRepresentation[myPath];
 	}
