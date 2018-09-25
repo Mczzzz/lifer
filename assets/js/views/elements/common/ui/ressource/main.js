@@ -345,59 +345,47 @@ this.Cloned.style.display = "none";
 
 
 
-      }else if(type == "stop"){
+	    }else if(type == "stop"){
 
-        //this.setStyle("background" , "white","element");
-        //childContainer.getContainer().style = this.initialStyle;
-        console.log('stopppp');
+	        //this.setStyle("background" , "white","element");
+	        //childContainer.getContainer().style = this.initialStyle;
+	        console.log('stopppp');
 
-        childContainer.setStyle("display","");
-        this.Cloned.remove();
-        this.Ghost.remove();
+	        childContainer.setStyle("display","");
+	        this.Cloned.remove();
+	        this.Ghost.remove();
 
-        console.log(childContainer.getContainer().previousElementSibling);
-        console.log(childContainer.getContainer().style.marginLeft);
+	        console.log(childContainer.getContainer().previousElementSibling);
+	        console.log(childContainer.getContainer().style.marginLeft);
 
-        let prevSibling;
+	        let prevSibling;
 
-        if(childContainer.getContainer().previousElementSibling && parseInt(childContainer.getContainer().style.marginLeft, 10) > 0){
+	        if(childContainer.getContainer().previousElementSibling && parseInt(childContainer.getContainer().style.marginLeft, 10) > 0){
 
-        	console.log("in if");
-        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
-        	console.log(prevSibling);
-       		prevSibling.addCollapse();
-
-
-
-        }else if(childContainer.getContainer().previousElementSibling && parseInt(childContainer.getContainer().style.marginLeft, 10) <=  parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft, 10))
-
-        	console.log("in else if");
-        	console.log(parseInt(childContainer.getContainer().style.marginLeft, 10));
-        	console.log(parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft));
-
-        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
-       		prevSibling.rmCollapse();
-
-      }
+	        	console.log("in if");
+	        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
+	        	console.log(prevSibling);
+	       		prevSibling.addCollapse();
 
 
+
+	        }else if(childContainer.getContainer().previousElementSibling &&
+	        	     ( parseInt(childContainer.getContainer().style.marginLeft, 10) <=  parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft, 10))
+	        	     ){
+
+	        	console.log("in else if");
+	        	console.log(parseInt(childContainer.getContainer().style.marginLeft, 10));
+	        	console.log(parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft));
+
+	        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
+	       		prevSibling.rmCollapse();
+
+	      	}
+
+
+
+		}
 
 	}
 
-
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
- 
