@@ -138,6 +138,33 @@ export default class MainRessource extends superViews{
 	}
 
 
+	indentChilds(node,childrenList = false){
+
+		let children;
+
+		if(!childrenList){
+
+			children = this.getChilds(node);
+
+		}else{
+
+			children = childrenList;
+
+		}
+		
+		//calcul de la différence
+		let diff = (parseInt( node.style.marginLeft ,10) + this.Pas) - (parseInt( children[0].style.marginLeft ,10));
+
+		for (let child of children) {
+
+				child.style.marginLeft = parseInt(child.style.marginLeft ,10) + diff + "px";
+
+		}
+
+
+	}
+
+
 	collapseAll(){
 
 		if (this.getContainer().hasChildNodes()) {
@@ -323,7 +350,7 @@ this.Cloned.style.display = "none";
 /*	        console.log(e.changedTouches[0].clientX);
 	        console.log(childContainer.getContainer().getBoundingClientRect().x);*/
 
-	        let Pas = 30;
+	        this.Pas = 30;
 
 	        let GoodMargin = 0;
 
@@ -332,14 +359,17 @@ this.Cloned.style.display = "none";
 	        	let PreviousContainerX = this.Ghost.previousElementSibling.getBoundingClientRect().x;
 
 
-	        	if( e.changedTouches[0].clientX > (PreviousContainerX + (Pas / 2)) ){
+	        	if( e.changedTouches[0].clientX > (PreviousContainerX + (this.Pas / 2)) ){
 
-	        		GoodMargin = PreviousContainerX + Pas;
+	        		GoodMargin = PreviousContainerX + this.Pas;
+
+
+
 
 	       		}else{
 
 		        	//calcul de la bonne valeur
-		        	GoodMargin = Math.round(e.changedTouches[0].clientX / Pas ) * Pas;
+		        	GoodMargin = Math.round(e.changedTouches[0].clientX / this.Pas ) * this.Pas;
 		        	//console.log("good Margin:"+ GoodMargin);
 		        	if(GoodMargin < 0){
 
@@ -356,10 +386,13 @@ this.Cloned.style.display = "none";
 	        
 	        }
 	        
+	        let childrenToMove = this.getChilds(childContainer.getContainer());
 
 	       	childContainer.setStyle("marginLeft", GoodMargin + "px");
         	this.Ghost.style.marginLeft = GoodMargin + "px";
 
+        	//on move les childrens
+        	this.indentChilds(childContainer.getContainer(),childrenToMove);
 
 
 
