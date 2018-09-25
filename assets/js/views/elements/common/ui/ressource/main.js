@@ -173,7 +173,9 @@ export default class MainRessource extends superViews{
 
 
 	moveChilds(node,childrenList){
-
+		console.log("in chid to move");
+		console.log(node);
+		console.log(childrenList);
 		let next = false;
 
 		if(node.nextElementSibling){
