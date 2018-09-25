@@ -172,6 +172,34 @@ export default class MainRessource extends superViews{
 	}
 
 
+	moveChilds(node,childrenList){
+
+		let next = false;
+
+		if(node.nextElementSibling){
+
+			let next = node.nextElementSibling;
+
+		}
+		
+
+		for (let child of childrenList) {
+
+			if(next){
+
+				node.parentElement.insertBefore(child,next);
+
+			}else{
+
+				node.parentElement.appendChild(child);
+
+			}
+
+		}
+
+
+	}
+
 	collapseAll(){
 
 		if (this.getContainer().hasChildNodes()) {
@@ -239,7 +267,7 @@ export default class MainRessource extends superViews{
 
 		if(type == "start"){
 
- 
+ 		  this.childrenToMove = this.getChilds(childContainer.getContainer());
 
 		  this.Cloned = childContainer.getContainer().cloneNode(true);
 		  document.body.appendChild(this.Cloned);
@@ -329,6 +357,7 @@ this.Cloned.style.display = "none";
 	 //         	console.log('in previous move node');
 	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling.previousElementSibling);
 	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
+	            this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 	          	
 	          }
 
@@ -344,6 +373,7 @@ this.Cloned.style.display = "none";
 	          	
 	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
 	          	childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
+	          	this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 	          }
 
 	        }
@@ -392,14 +422,13 @@ this.Cloned.style.display = "none";
 
 	        
 	        }
-	        
-	        let childrenToMove = this.getChilds(childContainer.getContainer());
+	       
 
 	       	childContainer.setStyle("marginLeft", GoodMargin + "px");
         	this.Ghost.style.marginLeft = GoodMargin + "px";
 
         	//on move les childrens
-        	this.indentChilds(childContainer.getContainer(),childrenToMove);
+        	this.indentChilds(childContainer.getContainer(),this.childrenToMove);
 
 
 
