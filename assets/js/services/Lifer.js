@@ -22,6 +22,23 @@ class Brain {
 
 	}
 
+destroy(path){
+
+
+//formater le path
+	let arrayPath = path.split("-");
+
+	let dataRepresentation = this.dataCenter;
+
+	for(let myPath of arrayPath ){
+
+		dataRepresentation = dataRepresentation[myPath];
+	}
+
+	console.log(dataRepresentation);
+
+}
+
 
 
 addMe(path){
