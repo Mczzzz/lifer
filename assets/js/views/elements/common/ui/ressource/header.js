@@ -88,7 +88,7 @@ export default class HeaderRessource extends superViews{
 
 
         let obj = this.getObjectThisfromPath("Note/Note-Main/Note-Main-Empty/Note-Main-Empty-Resource/Note-Main-Empty-Resource-Main");
-        collapseButton.getContainer().addEventListener("click",()=>obj["collapseAll"]());
+        collapseButton.getContainer().addEventListener("click",()=>obj.collapseAll());
 
 
 
