@@ -87,6 +87,41 @@ export default class MainRessource extends superViews{
 
 
 
+	expandSpecificNode(node){
+
+		let childrens = this.getContainer().childNodes;
+
+		let begin = false;
+
+		for (let child of childrens) {
+
+
+			if(child == node){
+
+				begin = true;
+				continue;
+			}
+
+
+			if((parseInt(child.style.marginLeft, 10) > 0) && begin == true){
+
+		  			child.style.display = "";
+
+
+		  	}else{
+
+		  		begin = false;
+
+		  	}
+
+
+
+		}
+
+
+	}
+
+
 	collapseAll(){
 
 		if (this.getContainer().hasChildNodes()) {
