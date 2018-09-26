@@ -60,15 +60,16 @@ export default class Text extends superViews{
 	rmCollapse(){
 
 		//console.log(this.card.path+"-collapser_"+this.ClassId);
+		this.collapseButton.setData("unfold_less");
 
-		console.log('in rmCollapse');
+/*		console.log('in rmCollapse');
 		let me = this.getObjectThisfromPath(this.card.path+"-collapser_"+this.ClassId);
 
 		if(me){
 
 			me.destroyMe();
 
-		}
+		}*/
 
 	}
 
