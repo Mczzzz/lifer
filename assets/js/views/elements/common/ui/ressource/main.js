@@ -129,10 +129,15 @@ export default class MainRessource extends superViews{
 
 		let children = this.getChilds(node);
 
+
+
+
 		let locker = false
 		let state  = "";
 
 		for (let child of children) {
+
+			let ThisChild = this.getObjectThisfromPath(child.className);
 
 			if(locker == false){
 
@@ -148,7 +153,13 @@ export default class MainRessource extends superViews{
 
 				child.style.display = state;
 
+
+
+
+
 		}
+
+		this.collapserSetter();
 
 	}
 
@@ -189,10 +200,10 @@ export default class MainRessource extends superViews{
 
 
 	moveChilds(node,childrenList){
-		console.log("in chid to move");
+/*		console.log("in chid to move");
 		console.log(node);
 		console.log(childrenList);
-		console.log(node.nextElementSibling);
+		console.log(node.nextElementSibling);*/
 		let next = false;
 
 		if(node.nextElementSibling){
