@@ -125,13 +125,28 @@ export default class MainRessource extends superViews{
 	}
 
 
-	expandSpecificNode(node){
+	collapsingNode(node){
 
 		let children = this.getChilds(node);
 
+		let locker = false
+		let state  = "";
+
 		for (let child of children) {
 
-				child.style.display = "";
+			if(locker == false){
+
+				if(child.style.display == "none"){
+
+					state = "";
+				}else{
+					state = "none";
+				}
+
+				locker = true;
+			}
+
+				child.style.display = state;
 
 		}
 
@@ -491,10 +506,9 @@ export default class MainRessource extends superViews{
 
 	        if(this.insertInParents){
 
-
 	        	GoodMargin = parseInt(this.Ghost.previousElementSibling.style.marginLeft,10) + this.Pas;
 
-	        this.insertInParents = false;
+	          this.insertInParents = false;
 	        }
 
 
@@ -510,57 +524,12 @@ export default class MainRessource extends superViews{
 
 	    }else if(type == "stop"){
 
-	        //this.setStyle("background" , "white","element");
-	        //childContainer.getContainer().style = this.initialStyle;
-	//        console.log('stopppp');
-
-	        //this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 
 	        childContainer.setStyle("display","");
-	        //this.Cloned.remove();
+
 	        this.Ghost.remove();
 
 	        this.collapserSetter();
-
-/*	        console.log(childContainer.getContainer().previousElementSibling);
-	        console.log(childContainer.getContainer().style.marginLeft);*/
-
-
-
-
-
-/*
-
-	        let prevSibling;
-
-	        if(childContainer.getContainer().previousElementSibling &&
-
-	        	parseInt(childContainer.getContainer().style.marginLeft, 10) > 0 && 
-
-	        	parseInt(childContainer.getContainer().style.marginLeft, 10) > parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft, 10)
-
-	          ){
-
-	        //	console.log("in if");
-	        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
-	        //	console.log(prevSibling);
-	       		prevSibling.lessCollapse();
-
-
-
-	        }else if(childContainer.getContainer().previousElementSibling &&
-	        	     ( parseInt(childContainer.getContainer().style.marginLeft, 10) <=  parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft, 10))
-	        	     ){
-
-/*	        	console.log("in else if");
-	        	console.log(parseInt(childContainer.getContainer().style.marginLeft, 10));
-	        	console.log(parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft));*/
-
-/*	        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
-	       		prevSibling.moreCollapse();
-
-	      	}
-*/
 
 
 		}
