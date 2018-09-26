@@ -205,6 +205,11 @@ export default class MainRessource extends superViews{
 	}
 
 
+	collapserSetter(){
+
+
+
+	}
 
 
 
@@ -230,7 +235,7 @@ export default class MainRessource extends superViews{
 		  			
 
 
-		  	}else{
+		  	}/*else{
 
 		  		//si j'ai des enfants je rajoute le logo collapse
 		  		if(child.nextElementSibling && (parseInt(child.nextElementSibling.style.marginLeft,10) > 0)){
@@ -239,11 +244,11 @@ export default class MainRessource extends superViews{
 
 		  			if(!this.collapsed){
 
-			  			ThisChild.addCollapse();
+			  			ThisChild.moreCollapse();
 
 		  			}else{
 
-		  				ThisChild.rmCollapse();
+		  				ThisChild.lessCollapse();
 
 		  			}
 
@@ -252,7 +257,7 @@ export default class MainRessource extends superViews{
 
 		  		}
 
-		  	}
+		  	}*/
 		    // faire quelque chose avec chaque enfant[i]
 		    // NOTE: La liste est en ligne, l'ajout ou la suppression des enfants changera la liste
 
@@ -275,6 +280,7 @@ export default class MainRessource extends superViews{
 
 
 	}
+
 
 
 
@@ -465,8 +471,16 @@ this.Cloned.style.display = "none";
 	        this.Cloned.remove();
 	        this.Ghost.remove();
 
+	        this.collapserSetter();
+
 /*	        console.log(childContainer.getContainer().previousElementSibling);
 	        console.log(childContainer.getContainer().style.marginLeft);*/
+
+
+
+
+
+/*
 
 	        let prevSibling;
 
@@ -481,7 +495,7 @@ this.Cloned.style.display = "none";
 	        //	console.log("in if");
 	        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
 	        //	console.log(prevSibling);
-	       		prevSibling.rmCollapse();
+	       		prevSibling.lessCollapse();
 
 
 
@@ -493,11 +507,11 @@ this.Cloned.style.display = "none";
 	        	console.log(parseInt(childContainer.getContainer().style.marginLeft, 10));
 	        	console.log(parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft));*/
 
-	        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
-	       		prevSibling.addCollapse();
+/*	        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
+	       		prevSibling.moreCollapse();
 
 	      	}
-
+*/
 
 
 		}

@@ -71,7 +71,7 @@ export default class Text extends superViews{
 			this.collapseButton = this.card.push("Button",collapseElement,"collapser_"+this.ClassId, "unfold_more");
 			this.collapseButton.setStylePicto("color","grey");
 			this.collapseButton.setStylePicto("marginRight","0px");
-			console.log("on passe la");
+
 			this.collapseButton.getContainer().addEventListener("click",()=>this.parentThis.expandSpecificNode(this.getContainer()));
 
 		}
@@ -80,20 +80,33 @@ export default class Text extends superViews{
 	}
 
 
-	rmCollapse(){
+	lessCollapse(){
 
 		this.eltCollapse();
 		this.collapseButton.setData("unfold_less");
 		this.collapseButton.setStylePicto("opacity","0.3");
 
+		this.collapseButton.setStyle("display", "");
+
 	}
 
 
 
-	addCollapse(){
+	moreCollapse(){
 
 		this.eltCollapse();
+		this.collapseButton.setData("unfold_more");
+		this.collapseButton.setStylePicto("opacity","1");
+		this.collapseButton.setStyle("display", "");
 	}
+
+
+	hideCollapse(){
+		this.eltCollapse();
+		this.collapseButton.setStyle("display", "none");
+
+	}
+
 
 
 	focus(first = false){
