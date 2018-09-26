@@ -323,6 +323,7 @@ export default class MainRessource extends superViews{
 		if(type == "start"){
 
  		  this.childrenToMove = this.getChilds(childContainer.getContainer());
+ 		  this.insertInParents = false;
 
 /*		  this.Cloned = childContainer.getContainer().cloneNode(true);
 		  document.body.appendChild(this.Cloned);
@@ -406,7 +407,16 @@ export default class MainRessource extends superViews{
 
 
 	        if(childContainer.getContainer().previousElementSibling.previousElementSibling){
-	 //       	console.log('in previous');
+
+
+	        	//on regarde si mon parent à deja des enfants
+	        	let isParent = this.getChilds(childContainer.getContainer().previousElementSibling.previousElementSibling).length;
+
+
+	        	if(isParent){
+
+	        		this.insertInParents = true;
+	        	}
 	          
 	          if(e.changedTouches[0].clientY < (this.Ghost.previousElementSibling.getBoundingClientRect().y + (this.Ghost.previousElementSibling.getBoundingClientRect().height / 2))){
 	 //         	console.log('in previous move node');
@@ -478,6 +488,16 @@ export default class MainRessource extends superViews{
 	        
 	        }
 	       
+
+	        if(insertInParents){
+
+
+	        	GoodMargin = parseInt(this.Ghost.previousElementSibling.style.marginLeft,10) + this.Pas;
+
+
+	        }
+
+
 
 	       	childContainer.setStyle("marginLeft", GoodMargin + "px");
         	this.Ghost.style.marginLeft = GoodMargin + "px";
