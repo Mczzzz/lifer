@@ -191,10 +191,12 @@ export default class HeaderRessource extends superViews{
 
     		colButton.setData("keyboard_arrow_down");
     		Main.setStyle("display","");
+        this.collapseButton.setStyle("display", "");
     	}else{
 
     		colButton.setData("keyboard_arrow_up");
     		Main.setStyle("display","none");
+         this.collapseButton.setStyle("display", "none");
 
     	}
     	
