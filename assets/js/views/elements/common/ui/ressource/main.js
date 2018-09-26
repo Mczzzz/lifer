@@ -494,7 +494,7 @@ this.Cloned.style.display = "none";
 	        //childContainer.getContainer().style = this.initialStyle;
 	//        console.log('stopppp');
 
-	        this.moveChilds(childContainer.getContainer(),this.childrenToMove);
+	        //this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 
 	        childContainer.setStyle("display","");
 	        this.Cloned.remove();
