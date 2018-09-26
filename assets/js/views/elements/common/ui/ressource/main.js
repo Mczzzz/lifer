@@ -412,7 +412,7 @@ this.Cloned.style.display = "none";
 	 //         	console.log('in previous move node');
 	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling.previousElementSibling);
 	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
-	            //this.moveChilds(childContainer.getContainer(),this.childrenToMove);
+	            this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 	          	
 	          }
 
@@ -428,7 +428,7 @@ this.Cloned.style.display = "none";
 	          	
 	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
 	          	childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
-	          	//this.moveChilds(childContainer.getContainer(),this.childrenToMove);
+	          	this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 	          }
 
 	        }
