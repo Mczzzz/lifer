@@ -43,7 +43,8 @@ export default class ActionButtons extends superViews{
 					this.card.setStylePictoComponent(Elt,"Photo","color","green");
 					this.card.setStylePictoComponent(Elt,"Photo","alignItems","center");
 
-					camera.getContainer().addEventListener("click",()=>this.StartCamera("image",true));
+					camera.getContainer().addEventListener("click",()=>this.Start("image"));
+					//camera.getContainer().addEventListener("click",()=>this.StartCamera("image",true));
 
 
 

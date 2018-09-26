@@ -4,6 +4,7 @@ import Card from "../card.js";
 
 import Text   from "./main/text.js";
 import Number from "./main/number.js";
+import Image from "./main/image.js";
 
 export default class MainRessource extends superViews{ 
      
@@ -56,6 +57,12 @@ export default class MainRessource extends superViews{
 
 			break;
 
+			case 'image':
+
+				this.image();
+
+			break;
+
 			//default:
 
 		}
@@ -81,6 +88,15 @@ export default class MainRessource extends superViews{
 
 		let number = new Number("Number_"+this.autoIncrement, this.path);
 		number.draggable(this.path,"onChildMove");
+		this.autoIncrement++;
+
+	}
+
+
+	image(){
+
+		let image = new Image("Image_"+this.autoIncrement, this.path);
+		image.draggable(this.path,"onChildMove");
 		this.autoIncrement++;
 
 	}
@@ -234,7 +250,7 @@ export default class MainRessource extends superViews{
 	collapserSetter(){
 
 		console.log('in collapserSetter');
-		
+
 		if (this.getContainer().hasChildNodes()) {
   
   			let childrens = this.getContainer().childNodes;
@@ -439,6 +455,7 @@ export default class MainRessource extends superViews{
 	        	//on regarde si mon parent à deja des enfants
 	        	let isParent = this.getChilds(childContainer.getContainer().previousElementSibling.previousElementSibling).length;
 
+	        	console.log()
 
 	        	if(isParent){
 
@@ -516,7 +533,7 @@ export default class MainRessource extends superViews{
 	        }
 	       
 
-	        if(this.insertInParents){
+	        if(this.insertInParents ){
 
 	        	GoodMargin = parseInt(this.Ghost.previousElementSibling.style.marginLeft,10) + this.Pas;
 
