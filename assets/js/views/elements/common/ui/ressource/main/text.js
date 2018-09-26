@@ -61,6 +61,7 @@ export default class Text extends superViews{
 
 		//console.log(this.card.path+"-collapser_"+this.ClassId);
 		this.collapseButton.setData("unfold_less");
+		this.collapseButton.setStylePicto("opacity","0.3");
 
 /*		console.log('in rmCollapse');
 		let me = this.getObjectThisfromPath(this.card.path+"-collapser_"+this.ClassId);
