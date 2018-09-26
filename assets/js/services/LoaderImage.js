@@ -11,7 +11,7 @@ class LoaderImage {
 
 
 
-	importPict(elt){
+	importPict(elt,target){
 
 
 
@@ -20,11 +20,11 @@ class LoaderImage {
 		let reader = new FileReader();
 		reader.readAsDataURL(elt);
 
-		reader.onloadend = ()=> this.loadPict(reader.result);
+		reader.onloadend = ()=> this.loadPict(reader.result,target);
 
 	}
 
-	loadPict(pict){
+	loadPict(pict,target){
 
 
 		this.imgObj = new Image();
@@ -36,7 +36,7 @@ class LoaderImage {
 
 	}
 
-	getOrientation(pict){
+	getOrientation(pict,target){
 
 		EXIF(this.elt,(err,orientation) => this.sendImg(err,orientation,pict));
 
@@ -44,7 +44,7 @@ class LoaderImage {
 
 
 
-	sendImg(err,orientation,pict){
+	sendImg(err,orientation,pict,target){
 
 		let res = {};
 		res.data = {};
@@ -55,9 +55,9 @@ class LoaderImage {
 		res.capture = true;
 
 
-		let NoteResource = Lifer.getData("Note-Main-Resources", "This");
+		let itemResource = Lifer.getData(target, "This");
 
-		NoteResource.createCard(res);
+		itemResource.addThumb(res);
 
 	}
 

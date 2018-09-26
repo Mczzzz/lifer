@@ -4,6 +4,7 @@ import Button     from '../views/elements/common/ui/card/elements/button.js';
 import TextButton from '../views/elements/common/ui/card/elements/textButton.js';
 import Input      from '../views/elements/common/ui/card/elements/input.js';
 import Select     from '../views/elements/common/ui/card/elements/select.js';
+import Thumb      from '../views/elements/common/ui/card/elements/thumb.js';
 
 const classes = {
 
@@ -13,6 +14,7 @@ const classes = {
     , TextButton
     , Input
     , Select
+    , Thumb
     
 };
 
