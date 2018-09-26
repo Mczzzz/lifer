@@ -72,7 +72,7 @@ export default class Text extends superViews{
 			this.collapseButton.setStylePicto("color","grey");
 			this.collapseButton.setStylePicto("marginRight","0px");
 
-			this.collapseButton.getContainer().addEventListener("click",()=>this.parentThis.expandSpecificNode(this.getContainer()));
+			this.collapseButton.getContainer().addEventListener("click",()=>this.parentThis.collapsingNode(this.getContainer()));
 
 		}
 
