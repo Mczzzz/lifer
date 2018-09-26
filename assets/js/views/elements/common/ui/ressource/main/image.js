@@ -43,7 +43,7 @@ export default class Image extends superViews{
 
 		this.camLauncher = document.createElement("input");
 		this.camLauncher.type = "file";
-		this.camLauncher.accept = type+"/*";
+		this.camLauncher.accept = "image/*";
 
 		//if(capture){
 			this.camLauncher.capture = "camera";	
