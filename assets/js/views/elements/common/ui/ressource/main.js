@@ -208,9 +208,37 @@ export default class MainRessource extends superViews{
 	collapserSetter(){
 
 
+		if (this.getContainer().hasChildNodes()) {
+  
+  			let childrens = this.getContainer().childNodes;
 
-	}
+			for (let child of childrens) {
 
+				if(child.nextElementSibling){
+
+					if(parseInt(child.nextElementSibling.style.marginLeft,10) > parseInt(child.style.marginLeft,10)){
+
+							let ThisChild = this.getObjectThisfromPath(child.className);
+
+						if(child.nextElementSibling.style.display == "none"){
+
+							ThisChild.moreCollapse();
+
+						}else{
+
+							ThisChild.lessCollapse();
+						}
+
+
+					}
+
+				}
+
+			}
+
+		}
+
+}
 
 
 	collapseAll(){
@@ -263,6 +291,7 @@ export default class MainRessource extends superViews{
 
 		  }
 
+		  this.collapserSetter();
 
 		  if(!this.collapsed){
 
