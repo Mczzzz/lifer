@@ -233,7 +233,8 @@ export default class MainRessource extends superViews{
 
 	collapserSetter(){
 
-
+		console.log('in collapserSetter');
+		
 		if (this.getContainer().hasChildNodes()) {
   
   			let childrens = this.getContainer().childNodes;
