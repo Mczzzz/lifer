@@ -18,6 +18,8 @@ export default class Text extends superViews{
 
 		this.form();
 
+		this.eltCollapser;
+
 	}
 
 
@@ -57,36 +59,14 @@ export default class Text extends superViews{
 	}
 
 
-	rmCollapse(){
+	eltCollapse(){
 
-		//console.log(this.card.path+"-collapser_"+this.ClassId);
-		this.collapseButton.setData("unfold_less");
-		this.collapseButton.setStylePicto("opacity","0.3");
-
-/*		console.log('in rmCollapse');
-		let me = this.getObjectThisfromPath(this.card.path+"-collapser_"+this.ClassId);
-
-		if(me){
-
-			me.destroyMe();
-
-		}*/
-
-	}
-
-
-
-	addCollapse(){
-
-		//console.log(this.card.path+"-collapser_"+this.ClassId);
-
-		let me = this.getObjectThisfromPath(this.card.path+"-collapser_"+this.ClassId);
+		this.eltCollapser = this.getObjectThisfromPath(this.card.path+"-collapser_"+this.ClassId);
 
 		let collapseElement; 
 
-		if(!me){
+		if(!this.eltCollapser){
 
-			console.log("on passe ici");
 			collapseElement = this.card.setElement("collapser_"+this.ClassId,false);
 			this.collapseButton = this.card.push("Button",collapseElement,"collapser_"+this.ClassId, "unfold_more");
 			this.collapseButton.setStylePicto("color","grey");
@@ -97,6 +77,22 @@ export default class Text extends superViews{
 		}
 
 
+	}
+
+
+	rmCollapse(){
+
+		this.eltCollapse();
+		this.collapseButton.setData("unfold_less");
+		this.collapseButton.setStylePicto("opacity","0.3");
+
+	}
+
+
+
+	addCollapse(){
+
+		this.eltCollapse();
 	}
 
 
