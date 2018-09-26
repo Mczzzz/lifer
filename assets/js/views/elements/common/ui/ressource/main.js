@@ -204,6 +204,10 @@ export default class MainRessource extends superViews{
 
 	}
 
+
+
+
+
 	collapseAll(){
 
 		if (this.getContainer().hasChildNodes()) {
@@ -231,10 +235,20 @@ export default class MainRessource extends superViews{
 		  		//si j'ai des enfants je rajoute le logo collapse
 		  		if(child.nextElementSibling && (parseInt(child.nextElementSibling.style.marginLeft,10) > 0)){
 
-		  			//dans ces cas la j'affiche mon logo de collapsion
-		  			console.log(child.className);
 		  			let ThisChild = this.getObjectThisfromPath(child.className);
-		  			ThisChild.addCollapse();
+
+		  			if(!this.collapsed){
+
+			  			ThisChild.addCollapse();
+
+		  			}else{
+
+		  				ThisChild.rmCollapse();
+
+		  			}
+
+
+
 
 		  		}
 
@@ -261,6 +275,8 @@ export default class MainRessource extends superViews{
 
 
 	}
+
+
 
 
 	onChildMove(childContainer, e, type){
@@ -441,7 +457,7 @@ this.Cloned.style.display = "none";
 
 	        //this.setStyle("background" , "white","element");
 	        //childContainer.getContainer().style = this.initialStyle;
-	        console.log('stopppp');
+	//        console.log('stopppp');
 
 	        this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 
@@ -449,8 +465,8 @@ this.Cloned.style.display = "none";
 	        this.Cloned.remove();
 	        this.Ghost.remove();
 
-	        console.log(childContainer.getContainer().previousElementSibling);
-	        console.log(childContainer.getContainer().style.marginLeft);
+/*	        console.log(childContainer.getContainer().previousElementSibling);
+	        console.log(childContainer.getContainer().style.marginLeft);*/
 
 	        let prevSibling;
 
@@ -462,9 +478,9 @@ this.Cloned.style.display = "none";
 
 	          ){
 
-	        	console.log("in if");
+	        //	console.log("in if");
 	        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
-	        	console.log(prevSibling);
+	        //	console.log(prevSibling);
 	       		prevSibling.addCollapse();
 
 
@@ -473,9 +489,9 @@ this.Cloned.style.display = "none";
 	        	     ( parseInt(childContainer.getContainer().style.marginLeft, 10) <=  parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft, 10))
 	        	     ){
 
-	        	console.log("in else if");
+/*	        	console.log("in else if");
 	        	console.log(parseInt(childContainer.getContainer().style.marginLeft, 10));
-	        	console.log(parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft));
+	        	console.log(parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft));*/
 
 	        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
 	       		prevSibling.rmCollapse();
