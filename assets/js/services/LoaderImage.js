@@ -31,14 +31,14 @@ class LoaderImage {
 
 		this.imgObj.src = pict;
 
-		this.imgObj.addEventListener('load',()=>this.getOrientation(pict));
+		this.imgObj.addEventListener('load',()=>this.getOrientation(pict,target));
 
 
 	}
 
 	getOrientation(pict,target){
 
-		EXIF(this.elt,(err,orientation) => this.sendImg(err,orientation,pict));
+		EXIF(this.elt,(err,orientation) => this.sendImg(err,orientation,pict,target));
 
 	}
 
