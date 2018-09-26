@@ -481,7 +481,7 @@ this.Cloned.style.display = "none";
 	        //	console.log("in if");
 	        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
 	        //	console.log(prevSibling);
-	       		prevSibling.addCollapse();
+	       		prevSibling.rmCollapse();
 
 
 
@@ -494,7 +494,7 @@ this.Cloned.style.display = "none";
 	        	console.log(parseInt(childContainer.getContainer().previousElementSibling.style.marginLeft));*/
 
 	        	prevSibling = this.getObjectThisfromPath(childContainer.getContainer().previousElementSibling.className);
-	       		prevSibling.rmCollapse();
+	       		prevSibling.addCollapse();
 
 	      	}
 
