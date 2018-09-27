@@ -38,23 +38,7 @@ export default class Image extends superViews{
 
 
 
-		this.EmptyElement = this.card.setElement("Legend_"+this.ClassId);
-		this.card.setStyleElement(this.EmptyElement,"justifyContent","flex-start");
-		this.card.setStyleElement(this.EmptyElement,"flexWrap","wrap");
-
-		let TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
-
-		this.card.setAttributeComponent(this.EmptyElement,"Input_"+this.ClassId,"placeholder","Légende...");
-
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontSize","18.5px");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"color","black","property");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"margin","0px 5px 5px 5px");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontWeight","normal");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"flex","1 1 100%");
-
-
-
-		this.camLauncher = document.createElement("input");
+				this.camLauncher = document.createElement("input");
 		this.camLauncher.type = "file";
 		this.camLauncher.accept = "image/*";
 
@@ -74,10 +58,28 @@ export default class Image extends superViews{
 
 
 		this.ImageElement = this.card.setElement("Image_"+this.ClassId);
-
 		let ImageElt = this.card.push("Thumb", this.ImageElement,"Pict_"+this.ClassId, data);
 
+		this.addLegend();
 
+	}
+
+
+
+	addLegend(){
+		this.EmptyElement = this.card.setElement("Legend_"+this.ClassId);
+		this.card.setStyleElement(this.EmptyElement,"justifyContent","flex-start");
+		this.card.setStyleElement(this.EmptyElement,"flexWrap","wrap");
+
+		let TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
+
+		this.card.setAttributeComponent(this.EmptyElement,"Input_"+this.ClassId,"placeholder","Légende...");
+
+		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontSize","18.5px");
+		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"color","black","property");
+		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"margin","0px 5px 5px 5px");
+		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontWeight","normal");
+		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"flex","1 1 100%");
 	}
 
 
