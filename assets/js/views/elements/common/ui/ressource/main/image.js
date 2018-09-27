@@ -70,10 +70,8 @@ export default class Image extends superViews{
 	}
 
 	ImageViewer(obj){
-
-		if (obj.requestFullscreen) {
+		console.log('in image viewer');
 		  obj.requestFullscreen();
-		}
 
 	}
 
