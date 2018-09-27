@@ -63,13 +63,17 @@ export default class Image extends superViews{
 		ImageElt.setStyle("display" , "flex");
 		ImageElt.setStyle("alignItems" , "center");
 
-		ImageElt.getContainer().addEventListener("click",()=>this.ImageViewer());
+		ImageElt.getContainer().addEventListener("click",()=>this.ImageViewer(ImageElt.getContainer()));
 
 		this.addLegend();
 
 	}
 
-	ImageViewer(){
+	ImageViewer(obj){
+
+		if (obj.requestFullscreen) {
+		  obj.requestFullscreen();
+		}
 
 	}
 
