@@ -17,7 +17,7 @@ export default class Thumb extends superViews{
      init(){
 
 
-          this.setStyle("margin" , "10px");
+          //this.setStyle("margin" , "10px");
 
           this.setStyle("border" , "none");
           this.setStyle("outline" , "none");
@@ -42,7 +42,7 @@ export default class Thumb extends superViews{
                let RatioPhoto = data.data.ObjImg.naturalWidth / data.data.ObjImg.naturalHeight;
 
                img.src = data.data.pict;
-               img.style.width  = "100%";
+               //img.style.width  = "100%";
                img.height = img.offsetWidth  / RatioPhoto;
 
 
