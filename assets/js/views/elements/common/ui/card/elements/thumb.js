@@ -60,7 +60,7 @@ export default class Thumb extends superViews{
                     img.width = ImgWidth;
                     img.height = ImgHeight;
 
-                    img.style.transform = 'rotate(' + data.data.orientation.rotate + 'deg)'+' translate('+decalY+'px, 0px)';
+                    img.style.transform = 'rotate(' + data.data.orientation.rotate + 'deg)';//+' translate('+decalY+'px, 0px)';
 
                     this.container.style.minHeight = ImgWidth+"px";
 
