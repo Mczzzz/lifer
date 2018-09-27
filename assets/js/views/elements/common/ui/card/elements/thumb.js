@@ -42,7 +42,7 @@ export default class Thumb extends superViews{
                let RatioPhoto = data.data.ObjImg.naturalWidth / data.data.ObjImg.naturalHeight;
 
                img.src = data.data.pict;
-               //img.style.width  = "100%";
+               img.style.height  = "50px";
                img.height = img.offsetWidth  / RatioPhoto;
 
 
