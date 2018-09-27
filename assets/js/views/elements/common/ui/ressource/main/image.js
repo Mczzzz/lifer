@@ -71,7 +71,7 @@ export default class Image extends superViews{
 
 	ImageViewer(obj){
 		console.log('in image viewer');
-		  obj.requestFullscreen();
+		  obj.webkitRequestFullscreen();
 
 	}
 
