@@ -17,7 +17,7 @@ export default class Image extends superViews{
      init(){
 
 
-          this.setStyle("margin" , "10px");
+          //this.setStyle("marginRight" , "10px");
 
           this.setStyle("border" , "none");
           this.setStyle("outline" , "none");

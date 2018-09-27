@@ -59,6 +59,7 @@ export default class Image extends superViews{
 
 		this.ImageElement = this.card.setElement("Image_"+this.ClassId);
 		let ImageElt = this.card.push("Thumb", this.ImageElement,"Pict_"+this.ClassId, data);
+		ImageElt.setStyle("marginRight" , "10px");
 
 		this.addLegend();
 
