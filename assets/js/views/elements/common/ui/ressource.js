@@ -15,11 +15,18 @@ export default class Ressource extends superViews{
 
           this.callBack = [];
 
+          this.target = false;
+
+          this.RessourceId = false;
+
+
      }
 
 
 
      init(){
+
+      this.initResource();
 
       this.Header = new Header("Header",this.path);
 
@@ -27,13 +34,40 @@ export default class Ressource extends superViews{
 
       this.Footer = new Footer('Footer' , this.path);
 
+     }
+
+
+     setTarget(path){
+
+      this.target = this.getObjectThisfromPath(path);
 
 
      }
 
+
+     initResource(){
+
+      if(this.target){
+
+        this.RessourceId = this.target.addRessource();
+
+      }
+
+     }
+
+
      addRessource(type){
 
-      this.Main.addRessource(type);
+      let RessourceId = false;
+
+      if(this.target){
+
+        RessourceId = this.target.addRessource(type);
+
+      }
+
+
+      this.Main.addRessource(type,RessourceId);
 
      }
 

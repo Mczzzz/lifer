@@ -34,6 +34,20 @@ export default class Resources extends superViews{
 	}
 
 
+
+
+
+
+
+	addRessource(){
+
+
+
+	}
+
+
+
+
 	createCard(Resource){
 
 		let updateTs = this.Moment();
@@ -105,6 +119,8 @@ export default class Resources extends superViews{
 		this.Save(card.path, Resource.text, updateTs);
 
 	}
+
+
 
 
 

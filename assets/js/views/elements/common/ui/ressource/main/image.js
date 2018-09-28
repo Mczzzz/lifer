@@ -73,6 +73,7 @@ export default class Image extends superViews{
 		
 		let viewCard = new Card('Viewer_', this.path);
 		viewCard.setStyle("position", "absolute");
+		//viewCard.setStyle("position", "absolute");
 		viewCard.setStyle("top", "0px");
 		viewCard.setStyle("left", "0px");
 		viewCard.setStyle("width", "100%");
