@@ -45,26 +45,35 @@ export default class Resources extends superViews{
 
 	addRessource(){
 
-		let RessourceTmpId = uuid();
-		console.log(RessourceTmpId);
-		this.createRessource(RessourceTmpId);
+		let ressourceTmpId = uuid();
+		console.log(ressourceTmpId);
+		this.createRessource(ressourceTmpId);
 		this.setStyle("flex" , "");
 
 	}
 
 
-	createRessource(RessourceTmpId){
+	createRessource(ressourceTmpId){
 
 
-		this.RessourceList[RessourceTmpId] = new Card('Card_'+RessourceTmpId, this.path);
+		this.RessourceList[ressourceTmpId] = new Card('Card_'+ressourceTmpId, this.path);
 		//card.setStyle("display","flex");
 
-		let HeaderElement = this.RessourceList[RessourceTmpId].setElement("header_"+RessourceTmpId);
+		let HeaderElement = this.RessourceList[ressourceTmpId].setElement("header_"+ressourceTmpId);
 		HeaderElement.setStyle("height","50px");
 		HeaderElement.setStyle("background","purple");
 
 	}
 
+
+	addItem(ressourceTmpId,itemTmpId,type){
+
+		let ItemElement = this.RessourceList[ressourceTmpId].setElement("Item_"+ressourceTmpId);
+		HeaderElement.setStyle("height","50px");
+		HeaderElement.setStyle("background","yellow");
+
+
+	}
 
 
 

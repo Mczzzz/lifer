@@ -53,21 +53,23 @@ export default class Ressource extends superViews{
 
       }
 
+
      }
 
 
-     addRessource(type){
+     addItem(type){
 
       let RessourceId = false;
 
       if(this.target){
 
-        RessourceId = this.target.addRessource(type);
+        RessourceId = this.target.addItem(type);
 
       }
 
 
-      this.Main.addRessource(type,RessourceId);
+      this.Main.addRessource(type,RessourceId); 
+      
 
      }
 

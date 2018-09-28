@@ -17,8 +17,6 @@ export default class MainRessource extends superViews{
 
           this.callBack = [];
 
-          this.autoIncrement = 0;
-
           this.collapsed = false;
 
      }
@@ -40,26 +38,26 @@ export default class MainRessource extends superViews{
 
 
 
-     addRessource(type){
+     addItem(type,RessourceId){
 
 
 		switch (type){
 
 			case 'text':
 
-				this.text();
+				this.text(RessourceId);
 
 			break;
 
 			case 'number':
 
-				this.number();
+				this.number(RessourceId);
 
 			break;
 
 			case 'image':
 
-				this.image();
+				this.image(RessourceId);
 
 			break;
 
@@ -73,31 +71,31 @@ export default class MainRessource extends superViews{
 
 
 
-	text(){
+	text(RessourceId){
 
-		let text = new Text("Text_"+this.autoIncrement, this.path);
+		let text = new Text("Text_"+RessourceId, this.path);
 		text.draggable(this.path,"onChildMove");
 		text.focus();
-		this.autoIncrement++;
+
 
 	}
 
 
 
-	number(){
+	number(RessourceId){
 
-		let number = new Number("Number_"+this.autoIncrement, this.path);
+		let number = new Number("Number_"+RessourceId, this.path);
 		number.draggable(this.path,"onChildMove");
-		this.autoIncrement++;
+
 
 	}
 
 
-	image(){
+	image(RessourceId){
 
-		let image = new Image("Image_"+this.autoIncrement, this.path);
+		let image = new Image("Image_"+RessourceId, this.path);
 		image.draggable(this.path,"onChildMove");
-		this.autoIncrement++;
+
 
 	}
 
