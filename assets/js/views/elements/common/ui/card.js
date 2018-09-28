@@ -60,7 +60,7 @@ export default class card extends superViews{
 
      setStyleElement(element,property,value,scope = "all"){
 
-          this[element].setStyle(property,value,scope);
+          this[element.className].setStyle(property,value,scope);
 
      }
 
