@@ -75,7 +75,6 @@ export default class Empty extends superViews{
 			let Lifer = this.Lifer;
 			let MyThis = this;
 
-			let addItem = this.addItem();
 
 			animation.onfinish = function(){
 				TitleCard.getContainer().remove();
