@@ -82,8 +82,13 @@ export default class Image extends superViews{
 		let PictElt = viewCard.setElement("PictElt");
 		viewCard.push("Image", PictElt, "MyPict", data);
 
+		viewCard.getContainer().addEventListener("click",()=>viewCard.destroyMe());
+
 
 	}
+
+
+	//destroyImgViewer(viewCard)
 
 
 
