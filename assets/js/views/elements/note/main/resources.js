@@ -45,7 +45,7 @@ export default class Resources extends superViews{
 
 		let RessourceTmpId = uuid();
 		console.log(RessourceTmpId);
-		createRessource(RessourceTmpId);
+		this.createRessource(RessourceTmpId);
 
 	}
 
