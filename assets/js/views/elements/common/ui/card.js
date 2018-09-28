@@ -46,10 +46,8 @@ export default class card extends superViews{
 
 
 
-     setElement(classSuffixe,prepend = false){
+     setElement(ClassName,prepend = false){
        
-         let ClassName   = classSuffixe;
-
          this[ClassName] = new Elements(ClassName,this.path,prepend);
          
          return this[ClassName];
@@ -59,6 +57,8 @@ export default class card extends superViews{
 
 
      setStyleElement(element,property,value,scope = "all"){
+
+          console.log(element);
 
           this[element.className].setStyle(property,value,scope);
 
