@@ -50,6 +50,7 @@ export default class Ressource extends superViews{
       if(this.target){
 
         this.RessourceId = this.target.addRessource();
+        console.log("this.RessourceId"+this.RessourceId);
 
       }
 
