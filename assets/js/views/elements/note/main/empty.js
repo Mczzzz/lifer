@@ -75,7 +75,7 @@ export default class Empty extends superViews{
 			let Lifer = this.Lifer;
 			let MyThis = this;
 
-			
+			let addItem = this.addItem();
 
 			animation.onfinish = function(){
 				TitleCard.getContainer().remove();
@@ -83,7 +83,7 @@ export default class Empty extends superViews{
 				MyThis.setStyle("display","");
 				console.log("animation finish");
 				Ressource.setTarget("Note-Main-Resources");
-				this.addItem(type);
+				Ressource.addItem(type);
 
 			}
 			console.log("end if");
@@ -91,7 +91,7 @@ export default class Empty extends superViews{
 
 		}else{
 
-			this.addItem(type);
+			Ressource.addItem(type);
 		}
 
 		
@@ -100,10 +100,6 @@ export default class Empty extends superViews{
 	}
 
 
-	addItem(type){
-
-		Ressource.addItem(type);
-	}
 
 
 	saveResource(card,Element, TheTextElt){
