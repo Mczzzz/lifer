@@ -48,7 +48,6 @@ export default class card extends superViews{
 
      setElement(ClassName,prepend = false){
 
-          console.log(ClassName);
           let Elt = new Elements(ClassName,this.path,prepend);
        
          this[Elt.MyClass] = Elt; 
@@ -71,7 +70,7 @@ export default class card extends superViews{
 
      setStyleComponent(element,component, property, value,scope = "all"){
 
-          this[element].setStyleComponent(component, property, value,scope);
+          this[element.MyClass].setStyleComponent(component, property, value,scope);
 
      }
 
@@ -80,7 +79,7 @@ export default class card extends superViews{
 
      setStylePictoComponent(element,component, property, value,scope = "all"){
 
-          this[element].setStylePictoComponent(component, property, value,scope);
+          this[element.MyClass].setStylePictoComponent(component, property, value,scope);
 
      }
 
@@ -91,11 +90,11 @@ export default class card extends superViews{
         if(property == "draggable"){
 
             value = true;
-            this[element].initTouch(component,this.path,'touchMover');
+            this[element.MyClass].initTouch(component,this.path,'touchMover');
         
         }
 
-          this[element].setAttributeComponent(component, property, value,scope);
+          this[element.MyClass].setAttributeComponent(component, property, value,scope);
 
      }
 
@@ -103,7 +102,7 @@ export default class card extends superViews{
 ////////////////
      setStyleInputComponent(element,component, property, value,scope = "all"){
 
-          this[element].setStyleInputComponent(component, property, value,scope);
+          this[element.MyClass].setStyleInputComponent(component, property, value,scope);
 
      }
 
@@ -111,7 +110,7 @@ export default class card extends superViews{
      setAttributeInputComponent(element,component, property, value,scope = "all"){
 
 
-          this[element].setAttributeInputComponent(component, property, value,scope);
+          this[element.MyClass].setAttributeInputComponent(component, property, value,scope);
 
      }
 
@@ -125,7 +124,7 @@ export default class card extends superViews{
           callback.path = this.path;
           callback.method = "CallBackFromItems";
 
-           this[classSuffixe] = this[element].add(type, classSuffixe, data,prepend,callback);
+           this[classSuffixe] = this[element.MyClass].add(type, classSuffixe, data,prepend,callback);
 
 
            return this[classSuffixe];
