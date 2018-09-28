@@ -59,16 +59,16 @@ export default class Ressource extends superViews{
 
      addItem(type){
 
-      let RessourceId = false;
+      let itemId = false;
 
       if(this.target){
 
-        RessourceId = this.target.addItem(this.RessourceId,type);
+        itemId = this.target.addItem(this.RessourceId,type);
 
       }
 
 
-      this.Main.addRessource(type,RessourceId); 
+      this.Main.addRessource(type,itemId); 
       
 
      }

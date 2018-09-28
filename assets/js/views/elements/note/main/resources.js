@@ -49,7 +49,7 @@ export default class Resources extends superViews{
 		console.log(ressourceTmpId);
 		this.createRessource(ressourceTmpId);
 		this.setStyle("flex" , "");
-
+		return ressourceTmpId;
 	}
 
 
@@ -73,7 +73,7 @@ export default class Resources extends superViews{
 		HeaderElement.setStyle("height","50px");
 		HeaderElement.setStyle("background","yellow");
 
-
+		return itemTmpId;
 	}
 
 
