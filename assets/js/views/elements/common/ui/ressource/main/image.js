@@ -63,13 +63,13 @@ export default class Image extends superViews{
 		ImageElt.setStyle("display" , "flex");
 		ImageElt.setStyle("alignItems" , "center");
 
-		ImageElt.getContainer().addEventListener("click",()=>this.ImageViewer(ImageElt.getContainer()));
+		ImageElt.getContainer().addEventListener("click",()=>this.ImageViewer(data));
 
 		this.addLegend();
 
 	}
 
-	ImageViewer(obj){
+	ImageViewer(data){
 		
 		let viewCard = new Card('Viewer_', this.path);
 		viewCard.setStyle("position", "absolute");
@@ -78,6 +78,10 @@ export default class Image extends superViews{
 		viewCard.setStyle("width", "100%");
 		viewCard.setStyle("height", "100%");
 		viewCard.setStyle("background", "red");
+
+		PictElt = this.card.setElement("PictElt");
+		viewCard.push("Image", PictElt, "MyPict", data);
+
 
 	}
 

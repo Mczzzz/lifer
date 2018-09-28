@@ -42,7 +42,7 @@ export default class Image extends superViews{
                let RatioPhoto = data.data.ObjImg.naturalWidth / data.data.ObjImg.naturalHeight;
 
                img.src = data.data.pict;
-               //img.style.h  = "100%";
+               img.style.h  = "100%";
                img.height = img.offsetWidth  / RatioPhoto;
 
 
