@@ -74,10 +74,12 @@ export default class Empty extends superViews{
 			Lifer.getData('Note-Header-Action',"This").showTitle(Lifer.getData('Note',"This").note.Title);
 			MyThis.setStyle("display","");
 
+			this.Ressource.setTarget("Note-Main-Resources");
+			this.Ressource.addItem(type);
+
 		}
 		
-		this.Ressource.setTarget("Note-Main-Resources");
-		this.Ressource.addItem(type);
+
 
 	}
 
