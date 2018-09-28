@@ -49,10 +49,11 @@ export default class card extends superViews{
      setElement(ClassName,prepend = false){
 
           console.log(ClassName);
+          let Elt = new Elements(ClassName,this.path,prepend);
        
-         this[ClassName] = new Elements(ClassName,this.path,prepend);
+         this[Elt.MyClass] = Elt; 
          
-         return this[ClassName];
+         return Elt;
           
      }
 
