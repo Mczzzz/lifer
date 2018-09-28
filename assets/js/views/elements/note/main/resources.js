@@ -57,8 +57,8 @@ export default class Resources extends superViews{
 		//card.setStyle("display","flex");
 
 		let HeaderElement = card.setElement("header_"+RessourceTmpId);
-		HeaderElement.setStyle("height","50px");
-		HeaderElement.setStyle("background","purple");
+		HeaderElement.style.height = "50px";
+		HeaderElement.style.background = "purple";
 
 	}
 
