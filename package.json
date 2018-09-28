@@ -11,7 +11,6 @@
     "exifreader": "^2.5.0",
     "fs": "0.0.1-security",
     "i18next": "^11.5.0",
-    "jquery": "^3.3.1",
     "jstree": "^3.3.5",
     "moment": "^2.22.2",
     "uuid": "^3.3.2"
