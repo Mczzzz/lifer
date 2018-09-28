@@ -23,6 +23,8 @@ export default class Empty extends superViews{
 		//this.active = false;
 		this.Ressource = new Ressource('Resource' , this.path);
 
+		this.initialSet = 1;
+
 	}
 
 
@@ -31,56 +33,64 @@ export default class Empty extends superViews{
 
 	show(type){
 
-		
-		//on fige la taille pour les transitions
-    	let TitleCard = this.Lifer.getData('Note-Main-Title-Card',"This");
-    	TitleCard.setStyle("height", TitleCard.getContainerRect("height")+"px");
-
-    	let top = TitleCard.getContainerRect("top");
-
-    	TitleCard.setStyle("position","absolute");
-	
-    	
-		let animation = TitleCard.getContainer().animate([
-		   {
-		   	// from
-
-            width: "100%",
-		    opacity: 1,
-		    top: top+"px",
-		    left:"0px"
-		   },
-		   {
-		   	// to
-		   	width: "50%",
-		    opacity: 0.2,
-		    top : "0px",
-		    left: '50px'
-		  }
-
-		], { 
-		  // timing options
-		  duration: 500,
-		  easing: 'ease-in',
-		  iterations: 1
-		});
-
-
-		let Lifer = this.Lifer;
-		let MyThis = this;
-
 		let Ressource = this.Ressource;
 
-		animation.onfinish = function(){
-			TitleCard.getContainer().remove();
-			Lifer.getData('Note-Header-Action',"This").showTitle(Lifer.getData('Note',"This").note.Title);
-			MyThis.setStyle("display","");
+		if(this.initialSet){
 
-			Ressource.setTarget("Note-Main-Resources");
-			Ressource.addItem(type);
 
-		}
+						//on fige la taille pour les transitions
+	    	let TitleCard = this.Lifer.getData('Note-Main-Title-Card',"This");
+	    	TitleCard.setStyle("height", TitleCard.getContainerRect("height")+"px");
+
+	    	let top = TitleCard.getContainerRect("top");
+
+	    	TitleCard.setStyle("position","absolute");
 		
+	    	
+			let animation = TitleCard.getContainer().animate([
+			   {
+			   	// from
+
+	            width: "100%",
+			    opacity: 1,
+			    top: top+"px",
+			    left:"0px"
+			   },
+			   {
+			   	// to
+			   	width: "50%",
+			    opacity: 0.2,
+			    top : "0px",
+			    left: '50px'
+			  }
+
+			], { 
+			  // timing options
+			  duration: 500,
+			  easing: 'ease-in',
+			  iterations: 1
+			});
+
+
+			let Lifer = this.Lifer;
+			let MyThis = this;
+
+			
+
+			animation.onfinish = function(){
+				TitleCard.getContainer().remove();
+				Lifer.getData('Note-Header-Action',"This").showTitle(Lifer.getData('Note',"This").note.Title);
+				MyThis.setStyle("display","");
+
+				Ressource.setTarget("Note-Main-Resources");
+
+			}
+
+			this.initialSet = 0;
+		}
+
+		
+		Ressource.addItem(type);
 
 
 	}

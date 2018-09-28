@@ -92,7 +92,7 @@ export default class MainRessource extends superViews{
 
 
 	image(RessourceId){
-
+			
 		let image = new Image("Image_"+RessourceId, this.path);
 		image.draggable(this.path,"onChildMove");
 
