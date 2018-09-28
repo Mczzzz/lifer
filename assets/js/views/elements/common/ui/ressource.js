@@ -26,7 +26,6 @@ export default class Ressource extends superViews{
 
      init(){
 
-      this.initResource();
 
       this.Header = new Header("Header",this.path);
 
@@ -41,7 +40,7 @@ export default class Ressource extends superViews{
 
       console.log("in set Target");
       this.target = this.getObjectThisfromPath(path);
-
+      this.initResource();
       console.log(this.target);
      }
 
