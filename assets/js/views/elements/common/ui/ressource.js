@@ -69,7 +69,7 @@ export default class Ressource extends superViews{
       }
 
 
-      this.Main.addRessource(type,itemId); 
+      this.Main.addItem(type,itemId); 
       
 
      }
