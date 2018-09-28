@@ -12,6 +12,8 @@ export default class Resources extends superViews{
 		super( MyClass , path);
 
 		this.init();
+
+		this.RessourceList = [];
 		
 	}
 
@@ -54,10 +56,10 @@ export default class Resources extends superViews{
 	createRessource(RessourceTmpId){
 
 
-		let card = new Card('Card_'+RessourceTmpId, this.path);
+		this.RessourceList[RessourceTmpId] = new Card('Card_'+RessourceTmpId, this.path);
 		//card.setStyle("display","flex");
 
-		let HeaderElement = card.setElement("header_"+RessourceTmpId);
+		let HeaderElement = this.RessourceList[RessourceTmpId].setElement("header_"+RessourceTmpId);
 		HeaderElement.setStyle("height","50px");
 		HeaderElement.setStyle("background","purple");
 
