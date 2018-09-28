@@ -74,7 +74,7 @@ export default class Thumb extends superViews{
           }
           
                     //pas le bon endroit mais toujours mieux que rien 
-          screen.orientation.lock("portrait-primary");
+          //screen.orientation.lock("portrait-primary");
 
      }
 
