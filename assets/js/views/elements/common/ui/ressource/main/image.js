@@ -72,12 +72,12 @@ export default class Image extends superViews{
 	ImageViewer(obj){
 		
 		let viewCard = new Card('Viewer_', this.path);
-		this.card.setStyle("position", "absolute");
-		this.card.setStyle("top", "0px");
-		this.card.setStyle("left", "0px");
-		this.card.setStyle("width", "100%");
-		this.card.setStyle("height", "100%");
-		this.card.setStyle("background", "red");
+		viewCard.setStyle("position", "absolute");
+		viewCard.setStyle("top", "0px");
+		viewCard.setStyle("left", "0px");
+		viewCard.setStyle("width", "100%");
+		viewCard.setStyle("height", "100%");
+		viewCard.setStyle("background", "red");
 
 	}
 
