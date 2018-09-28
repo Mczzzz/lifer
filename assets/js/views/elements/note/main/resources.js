@@ -1,3 +1,5 @@
+import uuid from "uuid/v1"
+
 import superViews from "../../common/super/views.js";
 
 import Card from "../../common/ui/card.js";
@@ -41,7 +43,8 @@ export default class Resources extends superViews{
 
 	addRessource(){
 
-
+		let RessourceId = uuid();
+		console.log(RessourceId);
 
 	}
 
