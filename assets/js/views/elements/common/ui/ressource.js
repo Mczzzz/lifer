@@ -1,3 +1,5 @@
+import uuid from "uuid/v1"
+
 import superViews from "../super/views.js";
 
 import Header from "./ressource/header.js";
