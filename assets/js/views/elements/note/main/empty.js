@@ -22,7 +22,6 @@ export default class Empty extends superViews{
 		this.setStyle("boxShadow","rgb(187, 187, 187) 0px -2px 12px");
 		//this.active = false;
 		this.Ressource = new Ressource('Resource' , this.path);
-		this.Ressource.setTarget("Note-Main-Resources");
 
 	}
 
@@ -32,7 +31,7 @@ export default class Empty extends superViews{
 
 	show(type){
 
-		this.Ressource.addItem(type);
+		
 		//on fige la taille pour les transitions
     	let TitleCard = this.Lifer.getData('Note-Main-Title-Card',"This");
     	TitleCard.setStyle("height", TitleCard.getContainerRect("height")+"px");
@@ -77,6 +76,8 @@ export default class Empty extends superViews{
 
 		}
 		
+		this.Ressource.setTarget("Note-Main-Resources");
+		this.Ressource.addItem(type);
 
 	}
 
