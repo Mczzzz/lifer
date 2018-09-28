@@ -83,19 +83,27 @@ export default class Empty extends superViews{
 				MyThis.setStyle("display","");
 				console.log("animation finish");
 				Ressource.setTarget("Note-Main-Resources");
+				this.addItem(type);
 
 			}
 			console.log("end if");
 			this.initialSet = 0;
+
+		}else{
+
+			this.addItem(type);
 		}
 
-		console.log("empty add Item");
-		Ressource.addItem(type);
+		
 
 
 	}
 
 
+	addItem(type){
+
+		Ressource.addItem(type);
+	}
 
 
 	saveResource(card,Element, TheTextElt){
