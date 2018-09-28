@@ -32,7 +32,7 @@ export default class Empty extends superViews{
 
 	show(type){
 
-		this.Ressource.addRessource(type);
+		this.Ressource.addItem(type);
 		//on fige la taille pour les transitions
     	let TitleCard = this.Lifer.getData('Note-Main-Title-Card',"This");
     	TitleCard.setStyle("height", TitleCard.getContainerRect("height")+"px");
