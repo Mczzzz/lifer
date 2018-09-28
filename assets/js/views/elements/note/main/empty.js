@@ -81,11 +81,11 @@ export default class Empty extends superViews{
 				TitleCard.getContainer().remove();
 				Lifer.getData('Note-Header-Action',"This").showTitle(Lifer.getData('Note',"This").note.Title);
 				MyThis.setStyle("display","");
-
+				console.log("animation finish");
 				Ressource.setTarget("Note-Main-Resources");
 
 			}
-
+			console.log("end if");
 			this.initialSet = 0;
 		}
 
