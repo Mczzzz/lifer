@@ -52,7 +52,7 @@ export default class card extends superViews{
 
          this[ClassName] = new Elements(ClassName,this.path,prepend);
          
-         return ClassName;
+         return this[ClassName];
           
      }
 
