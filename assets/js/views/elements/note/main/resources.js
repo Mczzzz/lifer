@@ -43,8 +43,22 @@ export default class Resources extends superViews{
 
 	addRessource(){
 
-		let RessourceId = uuid();
-		console.log(RessourceId);
+		let RessourceTmpId = uuid();
+		console.log(RessourceTmpId);
+		createRessource(RessourceTmpId);
+
+	}
+
+
+	createRessource(RessourceTmpId){
+
+
+		let card = new Card('Card_'+RessourceTmpId, this.path);
+		//card.setStyle("display","flex");
+
+		let HeaderElement = card.setElement("header_"+RessourceTmpId);
+		HeaderElement.setStyle("height","50px");
+		HeaderElement.setStyle("background","purple");
 
 	}
 
