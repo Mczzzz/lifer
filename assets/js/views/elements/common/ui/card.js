@@ -47,6 +47,8 @@ export default class card extends superViews{
 
 
      setElement(ClassName,prepend = false){
+
+          console.log(ClassName);
        
          this[ClassName] = new Elements(ClassName,this.path,prepend);
          
