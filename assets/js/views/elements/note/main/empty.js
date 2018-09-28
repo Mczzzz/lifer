@@ -89,7 +89,7 @@ export default class Empty extends superViews{
 			this.initialSet = 0;
 		}
 
-		
+		console.log("empty add Item");
 		Ressource.addItem(type);
 
 

@@ -53,7 +53,7 @@ if (screen.lockOrientationUniversal("portrait-primary")) {
 } else {
   // orientation lock failed
 }*/
-screen.orientation.lock("portrait-primary");
+//screen.orientation.lock("portrait-primary");
 //////////////////////////////////////////////////////////
 
 
