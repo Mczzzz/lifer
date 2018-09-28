@@ -70,8 +70,14 @@ export default class Image extends superViews{
 	}
 
 	ImageViewer(obj){
-		console.log('in image viewer');
-		  obj.webkitRequestFullscreen();
+		
+		let viewCard = new Card('Viewer_', this.path);
+		this.card.setStyle("position", "absolute");
+		this.card.setStyle("top", "0px");
+		this.card.setStyle("left", "0px");
+		this.card.setStyle("width", "100%");
+		this.card.setStyle("height", "100%");
+		this.card.setStyle("background", "red");
 
 	}
 
