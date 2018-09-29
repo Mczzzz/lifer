@@ -89,13 +89,13 @@ export default class Empty extends superViews{
 
 			}*/
 			console.log("end if");
-			this.initialSet = 0;
+			
 
 		}
 
 
 		
-		this.Ressource.addItem(type);
+		this.addItem(type);
 		
 
 		
@@ -104,12 +104,16 @@ export default class Empty extends superViews{
 	}
 
 	addItem(type){
-		let TitleCard = this.Lifer.getData('Note-Main-Title-Card',"This");
-		TitleCard.getContainer().remove();
-		this.Lifer.getData('Note-Header-Action',"This").showTitle(this.Lifer.getData('Note',"This").note.Title);
-		this.setStyle("display","");
-		console.log("animation finish");
-	   this.Ressource.setTarget("Note-Main-Resources");
+
+		if(this.initialSet){
+			let TitleCard = this.Lifer.getData('Note-Main-Title-Card',"This");
+				TitleCard.getContainer().remove();
+				this.Lifer.getData('Note-Header-Action',"This").showTitle(this.Lifer.getData('Note',"This").note.Title);
+				this.setStyle("display","");
+				console.log("animation finish");
+	   		this.Ressource.setTarget("Note-Main-Resources");
+	   		this.initialSet = 0;
+	   	}
 	   this.Ressource.addItem(type);
 	   
 		//this.Ressource.addItem(type);
