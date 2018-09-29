@@ -108,8 +108,8 @@ export default class Empty extends superViews{
 		this.setStyle("display","");
 		console.log("animation finish");
 	   this.Ressource.setTarget("Note-Main-Resources");
-
-		this.Ressource.addItem(type);
+	   	setTimeout( this.Ressource.addItem(type), 1000);
+		//this.Ressource.addItem(type);
 	}
 
 
