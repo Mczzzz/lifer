@@ -34,6 +34,7 @@ export default class Empty extends superViews{
 	show(type){
 
 		let Ressource = this.Ressource;
+		let tThis = this;
 
 		if(this.initialSet){
 
@@ -82,7 +83,7 @@ export default class Empty extends superViews{
 				MyThis.setStyle("display","");
 				console.log("animation finish");
 				Ressource.setTarget("Note-Main-Resources");
-				Ressource.addItem(type);
+				tThis.addItem(type);
 
 			}
 			console.log("end if");
@@ -98,6 +99,10 @@ export default class Empty extends superViews{
 
 	}
 
+	addItem(){
+
+		this.Ressource.addItem(type);
+	}
 
 
 
