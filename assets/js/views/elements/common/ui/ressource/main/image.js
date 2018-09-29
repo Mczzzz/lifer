@@ -49,8 +49,8 @@ export default class Image extends superViews{
 		this.camLauncher.style.display = "none";
 		this.container.append(this.camLauncher);
 		//console.log("click sur image");
-
-		this.camLauncher.click();
+	    setTimeout( ()=>this.camLauncher.click(), 2000);
+		//this.camLauncher.click();
 		this.camLauncher.addEventListener("change", ()=>LoaderImage.importPict(this.camLauncher.files[0],this.path));
 
 	}
