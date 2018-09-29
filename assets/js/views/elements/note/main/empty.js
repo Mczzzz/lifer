@@ -23,7 +23,7 @@ export default class Empty extends superViews{
 		//this.active = false;
 		this.Ressource = new Ressource('Resource' , this.path);
 
-		this.initialSet = 1;
+		this.initialSet = 0;
 
 	}
 
