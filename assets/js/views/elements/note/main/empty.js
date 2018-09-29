@@ -102,6 +102,12 @@ export default class Empty extends superViews{
 	}
 
 	addItem(type){
+		let TitleCard = this.Lifer.getData('Note-Main-Title-Card',"This");
+		TitleCard.getContainer().remove();
+		this.Lifer.getData('Note-Header-Action',"This").showTitle(Lifer.getData('Note',"This").note.Title);
+		this.setStyle("display","");
+		console.log("animation finish");
+	   this.Ressource.setTarget("Note-Main-Resources");
 
 		this.Ressource.addItem(type);
 	}
