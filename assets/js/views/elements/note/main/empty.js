@@ -23,7 +23,7 @@ export default class Empty extends superViews{
 		//this.active = false;
 		this.Ressource = new Ressource('Resource' , this.path);
 
-		this.initialSet = 0;
+		this.initialSet = 1;
 
 	}
 
@@ -77,7 +77,7 @@ export default class Empty extends superViews{
 			let MyThis = this;
 
 
-			animation.onfinish = ()=>this.addItem(type);
+			//animation.onfinish = ()=>this.addItem(type);
 
 /*			 function(){
 				TitleCard.getContainer().remove();
@@ -91,10 +91,12 @@ export default class Empty extends superViews{
 			console.log("end if");
 			this.initialSet = 0;
 
-		}else{
-
-			Ressource.addItem(type);
 		}
+
+
+		
+		this.Ressource.addItem(type);
+		
 
 		
 
