@@ -99,7 +99,7 @@ export default class Empty extends superViews{
 
 	}
 
-	addItem(){
+	addItem(type){
 
 		this.Ressource.addItem(type);
 	}
