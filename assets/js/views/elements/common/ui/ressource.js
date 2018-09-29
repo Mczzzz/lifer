@@ -18,6 +18,7 @@ export default class Ressource extends superViews{
           this.target = false;
 
           this.RessourceId = false;
+          this.ItemList = false;
 
 
      }
@@ -68,7 +69,7 @@ export default class Ressource extends superViews{
 
       }
 
-
+      this.ItemList[itemId]
       this.Main.addItem(type,itemId); 
       
 
