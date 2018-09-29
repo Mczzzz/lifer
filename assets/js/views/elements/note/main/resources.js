@@ -60,6 +60,12 @@ export default class Resources extends superViews{
 		//card.setStyle("display","flex");
 
 		let HeaderElement = this.RessourceList[ressourceTmpId].setElement("header_"+ressourceTmpId);
+
+		this.RessourceTitle = this.RessourceList[ressourceTmpId].push("Text", HeaderElement,"Title", "");
+		
+		this.RessourceTitle.setStyle("fontSize","22px");
+
+
 		HeaderElement.setStyle("height","50px");
 		HeaderElement.setStyle("background","purple");
 
@@ -67,8 +73,8 @@ export default class Resources extends superViews{
 
 
 	addItem(ressourceTmpId,type){
-		console.log("in addItem");
-		console.log(ressourceTmpId);
+/*		console.log("in addItem");
+		console.log(ressourceTmpId);*/
 		let itemTmpId = uuid();
 		let ItemElement = this.RessourceList[ressourceTmpId].setElement("Item_"+itemTmpId);
 		ItemElement.setStyle("height","50px");
