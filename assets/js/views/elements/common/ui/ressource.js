@@ -76,6 +76,13 @@ export default class Ressource extends superViews{
      }
 
 
+        //rajoutdela callback udpdate vers target
+
+    update(data){
+
+      this.target.update(data);
+    }
+
 
 }
 

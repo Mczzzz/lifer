@@ -76,7 +76,7 @@ export default class MainRessource extends superViews{
 		let text = new Text("Text_"+RessourceId, this.path);
 		text.draggable(this.path,"onChildMove");
 		text.focus();
-
+		text.addEventListener("keyup", ()=>this.parentThis.update());
 
 	}
 
@@ -92,7 +92,7 @@ export default class MainRessource extends superViews{
 
 
 	image(RessourceId){
-			
+
 		let image = new Image("Image_"+RessourceId, this.path);
 		image.draggable(this.path,"onChildMove");
 

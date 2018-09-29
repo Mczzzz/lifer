@@ -85,6 +85,15 @@ export default class Resources extends superViews{
 
 
 
+
+	update(){
+
+			console.log('au bon encdroit :)');
+
+	}
+
+
+
 	createCard(Resource){
 
 		let updateTs = this.Moment();
