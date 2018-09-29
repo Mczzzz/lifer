@@ -77,7 +77,9 @@ export default class Empty extends superViews{
 			let MyThis = this;
 
 
-			animation.onfinish = function(){
+			animation.onfinish = ()=>this.addItem(type);
+
+/*			 function(){
 				TitleCard.getContainer().remove();
 				Lifer.getData('Note-Header-Action',"This").showTitle(Lifer.getData('Note',"This").note.Title);
 				MyThis.setStyle("display","");
@@ -85,7 +87,7 @@ export default class Empty extends superViews{
 				Ressource.setTarget("Note-Main-Resources");
 				tThis.addItem(type);
 
-			}
+			}*/
 			console.log("end if");
 			this.initialSet = 0;
 
