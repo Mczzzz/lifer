@@ -8,9 +8,11 @@ export default class Text extends superViews{
 
 	constructor( MyClass , path,prepend = false,callback = false){
 
-		super( MyClass , path, prepend,callback);
+		super( MyClass , path, prepend);
 
 		this.init();
+
+		this.callBack = callback;
 		
 	}
 
@@ -20,6 +22,8 @@ export default class Text extends superViews{
 
 		this.eltCollapser;
 
+
+
 	}
 
 
@@ -28,8 +32,8 @@ export default class Text extends superViews{
 		this.setStyle('marginLeft', '0px');
 
 		this.card = new Card('Card_'+this.ClassId, this.path);
-		this.card.setCallBack("keyup",this.path, "Save");
-		
+		this.card.setCallBack("keyup",this.callBack.path, this.callBack.method);
+
 		this.card.setId(0);
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "12px 0px 6px 12px");
