@@ -6,9 +6,9 @@ import Card from "../../../ui/card.js";
 export default class Text extends superViews{
 	
 
-	constructor( MyClass , path){
+	constructor( MyClass , path,prepend = false,callback = false){
 
-		super( MyClass , path);
+		super( MyClass , path, prepend,callback);
 
 		this.init();
 		
@@ -41,9 +41,9 @@ export default class Text extends superViews{
 
 
 		this.EmptyElement = this.card.setElement("Text_"+this.ClassId);
-		this.card.setStyleElement(this.EmptyElement,"justifyContent","flex-start");
-		this.card.setStyleElement(this.EmptyElement,"alignItems","center");
-		this.card.setStyleElement(this.EmptyElement,"flex",1);
+		this.EmptyElement.setStyle("justifyContent","flex-start");
+		this.EmptyElement.setStyle("alignItems","center");
+		this.EmptyElement.setStyle("flex",1);
 
 
 		this.TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
