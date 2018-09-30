@@ -6,7 +6,7 @@ import 'moment/locale/fr';
 export default class views {
 	
 
-	constructor(MyClass,path,prepend = false,callback = false){
+	constructor(MyClass,path,prepend = false){
 
 
 
@@ -58,7 +58,7 @@ Moment.locale('fr');
 		this.Lifer.addData(this.path,[{"This" : this}]);
 
 
-	    this.callBack = callback;
+	
 
 	
 
