@@ -33,9 +33,9 @@ export default class Empty extends superViews{
 
 	show(type){
 
-		let Ressource = this.Ressource;
-		let tThis = this;
-
+//		let Ressource = this.Ressource;
+//		let tThis = this;
+/*
 		if(this.initialSet){
 
 
@@ -87,11 +87,11 @@ export default class Empty extends superViews{
 				Ressource.setTarget("Note-Main-Resources");
 				tThis.addItem(type);
 
-			}*/
+			}
 			console.log("end if");
 			
 
-		}
+		}*/
 
 
 		
