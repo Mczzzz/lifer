@@ -10,11 +10,13 @@ export default class Text extends superViews{
 
 		super( MyClass , path, prepend);
 
-		this.init();
+		
 
 		this.ExtcallBack = callback;
 		console.log("constructor UI RESSOURCES MAIN TEXT");
 		console.log(callback);
+
+		this.init();
 	}
 
 	init(){
