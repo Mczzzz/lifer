@@ -12,7 +12,7 @@ export default class Text extends superViews{
 
 		this.init();
 
-		this.callBack = callback;
+		this.ExtcallBack = callback;
 		
 	}
 
@@ -33,8 +33,8 @@ export default class Text extends superViews{
 
 		this.card = new Card('Card_'+this.ClassId, this.path);
 		console.log("this.callBack in text ressource");
-		console.log(this.callBack);
-		this.card.setCallBack("keyup",this.callBack.path, this.callBack.method);
+		console.log(this.ExtcallBack);
+		this.card.setCallBack("keyup",this.ExtcallBack.path, this.ExtcallBack.method);
 
 		this.card.setId(0);
 		this.card.setStyle("borderWidth", "0px");
