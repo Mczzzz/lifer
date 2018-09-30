@@ -122,7 +122,7 @@ export default class Resources extends superViews{
 		let card = new Card('Card_'+timestamp, this.path);
 		card.setId("TmpCardId-"+timestamp);
 		card.setStyle("border","1px solid red");
-		card.setCallBack("keyup",this.path, "Save");
+		
 		
 //A ne pas oublié sinon ca va merder
 //card.setId();

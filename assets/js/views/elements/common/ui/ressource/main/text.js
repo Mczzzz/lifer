@@ -28,6 +28,8 @@ export default class Text extends superViews{
 		this.setStyle('marginLeft', '0px');
 
 		this.card = new Card('Card_'+this.ClassId, this.path);
+		this.card.setCallBack("keyup",this.path, "Save");
+		
 		this.card.setId(0);
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "12px 0px 6px 12px");
@@ -52,7 +54,6 @@ export default class Text extends superViews{
 		this.TheTextElt.setStyle("margin","0px");
 		this.TheTextElt.setStyle("fontWeight","normal");
 
-		//this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"flex",1);
 
 
 
