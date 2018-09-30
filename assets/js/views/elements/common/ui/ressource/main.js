@@ -73,7 +73,11 @@ export default class MainRessource extends superViews{
 
 	text(RessourceId){
 
-		let text = new Text("Text_"+RessourceId, this.path,false,this.parentThis.update());
+		let callBack = {};
+		callBack.path = this.parentThis.target;
+		callBack.method = "update";
+
+		let text = new Text("Text_"+RessourceId, this.path,false,callBack);
 		text.draggable(this.path,"onChildMove");
 		text.focus();
 

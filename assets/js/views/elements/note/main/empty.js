@@ -114,6 +114,7 @@ export default class Empty extends superViews{
 	   		this.Ressource.setTarget("Note-Main-Resources");
 	   		this.initialSet = 0;
 	   	}
+	   	
 	   this.Ressource.addItem(type);
 	   
 		//this.Ressource.addItem(type);

@@ -39,19 +39,19 @@ export default class Ressource extends superViews{
 
      setTarget(path){
 
-      console.log("in set Target");
+     // console.log("in set Target");
       this.target = this.getObjectThisfromPath(path);
       this.initResource();
-      console.log(this.target);
+  //    console.log(this.target);
      }
 
 
      initResource(){
-      console.log("in init ressource");
+    //  console.log("in init ressource");
       if(this.target){
-        console.log("in init ressource - target");
+   //     console.log("in init ressource - target");
         this.RessourceId = this.target.addRessource();
-        console.log("this.RessourceId"+this.RessourceId);
+ //       console.log("this.RessourceId"+this.RessourceId);
 
       }
 
