@@ -45,7 +45,7 @@ export default class Resources extends superViews{
 
 	addRessource(){
 
-		let ressourceTmpId = uuid();
+		let ressourceTmpId = uuid().replace(/-/i, '.');
 		console.log(ressourceTmpId);
 		this.createRessource(ressourceTmpId);
 		this.setStyle("flex" , "");
@@ -75,7 +75,7 @@ export default class Resources extends superViews{
 	addItem(ressourceTmpId,type){
 /*		console.log("in addItem");
 		console.log(ressourceTmpId);*/
-		let itemTmpId = uuid();
+		let itemTmpId = uuid().replace(/-/i, '.');
 		let ItemElement = this.RessourceList[ressourceTmpId].setElement("Item_"+itemTmpId);
 		ItemElement.setStyle("height","50px");
 		ItemElement.setStyle("background","yellow");
