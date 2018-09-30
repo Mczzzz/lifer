@@ -47,11 +47,11 @@ export default class Text extends superViews{
 
 
 		this.TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
+		this.TheTextElt.setStyle("fontSize","18.5px");
+		this.TheTextElt.setStyle("color","#626262","all");		
+		this.TheTextElt.setStyle("margin","0px");
+		this.TheTextElt.setStyle("fontWeight","normal");
 
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontSize","18.5px");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"color","#626262","all");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"margin","0px");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontWeight","normal");
 		//this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"flex",1);
 
 
