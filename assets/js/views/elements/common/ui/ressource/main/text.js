@@ -32,6 +32,8 @@ export default class Text extends superViews{
 		this.setStyle('marginLeft', '0px');
 
 		this.card = new Card('Card_'+this.ClassId, this.path);
+		console.log("this.callBack in text ressource");
+		console.log(this.callBack);
 		this.card.setCallBack("keyup",this.callBack.path, this.callBack.method);
 
 		this.card.setId(0);
