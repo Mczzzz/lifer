@@ -82,7 +82,7 @@ export default class Ressource extends superViews{
 
         console.log('in Ressource ui -> updte to target');
 
-      this.Target.update(data);
+      this.target.update(data);
     }
 
 
