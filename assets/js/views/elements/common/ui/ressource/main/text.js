@@ -13,7 +13,8 @@ export default class Text extends superViews{
 		this.init();
 
 		this.ExtcallBack = callback;
-		
+		console.log("constructor UI RESSOURCES MAIN TEXT");
+		console.log(callback);
 	}
 
 	init(){
