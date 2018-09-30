@@ -267,7 +267,7 @@ Moment.locale('fr');
     }
 
 
-    dispatchEvents(e){
+/*    dispatchEvents(e){
 
      console.log('in text dispatchEvent');
           if(this.callBack != false){
@@ -280,7 +280,7 @@ Moment.locale('fr');
 
 
          this.changeColor();          
-     }
+     }*/
 
 
 
