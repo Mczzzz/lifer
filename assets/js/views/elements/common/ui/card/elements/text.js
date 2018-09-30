@@ -5,7 +5,7 @@ export default class Text extends superViews{
 
      constructor( MyClass,path,prepend = false,callback = false){
 
-          super( MyClass , path,callback);
+          super( MyClass , path);
 
           this.init();
 
