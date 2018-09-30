@@ -83,7 +83,7 @@ addMe(path){
 
 		}
 
-	//	this.dumpMe();
+		this.dumpMe();
 	}
 
 
@@ -137,6 +137,7 @@ addMe(path){
 
 	getData(path,Key, level = 0){
 
+		console.log(path);
 		if(path.length == 0) return false;
 
 		let arrayPath = path.split("-");
