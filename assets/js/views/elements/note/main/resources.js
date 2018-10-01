@@ -152,8 +152,9 @@ export default class Resources extends superViews{
 			MainElement.setStyle("justifyContent","flex-start");
 
 
-			card.push("Button",MainElement,"dragger"+timestamp, "drag_indicator");
-			card.setAttributeComponent(MainElement,"dragger"+timestamp,"draggable", "y");
+			let theButton = card.push("Button",MainElement,"dragger"+timestamp, "drag_indicator");
+			theButton.setAttribute("draggable", "y");
+			theButton.initTouch(this.path,"touchMover");
 
 			let aText = card.push("Text",MainElement,"main_new_"+timestamp, Resource.text);
 

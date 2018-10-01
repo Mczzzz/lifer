@@ -33,22 +33,22 @@ export default class FooterButtons extends superViews{
 
 				let StartNote = this.card.push("Button", Elt,"AddNote", "note_add");
 
-					this.card.setStylePictoComponent(Elt,"AddNote","fontSize","25px");
-					this.card.setStylePictoComponent(Elt,"AddNote","marginRight","0px");
-					this.card.setStylePictoComponent(Elt,"AddNote","color","green");
-					this.card.setStylePictoComponent(Elt,"AddNote","alignItems","center");
+					StartNote.setStylePicto("fontSize","25px");
+					StartNote.setStylePicto("marginRight","0px");
+					StartNote.setStylePicto("color","green");
+					StartNote.setStylePicto("alignItems","center");
 
 					StartNote.getContainer().addEventListener("click",()=>this.StartNote());
 
 
 
 					///////////////
-					this.card.push("Button", Elt,"sep1", "more_vert");
+					let sep1 = this.card.push("Button", Elt,"sep1", "more_vert");
 
-					this.card.setStylePictoComponent(Elt,"sep1","fontSize","25px");
-					this.card.setStylePictoComponent(Elt,"sep1","margin","5px");
-					this.card.setStylePictoComponent(Elt,"sep1","color","#cfcfcf");
-					this.card.setStylePictoComponent(Elt,"sep1","alignItems","center");
+					sep1.setStylePicto("fontSize","25px");
+					sep1.setStylePicto("margin","5px");
+					sep1.setStylePicto("color","#cfcfcf");
+					sep1.setStylePicto("alignItems","center");
 					//////////////
 
 
@@ -57,9 +57,9 @@ export default class FooterButtons extends superViews{
 
 				let FooterObjectButton = this.card.push("Button", Elt,"toObjects", "widgets");
 
-					this.card.setStylePictoComponent(Elt,"toObjects","fontSize","25px");
-					this.card.setStylePictoComponent(Elt,"toObjects","color","green");
-					this.card.setStylePictoComponent(Elt,"toObjects","alignItems","center");
+					FooterObjectButton.setStylePicto("fontSize","25px");
+					FooterObjectButton.setStylePicto("color","green");
+					FooterObjectButton.setStylePicto("alignItems","center");
 
 					FooterObjectButton.getContainer().addEventListener("click",()=>this.goToObject());
 

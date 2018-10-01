@@ -52,11 +52,11 @@ export default class HeaderRessource extends superViews{
 
 				let colButton = this.card.push("Button", HeaderElement,"collapse", "keyboard_arrow_down");
 
-				this.card.setStylePictoComponent(HeaderElement,"collapse","fontSize","25px");
-				this.card.setStylePictoComponent(HeaderElement,"collapse","margin","0px");
-				this.card.setStylePictoComponent(HeaderElement,"collapse","marginLeft","5px");
-				this.card.setStylePictoComponent(HeaderElement,"collapse","color","white");
-				this.card.setStylePictoComponent(HeaderElement,"collapse","alignItems","center");
+				colButton.setStylePicto("fontSize","25px");
+				colButton.setStylePicto("margin","0px");
+				colButton.setStylePicto("marginLeft","5px");
+				colButton.setStylePicto("color","white");
+				colButton.setStylePicto("alignItems","center");
 
 				colButton.getContainer().addEventListener("click",()=>this.colMain(colButton));
 
@@ -78,11 +78,11 @@ export default class HeaderRessource extends superViews{
 
         this.collapseButton = this.card.push("Button", HeaderElement,"fold", "unfold_less");
 
-        this.card.setStylePictoComponent(HeaderElement,"fold","fontSize","25px");
-        this.card.setStylePictoComponent(HeaderElement,"fold","margin","0px");
-        this.card.setStylePictoComponent(HeaderElement,"fold","marginRight","10px");
-        this.card.setStylePictoComponent(HeaderElement,"fold","color","white");
-        this.card.setStylePictoComponent(HeaderElement,"fold","alignItems","center");
+        this.collapseButton.setStylePicto("fontSize","25px");
+        this.collapseButton.setStylePicto("margin","0px");
+        this.collapseButton.setStylePicto("marginRight","10px");
+        this.collapseButton.setStylePicto("color","white");
+        this.collapseButton.setStylePicto("alignItems","center");
 
 
 
@@ -94,11 +94,11 @@ export default class HeaderRessource extends superViews{
 
 				let ddButton = this.card.push("Button", HeaderElement,"sep1", "more_vert");
 
-				this.card.setStylePictoComponent(HeaderElement,"sep1","fontSize","25px");
-				this.card.setStylePictoComponent(HeaderElement,"sep1","margin","0px");
-				this.card.setStylePictoComponent(HeaderElement,"sep1","marginRight","10px");
-				this.card.setStylePictoComponent(HeaderElement,"sep1","color","white");
-				this.card.setStylePictoComponent(HeaderElement,"sep1","alignItems","center");
+				ddButton.setStylePicto("fontSize","25px");
+				ddButton.setStylePicto("margin","0px");
+				ddButton.setStylePicto("marginRight","10px");
+				ddButton.setStylePicto("color","white");
+				ddButton.setStylePicto("alignItems","center");
 
 
 				ddButton.getContainer().addEventListener("click",()=>this.initDropDown());

@@ -103,7 +103,7 @@ export default class Image extends superViews{
 
 		let TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
 
-		this.card.setAttributeComponent(this.EmptyElement,"Input_"+this.ClassId,"placeholder","Légende...");
+		TheTextElt.setAttribute("placeholder","Légende...");
 
 		TheTextElt.setStyle("fontSize","18.5px");
 		TheTextElt.setStyle("color","black","property");

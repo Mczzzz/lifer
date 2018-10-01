@@ -46,7 +46,7 @@ export default class search extends superViews{
 
 							this.input = card.push("Text", ObjectsSearchCardElement,"ObjectsSearchCardElementItem", "");
 
-							card.setAttributeComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","placeholder","Recherche...");
+							this.input.setAttribute("placeholder","Recherche...");
 
 							this.input.setStyle("fontSize","15px");
 							this.input.setStyle("border","1px solid silver");

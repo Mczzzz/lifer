@@ -31,19 +31,19 @@ export default class HeaderButtons extends superViews{
 
 					let HeaderBackButton = this.card.push("Button", HeaderElement,"Back", "keyboard_backspace");
 
-					this.card.setStylePictoComponent(HeaderElement,"Back","fontSize","25px");
-					this.card.setStylePictoComponent(HeaderElement,"Back","color","green");
-					this.card.setStylePictoComponent(HeaderElement,"Back","alignItems","center");
+					HeaderBackButton.setStylePicto("fontSize","25px");
+					HeaderBackButton.setStylePicto("color","green");
+					HeaderBackButton.setStylePicto("alignItems","center");
 
 					HeaderBackButton.getContainer().addEventListener("click",()=>this.BackToHome());
 
 
-					this.card.push("Button", HeaderElement,"headerLogo", "widgets");
+					let headerLogo = this.card.push("Button", HeaderElement,"headerLogo", "widgets");
 
-					this.card.setStylePictoComponent(HeaderElement,"Logo","fontSize","25px");
-					this.card.setStylePictoComponent(HeaderElement,"Logo","marginRight","0px");
-					this.card.setStylePictoComponent(HeaderElement,"Logo","color","green");
-					this.card.setStylePictoComponent(HeaderElement,"Logo","alignItems","center");
+					headerLogo.setStylePicto("fontSize","25px");
+					headerLogo.setStylePicto("marginRight","0px");
+					headerLogo.setStylePicto("color","green");
+					headerLogo.setStylePicto("alignItems","center");
 
 
 

@@ -33,9 +33,9 @@ export default class HeaderButtons extends superViews{
 
 					let HeaderBackButton = this.card.push("Button", this.HeaderElement,"Back", "keyboard_backspace");
 
-					this.card.setStylePictoComponent(this.HeaderElement,"Back","fontSize","25px");
-					this.card.setStylePictoComponent(this.HeaderElement,"Back","color","green");
-					this.card.setStylePictoComponent(this.HeaderElement,"Back","alignItems","center");
+					HeaderBackButton.setStylePicto("fontSize","25px");
+					HeaderBackButton.setStylePicto("color","green");
+					HeaderBackButton.setStylePicto("alignItems","center");
 
 					HeaderBackButton.getContainer().addEventListener("click",()=>this.CloseMe());
 
@@ -44,7 +44,7 @@ export default class HeaderButtons extends superViews{
 
 					this.TheTitle = this.card.push("Text", this.HeaderElement,"Title", "");
 
-					this.card.setAttributeComponent(this.HeaderElement,"Title","placeholder","Titre Note...");
+					this.TheTitle.setAttribute("placeholder","Titre Note...");
 
 					this.TheTitle.setStyle("fontSize","22px");
 					this.TheTitle.setStyle("color","black","all");
@@ -55,13 +55,13 @@ export default class HeaderButtons extends superViews{
 					this.TheTitle.setStyle("display", "none");
 
 
-					this.card.push("Button", this.HeaderElement,"sep1", "more_vert");
+					let sep1 = this.card.push("Button", this.HeaderElement,"sep1", "more_vert");
 
-					this.card.setStylePictoComponent(this.HeaderElement,"sep1","fontSize","25px");
-					this.card.setStylePictoComponent(this.HeaderElement,"sep1","margin","0px");
-					this.card.setStylePictoComponent(this.HeaderElement,"sep1","marginRight","0px");
-					this.card.setStylePictoComponent(this.HeaderElement,"sep1","color","grey");
-					this.card.setStylePictoComponent(this.HeaderElement,"sep1","alignItems","center");
+					sep1.setStylePicto("fontSize","25px");
+					sep1.setStylePicto("margin","0px");
+					sep1.setStylePicto("marginRight","0px");
+					sep1.setStylePicto("color","grey");
+					sep1.setStylePicto("alignItems","center");
 
 
 

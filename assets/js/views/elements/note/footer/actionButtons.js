@@ -39,9 +39,9 @@ export default class ActionButtons extends superViews{
 
 					let camera = this.card.push("Button", Elt,"Photo", "camera_alt");
 
-					this.card.setStylePictoComponent(Elt,"Photo","fontSize","25px");
-					this.card.setStylePictoComponent(Elt,"Photo","color","green");
-					this.card.setStylePictoComponent(Elt,"Photo","alignItems","center");
+					camera.setStylePicto("fontSize","25px");
+					camera.setStylePicto("color","green");
+					camera.setStylePicto("alignItems","center");
 
 					camera.getContainer().addEventListener("click",()=>this.Start("image"));
 					//camera.getContainer().addEventListener("click",()=>this.StartCamera("image",true));
@@ -50,9 +50,9 @@ export default class ActionButtons extends superViews{
 
 					let videocam = this.card.push("Button", Elt,"Videocam", "videocam");
 
-					this.card.setStylePictoComponent(Elt,"Videocam","fontSize","25px");
-					this.card.setStylePictoComponent(Elt,"Videocam","color","green");
-					this.card.setStylePictoComponent(Elt,"Videocam","alignItems","center");
+					videocam.setStylePicto("fontSize","25px");
+					videocam.setStylePicto("color","green");
+					videocam.setStylePicto("alignItems","center");
 
 					videocam.getContainer().addEventListener("click",()=>this.StartCamera("video",true));
 
@@ -61,30 +61,30 @@ export default class ActionButtons extends superViews{
 
 					let micro = this.card.push("Button", Elt,"Mic", "mic");
 
-					this.card.setStylePictoComponent(Elt,"Mic","fontSize","25px");
-					this.card.setStylePictoComponent(Elt,"Mic","color","green");
-					this.card.setStylePictoComponent(Elt,"Mic","alignItems","center");
-					this.card.setStylePictoComponent(Elt,"Mic","marginRight","0px");
+					micro.setStylePicto("fontSize","25px");
+					micro.setStylePicto("color","green");
+					micro.setStylePicto("alignItems","center");
+					micro.setStylePicto("marginRight","0px");
 
 					micro.getContainer().addEventListener("click",()=>this.StartCamera("audio",true));
 
 
 					////////////
-					this.card.push("Button", Elt,"sep1", "more_vert");
+					let sep1 = this.card.push("Button", Elt,"sep1", "more_vert");
 
-					this.card.setStylePictoComponent(Elt,"sep1","fontSize","25px");
-					this.card.setStylePictoComponent(Elt,"sep1","margin","5px");
-					this.card.setStylePictoComponent(Elt,"sep1","color","#cfcfcf");
-					this.card.setStylePictoComponent(Elt,"sep1","alignItems","center");
+					sep1.setStylePicto("fontSize","25px");
+					sep1.setStylePicto("margin","5px");
+					sep1.setStylePicto("color","#cfcfcf");
+					sep1.setStylePicto("alignItems","center");
 					//////////////
 
 
 
 					let photo = this.card.push("Button", Elt,"Gallery", "photo");
 
-					this.card.setStylePictoComponent(Elt,"Gallery","fontSize","25px");
-					this.card.setStylePictoComponent(Elt,"Gallery","color","orange");
-					this.card.setStylePictoComponent(Elt,"Gallery","alignItems","center");
+					photo.setStylePicto("fontSize","25px");
+					photo.setStylePicto("color","orange");
+					photo.setStylePicto("alignItems","center");
 
 					photo.getContainer().addEventListener("click",()=>this.StartCamera("image"));
 
@@ -92,9 +92,9 @@ export default class ActionButtons extends superViews{
 
 					let video = this.card.push("Button", Elt,"Video", "movie");
 
-					this.card.setStylePictoComponent(Elt,"Video","fontSize","25px");
-					this.card.setStylePictoComponent(Elt,"Video","color","orange");
-					this.card.setStylePictoComponent(Elt,"Video","alignItems","center");
+					video.setStylePicto("fontSize","25px");
+					video.setStylePicto("color","orange");
+					video.setStylePicto("alignItems","center");
 
 					video.getContainer().addEventListener("click",()=>this.StartCamera("video"));
 
@@ -103,30 +103,30 @@ export default class ActionButtons extends superViews{
 
 					let musique = this.card.push("Button", Elt,"Musique", "music_video");
 
-					this.card.setStylePictoComponent(Elt,"Musique","fontSize","25px");
-					this.card.setStylePictoComponent(Elt,"Musique","color","orange");
-					this.card.setStylePictoComponent(Elt,"Musique","alignItems","center");
-					this.card.setStylePictoComponent(Elt,"Musique","marginRight","0px");
+					musique.setStylePicto("fontSize","25px");
+					musique.setStylePicto("color","orange");
+					musique.setStylePicto("alignItems","center");
+					musique.setStylePicto("marginRight","0px");
 
 					musique.getContainer().addEventListener("click",()=>this.StartCamera("audio"));
 
 
 
 					///////////////
-					this.card.push("Button", Elt,"sep2", "more_vert");
+					let sep2 = this.card.push("Button", Elt,"sep2", "more_vert");
 
-					this.card.setStylePictoComponent(Elt,"sep2","fontSize","25px");
-					this.card.setStylePictoComponent(Elt,"sep2","margin","5px");
-					this.card.setStylePictoComponent(Elt,"sep2","color","#cfcfcf");
-					this.card.setStylePictoComponent(Elt,"sep2","alignItems","center");
+					sep2.setStylePicto("fontSize","25px");
+					sep2.setStylePicto("margin","5px");
+					sep2.setStylePicto("color","#cfcfcf");
+					sep2.setStylePicto("alignItems","center");
 					///////////////
 
 
 					let number = this.card.push("Button", Elt,"Numbers", "looks_5");
 
-					this.card.setStylePictoComponent(Elt,"Numbers","fontSize","25px");
-					this.card.setStylePictoComponent(Elt,"Numbers","color","blue");
-					this.card.setStylePictoComponent(Elt,"Numbers","alignItems","center");
+					number.setStylePicto("fontSize","25px");
+					number.setStylePicto("color","blue");
+					number.setStylePicto("alignItems","center");
 
 					number.getContainer().addEventListener("click",()=>this.Start("number"));
 
@@ -142,9 +142,9 @@ export default class ActionButtons extends superViews{
 
 					let text = this.card.push("Button", Elt,"textElt", "text_fields");
 
-					this.card.setStylePictoComponent(Elt,"textElt","fontSize","25px");
-					this.card.setStylePictoComponent(Elt,"textElt","color","blue");
-					this.card.setStylePictoComponent(Elt,"textElt","alignItems","center");
+					text.setStylePicto("fontSize","25px");
+					text.setStylePicto("color","blue");
+					text.setStylePicto("alignItems","center");
 
 					text.getContainer().addEventListener("click",()=>this.Start("text"));
 

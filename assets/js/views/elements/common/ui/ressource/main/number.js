@@ -46,7 +46,7 @@ export default class Number extends superViews{
 
 		let TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
 
-		this.card.setAttributeComponent(this.EmptyElement,"Input_"+this.ClassId,"placeholder","Légende...");
+		TheTextElt.setAttribute("placeholder","Légende...");
 
 		TheTextElt.setStyle("fontSize","18.5px");
 		TheTextElt.setStyle("color","black","property");
@@ -61,14 +61,14 @@ export default class Number extends superViews{
 		TheValueElt.setStyle("flex","1 1 0%");
 
 
-		this.card.setAttributeInputComponent(this.EmptyElement,"Number_"+this.ClassId,"placeholder","0.0");
-		this.card.setAttributeInputComponent(this.EmptyElement,"Number_"+this.ClassId,"type","number");
+		TheValueElt.setAttributeInput("placeholder","0.0");
+		TheValueElt.setAttributeInput("type","number");
 
-		this.card.setStyleInputComponent(this.EmptyElement,"Number_"+this.ClassId,"fontSize","18.5px");
-		this.card.setStyleInputComponent(this.EmptyElement,"Number_"+this.ClassId,"color","black","property");
-		this.card.setStyleInputComponent(this.EmptyElement,"Number_"+this.ClassId,"background","transparent","all");
-		this.card.setStyleInputComponent(this.EmptyElement,"Number_"+this.ClassId,"margin","0px 5px 5px 5px");
-		this.card.setStyleInputComponent(this.EmptyElement,"Number_"+this.ClassId,"width","100%");
+		TheValueElt.setStyleInput("fontSize","18.5px");
+		TheValueElt.setStyleInput("color","black","property");
+		TheValueElt.setStyleInput("background","transparent","all");
+		TheValueElt.setStyleInput("margin","0px 5px 5px 5px");
+		TheValueElt.setStyleInput("width","100%");
 		
 
 		//on crée un bouton
@@ -77,9 +77,9 @@ export default class Number extends superViews{
 		InutiesTool.setStyle("flex","1.2");
 		InutiesTool.setStyle("marginLeft","15px");
 
-		this.card.setStylePictoComponent(this.EmptyElement,"Unit_"+this.ClassId,"fontSize","25px");
-		this.card.setStylePictoComponent(this.EmptyElement,"Unit_"+this.ClassId,"marginRight","0px");
-		this.card.setStylePictoComponent(this.EmptyElement,"Unit_"+this.ClassId,"color","green");
+		InutiesTool.setStylePicto("fontSize","25px");
+		InutiesTool.setStylePicto("marginRight","0px");
+		InutiesTool.setStylePicto("color","green");
 
 		InutiesTool.getContainer().addEventListener("click",()=>this.Startselect());
 		//////

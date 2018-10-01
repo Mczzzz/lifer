@@ -33,36 +33,37 @@ export default class Elements extends superViews{
 
      }*/
 
-     setStyleInputComponent(component, property, value,scope = "all"){
+//TO DESTROY
+/*     setStyleInputComponent(component, property, value,scope = "all"){
 
         this[component].setStyleInput(property, value,scope);
 
 
-     }
+     }*/
 
 
-
-
+//TO DESTROY
+/*
      setStylePictoComponent(component, property, value,scope = "all"){
 
         this[component].setStylePicto(property, value,scope);
 
 
-     }
+     }*/
 
 
 
-     setAttributeComponent(component, property, value,scope = "all"){
+/*     setAttributeComponent(component, property, value,scope = "all"){
 
         this[component].setAttribute(property, value,scope);
 
-     }
+     }*/
 
-     setAttributeInputComponent(component, property, value,scope = "all"){
+/*     setAttributeInputComponent(component, property, value,scope = "all"){
 
         this[component].setAttributeInput(property, value,scope);
 
-     }
+     }*/
 
 
 
@@ -78,12 +79,12 @@ export default class Elements extends superViews{
 
 
 
-     initTouch(component,path,callback){
+/*     initTouch(component,path,callback){
       //  console.log(component);
       //  console.log(path);
         this[component].initTouch(path,callback);
 
-     }
+     }*/
 
 
 }

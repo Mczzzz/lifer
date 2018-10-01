@@ -54,21 +54,22 @@ export default class UnitSelector extends superViews{
 		let ElementUnitPicto = card.setElement("ElementUnitPicto"+item.id);
 		ElementUnitPicto.setStyle("justifyContent","center");
 
-		card.push("Button", ElementUnitPicto,"unitSelect"+item.id, {"picto" : item.symbol, "fontType" : "fas"});
-		card.setStylePictoComponent(ElementUnitPicto,"unitSelect"+item.id,"marginRight","0px");
+		let button = card.push("Button", ElementUnitPicto,"unitSelect"+item.id, {"picto" : item.symbol, "fontType" : "fas"});
+		button.setStylePicto("marginRight","0px");
 
 		//////////////
 
 		let ElementUnit = card.setElement("ElementUnitselect"+item.id);
 		ElementUnit.setStyle("justifyContent","center");
-		let TheTextElt = card.push("Text", ElementUnit,"unitSelect"+item.id, item.name);
+		
+			let TheTextElt = card.push("Text", ElementUnit,"unitSelect"+item.id, item.name);
 
-		TheTextElt.setStyle("fontSize","10px");
-		TheTextElt.setStyle("textAlign","center");
-		TheTextElt.setStyle("color","black","property");
-		TheTextElt.setStyle("margin","10px 5px 5px 5px");
-		TheTextElt.setStyle("fontWeight","normal");
-		TheTextElt.setStyle("flex",1);
+			TheTextElt.setStyle("fontSize","10px");
+			TheTextElt.setStyle("textAlign","center");
+			TheTextElt.setStyle("color","black","property");
+			TheTextElt.setStyle("margin","10px 5px 5px 5px");
+			TheTextElt.setStyle("fontWeight","normal");
+			TheTextElt.setStyle("flex",1);
 
 
 

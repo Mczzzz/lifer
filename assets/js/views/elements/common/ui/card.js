@@ -76,16 +76,16 @@ export default class card extends superViews{
 
 
 
-
-     setStylePictoComponent(element,component, property, value,scope = "all"){
+//TO DESTROY
+/*     setStylePictoComponent(element,component, property, value,scope = "all"){
 
           this[element.MyClass].setStylePictoComponent(component, property, value,scope);
 
-     }
+     }*/
 
 
 
-     setAttributeComponent(element,component, property, value,scope = "all"){
+/*     setAttributeComponent(element,component, property, value,scope = "all"){
 
         if(property == "draggable"){
 
@@ -96,23 +96,24 @@ export default class card extends superViews{
 
           this[element.MyClass].setAttributeComponent(component, property, value,scope);
 
-     }
+     }*/
 
 
 ////////////////
-     setStyleInputComponent(element,component, property, value,scope = "all"){
+//TO DESTROY
+/*     setStyleInputComponent(element,component, property, value,scope = "all"){
 
           this[element.MyClass].setStyleInputComponent(component, property, value,scope);
 
-     }
+     }*/
 
 ///////////////
-     setAttributeInputComponent(element,component, property, value,scope = "all"){
+/*     setAttributeInputComponent(element,component, property, value,scope = "all"){
 
 
           this[element.MyClass].setAttributeInputComponent(component, property, value,scope);
 
-     }
+     }*/
 
 
 
