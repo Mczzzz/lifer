@@ -105,11 +105,11 @@ export default class Image extends superViews{
 
 		this.card.setAttributeComponent(this.EmptyElement,"Input_"+this.ClassId,"placeholder","Légende...");
 
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontSize","18.5px");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"color","black","property");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"margin","0px 5px 5px 5px");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontWeight","normal");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"flex","1 1 100%");
+		TheTextElt.setStyle("fontSize","18.5px");
+		TheTextElt.setStyle("color","black","property");
+		TheTextElt.setStyle("margin","0px 5px 5px 5px");
+		TheTextElt.setStyle("fontWeight","normal");
+		TheTextElt.setStyle("flex","1 1 100%");
 	}
 
 

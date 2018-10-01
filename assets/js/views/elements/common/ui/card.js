@@ -67,12 +67,12 @@ export default class card extends superViews{
      }*/
 
 
-
-     setStyleComponent(element,component, property, value,scope = "all"){
+//TO DESTROY
+/*     setStyleComponent(element,component, property, value,scope = "all"){
 
           this[element.MyClass].setStyleComponent(component, property, value,scope);
 
-     }
+     }*/
 
 
 

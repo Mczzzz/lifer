@@ -25,13 +25,13 @@ export default class Elements extends superViews{
 
      }
 
-
-     setStyleComponent(component, property, value,scope = "all"){
+//TO DESTROY
+/*     setStyleComponent(component, property, value,scope = "all"){
 
         this[component].setStyle(property, value,scope);
 
 
-     }
+     }*/
 
      setStyleInputComponent(component, property, value,scope = "all"){
 
