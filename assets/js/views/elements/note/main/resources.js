@@ -73,8 +73,8 @@ export default class Resources extends superViews{
 
 
 	addItem(ressourceTmpId,type){
-/*		console.log("in addItem");
-		console.log(ressourceTmpId);*/
+		console.log("in addItem");
+		console.log(ressourceTmpId);
 		let itemTmpId = uuid().replace(/-/gi, '.');
 		let ItemElement = this.RessourceList[ressourceTmpId].setElement("Item_"+itemTmpId);
 		ItemElement.setStyle("height","50px");
