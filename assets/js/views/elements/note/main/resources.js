@@ -86,10 +86,13 @@ export default class Resources extends superViews{
 
 
 
-	update(){
+	update(data){
+
+
+		//this.RessourceList[item]
 
 			console.log('au bon encdroit :)');
-
+				console.log(data);
 	}
 
 
