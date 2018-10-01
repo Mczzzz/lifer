@@ -57,6 +57,7 @@ export default class Resources extends superViews{
 	createRessource(ressourceTmpId){
 
 		this.RessourceList[ressourceTmpId] = {};
+		this.RessourceList[ressourceTmpId].ItemsList = [];
 
 		this.RessourceList[ressourceTmpId].Card = new Card('Card_'+ressourceTmpId, this.path);
 		//card.setStyle("display","flex");
