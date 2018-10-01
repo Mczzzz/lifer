@@ -83,8 +83,9 @@ export default class Resources extends superViews{
 		ItemElement.setStyle("height","50px");
 		ItemElement.setStyle("background","yellow");
 
-		this.RessourceList[ressourceTmpId].ItemsList = [];
-		this.RessourceList[ressourceTmpId].ItemsList.push(ItemElement);
+		this.RessourceList[ressourceTmpId].ItemsList[itemTmpId].push(ItemElement);
+
+		//this.RessourceList[ressourceTmpId].ItemsList.push(ItemElement);
 		//this.ItemList.push({"RessourceId"})
 		console.log(this.RessourceList);
 		return itemTmpId;
