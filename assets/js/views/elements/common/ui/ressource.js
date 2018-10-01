@@ -51,7 +51,7 @@ export default class Ressource extends superViews{
       if(this.target){
    //     console.log("in init ressource - target");
         this.RessourceId = this.target.addRessource();
-        console.log("RessourceId From Note Ressource: "+this.RessourceId);
+    //    console.log("RessourceId From Note Ressource: "+this.RessourceId);
 
       }
 
@@ -69,7 +69,7 @@ export default class Ressource extends superViews{
 
       }
 
-      console.log("itemId From Note Ressource : "+itemId);
+    //  console.log("itemId From Note Ressource : "+itemId);
 
       this.ItemList[itemId];
 
@@ -83,7 +83,7 @@ export default class Ressource extends superViews{
 
     update(data){
 
-        console.log('in Ressource ui -> updte to target');
+   //     console.log('in Ressource ui -> updte to target');
 
       this.target.update(data);
     }

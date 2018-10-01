@@ -14,6 +14,7 @@ export default class Resources extends superViews{
 		this.init();
 
 		this.RessourceList = [];
+		//this.ItemList = [];
 		
 	}
 
@@ -46,7 +47,7 @@ export default class Resources extends superViews{
 	addRessource(){
 
 		let ressourceTmpId = uuid().replace(/-/gi, '.');
-		console.log(ressourceTmpId);
+//		console.log(ressourceTmpId);
 		this.createRessource(ressourceTmpId);
 		this.setStyle("flex" , "");
 		return ressourceTmpId;
@@ -55,8 +56,9 @@ export default class Resources extends superViews{
 
 	createRessource(ressourceTmpId){
 
+		this.RessourceList[ressourceTmpId] = {};
 
-		this.RessourceList[ressourceTmpId] = new Card('Card_'+ressourceTmpId, this.path);
+		this.RessourceList[ressourceTmpId].Card = new Card('Card_'+ressourceTmpId, this.path);
 		//card.setStyle("display","flex");
 
 		let HeaderElement = this.RessourceList[ressourceTmpId].setElement("header_"+ressourceTmpId);
@@ -73,13 +75,18 @@ export default class Resources extends superViews{
 
 
 	addItem(ressourceTmpId,type){
-		console.log("in addItem");
-		console.log(ressourceTmpId);
+	//	console.log("in addItem");
+	//	console.log(ressourceTmpId);
 		let itemTmpId = uuid().replace(/-/gi, '.');
 		let ItemElement = this.RessourceList[ressourceTmpId].setElement("Item_"+itemTmpId);
+
 		ItemElement.setStyle("height","50px");
 		ItemElement.setStyle("background","yellow");
 
+		this.RessourceList[ressourceTmpId].ItemsList = [];
+		this.RessourceList[ressourceTmpId].ItemsList.push(ItemElement);
+		//this.ItemList.push({"RessourceId"})
+		console.log(this.RessourceList);
 		return itemTmpId;
 	}
 

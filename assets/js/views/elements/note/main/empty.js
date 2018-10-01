@@ -21,7 +21,7 @@ export default class Empty extends superViews{
 		this.setStyle("overflowY" , "scroll");
 		this.setStyle("boxShadow","rgb(187, 187, 187) 0px -2px 12px");
 		//this.active = false;
-		this.Ressource = new Ressource('Resource' , this.path);
+		this.Ressource = new Ressource('Ressource' , this.path);
 
 		this.initialSet = 1;
 
@@ -110,7 +110,7 @@ export default class Empty extends superViews{
 				TitleCard.getContainer().remove();
 				this.Lifer.getData('Note-Header-Action',"This").showTitle(this.Lifer.getData('Note',"This").note.Title);
 				this.setStyle("display","");
-				console.log("animation finish");
+		//		console.log("animation finish");
 	   		this.Ressource.setTarget("Note-Main-Resources");
 	   		this.initialSet = 0;
 	   	}
@@ -122,7 +122,7 @@ export default class Empty extends superViews{
 
 
 
-	saveResource(card,Element, TheTextElt){
+/*	saveResource(card,Element, TheTextElt){
 
 		let NoteResource = this.getObjectThisfromPath("Note-Main-Resources");
 
@@ -147,7 +147,7 @@ export default class Empty extends superViews{
 		}
 		
 
-	}
+	}*/
 
 
 

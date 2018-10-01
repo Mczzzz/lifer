@@ -13,8 +13,8 @@ export default class Text extends superViews{
 		
 
 		this.ExtcallBack = callback;
-		console.log("constructor UI RESSOURCES MAIN TEXT");
-		console.log(callback);
+//		console.log("constructor UI RESSOURCES MAIN TEXT");
+//		console.log(callback);
 
 		this.init();
 	}
@@ -35,8 +35,8 @@ export default class Text extends superViews{
 		this.setStyle('marginLeft', '0px');
 
 		this.card = new Card('Card_'+this.ClassId, this.path);
-		console.log("this.callBack in text ressource");
-		console.log(this.ExtcallBack);
+//		console.log("this.callBack in text ressource");
+//		console.log(this.ExtcallBack);
 		this.card.setCallBack("keyup",this.ExtcallBack.path, this.ExtcallBack.method);
 
 		this.card.setId(0);
