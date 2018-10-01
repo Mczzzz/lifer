@@ -48,17 +48,17 @@ export default class Number extends superViews{
 
 		this.card.setAttributeComponent(this.EmptyElement,"Input_"+this.ClassId,"placeholder","Légende...");
 
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontSize","18.5px");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"color","black","property");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"margin","0px 5px 5px 5px");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"fontWeight","normal");
-		this.card.setStyleComponent(this.EmptyElement,"Input_"+this.ClassId,"flex","1 1 100%");
+		TheTextElt.setStyle("fontSize","18.5px");
+		TheTextElt.setStyle("color","black","property");
+		TheTextElt.setStyle("margin","0px 5px 5px 5px");
+		TheTextElt.setStyle("fontWeight","normal");
+		TheTextElt.setStyle("flex","1 1 100%");
 
 
 
 		let TheValueElt = this.card.push("Input", this.EmptyElement,"Number_"+this.ClassId, "");
 
-		this.card.setStyleComponent(this.EmptyElement,"Number_"+this.ClassId,"flex","1 1 0%");
+		TheValueElt.setStyle("flex","1 1 0%");
 
 
 		this.card.setAttributeInputComponent(this.EmptyElement,"Number_"+this.ClassId,"placeholder","0.0");
@@ -74,8 +74,8 @@ export default class Number extends superViews{
 		//on crée un bouton
 		let InutiesTool = this.card.push("Button", this.EmptyElement,"Unit_"+this.ClassId,{"picto" : "fas fa-weight-hanging", "fontType" : "fas"});
 
-		this.card.setStyleComponent(this.EmptyElement,"Unit_"+this.ClassId,"flex","1.2");
-		this.card.setStyleComponent(this.EmptyElement,"Unit_"+this.ClassId,"marginLeft","15px");
+		InutiesTool.setStyle("flex","1.2");
+		InutiesTool.setStyle("marginLeft","15px");
 
 		this.card.setStylePictoComponent(this.EmptyElement,"Unit_"+this.ClassId,"fontSize","25px");
 		this.card.setStylePictoComponent(this.EmptyElement,"Unit_"+this.ClassId,"marginRight","0px");

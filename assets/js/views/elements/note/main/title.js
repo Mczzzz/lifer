@@ -77,10 +77,10 @@ export default class Title extends superViews{
 
 					this.updateNote = this.card.push("Text", HeaderElement,"update",this.data.update);
 
-					this.card.setStyleComponent(HeaderElement,"update","fontSize","9px");
-					this.card.setStyleComponent(HeaderElement,"update","color","grey");
-					this.card.setStyleComponent(HeaderElement,"update","margin","0px 5px 2px 0px");
-					this.card.setStyleComponent(HeaderElement,"update","fontWeight","normal");
+					this.updateNote.setStyle("fontSize","9px");
+					this.updateNote.setStyle("color","grey");
+					this.updateNote.setStyle("margin","0px 5px 2px 0px");
+					this.updateNote.setStyle("fontWeight","normal");
 
 
 
@@ -91,11 +91,11 @@ export default class Title extends superViews{
 
 					this.card.setAttributeComponent(MainElement,"title","placeholder","Titre Note...");
 
-					this.card.setStyleComponent(MainElement,"title","fontSize","20px");
-					this.card.setStyleComponent(MainElement,"title","color","black","property");
-					this.card.setStyleComponent(MainElement,"title","margin","0px 5px 5px 5px");
-					this.card.setStyleComponent(MainElement,"title","fontWeight","bold");
-					this.card.setStyleComponent(MainElement,"title","width","100%");
+					TheTitle.setStyle("fontSize","20px");
+					TheTitle.setStyle("color","black","property");
+					TheTitle.setStyle("margin","0px 5px 5px 5px");
+					TheTitle.setStyle("fontWeight","bold");
+					TheTitle.setStyle("width","100%");
 
 
 					TheTitle.getContainer().addEventListener("keyup", (e)=>this.changeFocus(e,TheTitle.getContainer()));

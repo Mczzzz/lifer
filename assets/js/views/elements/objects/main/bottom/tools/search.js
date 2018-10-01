@@ -48,13 +48,13 @@ export default class search extends superViews{
 
 							card.setAttributeComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","placeholder","Recherche...");
 
-							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","fontSize","15px");
-							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","border","1px solid silver");
-							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","borderRadius","5px");
-							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","background","white");
-							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","margin","0px");
-							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","padding","10px");
-							card.setStyleComponent(ObjectsSearchCardElement,"ObjectsSearchCardElementItem","width","100%");
+							this.input.setStyle("fontSize","15px");
+							this.input.setStyle("border","1px solid silver");
+							this.input.setStyle("borderRadius","5px");
+							this.input.setStyle("background","white");
+							this.input.setStyle("margin","0px");
+							this.input.setStyle("padding","10px");
+							this.input.setStyle("width","100%");
 							//limiter la largeur
 							//limiter a une ligne
 							//changer la couleur du texte

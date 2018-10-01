@@ -63,16 +63,16 @@ export default class breadcrumb extends superViews{
 
 				let TheClassName = this.card.push("TextButton",ObjectsBreadcrumbElement,className, node.text);
 
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"fontSize","15px");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"fontFamily","'Titillium Web',sans-serif,Arial,sans-serif");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"whiteSpace","nowrap");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"color","white");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"alignItems","center");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"borderRadius","4px 12px 4px 4px");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"background","#0288d1");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"padding","5px");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"marginRight","5px");
-					this.card.setStyleComponent(ObjectsBreadcrumbElement,className,"opacity","1");
+					TheClassName.setStyle("fontSize","15px");
+					TheClassName.setStyle("fontFamily","'Titillium Web',sans-serif,Arial,sans-serif");
+					TheClassName.setStyle("whiteSpace","nowrap");
+					TheClassName.setStyle("color","white");
+					TheClassName.setStyle("alignItems","center");
+					TheClassName.setStyle("borderRadius","4px 12px 4px 4px");
+					TheClassName.setStyle("background","#0288d1");
+					TheClassName.setStyle("padding","5px");
+					TheClassName.setStyle("marginRight","5px");
+					TheClassName.setStyle("opacity","1");
 
 
 				TheClassName.getContainer().addEventListener("click",(e)=>this.BackToMe(e,node,"breadcrumb"));

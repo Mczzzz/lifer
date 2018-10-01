@@ -63,12 +63,12 @@ export default class UnitSelector extends superViews{
 		ElementUnit.setStyle("justifyContent","center");
 		let TheTextElt = card.push("Text", ElementUnit,"unitSelect"+item.id, item.name);
 
-		card.setStyleComponent(ElementUnit,"unitSelect"+item.id,"fontSize","10px");
-		card.setStyleComponent(ElementUnit,"unitSelect"+item.id,"textAlign","center");
-		card.setStyleComponent(ElementUnit,"unitSelect"+item.id,"color","black","property");
-		card.setStyleComponent(ElementUnit,"unitSelect"+item.id,"margin","10px 5px 5px 5px");
-		card.setStyleComponent(ElementUnit,"unitSelect"+item.id,"fontWeight","normal");
-		card.setStyleComponent(ElementUnit,"unitSelect"+item.id,"flex",1);
+		TheTextElt.setStyle("fontSize","10px");
+		TheTextElt.setStyle("textAlign","center");
+		TheTextElt.setStyle("color","black","property");
+		TheTextElt.setStyle("margin","10px 5px 5px 5px");
+		TheTextElt.setStyle("fontWeight","normal");
+		TheTextElt.setStyle("flex",1);
 
 
 

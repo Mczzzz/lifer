@@ -132,12 +132,12 @@ export default class Resources extends superViews{
 		let HeaderElement = card.setElement("header_new_"+timestamp);
 		HeaderElement.setStyle("justifyContent","flex-end");
 
-				card.push("Text",HeaderElement,"update_new_"+timestamp,updateTs.format('Do MMMM YYYY, HH:mm:ss'));
+				let MyText = card.push("Text",HeaderElement,"update_new_"+timestamp,updateTs.format('Do MMMM YYYY, HH:mm:ss'));
 
-				card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"fontSize","9px");
-				card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"color","grey");
-				card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"margin","0px 5px 2px 0px");
-				card.setStyleComponent(HeaderElement,"update_new_"+timestamp,"fontWeight","normal");
+				MyText.setStyle("fontSize","9px");
+				MyText.setStyle("color","grey");
+				MyText.setStyle("margin","0px 5px 2px 0px");
+				MyText.setStyle("fontWeight","normal");
 
 		let MainElement = card.setElement("main_new_"+timestamp);
 
@@ -155,13 +155,13 @@ export default class Resources extends superViews{
 			card.push("Button",MainElement,"dragger"+timestamp, "drag_indicator");
 			card.setAttributeComponent(MainElement,"dragger"+timestamp,"draggable", "y");
 
-			card.push("Text",MainElement,"main_new_"+timestamp, Resource.text);
+			let aText = card.push("Text",MainElement,"main_new_"+timestamp, Resource.text);
 
-			card.setStyleComponent(MainElement,"main_new_"+timestamp,"fontSize","15px");
-			card.setStyleComponent(MainElement,"main_new_"+timestamp,"color","black");
-			card.setStyleComponent(MainElement,"main_new_"+timestamp,"margin","0px 5px 5px 5px");
-			card.setStyleComponent(MainElement,"main_new_"+timestamp,"fontWeight","normal");
-			card.setStyleComponent(MainElement,"main_new_"+timestamp,"width","100%");
+			aText.setStyle("fontSize","15px");
+			aText.setStyle("color","black");
+			aText.setStyle("margin","0px 5px 5px 5px");
+			aText.setStyle("fontWeight","normal");
+			aText.setStyle("width","100%");
 
 		}
 

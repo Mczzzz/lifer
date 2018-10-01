@@ -54,11 +54,11 @@ export default class list extends superViews{
 					let ObjectsInfosCardElement  = card.setElement("ObjectsInfosCardElement_" + info.infos.id);
 					ObjectsInfosCardElement.setStyle("justifyContent","flex-start");
 
-							card.push("Text", ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id, info.infos.name);
+							let text = card.push("Text", ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id, info.infos.name);
 
-							card.setStyleComponent(ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id,"fontSize","15px");
-							card.setStyleComponent(ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id,"color","white");
-							card.setStyleComponent(ObjectsInfosCardElement,"ObjectsInfosCardElementItem_" + info.infos.id,"alignItems","center");
+							text.setStyle("fontSize","15px");
+							text.setStyle("color","white");
+							text.setStyle("alignItems","center");
 
 
 		}
