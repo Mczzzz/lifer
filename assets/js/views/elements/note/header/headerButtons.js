@@ -27,8 +27,8 @@ export default class HeaderButtons extends superViews{
 
 
 			this.HeaderElement   = this.card.setElement("Header");
-			this.card.setStyleElement(this.HeaderElement,"justifyContent","space-between");
-			this.card.setStyleElement(this.HeaderElement,"alignItems","center");
+			this.HeaderElement.setStyle("justifyContent","space-between");
+			this.HeaderElement.setStyle("alignItems","center");
 
 
 					let HeaderBackButton = this.card.push("Button", this.HeaderElement,"Back", "keyboard_backspace");

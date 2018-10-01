@@ -45,8 +45,8 @@ export default class HeaderRessource extends superViews{
 
 
 		let HeaderElement = this.card.setElement("Element");
-		this.card.setStyleElement(HeaderElement,"justifyContent","space-between");
-		this.card.setStyleElement(HeaderElement,"alignItems","center");
+		HeaderElement.setStyle("justifyContent","space-between");
+		HeaderElement.setStyle("alignItems","center");
 
 
 

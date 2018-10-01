@@ -27,7 +27,7 @@ export default class FooterButtons extends superViews{
 
 
 			let Elt = this.card.setElement("Element");
-			this.card.setStyleElement(Elt,"justifyContent","flex-start");
+			Elt.setStyle("justifyContent","flex-start");
 
 
 

@@ -56,8 +56,8 @@ export default class dropdown extends superViews{
 
         let Element  = this.card.setElement("Elt_"+item.id);
 
-        //this.card.setStyleElement(Element,"justifyContent","space-between");
-        this.card.setStyleElement(Element,"justifyContent","flex-start");
+        //Element.setStyle("justifyContent","space-between");
+        Element.setStyle("justifyContent","flex-start");
 
           let ddPicto = this.card.push("Button", Element,"Button_"+item.id, item.picto);
           let ddButton = this.card.push("TextButton", Element,"TxtButton_"+item.id, item.text);

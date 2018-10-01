@@ -27,7 +27,7 @@ export default class FooterButtons extends superViews{
 
 
 			this.ObjectsFooterElement   = this.card.setElement("ObjectsFooterElement");
-			this.card.setStyleElement(this.ObjectsFooterElement,"justifyContent","flex-start");
+			this.ObjectsFooterElement.setStyle("justifyContent","flex-start");
 
 
 					let StartNote = this.card.push("Button", this.ObjectsFooterElement,"addNote", "note_add");

@@ -35,7 +35,7 @@ export default class ActionButtons extends superViews{
 
 
 			let Elt   = this.card.setElement("footer");
-			this.card.setStyleElement(Elt,"justifyContent","flex-start");
+			Elt.setStyle("justifyContent","flex-start");
 
 					let camera = this.card.push("Button", Elt,"Photo", "camera_alt");
 

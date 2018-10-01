@@ -54,7 +54,7 @@ export default class breadcrumb extends superViews{
 
 
 			let ObjectsBreadcrumbElement   = this.card.setElement("ObjectsBreadcrumbElement");
-			this.card.setStyleElement(ObjectsBreadcrumbElement,"justifyContent","flex-start");
+			ObjectsBreadcrumbElement.setStyle("justifyContent","flex-start");
 
 
 			for(let node of datas) {

@@ -27,7 +27,7 @@ export default class HeaderButtons extends superViews{
 
 
 			let Elt   = this.card.setElement("Element");
-			this.card.setStyleElement(Elt,"justifyContent","space-between");
+			Elt.setStyle("justifyContent","space-between");
 
 	}
 

@@ -52,14 +52,15 @@ export default class UnitSelector extends superViews{
 		card.setStyle("width", "30%");
 
 		let ElementUnitPicto = card.setElement("ElementUnitPicto"+item.id);
-		card.setStyleElement(ElementUnitPicto,"justifyContent","center");
+		ElementUnitPicto.setStyle("justifyContent","center");
+
 		card.push("Button", ElementUnitPicto,"unitSelect"+item.id, {"picto" : item.symbol, "fontType" : "fas"});
 		card.setStylePictoComponent(ElementUnitPicto,"unitSelect"+item.id,"marginRight","0px");
 
 		//////////////
 
 		let ElementUnit = card.setElement("ElementUnitselect"+item.id);
-		card.setStyleElement(ElementUnit,"justifyContent","center");
+		ElementUnit.setStyle("justifyContent","center");
 		let TheTextElt = card.push("Text", ElementUnit,"unitSelect"+item.id, item.name);
 
 		card.setStyleComponent(ElementUnit,"unitSelect"+item.id,"fontSize","10px");

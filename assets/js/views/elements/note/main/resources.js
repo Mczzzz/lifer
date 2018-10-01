@@ -130,7 +130,7 @@ export default class Resources extends superViews{
 		let carWidth = card.getWidth();
 
 		let HeaderElement = card.setElement("header_new_"+timestamp);
-		card.setStyleElement(HeaderElement,"justifyContent","flex-end");
+		HeaderElement.setStyle("justifyContent","flex-end");
 
 				card.push("Text",HeaderElement,"update_new_"+timestamp,updateTs.format('Do MMMM YYYY, HH:mm:ss'));
 
@@ -149,7 +149,7 @@ export default class Resources extends superViews{
 
 		}else{
 
-			card.setStyleElement(MainElement,"justifyContent","flex-start");
+			MainElement.setStyle("justifyContent","flex-start");
 
 
 			card.push("Button",MainElement,"dragger"+timestamp, "drag_indicator");

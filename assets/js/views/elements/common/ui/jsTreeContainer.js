@@ -1,8 +1,9 @@
 import LoaderCollection from '../../../../services/LoaderCollection.js';
-import jstree from 'jstree';
+//import jstree from 'jstree';
 
 export default class jsTreeContainer {
 
+/*
 
 	constructor(HTMLParent,collection,MyClass){
 
@@ -27,12 +28,12 @@ export default class jsTreeContainer {
 		return this.HTMLParent;
 	}*/
 
-
+/*
 
 	initJsTree(){
 
 			/*this.HTMLParent.css("padding", "10px");*/
-			$('.'+this.MyClass).on("deleteNode", (e, data) => this.onDeleteJsTree(e,data));
+/*			$('.'+this.MyClass).on("deleteNode", (e, data) => this.onDeleteJsTree(e,data));
 			$('.'+this.MyClass).on("addType", (e, data) => this.onAddTypeJsTree(e,data));
 
 			let JqElName = this.MyClass;
@@ -149,9 +150,9 @@ export default class jsTreeContainer {
 
 			$('.'+this.MyClass).jstree(true).hide_dots();
 
-	}
+	}*/
 
-//LOAD DATAS
+/*//LOAD DATAS
 	loadData(ParentNode = false){
 
 		this.Parent = false;
@@ -178,12 +179,12 @@ export default class jsTreeContainer {
 
         $('.'+this.MyClass).jstree(true).settings.core.data = dataList;
         $('.'+this.MyClass).jstree(true).refresh();
-	}
+	}*/
 //LOAD DATAS - END
 
 
 //SEARCH
-    getSearchElements(){
+/*    getSearchElements(){
 		console.log('in getSearchElements');
 		let res = {};
 		res.element = $('.'+this.MyClass).jstree(true);
@@ -193,12 +194,12 @@ export default class jsTreeContainer {
 		return res;
 
 	}
-
+*/
 
 
 //BREADCRUMB
 
-	getObjPathToNode(){
+/*	getObjPathToNode(){
 
 		let bcArray = [];
 
@@ -223,9 +224,9 @@ export default class jsTreeContainer {
         return bcArray;
 
 	}
+*/
 
-
-
+/*
 	clearSearch(){
 		$('.'+this.MyClass).jstree(true).clear_search();
 	}
@@ -245,11 +246,11 @@ export default class jsTreeContainer {
 		}*/
 
 
-	}
+	//}
 
 
 
-
+/*
 
 	hide(){
 		this.deselectAll();
@@ -275,9 +276,9 @@ export default class jsTreeContainer {
 		$('.'+this.MyClass).jstree(true).close_all();
 
 
-	}
+	}*/
 
-
+/*
 
 ////LISTENER -> PARENT
 	initCallBackEvents(){
@@ -293,7 +294,7 @@ export default class jsTreeContainer {
 		});
 
 
-	}
+	}*/
 
 
 /*	initEventsBreadSelect(myMethod){
@@ -304,7 +305,7 @@ export default class jsTreeContainer {
 
 
 
-
+/*
 //MISE A JOUR COLLECTION
 	onRenameJsTree(e,data){
 
@@ -373,12 +374,12 @@ export default class jsTreeContainer {
 
        	
 
-	}
+	}*/
 
 
 
 
-
+/*
 
 	onCreateJsTree(e,data){
 
@@ -411,7 +412,7 @@ export default class jsTreeContainer {
         this.collection.move(formData);
 
 	}
-
+*/
 
 
 

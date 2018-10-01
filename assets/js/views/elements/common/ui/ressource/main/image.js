@@ -98,8 +98,8 @@ export default class Image extends superViews{
 
 	addLegend(){
 		this.EmptyElement = this.card.setElement("Legend_"+this.ClassId);
-		this.card.setStyleElement(this.EmptyElement,"justifyContent","flex-start");
-		this.card.setStyleElement(this.EmptyElement,"flexWrap","wrap");
+		this.EmptyElement.setStyle("justifyContent","flex-start");
+		this.EmptyElement.setStyle("flexWrap","wrap");
 
 		let TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
 

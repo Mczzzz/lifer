@@ -42,7 +42,7 @@ export default class search extends superViews{
 
 
 					let ObjectsSearchCardElement  = card.setElement("Element");
-					card.setStyleElement(ObjectsSearchCardElement,"justifyContent","flex-start");
+					ObjectsSearchCardElement.setStyle("justifyContent","flex-start");
 
 							this.input = card.push("Text", ObjectsSearchCardElement,"ObjectsSearchCardElementItem", "");
 
