@@ -38,26 +38,26 @@ export default class MainRessource extends superViews{
 
 
 
-     addItem(type,RessourceId){
+     addItem(type,itemId){
 
 
 		switch (type){
 
 			case 'text':
 
-				this.text(RessourceId);
+				this.text(itemId);
 
 			break;
 
 			case 'number':
 
-				this.number(RessourceId);
+				this.number(itemId);
 
 			break;
 
 			case 'image':
 
-				this.image(RessourceId);
+				this.image(itemId);
 
 			break;
 
@@ -71,14 +71,14 @@ export default class MainRessource extends superViews{
 
 
 
-	text(RessourceId){
+	text(itemId){
 
 		let callBack = {};
 		callBack.path = this.parentThis.target.path;
 		callBack.method = "update";
-		console.log("in text main ui ressource");
-		console.log(callBack);
-		let text = new Text("Text_"+RessourceId, this.path,false,callBack);
+	//	console.log("in text main ui ressource");
+	//	console.log(callBack);
+		let text = new Text("Text_"+itemId, this.path,false,callBack);
 		text.draggable(this.path,"onChildMove");
 		text.focus();
 
@@ -86,18 +86,18 @@ export default class MainRessource extends superViews{
 
 
 
-	number(RessourceId){
+	number(itemId){
 
-		let number = new Number("Number_"+RessourceId, this.path);
+		let number = new Number("Number_"+itemId, this.path);
 		number.draggable(this.path,"onChildMove");
 
 
 	}
 
 
-	image(RessourceId){
+	image(itemId){
 
-		let image = new Image("Image_"+RessourceId, this.path);
+		let image = new Image("Image_"+itemId, this.path);
 		image.draggable(this.path,"onChildMove");
 
 
