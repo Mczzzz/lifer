@@ -61,9 +61,9 @@ export default class Resources extends superViews{
 		this.RessourceList[ressourceTmpId].Card = new Card('Card_'+ressourceTmpId, this.path);
 		//card.setStyle("display","flex");
 
-		let HeaderElement = this.RessourceList[ressourceTmpId].setElement("header_"+ressourceTmpId);
+		let HeaderElement = this.RessourceList[ressourceTmpId].Card.setElement("header_"+ressourceTmpId);
 
-		this.RessourceTitle = this.RessourceList[ressourceTmpId].push("Text", HeaderElement,"Title", "");
+		this.RessourceTitle = this.RessourceList[ressourceTmpId].Card.push("Text", HeaderElement,"Title", "");
 		
 		this.RessourceTitle.setStyle("fontSize","22px");
 
