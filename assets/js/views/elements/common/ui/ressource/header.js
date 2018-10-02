@@ -111,7 +111,7 @@ export default class HeaderRessource extends superViews{
 
      collapse(){
 
-        let obj = this.getObjectThisfromPath("Note-Main-Empty-Resource-Main");
+        let obj = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Main");
         let doneCollapsed = obj.collapseAll();
 
         if(doneCollapsed){
@@ -183,7 +183,7 @@ export default class HeaderRessource extends superViews{
 
 
 
-    	let Main = this.getObjectThisfromPath("Note-Main-Empty-Resource-Main");
+    	let Main = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Main");
 
 
    	console.log(Main);
