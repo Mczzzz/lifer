@@ -35,6 +35,8 @@ export default class Text extends superViews{
 		this.setStyle('marginLeft', '0px');
 
 		this.card = new Card('Card', this.path);
+		console.log("Ce que je cherche");
+		console.log(this.ClassId);
 		this.card.setId(this.ClassId);
 //		console.log("this.callBack in text ressource");
 //		console.log(this.ExtcallBack);
