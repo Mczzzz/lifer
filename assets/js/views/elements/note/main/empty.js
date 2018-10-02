@@ -18,7 +18,6 @@ export default class Empty extends superViews{
 	init(){
 
 		this.setStyle("display","none");
-		this.setStyle("overflowY" , "scroll");
 		this.setStyle("boxShadow","rgb(187, 187, 187) 0px -2px 12px");
 		//this.active = false;
 		this.Ressource = new Ressource('Ressource' , this.path);

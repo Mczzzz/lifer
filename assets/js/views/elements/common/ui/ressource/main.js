@@ -30,6 +30,7 @@ export default class MainRessource extends superViews{
 		this.setStyle("margin", "0px");
 		this.setStyle("padding", "0px");
 		this.setStyle("background", "linear-gradient(45deg, rgb(250, 250, 250) 0%, rgb(248, 248, 248) 100%)");
+		this.setStyle("overflowY" , "scroll");
 
 
 
