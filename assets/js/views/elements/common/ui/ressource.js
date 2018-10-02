@@ -82,9 +82,11 @@ export default class Ressource extends superViews{
         //rajoutdela callback udpdate vers target
 
     update(data){
-
+      console.log("IN UIREESSOURCES");
+      console.log(data);
    //     console.log('in Ressource ui -> updte to target');
       data.RessourceId = this.RessourceId;
+      console.log(data);
       this.target.update(data);
     }
 
