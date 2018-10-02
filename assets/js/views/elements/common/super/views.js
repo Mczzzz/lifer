@@ -17,7 +17,8 @@ Moment.locale('fr');
 		this.Moment = Moment;		
 
 
-
+		this.MyClass = MyClass;
+		
 
 		if(path == null){
 
@@ -34,12 +35,10 @@ Moment.locale('fr');
 
 		if(this.parentThis){
 
-			this.MyClass = this.parentThis.MyClass+"-"+MyClass;
 			this.path = this.parentThis.MyClass+"-"+MyClass;
 		
 		}else{
-
-			this.MyClass = MyClass;
+			
 			this.path = this.MyClass;
 
 		}
@@ -69,14 +68,14 @@ Moment.locale('fr');
 	superInit(prepend){
 
 
-		if(document.getElementsByClassName(this.MyClass)[0] !== undefined){
+		if(document.getElementsByClassName(this.path)[0] !== undefined){
 
-			this.container = document.getElementsByClassName(this.MyClass)[0];
+			this.container = document.getElementsByClassName(this.path)[0];
 
 		}else{
 
 			this.container = document.createElement("div");
-			this.container.className = this.MyClass;
+			this.container.className = this.path;
 
 			if(prepend){
 				this.parent.prepend(this.container);
