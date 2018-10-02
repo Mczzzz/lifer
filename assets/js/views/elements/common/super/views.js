@@ -99,6 +99,7 @@ Moment.locale('fr');
 		}
 		else {
 			this.ClassId = arrayId[1];
+			console.log(this.ClassId);
 		}
 
 
