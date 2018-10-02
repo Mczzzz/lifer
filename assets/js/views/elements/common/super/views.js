@@ -222,7 +222,7 @@ Moment.locale('fr');
 
 
 	setId(id){
-
+		console.log(id);
           this.container.id = id;
 
      }
