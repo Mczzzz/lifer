@@ -162,6 +162,7 @@ export default class card extends superViews{
 
      dispatchEvent(path,data){
 
+      data.id = this.container.id;
  //     console.log('in dispatchEvent');
 
   //    console.log(this.callBack);
