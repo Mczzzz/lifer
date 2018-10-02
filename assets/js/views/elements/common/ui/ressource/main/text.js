@@ -34,7 +34,8 @@ export default class Text extends superViews{
 
 		this.setStyle('marginLeft', '0px');
 
-		this.card = new Card('Card_'+this.ClassId, this.path);
+		this.card = new Card('Card', this.path);
+		this.card.setId(this.ClassId);
 //		console.log("this.callBack in text ressource");
 //		console.log(this.ExtcallBack);
 		this.card.setCallBack("keyup",this.ExtcallBack.path, this.ExtcallBack.method);
@@ -51,13 +52,13 @@ export default class Text extends superViews{
 		this.card.getContainer().addEventListener("click",()=>this.select());
 
 
-		this.EmptyElement = this.card.setElement("Text_"+this.ClassId);
+		this.EmptyElement = this.card.setElement("Text");
 		this.EmptyElement.setStyle("justifyContent","flex-start");
 		this.EmptyElement.setStyle("alignItems","center");
 		this.EmptyElement.setStyle("flex",1);
 
 
-		this.TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
+		this.TheTextElt = this.card.push("Text", this.EmptyElement,"Input", "");
 		this.TheTextElt.setStyle("fontSize","18.5px");
 		this.TheTextElt.setStyle("color","#626262","all");		
 		this.TheTextElt.setStyle("margin","0px");
