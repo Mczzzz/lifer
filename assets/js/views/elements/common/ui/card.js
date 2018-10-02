@@ -161,8 +161,9 @@ export default class card extends superViews{
 
 
      dispatchEvent(path,data){
-      console.log(data);
-      data.id = this.container.id;
+      let dataObj = {};
+      dataObj.id = this.container.id;
+      dataObj.data = data;
  //     console.log('in dispatchEvent');
 
   //    console.log(this.callBack);
@@ -172,7 +173,7 @@ export default class card extends superViews{
           console.log(eventsToCallBack);
            let objectToCallBack = this.getObjectThisfromPath(eventsToCallBack.path);
 
-           objectToCallBack[eventsToCallBack.method](this.path,data);
+           objectToCallBack[eventsToCallBack.method](this.path,dataObj);
 
         }
 
