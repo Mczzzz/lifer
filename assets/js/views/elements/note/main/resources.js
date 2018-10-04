@@ -90,7 +90,7 @@ export default class Resources extends superViews{
 		switch (type){
 
 			case 'text':
-				ItemElement.push("Text",ItemElement,"text","coucou");
+				this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","coucou");
 
 
 			break;
