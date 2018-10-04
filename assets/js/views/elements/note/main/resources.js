@@ -116,7 +116,7 @@ export default class Resources extends superViews{
 			console.log('au bon encdroit :)');
 			console.log(this.RessourceList);
 			console.log(data);
-			console.log(this.RessourceList[ressourceTmpId].Items[itemTmpId].object);
+			console.log(this.RessourceList[data.RessourceId].Items[data.id].object);
 			
 
 
