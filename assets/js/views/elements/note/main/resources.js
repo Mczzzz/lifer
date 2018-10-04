@@ -93,6 +93,7 @@ export default class Resources extends superViews{
 
 				this.RessourceList[ressourceTmpId].Items[itemTmpId].type = type;
 				let MyText = this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","...");
+				MyText.setStyle("justifyContent","flex-start");
 				this.RessourceList[ressourceTmpId].Items[itemTmpId].object = MyText;
 
 			break;
@@ -120,7 +121,7 @@ export default class Resources extends superViews{
 
 			this.RessourceList[data.RessourceId].Items[data.id].object.setData(data.data);
 			
-			consoole.log('after set Data');
+			conssole.log('after set Data');
 
 	}
 
