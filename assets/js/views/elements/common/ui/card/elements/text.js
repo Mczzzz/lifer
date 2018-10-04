@@ -81,7 +81,7 @@ export default class Text extends superViews{
 //                     console.log('in text dispatchEvent CallBack:');
 //                     console.log(this.callBack);
                let MyCallBack =  this.getObjectThisfromPath(this.callBack.path);
-               MyCallBack[this.callBack.method](this.path,this.getText());
+               MyCallBack[this.callBack.method](this.path,this);
 
           }
 

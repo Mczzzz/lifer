@@ -115,15 +115,8 @@ export default class Resources extends superViews{
 
 	update(data){
 
-			console.log('au bon encdroit :)');
-			console.log(this.RessourceList);
-			console.log(data);
-			console.log(this.RessourceList[data.RessourceId].Items[data.id].object);
-
-			this.RessourceList[data.RessourceId].Items[data.id].object.setData(data.data);
+			this.RessourceList[data.RessourceId].Items[data.id].object.setData(data.data.getData());
 			
-			conssole.log('after set Data');
-
 	}
 
 
@@ -136,7 +129,31 @@ export default class Resources extends superViews{
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-	createCard(Resource){
+
+	Save(Card, Resource, updateTs = false){
+
+		let card = this.getObjectThisfromPath(Card);
+
+
+		if(updateTs == false){
+			updateTs = this.Moment();
+		}
+
+		let resp = {};
+		resp.type = "text";
+		resp.action = "Push";
+		resp.guid = card.getId();
+		resp.update = updateTs;
+		resp.resource = Resource;
+		resp.Card = card.path;
+
+    	this.TheNote.Push(resp);
+
+	}
+
+
+
+	/*createCard(Resource){
 
 		let updateTs = this.Moment();
 		//on s'assure que le flex de noteMainTitle est bien supprimé sinon on le fait
@@ -207,32 +224,12 @@ export default class Resources extends superViews{
 		//et hop on envoi en sauvegarde la data mon gars
 		this.Save(card.path, Resource.text, updateTs);
 
-	}
+	}*/
 
 
 
 
 
-	Save(Card, Resource, updateTs = false){
-
-		let card = this.getObjectThisfromPath(Card);
-
-
-		if(updateTs == false){
-			updateTs = this.Moment();
-		}
-
-		let resp = {};
-		resp.type = "text";
-		resp.action = "Push";
-		resp.guid = card.getId();
-		resp.update = updateTs;
-		resp.resource = Resource;
-		resp.Card = card.path;
-
-    	this.TheNote.Push(resp);
-
-	}
 
 
 }
