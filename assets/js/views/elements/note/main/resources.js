@@ -87,6 +87,19 @@ export default class Resources extends superViews{
 		this.RessourceList[ressourceTmpId].ItemsList[itemTmpId] = [];
 		this.RessourceList[ressourceTmpId].ItemsList[itemTmpId].push(ItemElement);
 
+		switch (type){
+
+			case 'text':
+				ItemElement.push("Text",ItemElement,"text","coucou");
+
+
+			break;
+
+
+
+		}
+//TODO: je set mon element, j'ay ajoute le composant, j'enregistre mon composant dans this.RessourceList pour pouvoir le modifier à la mise à jour
+
 		//this.RessourceList[ressourceTmpId].ItemsList.push(ItemElement);
 		//this.ItemList.push({"RessourceId"})
 		console.log(this.RessourceList);
@@ -96,14 +109,12 @@ export default class Resources extends superViews{
 
 
 
-	update(path,data){
-
-
-		//this.RessourceList[item]
+	update(data){
 
 			console.log('au bon encdroit :)');
-			console.log(path);
-				console.log(data);
+			console.log(data);
+
+
 	}
 
 

@@ -82,12 +82,10 @@ export default class Ressource extends superViews{
         //rajoutdela callback udpdate vers target
 
     update(path, data){
-      console.log("IN UIREESSOURCES");
-      console.log(data);
-   //     console.log('in Ressource ui -> updte to target');
+    //TODO : path pour rien peut etre a supprimer à réflechir
       data.RessourceId = this.RessourceId;
-      console.log(data);
       this.target.update(data);
+
     }
 
 
