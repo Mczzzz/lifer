@@ -84,6 +84,7 @@ export default class Resources extends superViews{
 		let ItemElement = this.RessourceList[ressourceTmpId].Card.setElement("Item_"+itemTmpId);
 		ItemElement.setStyle("height","50px");
 		ItemElement.setStyle("background","yellow");
+		ItemElement.setStyle("justifyContent","flex-start");
 
 		this.RessourceList[ressourceTmpId].Items[itemTmpId] = {};
 
@@ -93,7 +94,7 @@ export default class Resources extends superViews{
 
 				this.RessourceList[ressourceTmpId].Items[itemTmpId].type = type;
 				let MyText = this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","...");
-				MyText.setStyle("justifyContent","flex-start");
+				MyText.setStyle("color","black");
 				this.RessourceList[ressourceTmpId].Items[itemTmpId].object = MyText;
 
 			break;
