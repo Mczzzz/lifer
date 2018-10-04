@@ -75,7 +75,7 @@ export default class MainRessource extends superViews{
 	text(itemId){
 
 		let callBack = {};
-		callBack.path = this.parentThis.target.path;
+		callBack.path = this.parentThis.path;
 		callBack.method = "update";
 	//	console.log("in text main ui ressource");
 	//	console.log(callBack);
