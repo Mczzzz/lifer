@@ -80,18 +80,17 @@ export default class Resources extends superViews{
 	//	console.log("in addItem");
 	//	console.log(ressourceTmpId);
 		let itemTmpId = uuid().replace(/-/gi, '.');
-		let ItemElement = this.RessourceList[ressourceTmpId].Card.setElement("Item_"+itemTmpId);
 
+		let ItemElement = this.RessourceList[ressourceTmpId].Card.setElement("Item_"+itemTmpId);
 		ItemElement.setStyle("height","50px");
 		ItemElement.setStyle("background","yellow");
 
 		this.RessourceList[ressourceTmpId].Items[itemTmpId] = {};
-		this.RessourceList[ressourceTmpId].Items[itemTmpId] = {};
-		this.RessourceList[ressourceTmpId].ItemsList[itemTmpId].push(ItemElement);
 
 		switch (type){
 
 			case 'text':
+
 				this.RessourceList[ressourceTmpId].Items[itemTmpId].type = type;
 				let MyText = this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","...");
 				this.RessourceList[ressourceTmpId].Items[itemTmpId].object = MyText;
@@ -115,6 +114,7 @@ export default class Resources extends superViews{
 	update(data){
 
 			console.log('au bon encdroit :)');
+			console.log(this.RessourceList);
 			console.log(this.RessourceList[ressourceTmpId].Items[itemTmpId].object);
 			console.log(data);
 
