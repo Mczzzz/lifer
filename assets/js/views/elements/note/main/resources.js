@@ -120,7 +120,7 @@ export default class Resources extends superViews{
 
 			this.RessourceList[data.RessourceId].Items[data.id].object.setData(data.data);
 			
-
+			consoole.log('after set Data');
 
 	}
 
