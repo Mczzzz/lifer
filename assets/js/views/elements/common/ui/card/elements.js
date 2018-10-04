@@ -66,6 +66,11 @@ export default class Elements extends superViews{
      }*/
 
 
+    updateChild(){
+
+        
+    }
+
 
     add(type, classSuffixe, data,prepend = false,callback = false){
 

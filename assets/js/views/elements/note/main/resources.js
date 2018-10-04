@@ -57,7 +57,8 @@ export default class Resources extends superViews{
 	createRessource(ressourceTmpId){
 
 		this.RessourceList[ressourceTmpId] = {};
-		this.RessourceList[ressourceTmpId].ItemsList = [];
+		this.RessourceList[ressourceTmpId].Items = [];
+
 
 		this.RessourceList[ressourceTmpId].Card = new Card('Card_'+ressourceTmpId, this.path);
 		//card.setStyle("display","flex");
@@ -84,14 +85,16 @@ export default class Resources extends superViews{
 		ItemElement.setStyle("height","50px");
 		ItemElement.setStyle("background","yellow");
 
-		this.RessourceList[ressourceTmpId].ItemsList[itemTmpId] = [];
+		this.RessourceList[ressourceTmpId].Items[itemTmpId] = {};
+		this.RessourceList[ressourceTmpId].Items[itemTmpId] = {};
 		this.RessourceList[ressourceTmpId].ItemsList[itemTmpId].push(ItemElement);
 
 		switch (type){
 
 			case 'text':
-				this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","coucou");
-
+				this.RessourceList[ressourceTmpId].Items[itemTmpId].type = type;
+				let MyText = this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","...");
+				this.RessourceList[ressourceTmpId].Items[itemTmpId].object = MyText;
 
 			break;
 
@@ -112,6 +115,7 @@ export default class Resources extends superViews{
 	update(data){
 
 			console.log('au bon encdroit :)');
+			console.log(this.RessourceList[ressourceTmpId].Items[itemTmpId].object);
 			console.log(data);
 
 
