@@ -117,7 +117,7 @@ export default class Resources extends superViews{
 
 			console.log(data);
 
-			this.RessourceList[data.RessourceId].Items[data.id].object.setData(data.data);
+			this.RessourceList[data.RessourceId].Items[data.id].object.setData(data.data.container.innerHTML);
 			
 	}
 
