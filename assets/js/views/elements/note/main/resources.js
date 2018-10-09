@@ -95,6 +95,7 @@ export default class Resources extends superViews{
 				this.RessourceList[ressourceTmpId].Items[itemTmpId].type = type;
 				let MyText = this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","...");
 				MyText.setStyle("color","black");
+				MyText.setStyle("fontSize","14px");
 				this.RessourceList[ressourceTmpId].Items[itemTmpId].object = MyText;
 
 			break;
@@ -116,8 +117,10 @@ export default class Resources extends superViews{
 	update(data){
 
 			console.log(data);
-
+			//on set le texte
 			this.RessourceList[data.RessourceId].Items[data.id].object.setData(data.data.container.innerHTML);
+			//on set la marge
+			this.RessourceList[data.RessourceId].Items[data.id].object.setStyle("marginLeft", data.data.parentThis.parentThis.parentThis.parentThis.marginLeft); 
 			//this.Save(Ressource, item )
 			
 	}
