@@ -1,5 +1,3 @@
-l
-
 import LoaderCollection from '../../services/LoaderCollection.js';
 
 import { DatasSynchronizing } from '../../services/DatasSynchronizing.js';
