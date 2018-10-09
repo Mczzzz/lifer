@@ -70,7 +70,7 @@ export default class Resources extends superViews{
 		this.RessourceTitle.setStyle("fontSize","22px");
 
 
-		HeaderElement.setStyle("height","50px");
+		//HeaderElement.setStyle("height","50px");
 		HeaderElement.setStyle("background","purple");
 
 	}
@@ -82,7 +82,7 @@ export default class Resources extends superViews{
 		let itemTmpId = uuid().replace(/-/gi, '.');
 
 		let ItemElement = this.RessourceList[ressourceTmpId].Card.setElement("Item_"+itemTmpId);
-		ItemElement.setStyle("height","50px");
+		//ItemElement.setStyle("height","50px");
 		ItemElement.setStyle("background","yellow");
 		ItemElement.setStyle("justifyContent","flex-start");
 
@@ -118,6 +118,7 @@ export default class Resources extends superViews{
 			console.log(data);
 
 			this.RessourceList[data.RessourceId].Items[data.id].object.setData(data.data.container.innerHTML);
+			//this.Save(Ressource, item )
 			
 	}
 
