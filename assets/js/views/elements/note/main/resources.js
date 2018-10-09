@@ -114,7 +114,7 @@ export default class Resources extends superViews{
 
 
 
-	update(type,data){
+	update(data){
 
 			console.log(data);
 			//on set le texte
