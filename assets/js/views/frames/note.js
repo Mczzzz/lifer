@@ -1,4 +1,4 @@
-
+l
 
 import LoaderCollection from '../../services/LoaderCollection.js';
 
@@ -27,7 +27,7 @@ export default class Note extends superViews{
 		this.note.guid = id;
 		this.note.Title = "";
 		this.note.Ts = this.Moment().format('YYYY-MM-DD HH:mm:ss');
-		
+		l
 		this.orders = [];
 
 
