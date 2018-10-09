@@ -114,13 +114,13 @@ export default class Resources extends superViews{
 
 
 
-	update(data){
+	update(type,data){
 
 			console.log(data);
 			//on set le texte
 			this.RessourceList[data.RessourceId].Items[data.id].object.setData(data.data.container.innerHTML);
 			//on set la marge
-			
+
 			this.RessourceList[data.RessourceId].Items[data.id].object.setStyle("marginLeft", data.data.parentThis.parentThis.parentThis.container.style.marginLeft); 
 			//this.Save(Ressource, item )
 			

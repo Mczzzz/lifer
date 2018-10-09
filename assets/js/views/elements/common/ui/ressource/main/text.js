@@ -65,10 +65,23 @@ export default class Text extends superViews{
 		this.TheTextElt.setStyle("fontWeight","normal");
 
 
+		//if(callback){
+			let config = { attributes: true, childList: true };
+			let observer = new MutationObserver(this.test);
+			observer.observe(this.container, config);
+
+		//}
+
 
 
 	}
 
+
+	test(MutationList){
+
+		console.log("MutationList");
+		console.log(MutationList);
+	}
 
 	eltCollapse(){
 
