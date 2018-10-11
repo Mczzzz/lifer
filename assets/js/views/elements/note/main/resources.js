@@ -77,14 +77,14 @@ export default class Resources extends superViews{
 		this.eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
 
 		let config = { childList: true };
-		let observer = new MutationObserver(this.updateTitle());
+		let observer = new MutationObserver(this.updateTitle);
 			observer.observe(this.eltTitle.getContainer(), config);
 
 
 	}
 
 
-	updateTitle(originTitle){
+	updateTitle(){
 
 		//console.log(originTitle);
 		let newTitle = this.eltTitle.getText();
