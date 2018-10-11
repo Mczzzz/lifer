@@ -94,6 +94,7 @@ export default class Resources extends superViews{
 
 	updateText(MyText,eltText){
 
+		console.log(eltText);
 		let newText = eltText.getText();
 
 		MyText.setData(newText);
