@@ -73,6 +73,18 @@ export default class Resources extends superViews{
 		//HeaderElement.setStyle("height","50px");
 		HeaderElement.setStyle("background","purple");
 
+
+		let config = { characterData: true };
+		let observer = new MutationObserver(this.updateTitle);
+			observer.observe(this.RessourceTitle.getContainer(), config);
+
+
+	}
+
+
+	updateTitle(){
+
+		console.log('in update Title');
 	}
 
 
