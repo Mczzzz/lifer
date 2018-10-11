@@ -86,7 +86,7 @@ export default class Resources extends superViews{
 
 	updateTitle(){
 
-		//console.log(originTitle);
+		console.log(this.eltTitle);
 		let newTitle = this.eltTitle.getText();
 
 		this.RessourceTitle.setData(newTitle);
