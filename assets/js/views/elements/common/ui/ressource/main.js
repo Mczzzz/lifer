@@ -41,24 +41,25 @@ export default class MainRessource extends superViews{
 
      addItem(type,itemId){
 
+     	let res;
 
 		switch (type){
 
 			case 'text':
 
-				this.text(itemId);
+				res = this.text(itemId);
 
 			break;
 
 			case 'number':
 
-				this.number(itemId);
+				res = this.number(itemId);
 
 			break;
 
 			case 'image':
 
-				this.image(itemId);
+				res = this.image(itemId);
 
 			break;
 
@@ -66,6 +67,8 @@ export default class MainRessource extends superViews{
 
 		}
 
+
+		return res;
 
      }
 
@@ -82,6 +85,8 @@ export default class MainRessource extends superViews{
 		let text = new Text("Text_"+itemId, this.path,false,callBack);
 		text.draggable(this.path,"onChildMove");
 		text.focus();
+
+		return text;
 
 	}
 

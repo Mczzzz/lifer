@@ -65,13 +65,13 @@ export default class HeaderRessource extends superViews{
 
 
 
-				let Title = this.card.push("Text",HeaderElement,"Title","");
+				this.Title = this.card.push("Text",HeaderElement,"Title","");
 
-				Title.setStyle("placeholder","Ma Ressource...");
-				Title.setStyle("fontSize","18px");
-				Title.setStyle("color","grey");
-				Title.setStyle("fontWeight","bold");
-        Title.setStyle("flex","1");
+				this.Title.setStyle("placeholder","Ma Ressource...");
+				this.Title.setStyle("fontSize","18px");
+				this.Title.setStyle("color","grey");
+				this.Title.setStyle("fontWeight","bold");
+        this.Title.setStyle("flex","1");
 
 
 

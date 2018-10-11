@@ -92,11 +92,26 @@ export default class Resources extends superViews{
 
 	}
 
+	updateTitle(MyText,eltText){
 
-	addItem(ressourceTmpId,type){
+		let newText = eltText.getText();
+
+		MyText.setData(newText);
+
+	}
+
+
+	newTmpId(){
+
+		return uuid().replace(/-/gi, '.');
+
+	}
+
+
+	addItem(ressourceTmpId,type,itemTmpId, elt){
 	//	console.log("in addItem");
 	//	console.log(ressourceTmpId);
-		let itemTmpId = uuid().replace(/-/gi, '.');
+		//let itemTmpId = uuid().replace(/-/gi, '.');
 
 		let ItemElement = this.RessourceList[ressourceTmpId].Card.setElement("Item_"+itemTmpId);
 		//ItemElement.setStyle("height","50px");
@@ -115,6 +130,11 @@ export default class Resources extends superViews{
 				MyText.setStyle("fontSize","14px");
 				this.RessourceList[ressourceTmpId].Items[itemTmpId].object = MyText;
 
+				let config = { attributes: true, characterData: true, childList: true, subtree: true};
+
+				let observer = new MutationObserver(()=>this.updateText(MyText,elt));
+				observer.observe(elt.getContainer(), config);
+
 			break;
 
 
@@ -125,7 +145,7 @@ export default class Resources extends superViews{
 		//this.RessourceList[ressourceTmpId].ItemsList.push(ItemElement);
 		//this.ItemList.push({"RessourceId"})
 		console.log(this.RessourceList);
-		return itemTmpId;
+
 	}
 
 
@@ -135,10 +155,10 @@ export default class Resources extends superViews{
 
 			console.log(data);
 			//on set le texte
-			this.RessourceList[data.RessourceId].Items[data.id].object.setData(data.data.container.innerHTML);
+	//		this.RessourceList[data.RessourceId].Items[data.id].object.setData(data.data.container.innerHTML);
 			//on set la marge
 
-			this.RessourceList[data.RessourceId].Items[data.id].object.setStyle("marginLeft", data.data.parentThis.parentThis.parentThis.container.style.marginLeft); 
+	//		this.RessourceList[data.RessourceId].Items[data.id].object.setStyle("marginLeft", data.data.parentThis.parentThis.parentThis.container.style.marginLeft); 
 			//this.Save(Ressource, item )
 			
 	}
