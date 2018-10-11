@@ -87,7 +87,7 @@ export default class Resources extends superViews{
 	updateTitle(originTitle, title){
 
 		console.log(originTitle);
-		let newTitle = originTitle.getData();
+		let newTitle = originTitle.getText();
 
 		 title.setData(newTitle);
 		console.log('in update Title');
