@@ -77,7 +77,7 @@ export default class Resources extends superViews{
 		let eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
 
 		console.log(eltTitle.getContainer());
-		let config = { characterData: true };
+		let config = { childList: true };
 		let observer = new MutationObserver(this.updateTitle);
 			observer.observe(eltTitle.getContainer(), config);
 
