@@ -74,24 +74,22 @@ export default class Resources extends superViews{
 		HeaderElement.setStyle("background","purple");
 
 		//get resourcecommmune
-		this.eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
+		eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
 
 		let config = { attributes: true, characterData: true, childList: true, subtree: true};
-		let observer = new MutationObserver(()=>this.updateTitle());
+		let observer = new MutationObserver(()=>this.updateTitle(eltTitle));
 			observer.observe(this.eltTitle.getContainer(), config);
 
 
 	}
 
 
-	updateTitle(){
+	updateTitle(eltTitle){
 
-		this.eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
-		console.log(this.eltTitle);
-		let newTitle = this.eltTitle.getText();
+		let newTitle = eltTitle.getText();
 
 		this.RessourceTitle.setData(newTitle);
-		console.log('in update Title');
+
 	}
 
 
