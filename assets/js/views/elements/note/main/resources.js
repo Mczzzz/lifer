@@ -73,10 +73,13 @@ export default class Resources extends superViews{
 		//HeaderElement.setStyle("height","50px");
 		HeaderElement.setStyle("background","purple");
 
-		console.log(this.RessourceTitle.getContainer());
+		//get resourcecommmune
+		let eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
+
+		console.log(eltTitle);
 		let config = { characterData: true };
 		let observer = new MutationObserver(this.updateTitle);
-			observer.observe(this.RessourceTitle.getContainer(), config);
+			observer.observe(eltTitle.getContainer(), config);
 
 
 	}
