@@ -83,10 +83,11 @@ export default class MainRessource extends superViews{
 	//	console.log("in text main ui ressource");
 	//	console.log(callBack);
 		let text = new Text("Text_"+itemId, this.path,false,callBack);
+		let textElt = text.getTextElement();
 		text.draggable(this.path,"onChildMove");
 		text.focus();
 
-		return text;
+		return textElt;
 
 	}
 
