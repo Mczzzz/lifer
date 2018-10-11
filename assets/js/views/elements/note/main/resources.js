@@ -78,15 +78,18 @@ export default class Resources extends superViews{
 
 		console.log(eltTitle.getContainer());
 		let config = { childList: true };
-		let observer = new MutationObserver(this.updateTitle);
+		let observer = new MutationObserver(this.updateTitle(eltTitle,this.RessourceTitle));
 			observer.observe(eltTitle.getContainer(), config);
 
 
 	}
 
 
-	updateTitle(){
+	updateTitle(originTitle, title){
 
+		let newTitle = originTitle.getData();
+
+		 title.setData(newTitle);
 		console.log('in update Title');
 	}
 
