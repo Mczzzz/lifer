@@ -92,12 +92,13 @@ export default class Resources extends superViews{
 
 	}
 
-	updateText(MyText,eltText){
+	updateText(MyText,elt){
 
 		console.log(eltText);
-		let newText = eltText.getText();
-
+		let newText = elt.text.getText();
 		MyText.setData(newText);
+		MyText.setStyle("marginLeft", elt.text.getContainer().style.marginLeft);
+
 
 	}
 
@@ -134,7 +135,8 @@ export default class Resources extends superViews{
 				let config = { attributes: true, characterData: true, childList: true, subtree: true};
 
 				let observer = new MutationObserver(()=>this.updateText(MyText,elt));
-				observer.observe(elt.getContainer(), config);
+				observer.observe(elt.bloc.getContainer(), config);
+				observer.observe(elt.text.getContainer(), config);
 
 			break;
 
