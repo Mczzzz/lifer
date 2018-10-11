@@ -92,7 +92,7 @@ export default class Resources extends superViews{
 
 	}
 
-	updateTitle(MyText,eltText){
+	updateText(MyText,eltText){
 
 		let newText = eltText.getText();
 
