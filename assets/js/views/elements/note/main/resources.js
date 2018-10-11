@@ -85,7 +85,8 @@ export default class Resources extends superViews{
 
 
 	updateTitle(){
-
+		
+		this.eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
 		console.log(this.eltTitle);
 		let newTitle = this.eltTitle.getText();
 
