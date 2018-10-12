@@ -76,7 +76,7 @@ export default class Resources extends superViews{
 		//get resourcecommmune
 		let eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
 
-		let config = { attributes: true, characterData: true, childList: true, subtree: true};
+		let config = { subtree: true};
 		let observer = new MutationObserver(()=>this.updateTitle(eltTitle));
 			observer.observe(eltTitle.getContainer(), config);
 
@@ -99,6 +99,8 @@ export default class Resources extends superViews{
 		MyText.setData(newText);
 		console.log(elt.text.getContainer().style.marginLeft);
 		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
+
+		//control order
 
 
 	}
