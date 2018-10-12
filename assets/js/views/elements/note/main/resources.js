@@ -133,6 +133,7 @@ export default class Resources extends superViews{
 				let MyText = this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","...");
 				MyText.setStyle("color","black");
 				MyText.setStyle("fontSize","14px");
+				MyText.removeAttribute("contentEditable");
 				this.RessourceList[ressourceTmpId].Items[itemTmpId].object = MyText;
 
 				let config = { attributes: true, characterData: true, childList: true, subtree: true};
