@@ -68,7 +68,7 @@ export default class Resources extends superViews{
 		this.RessourceTitle = this.RessourceList[ressourceTmpId].Card.push("Text", HeaderElement,"Title", "");
 		
 		this.RessourceTitle.setStyle("fontSize","22px");
-
+		this.RessourceTitle.removeAttribute("contentEditable");
 
 		//HeaderElement.setStyle("height","50px");
 		HeaderElement.setStyle("background","purple");
@@ -100,7 +100,7 @@ export default class Resources extends superViews{
 		console.log(elt.text.getContainer().style.marginLeft);
 		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
-		//control order
+		//reorder
 
 
 	}

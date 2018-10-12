@@ -176,11 +176,19 @@ Moment.locale('fr');
 
     }
 
+
 	setAttribute(property,value,scope = "all"){
 
 		if(scope == "property" || scope == "all") this[property] = value;
 
 		if(scope == "element" || scope == "all" )  this.container.setAttribute(property,value);
+    }
+
+
+    removeAttribute(attribute){
+
+    	this.container.removeAttribute(attribute);
+
     }
 
 
