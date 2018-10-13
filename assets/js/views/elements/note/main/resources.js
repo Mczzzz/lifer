@@ -101,6 +101,11 @@ export default class Resources extends superViews{
 		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
 		//reorder
+		//get child list of : //Note-Main-Empty-Ressource-Main
+		let EditRessource = this.getObjectThisfromPath('Note-Main-Empty-Ressource-Main');
+		let ChildList = EditRessource.getContainer().childNodes;
+
+		console.log(ChildList);
 
 
 	}
