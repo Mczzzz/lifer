@@ -113,6 +113,7 @@ export default class Resources extends superViews{
 
 		}
 
+		this.RessourceList[ressourceTmpId].Card.getContainer().prepend(this.RessourceList[ressourceTmpId].Card["header_"+ressourceTmpId].getContainer());
 
 		
 	}
