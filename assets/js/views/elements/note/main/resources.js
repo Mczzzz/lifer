@@ -106,7 +106,15 @@ export default class Resources extends superViews{
 		let ChildList = EditRessource.getContainer().childNodes;
 		let ReverseChildList = Array.from(ChildList).reverse();
 
-		console.log(this.RessourceList[ressourceTmpId]);
+		for (let item of ReverseChildList){
+			console.log(item);
+			console.log(this.RessourceList[ressourceTmpId]);
+
+
+		}
+
+
+		
 	}
 
 
