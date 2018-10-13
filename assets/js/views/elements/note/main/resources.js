@@ -108,7 +108,7 @@ export default class Resources extends superViews{
 
 		for (let item of ReverseChildList){
 			console.log(item.firstChild.id);
-			console.log(this.RessourceList[ressourceTmpId]);
+			this.RessourceList[ressourceTmpId].Card.getContainer().prepend(this.RessourceList[ressourceTmpId].Card["Item_"+item.firstChild.id].getContainer());
 
 
 		}
