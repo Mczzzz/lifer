@@ -92,7 +92,7 @@ export default class Resources extends superViews{
 
 	}
 
-	updateText(MyText,elt){
+	updateText(MyText,elt,ressourceTmpId){
 
 		console.log(elt);
 		let newText = elt.text.getText();
@@ -104,12 +104,9 @@ export default class Resources extends superViews{
 		//get child list of : //Note-Main-Empty-Ressource-Main
 		let EditRessource = this.getObjectThisfromPath('Note-Main-Empty-Ressource-Main');
 		let ChildList = EditRessource.getContainer().childNodes;
+		let ReverseChildList = Array.from(ChildList).reverse();
 
-		console.log(ChildList);
-		let toto = Array.from(ChildList).reverse();
-		console.log(toto);
-
-
+		console.log(this.RessourceList[ressourceTmpId]);
 	}
 
 
@@ -145,7 +142,7 @@ export default class Resources extends superViews{
 
 				let config = { attributes: true, characterData: true, childList: true, subtree: true};
 
-				let observer = new MutationObserver(()=>this.updateText(MyText,elt));
+				let observer = new MutationObserver(()=>this.updateText(MyText,elt,ressourceTmpId));
 				observer.observe(elt.bloc.getContainer(), config);
 				observer.observe(elt.text.getContainer(), config);
 
