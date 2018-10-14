@@ -117,7 +117,7 @@ export default class Resources extends superViews{
 
 
 		//on save
-		this.Save(ressourceTmpId,itemid,"text",element,value);
+		this.Save(ressourceTmpId,elt.bloc.ClassId,"text","text",newText);
 
 		
 	}
@@ -188,22 +188,22 @@ export default class Resources extends superViews{
 	}
 
 
-	save(ressourceTmpId,itemid,type, element,value){
+	save(ressourceTmpId,itemid = false,type, element,value){
 
 		if(updateTs == false){
 		    updateTs = this.Moment();
 		}
 
 		let resp = {};
-		resp.type = type;
 		resp.action = "Push";
-		resp.guid = card.getId();
+		resp.type = type;
+		resp.ressourceId = Resource;
+		resp.itemId = itemId;
+		resp.itemElt = element;
+		resp.itemVal = value;
 		resp.update = updateTs;
-		resp.resource = Resource;
-		resp.Card = card.path;
-
+		
     	this.TheNote.Push(resp);
-
 
 	}
 
