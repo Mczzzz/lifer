@@ -1,4 +1,4 @@
-import SvcBackEndComm from '../services/BackEndComm.js';
+import SvcBackEndComm from '../services/BackendComm.js';
 
 export default class UnityCollection {
 
