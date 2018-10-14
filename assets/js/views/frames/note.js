@@ -213,10 +213,10 @@ export default class Note extends superViews{
 
 
 		//Je fais les pré-actions sur la note
-		this._PushPreOrderAction(data.update);
+		//this._PushPreOrderAction(data.update);
 
 		//normalisation des dates de la ressource
-		data.update = data.update.format("YYYY-MM-DD HH:mm:ss");
+		//data.update = data.update.format("YYYY-MM-DD HH:mm:ss");
 
 		//Je demande un numero de commande a mon fournisseur
 		let purchaseOrder = DatasSynchronizing.purchaseOrder();
@@ -243,7 +243,7 @@ export default class Note extends superViews{
 
 	}
 
-	_PushPreOrderAction(update){
+	DEPRECATED_PushPreOrderAction(update){
 
 		
 		
