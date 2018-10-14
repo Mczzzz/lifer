@@ -195,7 +195,7 @@ export default class Resources extends superViews{
 		let resp = {};
 		resp.action = "Push";
 		resp.type = type;
-		resp.ressourceId = Resource;
+		resp.ressourceId = ressourceTmpId;
 		resp.itemId = itemId;
 		resp.itemElt = element;
 		resp.itemVal = value;
