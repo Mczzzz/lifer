@@ -46,7 +46,7 @@ export default class Resources extends superViews{
 
 	addRessource(){
 
-		let ressourceTmpId = "TmpResourceId_"+uuid().replace(/-/gi, '.');
+		let ressourceTmpId = "TmpResourceId-"+uuid().replace(/-/gi, '.');
 //		console.log(ressourceTmpId);
 		this.createRessource(ressourceTmpId);
 		this.setStyle("flex" , "");
