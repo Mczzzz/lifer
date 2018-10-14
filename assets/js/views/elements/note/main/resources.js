@@ -97,7 +97,7 @@ export default class Resources extends superViews{
 		console.log(elt);
 		let newText = elt.text.getText();
 		MyText.setData(newText);
-		console.log(elt.text.getContainer().style.marginLeft);
+	//	console.log(elt.text.getContainer().style.marginLeft);
 		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
 		//reorder
@@ -107,13 +107,17 @@ export default class Resources extends superViews{
 		let ReverseChildList = Array.from(ChildList).reverse();
 
 		for (let item of ReverseChildList){
-			console.log(item.firstChild.id);
+		//	console.log(item.firstChild.id);
 			this.RessourceList[ressourceTmpId].Card.getContainer().prepend(this.RessourceList[ressourceTmpId].Card["Item_"+item.firstChild.id].getContainer());
 
 
 		}
 
 		this.RessourceList[ressourceTmpId].Card.getContainer().prepend(this.RessourceList[ressourceTmpId].Card["header_"+ressourceTmpId].getContainer());
+
+
+		//on save
+		this.Save(ressourceTmpId,itemid,"text",element,value);
 
 		
 	}
@@ -184,7 +188,24 @@ export default class Resources extends superViews{
 	}
 
 
+	save(ressourceTmpId,itemid,type, element,value){
 
+		if(updateTs == false){
+		    updateTs = this.Moment();
+		}
+
+		let resp = {};
+		resp.type = type;
+		resp.action = "Push";
+		resp.guid = card.getId();
+		resp.update = updateTs;
+		resp.resource = Resource;
+		resp.Card = card.path;
+
+    	this.TheNote.Push(resp);
+
+
+	}
 
 
 
@@ -194,7 +215,7 @@ export default class Resources extends superViews{
 
 
 
-	Save(Card, Resource, updateTs = false){
+	_OldSave(Card, Resource, updateTs = false){
 
 		let card = this.getObjectThisfromPath(Card);
 
