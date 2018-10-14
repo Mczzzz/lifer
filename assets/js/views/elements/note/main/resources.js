@@ -117,7 +117,7 @@ export default class Resources extends superViews{
 
 
 		//on save
-		this.Save(ressourceTmpId,elt.bloc.ClassId,"text","text",newText);
+		this.save(ressourceTmpId,elt.bloc.ClassId,"text","text",newText);
 
 		
 	}
