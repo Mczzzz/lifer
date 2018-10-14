@@ -190,9 +190,7 @@ export default class Resources extends superViews{
 
 	save(ressourceTmpId,itemid = false,type, element,value){
 
-		if(updateTs == false){
-		    updateTs = this.Moment();
-		}
+		let updateTs = this.Moment();
 
 		let resp = {};
 		resp.action = "Push";
