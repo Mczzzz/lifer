@@ -188,7 +188,7 @@ export default class Resources extends superViews{
 	}
 
 
-	save(ressourceTmpId,itemid = false,type, element,value){
+	save(ressourceTmpId,itemId = false,type, element,value){
 
 		let updateTs = this.Moment();
 
