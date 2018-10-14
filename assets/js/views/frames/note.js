@@ -243,7 +243,7 @@ export default class Note extends superViews{
 
 	}
 
-	DEPRECATED_PushPreOrderAction(update){
+/*	DEPRECATED_PushPreOrderAction(update){
 
 		
 		
@@ -260,7 +260,7 @@ export default class Note extends superViews{
 		//faire un tableau des retours daction atten uet envoyé a la comande
 
 
-	}
+	}*/
 
 
 	_PushPrepareOrder(data, purchaseOrder){

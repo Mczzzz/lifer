@@ -96,6 +96,7 @@ export default class Resources extends superViews{
 
 		console.log(elt);
 		let newText = elt.text.getText();
+		console.log('newText: '+newText);
 		MyText.setData(newText);
 	//	console.log(elt.text.getContainer().style.marginLeft);
 		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
@@ -195,7 +196,7 @@ export default class Resources extends superViews{
 		let resp = {};
 		resp.action = "Push";
 		resp.type = type;
-		resp.ressourceId = ressourceTmpId;
+		resp.Id = ressourceTmpId;
 		resp.itemId = itemId;
 		resp.itemElt = element;
 		resp.itemVal = value;
