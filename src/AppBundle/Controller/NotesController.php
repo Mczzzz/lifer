@@ -195,6 +195,21 @@ class NotesController extends Controller
 
 
             $Resource->setNote($Note);
+            $Resource->setCreator($user);
+
+            $Resource->setTmpId(str_replace("TmpResourceId-","",$datas->Resource->guid));
+            
+            $ndtR = new \Datetime($datas->Resource->update);
+            $Resource->setUpdateAPP($ndtR);
+
+            $em->persist($Resource);
+            $em->flush();
+            //
+
+
+
+
+
 
             //load du type
 //TODO : mettre un unique sur le name please :)            
