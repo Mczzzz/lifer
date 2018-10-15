@@ -170,7 +170,7 @@ class NotesController extends Controller
                 $Resource = new Resources();
                 $Resource->setCreator($user);
 
-            }elseif(substr($datas->Resource->guid,0,10) == "TmpResourceId-"){
+            }elseif(substr($datas->Resource->guid,0,14) == "TmpResourceId-"){
 
                 $ResourceList = $em->getRepository('AppBundle:Resources')->findBy(array('tmpId' => $datas->Resource->guid));
 
