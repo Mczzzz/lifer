@@ -62,13 +62,13 @@ export default class Controller {
 
 	loadCrypto(){
 
-		let unityTypeCollection = new LoaderCollection("Crypto");
-		Lifer.addMe("Unity");
+		let cryptoTypeCollection = new LoaderCollection("Crypto");
+		Lifer.addMe("Crypto");
 
-		let dispatchResponseTo  = [{ "This" : "Lifer" , "method" : "addData", "path" : "Unity"}];
+		//et dispatchResponseTo  = [{ "This" : "Lifer" , "method" : "addData", "path" : "Unity"}];
 
-		unityTypeCollection.GetTypes(dispatchResponseTo);
-		unityTypeCollection.GetUnits(dispatchResponseTo);
+		cryptoTypeCollection.GetTypes(dispatchResponseTo);
+		//unityTypeCollection.GetUnits(dispatchResponseTo);
 		
 
 	}
