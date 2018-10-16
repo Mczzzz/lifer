@@ -6,7 +6,7 @@ import ObjectTree from '../collections/ObjectTreeCollection.js';*/
 import User from '../collections/UserCollection.js';
 import Note from '../collections/NoteCollection.js';
 import Unity from '../collections/UnityCollection.js';
-import Unity from '../collections/CryptoCollection.js';
+import Crypto from '../collections/CryptoCollection.js';
 
 
 const classes = {
@@ -16,7 +16,8 @@ const classes = {
     ObjectTree*/
     User,
     Note,
-    Unity
+    Unity,
+    Crypto
 };
 
 class LoaderCollection  {
