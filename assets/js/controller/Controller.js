@@ -26,6 +26,7 @@ export default class Controller {
 
 		this.loadUser();
 		this.loadUnity();
+		this.loadCrypto();
 
 		this.frame = new Frame(this.path);
 		this.gotToHome();
@@ -57,6 +58,24 @@ export default class Controller {
 		
 
 	}
+
+
+	loadCrypto(){
+
+		let unityTypeCollection = new LoaderCollection("Crypto");
+		Lifer.addMe("Unity");
+
+		let dispatchResponseTo  = [{ "This" : "Lifer" , "method" : "addData", "path" : "Unity"}];
+
+		unityTypeCollection.GetTypes(dispatchResponseTo);
+		unityTypeCollection.GetUnits(dispatchResponseTo);
+		
+
+	}
+
+
+
+
 
 
 	gotToHome(){
