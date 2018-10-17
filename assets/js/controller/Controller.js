@@ -67,7 +67,7 @@ export default class Controller {
 
 		//et dispatchResponseTo  = [{ "This" : "Lifer" , "method" : "addData", "path" : "Unity"}];
 
-		cryptoTypeCollection.GetTypes();
+		cryptoTypeCollection.GetInfos();
 		//unityTypeCollection.GetUnits(dispatchResponseTo);
 		
 
