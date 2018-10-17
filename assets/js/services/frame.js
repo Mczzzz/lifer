@@ -9,7 +9,7 @@ export default class Frame {
 	constructor(path){
 
 		let Me = 'frame';
-		this.path = path+"/"+Me;
+		this.path = path+"-"+Me;
 		Lifer.addMe(this.path);
 
 		this.init();

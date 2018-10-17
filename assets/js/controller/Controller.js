@@ -12,7 +12,7 @@ export default class Controller {
 
 		let Me = 'controller';
 
-		this.path = path+"/"+Me;
+		this.path = path+"-"+Me;
 
 		Lifer.addMe(this.path);
 
