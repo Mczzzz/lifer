@@ -23,7 +23,7 @@ console.log(window.innerHeight);
 
 window.addEventListener('resize', ()=>getSize());
 
-getSize(){
+function getSize(){
 
 let w = window,
     d = document,
