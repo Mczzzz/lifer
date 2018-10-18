@@ -19,7 +19,7 @@ export default class Empty extends superViews{
 
 		this.setStyle("display","none");
 		this.setStyle("boxShadow","rgb(187, 187, 187) 0px -2px 12px");
-		this.setStyle("maxHeight","70%");
+		//this.setStyle("maxHeight","70%");
 		//this.active = false;
 		this.Ressource = new Ressource('Ressource' , this.path);
 
