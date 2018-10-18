@@ -33,7 +33,8 @@ let w = window,
     y = w.innerHeight|| e.clientHeight|| g.clientHeight;
 
 
-	console.log(x);
+	//console.log(x);
+	document.body.style.height = y + "px";
 	console.log(y);
 
 
