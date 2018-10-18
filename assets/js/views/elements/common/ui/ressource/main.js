@@ -34,7 +34,17 @@ export default class MainRessource extends superViews{
 		this.setStyle("maxHeight" , "400px");
 
 
+		window.addEventListener('resize', ()=>this.resize());
 
+
+
+     }
+
+
+     resize(){
+
+     	this.container.scrollTop = this.container.scrollHeight;
+     	
      }
 
 
