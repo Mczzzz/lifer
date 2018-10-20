@@ -47,7 +47,7 @@ export default class Text extends superViews{
 		this.card.setStyle("background", "linear-gradient(45deg, #FCE94F 0%, #F4F14C 100%)");
 		this.card.setStyle("margin", "5px");
 		
-		//this.card.setStyle("marginBottom", "50px");
+		
 		this.card.setStyle("display", "flex");
 		this.card.getContainer().addEventListener("click",()=>this.select());
 
