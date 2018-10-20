@@ -96,6 +96,11 @@ export default class MainRessource extends superViews{
 		let textElt = text.getTextElement();
 		text.draggable(this.path,"onChildMove");
 		text.card.setStyle("marginBottom", "50px");
+
+		if(text.getContainer().previousElementSibling){
+			text.getContainer().previousElementSibling.style.marginBottom = "5px";
+		}
+
 		text.focus();
 		this.resize();
 		let res = {};
