@@ -97,7 +97,7 @@ export default class MainRessource extends superViews{
 		text.draggable(this.path,"onChildMove");
 		text.card.setStyle("marginBottom", "50px");
 		text.focus();
-		text.scrollTop = text.scrollHeight;	
+		this.resize();
 		let res = {};
 		res.bloc = text;
 		res.text = textElt
