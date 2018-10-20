@@ -90,21 +90,22 @@ export default class MainRessource extends superViews{
 		let callBack = {};
 		callBack.path = this.parentThis.path;
 		callBack.method = "update";
-	//	console.log("in text main ui ressource");
-	//	console.log(callBack);
+
 		let text = new Text("Text_"+itemId, this.path,false,callBack);
 		let textElt = text.getTextElement();
 		text.draggable(this.path,"onChildMove");
+
 		text.setStyle("marginBottom", "50px");
 
-	//	console.log(text.getContainer());
-//		console.log(text.getContainer().previousElementSibling);
-
 		if(text.getContainer().previousElementSibling){
-			console.log("update Parent bottom");
-			console.log(text.getContainer().previousElementSibling);
 			text.getContainer().previousElementSibling.style.marginBottom = "5px";
 		}
+
+		let config = { characterData: true, childList: true, subtree: true};
+		let observer = new MutationObserver(()=>this.resize());
+		observer.observe(text.getContainer(), config);
+
+
 
 		this.resize();
 
