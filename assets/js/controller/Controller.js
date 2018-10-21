@@ -65,12 +65,12 @@ export default class Controller {
 
 		let dataPackage = [];
 
-		let screen = [];
+		let Uscreen = [];
 
-		screen.width  = x;
-		screen.height = y;
+		Uscreen.width  = x;
+		Uscreen.height = y;
 
-		dataPackage.push(screen);
+		dataPackage.push(Uscreen);
 
 
 	    Lifer.addData(path,dataPackage);
