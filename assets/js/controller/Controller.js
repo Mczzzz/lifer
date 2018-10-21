@@ -25,6 +25,7 @@ export default class Controller {
 	init(){
 
 		this.loadUser();
+		this.loadDeviceInfos();
 		this.loadUnity();
 		this.loadCrypto();
 
@@ -44,7 +45,39 @@ export default class Controller {
 
 		userCollection.Get(dispatchResponseTo);
 
+
 	}
+
+
+	loadDeviceInfos(){
+
+		let path = "User-Device";
+
+		Lifer.addMe(path);
+
+		let w = window,
+	    d = document,
+	    e = d.documentElement,
+	    g = d.getElementsByTagName('body')[0],
+	    x = w.innerWidth || e.clientWidth || g.clientWidth,
+	    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+
+		let dataPackage = [];
+
+		let screen = [];
+
+		screen.push({'width' : document.body.style.width});
+		screen.push({'height' : document.body.style.height});
+
+		dataPackage.push(screen);
+
+
+	    Lifer.addData(path,dataPackage);
+
+
+	}
+
 
 	loadUnity(){
 
