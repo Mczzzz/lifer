@@ -42,6 +42,7 @@ export default class ActionButtons extends superViews{
 					camera.setStylePicto("fontSize","25px");
 					camera.setStylePicto("color","green");
 					camera.setStylePicto("alignItems","center");
+					camera.setStylePicto("marginLeft","15px");
 
 					camera.getContainer().addEventListener("click",()=>this.Start("image"));
 					//camera.getContainer().addEventListener("click",()=>this.StartCamera("image",true));
