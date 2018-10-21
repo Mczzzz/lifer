@@ -18,10 +18,17 @@ let css = document.createElement("style");
 
 		document.head.appendChild(css);
 
-console.log(window.innerHeight);
+//console.log(window.innerHeight);
 
 
-window.addEventListener('resize', ()=>getSize());
+//add full size screen
+
+
+
+
+
+
+/*window.addEventListener('resize', ()=>getSize());
 
 function getSize(){
 
@@ -33,13 +40,11 @@ let w = window,
     y = w.innerHeight|| e.clientHeight|| g.clientHeight;
 
 
-	//console.log(x);
-	document.body.style.height = y + "px";
-	console.log(y);
+
 
 
 }
-
+*/
 
 ////////////////////////////////////////////////////////
 //GROS HACK POUR FAIRE DU FULL SCREEN

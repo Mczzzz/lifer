@@ -67,8 +67,8 @@ export default class Controller {
 
 		let screen = [];
 
-		screen.width  = {'width' : document.body.style.width};
-		screen.height = {'height' : document.body.style.height};
+		screen.width  = document.body.style.width;
+		screen.height = document.body.style.height;
 
 		dataPackage.push(screen);
 
