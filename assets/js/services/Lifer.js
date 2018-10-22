@@ -120,12 +120,24 @@ addMe(path){
 		
 		for(let myData of dataArray ){
 //			console.log(myData);
-			let ite = 0;
-			console.log(myData);
-			for(let data of myData ){
-				dataRepresentation._datas[Object.keys(myData)[ite]] = myData[Object.keys(myData)[ite]];
-				ite++;
+			
+			//console.log(myData);
+			if(Array.isArray(myData)){
+
+				let ite = 0;
+
+				for(let data of myData ){
+					dataRepresentation._datas[Object.keys(myData)[ite]] = myData[Object.keys(myData)[ite]];
+					ite++;
+				}
+
+
+			}else{
+
+				dataRepresentation._datas[Object.keys(myData)[0]] = myData[Object.keys(myData)[0]];
+
 			}
+
 			
 		}
 
