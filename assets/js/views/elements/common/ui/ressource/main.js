@@ -46,7 +46,7 @@ export default class MainRessource extends superViews{
      	this.container.scrollTop = this.container.scrollHeight;
      	let deviceHeight = this.Lifer.getScreenSize().height;
 
-     	let initialDeviceHeight = this.Lifer.getData("User-Device", "Screen");
+     	let initialDevice = this.Lifer.getData("User-Device", "Screen");
 
      	if(initialDevice.height > deviceHeight){
 
