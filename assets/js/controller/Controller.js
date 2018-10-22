@@ -71,7 +71,7 @@ export default class Controller {
 		screen.width  = x;
 		screen.height = y;
 
-		Uscreen.screen = screen;
+		Uscreen.Screen = screen;
 
 		dataPackage.push(Uscreen);
 
