@@ -121,7 +121,7 @@ addMe(path){
 		for(let myData of dataArray ){
 //			console.log(myData);
 			
-			//console.log(myData);
+			console.log(myData);
 			if(Array.isArray(myData)){
 
 				let ite = 0;
