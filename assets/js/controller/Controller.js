@@ -66,8 +66,12 @@ export default class Controller {
 
 		let Uscreen = [];
 
-		Uscreen.width  = x;
-		Uscreen.height = y;
+		let screen = [];
+
+		screen.width  = x;
+		screen.height = y;
+
+		Uscreen.push(screen);
 
 		dataPackage.push(Uscreen);
 
