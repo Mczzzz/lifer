@@ -129,7 +129,14 @@ addMe(path){
 				let ite = 0;
 
 				for(let data of myData ){
-					dataRepresentation._datas[Object.keys(myData)[ite]] = myData[Object.keys(myData)[ite]];
+
+					let iterator = data.keys();
+
+					for (let key of iterator) {
+					  console.log(key); // expected output: 0 1 2
+					}
+
+					//dataRepresentation._datas[Object.keys(data)[ite]] = myData[Object.keys(myData)[ite]];
 					ite++;
 				}
 
