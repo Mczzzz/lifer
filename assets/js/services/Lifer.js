@@ -128,7 +128,7 @@ addMe(path){
 				console.log('lifer add data is array');
 				console.log(myData);
 				let ite = 0;
-
+				console.log('before for');
 				for(let data of myData ){
 					console.log('data');
 					console.log(data);
