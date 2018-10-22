@@ -66,7 +66,7 @@ export default class Controller {
 
 		let Uscreen = [];
 
-		let screen = [];
+		let screen = {};
 
 		screen.width  = x;
 		screen.height = y;
