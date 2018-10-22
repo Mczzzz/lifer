@@ -53,7 +53,7 @@ export default class MainRessource extends superViews{
      		this.setStyle("maxHeight" , "250px");
      	}else{
 
-     		this.setStyle("maxHeight" , initialDevice.height - this.getContainerRect('y')+"px");
+     		this.setStyle("maxHeight" , "");
 
      	}
 
