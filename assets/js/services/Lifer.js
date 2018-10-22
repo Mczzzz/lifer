@@ -126,6 +126,7 @@ addMe(path){
 			if(Array.isArray(myData)){
 
 				console.log('lifer add data is array');
+				console.log(myData);
 				let ite = 0;
 
 				for(let data of myData ){
