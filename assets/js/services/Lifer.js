@@ -128,11 +128,14 @@ addMe(path){
 				console.log('lifer add data is array');
 				console.log(myData);
 				let ite = 0;
+				
+				let iterator = myData.keys();
+
 				console.log('before for');
-				for(let data of myData ){
+				for(let key of iterator ){
 					console.log('data');
-					console.log(data);
-					let iterator = data.keys();
+					console.log(key);
+					
 
 					for (let key of iterator) {
 					  console.log(key); // expected output: 0 1 2
