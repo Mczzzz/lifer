@@ -122,35 +122,8 @@ addMe(path){
 		for(let myData of dataArray ){
 //			console.log(myData);
 			
-			
-			if(Array.isArray(myData)){
-
-				console.log('lifer add data is array');
-				console.log(myData);
-				let ite = 0;
-				
-				let iterator = myData.keys();
-
-				console.log('before for');
-				for(let key of iterator ){
-					console.log('data');
-					console.log(key);
-					
-
-					for (let key of iterator) {
-					  console.log(key); // expected output: 0 1 2
-					}
-
-					//dataRepresentation._datas[Object.keys(data)[ite]] = myData[Object.keys(myData)[ite]];
-					ite++;
-				}
-
-
-			}else{
-
 				dataRepresentation._datas[Object.keys(myData)[0]] = myData[Object.keys(myData)[0]];
 
-			}
 
 			
 		}
