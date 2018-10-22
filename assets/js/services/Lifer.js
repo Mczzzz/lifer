@@ -121,6 +121,7 @@ addMe(path){
 		for(let myData of dataArray ){
 //			console.log(myData);
 			let ite = 0;
+			console.log(myData);
 			for(let data of myData ){
 				dataRepresentation._datas[Object.keys(myData)[ite]] = myData[Object.keys(myData)[ite]];
 				ite++;
