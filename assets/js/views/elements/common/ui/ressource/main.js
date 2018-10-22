@@ -47,10 +47,16 @@ export default class MainRessource extends superViews{
      	let deviceHeight = this.Lifer.getScreenSize().height;
 
      	let initialDeviceHeight = this.Lifer.getData("User-Device", "Screen");
-     	console.log('deviceHeight');
-     	console.log(deviceHeight);
-     	console.log('InitialDeviceHeight');
-     	console.log(initialDeviceHeight);
+
+     	if(initialDevice.height > deviceHeight){
+
+     		this.setStyle("maxHeight" , "250px");
+     	}else{
+
+     		this.setStyle("maxHeight" , null);
+
+     	}
+
 
      }
 
