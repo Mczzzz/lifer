@@ -75,7 +75,8 @@ export default class Controller {
 
 		dataPackage.push(Uscreen);
 
-
+		console.log('dataPackage');
+		console.log(dataPackage);
 	    Lifer.addData(path,dataPackage);
 
 
