@@ -25,7 +25,6 @@ export default class Controller {
 	init(){
 
 		this.loadUser();
-		this.loadDeviceInfos();
 		this.loadUnity();
 		this.loadCrypto();
 
@@ -114,6 +113,7 @@ export default class Controller {
 	gotToHome(){
 
 		this.frame.Home();
+		this.loadDeviceInfos();
 
 	}
 
