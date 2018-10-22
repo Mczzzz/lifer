@@ -117,11 +117,12 @@ addMe(path){
 
 		}			
 
+		console.log(dataArray);
 		
 		for(let myData of dataArray ){
 //			console.log(myData);
 			
-			console.log(myData);
+			
 			if(Array.isArray(myData)){
 
 				console.log('lifer add data is array');
