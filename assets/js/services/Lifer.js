@@ -117,12 +117,15 @@ addMe(path){
 
 		}			
 
-		let ite = 0;
-
+		
 		for(let myData of dataArray ){
 //			console.log(myData);
-			dataRepresentation._datas[Object.keys(myData)[ite]] = myData[Object.keys(myData)[ite]];
-			ite++;
+			let ite = 0;
+			for(let data of myData ){
+				dataRepresentation._datas[Object.keys(myData)[ite]] = myData[Object.keys(myData)[ite]];
+				ite++;
+			}
+			
 		}
 
 /*
