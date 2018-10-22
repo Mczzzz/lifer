@@ -42,7 +42,7 @@ export default class MainRessource extends superViews{
 
 
      resize(){
-
+     	console.log('####### resize #######');
      	this.container.scrollTop = this.container.scrollHeight;
 
      }
