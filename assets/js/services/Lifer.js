@@ -129,7 +129,8 @@ addMe(path){
 				let ite = 0;
 
 				for(let data of myData ){
-
+					console.log('data');
+					console.log(data);
 					let iterator = data.keys();
 
 					for (let key of iterator) {
