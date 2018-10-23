@@ -43,12 +43,13 @@ export default class MainRessource extends superViews{
 
      resize(){
      //	console.log('####### resize #######');
-     	this.container.scrollTop = this.container.scrollHeight;
+     	
      	let deviceHeight = this.Lifer.getScreenSize().height;
 
      	//let initialDevice = this.Lifer.getData("User-Device", "Screen");
 
      	this.setStyle("maxHeight" , deviceHeight - 123 +"px");
+     	this.container.scrollTop = this.container.scrollHeight;
 
 /*     	if(initialDevice.height > deviceHeight){
 
