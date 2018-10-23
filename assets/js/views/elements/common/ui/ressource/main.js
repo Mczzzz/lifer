@@ -108,11 +108,11 @@ export default class MainRessource extends superViews{
 		let textElt = text.getTextElement();
 		text.draggable(this.path,"onChildMove");
 
-		text.setStyle("marginBottom", "50px");
+/*		text.setStyle("marginBottom", "50px");
 
 		if(text.getContainer().previousElementSibling){
 			text.getContainer().previousElementSibling.style.marginBottom = "5px";
-		}
+		}*/
 
 		let config = { characterData: true, childList: true, subtree: true};
 		let observer = new MutationObserver(()=>this.resize());
