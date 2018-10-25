@@ -121,12 +121,12 @@ export default class MainRessource extends superViews{
 		}*/
 
 		let config = { characterData: true, childList: true, subtree: true};
-		let observer = new MutationObserver(()=>this.resize());
+		let observer = new MutationObserver(()=>this.resize(text.getContainer()));
 		observer.observe(text.getContainer(), config);
 
 
 
-		this.resize(text);
+		this.resize(text.getContainer());
 
 		text.focus();
 		
