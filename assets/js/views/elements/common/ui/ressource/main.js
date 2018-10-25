@@ -55,6 +55,7 @@ export default class MainRessource extends superViews{
 
      		if(elt){
      			this.container.scrollTop = elt.offsetTop;
+     			console.log("in resize elt :"+elt.offsetTop);
      		}else{
      			this.container.scrollTop = this.container.scrollHeight;
      		}
