@@ -448,6 +448,27 @@ export default class MainRessource extends superViews{
 		  this.Cloned.style.top = childContainer.getContainer().getBoundingClientRect().y+"px";
 
 
+		  //on prends les enfants avec :
+		  let childToClone = this.getChilds(childContainer.getContainer());
+
+		  for (let child of childToClone) {
+
+		  	let Cloned = child.getContainer().cloneNode(true);
+		  document.body.appendChild(Cloned);
+
+		  Cloned.style.position = "absolute";
+		  Cloned.style.width = "100%";
+		  Cloned.className = childContainer.MyClass+"-Clone";
+		  //this.Cloned.style.marginLeft = "0px";
+		  Cloned.style.top = child.getContainer().getBoundingClientRect().y+"px";
+
+
+			
+		}
+
+
+
+
 		  //calcul de la position relative du clone par rapport au touch
 		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x;
 		  this.touchY = e.changedTouches[0].clientY - this.Cloned.getBoundingClientRect().y;
