@@ -453,14 +453,14 @@ export default class MainRessource extends superViews{
 
 		  for (let child of childToClone) {
 
-		  	let Cloned = child.getContainer().cloneNode(true);
+		  	let Cloned = child.cloneNode(true);
 		  document.body.appendChild(Cloned);
 
 		  Cloned.style.position = "absolute";
 		  Cloned.style.width = "100%";
-		  Cloned.className = childContainer.MyClass+"-Clone";
+		  Cloned.className = child.MyClass+"-Clone";
 		  //this.Cloned.style.marginLeft = "0px";
-		  Cloned.style.top = child.getContainer().getBoundingClientRect().y+"px";
+		  Cloned.style.top = child.getBoundingClientRect().y+"px";
 
 
 			
