@@ -470,8 +470,8 @@ export default class MainRessource extends superViews{
 
 
 		  //calcul de la position relative du clone par rapport au touch
-		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x;
-		  this.touchY = e.changedTouches[0].clientY - this.Cloned.getBoundingClientRect().y;
+		  this.touchX = this.Cloned.getBoundingClientRect().x;
+		  this.touchY = this.Cloned.getBoundingClientRect().y;
 	//	  console.log(this.touchX);
 	//	  console.log(this.touchY);
 
@@ -513,8 +513,8 @@ export default class MainRessource extends superViews{
 		    console.log(this.touchY);*/
 
 	        this.Cloned.style.marginLeft = "Opx";
-	        this.Cloned.style.top = e.changedTouches[0].clientY-this.touchY+"px";
-	        this.Cloned.style.left = e.changedTouches[0].clientX - ( this.touchX + this.initMarginClone) +"px";
+	        this.Cloned.style.top = this.touchY+"px";
+	        this.Cloned.style.left =  ( this.touchX + this.initMarginClone) +"px";
 
 	        //on fait bouger les enfants aussi :) :
 	         for (let childMove of this.childTomove) {
