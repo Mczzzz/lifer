@@ -527,7 +527,7 @@ export default class MainRessource extends superViews{
 
 	        this.Cloned.style.marginLeft = "Opx";
 	        this.Cloned.style.top = e.changedTouches[0].clientY - this.touchY+"px";
-	        this.Cloned.style.left =  ( this.touchX - this.initMarginClone) +"px";
+	        this.Cloned.style.left =  ( this.touchX + this.initMarginClone) +"px";
 
 	        //on fait bouger les enfants aussi :) :
 	         for (let childMove of this.childTomove) {
