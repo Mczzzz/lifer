@@ -435,7 +435,7 @@ export default class MainRessource extends superViews{
 
 		if(type == "start"){
 
-		let testVibration = window.navigator.vibrate(1000);
+		let testVibration = window.navigator.vibrate(500);
 		console.log('vibrate:'+testVibration);
  		  this.childrenToMove = this.getChilds(childContainer.getContainer());
  		  this.insertInParents = false;
