@@ -449,7 +449,7 @@ export default class MainRessource extends superViews{
 		  this.Cloned.style.position = "absolute";
 		  this.Cloned.style.width = "100%";
 		  this.Cloned.className = childContainer.MyClass+"-Clone";
-		  this.Cloned.style.marginLeft = "0px";
+		  //this.Cloned.style.marginLeft = "0px";
 		  this.Cloned.style.top = childContainer.getContainer().getBoundingClientRect().y+"px";
 
 
@@ -525,7 +525,7 @@ export default class MainRessource extends superViews{
 
 	        let MiddleCard = 0.5 * childContainer.getContainer().getBoundingClientRect().height;
 
-	        this.Cloned.style.marginLeft = "Opx";
+	        this.Cloned.style.marginLeft = "0px";
 	        this.Cloned.style.top = e.changedTouches[0].clientY - this.touchY+"px";
 	        this.Cloned.style.left =  ( this.touchX + this.initMarginClone) +"px";
 
