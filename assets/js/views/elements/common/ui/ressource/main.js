@@ -507,7 +507,7 @@ export default class MainRessource extends superViews{
 
 	        console.log()
 	        //controle qu'on ne sort pas de la fenêtre
-	        if(childContainer.getContainer().parentElement.getBoundingClientRect().y < e.changedTouches[0].clientY){
+	        if(childContainer.getContainer().parentElement.getBoundingClientRect().y > e.changedTouches[0].clientY){
 
 	        	window.navigator.vibrate(5);
 
