@@ -503,10 +503,16 @@ export default class MainRessource extends superViews{
 
 		}else if(type == "move"){
 
-			
-			
-
 	        event.preventDefault();
+
+	        //controle qu'on ne sort pas de la fenêtre
+	        if(childContainer.getContainer().parentElement.getBoundingClientRect().x < e.changedTouches[0].clientX){
+
+	        	window.navigator.vibrate(5);
+
+	        }
+
+
 	        //this.setStyle("background" , "red","element");
 
 	        let MiddleCard = 0.5 * childContainer.getContainer().getBoundingClientRect().height;
