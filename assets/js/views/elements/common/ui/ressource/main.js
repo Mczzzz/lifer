@@ -440,6 +440,9 @@ export default class MainRessource extends superViews{
  		  this.childrenToMove = this.getChilds(childContainer.getContainer());
  		  this.insertInParents = false;
 
+
+//CLONE
+
 		  this.Cloned = childContainer.getContainer().cloneNode(true);
 		  document.body.appendChild(this.Cloned);
 
@@ -452,27 +455,31 @@ export default class MainRessource extends superViews{
 
 		  //on prends les enfants avec :
 		  let childToClone = this.getChilds(childContainer.getContainer());
+		  
 		  this.childTomove = [];
+
 		  for (let child of childToClone) {
 
-		  	let Cloned = child.cloneNode(true);
-		  document.body.appendChild(Cloned);
+			  	let Cloned = child.cloneNode(true);
+			  document.body.appendChild(Cloned);
 
-		  Cloned.style.position = "absolute";
-		  Cloned.style.width = "100%";
-		  Cloned.className = child.MyClass+"-Clone";
-		  //this.Cloned.style.marginLeft = "0px";
-		  Cloned.style.top = child.getBoundingClientRect().y+"px";
+			  Cloned.style.position = "absolute";
+			  Cloned.style.width = "100%";
+			  Cloned.className = child.MyClass+"-Clone";
+			  //this.Cloned.style.marginLeft = "0px";
+			  Cloned.style.top = child.getBoundingClientRect().y+"px";
 
-		  this.childTomove.push(Cloned);
+			  this.childTomove.push(Cloned);
 			
-		}
+			}
 
 
 
 
 		  //calcul de la position relative du clone par rapport au touch
-		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x - parseInt(childContainer.getContainer().style.marginLeft, 10);
+		  console.log(e.changedTouches[0].clientX);
+		  console.log(this.Cloned.getBoundingClientRect().x);
+		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x;
 		  this.touchY = e.changedTouches[0].clientY - this.Cloned.getBoundingClientRect().y;
 	//	  console.log(this.touchX);
 	//	  console.log(this.touchY);
