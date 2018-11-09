@@ -526,7 +526,7 @@ export default class MainRessource extends superViews{
 	         for (let childMove of this.childTomove) {
 
 		  	childMove.style.top = e.changedTouches[0].clientY-this.touchY+"px";
-	        childMove.style.left = e.changedTouches[0].clientX - ( this.touchX + this.initMarginClone) +"px";
+	        childMove.style.left = e.changedTouches[0].clientX - ( this.touchX ) +"px";
 			
 			}
 
