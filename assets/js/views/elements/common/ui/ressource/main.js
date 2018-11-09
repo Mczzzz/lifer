@@ -479,7 +479,7 @@ export default class MainRessource extends superViews{
 		  //calcul de la position relative du clone par rapport au touch
 		  console.log(e.changedTouches[0].clientX);
 		  console.log(this.Cloned.getBoundingClientRect().x);
-		  this.touchX = e.changedTouches[0].clientX - childContainer.getContainer().getBoundingClientRect().x;
+		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x;
 		  this.touchY = e.changedTouches[0].clientY - this.Cloned.getBoundingClientRect().y;
 	//	  console.log(this.touchX);
 	//	  console.log(this.touchY);
