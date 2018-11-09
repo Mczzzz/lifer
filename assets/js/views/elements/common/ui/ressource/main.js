@@ -531,7 +531,7 @@ export default class MainRessource extends superViews{
 		  	childMove.style.top = e.changedTouches[0].clientY-this.touchY+"px";
 	        childMove.style.left = e.changedTouches[0].clientX - ( this.touchX + this.initMarginClone) +"px";
 			
-		}
+			}
 
 
 
@@ -667,6 +667,14 @@ export default class MainRessource extends superViews{
 	        childContainer.setStyle("display","");
 
 	        this.Cloned.remove();
+
+
+	        //on fait bouger les enfants aussi :) :
+	        for (let childMove of this.childTomove) {
+
+			  	childMove.remove();
+			
+			}
 
 	        this.Ghost.remove();
 
