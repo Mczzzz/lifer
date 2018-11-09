@@ -505,7 +505,9 @@ export default class MainRessource extends superViews{
 
 	        event.preventDefault();
 
-	        console.log()
+	        /////////////////////////////
+	        // CLONE ////////////////////
+	        /////////////////////////////
 	        //controle qu'on ne sort pas de la fenêtre
 	        if(childContainer.getContainer().parentElement.getBoundingClientRect().y > e.changedTouches[0].clientY){
 
@@ -514,16 +516,11 @@ export default class MainRessource extends superViews{
 	        }
 
 
-	        //this.setStyle("background" , "red","element");
-
 	        let MiddleCard = 0.5 * childContainer.getContainer().getBoundingClientRect().height;
-
-	/*        console.log(this.touchX);
-		    console.log(this.touchY);*/
 
 	        this.Cloned.style.marginLeft = "Opx";
 	        this.Cloned.style.top = e.changedTouches[0].clientY - this.touchY+"px";
-	        this.Cloned.style.left =  ( this.touchX + this.initMarginClone) +"px";
+	        this.Cloned.style.left =  ( this.touchX) +"px";
 
 	        //on fait bouger les enfants aussi :) :
 	         for (let childMove of this.childTomove) {
@@ -532,6 +529,10 @@ export default class MainRessource extends superViews{
 	        childMove.style.left = e.changedTouches[0].clientX - ( this.touchX + this.initMarginClone) +"px";
 			
 			}
+
+	        /////////////////////////////
+	        //////////////////// CLONE //
+	        /////////////////////////////
 
 
 
