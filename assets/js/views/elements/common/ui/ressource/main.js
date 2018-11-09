@@ -510,7 +510,7 @@ export default class MainRessource extends superViews{
 	        if(childContainer.getContainer().parentElement.getBoundingClientRect().y > e.changedTouches[0].clientY){
 
 	        	window.navigator.vibrate(5,100,10,100,20);
-
+	        	return true;
 	        }
 
 
