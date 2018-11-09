@@ -436,7 +436,7 @@ export default class MainRessource extends superViews{
 		if(type == "start"){
 
 		let testVibration = window.navigator.vibrate([5,100,5]);
-		console.log('vibrate:'+testVibration);
+
  		  this.childrenToMove = this.getChilds(childContainer.getContainer());
  		  this.insertInParents = false;
 
@@ -472,7 +472,7 @@ export default class MainRessource extends superViews{
 
 
 		  //calcul de la position relative du clone par rapport au touch
-		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x;
+		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x - parseInt(childContainer.getContainer().style.marginLeft, 10);
 		  this.touchY = e.changedTouches[0].clientY - this.Cloned.getBoundingClientRect().y;
 	//	  console.log(this.touchX);
 	//	  console.log(this.touchY);
