@@ -651,9 +651,9 @@ export default class MainRessource extends superViews{
 	        }
 	       
 
-	        if(this.insertInParents ){
+	        if(this.insertInParents){
 
-	        	GoodMargin = parseInt(this.Ghost.previousElementSibling.style.marginLeft,10) + this.Pas;
+	        	GoodMargin = this.Ghost.previousElementSibling ? parseInt(this.Ghost.previousElementSibling.style.marginLeft,10) + this.Pas : this.Pas;
 
 	          this.insertInParents = false;
 	        }
