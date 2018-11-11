@@ -646,7 +646,8 @@ export default class MainRessource extends superViews{
 	    }else if(type == "stop"){
 
 
-	        childContainer.setStyle("display","");
+	        //childContainer.setStyle("display","");
+	        childContainer.getContainer().style.visibility ="hidden";
 
 	        this.Cloned.remove();
 
