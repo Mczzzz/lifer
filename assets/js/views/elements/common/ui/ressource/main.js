@@ -515,15 +515,26 @@ export default class MainRessource extends superViews{
 
 	        event.preventDefault();
 
+	        //on bouge le Main en cas de déplacement proches du haut
+	        // de plus en plus vite
+	        if(e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y < 50){
+
+	        	this.container.scrollTop = this.container.offsetTop - 1;
+
+	        }
+
+	        if(childContainer.getContainer().parentElement.getBoundingClientRect().y > e.changedTouches[0].clientY){
+
+	        	//window.navigator.vibrate(5,100,10,100,20);
+	        	return true;
+	        }
+
+
 	        /////////////////////////////
 	        // CLONE ////////////////////
 	        /////////////////////////////
 	        //controle qu'on ne sort pas de la fenêtre
-	        if(childContainer.getContainer().parentElement.getBoundingClientRect().y > e.changedTouches[0].clientY){
 
-	        	window.navigator.vibrate(5,100,10,100,20);
-	        	return true;
-	        }
 
 
 	        let MiddleCard = 0.5 * childContainer.getContainer().getBoundingClientRect().height;
