@@ -192,7 +192,8 @@ export default class MainRessource extends superViews{
 
 			if((parseInt(child.style.marginLeft, 10) > parseInt(node.style.marginLeft, 10)) && begin == true){
 
-		  		
+				console.log("child");
+		  		console.log(child);
 		  		ArrayChilds.push(child);
 
 
