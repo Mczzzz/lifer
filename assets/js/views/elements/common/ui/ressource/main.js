@@ -470,7 +470,9 @@ export default class MainRessource extends superViews{
 			  Cloned.style.top = child.getBoundingClientRect().y+"px";
 
 			  this.childTomove.push(Cloned);
-			
+			  
+			  child.style.display = "none";
+
 			}
 
 		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x;
