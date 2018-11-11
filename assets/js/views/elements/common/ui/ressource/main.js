@@ -490,7 +490,7 @@ export default class MainRessource extends superViews{
 //GHOST
 		  this.Ghost = childContainer.getContainer().cloneNode();
 		  this.Ghost.style.boxShadow  = "inset rgb(121, 193, 206) 0px 0px 19px 3px";
-		  //this.Ghost.style.background = "rgb(121, 193, 206)";
+		  this.Ghost.className = childContainer.MyClass+"-Ghost";
 		  this.Ghost.style.marginTop = "5px";
 		  this.Ghost.style.marginBottom = "5px";
 		  this.Ghost.style.borderRadius = "15px";
