@@ -481,7 +481,7 @@ export default class MainRessource extends superViews{
 
 
 //GHOST
-		  this.Ghost = childContainer.getContainer().cloneNode(true);
+		  this.Ghost = childContainer.getContainer().cloneNode();
 		  this.Ghost.style.boxShadow  = "inset rgb(121, 193, 206) 0px 0px 19px 3px";
 		  //this.Ghost.style.background = "rgb(121, 193, 206)";
 		  this.Ghost.style.marginTop = "5px";
@@ -499,8 +499,8 @@ export default class MainRessource extends superViews{
 
 		  childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 		  
-		  childContainer.getContainer().style.visibility ="hidden";
-		  //childContainer.setStyle("display","none");
+		  //childContainer.getContainer().style.visibility ="hidden";
+		  childContainer.setStyle("display","none");
 
 
 
@@ -646,8 +646,8 @@ export default class MainRessource extends superViews{
 	    }else if(type == "stop"){
 
 
-	        //childContainer.setStyle("display","");
-	        childContainer.getContainer().style.visibility ="";
+	        childContainer.setStyle("display","");
+	        //childContainer.getContainer().style.visibility ="";
 
 	        this.Cloned.remove();
 
