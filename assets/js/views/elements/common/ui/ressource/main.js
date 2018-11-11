@@ -564,9 +564,10 @@ console.log(childContainer.getContainer().previousElementSibling.previousElement
 	          
 
 	          if(e.changedTouches[0].clientY < (this.Ghost.previousElementSibling.getBoundingClientRect().y + (this.Ghost.previousElementSibling.getBoundingClientRect().height / 2))){
-	 //         	console.log('in previous move node');
+	         	console.log('in previous move node');
 	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling.previousElementSibling);
 	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
+
 	            //this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 	          	
 	          }
@@ -576,10 +577,10 @@ console.log(childContainer.getContainer().previousElementSibling.previousElement
 
 	        if(childContainer.getContainer().nextElementSibling){
 
-	  //     	console.log('in next');
+	       	console.log('in next');
 
 	          if((e.changedTouches[0].clientY ) > childContainer.getContainer().nextElementSibling.getBoundingClientRect().y){
-	   //       	console.log('in next move node');
+	          	console.log('in next move node');
 	          	
 	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
 	          	childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
