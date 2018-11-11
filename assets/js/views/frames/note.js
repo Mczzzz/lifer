@@ -197,8 +197,8 @@ export default class Note extends superViews{
 
 	Push(data){
 
-		console.log("in Note Push");
-		console.log(data);
+//		console.log("in Note Push");
+//		console.log(data);
 
 
 		/*
