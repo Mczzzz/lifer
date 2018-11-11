@@ -519,6 +519,10 @@ export default class MainRessource extends superViews{
 	        // de plus en plus vite
 	        if(e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y < 50){
 
+	        	console.log(".scrollTop");
+	        	console.log(this.container.scrollTop);
+	        	console.log(this.container.offsetTop);
+
 	        	this.container.scrollTop = this.container.offsetTop - 1;
 
 	        }
