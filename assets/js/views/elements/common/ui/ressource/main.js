@@ -517,7 +517,7 @@ export default class MainRessource extends superViews{
 
 	        //on bouge le Main en cas de déplacement proches du haut
 	        // de plus en plus vite
-	        while(e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y < 50){
+	        if(e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y < 50){
 
 	        	this.container.scrollTop = this.container.scrollTop - (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
 
