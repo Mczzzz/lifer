@@ -550,7 +550,7 @@ export default class MainRessource extends superViews{
 
 	        if(childContainer.getContainer().previousElementSibling.previousElementSibling){
 
-
+console.log(childContainer.getContainer().previousElementSibling.previousElementSibling);
 	        	//on regarde si mon parent à deja des enfants
 	        	let isParent = this.getChilds(childContainer.getContainer().previousElementSibling.previousElementSibling).length;
 	        	console.log("IS Parent: "+isParent);
