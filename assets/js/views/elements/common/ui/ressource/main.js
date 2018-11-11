@@ -560,7 +560,7 @@ export default class MainRessource extends superViews{
 	 //         	console.log('in previous move node');
 	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling.previousElementSibling);
 	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
-	            this.moveChilds(childContainer.getContainer(),this.childrenToMove);
+	            //this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 	          	
 	          }
 
@@ -576,7 +576,7 @@ export default class MainRessource extends superViews{
 	          	
 	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
 	          	childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
-	          	this.moveChilds(childContainer.getContainer(),this.childrenToMove);
+	          	//this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 	          }
 
 	        }
@@ -649,6 +649,7 @@ export default class MainRessource extends superViews{
 
 
 	        childContainer.setStyle("display","");
+	        this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 	        //childContainer.getContainer().style.visibility ="";
 
 	        this.Cloned.remove();
