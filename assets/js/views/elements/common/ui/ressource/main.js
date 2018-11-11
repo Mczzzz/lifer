@@ -548,7 +548,7 @@ export default class MainRessource extends superViews{
 
 	        	//on regarde si mon parent à deja des enfants
 	        	let isParent = this.getChilds(childContainer.getContainer().previousElementSibling.previousElementSibling).length;
-
+	        	console.log("IS Parent: "+isParent);
 
 
 	        	if(isParent){
@@ -585,10 +585,7 @@ export default class MainRessource extends superViews{
 
 
 
-
-	        //le decalage
-/*	        console.log(e.changedTouches[0].clientX);
-	        console.log(childContainer.getContainer().getBoundingClientRect().x);*/
+//le decalage de la node principale
 
 	        this.Pas = 30;
 
@@ -633,6 +630,8 @@ export default class MainRessource extends superViews{
 
 	          this.insertInParents = false;
 	        }
+
+//Decalage principale
 
 
 
