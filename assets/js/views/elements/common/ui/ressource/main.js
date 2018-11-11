@@ -311,6 +311,10 @@ export default class MainRessource extends superViews{
 
 			}
 
+
+			child.style.visibility = "";
+
+
 		}
 
 
@@ -556,6 +560,7 @@ export default class MainRessource extends superViews{
 	        		this.insertInParents = true;
 	        	}
 	          
+
 	          if(e.changedTouches[0].clientY < (this.Ghost.previousElementSibling.getBoundingClientRect().y + (this.Ghost.previousElementSibling.getBoundingClientRect().height / 2))){
 	 //         	console.log('in previous move node');
 	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling.previousElementSibling);
@@ -660,6 +665,8 @@ export default class MainRessource extends superViews{
 			  	childMove.remove();
 			
 			}
+
+
 
 	        this.Ghost.remove();
 
