@@ -93,8 +93,8 @@ export default class Resources extends superViews{
 	}
 
 	updateText(MyText,elt,ressourceTmpId){
-
-		console.log(elt);
+		return true;
+		//console.log(elt);
 		let newText = elt.text.getText();
 		console.log('newText: '+newText);
 		MyText.setData(newText);
