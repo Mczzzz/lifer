@@ -647,7 +647,7 @@ export default class MainRessource extends superViews{
 
 
 	        //childContainer.setStyle("display","");
-	        childContainer.getContainer().style.visibility ="hidden";
+	        childContainer.getContainer().style.visibility ="";
 
 	        this.Cloned.remove();
 
