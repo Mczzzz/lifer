@@ -37,7 +37,7 @@ class DatasSynchronizing {
 			return this.Stack[stackId];
 
 		}else{
-			console.log('purshaseOrder Allready exist');
+//			console.log('purshaseOrder Allready exist');
 		}
 
 

@@ -59,7 +59,7 @@ export default class MainRessource extends superViews{
 
      			//getElementSize
      			let myeltSize = elt.getBoundingClientRect();
-     			console.log(myeltSize);
+     			//console.log(myeltSize);
 
      			if(myeltSize.width > mainSize){
 
@@ -68,7 +68,7 @@ export default class MainRessource extends superViews{
 
      			}else{
      				this.container.scrollTop = elt.offsetTop - 83;
-     			console.log("in resize elt :"+elt.offsetTop);
+     			//console.log("in resize elt :"+elt.offsetTop);
      			}
 
      		}/*else{
@@ -192,8 +192,8 @@ export default class MainRessource extends superViews{
 
 			if((parseInt(child.style.marginLeft, 10) > parseInt(node.style.marginLeft, 10)) && begin == true){
 
-				console.log("child");
-		  		console.log(child);
+			//	console.log("child");
+		  	//	console.log(child);
 		  		ArrayChilds.push(child);
 
 
@@ -324,7 +324,7 @@ export default class MainRessource extends superViews{
 
 	collapserSetter(){
 
-		console.log('in collapserSetter');
+	//	console.log('in collapserSetter');
 
 		if (this.getContainer().hasChildNodes()) {
   
@@ -564,12 +564,12 @@ export default class MainRessource extends superViews{
 
 
 	        if(childContainer.getContainer().previousElementSibling.previousElementSibling){
-console.log("childContainer.getContainer().previousElementSibling.previousElementSibling");
-console.log(childContainer.getContainer().previousElementSibling.previousElementSibling);
+//console.log("childContainer.getContainer().previousElementSibling.previousElementSibling");
+//console.log(childContainer.getContainer().previousElementSibling.previousElementSibling);
 	        	//on regarde si mon parent à deja des enfants
 	        	let isParent = this.getChilds(childContainer.getContainer().previousElementSibling.previousElementSibling).length;
-	        	console.log("IS Parent: "+isParent);
-	        	console.log(isParent);
+	        	//console.log("IS Parent: "+isParent);
+	        	//console.log(isParent);
 
 
 	        	if(isParent){
@@ -579,7 +579,7 @@ console.log(childContainer.getContainer().previousElementSibling.previousElement
 	          
 
 	          if(e.changedTouches[0].clientY < (this.Ghost.previousElementSibling.getBoundingClientRect().y + (this.Ghost.previousElementSibling.getBoundingClientRect().height / 2))){
-	         	console.log('in previous move node');
+	         	//console.log('in previous move node');
 	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling.previousElementSibling);
 	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 
@@ -592,10 +592,10 @@ console.log(childContainer.getContainer().previousElementSibling.previousElement
 
 	        if(childContainer.getContainer().nextElementSibling){
 
-	       	console.log('in next');
+	       	//console.log('in next');
 
 	          if((e.changedTouches[0].clientY ) > childContainer.getContainer().nextElementSibling.getBoundingClientRect().y){
-	          	console.log('in next move node');
+	          	//console.log('in next move node');
 	          	
 	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
 	          	childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());

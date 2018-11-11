@@ -98,7 +98,7 @@ Moment.locale('fr');
 		}
 		else {
 			this.ClassId = arrayId[1];
-			console.log(this.ClassId);
+//			console.log(this.ClassId);
 		}
 
 
@@ -230,7 +230,7 @@ Moment.locale('fr');
 
 
 	setId(id){
-		console.log(id);
+	//	console.log(id);
           this.container.id = id;
 
      }
