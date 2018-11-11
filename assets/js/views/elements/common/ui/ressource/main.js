@@ -471,7 +471,7 @@ export default class MainRessource extends superViews{
 
 			  this.childTomove.push(Cloned);
 			  
-			  child.style.display = "none";
+			  child.style.visibility = "hidden";
 
 			}
 
