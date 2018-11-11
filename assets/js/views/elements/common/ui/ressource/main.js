@@ -473,17 +473,14 @@ export default class MainRessource extends superViews{
 			
 			}
 
-
-
-
-		  //calcul de la position relative du clone par rapport au touch
-		  console.log(e.changedTouches[0].clientX);
-		  console.log(this.Cloned.getBoundingClientRect().x);
 		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x;
 		  this.touchY = e.changedTouches[0].clientY - this.Cloned.getBoundingClientRect().y;
-	//	  console.log(this.touchX);
-	//	  console.log(this.touchY);
 
+		  this.initMarginClone = parseInt(childContainer.getContainer().style.marginLeft, 10);
+//CLONE
+
+
+//GHOST
 		  this.Ghost = childContainer.getContainer().cloneNode(true);
 		  this.Ghost.style.boxShadow  = "inset rgb(121, 193, 206) 0px 0px 19px 3px";
 		  //this.Ghost.style.background = "rgb(121, 193, 206)";
@@ -495,16 +492,15 @@ export default class MainRessource extends superViews{
    		  this.Ghost.style.transitionDelay = "0.0s";
           this.Ghost.style.transitionTimingFunction = "cubic-bezier(0.15, -0.35, 0.98, 1.27)";
           this.Ghost.style.transitionProperty = "margin";
-
+//GHOST
 
 
 
 
 		  childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
-		  childContainer.setStyle("display","none");
-
-
-		  this.initMarginClone = parseInt(childContainer.getContainer().style.marginLeft, 10);
+		  
+		  childContainer.getContainer().style.visibility ="hidden";
+		  //childContainer.setStyle("display","none");
 
 
 
@@ -542,29 +538,7 @@ export default class MainRessource extends superViews{
 	        /////////////////////////////
 
 
-
-/*	        console.log("this.Cloned.style.left move");
-	        console.log(this.Cloned.style.left);*/
-
-
-/*
-
-	        if(!childContainer.getContainer().previousElementSibling.previousElementSibling && (e.changedTouches[0].clientY < this.Ghost.getBoundingClientRect().y)){
-
-	          this.Cloned.style.display = "none";
-
-	        }else if(!childContainer.getContainer().nextElementSibling && (e.changedTouches[0].clientY > (this.Ghost.getBoundingClientRect().y + this.Ghost.getBoundingClientRect().width ))){
-
-	          this.Cloned.style.display = "none";
-
-	        }else{
-				this.Cloned.style.display = "none";
-	        }
-*/
-
-
-
-
+//MOVEMENT CONTAINER
 
 
 	        if(childContainer.getContainer().previousElementSibling.previousElementSibling){
