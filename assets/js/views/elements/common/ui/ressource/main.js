@@ -523,7 +523,7 @@ export default class MainRessource extends superViews{
 	        	console.log(this.container.scrollTop);
 	        	console.log(this.container.offsetTop);
 
-	        	this.container.scrollTop = this.container.offsetTop - 1;
+	        	this.container.scrollTop = this.container.offsetTop -0.01;
 
 	        }
 
