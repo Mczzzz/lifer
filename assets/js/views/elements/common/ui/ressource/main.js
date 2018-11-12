@@ -20,6 +20,7 @@ export default class MainRessource extends superViews{
           this.collapsed = false;
 
           this.inMovement = false;
+          this.speed = 1;
 
      }
 
@@ -421,24 +422,27 @@ export default class MainRessource extends superViews{
 	}
 
 
-	moveScrollTop(direction){
+	moveScrollTop(direction,speed){
 
 		console.log(direction);
 		if(direction == "up"){
 
-			this.container.scrollTop = this.container.scrollTop - 1;
+			this.container.scrollTop = this.container.scrollTop - this.speed;
+			this.speed = this.speed + 0.1;
 			if(this.container.scrollTop == 0){
 
 				this.stopScroll();
+				this.speed = 1;
 			} 
 
 		}else if(direction == "down"){
 
-			this.container.scrollTop = this.container.scrollTop + 1;
-
+			this.container.scrollTop = this.container.scrollTop + this.speed;
+			this.speed = this.speed + 0.1;
 			if(this.container.scrollTop == this.container.scrollheight){
 
 				this.stopScroll();
+				this.speed = 1;
 			} 
 
 		}
@@ -563,6 +567,7 @@ export default class MainRessource extends superViews{
 
 	        }else{
 	        	this.stopScroll();
+	        	this.speed = 1;
 	        }
 
 
