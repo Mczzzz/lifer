@@ -734,6 +734,10 @@ export default class MainRessource extends superViews{
         	//on illumine le parent concerné
         	let breaker = 0;
 	        let myNode = this.Ghost;
+	        if(this.pNode){
+	        	this.pNode.style.background = "";
+	        }
+
 	        this.pNode = this.Ghost.previousElementSibling;
 	        do{
 	        	console.log('in do');
