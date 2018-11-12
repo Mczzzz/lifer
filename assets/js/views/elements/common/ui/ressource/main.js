@@ -618,15 +618,20 @@ export default class MainRessource extends superViews{
 	        let pNode = this.Ghost.previousElementSibling;
 	        do{
 	        	console.log('in do');
-	        	if(this.Ghost.previousElementSibling.getBoundingClientRect().x > pNode.getBoundingClientRect().x){
+	        	if(pNode){
 
-					pNode.style.background = "orange";
-					breaker = 1;	        		
+	        		if(this.Ghost.previousElementSibling.getBoundingClientRect().x > pNode.getBoundingClientRect().x){
+
+						pNode.style.background = "orange";
+						breaker = 1;	  
+
+		        	}else{
+		        		pNode = pNode.previousElementSibling;
+		        	}
+
 	        	}else{
-	        		pNode = pNode.previousElementSibling;
+	        		breaker = 1;
 	        	}
-	        	//console.log(this.Ghost.previousElementSibling.getBoundingClientRect().x);
-	        	//console.log(this.Ghost.getBoundingClientRect().x);
 
 	        
 	        }while(breaker == 0);
