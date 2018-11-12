@@ -428,7 +428,7 @@ export default class MainRessource extends superViews{
 		if(direction == "up"){
 
 			this.container.scrollTop = this.container.scrollTop - this.speed;
-			this.speed = this.speed + 0.1;
+			this.speed = this.speed + 0.05;
 			if(this.container.scrollTop == 0){
 
 				this.stopScroll();
@@ -438,7 +438,7 @@ export default class MainRessource extends superViews{
 		}else if(direction == "down"){
 
 			this.container.scrollTop = this.container.scrollTop + this.speed;
-			this.speed = this.speed + 0.1;
+			this.speed = this.speed + 0.05;
 			if(this.container.scrollTop == this.container.scrollheight){
 
 				this.stopScroll();
