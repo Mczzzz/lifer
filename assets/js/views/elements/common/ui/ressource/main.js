@@ -433,6 +433,17 @@ export default class MainRessource extends superViews{
 
 
 
+	moveMain(e,childContainer){
+
+		let new = e;
+		let old
+		do{
+
+			setTimeout();
+
+		}while();
+
+	}
 
 
 	onChildMove(childContainer, e, type){
@@ -587,6 +598,7 @@ export default class MainRessource extends superViews{
 	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling.previousElementSibling);
 	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 
+
 	            //this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 	          	
 	          }
@@ -608,7 +620,16 @@ export default class MainRessource extends superViews{
 
 	        }
 	    
+	        //s'il y a un parent on change sa couleur
+	        //on parcours en arrière les noeuds pour revenir au parent le plus proche
 
+	        let breaker = 0;
+	        do{
+	        	console.log('in do');
+	        	console.log(childContainer.getContainer().getBoundingClientRect().x);
+
+	        breaker = 1;
+	        }while(breaker == 0);
 
 
 
