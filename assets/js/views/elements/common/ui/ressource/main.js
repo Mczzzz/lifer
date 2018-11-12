@@ -424,7 +424,11 @@ export default class MainRessource extends superViews{
 	moveScrollTop(ratio){
 
 		this.container.scrollTop = this.container.scrollTop - ratio;
-		if(this.container.scrollTop == 0) clearInterval(this.movementId);
+		if(this.container.scrollTop == 0){
+
+			clearInterval(this.movementId);
+			this.inMovement = false;
+		} 
 	}
 
 	stopScroll(){
