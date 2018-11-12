@@ -413,7 +413,7 @@ export default class MainRessource extends superViews{
 
 		let initTouchWhile = e.changedTouches[0].clientY;
 
-		setTimeout(()=> moveScrollTop(1) , 2000 );
+		setTimeout(()=> this.moveScrollTop(1) , 2000 );
 
 	/*	do{
 
