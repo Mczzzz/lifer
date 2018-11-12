@@ -411,23 +411,38 @@ export default class MainRessource extends superViews{
 	}
 
 
-	moveLikePromise(speed = 30){
+	moveLikePromise(direction){
 
 		this.inMovement = true;
 
-		this.movementId = setInterval(()=> this.moveScrollTop(1) , speed );
+		this.movementId = setInterval(()=> this.moveScrollTop(direction) , speed );
 
 
 	}
 
 
-	moveScrollTop(ratio){
+	moveScrollTop(direction){
 
-		this.container.scrollTop = this.container.scrollTop - ratio;
-		if(this.container.scrollTop == 0){
+		if(direction == "up"){
 
-			this.stopScroll();
-		} 
+			this.container.scrollTop = this.container.scrollTop - 1;
+			if(this.container.scrollTop == 0){
+
+				this.stopScroll();
+			} 
+
+		}else if(direction == "down"){
+
+			this.container.scrollTop = this.container.scrollTop + 1;
+			if(this.container.scrollTop == this.container.scrollheight){
+
+				this.stopScroll();
+			} 
+
+		}
+
+
+
 	}
 
 	stopScroll(){
@@ -528,19 +543,29 @@ export default class MainRessource extends superViews{
 
 	        if(e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y < 50){
 
-	        	//dispatchEventListener
-	        	//this.container.scrollTop = this.container.scrollTop - (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
-				
-	        	
+
 	        	if(this.inMovement == false) {
-	        		this.moveLikePromise(e,childContainer);
-	        		console.log('this.moveLikePromise(e,childContainer);');
+	        		this.moveLikePromise("up");
+	        		//console.log('this.moveLikePromise(e,childContainer);');
+	        	}
+				
+
+	        }else if(childContainer.getContainer().parentElement.getBoundingClientRect().y + childContainer.getContainer().parentElement.getBoundingClientRect().height - e.changedTouches[0].clientY  < 50){
+
+
+	        	if(this.inMovement == false) {
+	        		this.moveLikePromise("down");
+	        		//console.log('this.moveLikePromise(e,childContainer);');
 	        	}
 				
 
 	        }else{
 	        	this.stopScroll();
 	        }
+
+
+
+
 
 	        if(childContainer.getContainer().parentElement.getBoundingClientRect().y > e.changedTouches[0].clientY){
 
