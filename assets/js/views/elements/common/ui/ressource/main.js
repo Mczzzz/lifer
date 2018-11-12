@@ -520,7 +520,7 @@ export default class MainRessource extends superViews{
 
 	        //on bouge le Main en cas de déplacement proches du haut
 	        // de plus en plus vite
-	        this.moveMain(e,childContainer);
+	        //this.moveMain(e,childContainer);
 
 	        if(e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y < 50){
 
