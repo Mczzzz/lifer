@@ -439,12 +439,8 @@ export default class MainRessource extends superViews{
 
 			this.container.scrollTop = this.container.scrollTop + this.speed;
 			this.speed = this.speed + 0.05;
-			console.log(this.container.scrollTop);
-			console.log(this.container.scrollHeight);
-			console.log(this.container.height);
-			console.log(this.container.style.maxHeight);
 
-			if(this.container.scrollTop == this.container.scrollHeight){
+			if(this.container.scrollTop + parseInt(this.container.style.maxHeight, 10) == this.container.scrollHeight){
 
 				this.stopScroll();
 				this.speed = 1;
