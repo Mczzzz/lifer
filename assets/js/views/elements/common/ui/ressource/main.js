@@ -478,7 +478,7 @@ export default class MainRessource extends superViews{
 			  Cloned.style.top = child.getBoundingClientRect().y+"px";
 
 			  this.childTomove.push(Cloned);
-			  childContainer.getContainer().style.height = childContainer.getContainer().style.height + child.getBoundingClientRect().height;
+			  //childContainer.getContainer().style.height = childContainer.getContainer().style.height + child.getBoundingClientRect().height;
 			  //child.style.visibility = "hidden";
 			  child.remove();
 			}
@@ -510,7 +510,7 @@ export default class MainRessource extends superViews{
 		  childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 		  
 		  //childContainer.getContainer().style.visibility ="hidden";
-		  childContainer.setStyle("visibility","hidden");
+		  childContainer.setStyle("display","none");
 
 
 
