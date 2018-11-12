@@ -415,7 +415,7 @@ export default class MainRessource extends superViews{
 
 		this.inMovement = true;
 
-		this.movementId = setInterval(()=> this.moveScrollTop(direction) , speed );
+		this.movementId = setInterval(()=> this.moveScrollTop(direction) , 30 );
 
 
 	}
