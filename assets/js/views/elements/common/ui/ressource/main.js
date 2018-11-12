@@ -611,22 +611,31 @@ export default class MainRessource extends superViews{
 	    
 	        //s'il y a un parent on change sa couleur
 	        //on parcours en arrière les noeuds pour revenir au parent le plus proche
+	        this.Pas = 30;
 
 	        let breaker = 0;
+	        let myNode = this.Ghost;
+	        let pNode = this.Ghost.previousElementSibling;
 	        do{
 	        	console.log('in do');
+	        	if(this.Ghost.previousElementSibling.getBoundingClientRect().x > pNode.getBoundingClientRect().x){
 
-	        	console.log(this.Ghost.previousElementSibling.getBoundingClientRect().x);
-	        	console.log(this.Ghost.getBoundingClientRect().x);
+					pNode.style.background = "orange";
+					breaker = 1;	        		
+	        	}else{
+	        		pNode = pNode.previousElementSibling;
+	        	}
+	        	//console.log(this.Ghost.previousElementSibling.getBoundingClientRect().x);
+	        	//console.log(this.Ghost.getBoundingClientRect().x);
 
-	        breaker = 1;
+	        
 	        }while(breaker == 0);
 
 
 
 //le decalage de la node principale
 
-	        this.Pas = 30;
+	        
 
 	        let GoodMargin = 0;
 
