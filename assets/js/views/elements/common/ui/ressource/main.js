@@ -622,10 +622,6 @@ export default class MainRessource extends superViews{
 	        	console.log("just previous");
 	        	let PreviousContainerX = this.Ghost.previousElementSibling.getBoundingClientRect().x;
 
-	        	//cacul du nombre de pas
-	        	let PreviousPas = Math.round(PreviousContainerX/ this.Pas );
-	        	console.log('PreviousPas:'+PreviousPas);
-
 	        	let margin = Math.round(e.changedTouches[0].clientX / this.Pas ) * this.Pas;
 
 	        	if(margin > (PreviousContainerX + this.Pas)){
@@ -649,7 +645,28 @@ export default class MainRessource extends superViews{
 
 
 	        	console.log("previous and next");
-	        	GoodMargin = Math.round(e.changedTouches[0].clientX / this.Pas ) * this.Pas;
+	        	let PreviousContainerX = this.Ghost.previousElementSibling.getBoundingClientRect().x;
+	        	let NextContainerX = childContainer.getContainer().nextElementSibling.getBoundingClientRect().x;
+
+	        	let margin = Math.round(e.changedTouches[0].clientX / this.Pas ) * this.Pas;
+
+
+	        	if(margin > (PreviousContainerX + this.Pas)){
+
+	        		GoodMargin = PreviousContainerX + this.Pas;
+
+	        	}else if (margin < NextContainerX){
+
+	        		GoodMargin = NextContainerX;
+
+	        	}else {
+
+	        		GoodMargin = margin;
+
+	        	}
+
+
+
 	        }
 
 
