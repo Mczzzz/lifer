@@ -611,6 +611,28 @@ export default class MainRessource extends superViews{
 
 	        let GoodMargin = 0;
 
+
+	        //si juste previous
+
+	        //si juste next
+
+	        //si previous + next
+	        if(this.Ghost.previousElementSibling && !childContainer.getContainer().nextElementSibling){
+
+	        	console.log("just previous");
+	        }else if(!this.Ghost.previousElementSibling && childContainer.getContainer().nextElementSibling){
+
+	        	console.log("just next");
+
+	        }else if(this.Ghost.previousElementSibling && childContainer.getContainer().nextElementSibling){
+
+
+	        	console.log("previous and next");
+	        }
+
+
+
+
 	        if(this.Ghost.previousElementSibling){
 
 	        	let PreviousContainerX = this.Ghost.previousElementSibling.getBoundingClientRect().x;
