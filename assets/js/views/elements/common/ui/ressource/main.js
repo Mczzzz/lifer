@@ -136,13 +136,13 @@ export default class MainRessource extends superViews{
 			text.getContainer().previousElementSibling.style.marginBottom = "5px";
 		}*/
 
-		let config = { characterData: true, childList: true, subtree: true};
+/*		let config = { characterData: true, childList: true, subtree: true};
 		let observer = new MutationObserver(()=>this.resize(text.getContainer()));
-		observer.observe(text.getContainer(), config);
+		observer.observe(text.getContainer(), config);*/
 
 
 
-		this.resize(text.getContainer());
+		//this.resize(text.getContainer());
 
 		text.focus();
 		
