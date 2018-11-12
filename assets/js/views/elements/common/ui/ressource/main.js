@@ -520,7 +520,7 @@ export default class MainRessource extends superViews{
 	        if(e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y < 50){
 
 	        	this.container.scrollTop = this.container.scrollTop - (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
-				this.onChildMove(childContainer, e, "move");
+				//this.onChildMove(childContainer, e, "move");
 
 	        }
 
