@@ -415,9 +415,9 @@ export default class MainRessource extends superViews{
 
 		this.inMovement = true;
 
-		let initTouchWhile = e.changedTouches[0].clientY;
+	//	let initTouchWhile = e.changedTouches[0].clientY;
 
-		setTimeout(()=> this.moveScrollTop(1) , 2000 );
+		setInterval(()=> this.moveScrollTop(1) , 200 );
 
 	/*	do{
 
