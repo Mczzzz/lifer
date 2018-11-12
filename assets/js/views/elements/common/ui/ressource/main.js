@@ -433,17 +433,6 @@ export default class MainRessource extends superViews{
 
 
 
-	moveMain(e,childContainer){
-
-		let new = e;
-		let old
-		do{
-
-			setTimeout();
-
-		}while();
-
-	}
 
 
 	onChildMove(childContainer, e, type){
