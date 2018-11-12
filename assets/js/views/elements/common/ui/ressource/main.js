@@ -434,23 +434,6 @@ export default class MainRessource extends superViews{
 
 
 
-	moveMain(e,childContainer){
-
-		return new Promise(()=>this.moveUpper(e,childContainer));
-	}
-
-	moveUpper(e,childContainer){
-
-		while(e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y < 50){
-
-        	this.container.scrollTop = this.container.scrollTop - (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
-
-		}
-
-	}
-
-
-
 
 	onChildMove(childContainer, e, type){
 
@@ -495,7 +478,7 @@ export default class MainRessource extends superViews{
 			  Cloned.style.top = child.getBoundingClientRect().y+"px";
 
 			  this.childTomove.push(Cloned);
-			  
+			  childContainer.getContainer().style.height = childContainer.getContainer().style.height + child..getBoundingClientRect().height;
 			  //child.style.visibility = "hidden";
 			  child.remove();
 			}
@@ -539,6 +522,14 @@ export default class MainRessource extends superViews{
 	        // de plus en plus vite
 	        this.moveMain(e,childContainer);
 
+	        if(e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y < 50){
+
+	        	//dispatchEventListener
+	        	this.container.scrollTop = this.container.scrollTop - (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
+				//this.onChildMove(childContainer, e, "move");
+				
+
+	        }
 
 	        if(childContainer.getContainer().parentElement.getBoundingClientRect().y > e.changedTouches[0].clientY){
 
