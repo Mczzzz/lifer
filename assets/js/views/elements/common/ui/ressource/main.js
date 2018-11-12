@@ -478,7 +478,7 @@ export default class MainRessource extends superViews{
 			  Cloned.style.top = child.getBoundingClientRect().y+"px";
 
 			  this.childTomove.push(Cloned);
-			  childContainer.getContainer().style.height = childContainer.getContainer().style.height + child..getBoundingClientRect().height;
+			  childContainer.getContainer().style.height = childContainer.getContainer().style.height + child.getBoundingClientRect().height;
 			  //child.style.visibility = "hidden";
 			  child.remove();
 			}
