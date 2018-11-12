@@ -615,7 +615,7 @@ export default class MainRessource extends superViews{
 	        let breaker = 0;
 	        do{
 	        	console.log('in do');
-	        	console.log(childContainer.getContainer().getBoundingClientRect().x);
+	        	console.log(this.Ghost.previousElementSibling.getBoundingClientRect().x);
 
 	        breaker = 1;
 	        }while(breaker == 0);
