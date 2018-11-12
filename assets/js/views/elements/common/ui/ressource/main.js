@@ -738,7 +738,7 @@ export default class MainRessource extends superViews{
 	        	console.log('in do');
 	        	if(pNode){
 
-	        		if(this.Ghost.previousElementSibling.getBoundingClientRect().x > pNode.getBoundingClientRect().x){
+	        		if(this.Ghost.previousElementSibling.getBoundingClientRect().x < pNode.getBoundingClientRect().x){
 
 						pNode.style.background = "orange";
 						breaker = 1;	  
