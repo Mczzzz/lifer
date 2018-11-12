@@ -417,7 +417,7 @@ export default class MainRessource extends superViews{
 
 	//	let initTouchWhile = e.changedTouches[0].clientY;
 
-		setInterval(()=> this.moveScrollTop(1) , 200 );
+		this.movementId = setInterval(()=> this.moveScrollTop(1) , 30 );
 
 	/*	do{
 
