@@ -476,7 +476,7 @@ export default class MainRessource extends superViews{
 
 			  this.childTomove.push(Cloned);
 			  
-			  child.style.visibility = "hidden";
+			  child.remove();
 
 			}
 
@@ -733,14 +733,6 @@ export default class MainRessource extends superViews{
 	        //childContainer.getContainer().style.visibility ="";
 
 	        this.Cloned.remove();
-
-
-	        //on fait bouger les enfants aussi :) :
-	        for (let childMove of this.childTomove) {
-
-			  	childMove.remove();
-			
-			}
 
 
 
