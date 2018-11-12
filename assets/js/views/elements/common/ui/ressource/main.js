@@ -510,7 +510,7 @@ export default class MainRessource extends superViews{
 		  childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 		  
 		  //childContainer.getContainer().style.visibility ="hidden";
-		  childContainer.setStyle("display","none");
+		  childContainer.setStyle("visibility","hidden");
 
 
 
