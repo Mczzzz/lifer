@@ -439,7 +439,7 @@ export default class MainRessource extends superViews{
 
 			this.container.scrollTop = this.container.scrollTop + this.speed;
 			this.speed = this.speed + 0.05;
-			if(this.container.scrollTop == this.container.scrollheight){
+			if(this.container.scrollTop == this.container.scrollHeight){
 
 				this.stopScroll();
 				this.speed = 1;
