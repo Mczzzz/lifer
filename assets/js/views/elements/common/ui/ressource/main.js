@@ -422,8 +422,8 @@ export default class MainRessource extends superViews{
 				console.log('ratio:'+ratio);
 
 			
-
-			setTimeout( ()=>this.moveScrollTop(ratio) , 200 );
+			let that = this;
+			setTimeout(funtion(){that.moveScrollTop(ratio)} , 200 );
 
 		}while(this.eChildMove.changedTouches[0].clientY == initTouchWhile);
 
