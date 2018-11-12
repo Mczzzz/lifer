@@ -442,7 +442,7 @@ export default class MainRessource extends superViews{
 			console.log(this.container.scrollTop);
 			console.log(this.container.scrollHeight);
 			console.log(this.container.height);
-			console.log(this.container.style.height);
+			console.log(this.container.style.maxHeight);
 
 			if(this.container.scrollTop == this.container.scrollHeight){
 
