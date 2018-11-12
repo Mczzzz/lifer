@@ -359,6 +359,9 @@ export default class MainRessource extends superViews{
 }
 
 
+
+
+
 	collapseAll(){
 
 		if (this.getContainer().hasChildNodes()) {
@@ -428,6 +431,23 @@ export default class MainRessource extends superViews{
 
 	}
 
+
+
+
+	moveMain(e,childContainer){
+
+		return new Promise((e,childContainer)=>moveUpper(e,childContainer));
+	}
+
+	moveUpper(e,childContainer){
+
+		while(e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y < 50){
+
+        	this.container.scrollTop = this.container.scrollTop - (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
+
+		}
+
+	}
 
 
 
@@ -517,12 +537,8 @@ export default class MainRessource extends superViews{
 
 	        //on bouge le Main en cas de déplacement proches du haut
 	        // de plus en plus vite
-	        if(e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y < 50){
+	        this.moveMain(e,childContainer);
 
-	        	this.container.scrollTop = this.container.scrollTop - (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
-				//this.onChildMove(childContainer, e, "move");
-
-	        }
 
 	        if(childContainer.getContainer().parentElement.getBoundingClientRect().y > e.changedTouches[0].clientY){
 
