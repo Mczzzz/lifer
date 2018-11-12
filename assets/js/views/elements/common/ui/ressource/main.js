@@ -431,8 +431,8 @@ export default class MainRessource extends superViews{
 
 
 	moveScrollTop(ratio){
-
-		this.container.scrollTop = this.container.scrollTop - 1;
+		console.log('in moveScrollTop');
+		this.container.scrollTop = this.container.scrollTop - ratio;
 	}
 
 
