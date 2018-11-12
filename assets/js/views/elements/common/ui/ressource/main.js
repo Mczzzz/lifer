@@ -411,34 +411,25 @@ export default class MainRessource extends superViews{
 	}
 
 
-	moveLikePromise(e,childContainer){
+	moveLikePromise(speed = 30){
 
 		this.inMovement = true;
 
-	//	let initTouchWhile = e.changedTouches[0].clientY;
+		this.movementId = setInterval(()=> this.moveScrollTop(1) , speed );
 
-		this.movementId = setInterval(()=> this.moveScrollTop(1) , 10 );
 
-	/*	do{
-
-			console.log(this.container.scrollTop);
-			if(this.container.scrollTop == 0) break;
-
-			let ratio = (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
-				console.log('ratio:'+ratio);
-
-			
-
-			
-
-		}while(this.eChildMove.changedTouches[0].clientY == initTouchWhile);
-*/
 	}
 
 
 	moveScrollTop(ratio){
-		console.log('in moveScrollTop');
+
 		this.container.scrollTop = this.container.scrollTop - ratio;
+		if(this.container.scrollTop == 0) clearInterval(this.movementId);
+	}
+
+	stopScroll(){
+
+
 	}
 
 
