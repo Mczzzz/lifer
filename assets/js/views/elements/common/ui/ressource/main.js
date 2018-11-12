@@ -734,18 +734,18 @@ export default class MainRessource extends superViews{
         	//on illumine le parent concerné
         	let breaker = 0;
 	        let myNode = this.Ghost;
-	        let pNode = this.Ghost.previousElementSibling;
+	        this.pNode = this.Ghost.previousElementSibling;
 	        do{
 	        	console.log('in do');
-	        	if(pNode){
+	        	if(this.pNode){
 
-	        		if(this.Ghost.getBoundingClientRect().x > pNode.getBoundingClientRect().x){
+	        		if(this.Ghost.getBoundingClientRect().x > this.pNode.getBoundingClientRect().x){
 
-						pNode.style.background = "orange";
-						breaker = 1;	  
+						this.pNode.style.background = "orange";
+						breaker = 1; 
 
 		        	}else{
-		        		pNode = pNode.previousElementSibling;
+		        		this.pNode = this.pNode.previousElementSibling;
 		        	}
 
 	        	}else{
@@ -779,7 +779,7 @@ export default class MainRessource extends superViews{
 	        //childContainer.getContainer().style.visibility ="";
 
 	        this.Cloned.remove();
-
+	        this.pNode.style.background = "";
 
 	        //on fait bouger les enfants aussi :) :
 	        for (let childMove of this.childTomove) {
