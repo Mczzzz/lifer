@@ -34,13 +34,14 @@ export default class MainRessource extends superViews{
 		this.setStyle("maxHeight" , "250px");
 
 
-		window.addEventListener('resize', ()=>this.resize());
+	//	window.addEventListener('resize', ()=>this.resize());
 
 
 
      }
 
 
+//DISABLED
      resize(elt = false){
      //	console.log('####### resize #######');
      	
