@@ -19,6 +19,8 @@ export default class MainRessource extends superViews{
 
           this.collapsed = false;
 
+          this.inMovement = false;
+
      }
 
 
@@ -411,6 +413,8 @@ export default class MainRessource extends superViews{
 
 	moveLikePromise(e,childContainer){
 
+		this.inMovement = true;
+
 		let initTouchWhile = e.changedTouches[0].clientY;
 
 		setTimeout(()=> this.moveScrollTop(1) , 2000 );
@@ -532,8 +536,11 @@ export default class MainRessource extends superViews{
 	        	//dispatchEventListener
 	        	//this.container.scrollTop = this.container.scrollTop - (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
 				
-	        	console.log('this.moveLikePromise(e,childContainer);');
-				this.moveLikePromise(e,childContainer);
+	        	
+	        	if(this.inMovement == false) {
+	        		this.moveLikePromise(e,childContainer);
+	        		console.log('this.moveLikePromise(e,childContainer);');
+	        	}
 				
 
 	        }
