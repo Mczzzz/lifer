@@ -385,31 +385,7 @@ export default class MainRessource extends superViews{
 		  			
 
 
-		  	}/*else{
-
-		  		//si j'ai des enfants je rajoute le logo collapse
-		  		if(child.nextElementSibling && (parseInt(child.nextElementSibling.style.marginLeft,10) > 0)){
-
-		  			let ThisChild = this.getObjectThisfromPath(child.className);
-
-		  			if(!this.collapsed){
-
-			  			ThisChild.moreCollapse();
-
-		  			}else{
-
-		  				ThisChild.lessCollapse();
-
-		  			}
-
-
-
-
-		  		}
-
-		  	}*/
-		    // faire quelque chose avec chaque enfant[i]
-		    // NOTE: La liste est en ligne, l'ajout ou la suppression des enfants changera la liste
+		  	}
 
 		  }
 
@@ -433,14 +409,27 @@ export default class MainRessource extends superViews{
 	}
 
 
+	moveLikePromise(e,childContainer){
+
+		let initTouchWhile = e.changedTouches[0].clientY;
+
+		do{
+
+			if(this.container.scrollTop == 0) break;
+
+			this.container.scrollTop = this.container.scrollTop - (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
+
+		}while(this.eChildMove.changedTouches[0].clientY == initTouchWhile);
+
+	}
 
 
 
 	onChildMove(childContainer, e, type){
 
-
-		console.log("on passe dans OnChildMove");
-		console.log(type);
+		this.eChildMove = e;
+//		console.log("on passe dans OnChildMove");
+//		console.log(type);
 
 		if(type == "start"){
 
@@ -528,8 +517,8 @@ export default class MainRessource extends superViews{
 	        if(e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y < 50){
 
 	        	//dispatchEventListener
-	        	this.container.scrollTop = this.container.scrollTop - (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
-				//this.onChildMove(childContainer, e, "move");
+	        	//this.container.scrollTop = this.container.scrollTop - (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
+				this.moveLikePromise(e,childContainer);
 				
 
 	        }
@@ -612,9 +601,6 @@ export default class MainRessource extends superViews{
 
 	        }
 	    
-	        //s'il y a un parent on change sa couleur
-	        //on parcours en arrière les noeuds pour revenir au parent le plus proche
-	       
 
 
 
@@ -685,46 +671,6 @@ export default class MainRessource extends superViews{
 
 
 
-
-/*	        if(this.Ghost.previousElementSibling){
-
-	        	let PreviousContainerX = this.Ghost.previousElementSibling.getBoundingClientRect().x;
-
-
-	        	if( e.changedTouches[0].clientX > (PreviousContainerX + (this.Pas / 2)) ){
-
-	        		GoodMargin = PreviousContainerX + this.Pas;
-
-
-
-
-	       		}else{
-
-		        	//calcul de la bonne valeur
-		        	GoodMargin = Math.round(e.changedTouches[0].clientX / this.Pas ) * this.Pas;
-		        	//console.log("good Margin:"+ GoodMargin);
-		        	if(GoodMargin < 0){
-
-		        		GoodMargin = 0;
-
-		        	}
-
-		        }
-
-	        }else{
-
-	        	GoodMargin = 0;
-
-	        
-	        }
-	       
-
-	        if(this.insertInParents){
-
-	        	GoodMargin = this.Ghost.previousElementSibling ? parseInt(this.Ghost.previousElementSibling.style.marginLeft,10) + this.Pas : this.Pas;
-
-	          this.insertInParents = false;
-	        }*/
 
 //Decalage principale
 
