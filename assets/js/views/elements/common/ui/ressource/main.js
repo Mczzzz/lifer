@@ -735,7 +735,7 @@ export default class MainRessource extends superViews{
 
 	        this.pNode = this.Ghost.previousElementSibling;
 	        do{
-	        	console.log('in do');
+	        	//console.log('in do');
 	        	if(this.pNode){
 
 	        		if(this.Ghost.getBoundingClientRect().x > this.pNode.getBoundingClientRect().x){
