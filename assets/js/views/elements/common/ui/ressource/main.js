@@ -783,7 +783,7 @@ export default class MainRessource extends superViews{
 	        //childContainer.getContainer().style.visibility ="";
 
 	        this.Cloned.remove();
-	        this.pNode.style.background = "";
+	        if(this.pNode) this.pNode.style.background = "";
 
 	        //on fait bouger les enfants aussi :) :
 	        for (let childMove of this.childTomove) {
