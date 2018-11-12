@@ -466,6 +466,8 @@ export default class MainRessource extends superViews{
 		  
 		  this.childTomove = [];
 
+		  let ghostHeight = childContainer.getContainer().getBoundingClientRect().height;
+
 		  for (let child of childToClone) {
 
 			  	let Cloned = child.cloneNode(true);
@@ -478,7 +480,7 @@ export default class MainRessource extends superViews{
 			  Cloned.style.top = child.getBoundingClientRect().y+"px";
 
 			  this.childTomove.push(Cloned);
-			  //childContainer.getContainer().style.height = childContainer.getContainer().style.height + child.getBoundingClientRect().height;
+			  ghostHeight = ghostHeight + child.getBoundingClientRect().height;
 			  //child.style.visibility = "hidden";
 			  child.remove();
 			}
@@ -497,7 +499,7 @@ export default class MainRessource extends superViews{
 		  this.Ghost.style.marginTop = "5px";
 		  this.Ghost.style.marginBottom = "5px";
 		  this.Ghost.style.borderRadius = "15px";
-		  this.Ghost.style.height = childContainer.getContainer().getBoundingClientRect().height+"px";
+		  this.Ghost.style.height = ghostHeight+"px";
 		  this.Ghost.style.transitionDuration = "0.2s";
    		  this.Ghost.style.transitionDelay = "0.0s";
           this.Ghost.style.transitionTimingFunction = "cubic-bezier(0.15, -0.35, 0.98, 1.27)";
