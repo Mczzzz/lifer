@@ -417,10 +417,10 @@ export default class MainRessource extends superViews{
 
 			if(this.container.scrollTop == 0) break;
 
-			let ratio = (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y);
+			let ratio = (1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
 				console.log('ratio:'+ratio);
 
-			this.container.scrollTop = this.container.scrollTop - ratio);
+			this.container.scrollTop = this.container.scrollTop - ratio;
 
 			setTimeout( console.log("test settimeout") , 500 );
 
