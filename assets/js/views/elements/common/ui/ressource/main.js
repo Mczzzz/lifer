@@ -538,6 +538,8 @@ export default class MainRessource extends superViews{
 	        	}
 				
 
+	        }else{
+	        	this.stopScroll();
 	        }
 
 	        if(childContainer.getContainer().parentElement.getBoundingClientRect().y > e.changedTouches[0].clientY){
