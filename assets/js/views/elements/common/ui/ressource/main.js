@@ -423,6 +423,7 @@ export default class MainRessource extends superViews{
 
 	moveScrollTop(direction){
 
+		console.log(direction);
 		if(direction == "up"){
 
 			this.container.scrollTop = this.container.scrollTop - 1;
@@ -434,6 +435,7 @@ export default class MainRessource extends superViews{
 		}else if(direction == "down"){
 
 			this.container.scrollTop = this.container.scrollTop + 1;
+
 			if(this.container.scrollTop == this.container.scrollheight){
 
 				this.stopScroll();
