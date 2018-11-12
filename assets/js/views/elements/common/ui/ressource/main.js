@@ -419,7 +419,7 @@ export default class MainRessource extends superViews{
 
 			this.container.scrollTop = this.container.scrollTop - (0.1 / (e.changedTouches[0].clientY - childContainer.getContainer().parentElement.getBoundingClientRect().y));
 
-			setTimeout( console.log ), 200 );
+			setTimeout( console.log("test settimeout") , 200 );
 
 		}while(this.eChildMove.changedTouches[0].clientY == initTouchWhile);
 
