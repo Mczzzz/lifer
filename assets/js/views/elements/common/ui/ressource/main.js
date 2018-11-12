@@ -620,9 +620,16 @@ export default class MainRessource extends superViews{
 	        if(this.Ghost.previousElementSibling && !childContainer.getContainer().nextElementSibling){
 
 	        	console.log("just previous");
+	        	let PreviousContainerX = this.Ghost.previousElementSibling.getBoundingClientRect().x;
+	        	console.log('PreviousContainerX');
+	        	console.log(PreviousContainerX);
+
+
+
 	        }else if(!this.Ghost.previousElementSibling && childContainer.getContainer().nextElementSibling){
 
 	        	console.log("just next");
+	        	GoodMargin = 0;
 
 	        }else if(this.Ghost.previousElementSibling && childContainer.getContainer().nextElementSibling){
 
@@ -633,7 +640,7 @@ export default class MainRessource extends superViews{
 
 
 
-	        if(this.Ghost.previousElementSibling){
+/*	        if(this.Ghost.previousElementSibling){
 
 	        	let PreviousContainerX = this.Ghost.previousElementSibling.getBoundingClientRect().x;
 
@@ -671,7 +678,7 @@ export default class MainRessource extends superViews{
 	        	GoodMargin = this.Ghost.previousElementSibling ? parseInt(this.Ghost.previousElementSibling.style.marginLeft,10) + this.Pas : this.Pas;
 
 	          this.insertInParents = false;
-	        }
+	        }*/
 
 //Decalage principale
 
