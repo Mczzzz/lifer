@@ -436,7 +436,7 @@ export default class MainRessource extends superViews{
 
 	moveMain(e,childContainer){
 
-		return new Promise((e,childContainer)=>this.moveUpper(e,childContainer));
+		return new Promise(()=>this.moveUpper(e,childContainer));
 	}
 
 	moveUpper(e,childContainer){
