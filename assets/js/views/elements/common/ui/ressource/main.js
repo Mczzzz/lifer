@@ -731,6 +731,7 @@ export default class MainRessource extends superViews{
         	this.Ghost.style.marginLeft = GoodMargin + "px";
 
 
+        	//on illumine le parent concerné
         	let breaker = 0;
 	        let myNode = this.Ghost;
 	        let pNode = this.Ghost.previousElementSibling;
@@ -738,7 +739,7 @@ export default class MainRessource extends superViews{
 	        	console.log('in do');
 	        	if(pNode){
 
-	        		if(this.Ghost.previousElementSibling.getBoundingClientRect().x < pNode.getBoundingClientRect().x){
+	        		if(this.Ghost.getBoundingClientRect().x > pNode.getBoundingClientRect().x){
 
 						pNode.style.background = "orange";
 						breaker = 1;	  
