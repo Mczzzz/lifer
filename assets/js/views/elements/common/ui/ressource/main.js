@@ -73,13 +73,15 @@ export default class MainRessource extends superViews{
      	this.setStyle("maxHeight" , mainSize +"px");
      	
      	console.log(this.resizeMoveTo);
-     	     		/*	this.container.scrollTop = this.resizeMoveTo;
 
-     			this.resizeMoveTo = 0;*/
 
      	if(initialDevice.height > deviceHeight){
 
      		console.log('in with keyboard');
+
+     		this.container.scrollTop = this.resizeMoveTo;
+
+     		this.resizeMoveTo = 0;
 
      		if(elt){
 
