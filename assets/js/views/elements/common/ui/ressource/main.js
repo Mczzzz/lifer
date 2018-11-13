@@ -154,7 +154,7 @@ export default class MainRessource extends superViews{
 
 
 		this.resizeMoveTo = text.getContainer().offsetTop;
-		//this.resize(text.getContainer());
+		this.resize(text.getContainer());
 		
 		//console.log(text.getContainer().offsetTop);
 		//text.focus();
