@@ -57,6 +57,9 @@ export default class MainRessource extends superViews{
 
      	this.setStyle("maxHeight" , mainSize +"px");
      	
+     	     			this.container.scrollTop = this.resizeMoveTo;
+
+     			this.resizeMoveTo = 0;
 
      	if(initialDevice.height > deviceHeight){
 
@@ -65,10 +68,8 @@ export default class MainRessource extends superViews{
      			//getElementSize
      			let myeltSize = elt.getBoundingClientRect();
      			//console.log(myeltSize);
-     			alert("scrollTopTo:"+ this.resizeMoveTo);
-     			this.container.scrollTop = this.resizeMoveTo;
+     			
 
-     			this.resizeMoveTo = 0;
      		/*	if(myeltSize.width > mainSize){
 
      				let diff = myeltSize.width - mainSize;
@@ -149,7 +150,7 @@ export default class MainRessource extends superViews{
 
 
 		this.resizeMoveTo = text.getContainer().offsetTop;
-		this.resize(text.getContainer());
+		//this.resize(text.getContainer());
 		
 		//console.log(text.getContainer().offsetTop);
 		text.focus();
