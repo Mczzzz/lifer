@@ -146,7 +146,7 @@ export default class MainRessource extends superViews{
 
 
 //		this.resize(text.getContainer());
-
+		console.log(text.offsetTop);
 		text.focus();
 		
 		let res = {};
