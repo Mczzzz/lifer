@@ -59,7 +59,8 @@ export default class MainRessource extends superViews{
      		console.log('####### resize EXECUTE #######');
      		this.skipResizeFirst = 0;
      	}
-     	console.log(elt)
+     	
+
 
      	let deviceHeight = this.Lifer.getScreenSize().height;
 
@@ -167,7 +168,7 @@ export default class MainRessource extends superViews{
 		observer.observe(text.getContainer(), config);*/
 
 
-		//this.resizeMoveTo = text.getContainer().offsetTop;
+		this.resizeMoveTo = text.getContainer().offsetTop;
 		//this.resize(text.getContainer());
 		
 		//console.log(text.getContainer().offsetTop);
