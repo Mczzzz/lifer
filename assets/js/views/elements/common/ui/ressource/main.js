@@ -68,7 +68,7 @@ export default class MainRessource extends superViews{
 
      		if(elt){
 
-     			
+
      			//getElementSize
      			//let myeltSize = elt.getBoundingClientRect();
      			//console.log(myeltSize);
@@ -157,7 +157,7 @@ export default class MainRessource extends superViews{
 		//this.resize(text.getContainer());
 		
 		//console.log(text.getContainer().offsetTop);
-		text.focus();
+		//text.focus();
 		
 
 		let res = {};
