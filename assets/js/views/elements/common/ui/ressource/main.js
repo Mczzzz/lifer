@@ -23,6 +23,8 @@ export default class MainRessource extends superViews{
           this.speed = 1;
 
           this.resizeMoveTo = 0;
+
+          this.skipResizeFirst = 0;
      }
 
 
@@ -46,7 +48,17 @@ export default class MainRessource extends superViews{
 
 //DISABLED
      resize(elt = false){
-     	console.log('####### resize #######');
+     	//console.log('####### resize #######');
+
+     	//prevention double resize ()je sais pas pourquoi exactement diff de 48 pixel 
+     	if(this.skipResizeFirst == 0){
+     		console.log('####### resize SKIP #######');
+     		this.skipResizeFirst = 1;
+     		return true;
+     	}else if(this.skipResizeFirst == 1){
+     		console.log('####### resize EXECUTE #######');
+     		this.skipResizeFirst = 0;
+     	}
      	console.log(elt)
 
      	let deviceHeight = this.Lifer.getScreenSize().height;
