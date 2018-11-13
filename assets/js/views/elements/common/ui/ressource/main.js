@@ -49,7 +49,7 @@ export default class MainRessource extends superViews{
      resize(elt = false){
      	console.log('####### resize #######');
      	console.log(elt)
- 
+ 	return true;
      	let deviceHeight = this.Lifer.getScreenSize().height;
 
      	let initialDevice = this.Lifer.getData("User-Device", "Screen");
