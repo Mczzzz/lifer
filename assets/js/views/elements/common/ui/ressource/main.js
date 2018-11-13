@@ -22,6 +22,7 @@ export default class MainRessource extends superViews{
           this.inMovement = false;
           this.speed = 1;
 
+          this.resizeMoveTo = 0;
      }
 
 
@@ -65,7 +66,10 @@ export default class MainRessource extends superViews{
      			let myeltSize = elt.getBoundingClientRect();
      			//console.log(myeltSize);
 
-     			if(myeltSize.width > mainSize){
+     			this.container.scrollTop = this.resizeMoveTo;
+
+     			this.resizeMoveTo = 0;
+     		/*	if(myeltSize.width > mainSize){
 
      				let diff = myeltSize.width - mainSize;
      				this.container.scrollTop = elt.offsetTop - 83 + diff;
@@ -73,7 +77,7 @@ export default class MainRessource extends superViews{
      			}else{
      				this.container.scrollTop = elt.offsetTop - 83;
      			//console.log("in resize elt :"+elt.offsetTop);
-     			}
+     			}*/
 
      		}/*else{
      			this.container.scrollTop = this.container.scrollHeight;
@@ -146,9 +150,10 @@ export default class MainRessource extends superViews{
 
 
 //		this.resize(text.getContainer());
-		console.log(text.getContainer().offsetTop);
+		this.resizeMoveTo = text.getContainer().offsetTop;
+		//console.log(text.getContainer().offsetTop);
 		text.focus();
-		this.container.scrollTop =  text.getContainer().offsetTop;
+		
 
 		let res = {};
 		res.bloc = text;
