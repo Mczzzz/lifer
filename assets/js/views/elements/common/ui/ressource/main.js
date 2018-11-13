@@ -82,29 +82,6 @@ export default class MainRessource extends superViews{
      		this.container.scrollTop = this.resizeMoveTo;
 
      		this.resizeMoveTo = 0;
-
-     		if(elt){
-
-
-     			//getElementSize
-     			//let myeltSize = elt.getBoundingClientRect();
-     			//console.log(myeltSize);
-     			
-
-     		/*	if(myeltSize.width > mainSize){
-
-     				let diff = myeltSize.width - mainSize;
-     				this.container.scrollTop = elt.offsetTop - 83 + diff;
-
-     			}else{
-     				this.container.scrollTop = elt.offsetTop - 83;
-     			//console.log("in resize elt :"+elt.offsetTop);
-     			}*/
-
-     		}/*else{
-     			this.container.scrollTop = this.container.scrollHeight;
-     		}*/
-
      		
      	}
 
@@ -171,10 +148,8 @@ export default class MainRessource extends superViews{
 
 
 		this.resizeMoveTo = text.getContainer().offsetTop;
-		//this.resize(text.getContainer());
-		
-		//console.log(text.getContainer().offsetTop);
-		//text.focus();
+
+		text.focus();
 		
 
 		let res = {};
