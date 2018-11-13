@@ -148,7 +148,8 @@ export default class MainRessource extends superViews{
 //		this.resize(text.getContainer());
 		console.log(text.getContainer().offsetTop);
 		text.focus();
-		
+		this.container.scrollTop =  text.getContainer().offsetTop;
+
 		let res = {};
 		res.bloc = text;
 		res.text = textElt
