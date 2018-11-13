@@ -192,7 +192,7 @@ export default class Text extends superViews{
 		console.log(this.card.getContainer().style.boxShadow);
 
 		//on transmet au parent notre position relative
-		this.parentThis.resizeMoveTo = this.getContainer().offsetTop + 83;
+		this.parentThis.resizeMoveTo = this.getContainer().offsetTop - 83;
 
 	}
 
