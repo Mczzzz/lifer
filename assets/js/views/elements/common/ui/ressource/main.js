@@ -38,7 +38,7 @@ export default class MainRessource extends superViews{
 		this.setStyle("maxHeight" , this.Lifer.getScreenSize().height - 123 +"px");
 
 
-		//window.addEventListener('resize', ()=>this.resize());
+		window.addEventListener('resize', ()=>this.resize());
 
 
 
@@ -48,6 +48,7 @@ export default class MainRessource extends superViews{
 //DISABLED
      resize(elt = false){
      	console.log('####### resize #######');
+     	console.log(elt)
  
      	let deviceHeight = this.Lifer.getScreenSize().height;
 
@@ -57,16 +58,19 @@ export default class MainRessource extends superViews{
 
      	this.setStyle("maxHeight" , mainSize +"px");
      	
-     	     			this.container.scrollTop = this.resizeMoveTo;
+     	     		/*	this.container.scrollTop = this.resizeMoveTo;
 
-     			this.resizeMoveTo = 0;
+     			this.resizeMoveTo = 0;*/
 
      	if(initialDevice.height > deviceHeight){
 
+     		console.log('in with keyboard');
+
      		if(elt){
 
+     			
      			//getElementSize
-     			let myeltSize = elt.getBoundingClientRect();
+     			//let myeltSize = elt.getBoundingClientRect();
      			//console.log(myeltSize);
      			
 
