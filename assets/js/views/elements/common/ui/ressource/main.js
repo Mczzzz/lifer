@@ -38,7 +38,7 @@ export default class MainRessource extends superViews{
 		this.setStyle("maxHeight" , this.Lifer.getScreenSize().height - 123 +"px");
 
 
-		window.addEventListener('resize', ()=>this.resize());
+		//window.addEventListener('resize', ()=>this.resize());
 
 
 
