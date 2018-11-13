@@ -147,7 +147,7 @@ export default class MainRessource extends superViews{
 
 //		this.resize(text.getContainer());
 
-		text.focus();
+		//text.focus();
 		
 		let res = {};
 		res.bloc = text;
