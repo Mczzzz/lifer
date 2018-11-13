@@ -38,22 +38,20 @@ export default class MainRessource extends superViews{
 		this.setStyle("maxHeight" , this.Lifer.getScreenSize().height - 123 +"px");
 		console.log('in init');
 
-		window.addEventListener('resize', ()=>this.resizeTest());
+		window.addEventListener('resize', ()=>this.resize());
 
 
 
-     }
-
-     resizeTest(){
-     	console.log('resizeTest');
      }
 
 //DISABLED
      resize(elt = false){
      	console.log('####### resize #######');
      	console.log(elt)
- 	return true;
+
      	let deviceHeight = this.Lifer.getScreenSize().height;
+
+     	console.log(deviceHeight);
 
      	let initialDevice = this.Lifer.getData("User-Device", "Screen");
 
