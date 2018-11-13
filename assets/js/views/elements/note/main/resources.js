@@ -93,7 +93,6 @@ export default class Resources extends superViews{
 	}
 
 	updateText(MyText,elt,ressourceTmpId){
-		return true;
 		//console.log(elt);
 		let newText = elt.text.getText();
 		console.log('newText: '+newText);
@@ -184,7 +183,7 @@ export default class Resources extends superViews{
 			//on set la marge
 
 			this.RessourceList[data.RessourceId].Items[data.id].object.setStyle("marginLeft", data.data.parentThis.parentThis.parentThis.container.style.marginLeft); 
-			//this.Save(Ressource, item )
+			//this.Save(Ressource, item );
 			
 	}
 
