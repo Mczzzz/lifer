@@ -65,7 +65,7 @@ export default class MainRessource extends superViews{
      			//getElementSize
      			let myeltSize = elt.getBoundingClientRect();
      			//console.log(myeltSize);
-
+     			alert("scrollTopTo:"+ this.resizeMoveTo);
      			this.container.scrollTop = this.resizeMoveTo;
 
      			this.resizeMoveTo = 0;
