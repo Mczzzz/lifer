@@ -61,12 +61,25 @@ export default class Image extends superViews{
 
 	prepare(){
 
-		this.ImageElement = this.card.setElement("Image_"+this.ClassId);
+		this.addThumb();
 		this.addLegend();
 
 	}
 
-	addThumb(data){
+	addThumb(){
+
+		this.ImageElement = this.card.setElement("Image_"+this.ClassId);
+		this.ImageElt = this.card.push("Thumb", this.ImageElement,"Pict_"+this.ClassId);
+		this.ImageElt.setStyle("marginRight" , "10px");
+		this.ImageElt.setStyle("display" , "flex");
+		this.ImageElt.setStyle("alignItems" , "center");
+
+		
+
+	}
+
+
+/*	addThumb(data){
 
 
 		let ImageElt = this.card.push("Thumb", this.ImageElement,"Pict_"+this.ClassId, data);
@@ -77,7 +90,7 @@ export default class Image extends superViews{
 		ImageElt.getContainer().addEventListener("click",()=>this.ImageViewer(data));
 
 	
-	}
+	}*/
 
 	ImageViewer(data){
 		
@@ -124,6 +137,9 @@ export default class Image extends superViews{
 		return this.TheTextElt;
 	}
 
+	getImageElement(){
+		return this.TheTextElt;
+	}
 
 	draggable(path,ancestorMethod){
 
