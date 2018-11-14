@@ -102,7 +102,7 @@ export default class Resources extends superViews{
 
 		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
-		this.reorder();
+		this.reorder(ressourceTmpId);
 
 		//on save
 		//this.save(ressourceTmpId,elt.bloc.ClassId,"text","text",newText);
@@ -110,15 +110,15 @@ export default class Resources extends superViews{
 		
 	}
 
-	updateImage(){
+	updateImage(MyText,elt,ressourceTmpId){
 
 
-		this.reorder();
+		this.reorder(ressourceTmpId);
 
 	}
 
 
-	reorder(){
+	reorder(ressourceTmpId){
 
 		//reorder
 		console.log(this.RessourceList);
