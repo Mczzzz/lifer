@@ -101,15 +101,20 @@ export default class Image extends superViews{
 		this.EmptyElement.setStyle("justifyContent","flex-start");
 		this.EmptyElement.setStyle("flexWrap","wrap");
 
-		let TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
+		this.TheTextElt = this.card.push("Text", this.EmptyElement,"Input_"+this.ClassId, "");
 
-		TheTextElt.setAttribute("placeholder","Légende...");
+		this.TheTextElt.setAttribute("placeholder","Légende...");
 
-		TheTextElt.setStyle("fontSize","18.5px");
-		TheTextElt.setStyle("color","black","property");
-		TheTextElt.setStyle("margin","0px 5px 5px 5px");
-		TheTextElt.setStyle("fontWeight","normal");
-		TheTextElt.setStyle("flex","1 1 100%");
+		this.TheTextElt.setStyle("fontSize","18.5px");
+		this.TheTextElt.setStyle("color","black","property");
+		this.TheTextElt.setStyle("margin","0px 5px 5px 5px");
+		this.TheTextElt.setStyle("fontWeight","normal");
+		this.TheTextElt.setStyle("flex","1 1 100%");
+	}
+
+
+	getTextElement(){
+		return this.TheTextElt;
 	}
 
 

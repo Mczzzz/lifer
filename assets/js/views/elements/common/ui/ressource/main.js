@@ -173,7 +173,14 @@ export default class MainRessource extends superViews{
 	image(itemId){
 
 		let image = new Image("Image_"+itemId, this.path);
+		let textElt = image.getTextElement();
 		image.draggable(this.path,"onChildMove");
+
+		let res = {};
+		res.bloc = image;
+		res.text = textElt;
+		//res.image = 
+		return res;
 
 
 	}
