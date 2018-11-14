@@ -54,6 +54,8 @@ export default class Image extends superViews{
 //		console.log("this.camLauncher.click()");
 		this.camLauncher.addEventListener("change", ()=>LoaderImage.importPict(this.camLauncher.files[0],this.path));
 
+		this.addLegend();
+
 	}
 
 
@@ -66,9 +68,11 @@ export default class Image extends superViews{
 		ImageElt.setStyle("display" , "flex");
 		ImageElt.setStyle("alignItems" , "center");
 
+		
+
 		ImageElt.getContainer().addEventListener("click",()=>this.ImageViewer(data));
 
-		this.addLegend();
+		
 
 	}
 
