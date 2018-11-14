@@ -74,7 +74,6 @@ export default class Image extends superViews{
 		ImageElt.setStyle("display" , "flex");
 		ImageElt.setStyle("alignItems" , "center");
 
-	
 		ImageElt.getContainer().addEventListener("click",()=>this.ImageViewer(data));
 
 	

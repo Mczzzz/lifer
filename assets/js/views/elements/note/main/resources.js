@@ -121,7 +121,7 @@ export default class Resources extends superViews{
 	reorder(){
 
 		//reorder
-
+		console.log(this.RessourceList);
 		let EditRessource = this.getObjectThisfromPath('Note-Main-Empty-Ressource-Main');
 		let ChildList = EditRessource.getContainer().childNodes;
 		let ReverseChildList = Array.from(ChildList).reverse();
