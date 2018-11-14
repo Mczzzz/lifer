@@ -170,17 +170,17 @@ export default class Resources extends superViews{
 			case 'image':
 
 				this.RessourceList[ressourceTmpId].Items[itemTmpId].type = type;
-				let MyText = this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","...");
-				MyText.setStyle("color","black");
-				MyText.setStyle("fontSize","14px");
-				MyText.removeAttribute("contentEditable");
-				this.RessourceList[ressourceTmpId].Items[itemTmpId].object = MyText;
+				let MyLegend= this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","...");
+				MyLegend.setStyle("color","black");
+				MyLegend.setStyle("fontSize","14px");
+				MyLegend.removeAttribute("contentEditable");
+				this.RessourceList[ressourceTmpId].Items[itemTmpId].object = MyLegend;
 
-				let config = { attributes: true, characterData: true, childList: true, subtree: true};
+				let MyLegendconfig = { attributes: true, characterData: true, childList: true, subtree: true};
 
-				let observer = new MutationObserver(()=>this.updateText(MyText,elt,ressourceTmpId));
-				observer.observe(elt.bloc.getContainer(), config);
-				observer.observe(elt.text.getContainer(), config);
+				let observer = new MutationObserver(()=>this.updateText(MyLegend,elt,ressourceTmpId));
+				observer.observe(elt.bloc.getContainer(), MyLegendconfig);
+				observer.observe(elt.text.getContainer(), MyLegendconfig);
 
 
 
