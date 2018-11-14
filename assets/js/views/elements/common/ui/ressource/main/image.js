@@ -54,26 +54,30 @@ export default class Image extends superViews{
 //		console.log("this.camLauncher.click()");
 		this.camLauncher.addEventListener("change", ()=>LoaderImage.importPict(this.camLauncher.files[0],this.path));
 
+		
+		this.prepare();
+	}
+
+
+	prepare(){
+
+		this.ImageElement = this.card.setElement("Image_"+this.ClassId);
 		this.addLegend();
 
 	}
 
-
 	addThumb(data){
 
 
-		this.ImageElement = this.card.setElement("Image_"+this.ClassId);
 		let ImageElt = this.card.push("Thumb", this.ImageElement,"Pict_"+this.ClassId, data);
 		ImageElt.setStyle("marginRight" , "10px");
 		ImageElt.setStyle("display" , "flex");
 		ImageElt.setStyle("alignItems" , "center");
 
-		
-
+	
 		ImageElt.getContainer().addEventListener("click",()=>this.ImageViewer(data));
 
-		
-
+	
 	}
 
 	ImageViewer(data){
