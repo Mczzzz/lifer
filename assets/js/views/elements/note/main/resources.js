@@ -112,6 +112,11 @@ export default class Resources extends superViews{
 
 	updateImage(MyText,elt,ressourceTmpId){
 
+		let newLegend = elt.text.getText();
+	
+		MyLegend.setData(newLegend);
+
+		MyLegend.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
 		this.reorder(ressourceTmpId);
 
