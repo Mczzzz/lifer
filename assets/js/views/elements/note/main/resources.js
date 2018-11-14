@@ -102,6 +102,24 @@ export default class Resources extends superViews{
 
 		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
+		this.reorder();
+
+		//on save
+		//this.save(ressourceTmpId,elt.bloc.ClassId,"text","text",newText);
+
+		
+	}
+
+	updateImage(){
+
+
+		this.reorder();
+
+	}
+
+
+	reorder(){
+
 		//reorder
 
 		let EditRessource = this.getObjectThisfromPath('Note-Main-Empty-Ressource-Main');
@@ -113,17 +131,6 @@ export default class Resources extends superViews{
 		}
 
 		this.RessourceList[ressourceTmpId].Card.getContainer().prepend(this.RessourceList[ressourceTmpId].Card["header_"+ressourceTmpId].getContainer());
-
-		//on save
-		//this.save(ressourceTmpId,elt.bloc.ClassId,"text","text",newText);
-
-		
-	}
-
-	updateImage(){
-
-
-
 
 	}
 
