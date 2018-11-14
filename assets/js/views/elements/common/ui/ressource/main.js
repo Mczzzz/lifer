@@ -150,11 +150,11 @@ export default class MainRessource extends superViews{
 		this.resizeMoveTo = text.getContainer().offsetTop;
 
 		text.focus();
-		
-
+		console.log('textElt');
+		console.log(textElt);
 		let res = {};
 		res.bloc = text;
-		res.text = textElt
+		res.text = textElt;
 		return res;
 
 	}
@@ -176,6 +176,8 @@ export default class MainRessource extends superViews{
 		let textElt = image.getTextElement();
 		image.draggable(this.path,"onChildMove");
 
+		console.log('textElt');
+		console.log(textElt);
 		let res = {};
 		res.bloc = image;
 		res.text = textElt;
