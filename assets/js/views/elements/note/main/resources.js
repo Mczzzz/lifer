@@ -92,35 +92,41 @@ export default class Resources extends superViews{
 
 	}
 
+
+
 	updateText(MyText,elt,ressourceTmpId){
-		//console.log(elt);
+
 		let newText = elt.text.getText();
-		console.log('newText: '+newText);
+	
 		MyText.setData(newText);
-	//	console.log(elt.text.getContainer().style.marginLeft);
+
 		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
 		//reorder
-		//get child list of : //Note-Main-Empty-Ressource-Main
+
 		let EditRessource = this.getObjectThisfromPath('Note-Main-Empty-Ressource-Main');
 		let ChildList = EditRessource.getContainer().childNodes;
 		let ReverseChildList = Array.from(ChildList).reverse();
 
 		for (let item of ReverseChildList){
-		//	console.log(item.firstChild.id);
 			this.RessourceList[ressourceTmpId].Card.getContainer().prepend(this.RessourceList[ressourceTmpId].Card["Item_"+item.firstChild.id].getContainer());
-
-
 		}
 
 		this.RessourceList[ressourceTmpId].Card.getContainer().prepend(this.RessourceList[ressourceTmpId].Card["header_"+ressourceTmpId].getContainer());
 
-
 		//on save
-		this.save(ressourceTmpId,elt.bloc.ClassId,"text","text",newText);
+		//this.save(ressourceTmpId,elt.bloc.ClassId,"text","text",newText);
 
 		
 	}
+
+	updateImage(){
+
+
+
+
+	}
+
 
 
 	newTmpId(){
@@ -161,7 +167,24 @@ export default class Resources extends superViews{
 
 			break;
 
+			case 'image':
 
+				this.RessourceList[ressourceTmpId].Items[itemTmpId].type = type;
+				let MyText = this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","...");
+				MyText.setStyle("color","black");
+				MyText.setStyle("fontSize","14px");
+				MyText.removeAttribute("contentEditable");
+				this.RessourceList[ressourceTmpId].Items[itemTmpId].object = MyText;
+
+				let config = { attributes: true, characterData: true, childList: true, subtree: true};
+
+				let observer = new MutationObserver(()=>this.updateText(MyText,elt,ressourceTmpId));
+				observer.observe(elt.bloc.getContainer(), config);
+				observer.observe(elt.text.getContainer(), config);
+
+
+
+			break;
 
 		}
 //TODO: je set mon element, j'ay ajoute le composant, j'enregistre mon composant dans this.RessourceList pour pouvoir le modifier à la mise à jour
