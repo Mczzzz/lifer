@@ -25,8 +25,8 @@ export default class Image extends superViews{
 
 	form(){
 
-		this.card = new Card('Card_'+this.ClassId, this.path);
-		this.card.setId(0);
+		this.card = new Card('Card', this.path);
+		this.card.setId(this.ClassId);
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "12px 0px 6px 12px");
 		this.card.setStyle("margin", "0px");
