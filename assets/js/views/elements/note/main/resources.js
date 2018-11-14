@@ -114,9 +114,9 @@ export default class Resources extends superViews{
 
 		let newLegend = elt.text.getText();
 	
-		MyLegend.setData(newLegend);
+		MyText.setData(newLegend);
 
-		MyLegend.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
+		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
 		this.reorder(ressourceTmpId);
 
