@@ -110,7 +110,20 @@ export default class Resources extends superViews{
 		
 	}
 
-	updateImage(MyText,elt,ressourceTmpId){
+	updateImagePict(MyPict,elt,ressourceTmpId){
+
+		let newPict = elt.pict;
+	
+		MyPict.setData(newPict);
+
+//		MyPict.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
+
+		this.reorder(ressourceTmpId);
+
+
+	}
+
+	updateImageLegend(MyText,elt,ressourceTmpId){
 
 		let newLegend = elt.text.getText();
 	
@@ -190,6 +203,11 @@ export default class Resources extends superViews{
 				MyThumb.setStyle("display" , "flex");
 				MyThumb.setStyle("alignItems" , "center");
 
+				let MyPictConfig = { attributes: true, characterData: true, childList: true, subtree: true};
+
+				let PictObserver = new MutationObserver(()=>this.updateImagePict(MyPict,elt,ressourceTmpId));
+				PictObserver.observe(elt.pict.getContainer(), MyPictConfig);
+
 
 
 				let MyLegend= this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","...");
@@ -200,7 +218,7 @@ export default class Resources extends superViews{
 
 				let MyLegendconfig = { attributes: true, characterData: true, childList: true, subtree: true};
 
-				let LegendObserver = new MutationObserver(()=>this.updateImage(MyLegend,elt,ressourceTmpId));
+				let LegendObserver = new MutationObserver(()=>this.updateImageLegend(MyLegend,elt,ressourceTmpId));
 				LegendObserver.observe(elt.bloc.getContainer(), MyLegendconfig);
 				LegendObserver.observe(elt.text.getContainer(), MyLegendconfig);
 
