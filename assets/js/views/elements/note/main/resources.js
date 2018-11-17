@@ -212,6 +212,8 @@ export default class Resources extends superViews{
 
 				console.log("MyThumbChild:");
 				console.log(MyThumb);
+				console.log("(elt.pict:");
+				console.log(elt.pict);
 
 				let PictObserver = new MutationObserver(()=>this.updateImagePict(MyThumb,elt,ressourceTmpId));
 				PictObserver.observe(elt.pict.getContainer(), MyPictConfig);
