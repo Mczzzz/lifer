@@ -113,7 +113,11 @@ export default class Resources extends superViews{
 	updateImagePict(MyPict,elt,ressourceTmpId){
 
 		let newPict = elt.pict;
+
+		console.log("elt");
+		console.log(elt);
 	
+	    //console.log("Image Update")
 		MyPict.setData(newPict);
 
 //		MyPict.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
@@ -127,6 +131,7 @@ export default class Resources extends superViews{
 
 		let newLegend = elt.text.getText();
 	
+
 		MyText.setData(newLegend);
 
 		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
