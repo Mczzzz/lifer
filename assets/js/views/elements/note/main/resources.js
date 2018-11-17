@@ -269,7 +269,7 @@ export default class Resources extends superViews{
 
 
 	update(data){
-
+			console.log("IIIIIIIIIIINNN UPDATE");
 			console.log(data);
 			//on set le texte
 			this.RessourceList[data.RessourceId].Items[data.id].data = data.data.container.innerHTML;
