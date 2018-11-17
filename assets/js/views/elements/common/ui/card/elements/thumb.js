@@ -32,7 +32,7 @@ export default class Thumb extends superViews{
           let img = document.createElement("img");
           this.container.append(img);
  
-          
+          console.log(data)
           if(!data.capture){
 
                img.src = data.data.pict +  "/" + this.parent.offsetWidth;

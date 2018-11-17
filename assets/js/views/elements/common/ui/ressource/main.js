@@ -179,6 +179,7 @@ export default class MainRessource extends superViews{
 		console.log('textElt');
 		console.log(textElt);
 		let res = {};
+		res.bloc = image;
 		res.pict = image;
 		res.text = textElt;
 		//res.image = 
