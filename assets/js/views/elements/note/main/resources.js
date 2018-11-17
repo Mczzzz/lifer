@@ -219,7 +219,6 @@ export default class Resources extends superViews{
 				let MyLegendconfig = { attributes: true, characterData: true, childList: true, subtree: true};
 
 				let LegendObserver = new MutationObserver(()=>this.updateImageLegend(MyLegend,elt,ressourceTmpId));
-				LegendObserver.observe(elt.bloc.getContainer(), MyLegendconfig);
 				LegendObserver.observe(elt.text.getContainer(), MyLegendconfig);
 
 
