@@ -208,7 +208,7 @@ export default class Resources extends superViews{
 				MyThumb.setStyle("display" , "flex");
 				MyThumb.setStyle("alignItems" , "center");
 
-				let MyPictConfig = { attributes: true, characterData: true, childList: true, subtree: true};
+				let MyPictConfig = { attributes: true, characterData: true, childList: true};
 
 				let PictObserver = new MutationObserver(()=>this.updateImagePict(MyThumb,elt,ressourceTmpId));
 				PictObserver.observe(elt.pict.getContainer(), MyPictConfig);

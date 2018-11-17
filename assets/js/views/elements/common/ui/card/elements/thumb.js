@@ -29,6 +29,11 @@ export default class Thumb extends superViews{
 
      setData(data){
 
+          //si elle exite déja on remplace l'image
+
+          
+
+
           let img = document.createElement("img");
           this.container.append(img);
  
