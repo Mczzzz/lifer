@@ -182,6 +182,16 @@ export default class Resources extends superViews{
 			case 'image':
 
 				this.RessourceList[ressourceTmpId].Items[itemTmpId].type = type;
+
+				//j'ajoute mon thumb vide
+				//et je lui pousserai sa data après
+				let MyThumb= this.RessourceList[ressourceTmpId].Card.push("Thumb",ItemElement,"pict",);
+				MyThumb.setStyle("marginRight" , "10px");
+				MyThumb.setStyle("display" , "flex");
+				MyThumb.setStyle("alignItems" , "center");
+
+
+
 				let MyLegend= this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","...");
 				MyLegend.setStyle("color","black");
 				MyLegend.setStyle("fontSize","14px");
