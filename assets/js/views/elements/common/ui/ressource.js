@@ -84,12 +84,12 @@ export default class Ressource extends superViews{
 
         //rajoutdela callback udpdate vers target
 
-    update(path, data){
+/*    update(path, data){
     //TODO : path pour rien peut etre a supprimer à réflechir
       data.RessourceId = this.RessourceId;
       this.target.update(data);
 
-    }
+    }*/
 
 
 }
