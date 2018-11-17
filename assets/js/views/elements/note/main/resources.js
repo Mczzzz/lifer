@@ -67,12 +67,13 @@ export default class Resources extends superViews{
 		HeaderElement.setStyle("justifyContent", "stretch");
 
 		let editRessource = this.RessourceList[ressourceTmpId].Card.push("Button", HeaderElement,"edit", "editc");
-		editRessource.setStylePicto("fontSize","25px");
+		editRessource.setStylePicto("fontSize","20px");
 		editRessource.setStylePicto("margin","0px");
 		editRessource.setStylePicto("marginLeft","5px");
 		editRessource.setStylePicto("color","white");
 		editRessource.setStylePicto("alignItems","center");
 
+		editRessource.getContainer().addEventListener("click",()=>this.loadRessource(ressourceTmpId));
 
 		this.RessourceTitle = this.RessourceList[ressourceTmpId].Card.push("Text", HeaderElement,"Title", "");
 		
@@ -278,6 +279,22 @@ export default class Resources extends superViews{
 
 	}
 
+
+
+	loadRessource(ressourceTmpId){
+
+		let TheRessource = this.Lifer.getData('Note-Main-Empty',"This");
+		TheRessource.addRessource();
+
+		for (let Item of  this.RessourceList[ressourceTmpId].Items){
+
+			TheRessource.addItem(Item.type, data=false);
+
+		}
+		
+
+
+	}
 
 
 	update(data){

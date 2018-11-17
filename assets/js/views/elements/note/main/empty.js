@@ -29,7 +29,7 @@ export default class Empty extends superViews{
 
 
 
-	addRessource(){
+	addRessource(title=false){
 
 		this.Ressource.destroyMe();
 		this.Ressource = new Ressource('Ressource' , this.path);
@@ -45,7 +45,7 @@ export default class Empty extends superViews{
 
 	}
 
-	addItem(type){
+	addItem(type, data=false){
 
 		console.log("in add item empty");
 		if(this.initialSet){
