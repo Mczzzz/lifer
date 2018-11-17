@@ -37,6 +37,18 @@ export default class ActionButtons extends superViews{
 			let Elt   = this.card.setElement("footer");
 			Elt.setStyle("justifyContent","flex-start");
 
+					let Ressource = this.card.push("Button", Elt,"addRessource", "playlist_add");
+
+					Ressource.setStylePicto("fontSize","25px");
+					Ressource.setStylePicto("color","green");
+					Ressource.setStylePicto("alignItems","center");
+					Ressource.setStylePicto("marginLeft","15px");
+
+					Ressource.getContainer().addEventListener("click",()=>this.startNewRessource());
+
+
+
+
 					let camera = this.card.push("Button", Elt,"Photo", "camera_alt");
 
 					camera.setStylePicto("fontSize","25px");
@@ -185,7 +197,11 @@ Start(type){
 }
 
 
+startNewRessource(){
 
+	this.Empty.addRessource();
+
+}
 
 /*StartNumber(type){
 

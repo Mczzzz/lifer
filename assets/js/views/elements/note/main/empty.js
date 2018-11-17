@@ -29,6 +29,13 @@ export default class Empty extends superViews{
 
 
 
+	addRessource(){
+
+		this.Ressource.destroyMe();
+		this.Ressource = new Ressource('Ressource' , this.path);
+
+	}
+
 
 
 	show(type){
