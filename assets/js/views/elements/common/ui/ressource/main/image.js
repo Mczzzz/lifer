@@ -90,6 +90,8 @@ export default class Image extends superViews{
 
 	ImageViewer(data){
 		
+		console.log("ImageViewer");
+		console.log(data);
 		let viewCard = new Card('Viewer_', this.path);
 		viewCard.setStyle("position", "absolute");
 		//viewCard.setStyle("position", "absolute");
