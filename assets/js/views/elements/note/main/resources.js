@@ -65,6 +65,9 @@ export default class Resources extends superViews{
 
 		let HeaderElement = this.RessourceList[ressourceTmpId].Card.setElement("header_"+ressourceTmpId);
 
+		this.RessourceTitle = this.RessourceList[ressourceTmpId].Card.push("Button", HeaderElement,"edit", "edit");
+
+
 		this.RessourceTitle = this.RessourceList[ressourceTmpId].Card.push("Text", HeaderElement,"Title", "");
 		
 		this.RessourceTitle.setStyle("fontSize","22px");
@@ -137,7 +140,7 @@ export default class Resources extends superViews{
 
 		MyText.setData(newLegend);
 
-		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
+//		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
 		this.reorder(ressourceTmpId);
 
