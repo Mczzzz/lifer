@@ -208,15 +208,18 @@ export default class Resources extends superViews{
 				MyThumb.setStyle("display" , "flex");
 				MyThumb.setStyle("alignItems" , "center");
 
-				let MyPictConfig = { attributes: true, subtree: true};
+				MyThumb.getContainer().addEventListener("click",()=>this.ImageViewer());
 
-				console.log("MyThumbChild:");
-				console.log(MyThumb);
-				console.log("(elt.pict:");
-				console.log(elt.pict);
+				console.log("elt.pict.ImageElt.getContainer()");
+				console.log(elt.pict.ImageElt.getContainer());
+
+
+				let MyPictConfig = { attributes: true, subtree: true};
 
 				let PictObserver = new MutationObserver(()=>this.updateImagePict(MyThumb,elt,ressourceTmpId));
 				PictObserver.observe(elt.pict.ImageElt.getContainer(), MyPictConfig);
+
+
 
 
 
@@ -244,6 +247,26 @@ export default class Resources extends superViews{
 
 	}
 
+
+
+	ImageViewer(data=false){
+		
+		let viewCard = new Card('Viewer_', this.path);
+		viewCard.setStyle("position", "absolute");
+		//viewCard.setStyle("position", "absolute");
+		viewCard.setStyle("top", "0px");
+		viewCard.setStyle("left", "0px");
+		viewCard.setStyle("width", "100%");
+		viewCard.setStyle("height", "100%");
+		viewCard.setStyle("background", "red");
+
+		let PictElt = viewCard.setElement("PictElt");
+		viewCard.push("Image", PictElt, "MyPict", data);
+
+		viewCard.getContainer().addEventListener("click",()=>viewCard.destroyMe());
+
+
+	}
 
 
 
