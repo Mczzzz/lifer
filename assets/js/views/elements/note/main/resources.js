@@ -205,7 +205,7 @@ export default class Resources extends superViews{
 
 				let MyPictConfig = { attributes: true, characterData: true, childList: true, subtree: true};
 
-				let PictObserver = new MutationObserver(()=>this.updateImagePict(MyPict,elt,ressourceTmpId));
+				let PictObserver = new MutationObserver(()=>this.updateImagePict(MyThumb,elt,ressourceTmpId));
 				PictObserver.observe(elt.pict.getContainer(), MyPictConfig);
 
 
