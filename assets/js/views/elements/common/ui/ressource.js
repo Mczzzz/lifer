@@ -69,6 +69,7 @@ export default class Ressource extends superViews{
 
       }
 
+      console.log(this.target);
     //  console.log("itemId From Note Ressource : "+itemId);
 
       this.ItemList[itemId];
