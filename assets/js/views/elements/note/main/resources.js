@@ -283,11 +283,12 @@ export default class Resources extends superViews{
 
 	loadRessource(ressourceTmpId){
 
+		console.log("loadRessource");
 		let TheRessource = this.Lifer.getData('Note-Main-Empty',"This");
 		TheRessource.addRessource();
 
 		for (let Item of  this.RessourceList[ressourceTmpId].Items){
-
+			console.log(Item);
 			TheRessource.addItem(Item.type, data=false);
 
 		}
