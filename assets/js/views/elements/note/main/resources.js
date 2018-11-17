@@ -94,10 +94,12 @@ export default class Resources extends superViews{
 
 
 
-	updateText(MyText,elt,ressourceTmpId){
+	updateText(MyText,elt,ressourceTmpId,itemTmpId){
 
 		let newText = elt.text.getText();
 	
+		this.RessourceList[ressourceTmpId].Items[itemTmpId].data = newText;
+
 		MyText.setData(newText);
 
 		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
@@ -114,23 +116,24 @@ export default class Resources extends superViews{
 
 		let newPict = elt.pict.data.pict;
 
-		console.log("elt");
-		console.log(elt);
-	
+/*		console.log("elt");
+		console.log(elt);*/
+		this.RessourceList[ressourceTmpId].Items[itemTmpId].pict = newPict;
 	    //console.log("Image Update")
 		MyPict.setData(newPict);
 
-		MyPict.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
+		//MyPict.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
 		this.reorder(ressourceTmpId);
 
 
 	}
 
-	updateImageLegend(MyText,elt,ressourceTmpId){
+	updateImageLegend(MyText,elt,ressourceTmpId,itemTmpId){
 
 		let newLegend = elt.text.getText();
 	
+		this.RessourceList[ressourceTmpId].Items[itemTmpId].legend = newLegend;
 
 		MyText.setData(newLegend);
 
@@ -191,7 +194,7 @@ export default class Resources extends superViews{
 
 				let config = { attributes: true, characterData: true, childList: true, subtree: true};
 
-				let observer = new MutationObserver(()=>this.updateText(MyText,elt,ressourceTmpId));
+				let observer = new MutationObserver(()=>this.updateText(MyText,elt,ressourceTmpId,itemTmpId));
 				observer.observe(elt.bloc.getContainer(), config);
 				observer.observe(elt.text.getContainer(), config);
 
@@ -214,7 +217,7 @@ export default class Resources extends superViews{
 
 				let MyPictConfig = { attributes: true, subtree: true};
 
-				let PictObserver = new MutationObserver(()=>this.updateImagePict(MyThumb,elt,ressourceTmpId));
+				let PictObserver = new MutationObserver(()=>this.updateImagePict(MyThumb,elt,ressourceTmpId,itemTmpId));
 				PictObserver.observe(elt.pict.ImageElt.getContainer(), MyPictConfig);
 
 
@@ -229,7 +232,7 @@ export default class Resources extends superViews{
 
 				let MyLegendconfig = { attributes: true, characterData: true, childList: true, subtree: true};
 
-				let LegendObserver = new MutationObserver(()=>this.updateImageLegend(MyLegend,elt,ressourceTmpId));
+				let LegendObserver = new MutationObserver(()=>this.updateImageLegend(MyLegend,elt,ressourceTmpId,itemTmpId));
 				LegendObserver.observe(elt.text.getContainer(), MyLegendconfig);
 
 
