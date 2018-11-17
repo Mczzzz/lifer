@@ -112,7 +112,7 @@ export default class Resources extends superViews{
 		
 	}
 
-	updateImagePict(MyPict,elt,ressourceTmpId){
+	updateImagePict(MyPict,elt,ressourceTmpId,itemTmpId){
 
 		let newPict = elt.pict.data.pict;
 
