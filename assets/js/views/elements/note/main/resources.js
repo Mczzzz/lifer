@@ -211,7 +211,7 @@ export default class Resources extends superViews{
 				MyThumb.getContainer().addEventListener("click",()=>this.ImageViewer());
 
 				console.log("elt.pict.ImageElt.getContainer()");
-				console.log(elt.pict.ImageElt.getContainer());
+				console.log(elt.pict.ImageElt);
 
 
 				let MyPictConfig = { attributes: true, subtree: true};
