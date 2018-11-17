@@ -186,16 +186,20 @@ export default class HeaderRessource extends superViews{
     	let Main = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Main");
 
 
+      let ActionTools = this.getObjectThisfromPath("Note-Footer");
+
 //   	console.log(Main);
     	if(Main.getContainer().style.display == "none"){
 
     		colButton.setData("keyboard_arrow_down");
     		Main.setStyle("display","");
+        ActionTools.setStyle("display","");
         this.collapseButton.setStyle("display", "");
     	}else{
 
     		colButton.setData("keyboard_arrow_up");
     		Main.setStyle("display","none");
+        ActionTools.setStyle("display","none");
          this.collapseButton.setStyle("display", "none");
 
     	}
