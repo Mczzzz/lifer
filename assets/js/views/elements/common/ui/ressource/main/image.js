@@ -81,9 +81,9 @@ export default class Image extends superViews{
 
     addThumb(data){
 
-    	//je pouse madata dans mon thumb, 
+    	//je pouse ma data dans mon thumb, 
     	this.ImageElt.setData(data);
-		this.IImageElt.getContainer().addEventListener("click",()=>this.ImageViewer(data));
+		this.ImageElt.getContainer().addEventListener("click",()=>this.ImageViewer(data));
 
 	}
 
