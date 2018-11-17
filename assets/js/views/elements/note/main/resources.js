@@ -64,6 +64,7 @@ export default class Resources extends superViews{
 		//card.setStyle("display","flex");
 
 		let HeaderElement = this.RessourceList[ressourceTmpId].Card.setElement("header_"+ressourceTmpId);
+		HeaderElement.setStyle("justifyContent", "stretch");
 
 		let editRessource = this.RessourceList[ressourceTmpId].Card.push("Button", HeaderElement,"edit", "editc");
 		editRessource.setStylePicto("fontSize","25px");
