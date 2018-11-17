@@ -33,6 +33,7 @@ export default class Empty extends superViews{
 
 		this.Ressource.destroyMe();
 		this.Ressource = new Ressource('Ressource' , this.path);
+		this.initialSet = 1;
 
 	}
 
@@ -53,10 +54,10 @@ export default class Empty extends superViews{
 				this.Lifer.getData('Note-Header-Action',"This").showTitle(this.Lifer.getData('Note',"This").note.Title);
 				this.setStyle("display","");
 		//		console.log("animation finish");
-	   		
+	   		 this.Ressource.setTarget("Note-Main-Resources");
 	   		this.initialSet = 0;
 	   	}
-	   this.Ressource.setTarget("Note-Main-Resources");
+	  
 	   this.Ressource.addItem(type);
 	   
 		//this.Ressource.addItem(type);
