@@ -120,7 +120,7 @@ export default class Resources extends superViews{
 	    //console.log("Image Update")
 		MyPict.setData(newPict);
 
-//		MyPict.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
+		MyPict.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
 		this.reorder(ressourceTmpId);
 
