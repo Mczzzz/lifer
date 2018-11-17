@@ -208,10 +208,7 @@ export default class Resources extends superViews{
 				MyThumb.setStyle("display" , "flex");
 				MyThumb.setStyle("alignItems" , "center");
 
-				MyThumb.getContainer().addEventListener("click",()=>this.ImageViewer());
-
-				console.log("elt.pict.ImageElt.getContainer()");
-				console.log(elt.pict.ImageElt);
+				MyThumb.getContainer().addEventListener("click",()=>this.ImageViewer(elt.pict.data.pict));
 
 
 				let MyPictConfig = { attributes: true, subtree: true};
