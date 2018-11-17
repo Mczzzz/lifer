@@ -204,6 +204,7 @@ export default class Resources extends superViews{
 				//j'ajoute mon thumb vide
 				//et je lui pousserai sa data après
 				let MyThumb= this.RessourceList[ressourceTmpId].Card.push("Thumb",ItemElement,"pict",);
+				MyThumb.setStyle("marginLeft" , "5px");
 				MyThumb.setStyle("marginRight" , "10px");
 				MyThumb.setStyle("display" , "flex");
 				MyThumb.setStyle("alignItems" , "center");
