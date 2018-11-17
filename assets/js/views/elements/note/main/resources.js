@@ -65,7 +65,12 @@ export default class Resources extends superViews{
 
 		let HeaderElement = this.RessourceList[ressourceTmpId].Card.setElement("header_"+ressourceTmpId);
 
-		this.RessourceTitle = this.RessourceList[ressourceTmpId].Card.push("Button", HeaderElement,"edit", "edit");
+		let editRessource = this.RessourceList[ressourceTmpId].Card.push("Button", HeaderElement,"edit", "editc");
+		editRessource.setStylePicto("fontSize","25px");
+		editRessource.setStylePicto("margin","0px");
+		editRessource.setStylePicto("marginLeft","5px");
+		editRessource.setStylePicto("color","white");
+		editRessource.setStylePicto("alignItems","center");
 
 
 		this.RessourceTitle = this.RessourceList[ressourceTmpId].Card.push("Text", HeaderElement,"Title", "");
