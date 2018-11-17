@@ -210,6 +210,9 @@ export default class Resources extends superViews{
 
 				let MyPictConfig = { attributes: true, subtree: true};
 
+				console.log("MyThumb:");
+				console.log(MyThumb);
+
 				let PictObserver = new MutationObserver(()=>this.updateImagePict(MyThumb,elt,ressourceTmpId));
 				PictObserver.observe(elt.pict.getContainer(), MyPictConfig);
 
