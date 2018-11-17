@@ -61,12 +61,12 @@ export default class Image extends superViews{
 
 	prepare(){
 
-		this.addThumb();
+		this.addStructThumb();
 		this.addLegend();
 
 	}
 
-	addThumb(){
+	addStructThumb(){
 
 		this.ImageElement = this.card.setElement("Image_"+this.ClassId);
 		this.ImageElt = this.card.push("Thumb", this.ImageElement,"Pict_"+this.ClassId);
@@ -74,23 +74,18 @@ export default class Image extends superViews{
 		this.ImageElt.setStyle("display" , "flex");
 		this.ImageElt.setStyle("alignItems" , "center");
 
-		
 
+	
 	}
 
 
-/*	addThumb(data){
+    addThumb(data){
 
+    	//je pouse madata dans mon thumb, 
+    	this.ImageElt.setData(data);
+		this.IImageElt.getContainer().addEventListener("click",()=>this.ImageViewer(data));
 
-		let ImageElt = this.card.push("Thumb", this.ImageElement,"Pict_"+this.ClassId, data);
-		ImageElt.setStyle("marginRight" , "10px");
-		ImageElt.setStyle("display" , "flex");
-		ImageElt.setStyle("alignItems" , "center");
-
-		ImageElt.getContainer().addEventListener("click",()=>this.ImageViewer(data));
-
-	
-	}*/
+	}
 
 	ImageViewer(data){
 		
