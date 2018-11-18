@@ -77,6 +77,8 @@ export default class Ressource extends superViews{
       let elt = this.Main.addItem(type,itemId);
 
       if(data){
+        console.log("In add Item Ressource !!!!!!!!!!!!!!!!!!!")
+        console.log(data);
          elt.bloc.setData(data);
       } 
      
