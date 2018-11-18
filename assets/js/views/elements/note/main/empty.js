@@ -45,7 +45,7 @@ export default class Empty extends superViews{
 
 	}
 
-	addItem(type, data=false){
+	addItem(type, ItemId = false, data=false){
 
 		console.log("in add item empty");
 		if(this.initialSet){
@@ -58,7 +58,7 @@ export default class Empty extends superViews{
 	   		this.initialSet = 0;
 	   	}
 	  
-	   this.Ressource.addItem(type,data);
+	   this.Ressource.addItem(type,ItemId, data);
 	   
 		//this.Ressource.addItem(type);
 	}
