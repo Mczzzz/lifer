@@ -265,7 +265,7 @@ export default class Resources extends superViews{
 
 	setObserver(elt,ressourceTmpId,itemTmpId){
 
-		MyText = this.RessourceList[ressourceTmpId].Items[itemTmpId].object;
+		let MyText = this.RessourceList[ressourceTmpId].Items[itemTmpId].object;
 
 		let config = { attributes: true, characterData: true, childList: true, subtree: true};
 
