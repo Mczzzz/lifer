@@ -109,7 +109,7 @@ export default class Resources extends superViews{
 		let newText = elt.text.getText();
 	
 		this.RessourceList[ressourceTmpId].Items[itemTmpId].data = newText;
-		this.RessourceList[ressourceTmpId].Items[itemTmpId].data.margin = elt.bloc.getContainer().style.marginLeft;
+		this.RessourceList[ressourceTmpId].Items[itemTmpId].margin = elt.bloc.getContainer().style.marginLeft;
 		MyText.setData(newText);
 
 
@@ -314,7 +314,7 @@ export default class Resources extends superViews{
 			let It = this.RessourceList[ressourceTmpId].Items[Item];
 /*
 */
-            TheRessource.addItem(It.type, Item, It.data);
+            TheRessource.addItem(It.type, Item, It.data,It.margin);
 
 		}
 		

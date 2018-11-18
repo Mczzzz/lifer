@@ -65,7 +65,7 @@ export default class Ressource extends superViews{
      }
 
 
-     addItem(type,itemId = false, data = false){
+     addItem(type,itemId = false, data = false,margin = false){
 
 
       let newItem = itemId;
@@ -88,6 +88,11 @@ export default class Ressource extends superViews{
         console.log(data);
          elt.bloc.setData(data);
       } 
+
+      if(margin){
+
+        elt.bloc.setStyle("marginLeft", margin);        
+      }
      
       if(!newItem){
 
