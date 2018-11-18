@@ -58,7 +58,7 @@ export default class Empty extends superViews{
 	   		this.initialSet = 0;
 	   	}
 	  
-	   this.Ressource.addItem(type);
+	   this.Ressource.addItem(type,data);
 	   
 		//this.Ressource.addItem(type);
 	}
