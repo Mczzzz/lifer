@@ -89,8 +89,14 @@ export default class Ressource extends superViews{
          elt.bloc.setData(data);
       } 
      
-      if(!newItem) this.target.addItem(this.RessourceId,type,itemId,elt);
+      if(!newItem){
 
+        this.target.addItem(this.RessourceId,type,itemId,elt);
+
+      }else{
+        //relink observer on 
+
+      } 
 
      }
 

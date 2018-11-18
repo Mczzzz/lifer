@@ -204,11 +204,13 @@ export default class Resources extends superViews{
 				MyText.removeAttribute("contentEditable");
 				this.RessourceList[ressourceTmpId].Items[itemTmpId].object = MyText;
 
-				let config = { attributes: true, characterData: true, childList: true, subtree: true};
+				this.setObserver(elt,ressourceTmpId,itemTmpId);
+
+/*				let config = { attributes: true, characterData: true, childList: true, subtree: true};
 
 				let observer = new MutationObserver(()=>this.updateText(MyText,elt,ressourceTmpId,itemTmpId));
 				observer.observe(elt.bloc.getContainer(), config);
-				observer.observe(elt.text.getContainer(), config);
+				observer.observe(elt.text.getContainer(), config);*/
 
 			break;
 
@@ -257,6 +259,19 @@ export default class Resources extends superViews{
 		//this.RessourceList[ressourceTmpId].ItemsList.push(ItemElement);
 		//this.ItemList.push({"RessourceId"})
 		console.log(this.RessourceList);
+
+	}
+
+
+	setObserver(elt,ressourceTmpId,itemTmpId){
+
+		MyText = this.RessourceList[ressourceTmpId].Items[itemTmpId].object;
+
+		let config = { attributes: true, characterData: true, childList: true, subtree: true};
+
+		let observer = new MutationObserver(()=>this.updateText(MyText,elt,ressourceTmpId,itemTmpId));
+		observer.observe(elt.bloc.getContainer(), config);
+		observer.observe(elt.text.getContainer(), config);
 
 	}
 
