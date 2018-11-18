@@ -7,7 +7,7 @@ import Footer from "./ressource/footer.js";
 export default class Ressource extends superViews{ 
      
 
-     constructor(MyClass,path,prepend = false){
+     constructor(MyClass,path,ressourceId=false,prepend = false){
 
           super( MyClass , path);
 
@@ -17,7 +17,7 @@ export default class Ressource extends superViews{
 
           this.target = false;
 
-          this.RessourceId = false;
+          this.RessourceId = ressourceId;
           this.ItemList = false;
 
 

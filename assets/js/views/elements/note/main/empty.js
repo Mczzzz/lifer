@@ -29,10 +29,10 @@ export default class Empty extends superViews{
 
 
 
-	addRessource(title=false){
+	addRessource(ressourceTmpId=false,title=false){
 
 		this.Ressource.destroyMe();
-		this.Ressource = new Ressource('Ressource' , this.path);
+		this.Ressource = new Ressource('Ressource' , this.path,ressourceTmpId);
 		this.initialSet = 1;
 
 	}
