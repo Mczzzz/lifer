@@ -295,8 +295,7 @@ export default class Resources extends superViews{
 			console.log(this.RessourceList[ressourceTmpId].Items[Item]);
 			let It = this.RessourceList[ressourceTmpId].Items[Item];
 
-			let data = false;
-			 TheRessource.addItem(It.type, data);
+            TheRessource.addItem(It.type, It.data);
 
 		}
 		
