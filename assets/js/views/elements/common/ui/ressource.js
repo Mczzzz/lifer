@@ -65,7 +65,7 @@ export default class Ressource extends superViews{
      }
 
 
-     addItem(type,itemId = false, data = false,margin = false){
+     addItem(type,itemId = false, data = false, margin = false){
 
 
       let newItem = itemId;
