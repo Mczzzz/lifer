@@ -90,7 +90,8 @@ export default class Ressource extends superViews{
       } 
 
       if(margin){
-
+        console.log('in margin :');
+        console.log(elt.bloc);
         elt.bloc.setStyle("marginLeft", margin);        
       }
      
