@@ -180,7 +180,9 @@ export default class Resources extends superViews{
 
 
 	addItem(ressourceTmpId,type,itemTmpId, elt){
-	//	console.log("in addItem");
+
+
+		console.log("in addItem !Resoure !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	//	console.log(ressourceTmpId);
 		//let itemTmpId = uuid().replace(/-/gi, '.');
 
