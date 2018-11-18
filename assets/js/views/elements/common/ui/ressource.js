@@ -67,7 +67,6 @@ export default class Ressource extends superViews{
 
      addItem(type,itemId = false, data = false){
 
-      let itemId = false;
 
       if(this.target && !itemId){
 
