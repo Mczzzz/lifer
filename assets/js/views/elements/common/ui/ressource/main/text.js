@@ -70,6 +70,13 @@ export default class Text extends superViews{
 	}
 
 
+	setData(data){
+
+		this.TheTextElt.setData(data);
+
+	}
+
+
 	getTextElement(){
 		return this.TheTextElt;
 	}

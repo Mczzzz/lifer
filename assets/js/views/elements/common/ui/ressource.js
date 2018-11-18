@@ -59,7 +59,7 @@ export default class Ressource extends superViews{
      }
 
 
-     addItem(type){
+     addItem(type,data = false){
 
       let itemId = false;
 
@@ -75,6 +75,7 @@ export default class Ressource extends superViews{
       this.ItemList[itemId];
 
       let elt = this.Main.addItem(type,itemId); 
+      elt.bloc.setData(data);
       
       this.target.addItem(this.RessourceId,type,itemId,elt);
 
