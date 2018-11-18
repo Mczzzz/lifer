@@ -50,7 +50,13 @@ export default class Ressource extends superViews{
     //  console.log("in init ressource");
       if(this.target){
    //     console.log("in init ressource - target");
-        this.RessourceId = this.target.addRessource();
+    if(!this.RessourceId){
+
+      this.RessourceId = this.target.addRessource();
+    }
+        
+
+
     //    console.log("RessourceId From Note Ressource: "+this.RessourceId);
 
       }
