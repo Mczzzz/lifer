@@ -109,8 +109,9 @@ export default class Resources extends superViews{
 		let newText = elt.text.getText();
 	
 		this.RessourceList[ressourceTmpId].Items[itemTmpId].data = newText;
-
+		this.RessourceList[ressourceTmpId].Items[itemTmpId].data.margin = elt.bloc.getContainer().style.marginLeft;
 		MyText.setData(newText);
+
 
 		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
