@@ -44,7 +44,7 @@ export default class Input extends superViews{
 
           this.changeColor();
 
-          this.MyInput.addEventListener("keyup", (e)=>this.dispatchEvents(e));
+          //this.MyInput.addEventListener("keyup", (e)=>this.dispatchEvents(e));
 
      }
 
