@@ -88,6 +88,8 @@ export default class Ressource extends superViews{
         console.log(data);
          elt.bloc.setData(data);
       } 
+            console.log('before margin :');
+        console.log(elt.bloc);  
 
       if(margin){
         console.log('in margin :');
