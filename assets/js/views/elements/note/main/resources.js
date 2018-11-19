@@ -115,7 +115,7 @@ export default class Resources extends superViews{
 
 		MyText.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
-		this.reorder(ressourceTmpId);
+		//this.reorder(ressourceTmpId);
 
 		//on save
 		//this.save(ressourceTmpId,elt.bloc.ClassId,"text","text",newText);
