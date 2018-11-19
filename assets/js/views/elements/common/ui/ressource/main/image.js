@@ -38,12 +38,22 @@ export default class Image extends superViews{
 
 
 
-				this.camLauncher = document.createElement("input");
+		//this.launchCam();
+
+		
+		this.prepare();
+	}
+
+
+
+	launchCam(){
+
+		this.camLauncher = document.createElement("input");
 		this.camLauncher.type = "file";
 		this.camLauncher.accept = "image/*";
 
 		//if(capture){
-			this.camLauncher.capture = "camera";	
+		this.camLauncher.capture = "camera";	
 		//}
 
 		this.camLauncher.style.display = "none";
@@ -54,8 +64,6 @@ export default class Image extends superViews{
 //		console.log("this.camLauncher.click()");
 		this.camLauncher.addEventListener("change", ()=>LoaderImage.importPict(this.camLauncher.files[0],this.path));
 
-		
-		this.prepare();
 	}
 
 

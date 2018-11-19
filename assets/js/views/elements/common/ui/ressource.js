@@ -76,25 +76,29 @@ export default class Ressource extends superViews{
 
       }
 
-      console.log(this.target);
+ //     console.log(this.target);
     //  console.log("itemId From Note Ressource : "+itemId);
 
       this.ItemList[itemId];
 
-      let elt = this.Main.addItem(type,itemId);
+      let anew = (itemId)? true : false;
+
+
+
+      let elt = this.Main.addItem(type,itemId,anew);
 
       if(data){
-        console.log("In add Item Ressource !!!!!!!!!!!!!!!!!!!")
-        console.log(data);
+/*        console.log("In add Item Ressource !!!!!!!!!!!!!!!!!!!")
+        console.log(data);*/
          elt.bloc.setData(data);
       } 
-            console.log('before margin :');
+ /*           console.log('before margin :');
             console.log(margin);
-        console.log(elt.bloc);  
+        console.log(elt.bloc);  */
 
       if(margin){
-        console.log('in margin :');
-        console.log(elt.bloc);
+/*        console.log('in margin :');
+        console.log(elt.bloc);*/
         elt.bloc.setStyle("marginLeft", margin);        
       }
      

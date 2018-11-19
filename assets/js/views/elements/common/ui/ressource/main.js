@@ -90,7 +90,7 @@ export default class MainRessource extends superViews{
 
 
 
-     addItem(type,itemId){
+     addItem(type,itemId,anew = false){
 
      	let res;
 
@@ -110,7 +110,7 @@ export default class MainRessource extends superViews{
 
 			case 'image':
 
-				res = this.image(itemId);
+				res = this.image(itemId,anew);
 
 			break;
 
@@ -170,9 +170,14 @@ export default class MainRessource extends superViews{
 	}
 
 
-	image(itemId){
+	image(itemId,anew){
 
 		let image = new Image("Image_"+itemId, this.path);
+		
+		if(anew){
+			image.launchCam();
+		}
+		
 		let textElt = image.getTextElement();
 		image.draggable(this.path,"onChildMove");
 
