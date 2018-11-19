@@ -81,9 +81,9 @@ export default class Ressource extends superViews{
 
       this.ItemList[itemId];
       console.log("Ressource addItem");
-      console.log(itemId);
+      console.log(data);
 
-      let anew = (itemId)? false : true;
+      let anew = (data)? false : true;
 
       let elt = this.Main.addItem(type,itemId,anew);
 
