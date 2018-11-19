@@ -92,8 +92,13 @@ export default class Ressource extends superViews{
       if(data){
 /*        console.log("In add Item Ressource !!!!!!!!!!!!!!!!!!!")
         console.log(data);*/
-        console.log(elt.bloc);
+        if(type == 'image'){
+          elt.bloc.addThumb(data);
+        }else{
+
          elt.bloc.setData(data);
+        
+        }
       } 
  /*           console.log('before margin :');
             console.log(margin);
