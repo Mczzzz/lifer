@@ -80,6 +80,8 @@ export default class Ressource extends superViews{
     //  console.log("itemId From Note Ressource : "+itemId);
 
       this.ItemList[itemId];
+      console.log("Ressource addItem");
+      console.log(itemId);
 
       let anew = (itemId)? false : true;
 
