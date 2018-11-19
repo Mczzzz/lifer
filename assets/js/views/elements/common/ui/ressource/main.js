@@ -174,6 +174,7 @@ export default class MainRessource extends superViews{
 
 		let image = new Image("Image_"+itemId, this.path);
 		
+		console.log("anew"+anew);
 		if(anew){
 			image.launchCam();
 		}
