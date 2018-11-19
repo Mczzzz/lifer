@@ -175,12 +175,14 @@ export default class Resources extends superViews{
 
 		for (let it of List){
 
-			newItemList[item.firstChild.id]= this.RessourceList[ressourceTmpId].Items[item.firstChild.id];
+			newItemList[it.firstChild.id]= this.RessourceList[ressourceTmpId].Items[it.firstChild.id];
 		}
 
 		console.log("newItemList");
 		console.log(newItemList);
+		console.log(this.RessourceList[ressourceTmpId].Item);
 		this.RessourceList[ressourceTmpId].Items = newItemList;
+		console.log(this.RessourceList[ressourceTmpId].Item);
 		this.RessourceList[ressourceTmpId].Card.getContainer().prepend(this.RessourceList[ressourceTmpId].Card["header_"+ressourceTmpId].getContainer());
 
 	}
