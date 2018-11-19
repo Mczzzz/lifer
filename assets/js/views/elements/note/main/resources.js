@@ -173,7 +173,7 @@ export default class Resources extends superViews{
 		}
 
 
-		for (let it of List){
+		for (let it of List.reverse()){
 
 			newItemList[it.firstChild.id]= this.RessourceList[ressourceTmpId].Items[it.firstChild.id];
 		}
@@ -199,7 +199,7 @@ export default class Resources extends superViews{
 	addItem(ressourceTmpId,type,itemTmpId, elt){
 
 
-		console.log("in addItem !Resoure !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+	//	console.log("in addItem !Resoure !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	//	console.log(ressourceTmpId);
 		//let itemTmpId = uuid().replace(/-/gi, '.');
 
