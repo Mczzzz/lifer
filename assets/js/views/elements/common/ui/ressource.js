@@ -111,6 +111,15 @@ export default class Ressource extends superViews{
      }
 
 
+
+
+    reorder(){
+
+      this.target.reorder(this.RessourceId);
+
+    }
+
+
         //rajoutdela callback udpdate vers target
 
 /*    update(path, data){
