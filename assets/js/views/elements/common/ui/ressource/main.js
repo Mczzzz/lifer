@@ -170,7 +170,7 @@ export default class MainRessource extends superViews{
 	}
 
 
-	image(itemId,anew){
+	image(itemId,anew = false){
 
 		let image = new Image("Image_"+itemId, this.path);
 		
