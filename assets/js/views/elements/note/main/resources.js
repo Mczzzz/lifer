@@ -329,8 +329,14 @@ export default class Resources extends superViews{
 //			console.log(this.RessourceList[ressourceTmpId].Items[Item]);
 			let It = this.RessourceList[ressourceTmpId].Items[Item];
 
+			let data = false;
+			if(It.type == 'image'){
+				data = It.pict;
+			}else{
+				data = It.data;
+			}
 
-            TheRessource.addItem(It.type, Item, It.data,It.margin);
+            TheRessource.addItem(It.type, Item, data,It.margin);
 
 		}
 		
