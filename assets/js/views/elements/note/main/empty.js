@@ -63,7 +63,12 @@ export default class Empty extends superViews{
 		//this.Ressource.addItem(type);
 	}
 
+	reorder(){
 
+
+		this.target.reorder(this.RessourceId);
+
+	}
 
 /*	saveResource(card,Element, TheTextElt){
 
