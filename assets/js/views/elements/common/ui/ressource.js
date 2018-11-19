@@ -81,9 +81,7 @@ export default class Ressource extends superViews{
 
       this.ItemList[itemId];
 
-      let anew = (itemId)? true : false;
-
-
+      let anew = (itemId)? false : true;
 
       let elt = this.Main.addItem(type,itemId,anew);
 
