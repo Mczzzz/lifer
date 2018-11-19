@@ -141,6 +141,12 @@ export default class Image extends superViews{
 	}
 
 
+	setData(data){
+
+		this.TheTextElt.setData(data);
+
+	}
+
 	getTextElement(){
 		return this.TheTextElt;
 	}

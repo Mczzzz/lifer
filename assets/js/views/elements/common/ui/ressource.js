@@ -65,7 +65,7 @@ export default class Ressource extends superViews{
      }
 
 
-     addItem(type,itemId = false, data = false, margin = false){
+     addItem(type,itemId = false, data = false, pict=false, margin = false){
 
 
       let newItem = itemId;
@@ -92,13 +92,13 @@ export default class Ressource extends superViews{
       if(data){
 /*        console.log("In add Item Ressource !!!!!!!!!!!!!!!!!!!")
         console.log(data);*/
-        if(type == 'image'){
-          elt.bloc.addThumb(data);
-        }else{
+        if(type == 'image' && pict){
+          elt.bloc.addThumb(pict);
+        }
 
          elt.bloc.setData(data);
         
-        }
+        
       } 
  /*           console.log('before margin :');
             console.log(margin);
