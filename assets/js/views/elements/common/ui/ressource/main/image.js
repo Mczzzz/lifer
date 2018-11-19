@@ -48,6 +48,8 @@ export default class Image extends superViews{
 
 	launchCam(){
 
+		console.log('in launch cam');
+
 		this.camLauncher = document.createElement("input");
 		this.camLauncher.type = "file";
 		this.camLauncher.accept = "image/*";
