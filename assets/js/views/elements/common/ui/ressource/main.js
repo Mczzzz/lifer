@@ -810,6 +810,8 @@ export default class MainRessource extends superViews{
 
 	        this.Ghost.remove();
 
+	        this.parentThis.target.reorder(this.parentThis.RessourceId);
+
 	        this.collapserSetter();
 
 
