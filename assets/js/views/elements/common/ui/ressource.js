@@ -84,6 +84,8 @@ export default class Ressource extends superViews{
       console.log(data);
 
       let anew = (data)? false : true;
+      console.log("Ressource addItem anew");
+      console.log(anew);
 
       let elt = this.Main.addItem(type,itemId,anew);
 
