@@ -161,15 +161,20 @@ export default class Resources extends superViews{
 		console.log(this.RessourceList);
 		let EditRessource = this.getObjectThisfromPath('Note-Main-Empty-Ressource-Main');
 		let ChildList = EditRessource.getContainer().childNodes;
-		let ReverseChildList = Array.from(ChildList).reverse();
+		let List = Array.from(ChildList);
 
 		let newItemList = [];
 
-		for (let item of ReverseChildList){
+		for (let item of List.reverse()){
 
 			console.log("in for reorder :");
 			console.log(this.RessourceList[ressourceTmpId].Card["Item_"+item.firstChild.id]);
 			this.RessourceList[ressourceTmpId].Card.getContainer().prepend(this.RessourceList[ressourceTmpId].Card["Item_"+item.firstChild.id].getContainer());
+		}
+
+
+		for (let it of List){
+
 			newItemList[item.firstChild.id]= this.RessourceList[ressourceTmpId].Items[item.firstChild.id];
 		}
 
