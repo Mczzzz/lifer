@@ -110,6 +110,7 @@ export default class Image extends superViews{
 		viewCard.setStyle("width", "100%");
 		viewCard.setStyle("height", "100%");
 		viewCard.setStyle("background", "red");
+		viewCard.setStyle("zIndex", "1000");
 
 		let PictElt = viewCard.setElement("PictElt");
 		viewCard.push("Image", PictElt, "MyPict", data);
