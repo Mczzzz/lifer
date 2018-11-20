@@ -293,7 +293,7 @@ export default class Resources extends superViews{
 	}
 
 
-
+//TODO a Factoriser avec ce qu'il y a directement dans image
 	ImageViewer(data=false){
 		
 		let viewCard = new Card('Viewer_', this.path);
@@ -304,6 +304,7 @@ export default class Resources extends superViews{
 		viewCard.setStyle("width", "100%");
 		viewCard.setStyle("height", "100%");
 		viewCard.setStyle("background", "red");
+		viewCard.setStyle("zIndex", "1000");
 
 		let PictElt = viewCard.setElement("PictElt");
 		viewCard.push("Image", PictElt, "MyPict", data);

@@ -98,6 +98,8 @@ export default class Image extends superViews{
 
 	}
 
+
+//TODO A FACTORISE AVEC SON COPAIN DANS RESOURCE
 	ImageViewer(data){
 		
 		console.log("ImageViewer");

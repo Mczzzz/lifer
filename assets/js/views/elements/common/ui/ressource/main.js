@@ -563,6 +563,12 @@ export default class MainRessource extends superViews{
 
 	        event.preventDefault();
 
+	        if(e.changedTouches[0].clientX > this.Lifer.getScreenSize().width * 0.75){
+
+	        	this.Cloned.style.background = "red";
+
+	        }
+
 	        //on bouge le Main en cas de déplacement proches du haut
 	        // de plus en plus vite
 	        //this.moveMain(e,childContainer);
