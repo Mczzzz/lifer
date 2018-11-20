@@ -15,7 +15,7 @@ export default class Resources extends superViews{
 
 		this.RessourceList = [];
 		//this.ItemList = [];
-		//this.observerTitle = false;
+		this.observerTitle = false;
 		
 	}
 
@@ -101,19 +101,19 @@ export default class Resources extends superViews{
 
 	setObserverTitle(ressourceTmpId){
 
-/*		if(this.observerTitle){
+		if(this.observerTitle){
 			console.log("DECONNEXION DE l'OBSERVER !!!!!!!!!!!!!");
 			this.observerTitle.disconnect();
-		} */
+		} 
 		console.log("DECONNEXION DE l'OBSERVER !!!!!!!!!!!!!");
 		console.log(ressourceTmpId);
 		let eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
 		console.log(eltTitle);
 		let config = { characterData: true, childList: true, subtree: true};
-		let observerTitle = new MutationObserver(()=>this.updateTitle(ressourceTmpId,eltTitle));
+		this.observerTitle = new MutationObserver(()=>this.updateTitle(ressourceTmpId,eltTitle));
 		console.log("observerTitle");
 		console.log(observerTitle);
-		observerTitle.observe(eltTitle.getContainer(), config);
+		this.observerTitle.observe(eltTitle.getContainer(), config);
 		console.log("observerTitle2");
 		console.log(observerTitle);
 
