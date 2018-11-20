@@ -84,12 +84,27 @@ export default class Resources extends superViews{
 		HeaderElement.setStyle("background","purple");
 
 		//get resourcecommmune
+
+		this.setObserverTitle(ressourceTmpId);
+
+/*		
+		SAUVEGARDE A DETRUIRE
+		let eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
+
+		let config = { characterData: true, childList: true, subtree: true};
+		let observer = new MutationObserver(()=>this.updateTitle(ressourceTmpId,eltTitle));
+			observer.observe(eltTitle.getContainer(), config);*/
+
+
+	}
+
+	setObserverTitle(ressourceTmpId){
+
 		let eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
 
 		let config = { characterData: true, childList: true, subtree: true};
 		let observer = new MutationObserver(()=>this.updateTitle(ressourceTmpId,eltTitle));
 			observer.observe(eltTitle.getContainer(), config);
-
 
 	}
 
@@ -323,6 +338,7 @@ export default class Resources extends superViews{
 		let TheRessource = this.Lifer.getData('Note-Main-Empty',"This");
 		TheRessource.addRessource(ressourceTmpId);
 		TheRessource.setTitle(this.RessourceList[ressourceTmpId].title);
+		this.setObserverTitle(ressourceTmpId);
 /*	
 		console.log(this.RessourceList[ressourceTmpId].Items);
 		console.log(Object.keys(this.RessourceList[ressourceTmpId].Items));*/
