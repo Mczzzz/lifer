@@ -108,7 +108,7 @@ export default class Resources extends superViews{
 		console.log("DECONNEXION DE l'OBSERVER !!!!!!!!!!!!!");
 		console.log(ressourceTmpId);
 		let eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
-
+		console.log(eltTitle);
 		let config = { characterData: true, childList: true, subtree: true};
 		let observerTitle = new MutationObserver(()=>this.updateTitle(ressourceTmpId,eltTitle));
 		observerTitle.observe(eltTitle.getContainer(), config);
