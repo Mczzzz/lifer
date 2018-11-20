@@ -114,6 +114,7 @@ export default class Resources extends superViews{
 		console.log("observerTitle");
 		console.log(observerTitle);
 		observerTitle.observe(eltTitle.getContainer(), config);
+		console.log(observerTitle);
 
 	}
 
