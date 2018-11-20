@@ -567,6 +567,8 @@ export default class MainRessource extends superViews{
 
 	        	this.Cloned.style.background = "red";
 
+	        }else{
+	        	this.Cloned.style.background = "";
 	        }
 
 	        //on bouge le Main en cas de déplacement proches du haut
