@@ -105,6 +105,7 @@ export default class Resources extends superViews{
 			console.log("DECONNEXION DE l'OBSEVER !!!!!!!!!!!!!");
 			this.observerTitle.disconnect();
 			this.observerTitle = false;
+			return true;
 		} 
 
 		let eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
