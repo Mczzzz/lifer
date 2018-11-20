@@ -111,6 +111,7 @@ export default class Resources extends superViews{
 		console.log(eltTitle);
 		let config = { characterData: true, childList: true, subtree: true};
 		let observerTitle = new MutationObserver(()=>this.updateTitle(ressourceTmpId,eltTitle));
+		console.log(observerTitle);
 		observerTitle.observe(eltTitle.getContainer(), config);
 
 	}
