@@ -105,19 +105,18 @@ export default class Resources extends superViews{
 			console.log("DECONNEXION DE l'OBSERVER !!!!!!!!!!!!!");
 			console.log(this.observerTitle);
 			this.observerTitle.disconnect();
+			this.observerTitle = false;
+			console.log(this.observerTitle);
+			return true;
 			
 		} 
 		console.log("AFTER DECONNEXION DE l'OBSERVER !!!!!!!!!!!!!");
 		console.log(ressourceTmpId);
 		let eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
-		console.log(eltTitle);
 		let config = { characterData: true, childList: true, subtree: true};
 		this.observerTitle = new MutationObserver(()=>this.updateTitle(ressourceTmpId,eltTitle));
-/*		console.log("observerTitle");
-		console.log(observerTitle);*/
+
 		this.observerTitle.observe(eltTitle.getContainer(), config);
-/*		console.log("observerTitle2");
-		console.log(observerTitle);*/
 
 	}
 
@@ -383,8 +382,8 @@ export default class Resources extends superViews{
 
 
 	update(data){
-			console.log("IIIIIIIIIIINNN UPDATE");
-			console.log(data);
+/*			console.log("IIIIIIIIIIINNN UPDATE");
+			console.log(data);*/
 			//on set le texte
 			this.RessourceList[data.RessourceId].Items[data.id].data = data.data.container.innerHTML;
 
