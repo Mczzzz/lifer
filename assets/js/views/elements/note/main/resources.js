@@ -26,7 +26,7 @@ export default class Resources extends superViews{
 		this.setStyle("overflowX", "hidden");
 		this.setStyle("overscrollBehavior","none");
 		
-
+		this.setStyleOut();
 		
 		this.TheNote = this.getObjectThisfromPath("Note");
 		
