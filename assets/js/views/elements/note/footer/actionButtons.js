@@ -44,6 +44,7 @@ export default class ActionButtons extends superViews{
 					text.setStylePicto("fontSize","25px");
 					text.setStylePicto("color","blue");
 					text.setStylePicto("alignItems","center");
+					text.setStylePicto("marginLeft","15px");
 
 					text.getContainer().addEventListener("click",()=>this.Start("text"));
 
