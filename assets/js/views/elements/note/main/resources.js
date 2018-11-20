@@ -330,14 +330,12 @@ export default class Resources extends superViews{
 			let It = this.RessourceList[ressourceTmpId].Items[Item];
 
 			let pict = false;
-			let data = false;
 
 			if(It.type == 'image'){
 				pict = It.pict;
-				data = It.legend;
-			}else{
-				data = It.data;
 			}
+			let	data = It.data;
+
 
 			 
 			
