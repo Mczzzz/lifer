@@ -101,6 +101,8 @@ export default class Resources extends superViews{
 
 	setObserverTitle(ressourceTmpId){
 
+		return true;
+		
 		if(this.observerTitle){
 			console.log("DECONNEXION DE l'OBSERVER !!!!!!!!!!!!!");
 			console.log(this.observerTitle);
