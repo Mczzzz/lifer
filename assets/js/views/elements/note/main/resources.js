@@ -76,10 +76,10 @@ export default class Resources extends superViews{
 
 		editRessource.getContainer().addEventListener("click",()=>this.loadRessource(ressourceTmpId));
 
-		this.RessourceTitle = this.RessourceList[ressourceTmpId].Card.push("Text", HeaderElement,"Title", "");
+		this.RessourceList[ressourceTmpId].TitleElt = this.RessourceList[ressourceTmpId].Card.push("Text", HeaderElement,"Title", "");
 		
-		this.RessourceTitle.setStyle("fontSize","22px");
-		this.RessourceTitle.removeAttribute("contentEditable");
+		this.RessourceList[ressourceTmpId].TitleElt.setStyle("fontSize","22px");
+		this.RessourceList[ressourceTmpId].TitleElt.removeAttribute("contentEditable");
 
 		//HeaderElement.setStyle("height","50px");
 		HeaderElement.setStyle("background","purple");
@@ -125,7 +125,7 @@ export default class Resources extends superViews{
 
 		let newTitle = eltTitle.getText();
 
-		this.RessourceTitle.setData(newTitle);
+		this.RessourceList[ressourceTmpId].TitleElt.setData(newTitle);
 		this.RessourceList[ressourceTmpId].title = newTitle;
 
 	}
