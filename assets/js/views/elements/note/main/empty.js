@@ -37,6 +37,11 @@ export default class Empty extends superViews{
 
 	}
 
+	setTitle(title){
+
+		this.Ressource.setTitle(title);
+		
+	}
 
 
 	show(type){

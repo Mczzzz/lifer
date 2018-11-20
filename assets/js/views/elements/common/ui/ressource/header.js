@@ -108,6 +108,11 @@ export default class HeaderRessource extends superViews{
 
      }
 
+     setTitle(title){
+
+      this.Title.setData(title);
+     }
+
 
      collapse(){
 

@@ -65,6 +65,14 @@ export default class Ressource extends superViews{
      }
 
 
+     setTitle(title){
+
+      this.Header.setTitle(title);
+
+     }
+
+
+
      addItem(type,itemId = false, data = false, pict=false, margin = false){
 
 
