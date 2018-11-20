@@ -144,7 +144,7 @@ export default class Resources extends superViews{
 
 		let newLegend = elt.text.getText();
 	
-		this.RessourceList[ressourceTmpId].Items[itemTmpId].legend = newLegend;
+		this.RessourceList[ressourceTmpId].Items[itemTmpId].data = newLegend;
 
 		MyText.setData(newLegend);
 
