@@ -25,7 +25,7 @@ export default class Resources extends superViews{
 		this.setStyle("overflowY" , "scroll");
 		this.setStyle("overflowX", "hidden");
 		this.setStyle("overscrollBehavior","none");
-		this.setStyle("filter", " blur(2px) sepia(100%)");
+		
 
 		
 		this.TheNote = this.getObjectThisfromPath("Note");
@@ -43,7 +43,15 @@ export default class Resources extends superViews{
 
 
 
+	setStyleOut(){
 
+		this.setStyle("filter", "blur(2px) sepia(100%)");
+
+	}
+
+	setStyleIn(){
+		this.setStyle("filter", "");
+	}
 
 
 
