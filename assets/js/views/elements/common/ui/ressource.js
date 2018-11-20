@@ -83,22 +83,21 @@ export default class Ressource extends superViews{
       console.log("Ressource addItem");
       console.log(data);
 
-      let anew = (data)? false : true;
+      let anew = (pict)? false : true;
       console.log("Ressource addItem anew");
       console.log(anew);
 
       let elt = this.Main.addItem(type,itemId,anew);
 
-      if(data){
+     
 /*        console.log("In add Item Ressource !!!!!!!!!!!!!!!!!!!")
         console.log(data);*/
-        if(type == 'image' && pict){
+      if(type == 'image' && pict){
           elt.bloc.addThumb(pict);
-        }
+       }
 
+      if(data){
          elt.bloc.setData(data);
-        
-        
       } 
  /*           console.log('before margin :');
             console.log(margin);
