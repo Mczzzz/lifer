@@ -105,7 +105,7 @@ export default class Resources extends superViews{
 			console.log("DECONNEXION DE l'OBSERVER !!!!!!!!!!!!!");
 			this.observerTitle.disconnect();
 		} */
-
+		console.log("DECONNEXION DE l'OBSERVER !!!!!!!!!!!!!");
 		let eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
 
 		let config = { characterData: true, childList: true, subtree: true};
@@ -344,6 +344,7 @@ export default class Resources extends superViews{
 		let TheRessource = this.Lifer.getData('Note-Main-Empty',"This");
 		TheRessource.addRessource(ressourceTmpId);
 		TheRessource.setTitle(this.RessourceList[ressourceTmpId].title);
+		console.log("loadRessource setObserverTitle");
 		this.setObserverTitle(ressourceTmpId);
 /*	
 		console.log(this.RessourceList[ressourceTmpId].Items);
