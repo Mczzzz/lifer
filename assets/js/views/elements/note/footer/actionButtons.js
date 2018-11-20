@@ -37,15 +37,15 @@ export default class ActionButtons extends superViews{
 			let Elt   = this.card.setElement("footer");
 			Elt.setStyle("justifyContent","flex-start");
 
-					let Ressource = this.card.push("Button", Elt,"addRessource", "playlist_add");
+					
 
-					Ressource.setStylePicto("fontSize","25px");
-					Ressource.setStylePicto("color","green");
-					Ressource.setStylePicto("alignItems","center");
-					Ressource.setStylePicto("marginLeft","15px");
+					let text = this.card.push("Button", Elt,"textElt", "text_fields");
 
-					Ressource.getContainer().addEventListener("click",()=>this.startNewRessource());
+					text.setStylePicto("fontSize","25px");
+					text.setStylePicto("color","blue");
+					text.setStylePicto("alignItems","center");
 
+					text.getContainer().addEventListener("click",()=>this.Start("text"));
 
 
 
@@ -58,6 +58,18 @@ export default class ActionButtons extends superViews{
 
 					camera.getContainer().addEventListener("click",()=>this.Start("image"));
 					//camera.getContainer().addEventListener("click",()=>this.StartCamera("image",true));
+
+
+
+					let Ressource = this.card.push("Button", Elt,"addRessource", "playlist_add");
+
+					Ressource.setStylePicto("fontSize","25px");
+					Ressource.setStylePicto("color","green");
+					Ressource.setStylePicto("alignItems","center");
+					Ressource.setStylePicto("marginLeft","15px");
+
+					Ressource.getContainer().addEventListener("click",()=>this.startNewRessource());
+
 
 
 
@@ -153,13 +165,7 @@ export default class ActionButtons extends superViews{
 
 
 
-					let text = this.card.push("Button", Elt,"textElt", "text_fields");
-
-					text.setStylePicto("fontSize","25px");
-					text.setStylePicto("color","blue");
-					text.setStylePicto("alignItems","center");
-
-					text.getContainer().addEventListener("click",()=>this.Start("text"));
+					
 
 /*
 button	Defines a clickable button (mostly used with a JavaScript to activate a script)
