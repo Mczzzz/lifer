@@ -25,6 +25,8 @@ export default class Resources extends superViews{
 		this.setStyle("overflowY" , "scroll");
 		this.setStyle("overflowX", "hidden");
 		this.setStyle("overscrollBehavior","none");
+		this.setStyle("filter", " blur(2px) sepia(100%)");
+
 		
 		this.TheNote = this.getObjectThisfromPath("Note");
 		
@@ -102,16 +104,10 @@ export default class Resources extends superViews{
 	setObserverTitle(ressourceTmpId){
 
 		if(this.observerTitle){
-			console.log("DECONNEXION DE l'OBSERVER !!!!!!!!!!!!!");
-			console.log(this.observerTitle);
 			this.observerTitle.disconnect();
 			this.observerTitle = false;
-			console.log(this.observerTitle);
-			
 		} 
 
-		console.log("AFTER DECONNEXION DE l'OBSERVER !!!!!!!!!!!!!");
-		console.log(ressourceTmpId);
 		let eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
 		let config = { characterData: true, childList: true, subtree: true};
 		this.observerTitle = new MutationObserver(()=>this.updateTitle(ressourceTmpId,eltTitle));
@@ -186,7 +182,6 @@ export default class Resources extends superViews{
 	reorder(ressourceTmpId){
 
 		//reorder
-		console.log(this.RessourceList);
 		let EditRessource = this.getObjectThisfromPath('Note-Main-Empty-Ressource-Main');
 		let ChildList = EditRessource.getContainer().childNodes;
 		let List = Array.from(ChildList);
