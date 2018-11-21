@@ -44,6 +44,8 @@ class DatasSynchronizing {
 		let stackId = Moment().format('x') + "-" + Math.floor(Math.random() * Math.floor(100000));
 
 		this.playQuery('insert into Commandes (id,status) values ('+stackId+',"INIT")');
+
+		return stackId;
 		//on regarde si le numéro existe déja mais ya peux de chance
 		/*let index = this.Stack.indexOf(stackId);
 
