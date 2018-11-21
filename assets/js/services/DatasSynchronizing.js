@@ -53,7 +53,7 @@ class DatasSynchronizing {
 		for(let cmd of Array.from(purchases.rows)){
 
 			console.log(cmd);
-			console.log(cmd.collection);
+			console.log(JSON.parse(cmd.collection));
 
 		}
 
@@ -76,9 +76,9 @@ class DatasSynchronizing {
 
 	webSQLsucess(tx,results,callback = false){
 
-		console.log("webSQLsuccess");
+/*		console.log("webSQLsuccess");
 		console.log(tx);
-		console.log(results);
+		console.log(results);*/
 		if(callback){
 			this[callback](results);
 		}
