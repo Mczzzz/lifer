@@ -52,16 +52,31 @@ class DatasSynchronizing {
 
 
 	playQuery(query){
-		this.syncData.transaction((tran)=>this.execQuery(tran,query));
+		this.syncData.transaction((db)=>this.execQuery(db,query));
 	}
 
-	execQuery(tran,query){
+	execQuery(db,query){
 
-		tran.executeSql(query);
+		db.executeSql(query,arguments,(tx,results)=>this.webSQLsucess(tx,results),(tx,errors)=>this.webSQLerror(tx,errors));
 	}
 
 
+	webSQLsucess(tx,results){
 
+		console.log("webSQLsuccess");
+		console.log(tx);
+		console.log(results);
+
+	}
+
+
+	webSQLerror(tx,errors){
+
+		console.log("webSQLerror");
+		console.log(tx);
+		console.log(errors);
+
+	}
 
 
 
