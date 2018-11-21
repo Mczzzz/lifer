@@ -21,7 +21,7 @@ class DatasSynchronizing {
 
 	init(){
 
-		this.syncData = openDatabase('syncData', '1.0', 'queue de synchronisation, 2 * 1024 * 1024);
+		this.syncData = openDatabase('syncData', '1.0', 'queue de synchronisation', 2 * 1024 * 1024);
 
 
 	}
