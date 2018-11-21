@@ -55,8 +55,9 @@ class DatasSynchronizing {
 		this.syncData.transaction((db)=>this.execQuery(db,query));
 	}
 
-	execQuery(db,query,arguments = []){
+	execQuery(db,query,arguments = false){
 
+	if(!arguments) arguments = [];
 		db.executeSql(query,arguments,(tx,results)=>this.webSQLsucess(tx,results),(tx,errors)=>this.webSQLerror(tx,errors));
 	}
 
