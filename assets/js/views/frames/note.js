@@ -247,7 +247,7 @@ export default class Note extends superViews{
 	_PushPrepareOrder(data, purchaseOrder){
 
 
-		let to        		= { "collection" : "Note"    , "method"   : "Push"  };
+		let to        		= JSON.stringify({ "collection" : "Note"    , "method"   : "Push"  });
 
 		let dispatchResponseTo  = [];
 		dispatchResponseTo.push({ "This"       : "Note"      , "method"   : "Confirm"});
