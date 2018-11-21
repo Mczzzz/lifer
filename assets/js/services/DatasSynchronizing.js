@@ -9,8 +9,6 @@ class DatasSynchronizing {
 
 	constructor(){
 
-
-		this.Stack = [];
 		this.active = false;
 
 		this.init();
@@ -25,7 +23,28 @@ class DatasSynchronizing {
 		this.playQuery('CREATE TABLE IF NOT EXISTS Commandes (id PRIMARY KEY, status,collection, dispatch_to, note_id,note_title, ressource_id, ressource_title, item_id, item_type, item_text, item_value, item_path,item_unit)');
 
 
+		this.startService();
+
+
 	}
+
+
+	startService(){
+
+		this.service = setInterval(()=> this.fillQueue() , 2000 );
+	}
+
+
+	fillQueue(){
+
+		console.log('fill queue !!!');
+
+
+
+	}
+
+
+
 
 
 	playQuery(query){
@@ -39,6 +58,10 @@ class DatasSynchronizing {
 
 
 
+
+
+
+
 	purchaseOrder(){
 
 		let stackId = Moment().format('x') + "-" + Math.floor(Math.random() * Math.floor(100000));
@@ -46,24 +69,6 @@ class DatasSynchronizing {
 		this.playQuery('insert into Commandes (id,status) values ('+stackId+',"INIT")');
 
 		return stackId;
-		//on regarde si le numéro existe déja mais ya peux de chance
-		/*let index = this.Stack.indexOf(stackId);
-
-		if(index == -1){
-
-			this.Stack[stackId] = {};
-			this.Stack[stackId].id = stackId;
-			this.Stack[stackId].status = "waiting";
-
-//			console.log("this.Stack");
-//			console.log(this.Stack);
-
-			return this.Stack[stackId];
-
-		}else{
-//			console.log('purshaseOrder Allready exist');
-		}*/
-
 
 	}
 

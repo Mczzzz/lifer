@@ -229,14 +229,14 @@ export default class Note extends superViews{
 		let order = this._PushPrepareOrder(data,purchaseOrder);
 
 		// Je prépare les actions à la livraison de la commande
-		this._PushPreparePostOrderAction(order,data,purchaseOrder);
+/*		this._PushPreparePostOrderAction(order,data,purchaseOrder);
 
 
 		//Je passe la commande
 		this._PushExectuteOrder(order,purchaseOrder);
 
 
-
+*/
 
 
 
@@ -282,7 +282,7 @@ export default class Note extends superViews{
 
 	}
 
-	_PushPreparePostOrderAction(order,data,purchaseOrder){
+	/*_PushPreparePostOrderAction(order,data,purchaseOrder){
 
 	    let actions = [];
 	    console.log("_PushPreparePostOrderAction");
@@ -307,7 +307,7 @@ export default class Note extends superViews{
 
 		return DatasSynchronizing.add(order.dispatchResponseTo,order.to,order.datas,purchaseOrder,true);
 
-	}
+	}*/
 
 
 }
