@@ -53,6 +53,7 @@ class DatasSynchronizing {
 		for(let cmd of Array.from(purchases.rows)){
 
 			console.log(cmd);
+			console.log(cmd.collection);
 
 		}
 
