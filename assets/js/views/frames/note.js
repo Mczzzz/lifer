@@ -275,6 +275,7 @@ export default class Note extends superViews{
 
 		}
 
+//TODO a déporter dans le datasync à mon avis
 
 		//on set le satus a pret à être traité
 

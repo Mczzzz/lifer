@@ -38,6 +38,10 @@ class DatasSynchronizing {
 	fillQueue(){
 
 		console.log('fill queue !!!');
+		//je lock tout ce qui est ready
+		this.playQuery('update Commandes SET status = "LOCKED" where status = "READY"');
+
+		//j'envoi
 
 
 
@@ -67,6 +71,7 @@ class DatasSynchronizing {
 		let stackId = Moment().format('x') + "-" + Math.floor(Math.random() * Math.floor(100000));
 
 		this.playQuery('insert into Commandes (id,status) values ('+stackId+',"INIT")');
+
 
 		return stackId;
 
