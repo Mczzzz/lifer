@@ -14,7 +14,7 @@ class DatasSynchronizing {
 		this.active = false;
 
 		this.init();
-		openDatabase
+	
 
 	}
 
