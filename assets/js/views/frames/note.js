@@ -248,15 +248,17 @@ export default class Note extends superViews{
 
 
 		let to        		= JSON.stringify({ "collection" : "Note" , "method" : "Push"  });
-		console.log("to:"+to);
+		//console.log("to:"+to);
 
 		let dispatchResponseTo  = [];
 		dispatchResponseTo.push({ "This"       : "Note"      , "method"   : "Confirm"});
 
-		DatasSynchronizing.playQuery(`update Notes SET collection ="`+to+`",
-			                                               dispatch_to = "`+dispatchResponseTo+`",
-			                                               note_id = "`+this.note.guid+`",
-			                                               note_title = "`+this.note.Title+`"
+		let dispatchResp = JSON.stringify(dispatchResponseTo);
+
+		DatasSynchronizing.playQuery(`update Notes SET collection ='`+to+`',
+			                                               dispatch_to = '`+dispatchResp+`',
+			                                               note_id = '`+this.note.guid+`',
+			                                               note_title = '`+this.note.Title+`'
 
 			                                               where id = `+purchaseOrder);
 
