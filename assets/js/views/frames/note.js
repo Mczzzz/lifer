@@ -259,16 +259,31 @@ export default class Note extends superViews{
 
 			                                               where id = `+purchaseOrder);
 
+
+		//a Bouger après
+		let ressourceId = "";
+		let itemId = "";
+
 		if(data){
 
 			//on lit l'objet et on rempli la base Commandes
 			//ressoures, items
 
 
+
+
 		}
 
 
 		//on set le satus a pret à être traité
+		
+		//clean up old task before
+		DatasSynchronizing.playQuery(`update Commandes SET status = "CANCELED" 
+			                          where status = "READY"
+			                          and note_id = "`+this.note.guid+`"
+			                          and ressource_id = `+ressourceId+`
+			                          and item_id = `+itemId);
+
 		DatasSynchronizing.playQuery(`update Commandes SET status = "READY" where id = `+purchaseOrder);
 
 /*		let datas     		= { "Note"       : this.note , "Resource" : data  , "OrderId" :  purchaseOrder.id  };
