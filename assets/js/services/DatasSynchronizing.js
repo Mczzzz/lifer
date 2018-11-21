@@ -29,7 +29,7 @@ class DatasSynchronizing {
 
 
 	playQuery(query){
-		this.syncData.transaction((tran)=>execQuery(tran,query));
+		this.syncData.transaction((tran)=>this.execQuery(tran,query));
 	}
 
 	execQuery(tran,query){
