@@ -61,7 +61,7 @@ class DatasSynchronizing {
 
 
 	playQuery(query,callback = false){
-		this.syncData.transaction((db)=>this.execQuery(db,query));
+		this.syncData.transaction((db)=>this.execQuery(db,query,callback));
 	}
 
 	execQuery(db,query,args = false, callback = false){
