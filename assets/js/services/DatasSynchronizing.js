@@ -20,7 +20,7 @@ class DatasSynchronizing {
 	init(){
 
 		this.syncData = openDatabase('syncData', '1.0', 'queue de synchronisation', 2 * 1024 * 1024);
-		this.playQuery('CREATE TABLE IF NOT EXISTS Commandes (id PRIMARY KEY, status,collection, dispatch_to, note_id,note_title, ressource_id, ressource_title, item_id, item_type, item_text, item_value, item_path,item_unit)');
+		this.playQuery('CREATE TABLE IF NOT EXISTS Notes (id PRIMARY KEY, status,collection, dispatch_to, note_id,note_title, ressource_id, ressource_title, item_id, item_type, item_text, item_value, item_path,item_unit)');
 
 
 		this.startService();
