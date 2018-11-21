@@ -68,7 +68,7 @@ class DatasSynchronizing {
 
 	if(!args) args = [];
 
-		db.executeSql(query,args,(tx,results,callback)=>this.webSQLsucess(tx,results,callback),(tx,errors)=>this.webSQLerror(tx,errors));
+		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results),(tx,errors)=>this.webSQLerror(tx,errors));
 	}
 
 
