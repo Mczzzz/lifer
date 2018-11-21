@@ -223,7 +223,7 @@ export default class Note extends superViews{
 
 
 		//on set l'id temporaire à la Note
-		if(this.note.guid === false) this.setNoteGuid("tmp-"+purchaseOrder;
+		if(this.note.guid === false) this.setNoteGuid("tmp-"+purchaseOrder);
 
 		//Je prépare la commande
 		let order = this._PushPrepareOrder(data,purchaseOrder);
