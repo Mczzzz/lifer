@@ -300,7 +300,12 @@ A prevoir
 		let dispatchResponseTo  = [];
 		dispatchResponseTo.push({ "This"       : "Note"      , "method"   : "Confirm"});
 
-		DatasSynchronizing.playQuery('update Commandes SET collection ="'+to+'",dispatch_to = "'+dispatchResponseTo+'" where id = '+purchaseOrder);
+		DatasSynchronizing.playQuery(`update Commandes SET collection ="`+to+`",
+			                                               dispatch_to = "`+dispatchResponseTo+`",
+			                                               note_id = "`+this.note.guid+`",
+			                                               note_title = "`+this.note.Title+`"
+
+			                                               where id = `+purchaseOrder);
 
 		let datas     		= { "Note"       : this.note , "Resource" : data  , "OrderId" :  purchaseOrder.id  };
 
