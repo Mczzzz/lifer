@@ -42,7 +42,7 @@ class DatasSynchronizing {
 		this.playQuery('update Commandes SET status = "LOCKED" where status = "READY"');
 
 		//j'envoi
-
+		this.playQuery('select * from Commandes where status = "LOCKED"');
 
 
 	}
