@@ -42,32 +42,44 @@ class DatasSynchronizing {
 		this.playQuery('update Commandes SET status = "LOCKED" where status = "READY"');
 
 		//j'envoi
-		this.playQuery('select * from Commandes where status = "LOCKED"');
+		this.playQuery('select * from Commandes where status = "LOCKED"',"sendCommand");
 
+	}
+
+
+	sendCommand(purchases){
+
+		for(let cmd of purchases){
+
+			console.log(cmd);
+
+		}
 
 	}
 
 
 
 
-
-	playQuery(query){
+	playQuery(query,callback = false){
 		this.syncData.transaction((db)=>this.execQuery(db,query));
 	}
 
-	execQuery(db,query,args = false){
+	execQuery(db,query,args = false, callback = false){
 
 	if(!args) args = [];
 
-		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results),(tx,errors)=>this.webSQLerror(tx,errors));
+		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results,callback),(tx,errors)=>this.webSQLerror(tx,errors));
 	}
 
 
-	webSQLsucess(tx,results){
+	webSQLsucess(tx,results,callback = false){
 
 		console.log("webSQLsuccess");
 		console.log(tx);
 		console.log(results);
+		if(callback){
+			this[callback](results);
+		}
 
 	}
 
