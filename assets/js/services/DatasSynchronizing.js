@@ -13,9 +13,18 @@ class DatasSynchronizing {
 		this.Stack = [];
 		this.active = false;
 
+		this.init();
+		openDatabase
+
 	}
 
 
+	init(){
+
+		this.syncData = openDatabase('syncData', '1.0', 'queue de synchronisation, 2 * 1024 * 1024);
+
+
+	}
 
 
 	purchaseOrder(){
