@@ -294,7 +294,11 @@ A prevoir
 
 	_PushPrepareOrder(data, purchaseOrder){
 
+
 		let to        		= { "collection" : "Note"    , "method"   : "Push"  };
+
+		DatasSynchronizing.playQuery('update Commandes SET collection ="'+to+'" whiere id = '+purchaseOrder);
+
 		
 		let dispatchResponseTo  = [];
 		dispatchResponseTo.push({ "This"       : "Note"      , "method"   : "Confirm"});

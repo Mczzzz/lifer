@@ -22,7 +22,7 @@ class DatasSynchronizing {
 	init(){
 
 		this.syncData = openDatabase('syncData', '1.0', 'queue de synchronisation', 2 * 1024 * 1024);
-		this.playQuery('CREATE TABLE IF NOT EXISTS Commandes (id PRIMARY KEY, status,note_id, note_title, ressource_id, ressource_title, item_id, item_type, item_text, item_value, item_path,item_unit)');
+		this.playQuery('CREATE TABLE IF NOT EXISTS Commandes (id PRIMARY KEY, status,note_id, collection,note_title, ressource_id, ressource_title, item_id, item_type, item_text, item_value, item_path,item_unit)');
 
 
 	}
@@ -38,13 +38,14 @@ class DatasSynchronizing {
 	}
 
 
+
 	purchaseOrder(){
 
 		let stackId = Moment().format('x') + "-" + Math.floor(Math.random() * Math.floor(100000));
 
 		this.playQuery('insert into Commandes (id,status) values ('+stackId+',"INIT")');
 		//on regarde si le numéro existe déja mais ya peux de chance
-		let index = this.Stack.indexOf(stackId);
+		/*let index = this.Stack.indexOf(stackId);
 
 		if(index == -1){
 
@@ -59,7 +60,7 @@ class DatasSynchronizing {
 
 		}else{
 //			console.log('purshaseOrder Allready exist');
-		}
+		}*/
 
 
 	}
