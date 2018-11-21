@@ -55,6 +55,9 @@ class DatasSynchronizing {
 			console.log(cmd);
 			console.log(JSON.parse(cmd.collection));
 
+			this.add(JSON.parse(cmd.dispatch_to),JSON.parse(cmd.collection),false,cmd.id,needTmpId=false){
+
+
 		}
 
 	}
