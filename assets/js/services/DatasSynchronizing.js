@@ -22,9 +22,19 @@ class DatasSynchronizing {
 	init(){
 
 		this.syncData = openDatabase('syncData', '1.0', 'queue de synchronisation', 2 * 1024 * 1024);
-		this.syncData.executeSql('CREATE TABLE IF NOT EXISTS Users (id unique, Name, MailID)');
+		this.playQuery('CREATE TABLE IF NOT EXISTS Users (id unique, Name, MailID)');
 
 
+	}
+
+
+	playQuery(query){
+		this.syncData.transaction((tran)=>execQuery(tran,query));
+	}
+
+	execQuery(tran,query){
+
+		tran.executeSql(query);
 	}
 
 
