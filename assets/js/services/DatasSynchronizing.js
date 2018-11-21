@@ -39,10 +39,10 @@ class DatasSynchronizing {
 
 		console.log('fill queue !!!');
 		//je lock tout ce qui est ready
-		this.playQuery('update Commandes SET status = "LOCKED" where status = "READY"');
+		this.playQuery('update Notes SET status = "LOCKED" where status = "READY"');
 
 		//j'envoi
-		this.playQuery('select * from Commandes where status = "LOCKED"',"sendCommand");
+		this.playQuery('select * from Notes where status = "LOCKED"',"sendCommand");
 
 	}
 
@@ -101,7 +101,7 @@ class DatasSynchronizing {
 
 		let stackId = Moment().format('x') + "-" + Math.floor(Math.random() * Math.floor(100000));
 
-		this.playQuery('insert into Commandes (id,status) values ('+stackId+',"INIT")');
+		this.playQuery('insert into Notes (id,status) values ('+stackId+',"INIT")');
 
 
 		return stackId;

@@ -253,7 +253,7 @@ export default class Note extends superViews{
 		let dispatchResponseTo  = [];
 		dispatchResponseTo.push({ "This"       : "Note"      , "method"   : "Confirm"});
 
-		DatasSynchronizing.playQuery(`update Commandes SET collection ="`+to+`",
+		DatasSynchronizing.playQuery(`update Notes SET collection ="`+to+`",
 			                                               dispatch_to = "`+dispatchResponseTo+`",
 			                                               note_id = "`+this.note.guid+`",
 			                                               note_title = "`+this.note.Title+`"
@@ -304,12 +304,12 @@ export default class Note extends superViews{
 		} 
 
 
-		DatasSynchronizing.playQuery(`update Commandes SET status = "CANCELED" 
+		DatasSynchronizing.playQuery(`update Notes SET status = "CANCELED" 
 			                          where status = "READY"
 			                          and note_id = "`+this.note.guid+`" `
 			                          +sqlWhereRessource+sqlWhereItem);
 
-		DatasSynchronizing.playQuery(`update Commandes SET status = "READY" where id = `+purchaseOrder);
+		DatasSynchronizing.playQuery(`update Notes SET status = "READY" where id = `+purchaseOrder);
 
 /*		let datas     		= { "Note"       : this.note , "Resource" : data  , "OrderId" :  purchaseOrder.id  };
 
