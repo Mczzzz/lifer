@@ -284,9 +284,9 @@ export default class Note extends superViews{
 	_PushPreparePostOrderAction(order,data,purchaseOrder){
 
 	    let actions = [];
-/*	    console.log("_PushPreparePostOrderAction");
-	    console.log("data.card");
-	    console.log(data.card);*/
+	    console.log("_PushPreparePostOrderAction");
+	    console.log("data");
+	    console.log(data);
 		actions.push({"object" : "Note-mainNote-noteMainTitle-NoteTitleCard", "method" : "setStyle", "value" : "color green"});
 		actions.push({"object" : data.card, "method" : "setStyle",  "value" : "background blue"});
 
