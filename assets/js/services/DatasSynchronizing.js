@@ -42,7 +42,7 @@ class DatasSynchronizing {
 		this.playQuery('update Commandes SET status = "LOCKED" where status = "READY"');
 
 		//j'envoi
-		//this.playQuery('select * from Commandes where status = "LOCKED"',"sendCommand");
+		this.playQuery('select * from Commandes where status = "LOCKED"',"sendCommand");
 
 	}
 
@@ -61,14 +61,14 @@ class DatasSynchronizing {
 
 
 	playQuery(query,callback = false){
-		this.syncData.transaction((db)=>this.execQuery(db,query,callback));
+		this.syncData.transaction((db)=>this.execQuery(db,query,false,callback));
 	}
 
 	execQuery(db,query,args = false, callback = false){
 
 	if(!args) args = [];
 
-		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results),(tx,errors)=>this.webSQLerror(tx,errors));
+		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results,callback),(tx,errors)=>this.webSQLerror(tx,errors));
 	}
 
 
