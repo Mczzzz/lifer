@@ -48,7 +48,7 @@ class DatasSynchronizing {
 
 
 	sendCommand(purchases){
-
+		console.log('in send command');
 		for(let cmd of purchases){
 
 			console.log(cmd);
