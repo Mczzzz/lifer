@@ -243,54 +243,6 @@ export default class Note extends superViews{
 
 	}
 
-/*	DEPRECATED_PushPreOrderAction(update){
-
-		
-		
-		this.note.Ts = update.format("YYYY-MM-DD HH:mm:ss");//objet Momentjs à formater a l'utilisation
-
-		let updateNoteTitleElt = this.getObjectThisfromPath("Note-Main-Title-Card");	
-		updateNoteTitleElt.getContainer().style.background = "red";
-
-		let updateNoteElt = this.getObjectThisfromPath("Note-Main-Title-Card-Element-Textupdate");	
-		updateNoteElt.getContainer().innerHTML = update.format('Do MMMM YYYY, HH:mm:ss');
-		updateNoteElt.getContainer().style.color = "red";
-
-
-		//faire un tableau des retours daction atten uet envoyé a la comande
-
-
-	}*/
-
-	/* api/note
-
-	{
-		*note.id //temporaire, puis definitf
-		note.title //si besoin
-		*note.timestampUpdate : update device
-
-
-		**Ressource.id //temporaire, puis definitf
-		Ressource.title
-
-		***item.id //temporaire, puis definitf
-		***item.type
-		   item.parentItem
-
-		   item.text :// texte + legende photo + legende unité
-
-		   item.unit  : Si type = unité, c'est l'id d'unité en base
-		   item.value :  Si type = unité, c'est la valeur
-
-		   item.path : si photo, c'est le path de stockage
-
-A prevoir
-
-		   localisation à tous les niveaux
-
-	}
-
-	*/
 
 	_PushPrepareOrder(data, purchaseOrder){
 
@@ -307,14 +259,26 @@ A prevoir
 
 			                                               where id = `+purchaseOrder);
 
-		let datas     		= { "Note"       : this.note , "Resource" : data  , "OrderId" :  purchaseOrder.id  };
+		if(data){
+
+			//on lit l'objet et on rempli la base Commandes
+			//ressoures, items
+
+
+		}
+
+
+		//on set le satus a pret à être traité
+		DatasSynchronizing.playQuery(`update Commandes SET status = "READY" where id = `+purchaseOrder);
+
+/*		let datas     		= { "Note"       : this.note , "Resource" : data  , "OrderId" :  purchaseOrder.id  };
 
 		let res = {};
 		res.to       = to;
 		res.dispatchResponseTo = dispatchResponseTo;
 		res.datas    = datas;
 
-		return res;
+		return res;*/
 
 	}
 
