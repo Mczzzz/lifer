@@ -195,7 +195,7 @@ export default class Note extends superViews{
 
 
 
-	Push(data){
+	Push(data = false){
 
 //		console.log("in Note Push");
 //		console.log(data);
@@ -262,6 +262,35 @@ export default class Note extends superViews{
 
 	}*/
 
+	/* api/note
+
+	{
+		*note.id //temporaire, puis definitf
+		note.title //si besoin
+		*note.timestampUpdate : update device
+
+
+		**Ressource.id //temporaire, puis definitf
+		Ressource.title
+
+		***item.id //temporaire, puis definitf
+		***item.type
+		   item.parentItem
+
+		   item.text :// texte + legende photo + legende unité
+
+		   item.unit  : Si type = unité, c'est l'id d'unité en base
+		   item.value :  Si type = unité, c'est la valeur
+
+		   item.path : si photo, c'est le path de stockage
+
+A prevoir
+
+		   localisation à tous les niveaux
+
+	}
+
+	*/
 
 	_PushPrepareOrder(data, purchaseOrder){
 
