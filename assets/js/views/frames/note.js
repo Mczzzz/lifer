@@ -297,8 +297,9 @@ A prevoir
 
 		let to        		= { "collection" : "Note"    , "method"   : "Push"  };
 
-		DatasSynchronizing.playQuery('update Commandes SET collection ="'+to+'" whiere id = '+purchaseOrder);
-
+		console.log('before update');
+		DatasSynchronizing.playQuery('update Commandes SET collection ="'+to+'" where id = '+purchaseOrder);
+		console.log('after update');
 		
 		let dispatchResponseTo  = [];
 		dispatchResponseTo.push({ "This"       : "Note"      , "method"   : "Confirm"});
