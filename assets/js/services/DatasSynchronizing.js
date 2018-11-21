@@ -49,7 +49,7 @@ class DatasSynchronizing {
 
 	sendCommand(purchases){
 		console.log('in send command');
-		console.log(purchases.rows);
+		console.log(Array.from(purchases.rows));
 		for(let cmd of purchases){
 
 			console.log(cmd);
