@@ -261,8 +261,9 @@ export default class Note extends superViews{
 
 
 		//a Bouger après
-		let ressourceId = "";
-		let itemId = "";
+		let ressourceId = null;
+		let itemId = null;
+
 
 		if(data){
 
@@ -276,13 +277,35 @@ export default class Note extends superViews{
 
 
 		//on set le satus a pret à être traité
-		
+
 		//clean up old task before
+		let sqlWhereRessource = "";
+		let sqlWhereItem = "";
+
+		if(ressourceId === null){
+
+			sqlWhereRessource = "and ressource_id IS NULL ";
+			sqlWhereItem = "and item_id IS NULL ";
+
+		}else{
+
+			sqlWhereRessource = 'and ressource_id ="'+ressourceId+'" ';
+
+			if(itemId = null){
+
+				sqlWhereItem = "and item_id IS NULL ";
+
+			}else{
+				sqlWhereItem = 'and item_id ="'+itemId+'" ';
+			}
+
+		} 
+
+
 		DatasSynchronizing.playQuery(`update Commandes SET status = "CANCELED" 
 			                          where status = "READY"
-			                          and note_id = "`+this.note.guid+`"
-			                          and ressource_id = `+ressourceId+`
-			                          and item_id = `+itemId);
+			                          and note_id = "`+this.note.guid+`" `
+			                          +sqlWhereRessource+sqlWhereItem);
 
 		DatasSynchronizing.playQuery(`update Commandes SET status = "READY" where id = `+purchaseOrder);
 
