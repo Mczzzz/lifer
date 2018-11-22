@@ -20,7 +20,9 @@ class DatasSynchronizing {
 	init(){
 
 		this.syncData = openDatabase('syncData', '1.0', 'queue de synchronisation', 2 * 1024 * 1024);
-		this.playQuery('CREATE TABLE IF NOT EXISTS Notes (id PRIMARY KEY, status,collection, dispatch_to, note_id,note_title, ressource_id, ressource_title, item_id, item_type, item_text, item_value, item_path,item_unit)');
+
+		this.NoteCollection = new LoaderCollection('Note');	
+		this.playQuery(this.NoteCollection.initwebSQLDB());
 
 
 		this.startService();
@@ -37,7 +39,7 @@ class DatasSynchronizing {
 
 	fillQueue(){
 
-		console.log('fill queue !!!');
+//		console.log('fill queue !!!');
 		//je lock tout ce qui est ready
 		this.playQuery('update Notes SET status = "LOCKED" where status = "READY"');
 
@@ -48,13 +50,13 @@ class DatasSynchronizing {
 
 
 	sendCommand(purchases){
-		console.log('in send command');
+//		console.log('in send command');
 
 		for(let cmd of Array.from(purchases.rows)){
-
+/*
 			console.log(cmd);
 			console.log(JSON.parse(cmd.collection));
-
+*/
 			this.add(JSON.parse(cmd.dispatch_to),JSON.parse(cmd.collection),false,cmd.id,false);
 
 

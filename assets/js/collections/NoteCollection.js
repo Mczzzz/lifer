@@ -14,6 +14,14 @@ export default class NoteCollection {
 	}
 
 
+	initwebSQLDB(){
+
+		return 'CREATE TABLE IF NOT EXISTS Notes (id PRIMARY KEY, status,collection, dispatch_to, note_id,note_title, ressource_id, ressource_title, item_id, item_type, item_text, item_value, item_path,item_unit)';
+	
+	}
+
+
+
   Push(from,datas){
 
 /*	datas =  {Note: {…}, Resource: {…}}
