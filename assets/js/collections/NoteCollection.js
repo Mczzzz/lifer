@@ -44,7 +44,7 @@ export default class NoteCollection {
 	//delete dataSend.Resource.card;
 
 
-    let result = this.SvcBackEndComm.c('POST',this.apiPrefixe + 'push',from,dataCallback,dataSend);
+    let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'push',from,dataCallback,dataSend);
 
   }
 
