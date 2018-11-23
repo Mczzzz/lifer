@@ -32,9 +32,9 @@ export default class BackendComm {
 
 						}else{
 
-							let Myclass = Lifer.getData(eventToDispatch.This,"This");
+/*							let Myclass = Lifer.getData(eventToDispatch.This,"This");
 
-							Myclass[eventToDispatch.method](json,dataCallback);
+							Myclass[eventToDispatch.method](json,dataCallback);*/
 
 						}
 

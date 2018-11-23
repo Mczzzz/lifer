@@ -39,12 +39,12 @@ export default class NoteCollection {
 					text*/
 
 	// Je supprime de mon object data ce qui ne sert à rien et le supprime.
-	let dataCallback = false;
+	let dataCallback = datas;
 	let dataSend = datas;
 	//delete dataSend.Resource.card;
 
 
-    let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'push',from,dataCallback,dataSend);
+    let result = this.SvcBackEndComm.c('POST',this.apiPrefixe + 'push',from,dataCallback,dataSend);
 
   }
 
