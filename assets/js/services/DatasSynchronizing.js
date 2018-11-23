@@ -21,9 +21,9 @@ class DatasSynchronizing {
 
 		this.syncData = openDatabase('syncData', '1.0', 'queue de synchronisation', 2 * 1024 * 1024);
 
+		//Init de la table Note si pas encore fait
 		this.NoteCollection = new LoaderCollection('Note');	
 		this.playQuery(this.NoteCollection.initwebSQLDB());
-
 
 		this.startService();
 

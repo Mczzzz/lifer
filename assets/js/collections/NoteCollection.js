@@ -8,7 +8,7 @@ export default class NoteCollection {
 		this.apiPrefixe = "/api_v1/notes/";
 		this.targetObject = "Note";
 
-    this.SvcBackEndComm = new SvcBackEndComm();
+    	this.SvcBackEndComm = new SvcBackEndComm();
 
 
 	}
@@ -39,7 +39,7 @@ export default class NoteCollection {
 					text*/
 
 	// Je supprime de mon object data ce qui ne sert à rien et le supprime.
-	let dataCallback = datas;
+	let dataCallback = false;
 	let dataSend = datas;
 	//delete dataSend.Resource.card;
 
