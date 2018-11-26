@@ -1,6 +1,7 @@
 import { Lifer } from '../services/Lifer.js';
 
-import LoaderCollection from '../services/LoaderCollection.js';
+import BDLocalCollection from '../collections/DBLocalCollection.js';
+import LoaderCollection  from '../services/LoaderCollection.js';
 
 import Frame from '../services/frame.js';
 
@@ -23,6 +24,9 @@ export default class Controller {
 
 
 	init(){
+
+
+		this.BDLocal = new BDLocalCollection();
 
 		this.loadUser();
 		this.loadUnity();

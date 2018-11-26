@@ -21,6 +21,17 @@ export default class NoteCollection {
 	}
 
 
+	queuePrepareSend(){
+
+		//je lock tout ce qui est ready
+		this.playQuery('update Notes SET status = "LOCKED" where status = "READY"');
+
+		//j'envoi
+		this.playQuery('select * from Notes where status = "LOCKED"',"sendCommand");
+
+	}
+
+
 
   Push(from,datas){
 
