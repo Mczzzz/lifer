@@ -1,4 +1,4 @@
-class DBLocalCollection {
+export default class DBLocalCollection {
 	
 
 	constructor(){

@@ -8,10 +8,20 @@ export default class NoteCollection {
 		this.apiPrefixe = "/api_v1/notes/";
 		this.targetObject = "Note";
 
+
+
     	this.SvcBackEndComm = new SvcBackEndComm();
 
 
 	}
+
+
+	init(){
+
+		//file d'attente de sauvegarde
+
+	}
+
 
 
 	initwebSQLDB(){
