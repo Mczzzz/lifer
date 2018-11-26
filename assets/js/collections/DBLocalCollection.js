@@ -3,11 +3,10 @@ export default class DBLocalCollection {
 
 	constructor(){
 
-
-		this.init();
-
 		this.LocalDB = {};
 		this.BDRessources = [];
+
+		this.init();
 
 	}
 
