@@ -34,6 +34,17 @@ export default class DBLocalCollection {
 		this.BDRessources.push(this.DBdown);
 
 
+		//base de synchro serveur descendant
+		this.DBdownCommon         = {};
+		this.DBdownCommon.name    = "commonAppData";
+		this.DBdownCommon.version = "1.0";
+		this.DBdownCommon.description = "Données communes pour l'app";
+		this.DBdownCommon.size = 2 * 1024 * 1024;
+
+		this.BDRessources.push(this.DBdownCommon);
+
+
+
 
 		this.createBases();
 
