@@ -16,13 +16,7 @@ export default class DBLocalCollection {
 		//instanciation et propagation des instance de db
 
 		//base de synchro d'enregistrement montant
-		this.DBup         = {};
-		this.DBup.name    = "syncUp";
-		this.DBup.version = "1.0";
-		this.DBup.description = "Buffer de syncho vers le serveur";
-		this.DBup.size = 2 * 1024 * 1024;
 
-		this.BDRessources.push(this.DBup);
 
 		//base de synchro serveur descendant
 		this.DBdown         = {};
@@ -52,13 +46,47 @@ export default class DBLocalCollection {
 	}
 
 
+	getDBup(){
+
+		DBup         = {};
+		DBup.name    = "syncUp";
+		DBup.version = "1.0";
+		DBup.description = "Buffer de syncho vers le serveur";
+		DBup.size = 2 * 1024 * 1024;
+
+		return DBup;
+
+	}
+
+
+	getDBdown(){
+
+		DBdown         = {};
+		DBdown.name    = "syncUp";
+		DBdown.version = "1.0";
+		DBdown.description = "Buffer de syncho vers le serveur";
+		DBdown.size = 2 * 1024 * 1024;
+
+		return DBdown;
+
+	}
+
+
+
+
+
+
 	createBases(){
+
+this.BDRessources.push(this.DBup);
 
 		for (let Base of this.BDRessources){
 
 			this.LocalDB[Base.name] = openDatabase(Base.name, Base.version, Base.description, Base.size);
 
 		}
+
+		return this.LocalDB;
 
 	}
 
