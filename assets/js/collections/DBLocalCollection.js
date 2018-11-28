@@ -48,7 +48,7 @@ export default class DBLocalCollection {
 
 	getDBup(){
 
-		DBup         = {};
+		let DBup         = {};
 		DBup.name    = "syncUp";
 		DBup.version = "1.0";
 		DBup.description = "Buffer de syncho vers le serveur";
@@ -61,10 +61,10 @@ export default class DBLocalCollection {
 
 	getDBdown(){
 
-		DBdown         = {};
-		DBdown.name    = "syncUp";
+		let DBdown         = {};
+		DBdown.name    = "syncDown";
 		DBdown.version = "1.0";
-		DBdown.description = "Buffer de syncho vers le serveur";
+		DBdown.description = "Replica Serveur pour Offline";
 		DBdown.size = 2 * 1024 * 1024;
 
 		return DBdown;
@@ -72,6 +72,17 @@ export default class DBLocalCollection {
 	}
 
 
+	getDBdownCommon(){
+
+		let DBdownCommon         = {};
+		DBdownCommon.name    = "commonAppData";
+		DBdownCommon.version = "1.0";
+		DBdownCommon.description = "Données communes pour l'app";
+		DBdownCommon.size = 2 * 1024 * 1024;
+
+		return DBdownCommon;
+
+	}
 
 
 
