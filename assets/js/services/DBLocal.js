@@ -18,16 +18,17 @@ class DBLocal {
 		console.log("this.BDLocalCollection");
 		console.log(this.BDLocalCollection);
 
-		for (let Base of this.BDLocalCollection){
-
-
-
-		}
+		
 
 
 	}
 
 
+	getDBInstance(name){
+
+		return this.BDLocalCollection[name];
+
+	}
 
 
 }
