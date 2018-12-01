@@ -3,8 +3,7 @@ export default class DBLocalCollection {
 
 	constructor(){
 
-		this.LocalDB = {};
-		this.BDRessources = [];
+		this.SGBD = [];
 
 		this.init();
 
@@ -15,32 +14,9 @@ export default class DBLocalCollection {
 
 		//instanciation et propagation des instance de db
 
-		//base de synchro d'enregistrement montant
-
-
-		//base de synchro serveur descendant
-		this.DBdown         = {};
-		this.DBdown.name    = "syncDown";
-		this.DBdown.version = "1.0";
-		this.DBdown.description = "Replica Serveur pour Offline";
-		this.DBdown.size = 2 * 1024 * 1024;
-
-		this.BDRessources.push(this.DBdown);
-
-
-		//base de synchro serveur descendant
-		this.DBdownCommon         = {};
-		this.DBdownCommon.name    = "commonAppData";
-		this.DBdownCommon.version = "1.0";
-		this.DBdownCommon.description = "Données communes pour l'app";
-		this.DBdownCommon.size = 2 * 1024 * 1024;
-
-		this.BDRessources.push(this.DBdownCommon);
-
-
-
-
-		this.createBases();
+        this.SGBD.push(this.getDBup());
+        this.SGBD.push(this.getDBdown());
+        this.SGBD.push(this.getDBdownCommon());
 
 
 	}
@@ -87,19 +63,12 @@ export default class DBLocalCollection {
 
 
 
-	createBases(){
+	createBases(DB){
 
-this.BDRessources.push(this.DBup);
-
-		for (let Base of this.BDRessources){
-
-			this.LocalDB[Base.name] = openDatabase(Base.name, Base.version, Base.description, Base.size);
-
-		}
-
-		return this.LocalDB;
+		return openDatabase(Base.name, Base.version, Base.description, Base.size);
 
 	}
+
 
 
 
