@@ -63,7 +63,7 @@ export default class DBLocalCollection {
 
 
 
-	createBases(DB){
+	createBases(Base){
 
 		return openDatabase(Base.name, Base.version, Base.description, Base.size);
 
