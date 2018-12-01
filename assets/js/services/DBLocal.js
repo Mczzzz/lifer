@@ -36,5 +36,5 @@ class DBLocal {
 
 
 const instance = new DBLocal();
-export { instance as LocalSGBD };
+export { instance as DBLocal };
 
