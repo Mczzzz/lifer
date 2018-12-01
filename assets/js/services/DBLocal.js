@@ -6,7 +6,11 @@ class DBLocal {
 
 	constructor(){
 
+
+
 		this.BDLocalCollection = new BDLocalCollection();
+
+		this.SGBD = [];
 
 		this.init();
 
@@ -15,8 +19,16 @@ class DBLocal {
 
 
 	init(){
-		console.log("this.BDLocalCollection");
-		console.log(this.BDLocalCollection);
+
+		for(let base of this.BDLocalCollection.SGBD){
+
+
+			this.SGBD[base.name] = this.BDLocalCollection.createBases(base);
+
+
+		}
+
+
 
 		
 
@@ -26,7 +38,7 @@ class DBLocal {
 
 	getDBInstance(name){
 
-		return this.BDLocalCollection[name];
+		return this.SGBD[name];
 
 	}
 
