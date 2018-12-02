@@ -8,7 +8,7 @@ export default class NoteCollection {
 		this.apiPrefixe = "/api_v1/notes/";
 		this.targetObject = "Note";
 
-
+		this.tables = [];
 
     	this.SvcBackEndComm = new SvcBackEndComm();
 
@@ -19,14 +19,32 @@ export default class NoteCollection {
 	init(){
 
 		//file d'attente de sauvegarde
+		let TblNote = {};
+		TblNote.name = "Notes";
+		TblNote.db = "syncUp";
+		tblNote.create = "CREATE TABLE IF NOT EXISTS "+TblNote.name+" (id PRIMARY KEY, status,collection, dispatch_to, note_id,note_title, ressource_id, ressource_title, item_id, item_type, item_text, item_value, item_path,item_unit)";
+		
+		this.tables.push(TblNote);
+
+
+
+
 
 	}
 
 
+//app component
 
-	initwebSQLDB(){
 
-		return 'CREATE TABLE IF NOT EXISTS Notes (id PRIMARY KEY, status,collection, dispatch_to, note_id,note_title, ressource_id, ressource_title, item_id, item_type, item_text, item_value, item_path,item_unit)';
+		initwebSQLTables(){
+
+		for (let table of this.table){
+
+			return table.create;
+
+
+		}
+
 	
 	}
 
@@ -43,7 +61,14 @@ export default class NoteCollection {
 
 
 
-  Push(from,datas){
+
+
+
+
+
+//server Component
+
+	  Push(from,datas){
 
 /*	datas =  {Note: {…}, Resource: {…}}
 			Note:
@@ -68,6 +93,19 @@ export default class NoteCollection {
     let result = this.SvcBackEndComm.ajaxSend('POST',this.apiPrefixe + 'push',from,dataCallback,dataSend);
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,5 @@
 import BDLocalCollection from '../collections/DBLocalCollection.js';
+import webSQL    from "./webSQL.js.js";
 
 
 class DBLocal {

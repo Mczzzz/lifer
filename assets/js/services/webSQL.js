@@ -3,7 +3,6 @@ class webSQL{
 
 	constructor(db){
 
-		this.db = 
 
 	}
 
