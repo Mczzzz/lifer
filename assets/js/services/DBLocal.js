@@ -1,5 +1,5 @@
 import BDLocalCollection from '../collections/DBLocalCollection.js';
-import webSQL    from "./webSQL.js.js";
+import webSQL    from "./webSQL.js";
 
 
 class DBLocal {
@@ -40,6 +40,15 @@ class DBLocal {
 	getDBInstance(name){
 
 		return this.SGBD[name];
+
+	}
+
+
+
+	executeQuery(){
+
+
+
 
 	}
 
