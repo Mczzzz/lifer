@@ -52,7 +52,7 @@ export default class HeaderButtons extends superViews{
 
 	BackToHome(){
 
-		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Home'}});
+		let LinkEvent = new CustomEvent('changeRoute', {'detail' : {'frame' : 'Home'}});
 		window.dispatchEvent(LinkEvent);
 
 	}

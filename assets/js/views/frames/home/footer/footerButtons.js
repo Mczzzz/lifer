@@ -69,7 +69,7 @@ export default class FooterButtons extends superViews{
 
 	StartNote(){
 
-		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Note'}});
+		let LinkEvent = new CustomEvent('changeRoute', {'detail' : {'frame' : 'Note'}});
 		window.dispatchEvent(LinkEvent);
 
 	}
@@ -77,7 +77,7 @@ export default class FooterButtons extends superViews{
 
 	goToObject(){
 
-		let LinkEvent = new CustomEvent('changeFrame', {'detail' : {'frame' : 'Objects'}});
+		let LinkEvent = new CustomEvent('changeRoute', {'detail' : {'frame' : 'Objects'}});
 		window.dispatchEvent(LinkEvent);
 
 	}

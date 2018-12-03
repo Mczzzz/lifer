@@ -1,5 +1,5 @@
 import { Lifer } from './services/Lifer.js';
-import Controller from './controller/Controller.js';
+import AppController from './controller/AppController.js';
 
 let name = "app";
 Lifer.addMe(name);
@@ -109,6 +109,6 @@ console.log(worker);*/
 //////////////////////////////////////////////////////////
 
 
-const LiferApp = new Controller(name);
+const LiferApp = new AppController(name);
 
 
