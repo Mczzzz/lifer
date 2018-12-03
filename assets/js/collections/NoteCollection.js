@@ -5,8 +5,14 @@ export default class NoteCollection {
 
 	constructor(){
 
-		this.apiPrefixe = "/api_v1/notes/";
-		this.targetObject = "Note";
+		this.serverStorage = {};
+		this.serverStorage.apiPrefixe = "/api_v1/notes/";
+
+		this.localStorage = {};
+		this.localStorage.SQLTable = "Notes";
+
+		//pourquoi pas ne pas setter l'objet mais en cas de multi ca va merder
+		//this.targetObject = "Note";
 
 		this.tables = [];
 
@@ -18,6 +24,9 @@ export default class NoteCollection {
 
 	init(){
 
+		this._initLocalStorage();
+
+		//localStorage
 		//file d'attente de sauvegarde
 		let TblNote = {};
 		TblNote.name = "Notes";
@@ -33,7 +42,32 @@ export default class NoteCollection {
 	}
 
 
+
+	_initLocalStorage(){
+
+
+
+
+
+		
+	}
+
+
+
+
+
 //app component
+
+	getLocalStorage(guid){
+
+
+		let query = "SELECT * FROM " 
+
+
+
+
+	}
+
 
 
 		initwebSQLTables(){
@@ -67,6 +101,16 @@ export default class NoteCollection {
 
 
 //server Component
+
+
+	getServerStorage(){
+
+
+		
+	}
+
+
+
 
 	  Push(from,datas){
 

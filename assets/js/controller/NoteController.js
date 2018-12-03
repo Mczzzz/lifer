@@ -1,10 +1,13 @@
-import Note from '../views/frames/note.js';
+import LoaderCollection  from '../services/LoaderCollection.js';
+
+import Note           from '../views/frames/note.js';
 
 export default class NoteController {
 
 
-	constructor(){
+	constructor(guid=null){
 
+		this.guid = guid;
 
 		this.init();
 	}
@@ -14,8 +17,8 @@ export default class NoteController {
 
 	init(){
 
-
 		this.initView();
+
 	}
 
 
@@ -23,10 +26,64 @@ export default class NoteController {
 
 	initView(){
 
+		this.Note = new Note("Note",null,this.guid);
 
-		let note = new Note("Note",null);
+		if(this.guid) this.updateNote();
 		
 	}
+
+
+
+
+
+
+	updateNote(){
+
+
+		//je recherche ce que j'ai en local
+			//je load ma collection locale
+			this.NoteCollection = new LoaderCollection('Note');
+			
+
+		//je fais une demande serveur
+
+		//Je match les mises à jour et s'il y en a je les appliques en update à ma note
+
+
+
+	}
+
+
+
+
+
+
+	store(){
+
+
+		this.localStorage();
+
+		this.serveurStorage();
+
+
+	}
+
+
+
+
+	_localStorage(){
+
+
+
+	}
+
+
+	_serverStorage(){
+
+
+
+	}
+
 
 
 }

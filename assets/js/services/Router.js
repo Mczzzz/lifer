@@ -51,10 +51,10 @@ export default class Router {
 	}
 
 
-	Note(){
+	Note(guid=null){
 
 		//this.cleanBody();
-		let note = new Note();
+		let note = new Note(guid);
 
 	}
 
