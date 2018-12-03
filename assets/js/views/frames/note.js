@@ -2,13 +2,13 @@ import LoaderCollection from '../../services/LoaderCollection.js';
 
 import { DatasSynchronizing } from '../../services/DatasSynchronizing.js';
 
-import superViews       from '../elements/common/super/views.js';
+import superViews       from '../common/superViews.js';
 
 
 
-import Header           from '../elements/note/header.js';
-import Main             from '../elements/note/main.js';
-import Footer           from '../elements/note/footer.js';
+import Header           from './note/header.js';
+import Main             from './note/main.js';
+import Footer           from './note/footer.js';
 
 
 export default class Note extends superViews{

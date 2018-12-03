@@ -1,8 +1,8 @@
-import superViews from "../elements/common/super/views.js";
+import superViews from "../common/superViews.js";
 
-import Header from '../elements/objects/header.js';
-import Main   from '../elements/objects/main.js'; 
-import Footer from '../elements/objects/footer.js';
+import Header from './objects/header.js';
+import Main   from './objects/main.js'; 
+import Footer from './objects/footer.js';
 
 
 export default class Objects extends superViews{

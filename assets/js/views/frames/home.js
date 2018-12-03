@@ -1,8 +1,8 @@
-import superViews from "../elements/common/super/views.js";
+import superViews from "../common/superViews.js";
 
-import Header from '../elements/home/header.js';
-import Main from '../elements/home/main.js';
-import Footer from '../elements/home/footer.js';
+import Header from './home/header.js';
+import Main from './home/main.js';
+import Footer from './home/footer.js';
 
 
 export default class Home extends superViews{
