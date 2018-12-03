@@ -1,7 +1,7 @@
 import { Lifer } from '../services/Lifer.js';
 import Home from '../controller/HomeController.js';
 import Objects from '../views/frames/objects.js';
-import Note from '../views/frames/note.js';
+import Note from '../controller/NoteController.js';
 
 export default class Router {
 
@@ -54,7 +54,7 @@ export default class Router {
 	Note(){
 
 		//this.cleanBody();
-		let note = new Note("Note",null);
+		let note = new Note();
 
 	}
 
