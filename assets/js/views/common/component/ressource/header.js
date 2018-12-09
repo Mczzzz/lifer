@@ -191,7 +191,7 @@ export default class HeaderRessource extends superViews{
     	let Main = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Main");
 
   //TODO : PAS PROPRE DU TOUT DU TOUT
-      let Resources = this.getObjectThisfromPath("Note-Main-Resources");
+      let Story = this.getObjectThisfromPath("Note-Main-Story");
 
 
   //    let ActionTools = this.getObjectThisfromPath("Note-Footer");
@@ -203,7 +203,7 @@ export default class HeaderRessource extends superViews{
     		Main.setStyle("display","");
    //     ActionTools.setStyle("display","");
         this.collapseButton.setStyle("display", "");
-        Resources.setStyleOut();
+        Story.setStyleOut();
 
     	}else{
 
@@ -211,7 +211,7 @@ export default class HeaderRessource extends superViews{
     		Main.setStyle("display","none");
     //    ActionTools.setStyle("display","none");
          this.collapseButton.setStyle("display", "none");
-         Resources.setStyleIn();
+         Story.setStyleIn();
 
     	}
     	

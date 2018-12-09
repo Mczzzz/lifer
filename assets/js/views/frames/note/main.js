@@ -1,7 +1,7 @@
 import superViews from "../../common/superViews.js";
 
 import Title      from "./main/title.js";
-import Resources  from "./main/resources.js";
+import Story  from "./main/story.js";
 import Empty      from "./main/empty.js";
 
 
@@ -44,7 +44,7 @@ export default class Main extends superViews{
 
 			
 
-		this.Resources = new Resources("Resources",this.path);
+		this.Story = new Story("Story",this.path);
 
 		this.Empty     = new Empty("Empty",this.path);
 
