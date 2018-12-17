@@ -11,11 +11,10 @@ export default class AppController {
 
 	constructor(path){
 
-		let Me = 'AppController';
+		let Me = 'App';
 
-		this.path = path+"-"+Me;
-		console.log("inAppcontroller");
-		console.log(this.path);
+		this.path = "Controller-"+Me;
+
 		Lifer.addMe(this.path);
 
 		this.init();

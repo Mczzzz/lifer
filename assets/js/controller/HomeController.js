@@ -5,6 +5,11 @@ export default class HomeController {
 
 	constructor(){
 
+		let Me = 'Home';
+
+		this.path = "Controller-"+Me;
+
+		Lifer.addMe(this.path);
 
 		this.init();
 	}

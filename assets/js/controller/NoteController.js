@@ -7,6 +7,12 @@ export default class NoteController {
 
 	constructor(guid=null){
 
+		let Me = 'Note';
+
+		this.path = "Controller-"+Me;
+
+		Lifer.addMe(this.path);
+
 		this.guid = guid;
 
 		this.init();
