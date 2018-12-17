@@ -1,3 +1,5 @@
+import { Lifer } from '../services/Lifer.js';
+
 import Home from '../views/frames/home.js';
 
 export default class HomeController {

@@ -1,3 +1,5 @@
+import { Lifer } from '../services/Lifer.js';
+
 import LoaderCollection  from '../services/LoaderCollection.js';
 
 import Note           from '../views/frames/note.js';
