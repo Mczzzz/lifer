@@ -109,7 +109,7 @@ export default class AppController {
 
 	gotToHome(){
 
-		this.rooter.Home();
+		this.router.Home();
 		this.loadDeviceInfos();
 
 	}
