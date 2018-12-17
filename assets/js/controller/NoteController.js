@@ -37,6 +37,9 @@ export default class NoteController {
 
 
 
+
+
+
 	updateNote(){
 
 
