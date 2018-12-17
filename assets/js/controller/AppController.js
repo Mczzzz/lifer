@@ -14,7 +14,8 @@ export default class AppController {
 		let Me = 'AppController';
 
 		this.path = path+"-"+Me;
-
+		console.log("inAppcontroller");
+		console.log(this.path);
 		Lifer.addMe(this.path);
 
 		this.init();
