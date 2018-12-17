@@ -4,7 +4,7 @@ import superViews from "../../../common/superViews.js";
 
 import Card from "../../../common/ui/card.js";
 
-export default class Resources extends superViews{
+export default class Story extends superViews{
 	
 
 	constructor( MyClass , path){
