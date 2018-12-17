@@ -8,8 +8,8 @@ export default class Router {
 
 	constructor(path){
 
-		let Me = 'router';
-		this.path = path+"-"+Me;
+		let Me = 'Router';
+		this.path = "Service-"+Me;
 		Lifer.addMe(this.path);
 
 		this.init();
@@ -30,6 +30,7 @@ export default class Router {
 		this.container.innerHTML = "";
 
 	}
+
 
 
 
