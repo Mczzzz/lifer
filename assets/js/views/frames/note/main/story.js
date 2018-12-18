@@ -190,7 +190,7 @@ export default class Story extends superViews{
 	reorder(ressourceTmpId){
 
 		//reorder
-		let EditRessource = this.getObjectThisfromPath('Frame-Note-Main-Empty-Ressource-Main');
+		let EditRessource = this.getObjectThisfromPath("Frame-Note-Main-Empty-Ressource-Main");
 		let ChildList = EditRessource.getContainer().childNodes;
 		let List = Array.from(ChildList);
 
