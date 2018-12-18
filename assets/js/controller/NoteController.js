@@ -33,8 +33,10 @@ export default class NoteController {
 
 
 	initView(){
+		console.log("initView");
+		console.log(this.guid);
 
-		this.Note = new Note("Frame-Note",null,this.guid);
+		this.Note = new Note("Frame-Note",false,this.guid);
 
 		if(this.guid) this.updateNote();
 		
