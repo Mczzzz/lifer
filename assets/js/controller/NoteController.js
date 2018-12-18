@@ -7,7 +7,7 @@ import Note           from '../views/frames/note.js';
 export default class NoteController {
 
 
-	constructor(guid=null){
+	constructor(guid=false){
 
 		let Me = 'Note';
 
