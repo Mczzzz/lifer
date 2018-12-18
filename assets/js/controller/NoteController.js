@@ -15,10 +15,6 @@ export default class NoteController {
 
 		Lifer.addMe(this.path);
 
-		console.log("Constructor");
-		console.log(guid);
-
-
 		this.guid = guid;
 
 		this.init();
@@ -37,8 +33,6 @@ export default class NoteController {
 
 
 	initView(){
-		console.log("initView");
-		console.log(this.guid);
 
 		this.Note = new Note("Frame-Note",false,this.guid);
 
