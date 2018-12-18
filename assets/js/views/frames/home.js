@@ -11,7 +11,8 @@ export default class Home extends superViews{
 
 	constructor( MyClass,path){
 
-		path="Frame";
+		path=null;
+		MyClass = "Frame-"+MyClass;
 
 		super( MyClass,path);
 

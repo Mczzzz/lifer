@@ -25,7 +25,7 @@ Moment.locale('fr');
 
 		this.parent = (this.parentThis)? this.parentThis.getContainer() : document.body;
 
-		this.path = (this.parentThis)? this.parentThis.path+"-"+MyClass : this.MyClass;
+		this.path = (this.parentThis)? this.parentThis.path+"-"+this.MyClass : this.MyClass;
 
 
 		this.Lifer.addMe(this.path);
