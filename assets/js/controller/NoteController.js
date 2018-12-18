@@ -15,6 +15,10 @@ export default class NoteController {
 
 		Lifer.addMe(this.path);
 
+		console.log("Constructor");
+		console.log(guid);
+
+
 		this.guid = guid;
 
 		this.init();
