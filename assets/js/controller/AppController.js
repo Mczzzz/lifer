@@ -79,7 +79,7 @@ export default class AppController {
 		let unityTypeCollection = new LoaderCollection("Unity");
 		Lifer.addMe("Extra-Unity");
 
-		let dispatchResponseTo  = [{ "This" : "Lifer" , "method" : "addData", "path" : "Unity"}];
+		let dispatchResponseTo  = [{ "This" : "Lifer" , "method" : "addData", "path" : "Extra-Unity"}];
 
 		unityTypeCollection.GetTypes(dispatchResponseTo);
 		unityTypeCollection.GetUnits(dispatchResponseTo);
