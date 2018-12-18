@@ -116,7 +116,7 @@ export default class Story extends superViews{
 			this.observerTitle = false;
 		} 
 
-		let eltTitle = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
+		let eltTitle = this.getObjectThisfromPath("Frame-Note-Main-Empty-Ressource-Header-Card-Element-Text-Title");
 		let config = { characterData: true, childList: true, subtree: true};
 		this.observerTitle = new MutationObserver(()=>this.updateTitle(ressourceTmpId,eltTitle));
 
