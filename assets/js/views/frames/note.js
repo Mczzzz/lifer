@@ -16,6 +16,8 @@ export default class Note extends superViews{
 
 	constructor(MyClass,path,id = false){
 
+		path="Frame";
+
 		super( MyClass , path);
 
 		console.log(id);
