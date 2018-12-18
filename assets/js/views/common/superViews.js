@@ -23,34 +23,10 @@ Moment.locale('fr');
 
 		this.parentThis = this.getObjectThisfromPath(path);
 
-		if(!this.parentThis){
+		this.parent = (this.parentThis)? this.parentThis.getContainer() : document.body;
 
-			this.parent = document.body;
-			this.parentThis = false;
+		this.path = (this.parentThis)? this.parentThis.path+"-"+MyClass : this.MyClass;
 
-		}else{
-			
-			this.parent = this.parentThis.getContainer();
-
-		}
-
-
-		if(this.parentThis){
-
-			this.path = this.parentThis.path+"-"+MyClass;
-		
-		}else{
-			
-			this.path = this.MyClass;
-
-		}
-
-
-
-		//this.MyClass = (MyClass !== false)? MyClass : this.constructor.name;
-
-		//this.Lifer.addMe(this.path);
-		//console.log(this.path);
 
 		this.Lifer.addMe(this.path);
 
@@ -58,10 +34,6 @@ Moment.locale('fr');
 
 		this.Lifer.addData(this.path,[{"This" : this}]);
 
-
-	
-
-	
 
 	}
 
