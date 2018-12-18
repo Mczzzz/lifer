@@ -21,17 +21,15 @@ Moment.locale('fr');
 
 		this.MyClass = MyClass;
 
+		this.parentThis = this.getObjectThisfromPath(path);
 
-		if(path == null){
+		if(!this.parentThis){
 
 			this.parent = document.body;
 			this.parentThis = false;
 
 		}else{
 			
-			this.parentThis = this.getObjectThisfromPath(path);
-			console.log("this.parentThis");
-			console.log(this.parentThis);
 			this.parent = this.parentThis.getContainer();
 
 		}
