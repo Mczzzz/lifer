@@ -77,7 +77,7 @@ export default class AppController {
 	loadUnity(){
 
 		let unityTypeCollection = new LoaderCollection("Unity");
-		Lifer.addMe("Unity");
+		Lifer.addMe("Extra-Unity");
 
 		let dispatchResponseTo  = [{ "This" : "Lifer" , "method" : "addData", "path" : "Unity"}];
 
@@ -91,7 +91,7 @@ export default class AppController {
 	loadCrypto(){
 
 		let cryptoTypeCollection = new LoaderCollection("Crypto");
-		Lifer.addMe("Crypto");
+		Lifer.addMe("Extra-Crypto");
 
 		//et dispatchResponseTo  = [{ "This" : "Lifer" , "method" : "addData", "path" : "Unity"}];
 
