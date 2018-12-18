@@ -116,7 +116,7 @@ export default class HeaderRessource extends superViews{
 
      collapse(){
 
-        let obj = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Main");
+        let obj = this.getObjectThisfromPath("Frame-Note-Main-Empty-Ressource-Main");
         let doneCollapsed = obj.collapseAll();
 
         if(doneCollapsed){
@@ -147,7 +147,7 @@ export default class HeaderRessource extends superViews{
     	items.push({'id':2,'picto':"add_alarm","text":"evenement"});
     	items.push({'id':3,'picto':"more_horiz","text":"Item Action"});
     	items.push({'id':4,'picto':"check_box_outline_blank","text":"checkbox"});
-    	items.push({'id':5,'picto':"unfold_less","text":"minimize","actionObj":"Note-Main-Empty-Resource-Main","method":"collapseAll"});
+    	items.push({'id':5,'picto':"unfold_less","text":"minimize","actionObj":"Frame-Note-Main-Empty-Resource-Main","method":"collapseAll"});
     	//gerer le maximize : unfold_more
 
 
@@ -188,10 +188,10 @@ export default class HeaderRessource extends superViews{
 
 
   //TODO : PAS PROPRE DU TOUT DU TOUT
-    	let Main = this.getObjectThisfromPath("Note-Main-Empty-Ressource-Main");
+    	let Main = this.getObjectThisfromPath("Frame-Note-Main-Empty-Ressource-Main");
 
   //TODO : PAS PROPRE DU TOUT DU TOUT
-      let Story = this.getObjectThisfromPath("Note-Main-Story");
+      let Story = this.getObjectThisfromPath("Frame-Note-Main-Story");
 
 
   //    let ActionTools = this.getObjectThisfromPath("Note-Footer");
