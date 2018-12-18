@@ -35,7 +35,7 @@ export default class Main extends superViews{
 
 	initChilds(){
 		console.log("INNNN init childs");
-		console.log(this.parentThis.note.guid);
+		console.log(this.parentThis);
 
 		if(this.parentThis.note.guid == false){
 
