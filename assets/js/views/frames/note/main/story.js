@@ -28,7 +28,7 @@ export default class Story extends superViews{
 		
 		this.setStyleOut();
 		
-		this.TheNote = this.getObjectThisfromPath("Note");
+		this.TheNote = this.getObjectThisfromPath("Frame-Note");
 		
 		if(this.TheNote.note.guid === false){
 

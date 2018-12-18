@@ -19,7 +19,7 @@ export default class Title extends superViews{
 
 
 
-		this.TheNote = this.getObjectThisfromPath("Note");
+		this.TheNote = this.getObjectThisfromPath("Frame-Note");
 		
 
 

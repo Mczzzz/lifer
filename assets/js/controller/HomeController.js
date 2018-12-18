@@ -31,7 +31,7 @@ export default class HomeController {
 	initView(){
 
 
-		let home = new Home("Home");
+		let home = new Home("Frame-Home");
 		
 	}
 

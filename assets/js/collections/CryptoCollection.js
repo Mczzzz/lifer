@@ -6,7 +6,7 @@ export default class CryptoCollection {
 	constructor(){
 
 		this.apiPrefixe = "https://api.coinmarketcap.com/v2/listings/";
-		this.targetObject = "Note";
+		this.targetObject = "Frame-Note";
 
     this.SvcBackEndComm = new SvcBackEndComm();
 

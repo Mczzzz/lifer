@@ -62,7 +62,7 @@ export default class Router {
 
 	NoteRemove(){
 
-		let note = Lifer.getData("Note","This");
+		let note = Lifer.getData("Frame-Note","This");
 		note.destroyMe();
 
 	}

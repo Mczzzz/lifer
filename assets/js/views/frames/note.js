@@ -16,8 +16,6 @@ export default class Note extends superViews{
 
 	constructor(MyClass,path,id = false){
 
-		path=null;
-		MyClass = "Frame-"+MyClass;
 
 		super( MyClass , path);
 
