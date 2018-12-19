@@ -102,9 +102,9 @@ export default class card extends superViews{
 
 
      dispatchEvent(path,data){
-      let dataObj = {};
+
+      let dataObj = data;
       dataObj.id = this.container.id;
-      dataObj.data = data;
 
         for (let eventsToCallBack of this.callBack) {
 
