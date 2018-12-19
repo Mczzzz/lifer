@@ -1,3 +1,5 @@
+import uuid from "uuid/v1"
+
 class Brain {
 	
 
