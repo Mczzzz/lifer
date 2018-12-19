@@ -128,11 +128,11 @@ export default class MainRessource extends superViews{
 
 	text(itemId){
 
-/*		let callBack = {};
+		let callBack = {};
 		callBack.path = this.parentThis.path;
-		callBack.method = "update";*/
+		callBack.method = "callBackDataTo";
 
-		let text = new Text("Text_"+itemId, this.path,false);
+		let text = new Text("Text_"+itemId, this.path,callBack);
 		let textElt = text.getTextElement();
 		text.draggable(this.path,"onChildMove");
 
@@ -215,8 +215,6 @@ export default class MainRessource extends superViews{
 
 			if((parseInt(child.style.marginLeft, 10) > parseInt(node.style.marginLeft, 10)) && begin == true){
 
-			//	console.log("child");
-		  	//	console.log(child);
 		  	ArrayChilds.push(child);
 
 
