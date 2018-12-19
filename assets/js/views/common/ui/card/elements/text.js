@@ -37,7 +37,7 @@ export default class Text extends superViews{
 
           this.changeColor();
 
-          this.container.addEventListener("keyup", (e)=>this.dispatchEvents(e));
+           this.container.addEventListener("keyup", (e)=>this.dispatchEvents(e));
 
      }
 
@@ -76,10 +76,9 @@ export default class Text extends superViews{
 
     dispatchEvents(e){
 
-//     console.log('in text dispatchEvent');
+
           if(this.callBack != false){
-//                     console.log('in text dispatchEvent CallBack:');
-//                     console.log(this.callBack);
+
                let MyCallBack =  this.getObjectThisfromPath(this.callBack.path);
                MyCallBack[this.callBack.method](this.path,this);
 

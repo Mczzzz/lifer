@@ -7,29 +7,29 @@ import Number from "./main/number.js";
 import Image from "./main/image.js";
 
 export default class MainRessource extends superViews{ 
-     
-
-     constructor(MyClass,path,prepend = false){
-
-          super( MyClass , path);
-
-          this.init();
-
-          this.callBack = [];
-
-          this.collapsed = false;
-
-          this.inMovement = false;
-          this.speed = 1;
-
-          this.resizeMoveTo = 0;
-
-          this.skipResizeFirst = 0;
-     }
 
 
+	constructor(MyClass,path,prepend = false){
 
-     init(){
+		super( MyClass , path);
+
+		this.init();
+
+		this.callBack = [];
+
+		this.collapsed = false;
+
+		this.inMovement = false;
+		this.speed = 1;
+
+		this.resizeMoveTo = 0;
+
+		this.skipResizeFirst = 0;
+	}
+
+
+
+	init(){
 
 		this.setStyle("borderWidth", "0px");
 		this.setStyle("borderRadius", "0px");
@@ -44,10 +44,10 @@ export default class MainRessource extends superViews{
 
 
 
-     }
+	}
 
-//DISABLED
-     resize(elt = false){
+
+	resize(elt = false){
      	//console.log('####### resize #######');
 
      	//prevention double resize ()je sais pas pourquoi exactement diff de 48 pixel 
@@ -86,7 +86,7 @@ export default class MainRessource extends superViews{
      	}
 
 
-     }
+    }
 
 
 
@@ -94,25 +94,25 @@ export default class MainRessource extends superViews{
 
      	let res;
 
-		switch (type){
+     	switch (type){
 
-			case 'text':
+     		case 'text':
 
-				res = this.text(itemId);
+     		res = this.text(itemId);
 
-			break;
+     		break;
 
-			case 'number':
+     		case 'number':
 
-				res = this.number(itemId);
+     		res = this.number(itemId);
 
-			break;
+     		break;
 
-			case 'image':
+     		case 'image':
 
-				res = this.image(itemId,anew);
+     		res = this.image(itemId,anew);
 
-			break;
+     		break;
 
 			//default:
 
@@ -121,7 +121,7 @@ export default class MainRessource extends superViews{
 
 		return res;
 
-     }
+	}
 
 
 
@@ -217,14 +217,14 @@ export default class MainRessource extends superViews{
 
 			//	console.log("child");
 		  	//	console.log(child);
-		  		ArrayChilds.push(child);
+		  	ArrayChilds.push(child);
 
 
-		  	}else{
+		  }else{
 
-		  		begin = false;
+		  	begin = false;
 
-		  	}
+		  }
 
 
 
@@ -261,7 +261,7 @@ export default class MainRessource extends superViews{
 				locker = true;
 			}
 
-				child.style.display = state;
+			child.style.display = state;
 
 
 
@@ -297,11 +297,11 @@ export default class MainRessource extends superViews{
 			for (let child of children) {
 
 
-					childPosition = parseInt(child.style.marginLeft ,10) + diff;
+				childPosition = parseInt(child.style.marginLeft ,10) + diff;
 
-					if(childPosition < this.pas) childPosition = this.Pas;
+				if(childPosition < this.pas) childPosition = this.Pas;
 
-					child.style.marginLeft = childPosition + "px";
+				child.style.marginLeft = childPosition + "px";
 
 			}
 		}
@@ -349,29 +349,27 @@ export default class MainRessource extends superViews{
 
 	//	console.log('in collapserSetter');
 
-		if (this.getContainer().hasChildNodes()) {
-  
-  			let childrens = this.getContainer().childNodes;
+	if (this.getContainer().hasChildNodes()) {
 
-			for (let child of childrens) {
+		let childrens = this.getContainer().childNodes;
 
-				if(child.nextElementSibling){
+		for (let child of childrens) {
 
-					if(parseInt(child.nextElementSibling.style.marginLeft,10) > parseInt(child.style.marginLeft,10)){
+			if(child.nextElementSibling){
 
-							let ThisChild = this.getObjectThisfromPath(child.className);
+				if(parseInt(child.nextElementSibling.style.marginLeft,10) > parseInt(child.style.marginLeft,10)){
 
-						if(child.nextElementSibling.style.display == "none"){
+					let ThisChild = this.getObjectThisfromPath(child.className);
 
-							ThisChild.moreCollapse();
+					if(child.nextElementSibling.style.display == "none"){
 
-						}else{
+						ThisChild.moreCollapse();
 
-							ThisChild.lessCollapse();
-						}
+					}else{
 
-
+						ThisChild.lessCollapse();
 					}
+
 
 				}
 
@@ -379,128 +377,130 @@ export default class MainRessource extends superViews{
 
 		}
 
+	}
+
 }
 
 
 
 
 
-	collapseAll(){
+collapseAll(){
 
-		if (this.getContainer().hasChildNodes()) {
-  
-  			let childrens = this.getContainer().childNodes;
+	if (this.getContainer().hasChildNodes()) {
 
-		  for (let child of childrens) {
+		let childrens = this.getContainer().childNodes;
 
-		  	if(parseInt(child.style.marginLeft, 10) > 0){
+		for (let child of childrens) {
 
-		  		if(!this.collapsed){
-		  			child.style.display = "none";
+			if(parseInt(child.style.marginLeft, 10) > 0){
 
-
-		  		}else{
-
-		  			child.style.display = "";
-		  		}
-
-		  			
+				if(!this.collapsed){
+					child.style.display = "none";
 
 
-		  	}
+				}else{
 
-		  }
+					child.style.display = "";
+				}
 
-		  this.collapserSetter();
 
-		  if(!this.collapsed){
 
-		  	this.collapsed = true;
 
-		  }else{
-
-		  	this.collapsed = false;
-
-		  }
-
-		  return this.collapsed;
+			}
 
 		}
 
+		this.collapserSetter();
 
-	}
+		if(!this.collapsed){
 
+			this.collapsed = true;
 
-	moveLikePromise(direction){
+		}else{
 
-		this.inMovement = true;
-
-		this.movementId = setInterval(()=> this.moveScrollTop(direction) , 10 );
-
-
-	}
-
-
-	moveScrollTop(direction,speed){
-
-		console.log(direction);
-		if(direction == "up"){
-
-			this.container.scrollTop = this.container.scrollTop - this.speed;
-			this.speed = this.speed + 0.05;
-			if(this.container.scrollTop == 0){
-
-				this.stopScroll();
-				this.speed = 1;
-			} 
-
-		}else if(direction == "down"){
-
-			this.container.scrollTop = this.container.scrollTop + this.speed;
-			this.speed = this.speed + 0.05;
-
-
-			if(this.container.scrollTop + this.container.getBoundingClientRect().height == this.container.scrollHeight){
-
-				this.stopScroll();
-				this.speed = 1;
-			} 
+			this.collapsed = false;
 
 		}
 
-
+		return this.collapsed;
 
 	}
 
-	stopScroll(){
 
-		clearInterval(this.movementId);
-		this.inMovement = false;
+}
+
+
+moveLikePromise(direction){
+
+	this.inMovement = true;
+
+	this.movementId = setInterval(()=> this.moveScrollTop(direction) , 10 );
+
+
+}
+
+
+moveScrollTop(direction,speed){
+
+	console.log(direction);
+	if(direction == "up"){
+
+		this.container.scrollTop = this.container.scrollTop - this.speed;
+		this.speed = this.speed + 0.05;
+		if(this.container.scrollTop == 0){
+
+			this.stopScroll();
+			this.speed = 1;
+		} 
+
+	}else if(direction == "down"){
+
+		this.container.scrollTop = this.container.scrollTop + this.speed;
+		this.speed = this.speed + 0.05;
+
+
+		if(this.container.scrollTop + this.container.getBoundingClientRect().height == this.container.scrollHeight){
+
+			this.stopScroll();
+			this.speed = 1;
+		} 
+
 	}
 
 
-	onChildMove(childContainer, e, type){
 
-		this.eChildMove = e;
+}
+
+stopScroll(){
+
+	clearInterval(this.movementId);
+	this.inMovement = false;
+}
+
+
+onChildMove(childContainer, e, type){
+
+	this.eChildMove = e;
 //		console.log("on passe dans OnChildMove");
 //		console.log(type);
 
-		if(type == "start"){
+if(type == "start"){
 
-		let testVibration = window.navigator.vibrate([5,100,5]);
+	let testVibration = window.navigator.vibrate([5,100,5]);
 
- 		  this.childrenToMove = this.getChilds(childContainer.getContainer());
- 		  this.insertInParents = false;
+	this.childrenToMove = this.getChilds(childContainer.getContainer());
+	this.insertInParents = false;
 
 
 //CLONE
 
-		  this.Cloned = childContainer.getContainer().cloneNode(true);
-		  document.body.appendChild(this.Cloned);
+this.Cloned = childContainer.getContainer().cloneNode(true);
+document.body.appendChild(this.Cloned);
 
-		  this.Cloned.style.position = "absolute";
-		  this.Cloned.style.width = "100%";
-		  this.Cloned.className = childContainer.MyClass+"-Clone";
+this.Cloned.style.position = "absolute";
+this.Cloned.style.width = "100%";
+this.Cloned.className = childContainer.MyClass+"-Clone";
 		  //this.Cloned.style.marginLeft = "0px";
 		  this.Cloned.style.top = childContainer.getContainer().getBoundingClientRect().y+"px";
 
@@ -514,12 +514,12 @@ export default class MainRessource extends superViews{
 
 		  for (let child of childToClone) {
 
-			  	let Cloned = child.cloneNode(true);
-			  document.body.appendChild(Cloned);
+		  	let Cloned = child.cloneNode(true);
+		  	document.body.appendChild(Cloned);
 
-			  Cloned.style.position = "absolute";
-			  Cloned.style.width = "100%";
-			  Cloned.className = child.MyClass+"-Clone";
+		  	Cloned.style.position = "absolute";
+		  	Cloned.style.width = "100%";
+		  	Cloned.className = child.MyClass+"-Clone";
 			  //this.Cloned.style.marginLeft = "0px";
 			  Cloned.style.top = child.getBoundingClientRect().y+"px";
 
@@ -529,32 +529,32 @@ export default class MainRessource extends superViews{
 			  child.remove();
 			}
 
-		  this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x;
-		  this.touchY = e.changedTouches[0].clientY - this.Cloned.getBoundingClientRect().y;
+			this.touchX = e.changedTouches[0].clientX - this.Cloned.getBoundingClientRect().x;
+			this.touchY = e.changedTouches[0].clientY - this.Cloned.getBoundingClientRect().y;
 
-		  this.initMarginClone = parseInt(childContainer.getContainer().style.marginLeft, 10);
+			this.initMarginClone = parseInt(childContainer.getContainer().style.marginLeft, 10);
 //CLONE
 
 
 //GHOST
-		  this.Ghost = childContainer.getContainer().cloneNode();
-		  this.Ghost.style.boxShadow  = "inset rgb(121, 193, 206) 0px 0px 19px 3px";
-		  this.Ghost.className = childContainer.MyClass+"-Ghost";
-		  this.Ghost.style.marginTop = "5px";
-		  this.Ghost.style.marginBottom = "5px";
-		  this.Ghost.style.borderRadius = "15px";
-		  this.Ghost.style.height = ghostHeight+"px";
-		  this.Ghost.style.transitionDuration = "0.2s";
-   		  this.Ghost.style.transitionDelay = "0.0s";
-          this.Ghost.style.transitionTimingFunction = "cubic-bezier(0.15, -0.35, 0.98, 1.27)";
-          this.Ghost.style.transitionProperty = "margin";
+this.Ghost = childContainer.getContainer().cloneNode();
+this.Ghost.style.boxShadow  = "inset rgb(121, 193, 206) 0px 0px 19px 3px";
+this.Ghost.className = childContainer.MyClass+"-Ghost";
+this.Ghost.style.marginTop = "5px";
+this.Ghost.style.marginBottom = "5px";
+this.Ghost.style.borderRadius = "15px";
+this.Ghost.style.height = ghostHeight+"px";
+this.Ghost.style.transitionDuration = "0.2s";
+this.Ghost.style.transitionDelay = "0.0s";
+this.Ghost.style.transitionTimingFunction = "cubic-bezier(0.15, -0.35, 0.98, 1.27)";
+this.Ghost.style.transitionProperty = "margin";
 //GHOST
 
 
 
 
-		  childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
-		  
+childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
+
 		  //childContainer.getContainer().style.visibility ="hidden";
 		  childContainer.setStyle("display","none");
 
@@ -562,15 +562,15 @@ export default class MainRessource extends superViews{
 
 		}else if(type == "move"){
 
-	        event.preventDefault();
+			event.preventDefault();
 
-	        if(e.changedTouches[0].clientX > this.Lifer.getScreenSize().width * 0.75){
+			if(e.changedTouches[0].clientX > this.Lifer.getScreenSize().width * 0.75){
 
-	        	this.Cloned.style.background = "red";
+				this.Cloned.style.background = "red";
 
-	        }else{
-	        	this.Cloned.style.background = "";
-	        }
+			}else{
+				this.Cloned.style.background = "";
+			}
 
 	        //on bouge le Main en cas de déplacement proches du haut
 	        // de plus en plus vite
@@ -583,7 +583,7 @@ export default class MainRessource extends superViews{
 	        		this.moveLikePromise("up");
 	        		//console.log('this.moveLikePromise(e,childContainer);');
 	        	}
-				
+
 
 	        }else if(childContainer.getContainer().parentElement.getBoundingClientRect().y + childContainer.getContainer().parentElement.getBoundingClientRect().height - e.changedTouches[0].clientY  < 50){
 
@@ -592,7 +592,7 @@ export default class MainRessource extends superViews{
 	        		this.moveLikePromise("down");
 	        		//console.log('this.moveLikePromise(e,childContainer);');
 	        	}
-				
+
 
 	        }else{
 	        	this.stopScroll();
@@ -624,12 +624,12 @@ export default class MainRessource extends superViews{
 	        this.Cloned.style.left =  e.changedTouches[0].clientX - this.touchX+"px";
 
 	        //on fait bouger les enfants aussi :) :
-	         for (let childMove of this.childTomove) {
+	        for (let childMove of this.childTomove) {
 
-		  	childMove.style.top = e.changedTouches[0].clientY-this.touchY+"px";
-	        childMove.style.left = e.changedTouches[0].clientX - ( this.touchX + this.initMarginClone) +"px";
-			
-			}
+	        	childMove.style.top = e.changedTouches[0].clientY-this.touchY+"px";
+	        	childMove.style.left = e.changedTouches[0].clientX - ( this.touchX + this.initMarginClone) +"px";
+
+	        }
 
 	        /////////////////////////////
 	        //////////////////// CLONE //
@@ -639,7 +639,7 @@ export default class MainRessource extends superViews{
 //MOVEMENT CONTAINER
 
 
-	        if(childContainer.getContainer().previousElementSibling.previousElementSibling){
+if(childContainer.getContainer().previousElementSibling.previousElementSibling){
 //console.log("childContainer.getContainer().previousElementSibling.previousElementSibling");
 //console.log(childContainer.getContainer().previousElementSibling.previousElementSibling);
 	        	//on regarde si mon parent à deja des enfants
@@ -652,44 +652,44 @@ export default class MainRessource extends superViews{
 
 	        		this.insertInParents = true;
 	        	}
-	          
 
-	          if(e.changedTouches[0].clientY < (this.Ghost.previousElementSibling.getBoundingClientRect().y + (this.Ghost.previousElementSibling.getBoundingClientRect().height / 2))){
+
+	        	if(e.changedTouches[0].clientY < (this.Ghost.previousElementSibling.getBoundingClientRect().y + (this.Ghost.previousElementSibling.getBoundingClientRect().height / 2))){
 	         	//console.log('in previous move node');
-	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling.previousElementSibling);
-	            childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
+	         	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().previousElementSibling.previousElementSibling);
+	         	childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 
 
 	            //this.moveChilds(childContainer.getContainer(),this.childrenToMove);
-	          	
-	          }
 
 	        }
 
+	    }
 
-	        if(childContainer.getContainer().nextElementSibling){
+
+	    if(childContainer.getContainer().nextElementSibling){
 
 	       	//console.log('in next');
 
-	          if((e.changedTouches[0].clientY ) > childContainer.getContainer().nextElementSibling.getBoundingClientRect().y){
+	       	if((e.changedTouches[0].clientY ) > childContainer.getContainer().nextElementSibling.getBoundingClientRect().y){
 	          	//console.log('in next move node');
 	          	
-	            childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
+	          	childContainer.getContainer().parentElement.insertBefore(childContainer.getContainer(),childContainer.getContainer().nextElementSibling.nextElementSibling);
 	          	childContainer.getContainer().parentElement.insertBefore(this.Ghost,childContainer.getContainer());
 	          	//this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 	          }
 
-	        }
-	    
+	      }
+
 
 
 
 
 //le decalage de la node principale
 
-	         this.Pas = 30;
+this.Pas = 30;
 
-	        let GoodMargin = 0;
+let GoodMargin = 0;
 
 
 	        //si juste previous
@@ -756,36 +756,36 @@ export default class MainRessource extends superViews{
 
 
 
-	       	childContainer.setStyle("marginLeft", GoodMargin + "px");
-        	this.Ghost.style.marginLeft = GoodMargin + "px";
+childContainer.setStyle("marginLeft", GoodMargin + "px");
+this.Ghost.style.marginLeft = GoodMargin + "px";
 
 
         	//on illumine le parent concerné
         	let breaker = 0;
-	        let myNode = this.Ghost;
-	        if(this.pNode){
-	        	this.pNode.style.background = "";
-	        }
+        	let myNode = this.Ghost;
+        	if(this.pNode){
+        		this.pNode.style.background = "";
+        	}
 
-	        this.pNode = this.Ghost.previousElementSibling;
-	        do{
+        	this.pNode = this.Ghost.previousElementSibling;
+        	do{
 	        	//console.log('in do');
 	        	if(this.pNode){
 
 	        		if(this.Ghost.getBoundingClientRect().x > this.pNode.getBoundingClientRect().x){
 
-						this.pNode.style.background = "orange";
-						breaker = 1; 
+	        			this.pNode.style.background = "orange";
+	        			breaker = 1; 
 
-		        	}else{
-		        		this.pNode = this.pNode.previousElementSibling;
-		        	}
+	        		}else{
+	        			this.pNode = this.pNode.previousElementSibling;
+	        		}
 
 	        	}else{
 	        		breaker = 1;
 	        	}
 
-	        
+
 	        }while(breaker == 0);
 
 
@@ -804,11 +804,11 @@ export default class MainRessource extends superViews{
 
 
 
-	    }else if(type == "stop"){
+        }else if(type == "stop"){
 
 
-	        childContainer.setStyle("display","");
-	        this.moveChilds(childContainer.getContainer(),this.childrenToMove);
+        	childContainer.setStyle("display","");
+        	this.moveChilds(childContainer.getContainer(),this.childrenToMove);
 	        //childContainer.getContainer().style.visibility ="";
 
 	        this.Cloned.remove();
@@ -817,9 +817,9 @@ export default class MainRessource extends superViews{
 	        //on fait bouger les enfants aussi :) :
 	        for (let childMove of this.childTomove) {
 
-			  	childMove.remove();
-			
-			}
+	        	childMove.remove();
+
+	        }
 
 
 
@@ -830,7 +830,7 @@ export default class MainRessource extends superViews{
 	        this.collapserSetter();
 
 
-		}
+	    }
 
 	}
 

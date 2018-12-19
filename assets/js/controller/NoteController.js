@@ -15,6 +15,8 @@ export default class NoteController {
 
 		Lifer.addMe(this.path);
 
+		Lifer.addData(this.path,[{"This" : this}]);
+
 		this.guid = guid;
 
 		this.init();
@@ -43,7 +45,11 @@ export default class NoteController {
 
 
 
+	dataToStore(data){
 
+		console.log("NOTE CONTROLLER - dataToStore");
+		console.log(data);
+	}
 
 
 

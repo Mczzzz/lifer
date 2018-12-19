@@ -13,9 +13,9 @@ export default class Ressource extends superViews{
 
           this.init();
 
-          this.callBack = [];
-
           this.target = false;
+
+          this.targetData = {};
 
           this.RessourceId = ressourceId;
           this.ItemList = false;
@@ -37,11 +37,21 @@ export default class Ressource extends superViews{
      }
 
 
-     setTargetData(path){
+     setTargetData(path,method){
 
-      this.targetData = this.getObjectThisfromPath(path);
+      this.targetData.obj = this.getObjectThisfromPath(path);
+      this.targetData.method = method;
 
      }
+
+
+     callBackDataTo(data){
+
+      this.targetData.obj[this.targetData.method](data);
+    
+     }
+
+
 
 
 
@@ -54,21 +64,18 @@ export default class Ressource extends superViews{
      }
 
 
-     initResource(){
+    initResource(){
 
       if(this.target){
 
-    if(!this.RessourceId){
+        if(!this.RessourceId){
 
-      this.RessourceId = this.target.addRessource();
-    }
+          this.RessourceId = this.target.addRessource();
+        }
         
-
-
       }
 
-
-     }
+    }
 
 
      setTitle(title){
