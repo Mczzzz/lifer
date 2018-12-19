@@ -47,10 +47,13 @@ export default class NoteController {
 
 	dataToStore(data){
 
-		console.log("NOTE CONTROLLER - dataToStore");
+		data.gender = "Note"; 
+
+		if (!this.guid) this.guid = Lifer.newTmpId();
+			
+		data.NoteId = this.guid;
+		
 		console.log(data);
-		console.log(this.guid);
-		//il faut que j'ajoute mon id
 		//comme j'ai une data, je fais la demande de création au serveur
 		//en attendant je local sorage et une fois que j'ai un retour
 		//je suis pret pour envoyé l'info

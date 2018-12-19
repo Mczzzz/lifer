@@ -241,6 +241,12 @@ addMe(path){
 
 
 
+	newTmpId(){
+
+		return uuid().replace(/-/gi, '.');
+
+	}
+
 
 
 }

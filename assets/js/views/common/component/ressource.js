@@ -47,6 +47,7 @@ export default class Ressource extends superViews{
 
      callBackDataTo(path,data){
 
+      data.RessourceId = this.RessourceId;
       this.targetData.obj[this.targetData.method](data);
     
      }
@@ -70,7 +71,7 @@ export default class Ressource extends superViews{
 
         if(!this.RessourceId){
 
-          this.RessourceId = this.target.addRessource();
+          this.RessourceId = this.Lifer.newTmpId();
         }
         
       }
