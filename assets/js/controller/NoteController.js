@@ -1,5 +1,7 @@
 import { Lifer } from '../services/Lifer.js';
 
+import { DatasSynchronizing } from '../../services/DatasSynchronizing.js';
+
 import LoaderCollection  from '../services/LoaderCollection.js';
 
 import Note           from '../views/frames/note.js';
@@ -53,10 +55,9 @@ export default class NoteController {
 			
 		data.NoteId = this.guid;
 		
-		console.log(data);
-		//comme j'ai une data, je fais la demande de création au serveur
-		//en attendant je local sorage et une fois que j'ai un retour
-		//je suis pret pour envoyé l'info
+		//add(dispatchResponseTo,to,datas,purchaseOrder,needTmpId=false){
+
+		DatasSynchronizing.add(data);
 
 
 	}
@@ -81,35 +82,6 @@ export default class NoteController {
 	}
 
 
-
-
-
-
-	store(){
-
-
-		this.localStorage();
-
-		this.serveurStorage();
-
-
-	}
-
-
-
-
-	_localStorage(){
-
-
-
-	}
-
-
-	_serverStorage(){
-
-
-
-	}
 
 
 
