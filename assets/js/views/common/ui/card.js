@@ -105,15 +105,11 @@ export default class card extends superViews{
       let dataObj = {};
       dataObj.id = this.container.id;
       dataObj.data = data;
- //     console.log('in dispatchEvent');
 
-  //    console.log(this.callBack);
         for (let eventsToCallBack of this.callBack) {
 
-          console.log('Card Dispatch Event');
           console.log(eventsToCallBack);
            let objectToCallBack = this.getObjectThisfromPath(eventsToCallBack.path);
-           //console.log();
            objectToCallBack[eventsToCallBack.method](this.path,dataObj);
 
         }
