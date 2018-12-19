@@ -45,7 +45,7 @@ export default class Ressource extends superViews{
      }
 
 
-     callBackDataTo(data){
+     callBackDataTo(path,data){
 
       this.targetData.obj[this.targetData.method](data);
     
