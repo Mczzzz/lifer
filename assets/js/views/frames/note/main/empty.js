@@ -59,6 +59,7 @@ export default class Empty extends superViews{
 				this.Lifer.getData('Frame-Note-Header-Action',"This").showTitle(this.Lifer.getData('Frame-Note',"This").note.Title);
 				this.setStyle("display","");
 		//		console.log("animation finish");
+	   		 //this.Ressource.setTarget("Frame-Note-Main-Story");
 	   		 this.Ressource.setTarget("Frame-Note-Main-Story");
 	   		this.initialSet = 0;
 	   	}
@@ -67,37 +68,6 @@ export default class Empty extends superViews{
 	   
 		//this.Ressource.addItem(type);
 	}
-
-
-/*	saveResource(card,Element, TheTextElt){
-
-		let NoteResource = this.getObjectThisfromPath("Note-Main-Resources");
-
-		if(TheTextElt.getContainer().innerHTML.length > 0){
-
-			let res = {};
-			res.text = TheTextElt.getContainer().innerHTML;
-
-			TheTextElt.getContainer().innerHTML = "";
-			TheTextElt.getContainer().focus();
-//a revoir car pas très propre, l'objet texte devrait comprendre qu'il est vide et il devrait se setter tous seul.
-//			card.setStyleComponent(Element,"mainNewInput","color",TheTextElt.placeHodelColor,"element");
-
-			NoteResource.createCard(res);
-
-		}else{
-
-			TheTextElt.getContainer().focus();
-	//		card.setAttributeComponent(Element,"mainNewInput","placeholder","Tapes un truc :) ...");
-		//	card.setStyleComponent(Element,"mainNewInput","color","red","element");
-
-		}
-		
-
-	}*/
-
-
-
 
 
 

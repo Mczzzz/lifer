@@ -37,6 +37,14 @@ export default class Ressource extends superViews{
      }
 
 
+     setTargetData(path){
+
+      this.targetData = this.getObjectThisfromPath(path);
+
+     }
+
+
+
      setTarget(path){
 
       console.log("in set Target");
@@ -47,17 +55,15 @@ export default class Ressource extends superViews{
 
 
      initResource(){
-    //  console.log("in init ressource");
+
       if(this.target){
-   //     console.log("in init ressource - target");
+
     if(!this.RessourceId){
 
       this.RessourceId = this.target.addRessource();
     }
         
 
-
-    //    console.log("RessourceId From Note Ressource: "+this.RessourceId);
 
       }
 
@@ -84,22 +90,16 @@ export default class Ressource extends superViews{
 
       }
 
- //     console.log(this.target);
-    //  console.log("itemId From Note Ressource : "+itemId);
 
       this.ItemList[itemId];
-      console.log("Ressource addItem");
-      console.log(data);
+
 
       let anew = (pict)? false : true;
-      console.log("Ressource addItem anew");
-      console.log(anew);
+
 
       let elt = this.Main.addItem(type,itemId,anew);
 
      
-/*        console.log("In add Item Ressource !!!!!!!!!!!!!!!!!!!")
-        console.log(data);*/
       if(type == 'image' && pict){
           elt.bloc.addThumb(pict);
        }
@@ -107,13 +107,10 @@ export default class Ressource extends superViews{
       if(data){
          elt.bloc.setData(data);
       } 
- /*           console.log('before margin :');
-            console.log(margin);
-        console.log(elt.bloc);  */
+
 
       if(margin){
-/*        console.log('in margin :');
-        console.log(elt.bloc);*/
+
         elt.bloc.setStyle("marginLeft", margin);        
       }
      
@@ -137,16 +134,6 @@ export default class Ressource extends superViews{
       this.target.reorder(this.RessourceId);
 
     }
-
-
-        //rajoutdela callback udpdate vers target
-
-/*    update(path, data){
-    //TODO : path pour rien peut etre a supprimer à réflechir
-      data.RessourceId = this.RessourceId;
-      this.target.update(data);
-
-    }*/
 
 
 }
