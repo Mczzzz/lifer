@@ -93,7 +93,7 @@ export default class card extends superViews{
      CallBackFromItems(path,data){
 
       console.log('in  CallBackFromItems');
-
+      console.log(data);
       this.dispatchEvent(path,data);
 
 
