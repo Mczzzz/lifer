@@ -81,7 +81,7 @@ export default class Text extends superViews{
 
                let data   = {};
                data.type  = "text";
-               data.value = this.container.innerHTML,
+               data.value = this.container.innerHTML;
 
                let MyCallBack =  this.getObjectThisfromPath(this.callBack.path);
                MyCallBack[this.callBack.method](this.path,data);
