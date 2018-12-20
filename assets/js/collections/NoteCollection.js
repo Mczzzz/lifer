@@ -31,7 +31,21 @@ export default class NoteCollection {
 		let TblNote = {};
 		TblNote.name = "Notes";
 		TblNote.db = "syncUp";
-		tblNote.create = "CREATE TABLE IF NOT EXISTS "+TblNote.name+" (id PRIMARY KEY, status,collection, dispatch_to, note_id,note_title, ressource_id, ressource_title, item_id, item_type, item_text, item_value, item_path,item_unit)";
+		tblNote.create = "CREATE TABLE IF NOT EXISTS "+TblNote.name+` (timestamp,
+																	   status,
+																	   collection,
+																	   dispatch_to,
+																	   note_id,
+																	   note_title,
+																	   ressource_id,
+																	   ressource_title,
+																	   item_id,
+																	   item_type,
+																	   item_text,
+																	   item_value,
+																	   item_path,
+																	   item_unit
+																	   )`;
 		
 		this.tables.push(TblNote);
 
@@ -43,7 +57,11 @@ export default class NoteCollection {
 
 
 	store(){
-		
+
+		//j'enregistre dans le local storage ma data
+		this.playQuery('insert into Notes (timestamp,status) values (NOW(),"INIT")');
+
+
 	}
 
 

@@ -44,6 +44,8 @@ class DatasSynchronizing {
 
 	fillQueue(){
 
+		////le service fill queue doit référencer l'ensemble des collection et c'est  lui qui se charge de la synchro montante vers le serveur
+
 		this.NoteCollection.queuePrepareSend();
 
 	}
@@ -52,14 +54,12 @@ class DatasSynchronizing {
 
 	store(data){
 
-		let Collection = this[data.collection+"Collection"];
-		Collection.store(data);
 		//on va chercher la collection dans data
 		//on y appel la methode store
 			// qui pousse dans la localstorage
 
-
-		////le service fill queue doit référencer l'ensemble des collection et c'est  lui qui se charge de la synchro montante vers le serveur
+		let Collection = this[data.collection+"Collection"];
+		Collection.store(data);
 
 	}
 
