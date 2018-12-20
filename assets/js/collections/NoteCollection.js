@@ -1,5 +1,7 @@
 import SvcBackEndComm from '../services/BackendComm.js';
 
+import webSQL from '../services/webSQL.js';
+
 export default class NoteCollection {
 
 
@@ -8,13 +10,7 @@ export default class NoteCollection {
 		this.serverStorage = {};
 		this.serverStorage.apiPrefixe = "/api_v1/notes/";
 
-		this.localStorage = {};
-		this.localStorage.SQLTable = "Notes";
-
-		//pourquoi pas ne pas setter l'objet mais en cas de multi ca va merder
-		//this.targetObject = "Note";
-
-		this.tables = [];
+		this.webSQL = new webSQL();
 
     	this.SvcBackEndComm = new SvcBackEndComm();
 
@@ -25,33 +21,6 @@ export default class NoteCollection {
 	init(){
 
 		this._initLocalStorage();
-
-		//localStorage
-		//file d'attente de sauvegarde
-		let TblNote = {};
-		TblNote.name = "Notes";
-		TblNote.db = "syncUp";
-		tblNote.create = "CREATE TABLE IF NOT EXISTS "+TblNote.name+` (timestamp,
-																	   status,
-																	   collection,
-																	   dispatch_to,
-																	   note_id,
-																	   note_title,
-																	   ressource_id,
-																	   ressource_title,
-																	   item_id,
-																	   item_type,
-																	   item_text,
-																	   item_value,
-																	   item_path,
-																	   item_unit
-																	   )`;
-		
-		this.tables.push(TblNote);
-
-
-
-
 
 	}
 
@@ -69,11 +38,32 @@ export default class NoteCollection {
 
 	_initLocalStorage(){
 
-
-
-
-
+	//localStorage
+		//file d'attente de sauvegarde
+		let TblNote = {};
+		TblNote.name = "Notes";
+		TblNote.db = "syncData";
+		tblNote.create = "CREATE TABLE IF NOT EXISTS "+TblNote.name+` (timestamp,
+																	   status,
+																	   collection,
+																	   dispatch_to,
+																	   note_id,
+																	   note_title,
+																	   ressource_id,
+																	   ressource_title,
+																	   item_id,
+																	   item_type,
+																	   item_text,
+																	   item_value,
+																	   item_path,
+																	   item_unit
+																	   )`;
 		
+		
+		this.webSQL.playQuery(TblNote.db,tblNote.create);
+		console.log('after initlocalstorage')
+
+
 	}
 
 
@@ -84,11 +74,7 @@ export default class NoteCollection {
 
 	getLocalStorage(guid){
 
-
-		let query = "SELECT * FROM " 
-
-
-
+	//	let query = "SELECT * FROM " 
 
 	}
 

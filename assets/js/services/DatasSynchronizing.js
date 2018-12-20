@@ -4,6 +4,7 @@ import 'moment/locale/fr';
 import LoaderCollection from './LoaderCollection.js';
 
 
+
 class DatasSynchronizing {
 	
 
@@ -18,8 +19,6 @@ class DatasSynchronizing {
 
 
 	init(){
-
-		this.syncData = openDatabase('syncData', '1.0', 'queue de synchronisation', 2 * 1024 * 1024);
 
 		//Init de la table Note si pas encore fait
 		this.NoteCollection = new LoaderCollection('Note');

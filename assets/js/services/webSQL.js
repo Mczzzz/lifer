@@ -8,9 +8,12 @@ class webSQL{
 
 
 
-	playQuery(query,callback = false){
-		this.db.transaction((db)=>this.execQuery(db,query,false,callback));
+	playQuery(base,query,callback = false){
+
+		base.transaction((db)=>this.execQuery(db,query,false,callback));
+
 	}
+
 
 	execQuery(db,query,args = false, callback = false){
 
@@ -22,9 +25,9 @@ class webSQL{
 
 	webSQLsucess(tx,results,callback = false){
 
-/*		console.log("webSQLsuccess");
+		console.log("webSQLsuccess");
 		console.log(tx);
-		console.log(results);*/
+		console.log(results);
 		if(callback){
 			this[callback](results);
 		}

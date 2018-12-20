@@ -3,74 +3,31 @@ export default class DBLocalCollection {
 
 	constructor(){
 
-		this.SGBD = [];
-
-		this.init();
-
 	}
 
 
-	init(){
 
-		//instanciation et propagation des instance de db
+	getSyncData(){
 
-        this.SGBD.push(this.getDBup());
-        this.SGBD.push(this.getDBdown());
-        this.SGBD.push(this.getDBdownCommon());
-
-
-	}
-
-
-	getDBup(){
-
-		let DBup         = {};
-		DBup.name    = "syncUp";
-		DBup.version = "1.0";
-		DBup.description = "Buffer de syncho vers le serveur";
+		let DBSyncData   = {};
+		DBup.name        = "syncData";
+		DBup.version     = "1.0";
+		DBup.description = "Buffer de syncho vers le serveur localStorage";
 		DBup.size = 2 * 1024 * 1024;
 
-		return DBup;
-
-	}
-
-
-	getDBdown(){
-
-		let DBdown         = {};
-		DBdown.name    = "syncDown";
-		DBdown.version = "1.0";
-		DBdown.description = "Replica Serveur pour Offline";
-		DBdown.size = 2 * 1024 * 1024;
-
-		return DBdown;
-
-	}
-
-
-	getDBdownCommon(){
-
-		let DBdownCommon         = {};
-		DBdownCommon.name    = "commonAppData";
-		DBdownCommon.version = "1.0";
-		DBdownCommon.description = "Données communes pour l'app";
-		DBdownCommon.size = 2 * 1024 * 1024;
-
-		return DBdownCommon;
+		return DBSyncData;
 
 	}
 
 
 
+	getDBConnection(db){
 
-	createBases(Base){
+		let Base = this["get"+db];
 
 		return openDatabase(Base.name, Base.version, Base.description, Base.size);
 
 	}
-
-
-
 
 
 }
