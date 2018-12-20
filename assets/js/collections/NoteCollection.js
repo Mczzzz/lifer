@@ -60,7 +60,7 @@ export default class NoteCollection {
 																	   )`;
 		
 		
-		this.webSQL.playQuery(TblNote.db,tblNote.create);
+		this.webSQL.playQuery(TblNote.db,TblNote.create);
 		console.log('after initlocalstorage')
 
 
