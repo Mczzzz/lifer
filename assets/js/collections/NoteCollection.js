@@ -29,7 +29,7 @@ export default class NoteCollection {
 
 		console.log("in note collection Store");
 		//j'enregistre dans le local storage ma data
-		this.playQuery('insert into Notes (timestamp,status) values (NOW(),"INIT")');
+		this.playQuery('syncData','insert into Notes (timestamp,status) values (NOW(),"INIT")');
 
 
 	}
