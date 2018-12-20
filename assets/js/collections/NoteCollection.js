@@ -27,6 +27,7 @@ export default class NoteCollection {
 
 	store(){
 
+		console.log("in note collection Store");
 		//j'enregistre dans le local storage ma data
 		this.playQuery('insert into Notes (timestamp,status) values (NOW(),"INIT")');
 
