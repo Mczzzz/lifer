@@ -21,6 +21,8 @@ export default class NoteController {
 
 		this.guid = guid;
 
+		this.title = "";
+
 		this.init();
 	}
 
@@ -49,15 +51,15 @@ export default class NoteController {
 
 	dataToStore(data){
 
-		data.gender = "Note"; 
+		data.collection = "Note"; 
 
 		if (!this.guid) this.guid = Lifer.newTmpId();
 			
 		data.NoteId = this.guid;
+		data.NoteTitle = this.title;
 		
-		//add(dispatchResponseTo,to,datas,purchaseOrder,needTmpId=false){
 
-		DatasSynchronizing.add(data);
+		DatasSynchronizing.store(data);
 
 
 	}

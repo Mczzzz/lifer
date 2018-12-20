@@ -17,6 +17,8 @@ export default class Ressource extends superViews{
 
           this.targetData = {};
 
+          this.title = "";
+
           this.RessourceId = ressourceId;
           this.ItemList = false;
 
@@ -48,6 +50,7 @@ export default class Ressource extends superViews{
      callBackDataTo(path,data){
 
       data.RessourceId = this.RessourceId;
+      data.RessourceTitle = this.title;
       this.targetData.obj[this.targetData.method](data);
     
      }

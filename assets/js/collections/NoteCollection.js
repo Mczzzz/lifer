@@ -42,6 +42,12 @@ export default class NoteCollection {
 	}
 
 
+	store(){
+		
+	}
+
+
+
 
 	_initLocalStorage(){
 
