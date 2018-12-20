@@ -7,7 +7,7 @@ export default class DBLocalCollection {
 
 
 
-	getSyncData(){
+	getsyncData(){
 
 		let DBSyncData   = {};
 		DBup.name        = "syncData";
@@ -22,6 +22,7 @@ export default class DBLocalCollection {
 
 
 	getDBConnection(db){
+
 
 		let Base = this["get"+db]();
 
