@@ -1,5 +1,5 @@
 import { Lifer } from '../../services/Lifer.js';
-import { DBLocal } from '../../services/DBLocal.js';
+//import { DBLocal } from '../../services/DBLocal.js';
 
 import Moment from 'moment';
 import 'moment/locale/fr';
