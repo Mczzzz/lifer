@@ -23,8 +23,8 @@ class DatasSynchronizing {
 
 		//Init de la table Note si pas encore fait
 		this.NoteCollection = new LoaderCollection('Note');
-		console.log("this.NoteCollection");
-		console.log(this.NoteCollection);
+		this.NoteCollection.init();
+
 
 		//this.playQuery(this.NoteCollection.tables);
 
