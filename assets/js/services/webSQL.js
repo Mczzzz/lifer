@@ -1,8 +1,12 @@
+import DBLocalCollection from '../collections/DBLocalCollection.js';
+
 export default class webSQL{
 	
 
-	constructor(db){
+	constructor(){
 
+
+		this.DBLocalCollection = new DBLocalCollection();
 
 	}
 
@@ -10,7 +14,8 @@ export default class webSQL{
 
 	playQuery(base,query,callback = false){
 
-		base.transaction((db)=>this.execQuery(db,query,false,callback));
+		let Bdd = this.DBLocalCollection.getDBConnection(base);
+		Bdd.transaction((db)=>this.execQuery(db,query,false,callback));
 
 	}
 
