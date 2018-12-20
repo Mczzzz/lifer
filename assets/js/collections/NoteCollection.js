@@ -27,10 +27,7 @@ export default class NoteCollection {
 
 	store(){
 
-		console.log("in note collection Store");
-		//j'enregistre dans le local storage ma data
-		this.webSQL.playQuery('syncData','insert into Notes (timestamp,status) values ("test","INIT")');
-
+		this.webSQL.playQuery('syncData','insert into Notes (timestamp,status) values (date(\'now\'),"INIT")');
 
 	}
 
