@@ -1,6 +1,6 @@
 import { Lifer } from '../services/Lifer.js';
 
-import { DatasSynchronizing } from '../../services/DatasSynchronizing.js';
+import { DatasSynchronizing } from '../services/DatasSynchronizing.js';
 
 import LoaderCollection  from '../services/LoaderCollection.js';
 
