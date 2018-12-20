@@ -1,4 +1,4 @@
-class webSQL{
+export default class webSQL{
 	
 
 	constructor(db){
