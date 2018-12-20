@@ -23,7 +23,9 @@ export default class DBLocalCollection {
 
 	getDBConnection(db){
 
-		let Base = this["get"+db];
+		let Base = this["get"+db]();
+
+		console.log(Base);
 
 		return openDatabase(Base.name, Base.version, Base.description, Base.size);
 
