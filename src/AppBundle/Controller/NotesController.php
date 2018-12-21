@@ -177,7 +177,7 @@ class NotesController extends Controller
             //if(!$NoteElement->timestamp){
             if(0){
                 $ndt = new \Datetime('now');
-            }
+            
             }else{
                 $ndt = new \Datetime($NoteElement->timestamp);
             }
