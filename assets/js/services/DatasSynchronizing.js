@@ -37,7 +37,7 @@ class DatasSynchronizing {
 
 	startService(){
 
-		this.service = setInterval(()=> this.fillQueue() , 10000 );
+		this.service = setInterval(()=> this.fillQueue() , 2000 );
 
 	}
 

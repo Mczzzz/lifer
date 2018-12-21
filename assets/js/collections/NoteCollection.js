@@ -154,7 +154,6 @@ export default class NoteCollection {
 
 		let len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
-		    console.log(results.rows.item(i));
 		    
 		    this.webSQL.playQuery('syncUp',
 			                  `insert into Notes ( timestamp,
@@ -184,8 +183,13 @@ export default class NoteCollection {
 
 		  }
 
-		let qry = "UPDATE Notes SET state = 'PREUP' WHERE state = 'RESERVEDUP' ";
-		this.webSQL.playQuery('syncData',qry);
+		 if(results.rows.length){
+
+			let qry = "UPDATE Notes SET state = 'PREUP' WHERE state = 'RESERVEDUP' ";
+			this.webSQL.playQuery('syncData',qry);
+
+		 }
+
 
 	}
 
