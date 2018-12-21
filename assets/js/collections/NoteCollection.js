@@ -85,7 +85,7 @@ export default class NoteCollection {
                    			         item_id,
                    			         item_type
                    			       )
-                   			ON CONFLICT REPLACE
+                   			ON CONFLICT UPDATE
 
 																	   );
 																	   `;
