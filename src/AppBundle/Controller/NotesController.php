@@ -90,10 +90,9 @@ class NotesController extends Controller
         //SERIALIZED OBJECT
         $datas = json_decode($request->getContent());
 
-        var_dump($datas);
-        die();
+
 //ok
-        if(!$datas || !is_object($datas)){
+        if(!$datas || !is_array($datas)){
 
             $res->error = "2.2";
             $res->msg = "Datas Corrupted";
@@ -107,21 +106,54 @@ class NotesController extends Controller
         $em = $this->getDoctrine()->getManager();
 
 
+        foreach ($datas as $NoteElement) {
 
-        if($datas->Note->guid === false){
+            $this->storeElement($NoteElement);
+
+        }
+
+
+            $res->error = "0";
+            $res->msg   = "SUCCESS";
+
+
+            return new response(json_encode($res));
+
+
+/*
+# id, username, username_canonical, email, email_canonical, enabled, salt, password, last_login, confirmation_token, password_requested_at, roles, birth_date
+1, lifer, lifer, tlili.yasmine@gmail.com, tlili.yasmine@gmail.com, 1, , $2y$13$ms1PMDxXpt8.jY20CLnVGu3BkdDpeubKXMHWrkNzuACpR5Wp.9wtO, 2018-07-16 09:37:40, , , a:0:{}, 1981-05-25 00:00:00
+2, MyLove, mylove, ax.delpierre@gmail.com, ax.delpierre@gmail.com, 1, , $2y$13$0RhTBsVuawSerODSXXwTG.ZEybGC37ZgXYu6iRgPKff3GJan/Icpq, 2018-07-25 21:10:21, , , a:0:{}, 1982-07-23 00:00:00
+3, Mczzzz, mczzzz, g.bailly.akasha@gmail.com, g.bailly.akasha@gmail.com, 1, , $2y$13$UpI/NkvLIwIXMlVj4EvrH./Q5xQl4mzBO92404orJg5f1YWSaSM.C, 2018-08-18 21:48:14, , , a:0:{}, 1977-10-17 21:35:00
+
+*/
+
+
+
+    }
+
+
+
+
+    private function storeElement($NoteElement){
+
+
+
+
+            if($NoteElement->note_id === false){
 
             $Note = new Notes();
             $Note->setCreator($user);
 
-        }elseif(substr($datas->Note->guid,0,3) == "tmp"){
+        }elseif(substr($NoteElement->note_id,0,3) == "tmp"){
 
-             $NoteList = $em->getRepository('AppBundle:Notes')->findBy(array('tmpId' => $datas->Note->guid));
+             $NoteList = $em->getRepository('AppBundle:Notes')->findBy(array('tmpId' => $NoteElement->note_id));
 
              if(!$NoteList){
 
                     $Note = new Notes();
                     $Note->setCreator($user);
-                    $Note->setTmpId($datas->Note->guid);
+                    $Note->setTmpId($NoteElement->note_id);
 
 /*                    $test = new \stdClass();
                     $test->format = 'NOW()';*/
@@ -135,17 +167,17 @@ class NotesController extends Controller
 
         }else{
 
-            $Note = $em->getRepository('AppBundle:Notes')->find($datas->Note->guid);
+            $Note = $em->getRepository('AppBundle:Notes')->find($NoteElement->note_id);
         
         }
 
 
-            $Note->setName($datas->Note->Title);
+            $Note->setName($NoteElement->note_title);
 
             if(!$datas->Note->Ts){
                 $ndt = new \Datetime('now');
             }else{
-                $ndt = new \Datetime($datas->Note->Ts);
+                $ndt = new \Datetime($NoteElement->timestamp);
             }
 
             
@@ -246,59 +278,9 @@ class NotesController extends Controller
             $res->datas->Resource->id = $Resource->getId();
 
 
-            $res->error = "0";
-            $res->msg   = "SUCCESS";
-
-
-            return new response(json_encode($res));
-
-        
-
-
-/*
-# id, username, username_canonical, email, email_canonical, enabled, salt, password, last_login, confirmation_token, password_requested_at, roles, birth_date
-1, lifer, lifer, tlili.yasmine@gmail.com, tlili.yasmine@gmail.com, 1, , $2y$13$ms1PMDxXpt8.jY20CLnVGu3BkdDpeubKXMHWrkNzuACpR5Wp.9wtO, 2018-07-16 09:37:40, , , a:0:{}, 1981-05-25 00:00:00
-2, MyLove, mylove, ax.delpierre@gmail.com, ax.delpierre@gmail.com, 1, , $2y$13$0RhTBsVuawSerODSXXwTG.ZEybGC37ZgXYu6iRgPKff3GJan/Icpq, 2018-07-25 21:10:21, , , a:0:{}, 1982-07-23 00:00:00
-3, Mczzzz, mczzzz, g.bailly.akasha@gmail.com, g.bailly.akasha@gmail.com, 1, , $2y$13$UpI/NkvLIwIXMlVj4EvrH./Q5xQl4mzBO92404orJg5f1YWSaSM.C, 2018-08-18 21:48:14, , , a:0:{}, 1977-10-17 21:35:00
-
-*/
-
-
-
-/* 
-        //NOTE
-        $noteId         = $request->request->get('noteId');
-
-        $noteTitle      = $request->request->get('noteTitle');
-
-        $noteAppTs      = $request->request->get('noteTs');
-
-        //RESOURCE
-        $resourceId     = $request->request->get('resourceId');
-
-        $resourceTypeId = $request->request->get('resourceTypeId'); //obligatoire
-
-        $resourceText   = $request->request->get('resourceText');
-
-        //$resourceData   = $request->request->get('data');
-        
-       $value       = $request->request->get('value');
-
-        $dateTime       = $request->request->get('dateTime');
-
-        $unit        = $request->request->get('unit');*/
-
-
-
-
-
-
-
-
 
 
     }
-
 
 
 
