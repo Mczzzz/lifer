@@ -175,7 +175,7 @@ class NotesController extends Controller
             $Note->setName($NoteElement->note_title);
 
             //if(!$NoteElement->timestamp){
-            if(false){
+            if(0){
                 $ndt = new \Datetime('now');
             }
             }else{
@@ -194,7 +194,7 @@ class NotesController extends Controller
             $res->datas->Note->id = $Note->getId();
 
 
-            continue;
+            return true;
 
 
             //j'attaque le traitement de la ressource
