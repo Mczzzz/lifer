@@ -209,7 +209,7 @@ export default class NoteCollection {
 
 		this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'push',false,false,arrayToSend);
 
-		let qry = "UPDATE Notes SET status = 'UPLOADING' WHERE state = 'BEFOREUP' ";
+		let qry = "UPDATE Notes SET status = 'UPLOADING' WHERE status = 'BEFOREUP' ";
 		this.webSQL.playQuery('syncUp',qry);
 
 	}
