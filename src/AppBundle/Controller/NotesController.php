@@ -284,7 +284,7 @@ class NotesController extends Controller
             
             //$ndtR = new \Datetime($datas->Resource->update);
             //$Resource->setUpdateAPP($ndtR);
-             if($NoteElement->type == "text"){
+             if($NoteElement->item_type == "text"){
 
                 $Item->setText($NoteElement->text);
 
