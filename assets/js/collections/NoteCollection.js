@@ -67,7 +67,7 @@ export default class NoteCollection {
 		let TblNote = {};
 		TblNote.name = "Notes";
 		TblNote.db = "syncData";
-		TblNote.create = `CREATE TABLE IF NOT EXISTS `+TblNote.name+` (timestamp REAL,
+		TblNote.create = `CREATE TABLE IF NOT EXISTS `+TblNote.name+` (timestamp DATETIME,
 																	   status,
 																	   note_id,
 																	   note_title,
