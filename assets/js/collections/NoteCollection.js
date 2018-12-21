@@ -87,16 +87,17 @@ export default class NoteCollection {
 																	   collection,
 																	   dispatch_to
 																	   );
-
-
-
-
-
 																	   `;
-		
+		TblNote.index = `CREATE INDEX idx_global_unique 
+						 ON `+TblNote.name+` (note_id,
+			                   			   	  ressource_id,
+			                   			      item_id,
+			                   			      item_type);`
+
 		
 		this.webSQL.playQuery(TblNote.db,TblNote.create);
-		console.log('after initlocalstorage')
+		this.webSQL.playQuery(TblNote.db,TblNote.index);
+
 
 
 	}
