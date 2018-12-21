@@ -130,10 +130,10 @@ export default class NoteCollection {
 
 
 		//je regarde dans mon sync data ce qui a plus d'une seconde d'enregistrement et qui a un status LOCAL order by croissant timestamp (pour gérer les plus vieux en priorité)
-		let qry = "UPDATE Notes SET state = 'PREUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds') AND state = 'WAITING' ";
+		let qry = "UPDATE Notes SET state = 'RESERVEDUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds') AND state = 'WAITING' ";
 		this.webSQL.playQuery('syncData',qry);
 
-		let qry2 = "SELECT * FROM Notes WHERE state = 'PREUP' ";
+		let qry2 = "SELECT * FROM Notes WHERE state = 'RESERVEDUP' ";
 		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
 		this.webSQL.playQuery('syncData',qry2,this,'_pushInSyncUp');
 
@@ -150,7 +150,37 @@ export default class NoteCollection {
 		var len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
 		    console.log(results.rows.item(i));
+		    
+		    this.webSQL.playQuery('syncUp',
+			                  `insert into Notes ( timestamp,
+			                                       status,
+			                                       note_id,
+												   note_title,
+												   ressource_id,
+												   ressource_title,
+												   item_id,
+												   item_type,
+												   item_text
+			                                      )
+			                   values ("`+results.rows.item(i).timestampd+`",
+			                          "BEFOREUP",
+			                          "`+results.rows.item(i).note_id+`",
+			                          "`+results.rows.item(i).note_title+`",
+			                          "`+results.rows.item(i).ressource_id+`",
+			                          "`+results.rows.item(i).ressource_title+`",
+			                          "`+results.rows.item(i).item_id+`",
+			                          "`+results.rows.item(i).item_type+`",
+			                          "`+results.rows.item(i).item_text+`"
+			                          )
+
+			                 `);
+
+
+
 		  }
+
+		let qry = "UPDATE Notes SET state = 'PREUP' WHERE state = 'RESERVEDUP' ";
+		this.webSQL.playQuery('syncData',qry);
 
 	}
 
