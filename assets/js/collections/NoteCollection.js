@@ -27,7 +27,10 @@ export default class NoteCollection {
 
 	store(){
 
-		this.webSQL.playQuery('syncData','insert into Notes (timestamp,status) values (strftime(\'%s\',\'now\'),"INIT")');
+		this.webSQL.playQuery('syncData',
+			                  `insert into Notes (timestamp,status)
+			                          values (STRFTIME('%Y%m%d%H%M%f', 'NOW'),"INIT")`
+			                 );
 
 	}
 
