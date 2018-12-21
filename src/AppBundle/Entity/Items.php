@@ -319,7 +319,7 @@ class Items
      *
      * @return self
      */
-    public function setTsUpdateBDD(\DateTime $tsUpdateBDD)
+    public function setTsUpdateBDD( $tsUpdateBDD)
     {
         $this->tsUpdateBDD = $tsUpdateBDD;
 
@@ -339,7 +339,7 @@ class Items
      *
      * @return self
      */
-    public function setUpdateAPP(datetime $updateAPP)
+    public function setUpdateAPP( $updateAPP)
     {
         $this->updateAPP = $updateAPP;
 
