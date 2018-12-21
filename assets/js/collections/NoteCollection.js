@@ -38,7 +38,7 @@ export default class NoteCollection {
 												   ressource_title,
 												   item_id,
 												   item_type,
-												   item_text,
+												   item_text
 			                                      )
 			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "LOCAL",
