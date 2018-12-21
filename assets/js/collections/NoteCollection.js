@@ -38,7 +38,7 @@ export default class NoteCollection {
 												   ressource_title,
 												   item_id,
 												   item_type,
-												   item_text
+												   item_text,
 			                                      )
 			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "LOCAL",
@@ -77,12 +77,14 @@ export default class NoteCollection {
 																	   item_type,
 																	   item_text,
 																	   item_value INTEGER DEFAULT 0,
-																	   item_path TEXT INTEGER DEFAULT "",
+																	   item_path TEXT DEFAULT "",
 																	   item_unit INTEGER DEFAULT 0,
+																	   state TEXT DEFAULT "WAITING",
 						    UNIQUE ( note_id,
                    			    	 ressource_id,
                    			         item_id,
-                   			         item_type
+                   			         item_type,
+                   			         state
                    			       )
                    			ON CONFLICT REPLACE
 
@@ -129,8 +131,8 @@ export default class NoteCollection {
 
 
 		//je regarde dans mon sync data ce qui a plus d'une seconde d'enregistrement et qui a un status LOCAL order by croissant timestamp (pour gérer les plus vieux en priorité)
-		let qry = "SELECT * FROM syncData WHERE timestamp < (STRFTIME('%Y%m%d%H%M%f', 'NOW') - 1)"
-
+		let qry = "UPDATE Notes SET state = 'PREUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds') AND state = 'WAITING' ";
+		this.webSQL.playQuery('syncData',qry);
 
 		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
 		// j'envoi en auserveru et attedns un retour positif
