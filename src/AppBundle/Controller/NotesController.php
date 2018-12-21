@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use AppBundle\Entity\Notes;
 use AppBundle\Entity\Resources;
-use AppBundle\Entity\ResourcesTypes;
+use AppBundle\Entity\Items;
 
 use AppBundle\Helper\timestamp;
 
@@ -246,22 +246,54 @@ class NotesController extends Controller
 
 
 
-            //load du type
-//TODO : mettre un unique sur le name please :)            
-            $ResourceType = $em->getRepository('AppBundle:ResourcesTypes')->findBy(array("name" => $datas->Resource->type));
 
-            if($ResourceType){
+            //j'attaque le traitement de la ressource
+            if($NoteElement->item_id === false){
 
-                $Resource->setType($ResourceType[0]);
+                $Item = new Items();
+                $Item->setCreator($this->user);
 
+            }elseif(substr($NoteElement->item_id,0,3) == "tmp"){
+
+                $ItemList = $this->em->getRepository('AppBundle:Items')->findBy(array('tmpId' => $NoteElement->item_id));
+
+                if(!$ItemList){
+
+                        $Item = new Items();
+                        $Item->setCreator($this->user);
+                        $Item->setTmpId($NoteElement->item_id);
+
+                 }else{
+     
+                    $Item = $ItemList[0];
+     
+                 }
+
+     
+            }else{
+
+                $Item = $this->em->getRepository('AppBundle:Items')->find($NoteElement->item_id);
+            
             }
+
+
+            $Item->setResource($Note);
+            $Item->setCreator($this->user);
+
+            $Item->setTmpId(str_replace("tmp","",$NoteElement->ressource_id));
+            
+            //$ndtR = new \Datetime($datas->Resource->update);
+            //$Resource->setUpdateAPP($ndtR);
+
+            $this->em->persist($Resource);
+            $this->em->flush();
 
             
 
 
 
 
-            if($datas->Resource->type == "text"){
+            if($NoteElement->type == "text"){
 
                 $Resource->setText($datas->Resource->resource);
 
