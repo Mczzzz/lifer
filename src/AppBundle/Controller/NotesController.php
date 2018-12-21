@@ -242,7 +242,7 @@ class NotesController extends Controller
             //
 
 
-            return true;
+          
 
 
 
