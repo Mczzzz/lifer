@@ -144,9 +144,13 @@ export default class NoteCollection {
 
 	}
 
-	_pushInSyncUp(datas){
+	_pushInSyncUp(results){
 		console.log("in _pushInSyncUp");
-		console.log(datas);
+		console.log(results);
+		var len = results.rows.length, i;
+		  for (i = 0; i < len; i++) {
+		    console.log(results.rows.item(i));
+		  }
 
 	}
 
