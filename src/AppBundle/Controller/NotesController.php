@@ -284,34 +284,34 @@ class NotesController extends Controller
             
             //$ndtR = new \Datetime($datas->Resource->update);
             //$Resource->setUpdateAPP($ndtR);
+             if($NoteElement->type == "text"){
 
-            $this->em->persist($Resource);
-            $this->em->flush();
+                $Item->setText($NoteElement->text);
+
+            }
+
+/*            $this->em->persist($Resource);
+            $this->em->flush();*/
 
             
 
 
 
 
-            if($NoteElement->type == "text"){
-
-                $Resource->setText($datas->Resource->resource);
-
-            }
+           
 
 
-            $majResource = new \Datetime($datas->Resource->update);
+            //$majResource = new \Datetime($datas->Resource->update);
 
 
-            $Resource->setUpdateAPP($majResource);
+            //$Resource->setUpdateAPP($NoteElement->text);
 
 
-            $em->persist($Resource);
-            $em->flush();
+            $this->em->persist($Item);
+            $this->em->flush();
 
 
-            $res->datas->Resource = new \stdClass();
-            $res->datas->Resource->id = $Resource->getId();
+
 
 
 
