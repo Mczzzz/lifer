@@ -290,6 +290,8 @@ class NotesController extends Controller
 
             }
 
+            $ndtR = new \Datetime('now');
+            $Item->setUpdateAPP($ndtR);
 /*            $this->em->persist($Resource);
             $this->em->flush();*/
 
