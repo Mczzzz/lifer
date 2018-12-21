@@ -42,13 +42,13 @@ export default class NoteCollection {
 			                                      )
 			                          values (STRFTIME('%Y%m%d%H%M%f', 'NOW'),
 			                          "LOCAL",
-			                          `+data.NoteId+`,
-			                          `+data.NoteTitle+`,
-			                          `+data.RessourceId+`,
-			                          `+data.RessourceTitle+`,
-			                          `+data.id+`,
-			                          `+data.type+`,
-			                          `+data.value+`
+			                          "`+data.NoteId+`",
+			                          "`+data.NoteTitle+`",
+			                          "`+data.RessourceId+`",
+			                          "`+data.RessourceTitle+`",
+			                          "`+data.id+`",
+			                          "`+data.type+`",
+			                          "`+data.value+`"
 			                          )`
 			                 );
 
