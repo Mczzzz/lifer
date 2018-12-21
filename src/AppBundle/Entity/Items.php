@@ -125,5 +125,245 @@ class Items
 
 
 
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTmpId()
+    {
+        return $this->tmpId;
+    }
+
+    /**
+     * @param string $tmpId
+     *
+     * @return self
+     */
+    public function setTmpId($tmpId)
+    {
+        $this->tmpId = $tmpId;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getResource()
+    {
+        return $this->resource;
+    }
+
+    /**
+     * @param int $resource
+     *
+     * @return self
+     */
+    public function setResource($resource)
+    {
+        $this->resource = $resource;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param int $type
+     *
+     * @return self
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getParentItem()
+    {
+        return $this->parentItem;
+    }
+
+    /**
+     * @param int $parentItem
+     *
+     * @return self
+     */
+    public function setParentItem($parentItem)
+    {
+        $this->parentItem = $parentItem;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getText()
+    {
+        return $this->text;
+    }
+
+    /**
+     * @param string $text
+     *
+     * @return self
+     */
+    public function setText($text)
+    {
+        $this->text = $text;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return self
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getUnit()
+    {
+        return $this->unit;
+    }
+
+    /**
+     * @param int $unit
+     *
+     * @return self
+     */
+    public function setUnit($unit)
+    {
+        $this->unit = $unit;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    /**
+     * @param string $path
+     *
+     * @return self
+     */
+    public function setPath($path)
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getTsUpdateBDD()
+    {
+        return $this->tsUpdateBDD;
+    }
+
+    /**
+     * @param \DateTime $tsUpdateBDD
+     *
+     * @return self
+     */
+    public function setTsUpdateBDD(\DateTime $tsUpdateBDD)
+    {
+        $this->tsUpdateBDD = $tsUpdateBDD;
+
+        return $this;
+    }
+
+    /**
+     * @return datetime
+     */
+    public function getUpdateAPP()
+    {
+        return $this->updateAPP;
+    }
+
+    /**
+     * @param datetime $updateAPP
+     *
+     * @return self
+     */
+    public function setUpdateAPP(datetime $updateAPP)
+    {
+        $this->updateAPP = $updateAPP;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCreator()
+    {
+        return $this->creator;
+    }
+
+    /**
+     * @param int $creator
+     *
+     * @return self
+     */
+    public function setCreator($creator)
+    {
+        $this->creator = $creator;
+
+        return $this;
+    }
 }
 
