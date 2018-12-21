@@ -193,10 +193,13 @@ export default class NoteCollection {
 
 	_createRequestToServer(results){
 
+		console.log('IN _createRequestToServer !!!')
+
 		let arrayToSend = [];
 		let len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
 
+		  	console.log(results.rows.item(i));
 
 		  	arrayToSend.push(results.rows.item(i));
 
