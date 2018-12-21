@@ -97,7 +97,7 @@ export default class Ressource extends superViews{
 
       if(this.target && !itemId){
 
-          itemId =  this.target.newTmpId();     
+          itemId =  "tmp-"+this.target.newTmpId();     
 
       }
 
