@@ -207,10 +207,16 @@ export default class NoteCollection {
 
 			}
 
-		this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'push',false,false,arrayToSend);
+		if(arrayToSend.length){
 
-		let qry = "UPDATE Notes SET status = 'UPLOADING' WHERE status = 'BEFOREUP' ";
-		this.webSQL.playQuery('syncUp',qry);
+			this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'push',false,false,arrayToSend);
+
+			let qry = "UPDATE Notes SET status = 'UPLOADING' WHERE status = 'BEFOREUP' ";
+			this.webSQL.playQuery('syncUp',qry);
+
+
+		}
+
 
 	}
 
