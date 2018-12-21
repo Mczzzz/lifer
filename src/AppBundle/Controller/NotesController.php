@@ -140,7 +140,7 @@ class NotesController extends Controller
 
 
 
-            if($NoteElement->note_id === false){
+         if($NoteElement->note_id === false){
 
             $Note = new Notes();
             $Note->setCreator($user);
@@ -174,8 +174,10 @@ class NotesController extends Controller
 
             $Note->setName($NoteElement->note_title);
 
-            if(!$datas->Note->Ts){
+            //if(!$NoteElement->timestamp){
+            if(false){
                 $ndt = new \Datetime('now');
+            }
             }else{
                 $ndt = new \Datetime($NoteElement->timestamp);
             }
@@ -192,7 +194,7 @@ class NotesController extends Controller
             $res->datas->Note->id = $Note->getId();
 
 
-
+            continue;
 
 
             //j'attaque le traitement de la ressource
