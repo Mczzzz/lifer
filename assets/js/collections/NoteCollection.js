@@ -87,11 +87,7 @@ export default class NoteCollection {
 																	   collection,
 																	   dispatch_to
 																	   );
-	                     CREATE INDEX idx_global_unique 
-						 ON `+TblNote.name+` (note_id,
-			                   			   	  ressource_id,
-			                   			      item_id,
-			                   			      item_type);
+
 
 
 
