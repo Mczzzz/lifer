@@ -286,7 +286,7 @@ class NotesController extends Controller
             //$Resource->setUpdateAPP($ndtR);
              if($NoteElement->item_type == "text"){
 
-                $Item->setText($NoteElement->text);
+                $Item->setText($NoteElement->item_text);
 
             }
 
