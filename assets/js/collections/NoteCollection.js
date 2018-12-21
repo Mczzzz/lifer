@@ -30,8 +30,26 @@ export default class NoteCollection {
 		console.log(data);
 
 		this.webSQL.playQuery('syncData',
-			                  `insert into Notes (timestamp,status)
-			                          values (STRFTIME('%Y%m%d%H%M%f', 'NOW'),"INIT")`
+			                  `insert into Notes ( timestamp,
+			                                       status,
+			                                       note_id,
+												   note_title,
+												   ressource_id,
+												   ressource_title,
+												   item_id,
+												   item_type,
+												   item_text
+			                                      )
+			                          values (STRFTIME('%Y%m%d%H%M%f', 'NOW'),
+			                          "LOCAL",
+			                          `+data.NoteId+`,
+			                          `+data.NoteTitle+`,
+			                          `+data.RessourceId+`,
+			                          `+data.RessourceTitle+`,
+			                          `+data.id+`,
+			                          `+data.type+`,
+			                          `+data.value+`
+			                          )`
 			                 );
 
 	}
@@ -48,8 +66,6 @@ export default class NoteCollection {
 		TblNote.db = "syncData";
 		TblNote.create = "CREATE TABLE IF NOT EXISTS "+TblNote.name+` (timestamp,
 																	   status,
-																	   collection,
-																	   dispatch_to,
 																	   note_id,
 																	   note_title,
 																	   ressource_id,
@@ -59,7 +75,9 @@ export default class NoteCollection {
 																	   item_text,
 																	   item_value,
 																	   item_path,
-																	   item_unit
+																	   item_unit,
+																	   collection,
+																	   dispatch_to
 																	   )`;
 		
 		
