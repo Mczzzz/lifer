@@ -128,7 +128,7 @@ export default class NoteCollection {
 	synchroToServer(){
 
 
-
+	//////PRE TRAITEMENT
 		//je regarde dans mon sync data ce qui a plus d'une seconde d'enregistrement et qui a un status LOCAL order by croissant timestamp (pour gérer les plus vieux en priorité)
 		let qry = "UPDATE Notes SET state = 'RESERVEDUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds') AND state = 'WAITING' ";
 		this.webSQL.playQuery('syncData',qry);
@@ -137,7 +137,13 @@ export default class NoteCollection {
 		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
 		this.webSQL.playQuery('syncData',qry2,this,'_pushInSyncUp');
 
+	//////COMPOSITION DE l'ENVOI
+		let qry3 = "SELECT * FROM Notes WHERE state = 'BEFOREUP' ";
+		this.webSQL.playQuery('syncUp',qry3,this,'_createRequestToServer');
 		// j'envoi en auserveru et attedns un retour positif
+
+
+
 		//si oui, je regarde dans syncdata si mon timestamp est le même dans ce cas la je flag SYNCHRO
 					//sinon je supprime seulement ma ligne dans syncup
 		//si non, je resset pour l'envoi suite à échec
@@ -145,9 +151,8 @@ export default class NoteCollection {
 	}
 
 	_pushInSyncUp(results){
-		console.log("in _pushInSyncUp");
-		console.log(results);
-		var len = results.rows.length, i;
+
+		let len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
 		    console.log(results.rows.item(i));
 		    
@@ -162,7 +167,7 @@ export default class NoteCollection {
 												   item_type,
 												   item_text
 			                                      )
-			                   values ("`+results.rows.item(i).timestampd+`",
+			                   values ("`+results.rows.item(i).timestamp+`",
 			                          "BEFOREUP",
 			                          "`+results.rows.item(i).note_id+`",
 			                          "`+results.rows.item(i).note_title+`",
@@ -184,6 +189,24 @@ export default class NoteCollection {
 
 	}
 
+
+
+	_createRequestToServer(results){
+
+		let arrayToSend = [];
+		let len = results.rows.length, i;
+		  for (i = 0; i < len; i++) {
+
+
+		  	arrayToSend.push(results.rows.item(i));
+
+
+
+			}
+
+		this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'push',false,false,arrayToSend);
+
+	}
 
 
 
@@ -208,6 +231,8 @@ export default class NoteCollection {
 
 
 		}
+
+
 
 	
 	}
