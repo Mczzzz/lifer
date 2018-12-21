@@ -73,7 +73,7 @@ class NotesController extends Controller
 
 
         //users infos
-        $user = $this->getUser();
+        $this->user = $this->getUser();
 
         if(!$user){
 
@@ -143,7 +143,7 @@ class NotesController extends Controller
          if($NoteElement->note_id === false){
 
             $Note = new Notes();
-            $Note->setCreator($user);
+            $Note->setCreator($this->user);
 
         }elseif(substr($NoteElement->note_id,0,3) == "tmp"){
 
@@ -152,7 +152,7 @@ class NotesController extends Controller
              if(!$NoteList){
 
                     $Note = new Notes();
-                    $Note->setCreator($user);
+                    $Note->setCreator($this->user);
                     $Note->setTmpId($NoteElement->note_id);
 
 /*                    $test = new \stdClass();
