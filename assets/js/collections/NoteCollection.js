@@ -229,6 +229,9 @@ export default class NoteCollection {
 
 
 
+
+
+
 //app component
 
 	getLocalStorage(guid){
