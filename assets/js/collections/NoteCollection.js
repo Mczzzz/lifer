@@ -133,20 +133,22 @@ export default class NoteCollection {
 		let qry = "UPDATE Notes SET state = 'PREUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds') AND state = 'WAITING' ";
 		this.webSQL.playQuery('syncData',qry);
 
+		let qry = "SELECT * FROM Notes WHERE state = 'PREUP' ";
 		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
+		this.webSQL.playQuery('syncData',qry,this,'_pushInSyncUp');
+
 		// j'envoi en auserveru et attedns un retour positif
 		//si oui, je regarde dans syncdata si mon timestamp est le même dans ce cas la je flag SYNCHRO
 					//sinon je supprime seulement ma ligne dans syncup
 		//si non, je resset pour l'envoi suite à échec
 
-
-
-
-
-
 	}
 
+	_pushInSyncUp(datas){
+		console.log("in _pushInSyncUp");
+		console.log(datas);
 
+	}
 
 
 

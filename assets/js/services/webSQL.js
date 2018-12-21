@@ -12,29 +12,29 @@ export default class webSQL{
 
 
 
-	playQuery(base,query,callback = false){
+	playQuery(base,query,callbackObj = false, callbackMethod = false){
 
 		let Bdd = this.DBLocalCollection.getDBConnection(base);
-		Bdd.transaction((db)=>this.execQuery(db,query,false,callback));
+		Bdd.transaction((db)=>this.execQuery(db,query,false,callbackObj,callbackMethod));
 
 	}
 
 
-	execQuery(db,query,args = false, callback = false){
+	execQuery(db,query,args = false, callbackObj = false, callbackMethod = false){
 
 	if(!args) args = [];
 
-		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results,callback),(tx,errors)=>this.webSQLerror(tx,errors));
+		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results,callbackObj,callbackMethod),(tx,errors)=>this.webSQLerror(tx,errors));
 	}
 
 
-	webSQLsucess(tx,results,callback = false){
+	webSQLsucess(tx,results,callbackObj = false, callbackMethod = false){
 
 		console.log("webSQLsuccess");
 		console.log(tx);
 		console.log(results);
-		if(callback){
-			this[callback](results);
+		if(callbackObj && callbackMethod){
+			callbackObj[callbackMethod](results);
 		}
 
 	}
