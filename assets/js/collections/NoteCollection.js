@@ -57,6 +57,8 @@ export default class NoteCollection {
 
 
 
+//SELECT timestamp,status, note_id, ressource_title,item_id,item_type,item_text,item_value,item_path,item_unit,note_title FROM Notes
+//SELECT timestamp,status, note_id, note_title,ressource_id,ressource_title,item_id,item_type,item_text,item_value FROM Notes
 
 	_initLocalStorage(){
 
@@ -74,9 +76,9 @@ export default class NoteCollection {
 																	   item_id,
 																	   item_type,
 																	   item_text,
-																	   item_value,
-																	   item_path,
-																	   item_unit,
+																	   item_value INTEGER DEFAULT 0,
+																	   item_path TEXT INTEGER DEFAULT "",
+																	   item_unit INTEGER DEFAULT 0,
 						    UNIQUE ( note_id,
                    			    	 ressource_id,
                    			         item_id,
@@ -125,7 +127,11 @@ export default class NoteCollection {
 	synchroToServer(){
 
 
+
 		//je regarde dans mon sync data ce qui a plus d'une seconde d'enregistrement et qui a un status LOCAL order by croissant timestamp (pour gérer les plus vieux en priorité)
+		let qry = "SELECT * FROM syncData WHERE timestamp < (STRFTIME('%Y%m%d%H%M%f', 'NOW') - 1)"
+
+
 		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
 		// j'envoi en auserveru et attedns un retour positif
 		//si oui, je regarde dans syncdata si mon timestamp est le même dans ce cas la je flag SYNCHRO
