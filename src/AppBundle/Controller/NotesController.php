@@ -103,7 +103,7 @@ class NotesController extends Controller
 
 
         // j'enregistre en base ma note
-        $em = $this->getDoctrine()->getManager();
+        $this->em = $this->getDoctrine()->getManager();
 
 
         foreach ($datas as $NoteElement) {
@@ -147,7 +147,7 @@ class NotesController extends Controller
 
         }elseif(substr($NoteElement->note_id,0,3) == "tmp"){
 
-             $NoteList = $em->getRepository('AppBundle:Notes')->findBy(array('tmpId' => $NoteElement->note_id));
+             $NoteList =  $this->em->getRepository('AppBundle:Notes')->findBy(array('tmpId' => $NoteElement->note_id));
 
              if(!$NoteList){
 
@@ -167,7 +167,7 @@ class NotesController extends Controller
 
         }else{
 
-            $Note = $em->getRepository('AppBundle:Notes')->find($NoteElement->note_id);
+            $Note =  $this->em->getRepository('AppBundle:Notes')->find($NoteElement->note_id);
         
         }
 
@@ -185,8 +185,8 @@ class NotesController extends Controller
             
             $Note->setUpdateAPP($ndt);
 
-            $em->persist($Note);
-            $em->flush();
+             $this->em->persist($Note);
+             $this->em->flush();
 
             //log de la partie Note
             $res->datas = new \stdClass();
