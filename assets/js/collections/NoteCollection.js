@@ -76,7 +76,7 @@ export default class NoteCollection {
 																	   item_text,
 																	   item_value,
 																	   item_path,
-																	   item_unit
+																	   item_unit,
 						    UNIQUE ( note_id,
                    			    	 ressource_id,
                    			         item_id,

@@ -38,15 +38,14 @@ class DatasSynchronizing {
 	startService(){
 
 		this.service = setInterval(()=> this.fillQueue() , 2000 );
-		
+
 	}
 
 
 	fillQueue(){
 
 		////le service fill queue doit référencer l'ensemble des collection et c'est  lui qui se charge de la synchro montante vers le serveur
-
-		this.NoteCollection.queuePrepareSend();
+		this.NoteCollection.synchroToServer();
 
 	}
 
