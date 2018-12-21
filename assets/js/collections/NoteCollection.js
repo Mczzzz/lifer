@@ -40,7 +40,7 @@ export default class NoteCollection {
 												   item_type,
 												   item_text
 			                                      )
-			                   values (date('YYYY-MM-DD HH:MM:SS.SSS'),
+			                   values (date(YYYY-MM-DD HH:MM:SS.SSS),
 			                          "LOCAL",
 			                          "`+data.NoteId+`",
 			                          "`+data.NoteTitle+`",
