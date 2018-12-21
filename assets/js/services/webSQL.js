@@ -23,7 +23,7 @@ export default class webSQL{
 	execQuery(db,query,args = false, callbackObj = false, callbackMethod = false){
 
 	if(!args) args = [];
-
+		console.log(query);
 		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results,callbackObj,callbackMethod),(tx,errors)=>this.webSQLerror(tx,errors));
 	}
 
