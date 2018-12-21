@@ -40,7 +40,7 @@ export default class NoteCollection {
 												   item_type,
 												   item_text
 			                                      )
-			                          values (STRFTIME('%Y%m%d%H%M%f', 'NOW'),
+			                   values (STRFTIME('%Y%m%d%H%M%f', 'NOW'),
 			                          "LOCAL",
 			                          "`+data.NoteId+`",
 			                          "`+data.NoteTitle+`",
@@ -49,8 +49,16 @@ export default class NoteCollection {
 			                          "`+data.id+`",
 			                          "`+data.type+`",
 			                          "`+data.value+`"
-			                          )`
-			                 );
+			                          )
+			                   ON CONFLICT(note_id,
+			                   			   ressource_id,
+			                   			   item_id,
+			                   			   item_type
+			                   			   )
+			                   DO UPDATE SET note_title = "`+data.NoteTitle+`",
+			                                 ressource_title = "`+data.RessourceTitle+`",
+			                                 item_text = "`+data.value+`";
+			                 `);
 
 	}
 
