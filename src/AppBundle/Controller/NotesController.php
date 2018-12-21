@@ -207,7 +207,7 @@ class NotesController extends Controller
 
             }elseif(substr($NoteElement->ressource_id,0,3) == "tmp"){
 
-                $ResourceList = $this->em->getRepository('AppBundle:Resources')->findBy(array('tmpId' => $$NoteElement->ressource_idd));
+                $ResourceList = $this->em->getRepository('AppBundle:Resources')->findBy(array('tmpId' => $NoteElement->ressource_id));
 
                 if(!$ResourceList){
 
