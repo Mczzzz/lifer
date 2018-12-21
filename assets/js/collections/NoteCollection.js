@@ -40,7 +40,7 @@ export default class NoteCollection {
 												   item_type,
 												   item_text
 			                                      )
-			                   values (datetime('now'),
+			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "LOCAL",
 			                          "`+data.NoteId+`",
 			                          "`+data.NoteTitle+`",
