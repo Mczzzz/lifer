@@ -75,7 +75,7 @@ class NotesController extends Controller
         //users infos
         $this->user = $this->getUser();
 
-        if(!$user){
+        if(!$this->user){
 
             $res->error = "1.2";
             $res->msg = "User Unknown";
