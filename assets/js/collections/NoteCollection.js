@@ -76,9 +76,7 @@ export default class NoteCollection {
 																	   item_text,
 																	   item_value,
 																	   item_path,
-																	   item_unit,
-																	   collection,
-																	   dispatch_to,
+																	   item_unit
 						    UNIQUE ( note_id,
                    			    	 ressource_id,
                    			         item_id,
@@ -92,7 +90,58 @@ export default class NoteCollection {
 
 		
 		this.webSQL.playQuery(TblNote.db,TblNote.create);
+
+
+		let TblNoteUp = {};
+		TblNoteUp.name = "Notes";
+		TblNoteUp.db = "syncUp";
+		TblNoteUp.create = `CREATE TABLE IF NOT EXISTS `+TblNoteUp.name+` (timestamp,
+																	   status,
+																	   note_id,
+																	   note_title,
+																	   ressource_id,
+																	   ressource_title,
+																	   item_id,
+																	   item_type,
+																	   item_text,
+																	   item_value,
+																	   item_path,
+																	   item_unit
+																	   );
+																	   `;
+
+
+		
+		this.webSQL.playQuery(TblNoteUp.db,TblNoteUp.create);
+
+
+
+
 	}
+
+
+
+
+	synchroToServer(){
+
+
+		//je regarde dans mon sync data ce qui a plus d'une seconde d'enregistrement et qui a un status LOCAL order by croissant timestamp (pour gérer les plus vieux en priorité)
+		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
+		// j'envoi en auserveru et attedns un retour positif
+		//si oui, je regarde dans syncdata si mon timestamp est le même dans ce cas la je flag SYNCHRO
+					//sinon je supprime seulement ma ligne dans syncup
+		//si non, je resset pour l'envoi suite à échec
+
+
+
+
+
+
+	}
+
+
+
+
 
 
 
@@ -121,7 +170,7 @@ export default class NoteCollection {
 	}
 
 
-	queuePrepareSend(){
+/*	queuePrepareSend(){
 
 		//je lock tout ce qui est ready
 		this.playQuery('update Notes SET status = "LOCKED" where status = "READY"');
@@ -129,7 +178,7 @@ export default class NoteCollection {
 		//j'envoi
 		this.playQuery('select * from Notes where status = "LOCKED"',"sendCommand");
 
-	}
+	}*/
 
 
 

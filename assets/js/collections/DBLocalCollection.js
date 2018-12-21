@@ -12,6 +12,18 @@ export default class DBLocalCollection {
 		let DBSyncData   = {};
 		DBSyncData.name        = "syncData";
 		DBSyncData.version     = "1.0";
+		DBSyncData.description = "synchro locale";
+		DBSyncData.size = 2 * 1024 * 1024;
+
+		return DBSyncData;
+
+	}
+
+	getsyncUp(){
+
+		let DBSyncData   = {};
+		DBSyncData.name        = "syncUp";
+		DBSyncData.version     = "1.0";
 		DBSyncData.description = "Buffer de syncho vers le serveur localStorage";
 		DBSyncData.size = 2 * 1024 * 1024;
 
@@ -25,8 +37,6 @@ export default class DBLocalCollection {
 
 
 		let Base = this["get"+db]();
-
-		console.log(Base);
 
 		return openDatabase(Base.name, Base.version, Base.description, Base.size);
 
