@@ -50,14 +50,7 @@ export default class NoteCollection {
 			                          "`+data.type+`",
 			                          "`+data.value+`"
 			                          )
-			                   ON CONFLICT(note_id,
-			                   			   ressource_id,
-			                   			   item_id,
-			                   			   item_type
-			                   			   )
-			                   DO UPDATE SET note_title = "`+data.NoteTitle+`",
-			                                 ressource_title = "`+data.RessourceTitle+`",
-			                                 item_text = "`+data.value+`";
+
 			                 `);
 
 	}
@@ -85,21 +78,20 @@ export default class NoteCollection {
 																	   item_path,
 																	   item_unit,
 																	   collection,
-																	   dispatch_to
+																	   dispatch_to,
+						    UNIQUE ( note_id,
+                   			    	 ressource_id,
+                   			         item_id,
+                   			         item_type
+                   			       )
+                   			ON CONFLICT REPLACE
+
 																	   );
 																	   `;
-		TblNote.index = `CREATE INDEX idx_global_unique 
-						 ON `+TblNote.name+` (note_id,
-			                   			   	  ressource_id,
-			                   			      item_id,
-			                   			      item_type);`
+
 
 		
 		this.webSQL.playQuery(TblNote.db,TblNote.create);
-		this.webSQL.playQuery(TblNote.db,TblNote.index);
-
-
-
 	}
 
 
