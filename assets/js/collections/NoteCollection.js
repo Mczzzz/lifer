@@ -72,7 +72,7 @@ export default class NoteCollection {
 		let TblNote = {};
 		TblNote.name = "Notes";
 		TblNote.db = "syncData";
-		TblNote.create = "CREATE TABLE IF NOT EXISTS "+TblNote.name+` (timestamp,
+		TblNote.create = `CREATE TABLE IF NOT EXISTS `+TblNote.name+` (timestamp,
 																	   status,
 																	   note_id,
 																	   note_title,
@@ -86,7 +86,17 @@ export default class NoteCollection {
 																	   item_unit,
 																	   collection,
 																	   dispatch_to
-																	   )`;
+																	   );
+	                     CREATE INDEX idx_global_unique 
+						 ON `+TblNote.name+` (note_id,
+			                   			   	  ressource_id,
+			                   			      item_id,
+			                   			      item_type);
+
+
+
+
+																	   `;
 		
 		
 		this.webSQL.playQuery(TblNote.db,TblNote.create);
