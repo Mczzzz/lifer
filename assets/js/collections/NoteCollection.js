@@ -107,9 +107,9 @@ export default class NoteCollection {
 																	   item_id,
 																	   item_type,
 																	   item_text,
-																	   item_value,
-																	   item_path,
-																	   item_unit
+																	   item_value INTEGER DEFAULT 0,
+																	   item_path  TEXT DEFAULT "",
+																	   item_unit  INTEGER DEFAULT 0
 																	   );
 																	   `;
 
@@ -138,7 +138,7 @@ export default class NoteCollection {
 		this.webSQL.playQuery('syncData',qry2,this,'_pushInSyncUp');
 
 	//////COMPOSITION DE l'ENVOI
-		let qry3 = "SELECT * FROM Notes WHERE state = 'BEFOREUP' ";
+		let qry3 = "SELECT * FROM Notes WHERE status = 'BEFOREUP' ";
 		this.webSQL.playQuery('syncUp',qry3,this,'_createRequestToServer');
 		// j'envoi en auserveru et attedns un retour positif
 
