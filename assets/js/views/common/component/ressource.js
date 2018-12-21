@@ -74,7 +74,7 @@ export default class Ressource extends superViews{
 
         if(!this.RessourceId){
 
-          this.RessourceId = this.Lifer.newTmpId();
+          this.RessourceId = "tmp-"+this.Lifer.newTmpId();
         }
         
       }

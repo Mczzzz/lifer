@@ -53,9 +53,9 @@ export default class NoteController {
 
 		data.collection = "Note"; 
 
-		if (!this.guid) this.guid = Lifer.newTmpId();
+		if (!this.guid) this.guid = "tmp-"+Lifer.newTmpId();
 			
-		data.NoteId = "tmp-"+this.guid;
+		data.NoteId = this.guid;
 		data.NoteTitle = this.title;
 		
 

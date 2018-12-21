@@ -194,24 +194,26 @@ class NotesController extends Controller
             $res->datas->Note->id = $Note->getId();
 
 
-            return true;
+
+
+
 
 
             //j'attaque le traitement de la ressource
-            if($datas->Resource->guid === false){
+            if($NoteElement->ressource_id === false){
 
                 $Resource = new Resources();
-                $Resource->setCreator($user);
+                $Resource->setCreator($this->user);
 
-            }elseif(substr($datas->Resource->guid,0,14) == "TmpResourceId-"){
+            }elseif(substr($NoteElement->ressource_id,0,3) == "tmp"){
 
-                $ResourceList = $em->getRepository('AppBundle:Resources')->findBy(array('tmpId' => $datas->Resource->guid));
+                $ResourceList = $this->em->getRepository('AppBundle:Resources')->findBy(array('tmpId' => $$NoteElement->ressource_idd));
 
                 if(!$ResourceList){
 
                         $Resource = new Resources();
-                        $Resource->setCreator($user);
-                        $Resource->setTmpId($datas->Resource->guid);
+                        $Resource->setCreator($this->user);
+                        $Resource->setTmpId($NoteElement->ressource_id);
 
                  }else{
      
@@ -222,25 +224,25 @@ class NotesController extends Controller
      
             }else{
 
-                $Resource = $em->getRepository('AppBundle:Resources')->find($datas->Resource->guid);
+                $Resource = $this->em->getRepository('AppBundle:Resources')->find($NoteElement->ressource_id);
             
             }
 
 
             $Resource->setNote($Note);
-            $Resource->setCreator($user);
+            $Resource->setCreator($this->user);
 
-            $Resource->setTmpId(str_replace("TmpResourceId-","",$datas->Resource->guid));
+            $Resource->setTmpId(str_replace("tmp","",$NoteElement->ressource_id));
             
-            $ndtR = new \Datetime($datas->Resource->update);
-            $Resource->setUpdateAPP($ndtR);
+            //$ndtR = new \Datetime($datas->Resource->update);
+            //$Resource->setUpdateAPP($ndtR);
 
-            $em->persist($Resource);
-            $em->flush();
+            $this->em->persist($Resource);
+            $this->em->flush();
             //
 
 
-
+            return true;
 
 
 
