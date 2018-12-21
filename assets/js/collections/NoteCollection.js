@@ -83,8 +83,7 @@ export default class NoteCollection {
 						    UNIQUE ( note_id,
                    			    	 ressource_id,
                    			         item_id,
-                   			         item_type,
-                   			         state
+                   			         item_type
                    			       )
                    			ON CONFLICT REPLACE
 
