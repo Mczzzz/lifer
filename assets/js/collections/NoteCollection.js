@@ -40,7 +40,7 @@ export default class NoteCollection {
 												   item_type,
 												   item_text
 			                                      )
-			                   values (STRFTIME('%Y%m%d%H%M%f', 'NOW'),
+			                   values (date('YYYY-MM-DD HH:MM:SS.SSS'),
 			                          "LOCAL",
 			                          "`+data.NoteId+`",
 			                          "`+data.NoteTitle+`",
@@ -67,7 +67,7 @@ export default class NoteCollection {
 		let TblNote = {};
 		TblNote.name = "Notes";
 		TblNote.db = "syncData";
-		TblNote.create = `CREATE TABLE IF NOT EXISTS `+TblNote.name+` (timestamp FLOAT,
+		TblNote.create = `CREATE TABLE IF NOT EXISTS `+TblNote.name+` (timestamp,
 																	   status,
 																	   note_id,
 																	   note_title,
