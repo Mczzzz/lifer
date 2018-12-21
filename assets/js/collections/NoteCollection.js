@@ -25,7 +25,9 @@ export default class NoteCollection {
 	}
 
 
-	store(){
+	store(data){
+
+		console.log(data);
 
 		this.webSQL.playQuery('syncData',
 			                  `insert into Notes (timestamp,status)
