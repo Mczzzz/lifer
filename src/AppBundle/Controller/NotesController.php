@@ -257,14 +257,18 @@ class NotesController extends Controller
 
                 $ItemList = $this->em->getRepository('AppBundle:Items')->findBy(array('tmpId' => $NoteElement->item_id));
 
+
+
                 if(!$ItemList){
 
+                    die("Item not found");
                         $Item = new Items();
                         $Item->setCreator($this->user);
                         $Item->setTmpId($NoteElement->item_id);
 
                  }else{
-     
+                    die("Load FROM Item");
+
                     $Item = $ItemList[0];
      
                  }
