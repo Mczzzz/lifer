@@ -277,7 +277,7 @@ class NotesController extends Controller
             }
 
 
-            $Item->setResource($Note);
+            $Item->setResource($Resource);
             $Item->setCreator($this->user);
 
             $Item->setTmpId(str_replace("tmp","",$NoteElement->ressource_id));
