@@ -284,7 +284,7 @@ class NotesController extends Controller
             $Item->setResource($Resource);
             $Item->setCreator($this->user);
 
-            $Item->setTmpId($NoteElement->ressource_id);
+            $Item->setTmpId($NoteElement->item_id);
             
             //$ndtR = new \Datetime($datas->Resource->update);
             //$Resource->setUpdateAPP($ndtR);
