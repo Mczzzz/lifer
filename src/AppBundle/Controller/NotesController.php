@@ -255,9 +255,11 @@ class NotesController extends Controller
 
             }elseif(substr($NoteElement->item_id,0,3) == "tmp"){
 
+                var_dump($NoteElement->item_id);
                 $ItemList = $this->em->getRepository('AppBundle:Items')->findBy(array('tmpId' => $NoteElement->item_id));
 
-
+                var_dump($ItemList);
+                die();
 
                 if(!$ItemList){
 
