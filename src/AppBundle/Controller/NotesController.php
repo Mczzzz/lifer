@@ -261,7 +261,7 @@ class NotesController extends Controller
 
                 if(!$ItemList){
 
-                    die("Item not found");
+                
                         $Item = new Items();
                         $Item->setCreator($this->user);
                         $Item->setTmpId($NoteElement->item_id);
