@@ -232,7 +232,7 @@ class NotesController extends Controller
             $Resource->setNote($Note);
             $Resource->setCreator($this->user);
 
-            $Resource->setTmpId(str_replace("tmp","",$NoteElement->ressource_id));
+            $Resource->setTmpId($NoteElement->ressource_id);
             
             //$ndtR = new \Datetime($datas->Resource->update);
             //$Resource->setUpdateAPP($ndtR);
@@ -280,7 +280,7 @@ class NotesController extends Controller
             $Item->setResource($Resource);
             $Item->setCreator($this->user);
 
-            $Item->setTmpId(str_replace("tmp","",$NoteElement->ressource_id));
+            $Item->setTmpId($NoteElement->ressource_id);
             
             //$ndtR = new \Datetime($datas->Resource->update);
             //$Resource->setUpdateAPP($ndtR);
