@@ -106,15 +106,32 @@ class NotesController extends Controller
         $this->em = $this->getDoctrine()->getManager();
 
 
+        $response = new \stdClass();
+
         foreach ($datas as $NoteElement) {
 
-            $this->storeElement($NoteElement);
+        $StoreResult = $this->storeElement($NoteElement);
+
+
+            $response->Note        = new \stdClass();
+            $response->Note->id    = $StoreResult["Note"]->getId();
+            $response->Note->tmpId = $NoteElement->note_id;
+
+            $response->Resource        = new \stdClass();
+            $response->Resource->id    = $StoreResult["Resource"]->getId();
+            $response->Resource->tmpId = $NoteElement->ressource_id;
+
+            $response->Item = new \stdClass();
+            $response->Item->id = $StoreResult["Item"]->getId();
+            $response->Item->tmpId = $NoteElement->item_id;
+
 
         }
 
 
             $res->error = "0";
             $res->msg   = "SUCCESS";
+            $res->data  = $response;
 
 
             return new response(json_encode($res));
@@ -137,10 +154,33 @@ class NotesController extends Controller
 
     private function storeElement($NoteElement){
 
+        $arrayResponse = array();
+
+        $MyNote = $this->storeNote($NoteElement);
+
+        $arrayResponse["Note"] = $MyNote;
+
+        $MyResource = $this->storeResource($NoteElement, $MyNote);
+
+        $arrayResponse["Resource"] = $MyResource;
+
+
+        $MyItem = $this->storeItem($NoteElement,$MyResource);
+     
+        $arrayResponse["Item"] = $MyItem;
+
+        return $arrayResponse;      
+
+    }
 
 
 
-         if($NoteElement->note_id === false){
+
+
+    private function storeNote($NoteElement){
+
+
+            if($NoteElement->note_id === false){
 
             $Note = new Notes();
             $Note->setCreator($this->user);
@@ -188,18 +228,20 @@ class NotesController extends Controller
              $this->em->persist($Note);
              $this->em->flush();
 
-            //log de la partie Note
-            $res->datas = new \stdClass();
-            $res->datas->Note = new \stdClass();
-            $res->datas->Note->id = $Note->getId();
+
+             return $Note;
+
+
+    }
 
 
 
 
 
+    private function storeResource($NoteElement){
 
 
-            //j'attaque le traitement de la ressource
+         //j'attaque le traitement de la ressource
             if($NoteElement->ressource_id === false){
 
                 $Resource = new Resources();
@@ -239,15 +281,19 @@ class NotesController extends Controller
 
             $this->em->persist($Resource);
             $this->em->flush();
-            //
-
-
-          
 
 
 
+            return $Resource;
 
-            //j'attaque le traitement de la ressource
+
+    }
+
+
+    private function storeItem($NoteElement){
+
+
+                    //j'attaque le traitement de la ressource
             if($NoteElement->item_id === false){
 
                 $Item = new Items();
@@ -286,8 +332,7 @@ class NotesController extends Controller
 
             $Item->setTmpId($NoteElement->item_id);
             
-            //$ndtR = new \Datetime($datas->Resource->update);
-            //$Resource->setUpdateAPP($ndtR);
+
              if($NoteElement->item_type == "text"){
 
                 $Item->setText($NoteElement->item_text);
@@ -296,36 +341,14 @@ class NotesController extends Controller
 
             $ndtR = new \Datetime('now');
             $Item->setUpdateAPP($ndtR);
-/*            $this->em->persist($Resource);
-            $this->em->flush();*/
-
-            
-
-
-
-
-           
-
-
-            //$majResource = new \Datetime($datas->Resource->update);
-
-
-            //$Resource->setUpdateAPP($NoteElement->text);
 
 
             $this->em->persist($Item);
             $this->em->flush();
 
 
-
-
-
-
-
+            return $Item;
     }
-
-
-
 
 }
 
