@@ -57,11 +57,11 @@ class LoaderImage {
 
 	}
 
-	this.consoleSize(usedBytes, grantedBytes){
+	consoleSize(usedBytes, grantedBytes){
 		console.log('we are using ', usedBytes, ' of ', grantedBytes, 'bytes');
 	}
 
-	this.consoleSizeError(e){
+	consoleSizeError(e){
 		console.log('Error', e);
 	}
 
