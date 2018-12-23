@@ -124,7 +124,7 @@ class NotesController extends Controller
             $response->Item = new \stdClass();
             $response->Item->id = $StoreResult["Item"]->getId();
             $response->Item->tmpId = $NoteElement->item_id;
-
+            $response->timestamp = $NoteElement->timestamp;
 
         }
 
