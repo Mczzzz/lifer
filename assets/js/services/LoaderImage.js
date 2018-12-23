@@ -27,24 +27,19 @@ class LoaderImage {
 	loadPict(pict,target){
 
 
-		navigator.webkitTemporaryStorage.queryUsageAndQuota (
-		    function(usedBytes, grantedBytes) {
-		        console.log('we are using ', usedBytes, ' of ', grantedBytes, 'bytes');
-		    },
-		    function(e) { console.log('Error', e);  }
-		);
+		navigator.webkitTemporaryStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
 
 
 		// Request Quota (only for File System API) 
-		let requestedBytes = 1024*1024*10; // 10MB
+/*		let requestedBytes = 1024*1024*10; // 10MB
 
 		navigator.webkitPersistentStorage.requestQuota (
 		    requestedBytes, function(grantedBytes) {
 		        window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
 
-		    }, function(e) { console.log('Error', e); }
+		    , this.consoleSizeError}
 		);
-		});
+		});*/
 
 
 
@@ -61,6 +56,15 @@ class LoaderImage {
 
 
 	}
+
+	this.consoleSize(usedBytes, grantedBytes){
+		console.log('we are using ', usedBytes, ' of ', grantedBytes, 'bytes');
+	}
+
+	this.consoleSizeError(e){
+		console.log('Error', e);
+	}
+
 
 	getOrientation(pict,target){
 
