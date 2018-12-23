@@ -4,8 +4,8 @@ export default class BackendComm {
 
 
 
-	ajaxSend(VERB,url,dispatchResponseTo=false,dataCallback = false,dataSend = false){
-
+//	ajaxSend(VERB,url,dispatchResponseTo=false,dataCallback = false,dataSend = false){
+	ajaxSend(VERB,url,callBackObj=false,callBackMethod = false,dataSend = false){
 //		console.log("on passe bien dans ajaxSend");		
 
 			let params = this._BuildParams(VERB,dataSend);
@@ -17,13 +17,17 @@ export default class BackendComm {
 
 			}).then(function(json){
 
-//				console.log(json);
+
+				console.log("return from ajax");
+				console.log(json);
 				
-				if(dispatchResponseTo !== false){
+				if(callBackObj !== false && callBackMethod !== false){
 
-					for (let eventToDispatch of dispatchResponseTo){
 
-						if(eventToDispatch.This == 'Lifer' && eventToDispatch.method == 'addData'){
+					callBackObj[callBackMethod](json);
+
+
+/*						if(eventToDispatch.This == 'Lifer' && eventToDispatch.method == 'addData'){
 
 							//dispatchResponseTo.push({ "This" : "Lifer" , "method" : "addData", "path" : "User"});
 							let formatArrayResponse = [json.data];
@@ -36,11 +40,10 @@ export default class BackendComm {
 
 							Myclass[eventToDispatch.method](json,dataCallback);*/
 
-						}
+					
 
 
 
-					}
 
 						
 
