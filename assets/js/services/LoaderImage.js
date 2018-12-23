@@ -35,8 +35,7 @@ class LoaderImage {
 
 		navigator.webkitPersistentStorage.requestQuota (
 		    requestedBytes, (grantedBytes) => this.requestUpsize(grantedBytes), (e) => this.consoleSizeError(e) );
-		);
-		});
+
 
 
 
