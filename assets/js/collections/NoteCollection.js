@@ -261,7 +261,8 @@ export default class NoteCollection {
 						  `;
 
 		this.webSQL.playQuery('syncData',qryTestLine);
-		//je sup
+
+		//il faut mettre a jour les id
 
 	}
 

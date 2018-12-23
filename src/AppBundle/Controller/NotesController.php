@@ -238,7 +238,7 @@ class NotesController extends Controller
 
 
 
-    private function storeResource($NoteElement){
+    private function storeResource($NoteElement,$Note){
 
 
          //j'attaque le traitement de la ressource
@@ -290,7 +290,7 @@ class NotesController extends Controller
     }
 
 
-    private function storeItem($NoteElement){
+    private function storeItem($NoteElement,$Resource){
 
 
                     //j'attaque le traitement de la ressource
