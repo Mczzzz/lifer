@@ -26,6 +26,30 @@ class LoaderImage {
 
 	loadPict(pict,target){
 
+
+		navigator.webkitTemporaryStorage.queryUsageAndQuota (
+		    function(usedBytes, grantedBytes) {
+		        console.log('we are using ', usedBytes, ' of ', grantedBytes, 'bytes');
+		    },
+		    function(e) { console.log('Error', e);  }
+		);
+
+
+		// Request Quota (only for File System API) 
+		let requestedBytes = 1024*1024*10; // 10MB
+
+		navigator.webkitPersistentStorage.requestQuota (
+		    requestedBytes, function(grantedBytes) {
+		        window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
+
+		    }, function(e) { console.log('Error', e); }
+		);
+		});
+
+
+
+
+
 		localStorage.setItem("imgData"+Math.floor(Math.random() * Math.floor(1000)), pict);
 
 		this.imgObj = new Image();
