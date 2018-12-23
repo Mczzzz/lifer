@@ -27,7 +27,7 @@ class LoaderImage {
 	loadPict(pict,target){
 
 
-		navigator.webkitTemporaryStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
+		navigator.webkitPersistentStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
 
 
 		// Request Quota (only for File System API) 
