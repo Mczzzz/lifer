@@ -244,7 +244,23 @@ export default class NoteCollection {
 		           AND  item_id = "`+ItemId+`" 
 		           `;
 		this.webSQL.playQuery('syncUp',qry);
+
 		//je regarde si en base syncdata je retrouve ma ligne
+		let qryTestLine = `UPDATE Notes
+                           SET note_id =  "`+datas.data.Note.id+`"   ,
+							ressource_id =  "`+datas.data.Resource.id+`"  ,
+							item_id =  "`+datas.data.Item.id+`"   ,
+							status = "SYNC",
+							state  = "CLEAN" 
+ 
+						   WHERE timestamp = "`+datas.data.timestamp+`" 
+				           AND  note_id = "`+NoteId+`" 
+				           AND  ressource_id = "`+ResourceId+`" 
+				           AND  item_id = "`+ItemId+`" 
+				           AND STATE = "PREUP"
+						  `;
+
+		this.webSQL.playQuery('syncData',qryTestLine);
 		//je sup
 
 	}
