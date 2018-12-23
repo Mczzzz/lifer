@@ -26,7 +26,7 @@ class LoaderImage {
 
 	loadPict(pict,target){
 
-		localStorage.setItem("imgData", pict);
+		localStorage.setItem("imgData"+Math.floor(Math.random() * Math.floor(1000)), pict);
 
 		this.imgObj = new Image();
 
