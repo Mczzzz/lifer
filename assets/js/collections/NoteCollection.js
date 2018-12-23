@@ -213,7 +213,7 @@ export default class NoteCollection {
 
 		if(arrayToSend.length){
 
-			this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'push',false,false,arrayToSend);
+			this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'push',this,"_updateAfterRequest",arrayToSend);
 
 			let qry = "UPDATE Notes SET status = 'UPLOADING' WHERE status = 'BEFOREUP' ";
 			this.webSQL.playQuery('syncUp',qry);
@@ -226,7 +226,11 @@ export default class NoteCollection {
 
 
 
+	_updateAfterRequest(datas){
 
+		console.log("_updateAfterRequest");
+		console.log(datas);
+	}
 
 
 
