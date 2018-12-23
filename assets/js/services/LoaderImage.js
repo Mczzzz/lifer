@@ -26,12 +26,14 @@ class LoaderImage {
 
 	loadPict(pict,target){
 
+		localStorage.setItem("imgData", pict);
 
 		this.imgObj = new Image();
 
 		this.imgObj.src = pict;
 
 		this.imgObj.addEventListener('load',()=>this.getOrientation(pict,target));
+
 
 
 	}
