@@ -230,6 +230,23 @@ export default class NoteCollection {
 
 		console.log("_updateAfterRequest");
 		console.log(datas);
+
+		//on regarde si on a du temporaire pour les id
+		let NoteId = (datas.data.Note.tmpId) ? datas.data.Note.tmpId : datas.data.Note.id;
+		let ResourceId = (datas.data.Resource.tmpId) ? datas.data.Resource.tmpId : datas.data.Resource.id;
+		let ItemId = (datas.data.Item.tmpId) ? datas.data.Note.Item.tmpId : datas.data.Item.id;
+
+		//je supprime la ligne de sync up
+		let qry = `DELETE FROM Notes 
+		           WHERE timestamp = "`+datas.data.timestamp+`"
+		           AND  note_id = "`+NoteId+`" 
+		           AND  ressource_id = "`+ResourceId+`" 
+		           AND  item_id = "`+ItemId+`" 
+		           `;
+		this.webSQL.playQuery('syncUp',qry);
+		//je regarde si en base syncdata je retrouve ma ligne
+		//je sup
+
 	}
 
 
