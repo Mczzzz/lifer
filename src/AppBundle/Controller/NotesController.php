@@ -336,7 +336,7 @@ class NotesController extends Controller
              if($NoteElement->item_type == "text"){
 
                 //résupération du type
-                $ItemType = $this->em->getRepository('AppBundle:ItemsTypes')->findOneBy(array('Name' => $NoteElement->item_type));
+                $ItemType = $this->em->getRepository('AppBundle:ItemsTypes')->findOneBy(array('name' => $NoteElement->item_type));
 
                 $Item->setType($ItemType);
                 $Item->setText($NoteElement->item_text);
