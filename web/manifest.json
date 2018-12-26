@@ -14,5 +14,6 @@
 "permissions": [
           "storage"
         ],
-"start_url" : "app.php"
+"start_url" : "app.php",
+"scope": "/build/"
 }
