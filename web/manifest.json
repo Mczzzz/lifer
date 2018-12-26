@@ -3,7 +3,7 @@
 "name": "Lifer App",
 "icons": [
   {
-    "src": "",
+    "src": "/assets/logo/lifer_192x192.png",
     "type": "image/png",
     "sizes": "192x192"
   }
