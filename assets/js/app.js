@@ -40,11 +40,11 @@ window.addEventListener('beforeinstallprompt', (e) => {
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
   // Update UI notify the user they can add to home screen
-  btnAdd.style.display = 'block';
+ // btnAdd.style.display = 'block';
 });
 
 
-
+/*
 btnAdd.addEventListener('click', (e) => {
   // hide our user interface that shows our A2HS button
   btnAdd.style.display = 'none';
@@ -61,7 +61,7 @@ btnAdd.addEventListener('click', (e) => {
       deferredPrompt = null;
     });
 });
-
+*/
 //console.log(window.innerHeight);
 
 
