@@ -13,5 +13,6 @@
 "theme_color": "aliceblue",
 "permissions": [
           "storage"
-        ]
+        ],
+"start_url" : "/home"
 }
