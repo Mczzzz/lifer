@@ -27,21 +27,23 @@ class LoaderImage {
 	loadPict(pict,target){
 
 
-		navigator.webkitPersistentStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
+		/*navigator.webkitPersistentStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
 
 
 		// Request Quota (only for File System API) 
 		var requestedBytes = 1024*1024*10; // 10MB
 
 		navigator.webkitPersistentStorage.requestQuota (
-		    requestedBytes, (grantedBytes) => this.requestUpsize(grantedBytes), (e) => this.consoleSizeError(e) );
+		    requestedBytes, (grantedBytes) => this.requestUpsize(grantedBytes), (e) => this.consoleSizeError(e) );*/
+
+		chrome.storage.sync.set({"MyPict": pict}, function() {
+		          console.log('Value is set to persistant storage');
+		        });
 
 
 
 
-
-
-		localStorage.setItem("imgData"+Math.floor(Math.random() * Math.floor(1000)), pict);
+		//localStorage.setItem("imgData"+Math.floor(Math.random() * Math.floor(1000)), pict);
 
 		this.imgObj = new Image();
 
