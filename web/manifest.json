@@ -14,5 +14,5 @@
 "permissions": [
           "storage"
         ],
-"start_url" : "/home"
+"start_url" : "."
 }
