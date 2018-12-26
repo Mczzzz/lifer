@@ -19,6 +19,14 @@ let css = document.createElement("style");
 		document.head.appendChild(css);
 
 
+//WEB WORKER
+let worker = new Worker('build/ww.js');
+console.log(worker);
+worker.addEventListener('message', function(e) {
+  console.log('Worker said: ', e.data);
+}, false);
+
+
 
 
 let deferredPrompt;
