@@ -40,7 +40,7 @@ window.addEventListener('beforeinstallprompt', (ev) => {
   } catch (e) {}
   e.preventDefault();
   e.prompt();
-  await e.userChoice; // let's say 5 seconds later this resolves... 
+  e.userChoice; // let's say 5 seconds later this resolves... 
 });
 
 
