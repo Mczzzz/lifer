@@ -19,15 +19,17 @@ let css = document.createElement("style");
 		document.head.appendChild(css);
 
 
-//WEB WORKER
-let worker = new Worker('build/ww.js');
-console.log(worker);
-worker.addEventListener('message', function(e) {
-  console.log('Worker said: ', e.data);
-}, false);
-
-worker.postMessage('Hello World'); // Send data to our worker.
-console.log(worker);
+if ('serviceWorker' in navigator) {
+  // Register a service worker hosted at the root of the
+  // site using the default scope.
+  navigator.serviceWorker.register('/build/ww.js').then(function(registration) {
+    console.log('Service worker registration succeeded:', registration);
+  }, /*catch*/ function(error) {
+    console.log('Service worker registration failed:', error);
+  });
+} else {
+  console.log('Service workers are not supported.');
+}
 
 
 
