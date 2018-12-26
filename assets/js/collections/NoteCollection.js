@@ -27,7 +27,7 @@ export default class NoteCollection {
 
 	store(data){
 
-		console.log(data);
+//		console.log(data);
 
 		this.webSQL.playQuery('syncData',
 			                  `insert into Notes ( timestamp,
@@ -197,13 +197,13 @@ export default class NoteCollection {
 
 	_createRequestToServer(results){
 
-		console.log('IN _createRequestToServer !!!')
+		//console.log('IN _createRequestToServer !!!')
 
 		let arrayToSend = [];
 		let len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
 
-		  	console.log(results.rows.item(i));
+		 // 	console.log(results.rows.item(i));
 
 		  	arrayToSend.push(results.rows.item(i));
 
@@ -227,9 +227,9 @@ export default class NoteCollection {
 
 
 	_updateAfterRequest(datas){
-
+/*
 		console.log("_updateAfterRequest");
-		console.log(datas);
+		console.log(datas);*/
 
 		//on regarde si on a du temporaire pour les id
 		let NoteId = (datas.data.Note.tmpId) ? datas.data.Note.tmpId : datas.data.Note.id;
