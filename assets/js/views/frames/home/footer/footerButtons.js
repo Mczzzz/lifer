@@ -10,7 +10,31 @@ export default class FooterButtons extends superViews{
 		super( MyClass , path);
 
 
+
+
+
+//		this.deferredPrompt;
+
+		window.addEventListener('beforeinstallprompt', function (e) {
+		  // Prevent Chrome 67 and earlier from automatically showing the prompt
+		  e.preventDefault();
+		  // Stash the event so it can be triggered later.
+		 this.deferredPrompt = e;
+
+		//  this.showAddToHomeScreen();
+
+		});
+
+
+
+
+
+
+
+
 		this.init();
+
+
 		
 	}
 
@@ -61,7 +85,7 @@ export default class FooterButtons extends superViews{
 					FooterObjectButton.setStylePicto("color","green");
 					FooterObjectButton.setStylePicto("alignItems","center");
 
-					FooterObjectButton.getContainer().addEventListener("click",()=>this.goToObject());
+					FooterObjectButton.getContainer().addEventListener("click",()=>this.addToHomeScreen());
 
 
 	}
@@ -81,6 +105,49 @@ export default class FooterButtons extends superViews{
 		window.dispatchEvent(LinkEvent);
 
 	}
+
+
+
+
+
+
+
+/*	showAddToHomeScreen() {
+
+	  let a2hsBtn = document.querySelector(".ad2hs-prompt");
+
+	  a2hsBtn.style.display = "block";
+
+	  a2hsBtn.addEventListener("click", addToHomeScreen);
+
+	}*/
+
+
+
+
+	addToHomeScreen() { 
+//	var a2hsBtn = document.querySelector(".ad2hs-prompt");  // hide our user interface that shows our A2HS button
+//  a2hsBtn.style.display = 'none';  // Show the prompt
+  this.deferredPrompt.prompt();  // Wait for the user to respond to the prompt
+  this.deferredPrompt.userChoice
+    .then(function(choiceResult){
+
+  if (choiceResult.outcome === 'accepted') {
+    console.log('User accepted the A2HS prompt');
+  } else {
+    console.log('User dismissed the A2HS prompt');
+  }
+
+  this.deferredPrompt = null;
+
+});}
+
+
+
+
+
+
+
 
 
 }
