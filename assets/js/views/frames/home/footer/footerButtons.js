@@ -23,7 +23,7 @@ export default class FooterButtons extends superViews{
 		 console.log("IN DEFFFFFEREDD TO PROMPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
 		//  this.showAddToHomeScreen();
 
-		setTimeout(()=>{   e.prompt(); }, 1000);
+		setTimeout(()=>this.prompt(), 1000);
 
 
 
@@ -49,6 +49,14 @@ window.addEventListener("beforeinstallprompt", function(e) {
 
 
 		
+	}
+
+
+	prompt(){
+
+		console.log('in prompt');
+		this.deferredPrompt.prompt();
+
 	}
 
 
