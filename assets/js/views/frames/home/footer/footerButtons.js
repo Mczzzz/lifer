@@ -15,7 +15,7 @@ export default class FooterButtons extends superViews{
 
 //		this.deferredPrompt;
 
-/*		window.addEventListener('beforeinstallprompt', function (e) {
+		window.addEventListener('beforeinstallprompt', function (e) {
 		  // Prevent Chrome 67 and earlier from automatically showing the prompt
 		  e.preventDefault();
 		  // Stash the event so it can be triggered later.
@@ -23,10 +23,17 @@ export default class FooterButtons extends superViews{
 		 console.log("IN DEFFFFFEREDD TO PROMPTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
 		//  this.showAddToHomeScreen();
 
+		setTimeout()=>{
+         e.prompt(); // Throws, because already consumed. 
+     }, 10000); // 10 seconds late
+
 		});
-*/
 
 
+
+ 
+
+/*
 window.addEventListener("beforeinstallprompt", function(e) { 
   // log the platforms provided as options in an install prompt 
   console.log(e.platforms); // e.g., ["web", "android", "windows"] 
@@ -36,7 +43,7 @@ window.addEventListener("beforeinstallprompt", function(e) {
 });
 
 
-
+*/
 
 		this.init();
 
