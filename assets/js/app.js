@@ -34,16 +34,16 @@ if ('serviceWorker' in navigator) {
 
 
 
-window.addEventListener('beforeinstallprompt', (ev) => {
-  try {
-    e.prompt();  // Error: preventDefault not called
-  } catch (e) {}
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
   e.preventDefault();
-  e.prompt();
-  e.userChoice; // let's say 5 seconds later this resolves... 
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  // Update UI notify the user they can add to home screen
+ // btnAdd.style.display = 'block';
 });
-
-
 
 
 /*
