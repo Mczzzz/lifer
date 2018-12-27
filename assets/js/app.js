@@ -34,17 +34,31 @@ if ('serviceWorker' in navigator) {
 
 
 
-let deferredPrompt;
+var deferredPrompt;
 
-window.addEventListener('beforeinstallprompt', (e) => {
+window.addEventListener('beforeinstallprompt', function (e) {
   // Prevent Chrome 67 and earlier from automatically showing the prompt
-  //e.preventDefault();
+  e.preventDefault();
   // Stash the event so it can be triggered later.
   deferredPrompt = e;
-  // Update UI notify the user they can add to home screen
- // btnAdd.style.display = 'block';
- beforeinstallpromptevent.prompt();
+
+  showAddToHomeScreen();
+
 });
+
+//creer le bouton
+
+
+function showAddToHomeScreen() {
+
+  var a2hsBtn = document.querySelector(".ad2hs-prompt");
+
+  a2hsBtn.style.display = "block";
+
+  a2hsBtn.addEventListener("click", addToHomeScreen);
+
+}
+
 
 
 /*
