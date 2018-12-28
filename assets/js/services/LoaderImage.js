@@ -68,7 +68,7 @@ class LoaderImage {
 
 
 		// Request Quota (only for File System API) 
-		var requestedBytes = 1024*1024*10; // 10MB
+		var requestedBytes = 1024*1024*100; // 10MB
 
 		navigator.webkitPersistentStorage.requestQuota (
 		    requestedBytes, (grantedBytes) => this.requestUpsize(grantedBytes), (e) => this.consoleSizeError(e) );
