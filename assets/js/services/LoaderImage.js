@@ -134,7 +134,7 @@ class LoaderImage {
 
 		function onInitFs(localstorage){
 
-		//let that = this;
+
 		function errorHandler(e){
 
 			console.log(e);
@@ -149,7 +149,7 @@ class LoaderImage {
 		function fileW(fileWriter){
 
 
-				console.log('in file writer');
+
 		      fileWriter.onwriteend = function(e) {
 		        console.log('Write completed.');
 		      };
@@ -168,41 +168,14 @@ class LoaderImage {
 			}
 
 
-					console.log('oninitfs');
-		localstorage.root.getFile('image.txt', {create: true}, fileEntry , errorHandler);
+		localstorage.root.getFile('image.jpg', {create: true}, fileEntry , errorHandler);
 
 
 
 		}
 
-		
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		console.log('PICCCT');
-		console.log(this.pict);
 		 window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, this.errorHandler);
-
-
 
 
 	}
