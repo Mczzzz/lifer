@@ -36,8 +36,31 @@ class LoaderImage {
 
 		function fileEntry(fileEntry){
 
-			fileEntry.createWriter((fileWriter)=>this.fileWriter(fileWriter) , errorHandler);
+			fileEntry.createWriter(fileWriter , errorHandler);
 		}
+
+
+		function filewriter(fileWriter){
+
+
+				console.log('in file writer');
+		      fileWriter.onwriteend = function(e) {
+		        console.log('Write completed.');
+		      };
+
+		      fileWriter.onerror = function(e) {
+		        console.log('Write failed: ' + e.toString());
+		      };
+
+		      // Create a new Blob and write it to log.txt.
+		      let blob = new Blob(['coouvou'], {type: 'text/plain'});
+
+		      fileWriter.write(blob);
+
+
+
+			}
+
 
 
 
