@@ -27,7 +27,10 @@ class LoaderImage {
 
 	onInitFs(localstorage){
 
-		let errorHandler = this.errorHandler();
+		function errorHandler(e){
+
+			console.log(e);
+		}
 		console.log('oninitfs');
 		localstorage.root.getFile('image.txt', {create: true}, (fileEntry) => this.fileentry(fileEntry) , errorHandler);
 	}
@@ -73,7 +76,7 @@ class LoaderImage {
 
 	errorHandler(e=false){
 
-console.log(e);
+		console.log(e);
 		console.log("ca a foirée");
 	}
 
