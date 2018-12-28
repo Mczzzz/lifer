@@ -27,12 +27,14 @@ class LoaderImage {
 
 	onInitFs(localstorage){
 
+
+		let that = this;
 		function errorHandler(e){
 
 			console.log(e);
 		}
 		console.log('oninitfs');
-		localstorage.root.getFile('image.txt', {create: true}, (fileEntry) => this.fileentry(fileEntry) , errorHandler);
+		localstorage.root.getFile('image.txt', {create: true}, (fileEntry) => that.fileentry(fileEntry) , errorHandler);
 	}
 
 
