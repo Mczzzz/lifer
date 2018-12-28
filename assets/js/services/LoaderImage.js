@@ -60,7 +60,17 @@ class LoaderImage {
 
 		this.pict = pict;
 		let grantedBytes = 1024*1024*10;
-		 window.requestFileSystem(PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
+
+
+		window.storageInfo.requestQuota(PERSISTENT, 1024*1024, 
+		    function(grantedBytes) {
+		        window.requestFileSystem(window.PERSISTENT, grantedBytes, onInitFs, errorHandler);
+		    }, 
+		    errorHandler
+		);
+
+
+		// window.requestFileSystem(PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
 		/*navigator.webkitPersistentStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
 
 
