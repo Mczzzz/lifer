@@ -132,9 +132,9 @@ class LoaderImage {
 
 		let pict = this.pict;
 
-		function fileEntry(){
+		function onInitFs(localstorage){
 
-		let that = this;
+		//let that = this;
 		function errorHandler(e){
 
 			console.log(e);
