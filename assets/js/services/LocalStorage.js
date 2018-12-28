@@ -46,13 +46,12 @@ export default class LocalStorage {
 
 	//	let pict = this.pict;
 	
-	let picture = pict;
+
 
 		function onInitFs(localstorage){
 
 
 
-			let MyPict = picture;
 
 			function errorHandler(e){
 
@@ -77,11 +76,9 @@ export default class LocalStorage {
 			        console.log('Write failed: ' + e.toString());
 			      };
 
-			      console.log('MyPict !!!!!!!!!!!!!!!!');
-			      console.log(MyPict);
 
 			      // Create a new Blob and write it to log.txt.
-			      let blob = new Blob([MyPict.data.pict], {type: 'image/jpg'});
+			      let blob = new Blob([pict], {type: 'image/jpg'});
 
 			      fileWriter.write(blob);
 
