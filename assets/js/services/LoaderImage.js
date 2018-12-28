@@ -44,9 +44,9 @@ class LoaderImage {
 
       fileWriter.write(blob);
 
-    }, this.errorHandler);
+    }, this['errorHandler']());
 
-  }, this.errorHandler);
+  }, this['errorHandler']());
 	}
 
 	errorHandler(){
