@@ -37,7 +37,7 @@ class LoaderImage {
 
 
     // Create a FileWriter object for our FileEntry (log.txt).
-    fileEntry.createWriter((fileWriter)=>this.fileWriter(fileWriter) , this.errorHandler());
+    fileEntry.createWriter((fileWriter)=>this.fileWriter(fileWriter) , this.errorHandler);
 
   			
 
@@ -69,8 +69,9 @@ class LoaderImage {
 
 
 
-	errorHandler(){
+	errorHandler(e){
 
+console.log(e);
 		console.log("ca a foirée");
 	}
 
@@ -90,8 +91,7 @@ class LoaderImage {
 		// Request Quota (only for File System API) 
 		var requestedBytes = 1024*1024*100; // 10MB
 
-		navigator.webkitPersistentStorage.requestQuota (
-		    requestedBytes, (grantedBytes) => this.requestUpsize(grantedBytes), (e) => this.consoleSizeError(e) );
+		navigator.webkitPersistentStorage.requestQuota ( requestedBytes, (grantedBytes) => this.requestUpsize(grantedBytes), (e) => this.consoleSizeError(e) );
 
 	
 		 //window.requestFileSystem(window.PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
