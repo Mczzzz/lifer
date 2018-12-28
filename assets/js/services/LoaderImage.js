@@ -74,7 +74,7 @@ class LoaderImage {
 		    requestedBytes, (grantedBytes) => this.requestUpsize(grantedBytes), (e) => this.consoleSizeError(e) );
 
 	
-		 window.requestFileSystem(window.PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
+		 //window.requestFileSystem(window.PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
 
 
 
@@ -100,7 +100,7 @@ class LoaderImage {
 	}
 
 	requestUpsize(grantedBytes){
-		 window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
+		 window.requestFileSystem(PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
 	}
 
 
