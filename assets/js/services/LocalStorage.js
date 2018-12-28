@@ -77,6 +77,9 @@ export default class LocalStorage {
 			        console.log('Write failed: ' + e.toString());
 			      };
 
+			      console.log('MyPict !!!!!!!!!!!!!!!!');
+			      console.log(MyPict);
+
 			      // Create a new Blob and write it to log.txt.
 			      let blob = new Blob([MyPict.data.pict], {type: 'image/jpg'});
 
