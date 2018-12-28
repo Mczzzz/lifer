@@ -45,7 +45,7 @@ export default class LocalStorage {
 
 
 	//	let pict = this.pict;
-
+	console.log(pict);
 
 		function onInitFs(localstorage){
 
