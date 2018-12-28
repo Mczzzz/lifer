@@ -100,7 +100,7 @@ class LoaderImage {
 	}
 
 	requestUpsize(grantedBytes){
-		 window.requestFileSystem(PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
+		 window.webkitRequestFileSystem(PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
 	}
 
 
