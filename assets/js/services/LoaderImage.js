@@ -168,7 +168,8 @@ class LoaderImage {
 			}
 
 
-
+					console.log('oninitfs');
+		localstorage.root.getFile('image.txt', {create: true}, fileEntry , errorHandler);
 
 
 
@@ -179,8 +180,7 @@ class LoaderImage {
 
 
 
-		console.log('oninitfs');
-		localstorage.root.getFile('image.txt', {create: true}, fileEntry , errorHandler);
+
 
 
 
