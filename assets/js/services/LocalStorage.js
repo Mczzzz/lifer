@@ -50,45 +50,48 @@ export default class LocalStorage {
 
 		function onInitFs(localstorage){
 
-console.log(picture);
-		function errorHandler(e){
-
-			console.log(e);
-		}
-
-		function fileEntry(fileEntry){
-
-			fileEntry.createWriter(fileW , errorHandler);
-		}
 
 
-		function fileW(fileWriter){
+			let MyPict = picture;
+
+			function errorHandler(e){
+
+				console.log(e);
+			}
+
+			function fileEntry(fileEntry){
+
+				fileEntry.createWriter(fileW , errorHandler);
+			}
+
+
+			function fileW(fileWriter){
 
 
 
-		      fileWriter.onwriteend = function(e) {
-		        console.log('Write completed.');
-		      };
+			      fileWriter.onwriteend = function(e) {
+			        console.log('Write completed.');
+			      };
 
-		      fileWriter.onerror = function(e) {
-		        console.log('Write failed: ' + e.toString());
-		      };
+			      fileWriter.onerror = function(e) {
+			        console.log('Write failed: ' + e.toString());
+			      };
 
-		      // Create a new Blob and write it to log.txt.
-		      let blob = new Blob([picture.data.pict], {type: 'image/jpg'});
+			      // Create a new Blob and write it to log.txt.
+			      let blob = new Blob([MyPict.data.pict], {type: 'image/jpg'});
 
-		      fileWriter.write(blob);
+			      fileWriter.write(blob);
+
+
+
+				}
+
+
+			localstorage.root.getFile(name, {create: true}, fileEntry , errorHandler);
 
 
 
 			}
-
-
-		localstorage.root.getFile(name, {create: true}, fileEntry , errorHandler);
-
-
-
-		}
 
 
 		 window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, this.errorHandler);
