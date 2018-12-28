@@ -44,17 +44,23 @@ class LoaderImage {
 
       fileWriter.write(blob);
 
-    }, errorHandler);
+    }, this.errorHandler);
 
-  }, errorHandler);
+  }, this.errorHandler);
 	}
+
+	errorHandler(){
+
+		console.log("ca a foirée");
+	}
+
 
 
 	loadPict(pict,target){
 
 		this.pict = pict;
 		let grantedBytes = 1024*1024*10;
-		 window.requestFileSystem(PERSISTENT, grantedBytes, this.onInitFs, errorHandler);
+		 window.requestFileSystem(PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
 		/*navigator.webkitPersistentStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
 
 
