@@ -46,8 +46,9 @@ class LoaderImage {
 
     }, this.errorHandler());
 
-  }, coucou);
+  			}, this.errorHandler());
 	}
+
 
 	errorHandler(){
 
