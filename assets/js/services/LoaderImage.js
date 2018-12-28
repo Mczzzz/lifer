@@ -62,26 +62,19 @@ class LoaderImage {
 		let grantedBytes = 1024*1024*10;
 
 
-		navigator.webkitPersistentStorage.requestQuota(PERSISTENT, 1024*1024, 
-		    function(grantedBytes) {
-		        window.requestFileSystem(window.PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
-		    }, 
-		    this.errorHandler
-		);
-
 
 		// window.requestFileSystem(PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
-		/*navigator.webkitPersistentStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
+		navigator.webkitPersistentStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
 
 
 		// Request Quota (only for File System API) 
 		var requestedBytes = 1024*1024*10; // 10MB
 
 		navigator.webkitPersistentStorage.requestQuota (
-		    requestedBytes, (grantedBytes) => this.requestUpsize(grantedBytes), (e) => this.consoleSizeError(e) );*/
+		    requestedBytes, (grantedBytes) => this.requestUpsize(grantedBytes), (e) => this.consoleSizeError(e) );
 
 	
-
+		 window.requestFileSystem(window.PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
 
 
 
