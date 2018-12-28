@@ -25,7 +25,7 @@ class LoaderImage {
 	}
 
 
-	onInitFs(){
+	onInitFs(localstorage){
 		localstorage.root.getFile('image.jpg', {create: true}, function(fileEntry) {
 
     // Create a FileWriter object for our FileEntry (log.txt).
@@ -40,7 +40,7 @@ class LoaderImage {
       };
 
       // Create a new Blob and write it to log.txt.
-      var blob = new Blob([pict], {type: 'image/jpg'});
+      var blob = new Blob([this.pict], {type: 'image/jpg'});
 
       fileWriter.write(blob);
 
@@ -52,8 +52,9 @@ class LoaderImage {
 
 	loadPict(pict,target){
 
+		this.pict = pict;
 		let grantedBytes = 1024*1024*10;
-		 window.requestFileSystem(PERSISTENT, grantedBytes, this.onInitFs(pict), errorHandler);
+		 window.requestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
 		/*navigator.webkitPersistentStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
 
 
