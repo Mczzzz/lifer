@@ -27,6 +27,7 @@ class LoaderImage {
 
 	onInitFs(localstorage){
 
+		let pict = this.pict;
 
 		let that = this;
 		function errorHandler(e){
@@ -53,7 +54,7 @@ class LoaderImage {
 		      };
 
 		      // Create a new Blob and write it to log.txt.
-		      let blob = new Blob(['coouvou'], {type: 'text/plain'});
+		      let blob = new Blob([pict], {type: 'text/plain'});
 
 		      fileWriter.write(blob);
 
@@ -82,37 +83,6 @@ class LoaderImage {
 
 
 	}
-
-
-	filewriter(fileWriter){
-
-
-		console.log('in file writer');
-      fileWriter.onwriteend = function(e) {
-        console.log('Write completed.');
-      };
-
-      fileWriter.onerror = function(e) {
-        console.log('Write failed: ' + e.toString());
-      };
-
-      // Create a new Blob and write it to log.txt.
-      let blob = new Blob(['coouvou'], {type: 'text/plain'});
-
-      fileWriter.write(blob);
-
-
-
-	}
-
-
-
-	errorHandler(e=false){
-
-		console.log(e);
-		console.log("ca a foirée");
-	}
-
 
 
 	loadPict(pict,target){
