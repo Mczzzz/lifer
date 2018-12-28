@@ -35,6 +35,7 @@ class LoaderImage {
 
 		navigator.webkitPersistentStorage.requestQuota (
 		    requestedBytes, (grantedBytes) => this.requestUpsize(grantedBytes), (e) => this.consoleSizeError(e) );*/
+		    console.log(chrome.storage);
 
 		chrome.storage.sync.set({"MyPict": pict}, function() {
 		          console.log('Value is set to persistant storage');
