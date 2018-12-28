@@ -36,11 +36,11 @@ class LoaderImage {
 
 		function fileEntry(fileEntry){
 
-			fileEntry.createWriter(fileWriter , errorHandler);
+			fileEntry.createWriter(fileW , errorHandler);
 		}
 
 
-		function filewriter(fileWriter){
+		function fileW(fileWriter){
 
 
 				console.log('in file writer');
