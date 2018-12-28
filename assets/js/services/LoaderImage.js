@@ -25,7 +25,7 @@ class LoaderImage {
 	}
 
 
-	onInitFs(localstorage){
+/*	onInitFs(localstorage){
 
 		let pict = this.pict;
 
@@ -67,7 +67,7 @@ class LoaderImage {
 
 		console.log('oninitfs');
 		localstorage.root.getFile('image.txt', {create: true}, fileEntry , errorHandler);
-	}
+	}*/
 
 
 	fileentry(fileEntry){
@@ -129,9 +129,78 @@ class LoaderImage {
 
 	requestUpsize(grantedBytes){
 
+
+		let pict = this.pict;
+
+		function fileEntry(){
+
+		let that = this;
+		function errorHandler(e){
+
+			console.log(e);
+		}
+
+		function fileEntry(fileEntry){
+
+			fileEntry.createWriter(fileW , errorHandler);
+		}
+
+
+		function fileW(fileWriter){
+
+
+				console.log('in file writer');
+		      fileWriter.onwriteend = function(e) {
+		        console.log('Write completed.');
+		      };
+
+		      fileWriter.onerror = function(e) {
+		        console.log('Write failed: ' + e.toString());
+		      };
+
+		      // Create a new Blob and write it to log.txt.
+		      let blob = new Blob([pict], {type: 'text/plain'});
+
+		      fileWriter.write(blob);
+
+
+
+			}
+
+
+
+
+
+
+		}
+
+		
+
+
+
+
+		console.log('oninitfs');
+		localstorage.root.getFile('image.txt', {create: true}, fileEntry , errorHandler);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		console.log('PICCCT');
 		console.log(this.pict);
-		 window.webkitRequestFileSystem(PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
+		 window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, this.errorHandler);
 
 
 
