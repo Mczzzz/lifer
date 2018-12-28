@@ -26,7 +26,14 @@ class LoaderImage {
 
 
 	onInitFs(localstorage){
-		localstorage.root.getFile('image.txt', {create: true}, function(fileEntry) {
+		localstorage.root.getFile('image.txt', {create: true}, (fileEntry) => this.fileentry(fileEntry) , this.errorHandler());
+	}
+
+
+	fileentry(fileEntry){
+
+		console.log(' in file entry');
+
 
     // Create a FileWriter object for our FileEntry (log.txt).
     fileEntry.createWriter(function(fileWriter) {
@@ -46,7 +53,10 @@ class LoaderImage {
 
     }, this.errorHandler());
 
-  			}, this.errorHandler());
+  			
+
+
+
 	}
 
 
