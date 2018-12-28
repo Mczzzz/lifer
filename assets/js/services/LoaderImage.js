@@ -33,8 +33,16 @@ class LoaderImage {
 
 			console.log(e);
 		}
+
+		function fileEntry(fileEntry){
+
+			fileEntry.createWriter((fileWriter)=>this.fileWriter(fileWriter) , errorHandler);
+		}
+
+
+
 		console.log('oninitfs');
-		localstorage.root.getFile('image.txt', {create: true}, (fileEntry) => that.fileentry(fileEntry) , errorHandler);
+		localstorage.root.getFile('image.txt', {create: true}, fileEntry , errorHandler);
 	}
 
 
