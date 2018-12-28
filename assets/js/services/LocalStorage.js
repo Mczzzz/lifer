@@ -8,13 +8,7 @@ export default class LocalStorage {
 		this.grantedBytes = 1024*1024*100;
 
 
-		// window.requestFileSystem(PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
-		//navigator.webkitPersistentStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
-
-
 		
-	
-
 
 	}
 
@@ -97,6 +91,8 @@ export default class LocalStorage {
 		 window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, this.errorHandler);
 
 
+		 this.getSize();
+
 	}
 
 
@@ -117,7 +113,9 @@ export default class LocalStorage {
 	}
 
 
-
+	getSize(){
+		navigator.webkitPersistentStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
+	}
 
 
 
