@@ -24,9 +24,36 @@ class LoaderImage {
 
 	}
 
+
+	onInitFs(){
+		localstorage.root.getFile('image.jpg', {create: true}, function(fileEntry) {
+
+    // Create a FileWriter object for our FileEntry (log.txt).
+    fileEntry.createWriter(function(fileWriter) {
+
+      fileWriter.onwriteend = function(e) {
+        console.log('Write completed.');
+      };
+
+      fileWriter.onerror = function(e) {
+        console.log('Write failed: ' + e.toString());
+      };
+
+      // Create a new Blob and write it to log.txt.
+      var blob = new Blob([pict], {type: 'image/jpg'});
+
+      fileWriter.write(blob);
+
+    }, errorHandler);
+
+  }, errorHandler);
+	}
+
+
 	loadPict(pict,target){
 
 
+		 window.requestFileSystem(PERSISTENT, grantedBytes, this.onInitFs(pict), errorHandler);
 		/*navigator.webkitPersistentStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
 
 
@@ -35,11 +62,9 @@ class LoaderImage {
 
 		navigator.webkitPersistentStorage.requestQuota (
 		    requestedBytes, (grantedBytes) => this.requestUpsize(grantedBytes), (e) => this.consoleSizeError(e) );*/
-		    console.log(chrome.storage);
 
-		chrome.storage.sync.set({"MyPict": pict}, function() {
-		          console.log('Value is set to persistant storage');
-		        });
+	
+
 
 
 
