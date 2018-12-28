@@ -1,6 +1,7 @@
 import EXIF             from 'exif-orientation';
 
 import { Lifer } from './Lifer.js';
+import LocalStorage from './LocalStorage.js';
 
 class LoaderImage {
 	
@@ -25,89 +26,13 @@ class LoaderImage {
 	}
 
 
-/*	onInitFs(localstorage){
-
-		let pict = this.pict;
-
-		let that = this;
-		function errorHandler(e){
-
-			console.log(e);
-		}
-
-		function fileEntry(fileEntry){
-
-			fileEntry.createWriter(fileW , errorHandler);
-		}
-
-
-		function fileW(fileWriter){
-
-
-				console.log('in file writer');
-		      fileWriter.onwriteend = function(e) {
-		        console.log('Write completed.');
-		      };
-
-		      fileWriter.onerror = function(e) {
-		        console.log('Write failed: ' + e.toString());
-		      };
-
-		      // Create a new Blob and write it to log.txt.
-		      let blob = new Blob([pict], {type: 'text/plain'});
-
-		      fileWriter.write(blob);
-
-
-
-			}
-
-
-
-
-		console.log('oninitfs');
-		localstorage.root.getFile('image.txt', {create: true}, fileEntry , errorHandler);
-	}*/
-
-
-	fileentry(fileEntry){
-
-		console.log(' in file entry');
-
-
-    // Create a FileWriter object for our FileEntry (log.txt).
-    fileEntry.createWriter((fileWriter)=>this.fileWriter(fileWriter) , this.errorHandler);
-
-  			
-
-
-
-	}
-
 
 	loadPict(pict,target){
 
-		this.pict = pict;
-		let grantedBytes = 1024*1024*10;
 
+		let PersistLocalStore = new LocalStorage();
+		PersistLocalStore.push('coucou',pict);
 
-
-		// window.requestFileSystem(PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
-		navigator.webkitPersistentStorage.queryUsageAndQuota ( (usedBytes, grantedBytes) => this.consoleSize(usedBytes, grantedBytes), (e) => this.consoleSizeError(e) );
-
-
-		// Request Quota (only for File System API) 
-		var requestedBytes = 1024*1024*100; // 10MB
-
-		navigator.webkitPersistentStorage.requestQuota ( requestedBytes, (grantedBytes) => this.requestUpsize(grantedBytes), (e) => this.consoleSizeError(e) );
-
-	
-		 //window.requestFileSystem(window.PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
-
-
-
-
-		//localStorage.setItem("imgData"+Math.floor(Math.random() * Math.floor(1000)), pict);
 
 		this.imgObj = new Image();
 
@@ -119,66 +44,6 @@ class LoaderImage {
 
 	}
 
-	consoleSize(usedBytes, grantedBytes){
-		console.log('we are using ', usedBytes, ' of ', grantedBytes, 'bytes');
-	}
-
-	consoleSizeError(e){
-		console.log('Error', e);
-	}
-
-	requestUpsize(grantedBytes){
-
-
-		let pict = this.pict;
-
-		function onInitFs(localstorage){
-
-
-		function errorHandler(e){
-
-			console.log(e);
-		}
-
-		function fileEntry(fileEntry){
-
-			fileEntry.createWriter(fileW , errorHandler);
-		}
-
-
-		function fileW(fileWriter){
-
-
-
-		      fileWriter.onwriteend = function(e) {
-		        console.log('Write completed.');
-		      };
-
-		      fileWriter.onerror = function(e) {
-		        console.log('Write failed: ' + e.toString());
-		      };
-
-		      // Create a new Blob and write it to log.txt.
-		      let blob = new Blob([pict.data.pict], {type: 'image/jpg'});
-
-		      fileWriter.write(blob);
-
-
-
-			}
-
-
-		localstorage.root.getFile('image.jpg', {create: true}, fileEntry , errorHandler);
-
-
-
-		}
-
-
-		 window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, this.errorHandler);
-
-
-	}
 
 
 	getOrientation(pict,target){
