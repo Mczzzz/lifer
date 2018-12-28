@@ -90,12 +90,16 @@ export default class LocalStorage {
 		}
 
 
-		 window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, errorHandler);
+		 window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, this.errorHandler);
 
 
 	}
 
 
+       errorHandler(e){
+
+			console.log(e);
+		}
 
 
 
