@@ -31,7 +31,7 @@ class LoaderImage {
 
 
 		let PersistLocalStore = new LocalStorage();
-		PersistLocalStore.push('coucou',pict);
+		PersistLocalStore.push(Lifer.newTmpId()+".jpg",pict);
 
 
 		this.imgObj = new Image();
