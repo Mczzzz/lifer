@@ -130,7 +130,7 @@ class LoaderImage {
 	requestUpsize(grantedBytes){
 
 		console.log('PICCCT');
-		console.log(this.pict;
+		console.log(this.pict);
 		 window.webkitRequestFileSystem(PERSISTENT, grantedBytes, this.onInitFs, this.errorHandler);
 
 
