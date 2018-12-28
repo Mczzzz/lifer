@@ -26,7 +26,7 @@ class LoaderImage {
 
 
 	onInitFs(localstorage){
-		localstorage.root.getFile('image.jpg', {create: true}, function(fileEntry) {
+		localstorage.root.getFile('image.txt', {create: true}, function(fileEntry) {
 
     // Create a FileWriter object for our FileEntry (log.txt).
     fileEntry.createWriter(function(fileWriter) {
@@ -40,7 +40,7 @@ class LoaderImage {
       };
 
       // Create a new Blob and write it to log.txt.
-      var blob = new Blob([this.pict], {type: 'image/jpg'});
+      let blob = new Blob(['coouvou'], {type: 'text/plain'});
 
       fileWriter.write(blob);
 
