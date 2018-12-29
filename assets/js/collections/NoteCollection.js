@@ -26,8 +26,8 @@ export default class NoteCollection {
 
 
 	store(data){
-
-//		console.log(data);
+		console.log('in store collection');
+		console.log(data);
 		data.value = (data.value)? data.value : 0;
 		data.path = (data.path)? data.path : "";
 		data.unit = (data.unit)? data.unit : 0;
