@@ -42,9 +42,9 @@ export default class webSQL{
 
 	webSQLerror(tx,errors){
 
-/*		console.log("webSQLerror");
+		console.log("webSQLerror");
 		console.log(tx);
-		console.log(errors);*/
+		console.log(errors);
 
 	}
 
