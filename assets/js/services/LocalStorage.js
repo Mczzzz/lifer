@@ -17,22 +17,81 @@ export default class LocalStorage {
 
 
 
-	push(name, pict){
+	push(name, Myfile){
 
 /*		this.pict = pict;
 		this.name = name;*/
 
-		navigator.webkitPersistentStorage.requestQuota ( this.grantedBytes, (grantedBytes) => this.pushAction(grantedBytes, name, pict), (e) => this.consoleSizeError(e) );
+		navigator.webkitPersistentStorage.requestQuota ( this.grantedBytes, (grantedBytes) => this.pushAction(grantedBytes, name, Myfile), (e) => this.consoleSizeError(e) );
 
 
 	}
 
 
-	get(){
+	get(name){
+
+
+		navigator.webkitPersistentStorage.requestQuota ( this.grantedBytes, (grantedBytes) => this.getAction(grantedBytes, name), (e) => this.consoleSizeError(e) );	
+
+	}
+
+
+	getAction(grantedBytes,name){
+
+
+
+		function onInitFs(fs) {
+
+
+			function errorHandler(e){
+
+				console.log(e);
+			}
+
+			function file(file){
+
+
+				let reader = new FileReader();
+
+				//reader.readAsDataURL(elt);
+				reader.readAsText(file);
+
+				reader.onloadend = ()=> this.getOut(reader.result);
+
+/*		       reader.onloadend = function(e) {
+		         let txtArea = document.createElement('textarea');
+		         txtArea.value = this.result;
+		         document.body.appendChild(txtArea);
+		       };
+
+		       reader.readAsText(file);*/
+
+			}
+
+
+			function fileEntry(fileEntry){
+
+				 fileEntry.file(file, errorHandler);
+			}
+
+
+	        fs.root.getFile(name , {}, fileEntry , errorHandler);
+
+		}
+
+		 window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, this.errorHandler);
 
 
 
 	}
+
+
+	getOut(MyFile){
+		
+		console.log(MyFile);
+	
+	}
+
 
 
 
