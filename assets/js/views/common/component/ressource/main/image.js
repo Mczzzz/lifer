@@ -107,7 +107,7 @@ export default class Image extends superViews{
 			dataObj.type = "image";
 			dataObj.path = data.data.ObjImg.PersistName;
 			dataObj.text = this.getTextElement().getText();
-			dataObj.id   = this.Lifer.newTmpId();
+			dataObj.id   = this.card.getId();
 			let objectToCallBack = this.getObjectThisfromPath(this.ExtcallBack.path);
            	objectToCallBack[this.ExtcallBack.method]("",dataObj);
 
