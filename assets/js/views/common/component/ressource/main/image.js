@@ -15,7 +15,8 @@ export default class Image extends superViews{
 
 		this.init();
 
-
+		this.response = {};
+		this.response.type = "image";
 		
 	}
 
@@ -37,15 +38,41 @@ export default class Image extends superViews{
 		this.card.setStyle("background", "linear-gradient(45deg, rgb(252, 79, 160) 0%, rgb(244, 149, 76) 100%)");
 		this.card.setStyle("margin", "5px");
 		this.card.setStyle("display", "flex");
-		this.card.setCallBack("keyup",this.ExtcallBack.path, this.ExtcallBack.method);
+		this.card.setCallBack("keyup",this.path, "encapResponse");
 		//this.card.setCallBack("keyup",this.ExtcallBack.path, this.ExtcallBack.method);
 
+		this.response.id = this.card.getId();
 
 
 		//this.launchCam();
 
 		
 		this.prepare();
+	}
+
+
+
+//il faut refaire un pont ici pour récuprer les datas
+	encapResponse(data){
+
+		console.log('encapResponse');
+		console.log(data);
+
+
+		if(this.ExtcallBack){
+
+			this.response.text = this.getTextElement().getText();
+
+			let objectToCallBack = this.getObjectThisfromPath(this.ExtcallBack.path);
+           	objectToCallBack[this.ExtcallBack.method]("",this.response);
+
+
+		}
+
+
+
+
+
 	}
 
 
@@ -78,6 +105,8 @@ export default class Image extends superViews{
 		this.addStructThumb();
 		this.addLegend();
 
+
+
 	}
 
 	addStructThumb(){
@@ -102,14 +131,12 @@ export default class Image extends superViews{
 
 		if(this.ExtcallBack){
 
-			console.log(data);
-			let dataObj  = {};
-			dataObj.type = "image";
-			dataObj.path = data.data.ObjImg.PersistName;
-			dataObj.text = this.getTextElement().getText();
-			dataObj.id   = this.card.getId();
+		
+			this.response.path = data.data.ObjImg.PersistName;
+			this.response.text = this.getTextElement().getText();
+
 			let objectToCallBack = this.getObjectThisfromPath(this.ExtcallBack.path);
-           	objectToCallBack[this.ExtcallBack.method]("",dataObj);
+           	objectToCallBack[this.ExtcallBack.method]("",this.response);
 
 
 		}
