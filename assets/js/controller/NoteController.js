@@ -52,6 +52,7 @@ export default class NoteController {
 	dataToStore(data){
 
 		console.log('in dataStore');
+		console.log('data');
 
 		data.collection = "Note"; 
 
