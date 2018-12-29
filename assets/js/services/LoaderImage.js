@@ -31,9 +31,11 @@ class LoaderImage {
 
 
 		let PersistLocalStore = new LocalStorage();
-		PersistLocalStore.push(Lifer.newTmpId()+".jpg",pict);
+		let name = Lifer.newTmpId()+".jpg";
+		PersistLocalStore.push(name,pict);
 
-		PersistLocalStore.get(Lifer.newTmpId()+".jpg");
+		setTimeout(()=>this.testread(name), 1000);
+		
 
 
 		this.imgObj = new Image();
@@ -46,6 +48,13 @@ class LoaderImage {
 
 	}
 
+
+	testread(name){
+
+		let PersistLocalStore = new LocalStorage();
+		PersistLocalStore.get(name);
+
+	}
 
 
 	getOrientation(pict,target){
