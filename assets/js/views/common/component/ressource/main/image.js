@@ -7,9 +7,11 @@ import { LoaderImage } from '../../../../../services/LoaderImage.js';
 export default class Image extends superViews{
 	
 
-	constructor( MyClass , path){
+	constructor( MyClass , path,prepend = false,callback = false){
 
-		super( MyClass , path);
+		super( MyClass , path, prepend);
+
+		this.ExtcallBack = callback;
 
 		this.init();
 
@@ -35,6 +37,8 @@ export default class Image extends superViews{
 		this.card.setStyle("background", "linear-gradient(45deg, rgb(252, 79, 160) 0%, rgb(244, 149, 76) 100%)");
 		this.card.setStyle("margin", "5px");
 		this.card.setStyle("display", "flex");
+
+		//this.card.setCallBack("keyup",this.ExtcallBack.path, this.ExtcallBack.method);
 
 
 
@@ -95,6 +99,15 @@ export default class Image extends superViews{
     	//je pouse ma data dans mon thumb, 
     	this.ImageElt.setData(data);
 		this.ImageElt.getContainer().addEventListener("click",()=>this.ImageViewer(data));
+
+		if(this.ExtcallBack){
+
+			let objectToCallBack = this.getObjectThisfromPath(this.ExtcallBack.path);
+           	objectToCallBack[this.ExtcallBack.method]("",this.data);
+
+
+		}
+
 
 	}
 

@@ -163,9 +163,14 @@ export default class MainRessource extends superViews{
 
 	image(itemId,anew = false){
 
-		let image = new Image("Image_"+itemId, this.path);
+		let callBack = {};
+		callBack.path = this.parentThis.path;
+		callBack.method = "callBackDataTo";
+
+
+		let image = new Image("Image_"+itemId, this.path,false,callBack);
 		
-		console.log("anew"+anew);
+		//console.log("anew"+anew);
 		if(anew){
 			image.launchCam();
 		}

@@ -6,7 +6,7 @@ import Card from "../../../ui/card.js";
 export default class Text extends superViews{
 	
 
-	constructor( MyClass , path,prepend = false,callback = false){
+	constructor( MyClass , path,prepend = false, callback = false){
 
 		super( MyClass , path, prepend);
 

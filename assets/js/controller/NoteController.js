@@ -51,6 +51,8 @@ export default class NoteController {
 
 	dataToStore(data){
 
+		console.log('in dataStore');
+
 		data.collection = "Note"; 
 
 		if (!this.guid) this.guid = "tmp-"+Lifer.newTmpId();
