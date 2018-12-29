@@ -102,7 +102,7 @@ export default class Image extends superViews{
 
 		if(this.ExtcallBack){
 
-			consoe.log(data);
+			console.log(data);
 			let dataObj  = {};
 			dataObj.type = "image";
 			dataObj.path = data.data.ObjImg.PersistName;
