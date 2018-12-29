@@ -57,7 +57,7 @@ export default class NoteCollection {
 			                          "`+data.text+`",
 			                          "`+data.value+`",
 			                          "`+data.path+`",
-			                          "`+data.unit+`",
+			                          "`+data.unit+`"
 			                          )
 
 			                 `);
