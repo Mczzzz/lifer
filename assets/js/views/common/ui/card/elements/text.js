@@ -51,7 +51,8 @@ export default class Text extends superViews{
      }
 
 
-     setplaceHolderColor(color){
+     setplaceHolderColor(color){ 
+
 
           this.placeHodelColor = color;          
 
@@ -81,8 +82,8 @@ export default class Text extends superViews{
 
                let data   = {};
                data.type  = "text";
-               data.value = this.container.innerHTML;
-
+//TODO : peut etre a supprimer : data.value = this.container.innerHTML;
+               data.text = this.container.innerHTML;
                let MyCallBack =  this.getObjectThisfromPath(this.callBack.path);
                MyCallBack[this.callBack.method](this.path,data);
 
