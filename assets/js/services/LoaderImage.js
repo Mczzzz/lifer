@@ -41,6 +41,7 @@ class LoaderImage {
 		this.imgObj = new Image();
 
 		this.imgObj.src = pict;
+		this.imgObj.PersistName = name;
 
 		this.imgObj.addEventListener('load',()=>this.getOrientation(pict,target));
 

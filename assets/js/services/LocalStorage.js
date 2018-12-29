@@ -3,12 +3,13 @@ import { Lifer } from '../services/Lifer.js';
 export default class LocalStorage {
 
 
-	constructor(){
+	constructor(type = "PERSISTENT"){
 
+		this.type = type;
 
 		this.grantedBytes = 1024*1024*100;
 
-
+		this.callback = false
 		
 
 	}
@@ -28,8 +29,17 @@ export default class LocalStorage {
 	}
 
 
-	get(name){
+	get(name, callbackObj = false, callbackMethod = false){
 
+		if(callbackObj && callbackMethod){
+
+			this.callback = {};
+			this.callback.obj = callbackObj;
+			this.callback.method = callbackMethod;
+
+		}
+
+		
 
 		navigator.webkitPersistentStorage.requestQuota ( this.grantedBytes, (grantedBytes) => this.getAction(grantedBytes, name), (e) => this.consoleSizeError(e) );	
 
@@ -57,15 +67,7 @@ export default class LocalStorage {
 				//reader.readAsDataURL(elt);
 				reader.readAsText(file);
 
-				reader.onloadend = ()=> that.getOut(reader.result);
-
-/*		       reader.onloadend = function(e) {
-		         let txtArea = document.createElement('textarea');
-		         txtArea.value = this.result;
-		         document.body.appendChild(txtArea);
-		       };
-
-		       reader.readAsText(file);*/
+				reader.onloadend = ()=> that.toCallBack(reader.result);
 
 			}
 
@@ -80,16 +82,20 @@ export default class LocalStorage {
 
 		}
 
-		 window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, this.errorHandler);
+		 window.webkitRequestFileSystem(this.type, grantedBytes, onInitFs, this.errorHandler);
 
 
 
 	}
 
 
-	getOut(MyFile){
+	toCallBack(MyFile){
 		
-		console.log(MyFile);
+		if(this.callback){
+
+			this.callback.obj[this.callback.method](MyFile);
+
+		}
 	
 	}
 
@@ -149,7 +155,7 @@ export default class LocalStorage {
 			}
 
 
-		 window.webkitRequestFileSystem(PERSISTENT, grantedBytes, onInitFs, this.errorHandler);
+		 window.webkitRequestFileSystem(this.type, grantedBytes, onInitFs, this.errorHandler);
 
 
 		 this.getSize();
