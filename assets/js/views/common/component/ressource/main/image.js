@@ -13,10 +13,13 @@ export default class Image extends superViews{
 
 		this.ExtcallBack = callback;
 
-		this.init();
 
 		this.response = {};
 		this.response.type = "image";
+
+
+		this.init();
+
 		
 	}
 
