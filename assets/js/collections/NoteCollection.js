@@ -28,6 +28,9 @@ export default class NoteCollection {
 	store(data){
 
 //		console.log(data);
+		data.value = (data.value) data.value : 0;
+		data.path = (data.path) data.path : "";
+		data.unit = (data.unit) data.unit : 0;
 
 		this.webSQL.playQuery('syncData',
 			                  `insert into Notes ( timestamp,
@@ -38,7 +41,10 @@ export default class NoteCollection {
 												   ressource_title,
 												   item_id,
 												   item_type,
-												   item_text
+												   item_text,
+												   item_value,
+												   item_path,
+												   item_unit
 			                                      )
 			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "LOCAL",
@@ -48,7 +54,10 @@ export default class NoteCollection {
 			                          "`+data.RessourceTitle+`",
 			                          "`+data.id+`",
 			                          "`+data.type+`",
-			                          "`+data.value+`"
+			                          "`+data.text+`",
+			                          "`+data.value+`",
+			                          "`+data.path+`",
+			                          "`+data.unit+`",
 			                          )
 
 			                 `);
