@@ -39,6 +39,7 @@ export default class LocalStorage {
 	getAction(grantedBytes,name){
 
 
+		let that = this;
 
 		function onInitFs(fs) {
 
@@ -56,7 +57,7 @@ export default class LocalStorage {
 				//reader.readAsDataURL(elt);
 				reader.readAsText(file);
 
-				reader.onloadend = ()=> this.getOut(reader.result);
+				reader.onloadend = ()=> that.getOut(reader.result);
 
 /*		       reader.onloadend = function(e) {
 		         let txtArea = document.createElement('textarea');
