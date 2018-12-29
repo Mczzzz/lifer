@@ -37,7 +37,7 @@ export default class Image extends superViews{
 		this.card.setStyle("background", "linear-gradient(45deg, rgb(252, 79, 160) 0%, rgb(244, 149, 76) 100%)");
 		this.card.setStyle("margin", "5px");
 		this.card.setStyle("display", "flex");
-
+		this.card.setCallBack("keyup",this.ExtcallBack.path, this.ExtcallBack.method);
 		//this.card.setCallBack("keyup",this.ExtcallBack.path, this.ExtcallBack.method);
 
 
@@ -102,8 +102,13 @@ export default class Image extends superViews{
 
 		if(this.ExtcallBack){
 
+			let dataObj  = {};
+			dataObj.type = "image";
+			dataObj.path = data.pict.data.ObjImg.PersistName;
+			dataObj.text = this.getTextElement();
+			dataObj.id   = this.Lifer.newTmpId();
 			let objectToCallBack = this.getObjectThisfromPath(this.ExtcallBack.path);
-           	objectToCallBack[this.ExtcallBack.method]("",this.data);
+           	objectToCallBack[this.ExtcallBack.method]("",dataObj);
 
 
 		}
