@@ -195,13 +195,37 @@ export default class NoteCollection {
 	_syncData(){
 
 
-	//////COMPOSITION DE l'ENVOI
-		let qry = "SELECT * FROM NotesDatas WHERE status = 'BEFOREUP' ORDER BY timestamp ASC LIMIT 1";
-		this.webSQL.playQuery('syncUp',qry,this,'_createRequestToServerDatas');
+		//onverifie qu'il n'y a rien en cours d'upload
+		let qry = "SELECT * FROM NotesDatas WHERE status = 'UPLOADING' LIMIT 1";
+		this.webSQL.playQuery('syncUp',qry,this,'_canExecuteNewDataSynchro');
 
+
+	//////COMPOSITION DE l'ENVOI
+		/*let qry = "SELECT * FROM NotesDatas WHERE status = 'BEFOREUP' ORDER BY timestamp ASC LIMIT 1";
+		this.webSQL.playQuery('syncUp',qry,this,'_createRequestToServerDatas');
+*/
 
 
 	}
+
+
+	_canExecuteNewDataSynchro(datas){
+
+		if(results.rows.length == 0){
+
+			let qry = "SELECT * FROM NotesDatas WHERE status = 'BEFOREUP' ORDER BY timestamp ASC LIMIT 1";
+			this.webSQL.playQuery('syncUp',qry,this,'_createRequestToServerDatas');
+
+
+		}else{
+
+			console.log("Upload déja en cours on attends");
+
+		}
+
+
+	}
+
 
 
 

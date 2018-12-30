@@ -445,6 +445,45 @@ class NotesController extends Controller
         $this->em = $this->getDoctrine()->getManager();
 
 
+
+
+
+
+        //on recherche siça concorde bien au niveau des id Notes / Resources / Items
+        $Item = $this->em->getRepository('AppBundle:Items')->findOneBy(array('path' => $datas->item_path, 'creator' => $this->user->getId() ));
+
+        if(!$Item){
+
+            $res->error = "3.1";
+            $res->msg = "Item Not find yet";
+
+            return new response(json_encode($res));
+
+        }
+        //si oui alors on enregistre dans iduser/id_items/file
+        //on crée l'arorescence si elle existe pas :
+            $data_path = $this->container->getParameter('data_path');
+
+            $completePath = $data_path.$this->user->getId()."/".$Item->getId();
+
+
+        if (!mkdir($completePath, 0777, true)) {
+             $res->error = "3.2";
+            $res->msg = "Mkdir failed";
+
+            return new response(json_encode($res));
+        }
+
+
+        file_put_contents($completePath."/".$datas->item_path, $current);
+
+
+          $res->error = "0";
+            $res->msg = "Enregistrement OK";
+
+            return new response(json_encode($res));
+
+
     }
 
 
