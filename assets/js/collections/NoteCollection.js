@@ -313,10 +313,9 @@ export default class NoteCollection {
 
 	_createRequestToServerDatas(results){
 
-		console.log(results.rows);
 
-		this.DatasToSend = results.rows;
-		let name = results.rows.item(0).item_path;
+		this.DatasToSend = results.rows.item(0);
+		let name = this.DatasToSend.item_path;
 			//on va chercher le fichier dans le storage
 			let PersistLocalStore = new LocalStorage();
 			PersistLocalStore.get(name,this, "sendDatasToServer");
@@ -336,6 +335,7 @@ export default class NoteCollection {
 
 
 		console.log('in sendDatasToServer');
+		console.log(datas);
 		console.log(this.DatasToSend);
 
 	//	this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'pushDatas',this,"_updateAfterRequest",toSend);
