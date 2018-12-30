@@ -196,7 +196,7 @@ export default class NoteCollection {
 
 	//////COMPOSITION DE l'ENVOI
 		let qry = "SELECT * FROM NotesDatas WHERE status = 'BEFOREUP' ORDER BY timestamp ASC LIMIT 1";
-		this.webSQL.playQuery('syncUp',qry3,this,'_createRequestToServerDatas');
+		this.webSQL.playQuery('syncUp',qry,this,'_createRequestToServerDatas');
 
 
 
