@@ -16,7 +16,7 @@ export default class Image extends superViews{
 
 		this.response = {};
 		this.response.type = "image";
-
+		this.response.path = "";
 
 		this.init();
 

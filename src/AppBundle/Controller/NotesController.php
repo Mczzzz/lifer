@@ -333,15 +333,23 @@ class NotesController extends Controller
             $Item->setTmpId($NoteElement->item_id);
             
 
-             if($NoteElement->item_type == "text"){
+           //  
 
                 //résupération du type
                 $ItemType = $this->em->getRepository('AppBundle:ItemsTypes')->findOneBy(array('name' => $NoteElement->item_type));
 
                 $Item->setType($ItemType);
-                $Item->setText($NoteElement->item_text);
+                
 
+            //}
+
+            if($NoteElement->item_type == "image"){
+
+                $Item->setPath($NoteElement->item_path);
+            
             }
+
+            $Item->setText($NoteElement->item_text);
 
             $ndtR = new \Datetime('now');
             $Item->setUpdateAPP($ndtR);
