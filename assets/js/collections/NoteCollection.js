@@ -173,7 +173,10 @@ export default class NoteCollection {
 												   ressource_title,
 												   item_id,
 												   item_type,
-												   item_text
+												   item_text,
+												   item_value,
+												   item_path,
+												   item_unit
 			                                      )
 			                   values ("`+results.rows.item(i).timestamp+`",
 			                          "BEFOREUP",
@@ -183,7 +186,10 @@ export default class NoteCollection {
 			                          "`+results.rows.item(i).ressource_title+`",
 			                          "`+results.rows.item(i).item_id+`",
 			                          "`+results.rows.item(i).item_type+`",
-			                          "`+results.rows.item(i).item_text+`"
+			                          "`+results.rows.item(i).item_text+`",
+			                          "`+results.rows.item(i).item_value+`",
+			                          "`+results.rows.item(i).item_path+`",
+			                          "`+results.rows.item(i).item_unit+`"
 			                          )
 
 			                 `);
