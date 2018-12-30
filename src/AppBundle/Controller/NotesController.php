@@ -431,7 +431,7 @@ class NotesController extends Controller
 
 
 //ok
-        if(!$datas || !is_array($datas)){
+        if(!$datas || !is_object($datas)){
 
             $res->error = "2.2";
             $res->msg = "Datas Corrupted";
