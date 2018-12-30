@@ -138,7 +138,7 @@ export default class NoteCollection {
 																	   ressource_id,
 																	   item_id,
 																	   item_type TEXT DEFAULT "PERSISTENT",
-																	   item_path  TEXT DEFAULT "",
+																	   item_path  TEXT DEFAULT ""
 																	   );
 																	   `;
 
