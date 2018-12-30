@@ -133,8 +133,8 @@ export default class Image extends superViews{
 		this.ImageElt.getContainer().addEventListener("click",()=>this.ImageViewer(data));
 
 		if(this.ExtcallBack){
-
-		
+			console.log('in add thumb');
+			console.log(data.data)
 			this.response.path = data.data.ObjImg.PersistName;
 			this.response.text = this.getTextElement().getText();
 
