@@ -448,9 +448,10 @@ class NotesController extends Controller
 
 
 
-
+        var_dump($datas->item_path);
+        die();
         //on recherche siça concorde bien au niveau des id Notes / Resources / Items
-        $Item = $this->em->getRepository('AppBundle:Items')->findOneBy(array('path' => $datas->item_path, 'creator' => $this->user->getId() ));
+        $Item = $this->em->getRepository('AppBundle:Items')->findOneBy(array('path' => $datas->item_path));
 
         if(!$Item){
 
