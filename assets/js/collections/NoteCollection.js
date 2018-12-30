@@ -129,6 +129,25 @@ export default class NoteCollection {
 
 
 
+		let TblNoteDataUp = {};
+		TblNoteDataUp.name = "NotesData";
+		TblNoteDataUp.db = "syncUp";
+		TblNoteDataUp.create = `CREATE TABLE IF NOT EXISTS `+TblNoteDataUp.name+` (timestamp,
+																	   status,
+																	   note_id,
+																	   ressource_id,
+																	   item_id,
+																	   item_type TEXT DEFAULT "PERSISTENT",
+																	   item_path  TEXT DEFAULT "",
+																	   );
+																	   `;
+
+
+		
+		this.webSQL.playQuery(TblNoteDataUp.db,TblNoteDataUp.create);
+
+
+
 	}
 
 
@@ -141,6 +160,16 @@ export default class NoteCollection {
 		//je regarde dans mon sync data ce qui a plus d'une seconde d'enregistrement et qui a un status LOCAL order by croissant timestamp (pour gérer les plus vieux en priorité)
 		let qry = "UPDATE Notes SET state = 'RESERVEDUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds') AND state = 'WAITING' ";
 		this.webSQL.playQuery('syncData',qry);
+
+		this._syncEntities();
+
+		this.syncData();
+
+	}
+
+
+	_syncEntities(){
+
 
 		let qry2 = "SELECT * FROM Notes WHERE state = 'RESERVEDUP' ";
 		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
@@ -157,7 +186,19 @@ export default class NoteCollection {
 					//sinon je supprime seulement ma ligne dans syncup
 		//si non, je resset pour l'envoi suite à échec
 
+
+
 	}
+
+
+	_syncData(){
+
+
+
+
+	}
+
+
 
 	_pushInSyncUp(results){
 
