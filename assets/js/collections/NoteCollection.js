@@ -240,7 +240,7 @@ export default class NoteCollection {
 
 
 		    	this.webSQL.playQuery('syncUp',
-			                  `insert into NoteDatas ( timestamp,
+			                  `insert into NotesDatas ( timestamp,
 			                                       status,
 			                                       note_id,
 												   ressource_id,
