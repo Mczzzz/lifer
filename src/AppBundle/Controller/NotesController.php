@@ -472,7 +472,7 @@ class NotesController extends Controller
         }
 
 
-        file_put_contents($completePath."/".$datas->item_path, $current);
+        file_put_contents($completePath."/".$datas->item_path, base64_decode($datas->datas));
 
 
           $res->error = "0";
