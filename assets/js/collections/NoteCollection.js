@@ -194,6 +194,10 @@ export default class NoteCollection {
 	_syncData(){
 
 
+	//////COMPOSITION DE l'ENVOI
+		let qry = "SELECT * FROM NotesDatas WHERE status = 'BEFOREUP' ORDER BY timestamp ASC LIMIT 1";
+		this.webSQL.playQuery('syncUp',qry3,this,'_createRequestToServerDatas');
+
 
 
 	}
@@ -275,6 +279,7 @@ export default class NoteCollection {
 
 
 
+
 	_createRequestToServer(results){
 
 		//console.log('IN _createRequestToServer !!!')
@@ -301,6 +306,37 @@ export default class NoteCollection {
 
 		}
 
+
+	}
+
+
+	_createRequestToServerDatas(results){
+
+		this.DatasToSend = results.rows;
+			//on va chercher le fichier dans le storage
+			let PersistLocalStore = new LocalStorage();
+			PersistLocalStore.get((results.rows.item(i).item_path,this, "sendDatasToServer");
+
+
+			
+
+			
+
+
+		
+	}
+
+
+
+	sendDatasToServer(datas){
+
+
+		console.log('in sendDatasToServer');
+		console.log(this.DatasToSend);
+
+	//	this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'pushDatas',this,"_updateAfterRequest",toSend);
+/*		let qry = "UPDATE NotesDatas SET status = 'UPLOADING' WHERE status = 'BEFOREUP' ";
+			this.webSQL.playQuery('syncUp',qry);*/
 
 	}
 

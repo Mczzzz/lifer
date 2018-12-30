@@ -49,7 +49,7 @@ class LoaderImage {
 
 	}
 
-
+//TODO : ne sert a rien juste un test a supprimer mais pas le temps de regarder
 	testread(name){
 
 		let PersistLocalStore = new LocalStorage();

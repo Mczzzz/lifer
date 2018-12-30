@@ -2,7 +2,7 @@ import Moment from 'moment';
 import 'moment/locale/fr';
 
 import LoaderCollection from './LoaderCollection.js';
-
+import LocalStorage from './LocalStorage.js';
 
 
 class DatasSynchronizing {

@@ -46,6 +46,14 @@ export default class LocalStorage {
 	}
 
 
+	remove(name){
+
+		navigator.webkitPersistentStorage.requestQuota ( this.grantedBytes, (grantedBytes) => this.removeAction(grantedBytes, name), (e) => this.consoleSizeError(e) );	
+
+	}
+
+
+
 	getAction(grantedBytes,name){
 
 
@@ -87,6 +95,46 @@ export default class LocalStorage {
 
 
 	}
+
+
+	removeAction(grantedBytes,name){
+
+
+		let that = this;
+
+		function onInitFs(fs) {
+
+
+			function errorHandler(e){
+
+				console.log(e);
+			}
+
+			function file(){
+
+				console.log("File Removed from persistent");
+
+			}
+
+
+			function fileEntry(fileEntry){
+
+				 fileEntry.remove(file, errorHandler);
+			}
+
+
+	        fs.root.getFile(name ,{create: false}, fileEntry , errorHandler);
+
+		}
+
+		 window.webkitRequestFileSystem(this.type, grantedBytes, onInitFs, this.errorHandler);
+
+
+
+	}
+
+
+
 
 
 	toCallBack(MyFile){
