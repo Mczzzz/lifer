@@ -164,7 +164,7 @@ export default class NoteCollection {
 
 		this._syncEntities();
 
-		this._syncData();
+		
 
 	}
 
@@ -378,6 +378,8 @@ export default class NoteCollection {
 /*
 		console.log("_updateAfterRequest");
 		console.log(datas);*/
+		this._syncData();
+
 
 		//on regarde si on a du temporaire pour les id
 		let NoteId = (datas.data.Note.tmpId) ? datas.data.Note.tmpId : datas.data.Note.id;
