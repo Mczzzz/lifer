@@ -471,8 +471,12 @@ class NotesController extends Controller
             return new response(json_encode($res));
         }
 
+        $base_to_php = explode(',', $datas->datas);
+        // the 2nd item in the base_to_php array contains the content of the image
+        $Mydata = base64_decode($base_to_php[1]);
 
-        file_put_contents($completePath."/".$datas->item_path, base64_decode($datas->datas));
+
+        file_put_contents($completePath."/".$datas->item_path, $Mydata);
 
 
           $res->error = "0";
