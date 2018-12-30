@@ -209,7 +209,7 @@ export default class NoteCollection {
 	}
 
 
-	_canExecuteNewDataSynchro(datas){
+	_canExecuteNewDataSynchro(results){
 
 		if(results.rows.length == 0){
 
