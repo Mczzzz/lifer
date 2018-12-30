@@ -339,8 +339,8 @@ export default class NoteCollection {
 		console.log(this.DatasToSend);*/
 		this.DatasToSend.datas = datas;
 		this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'pushDatas',this,"_updateAfterRequest",this.DatasToSend);
-/*		let qry = "UPDATE NotesDatas SET status = 'UPLOADING' WHERE status = 'BEFOREUP' ";
-			this.webSQL.playQuery('syncUp',qry);*/
+		let qry = "UPDATE NotesDatas SET status = 'UPLOADING' WHERE status = 'BEFOREUP' AND timestamp = "+this.DatasToSend.timestamp+" AND item_path = "+this.DatasToSend.item_path;
+		this.webSQL.playQuery('syncUp',qry);
 
 	}
 
