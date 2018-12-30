@@ -125,6 +125,7 @@ class NotesController extends Controller
             $response->Item->id = $StoreResult["Item"]->getId();
             $response->Item->tmpId = $NoteElement->item_id;
             $response->timestamp = $NoteElement->timestamp;
+            $response->type = $NoteElement->item_type;
 
         }
 
@@ -478,9 +479,17 @@ class NotesController extends Controller
 
         file_put_contents($completePath."/".$datas->item_path, $Mydata);
 
+            $response = new \stdClass();
+            $response->Item = new \stdClass();
+            $response->Item->id = $Item->getId();
+            $response->Item->tmpId = $datas->item_id;
+            $response->timestamp = $datas->timestamp;
+            $response->type = $datas->item_type;
 
-          $res->error = "0";
-            $res->msg = "Enregistrement OK";
+
+
+            $res->error = "0";
+            $res->data = $response;
 
             return new response(json_encode($res));
 
