@@ -312,8 +312,10 @@ export default class NoteCollection {
 
 	_createRequestToServerDatas(results){
 
+		console.log(results.rows);
+
 		this.DatasToSend = results.rows;
-		let name = results.rows.item(i).item_path;
+		let name = results.rows.item(0).item_path;
 			//on va chercher le fichier dans le storage
 			let PersistLocalStore = new LocalStorage();
 			PersistLocalStore.get(name,this, "sendDatasToServer");
