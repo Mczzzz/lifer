@@ -236,6 +236,30 @@ export default class NoteCollection {
 			                 `);
 
 
+		    if(results.rows.item(i).item_type == "image" && results.rows.item(i).item_path.length > 0)
+
+
+		    	this.webSQL.playQuery('syncUp',
+			                  `insert into NoteDatas ( timestamp,
+			                                       status,
+			                                       note_id,
+												   ressource_id,
+												   item_id,
+												   item_type,
+												   item_path
+			                                      )
+			                   values ("`+results.rows.item(i).timestamp+`",
+			                          "BEFOREUP",
+			                          "`+results.rows.item(i).note_id+`",
+			                          "`+results.rows.item(i).ressource_id+`",
+			                          "`+results.rows.item(i).item_id+`",
+			                          "PERSISTENT",
+			                          "`+results.rows.item(i).item_path+`"
+			                          )
+
+			                 `);
+
+
 
 		  }
 
