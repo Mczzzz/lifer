@@ -126,6 +126,7 @@ class NotesController extends Controller
             $response->Item->tmpId = $NoteElement->item_id;
             $response->timestamp = $NoteElement->timestamp;
             $response->type = $NoteElement->item_type;
+            $response->call = "push";
 
         }
 
@@ -485,7 +486,7 @@ class NotesController extends Controller
             $response->Item->tmpId = $datas->item_id;
             $response->timestamp = $datas->timestamp;
             $response->type = $datas->item_type;
-
+            $response->call = "pushDatas";
 
 
             $res->error = "0";

@@ -386,33 +386,38 @@ export default class NoteCollection {
 		let ResourceId = (datas.data.Resource.tmpId) ? datas.data.Resource.tmpId : datas.data.Resource.id;
 		let ItemId = (datas.data.Item.tmpId) ? datas.data.Item.tmpId : datas.data.Item.id;
 
-		//je supprime la ligne de sync up
-		let qry = `DELETE FROM Notes 
-		           WHERE timestamp = "`+datas.data.timestamp+`"
-		           AND  note_id = "`+NoteId+`" 
-		           AND  ressource_id = "`+ResourceId+`" 
-		           AND  item_id = "`+ItemId+`" 
-		           `;
-		this.webSQL.playQuery('syncUp',qry);
+		if(datas.data.type == 'text'){
 
-		//je regarde si en base syncdata je retrouve ma ligne
-		let qryTestLine = `UPDATE Notes
-                           SET note_id =  "`+datas.data.Note.id+`"   ,
-							ressource_id =  "`+datas.data.Resource.id+`"  ,
-							item_id =  "`+datas.data.Item.id+`"   ,
-							status = "SYNC",
-							state  = "CLEAN" 
- 
-						   WHERE timestamp = "`+datas.data.timestamp+`" 
-				           AND  note_id = "`+NoteId+`" 
-				           AND  ressource_id = "`+ResourceId+`" 
-				           AND  item_id = "`+ItemId+`" 
-				           AND STATE = "PREUP"
-						  `;
+					//je supprime la ligne de sync up
+			let qry = `DELETE FROM Notes 
+			           WHERE timestamp = "`+datas.data.timestamp+`"
+			           AND  note_id = "`+NoteId+`" 
+			           AND  ressource_id = "`+ResourceId+`" 
+			           AND  item_id = "`+ItemId+`" 
+			           `;
+			this.webSQL.playQuery('syncUp',qry);
 
-		this.webSQL.playQuery('syncData',qryTestLine);
+			//je regarde si en base syncdata je retrouve ma ligne
+			let qryTestLine = `UPDATE Notes
+	                           SET note_id =  "`+datas.data.Note.id+`"   ,
+								ressource_id =  "`+datas.data.Resource.id+`"  ,
+								item_id =  "`+datas.data.Item.id+`"   ,
+								status = "SYNC",
+								state  = "CLEAN" 
+	 
+							   WHERE timestamp = "`+datas.data.timestamp+`" 
+					           AND  note_id = "`+NoteId+`" 
+					           AND  ressource_id = "`+ResourceId+`" 
+					           AND  item_id = "`+ItemId+`" 
+					           AND STATE = "PREUP"
+							  `;
 
-		//il faut mettre a jour les id
+			this.webSQL.playQuery('syncData',qryTestLine);
+
+			//il faut mettre a jour les id
+
+		}
+	
 
 	}
 
