@@ -481,9 +481,9 @@ class NotesController extends Controller
         file_put_contents($completePath."/".$datas->item_path, $Mydata);
 
             $response = new \stdClass();
-            $response->Item = new \stdClass();
-            $response->Item->id = $Item->getId();
-            $response->Item->tmpId = $datas->item_id;
+            $response->item_id = $Item->getId();
+            $response->item_tmpId = $datas->item_id;
+            $response->item_path = $datas->item_path;
             $response->timestamp = $datas->timestamp;
             $response->type = $datas->item_type;
             $response->call = "pushDatas";

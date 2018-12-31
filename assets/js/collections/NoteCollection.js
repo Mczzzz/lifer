@@ -378,7 +378,7 @@ export default class NoteCollection {
 /*
 		console.log("_updateAfterRequest");
 		console.log(datas);*/
-		this._syncData();
+		
 
 
 		//on regarde si on a du temporaire pour les id
@@ -386,7 +386,7 @@ export default class NoteCollection {
 		let ResourceId = (datas.data.Resource.tmpId) ? datas.data.Resource.tmpId : datas.data.Resource.id;
 		let ItemId = (datas.data.Item.tmpId) ? datas.data.Item.tmpId : datas.data.Item.id;
 
-		if(datas.data.type == 'text'){
+		if(datas.data.type == 'text' && datas.data.call == 'push'){
 
 					//je supprime la ligne de sync up
 			let qry = `DELETE FROM Notes 
@@ -416,8 +416,66 @@ export default class NoteCollection {
 
 			//il faut mettre a jour les id
 
+		}else if(datas.data.type == 'image' && datas.data.call == 'push'){
+
+			this._syncData();
+
+
+
+		}else if(datas.data.type == 'image' && datas.data.call == 'pushDatas'){
+
+			
+
+
+					//je supprime la ligne de sync up
+			let qry = `DELETE FROM Notes 
+			           WHERE timestamp = "`+datas.data.timestamp+`"
+			           AND  note_id = "`+NoteId+`" 
+			           AND  ressource_id = "`+ResourceId+`" 
+			           AND  item_id = "`+ItemId+`" 
+			           `;
+			this.webSQL.playQuery('syncUp',qry);
+
+
+					//je supprime la ligne de sync up
+			let qry = `DELETE FROM NotesDatas 
+			           WHERE timestamp = "`+datas.data.timestamp+`"
+			           AND  item_id = "`+datas.data.item_tmpId+`",
+			           AND  item_path = "`+datas.data.item_path+`"
+			           AND  status = "UPLOADING"   
+			           `;
+			this.webSQL.playQuery('syncUp',qry);
+
+
+
+			//je regarde si en base syncdata je retrouve ma ligne
+			let qryTestLine = `UPDATE Notes
+	                           SET note_id =  "`+datas.data.Note.id+`"   ,
+								ressource_id =  "`+datas.data.Resource.id+`"  ,
+								item_id =  "`+datas.data.Item.id+`"   ,
+								status = "SYNC",
+								state  = "CLEAN" 
+	 
+							   WHERE timestamp = "`+datas.data.timestamp+`" 
+					           AND  note_id = "`+NoteId+`" 
+					           AND  ressource_id = "`+ResourceId+`" 
+					           AND  item_id = "`+ItemId+`" 
+					           AND STATE = "PREUP"
+							  `;
+
+			this.webSQL.playQuery('syncData',qryTestLine);
+
+
+			//destroy persistent
+
+	
 		}
 	
+
+
+
+
+
 
 	}
 
