@@ -381,12 +381,12 @@ export default class NoteCollection {
 		
 
 
-		//on regarde si on a du temporaire pour les id
-		let NoteId = (datas.data.Note.tmpId) ? datas.data.Note.tmpId : datas.data.Note.id;
-		let ResourceId = (datas.data.Resource.tmpId) ? datas.data.Resource.tmpId : datas.data.Resource.id;
-		let ItemId = (datas.data.Item.tmpId) ? datas.data.Item.tmpId : datas.data.Item.id;
-
 		if(datas.data.type == 'text' && datas.data.call == 'push'){
+
+					//on regarde si on a du temporaire pour les id
+			let NoteId = (datas.data.Note.tmpId) ? datas.data.Note.tmpId : datas.data.Note.id;
+			let ResourceId = (datas.data.Resource.tmpId) ? datas.data.Resource.tmpId : datas.data.Resource.id;
+			let ItemId = (datas.data.Item.tmpId) ? datas.data.Item.tmpId : datas.data.Item.id;
 
 					//je supprime la ligne de sync up
 			let qry = `DELETE FROM Notes 
