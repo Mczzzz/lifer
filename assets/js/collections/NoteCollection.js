@@ -340,6 +340,7 @@ export default class NoteCollection {
 
 		this.DatasToSend = results.rows.item(0);
 		let name = this.DatasToSend.item_path;
+		this.DatasToSend.item_type = "image";
 			//on va chercher le fichier dans le storage
 			let PersistLocalStore = new LocalStorage();
 			PersistLocalStore.get(name,this, "sendDatasToServer");
