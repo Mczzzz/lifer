@@ -438,13 +438,13 @@ export default class NoteCollection {
 
 
 					//je supprime la ligne de sync up
-			let qry = `DELETE FROM NotesDatas 
+			let qry2 = `DELETE FROM NotesDatas 
 			           WHERE timestamp = "`+datas.data.timestamp+`"
 			           AND  item_id = "`+datas.data.item_tmpId+`",
 			           AND  item_path = "`+datas.data.item_path+`"
 			           AND  status = "UPLOADING"   
 			           `;
-			this.webSQL.playQuery('syncUp',qry);
+			this.webSQL.playQuery('syncUp',qry2);
 
 
 
