@@ -480,6 +480,8 @@ class NotesController extends Controller
 
         file_put_contents($completePath."/".$datas->item_path, $Mydata);
 
+
+
             $response = new \stdClass();
             $response->item_id = $Item->getId();
             $response->item_tmpId = $datas->item_id;
@@ -487,6 +489,9 @@ class NotesController extends Controller
             $response->timestamp = $datas->timestamp;
             $response->type = $datas->item_type;
             $response->call = "pushDatas";
+            $response->note_id = $datas->note_id;
+            $response->ressource_id = $datas->ressource_id;
+            $response->file_exist = file_exists ($completePath."/".$datas->item_path);
 
 
             $res->error = "0";

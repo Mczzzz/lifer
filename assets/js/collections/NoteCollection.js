@@ -181,8 +181,6 @@ export default class NoteCollection {
 		this.webSQL.playQuery('syncUp',qry3,this,'_createRequestToServer');
 		// j'envoi en auserveru et attedns un retour positif
 
-
-
 		//si oui, je regarde dans syncdata si mon timestamp est le même dans ce cas la je flag SYNCHRO
 					//sinon je supprime seulement ma ligne dans syncup
 		//si non, je resset pour l'envoi suite à échec
@@ -380,15 +378,17 @@ export default class NoteCollection {
 /*
 		console.log("_updateAfterRequest");
 		console.log(datas);*/
-		
+			let NoteId = "";
+			let ResourceId = "";
+			let ItemId = "";
 
 
 		if(datas.data.type == 'text' && datas.data.call == 'push'){
 
 					//on regarde si on a du temporaire pour les id
-			let NoteId = (datas.data.Note.tmpId) ? datas.data.Note.tmpId : datas.data.Note.id;
-			let ResourceId = (datas.data.Resource.tmpId) ? datas.data.Resource.tmpId : datas.data.Resource.id;
-			let ItemId = (datas.data.Item.tmpId) ? datas.data.Item.tmpId : datas.data.Item.id;
+			NoteId = (datas.data.Note.tmpId) ? datas.data.Note.tmpId : datas.data.Note.id;
+			ResourceId = (datas.data.Resource.tmpId) ? datas.data.Resource.tmpId : datas.data.Resource.id;
+			ItemId = (datas.data.Item.tmpId) ? datas.data.Item.tmpId : datas.data.Item.id;
 
 					//je supprime la ligne de sync up
 			let qry = `DELETE FROM Notes 
@@ -420,6 +420,12 @@ export default class NoteCollection {
 
 		}else if(datas.data.type == 'image' && datas.data.call == 'push'){
 
+
+			//on met a jour tous les id
+			//dans les 3 tables
+
+
+
 			this._syncData();
 
 
@@ -427,6 +433,10 @@ export default class NoteCollection {
 		}else if(datas.data.type == 'image' && datas.data.call == 'pushDatas'){
 
 			
+			let NoteId = datas.data.node_id;
+			let ResourceId = (datas.data.Resource.tmpId) ? datas.data.Resource.tmpId : datas.data.Resource.id;
+			let ItemId = (datas.data.Item.tmpId) ? datas.data.Item.tmpId : datas.data.Item.id;
+
 
 
 					//je supprime la ligne de sync up
