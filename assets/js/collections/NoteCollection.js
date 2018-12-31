@@ -340,7 +340,6 @@ export default class NoteCollection {
 
 		this.DatasToSend = results.rows.item(0);
 		let name = this.DatasToSend.item_path;
-		this.DatasToSend.item_type = "image";
 			//on va chercher le fichier dans le storage
 			let PersistLocalStore = new LocalStorage();
 			PersistLocalStore.get(name,this, "sendDatasToServer");
@@ -363,6 +362,8 @@ export default class NoteCollection {
 		console.log(datas);
 		console.log(this.DatasToSend);*/
 		this.DatasToSend.datas = datas;
+//TODO : A ne pas mettre en dur		
+		this.DatasToSend.item_type = "image";
 		this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'pushDatas',this,"_updateAfterRequest",this.DatasToSend);
 		let qry = `UPDATE NotesDatas
 		           SET status = 'UPLOADING'
