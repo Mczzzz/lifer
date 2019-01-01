@@ -68,7 +68,7 @@ export default class Main extends superViews{
 
 
 
-				item = card.push("textButton", Elt,"view_Note", "viewNote");
+				item = card.push("textButton", Elt,"view_Note");
 
 					item.setData(datas.rows[i].item_id);
 
