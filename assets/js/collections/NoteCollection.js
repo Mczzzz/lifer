@@ -391,9 +391,18 @@ export default class NoteCollection {
 			this.webSQL.playQuery('syncData',qryTestLine);
 
 
+			
+			//j'enregistre dans le temporaire
+			//data:image/jpeg;base64,
 			//destroy persistent
-
+			let TemporaryLocalStore = new LocalStorage('TEMPORARY');
+			TemporaryLocalStore.push(datas.data.item_path,"data:image/jpeg;base64,"+datas.data.picture);
 	
+
+			let PersistLocalStore = new LocalStorage();
+			PersistLocalStore.remove(datas.data.item_path);
+
+
 		}
 	
 

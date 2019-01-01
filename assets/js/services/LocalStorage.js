@@ -22,6 +22,7 @@ export default class LocalStorage {
 
 /*		this.pict = pict;
 		this.name = name;*/
+		
 
 		navigator.webkitPersistentStorage.requestQuota ( this.grantedBytes, (grantedBytes) => this.pushAction(grantedBytes, name, Myfile), (e) => this.consoleSizeError(e) );
 
