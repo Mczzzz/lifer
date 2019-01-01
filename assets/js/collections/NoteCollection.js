@@ -383,7 +383,7 @@ export default class NoteCollection {
 					           AND  note_id = "`+datas.data.note_id+`" 
 					           AND  ressource_id = "`+datas.data.ressource_id+`" 
 					           AND  item_id = "`+datas.data.item_id+`" 
-					           AND STATE = "PREUP"
+					           AND STATE = "PARTIAL"
 							  `;
 
 			this.webSQL.playQuery('syncData',qryTestLine);
