@@ -52,10 +52,11 @@ export default class Router {
 	}
 
 
-	Note(){
+	Note(e){
 
+		let guid = (e.detail.guid)? e.detail.guid : false;
 		//this.cleanBody();
-		let note = new Note();
+		let note = new Note(guid);
 
 	}
 

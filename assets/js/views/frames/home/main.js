@@ -69,23 +69,31 @@ export default class Main extends superViews{
 
 
 				item = card.push("TextButton", Elt,"view_Note",datas.rows[i].item_id);
+				item.getContainer().addEventListener("click",()=>this.openNote(datas.rows[i].item_id));
 
 					//item.setData(datas.rows[i].item_id);
 
 					//item.getContainer().addEventListener("click",()=>this.StartNote());
 
 
-
-
-
-
-
-
-
 		  }
 
 
 
+
+
+	}
+
+
+
+	openNote(guid){
+
+	 let LinkEvent = new CustomEvent('changeRoute', {'detail' : {'frame' : 'Note',
+	 	                                                          'guid' : guid
+	 	                                                         }
+	 	                                             }
+	 	                            );
+     window.dispatchEvent(LinkEvent);
 
 
 	}
