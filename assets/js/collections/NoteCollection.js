@@ -375,7 +375,8 @@ export default class NoteCollection {
 
 			//je regarde si en base syncdata je retrouve ma ligne
 			let qryTestLine = `UPDATE Notes
-	                          	status = "SYNC",
+
+	                          SET status = "SYNC",
 								state  = "CLEAN" 
 	 
 							   WHERE timestamp = "`+datas.data.timestamp+`" 
