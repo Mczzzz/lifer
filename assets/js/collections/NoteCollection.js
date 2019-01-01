@@ -365,7 +365,7 @@ export default class NoteCollection {
 					//je supprime la ligne de sync up
 			let qry2 = `DELETE FROM NotesDatas 
 			           WHERE timestamp = "`+datas.data.timestamp+`"
-			           AND  item_id = "`+datas.data.item_id+`",
+			           AND  item_id = "`+datas.data.item_id+`" 
 			           AND  item_path = "`+datas.data.item_path+`"
 			           AND  status = "UPLOADING"   
 			           `;
