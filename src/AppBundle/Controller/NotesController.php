@@ -106,27 +106,28 @@ class NotesController extends Controller
         $this->em = $this->getDoctrine()->getManager();
 
 
-        $response = new \stdClass();
+        
 
         foreach ($datas as $NoteElement) {
 
         $StoreResult = $this->storeElement($NoteElement);
 
 
-            $response->Note        = new \stdClass();
-            $response->Note->id    = $StoreResult["Note"]->getId();
-            $response->Note->tmpId = $NoteElement->note_id;
+            $response = new \stdClass();
 
-            $response->Resource        = new \stdClass();
-            $response->Resource->id    = $StoreResult["Resource"]->getId();
-            $response->Resource->tmpId = $NoteElement->ressource_id;
+            $response->note_id    = $StoreResult["Note"]->getId();
+            $response->note_tmpId = $NoteElement->note_id;
 
-            $response->Item = new \stdClass();
-            $response->Item->id = $StoreResult["Item"]->getId();
-            $response->Item->tmpId = $NoteElement->item_id;
+            $response->ressource_id    = $StoreResult["Resource"]->getId();
+            $response->ressource_tmpId = $NoteElement->ressource_id;
+
+            $response->item_id = $StoreResult["Item"]->getId();
+            $response->item_tmpId = $NoteElement->item_id;
             $response->timestamp = $NoteElement->timestamp;
             $response->type = $NoteElement->item_type;
+            $response->item_path = $NoteElement->item_path;
             $response->call = "push";
+
 
         }
 

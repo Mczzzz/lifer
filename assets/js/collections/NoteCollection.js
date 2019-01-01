@@ -263,31 +263,6 @@ export default class NoteCollection {
 			                 `);
 
 
-		    if(results.rows.item(i).item_type == "image" && results.rows.item(i).item_path.length > 0)
-
-
-		    	this.webSQL.playQuery('syncUp',
-			                  `insert into NotesDatas ( timestamp,
-			                                       status,
-			                                       note_id,
-												   ressource_id,
-												   item_id,
-												   item_type,
-												   item_path
-			                                      )
-			                   values ("`+results.rows.item(i).timestamp+`",
-			                          "BEFOREUP",
-			                          "`+results.rows.item(i).note_id+`",
-			                          "`+results.rows.item(i).ressource_id+`",
-			                          "`+results.rows.item(i).item_id+`",
-			                          "PERSISTENT",
-			                          "`+results.rows.item(i).item_path+`"
-			                          )
-
-			                 `);
-
-
-
 		  }
 
 		 if(results.rows.length){
@@ -362,7 +337,7 @@ export default class NoteCollection {
 		this.DatasToSend.datas = datas;
 //TODO : A ne pas mettre en dur		
 		this.DatasToSend.item_type = "image";
-		this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'pushDatas',this,"_updateAfterRequest",this.DatasToSend);
+		this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'pushDatas',this,"_updateAfterRequestData",this.DatasToSend);
 		let qry = `UPDATE NotesDatas
 		           SET status = 'UPLOADING'
 		           WHERE status = 'BEFOREUP'
@@ -374,77 +349,15 @@ export default class NoteCollection {
 
 
 
-	_updateAfterRequest(datas){
-/*
-		console.log("_updateAfterRequest");
-		console.log(datas);*/
-			let NoteId = "";
-			let ResourceId = "";
-			let ItemId = "";
-
-
-		if(datas.data.type == 'text' && datas.data.call == 'push'){
-
-					//on regarde si on a du temporaire pour les id
-			NoteId = (datas.data.Note.tmpId) ? datas.data.Note.tmpId : datas.data.Note.id;
-			ResourceId = (datas.data.Resource.tmpId) ? datas.data.Resource.tmpId : datas.data.Resource.id;
-			ItemId = (datas.data.Item.tmpId) ? datas.data.Item.tmpId : datas.data.Item.id;
-
-					//je supprime la ligne de sync up
-			let qry = `DELETE FROM Notes 
-			           WHERE timestamp = "`+datas.data.timestamp+`"
-			           AND  note_id = "`+NoteId+`" 
-			           AND  ressource_id = "`+ResourceId+`" 
-			           AND  item_id = "`+ItemId+`" 
-			           `;
-			this.webSQL.playQuery('syncUp',qry);
-
-			//je regarde si en base syncdata je retrouve ma ligne
-			let qryTestLine = `UPDATE Notes
-	                           SET note_id =  "`+datas.data.Note.id+`"   ,
-								ressource_id =  "`+datas.data.Resource.id+`"  ,
-								item_id =  "`+datas.data.Item.id+`"   ,
-								status = "SYNC",
-								state  = "CLEAN" 
-	 
-							   WHERE timestamp = "`+datas.data.timestamp+`" 
-					           AND  note_id = "`+NoteId+`" 
-					           AND  ressource_id = "`+ResourceId+`" 
-					           AND  item_id = "`+ItemId+`" 
-					           AND STATE = "PREUP"
-							  `;
-
-			this.webSQL.playQuery('syncData',qryTestLine);
-
-			//il faut mettre a jour les id
-
-		}else if(datas.data.type == 'image' && datas.data.call == 'push'){
-
-
-			//on met a jour tous les id
-			//dans les 3 tables
-
-
-
-			this._syncData();
-
-
-
-		}else if(datas.data.type == 'image' && datas.data.call == 'pushDatas'){
+	_updateAfterRequestData(datas){
 
 			
-			let NoteId = datas.data.node_id;
-			let ResourceId = (datas.data.Resource.tmpId) ? datas.data.Resource.tmpId : datas.data.Resource.id;
-			let ItemId = (datas.data.Item.tmpId) ? datas.data.Item.tmpId : datas.data.Item.id;
-
-
-
 					//je supprime la ligne de sync up
 			let qry = `DELETE FROM Notes 
 			           WHERE timestamp = "`+datas.data.timestamp+`"
-			           AND  note_id = "`+NoteId+`" 
-			           AND  ressource_id = "`+ResourceId+`" 
-			           AND  item_id = "`+ItemId+`" 
+			           AND  note_id = "`+datas.data.note_id+`" 
+			           AND  ressource_id = "`+datas.data.ressource_id+`" 
+			           AND  item_id = "`+datas.data.item_id+`" 
 			           `;
 			this.webSQL.playQuery('syncUp',qry);
 
@@ -452,7 +365,7 @@ export default class NoteCollection {
 					//je supprime la ligne de sync up
 			let qry2 = `DELETE FROM NotesDatas 
 			           WHERE timestamp = "`+datas.data.timestamp+`"
-			           AND  item_id = "`+datas.data.item_tmpId+`",
+			           AND  item_id = "`+datas.data.item_id+`",
 			           AND  item_path = "`+datas.data.item_path+`"
 			           AND  status = "UPLOADING"   
 			           `;
@@ -462,16 +375,13 @@ export default class NoteCollection {
 
 			//je regarde si en base syncdata je retrouve ma ligne
 			let qryTestLine = `UPDATE Notes
-	                           SET note_id =  "`+datas.data.Note.id+`"   ,
-								ressource_id =  "`+datas.data.Resource.id+`"  ,
-								item_id =  "`+datas.data.Item.id+`"   ,
-								status = "SYNC",
+	                          	status = "SYNC",
 								state  = "CLEAN" 
 	 
 							   WHERE timestamp = "`+datas.data.timestamp+`" 
-					           AND  note_id = "`+NoteId+`" 
-					           AND  ressource_id = "`+ResourceId+`" 
-					           AND  item_id = "`+ItemId+`" 
+					           AND  note_id = "`+datas.data.note_id+`" 
+					           AND  ressource_id = "`+datas.data.ressource_id+`" 
+					           AND  item_id = "`+datas.data.item_id+`" 
 					           AND STATE = "PREUP"
 							  `;
 
@@ -485,9 +395,108 @@ export default class NoteCollection {
 	
 
 
+	_updateAfterRequest(datas){
+
+
+//todo: jE PENSE QU4IL MANQUE UN foR 
+/*
+		console.log("_updateAfterRequest");
+		console.log(datas);*/
+					//on regarde si on a du temporaire pour les id
 
 
 
+			NoteId = (datas.data.note_tmpId) ? datas.data.note_tmpId : datas.data.note_id;
+			ResourceId = (datas.data.ressource_tmpId) ? datas.data.ressource_tmpId : datas.data.ressource_id;
+			ItemId = (datas.data.item_tmpId) ? datas.data.item_tmpId : datas.data.item_id;
+
+
+		if(datas.data.type == 'text'){
+
+
+
+					//je supprime la ligne de sync up
+
+			this.webSQL.playQuery('syncUp',`DELETE FROM Notes 
+								           WHERE timestamp = "`+datas.data.timestamp+`"
+								           AND  note_id = "`+NoteId+`" 
+								           AND  ressource_id = "`+ResourceId+`" 
+								           AND  item_id = "`+ItemId+`" 
+								           `);
+
+			//je regarde si en base syncdata je retrouve ma ligne
+			this.webSQL.playQuery('syncData',`UPDATE Notes
+	                           SET note_id =  "`+datas.data.note_id+`"   ,
+								ressource_id =  "`+datas.data.ressource_id+`"  ,
+								item_id =  "`+datas.data.item_id+`"   ,
+								status = "SYNC",
+								state  = "CLEAN" 
+	 
+							   WHERE timestamp = "`+datas.data.timestamp+`" 
+					           AND  note_id = "`+NoteId+`" 
+					           AND  ressource_id = "`+ResourceId+`" 
+					           AND  item_id = "`+ItemId+`" 
+					           AND STATE = "PREUP"
+							  `);
+
+			//il faut mettre a jour les id
+
+		}else if(datas.data.type == 'image'){
+
+
+				this.webSQL.playQuery('syncUp',`UPDATE Notes 
+												SET note_id =  "`+datas.data.note_id+`"   ,
+												ressource_id =  "`+datas.data.ressource_id+`"  ,
+												item_id =  "`+datas.data.item_id+`"   ,
+												status = "WAITUPDATA",
+										           WHERE timestamp = "`+datas.data.timestamp+`"
+										           AND  note_id = "`+NoteId+`" 
+										           AND  ressource_id = "`+ResourceId+`" 
+										           AND  item_id = "`+ItemId+`" 
+										           `);
+
+
+		    	this.webSQL.playQuery('syncUp',
+			                  `insert into NotesDatas ( timestamp,
+			                                       status,
+			                                       note_id,
+												   ressource_id,
+												   item_id,
+												   item_type,
+												   item_path
+			                                      )
+			                   values ("`+datas.data.timestamp+`",
+			                          "BEFOREUP",
+			                          "`+datas.data.note_id+`",
+			                          "`+datas.data.ressource_id+`",
+			                          "`+datas.data.item_id+`",
+			                          "PERSISTENT",
+			                          "`+datas.data.item_path+`"
+			                          )
+
+			                 `);
+
+
+				this.webSQL.playQuery('syncData',`UPDATE Notes
+		                           SET note_id =  "`+datas.data.note_id+`"   ,
+									ressource_id =  "`+datas.data.ressource_id+`"  ,
+									item_id =  "`+datas.data.item_id+`"   ,
+									status = "WAITUPDATA",
+									state  = "PARTIAL" 
+		 
+								   WHERE timestamp = "`+datas.data.timestamp+`" 
+						           AND  note_id = "`+NoteId+`" 
+						           AND  ressource_id = "`+ResourceId+`" 
+						           AND  item_id = "`+ItemId+`" 
+						           AND STATE = "PREUP"
+								  `);
+
+
+			
+		    this._syncData();
+
+
+		}
 
 	}
 
