@@ -310,8 +310,8 @@ export default class NoteCollection {
 
 
 	_createRequestToServerDatas(results){
-		console.log("_createRequestToServerDatas");
-		console.log(results);
+
+		if(results.rows.length == 0) return true;
 
 		this.DatasToSend = results.rows.item(0);
 		let name = this.DatasToSend.item_path;
