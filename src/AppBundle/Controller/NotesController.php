@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use Intervention\Image\ImageManager;
 
 use AppBundle\Entity\Notes;
 use AppBundle\Entity\Resources;
@@ -483,6 +484,9 @@ class NotesController extends Controller
 
         file_put_contents($completePath."/".$datas->item_path, $Mydata);
 
+        $manager = new ImageManager();
+        $IMimage = $manager->make($completePath."/".$datas->item_path)->resize(300, 200);
+
 
 
             $response = new \stdClass();
@@ -495,6 +499,7 @@ class NotesController extends Controller
             $response->note_id = $datas->note_id;
             $response->ressource_id = $datas->ressource_id;
             $response->file_exist = file_exists ($completePath."/".$datas->item_path);
+            $response->picture = base64_encode($IMimage->response('jpg', 70));
 
 
             $res->error = "0";
