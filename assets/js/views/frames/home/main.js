@@ -32,6 +32,8 @@ export default class Main extends superViews{
 
 	showList(){
 
+		console.log("in showLiiiiiiiiiiiiiiiiiiiiiiiiiist!!!!!!");
+
 		this.NoteCollection = new LoaderCollection('Note');
 		this.NoteCollection.getAllNotes(this,'addCards');
 
