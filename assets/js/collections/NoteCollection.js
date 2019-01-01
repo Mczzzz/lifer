@@ -406,9 +406,9 @@ export default class NoteCollection {
 
 
 
-			NoteId = (datas.data.note_tmpId) ? datas.data.note_tmpId : datas.data.note_id;
-			ResourceId = (datas.data.ressource_tmpId) ? datas.data.ressource_tmpId : datas.data.ressource_id;
-			ItemId = (datas.data.item_tmpId) ? datas.data.item_tmpId : datas.data.item_id;
+			let NoteId = (datas.data.note_tmpId) ? datas.data.note_tmpId : datas.data.note_id;
+			let ResourceId = (datas.data.ressource_tmpId) ? datas.data.ressource_tmpId : datas.data.ressource_id;
+			let ItemId = (datas.data.item_tmpId) ? datas.data.item_tmpId : datas.data.item_id;
 
 
 		if(datas.data.type == 'text'){
