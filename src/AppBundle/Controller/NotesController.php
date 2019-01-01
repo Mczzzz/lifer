@@ -105,7 +105,7 @@ class NotesController extends Controller
         // j'enregistre en base ma note
         $this->em = $this->getDoctrine()->getManager();
 
-        $response = new \stdClass();
+        //$response = new \stdClass();
         $arrayRes = array();
 
         foreach ($datas as $NoteElement) {
@@ -136,7 +136,7 @@ class NotesController extends Controller
 
             $res->error = "0";
             $res->msg   = "SUCCESS";
-            $res->data  = $response;
+            $res->data  = $arrayRes;
 
 
             return new response(json_encode($res));
