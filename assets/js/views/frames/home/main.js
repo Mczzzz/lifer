@@ -42,7 +42,7 @@ export default class Main extends superViews{
 
 	addCards(datas){
 
-
+		console.log("In Addd Cardsssssssssssssssssss!!!!");
 
 		console.log(datas);
 
