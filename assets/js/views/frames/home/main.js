@@ -49,7 +49,7 @@ export default class Main extends superViews{
 		let card = "";
 		let Elt = "";
 		let item = "";
-
+		let id = "";
 		let len = datas.rows.length, i;
 		  for (i = 0; i < len; i++) {
 
@@ -67,9 +67,9 @@ export default class Main extends superViews{
 			Elt.setStyle("justifyContent","flex-start");
 
 
-
+			id = datas.rows[i].item_id;
 				item = card.push("TextButton", Elt,"view_Note",datas.rows[i].item_id);
-				item.getContainer().addEventListener("click",()=>this.openNote(datas.rows[i].item_id));
+				item.getContainer().addEventListener("click",()=>this.openNote(id));
 
 					//item.setData(datas.rows[i].item_id);
 
