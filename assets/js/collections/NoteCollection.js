@@ -164,6 +164,7 @@ export default class NoteCollection {
 
 		this._syncEntities();
 
+		this._syncData();
 		
 
 	}
@@ -494,7 +495,7 @@ export default class NoteCollection {
 
 
 			
-		    this._syncData();
+	
 
 
 		}
