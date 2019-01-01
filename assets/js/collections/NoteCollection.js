@@ -449,7 +449,7 @@ export default class NoteCollection {
 												SET note_id =  "`+datas.data.note_id+`"   ,
 												ressource_id =  "`+datas.data.ressource_id+`"  ,
 												item_id =  "`+datas.data.item_id+`"   ,
-												status = "WAITUPDATA",
+												status = "WAITUPDATA"
 										           WHERE timestamp = "`+datas.data.timestamp+`"
 										           AND  note_id = "`+NoteId+`" 
 										           AND  ressource_id = "`+ResourceId+`" 
