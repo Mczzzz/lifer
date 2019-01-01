@@ -70,10 +70,7 @@ export default class Main extends superViews{
 
 				item = card.push("textButton", Elt,"view_Note", "viewNote");
 
-					item.setStylePicto("fontSize","25px");
-					item.setStylePicto("marginRight","0px");
-					item.setStylePicto("color","green");
-					item.setStylePicto("alignItems","center");
+					item.setData(datas.rows[i].item_id);
 
 					//item.getContainer().addEventListener("click",()=>this.StartNote());
 
