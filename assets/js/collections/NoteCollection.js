@@ -406,21 +406,30 @@ export default class NoteCollection {
 		console.log(datas);*/
 					//on regarde si on a du temporaire pour les id
 
+		let NoteId = "";
+		let ResourceId = "";
+		let ItemId = "";
+
+		let len = datas.data.length, i;
+		  for (i = 0; i < len; i++) {
 
 
-			let NoteId = (datas.data.note_tmpId) ? datas.data.note_tmpId : datas.data.note_id;
-			let ResourceId = (datas.data.ressource_tmpId) ? datas.data.ressource_tmpId : datas.data.ressource_id;
-			let ItemId = (datas.data.item_tmpId) ? datas.data.item_tmpId : datas.data.item_id;
+
+		  	NoteId = (datas.data[i].note_tmpId) ? datas.data[i].note_tmpId : datas.data[i].note_id;
+			ResourceId = (datas.data[i].ressource_tmpId) ? datas.data[i].ressource_tmpId : datas.data[i].ressource_id;
+			ItemId = (datas.data[i].item_tmpId) ? datas.data[i].item_tmpId : datas.data[i].item_id;
 
 
-		if(datas.data.type == 'text'){
+
+
+		if(datas.data[i].type == 'text'){
 
 
 
 					//je supprime la ligne de sync up
 
 			this.webSQL.playQuery('syncUp',`DELETE FROM Notes 
-								           WHERE timestamp = "`+datas.data.timestamp+`"
+								           WHERE timestamp = "`+datas.data[i].timestamp+`"
 								           AND  note_id = "`+NoteId+`" 
 								           AND  ressource_id = "`+ResourceId+`" 
 								           AND  item_id = "`+ItemId+`" 
@@ -428,13 +437,13 @@ export default class NoteCollection {
 
 			//je regarde si en base syncdata je retrouve ma ligne
 			this.webSQL.playQuery('syncData',`UPDATE Notes
-	                           SET note_id =  "`+datas.data.note_id+`"   ,
-								ressource_id =  "`+datas.data.ressource_id+`"  ,
-								item_id =  "`+datas.data.item_id+`"   ,
+	                           SET note_id =  "`+datas.data[i].note_id+`"   ,
+								ressource_id =  "`+datas.data[i].ressource_id+`"  ,
+								item_id =  "`+datas.data[i].item_id+`"   ,
 								status = "SYNC",
 								state  = "CLEAN" 
 	 
-							   WHERE timestamp = "`+datas.data.timestamp+`" 
+							   WHERE timestamp = "`+datas.data[i].timestamp+`" 
 					           AND  note_id = "`+NoteId+`" 
 					           AND  ressource_id = "`+ResourceId+`" 
 					           AND  item_id = "`+ItemId+`" 
@@ -443,15 +452,15 @@ export default class NoteCollection {
 
 			//il faut mettre a jour les id
 
-		}else if(datas.data.type == 'image'){
+		}else if(datas.data[i].type == 'image'){
 
 
 				this.webSQL.playQuery('syncUp',`UPDATE Notes 
-												SET note_id =  "`+datas.data.note_id+`"   ,
-												ressource_id =  "`+datas.data.ressource_id+`"  ,
-												item_id =  "`+datas.data.item_id+`"   ,
+												SET note_id =  "`+datas.data[i].note_id+`"   ,
+												ressource_id =  "`+datas.data[i].ressource_id+`"  ,
+												item_id =  "`+datas.data[i].item_id+`"   ,
 												status = "WAITUPDATA"
-										           WHERE timestamp = "`+datas.data.timestamp+`"
+										           WHERE timestamp = "`+datas.data[i].timestamp+`"
 										           AND  note_id = "`+NoteId+`" 
 										           AND  ressource_id = "`+ResourceId+`" 
 										           AND  item_id = "`+ItemId+`" 
@@ -467,26 +476,26 @@ export default class NoteCollection {
 												   item_type,
 												   item_path
 			                                      )
-			                   values ("`+datas.data.timestamp+`",
+			                   values ("`+datas.data[i].timestamp+`",
 			                          "BEFOREUP",
-			                          "`+datas.data.note_id+`",
-			                          "`+datas.data.ressource_id+`",
-			                          "`+datas.data.item_id+`",
+			                          "`+datas.data[i].note_id+`",
+			                          "`+datas.data[i].ressource_id+`",
+			                          "`+datas.data[i].item_id+`",
 			                          "PERSISTENT",
-			                          "`+datas.data.item_path+`"
+			                          "`+datas.data[i].item_path+`"
 			                          )
 
 			                 `);
 
 
 				this.webSQL.playQuery('syncData',`UPDATE Notes
-		                           SET note_id =  "`+datas.data.note_id+`"   ,
-									ressource_id =  "`+datas.data.ressource_id+`"  ,
-									item_id =  "`+datas.data.item_id+`"   ,
+		                           SET note_id =  "`+datas.data[i].note_id+`"   ,
+									ressource_id =  "`+datas.data[i].ressource_id+`"  ,
+									item_id =  "`+datas.data[i].item_id+`"   ,
 									status = "WAITUPDATA",
 									state  = "PARTIAL" 
 		 
-								   WHERE timestamp = "`+datas.data.timestamp+`" 
+								   WHERE timestamp = "`+datas.data[i].timestamp+`" 
 						           AND  note_id = "`+NoteId+`" 
 						           AND  ressource_id = "`+ResourceId+`" 
 						           AND  item_id = "`+ItemId+`" 
@@ -498,7 +507,18 @@ export default class NoteCollection {
 	
 
 
+			}
+
+
+		NoteId = "";
+		ResourceId = "";
+		ItemId = "";
+
+
+
 		}
+
+
 
 	}
 

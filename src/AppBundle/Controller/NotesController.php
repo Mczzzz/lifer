@@ -105,29 +105,31 @@ class NotesController extends Controller
         // j'enregistre en base ma note
         $this->em = $this->getDoctrine()->getManager();
 
-
-        
+        $response = new \stdClass();
+        $arrayRes = array();
 
         foreach ($datas as $NoteElement) {
 
         $StoreResult = $this->storeElement($NoteElement);
 
 
-            $response = new \stdClass();
+            $Itemresponse = new \stdClass();
 
-            $response->note_id    = $StoreResult["Note"]->getId();
-            $response->note_tmpId = $NoteElement->note_id;
+            $Itemresponse->note_id    = $StoreResult["Note"]->getId();
+            $Itemresponse->note_tmpId = $NoteElement->note_id;
 
-            $response->ressource_id    = $StoreResult["Resource"]->getId();
-            $response->ressource_tmpId = $NoteElement->ressource_id;
+            $Itemresponse->ressource_id    = $StoreResult["Resource"]->getId();
+            $Itemresponse->ressource_tmpId = $NoteElement->ressource_id;
 
-            $response->item_id = $StoreResult["Item"]->getId();
-            $response->item_tmpId = $NoteElement->item_id;
-            $response->timestamp = $NoteElement->timestamp;
-            $response->type = $NoteElement->item_type;
-            $response->item_path = $NoteElement->item_path;
-            $response->call = "push";
+            $Itemresponse->item_id = $StoreResult["Item"]->getId();
+            $Itemresponse->item_tmpId = $NoteElement->item_id;
+            $Itemresponse->timestamp = $NoteElement->timestamp;
+            $Itemresponse->type = $NoteElement->item_type;
+            $Itemresponse->item_path = $NoteElement->item_path;
+            $Itemresponse->call = "push";
 
+
+            array_push($arrayRes,$Itemresponse);
 
         }
 
