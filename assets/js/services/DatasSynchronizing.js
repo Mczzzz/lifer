@@ -20,8 +20,8 @@ class DatasSynchronizing {
 	init(){
 
 		//Init de la table Note si pas encore fait
-		this.NoteCollection = new LoaderCollection('Note');
-		this.NoteCollection.init();
+/*		this.NoteCollection = new LoaderCollection('Note');
+		this.NoteCollection.init();*/
 
 
 		this.NotesCollection = new LoaderCollection('Notes');
