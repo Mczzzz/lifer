@@ -114,7 +114,7 @@ export default class HeaderButtons extends superViews{
 		  { transform: 'translateX('+DeviceWidth+'px)' }
 		], { 
 		  // timing options
-		  duration: time,
+		  duration: time+100,
 		  easing : 'ease-in-out',
 		  iterations: 1
 		});
