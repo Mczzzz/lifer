@@ -68,8 +68,8 @@ export default class Main extends superViews{
 
 			let card = new Card('Card'+id, this.path);
 	
-		    card.setStyle("borderWidth", "0px");
-		    card.setStyle("borderRadius", "0px");
+		    card.setStyle("borderWidth", "1px");
+		    card.setStyle("borderRadius", "3px");
 		    card.setStyle("margin", "0px");
 		    card.setStyle("padding", "10px");
 		    card.setStyle("background", "transparent");
