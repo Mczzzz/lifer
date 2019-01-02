@@ -128,7 +128,9 @@ export default class HeaderButtons extends superViews{
 
 	changeRoute(){
 
-		let LinkEvent = new CustomEvent('changeRoute', {'detail' : {'frame' : 'NoteRemove'}});
+		this.parentThis.parentThis.destroyMe();
+
+		let LinkEvent = new CustomEvent('changeRoute', {'detail' : {'frame' : 'Home'}});
 		window.dispatchEvent(LinkEvent);
 
 	}
