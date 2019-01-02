@@ -28,6 +28,7 @@ export default class NoteController {
 
 	init(){
 
+		this.ChildId = 0;
 		this.initView();
 
 	}
@@ -37,9 +38,8 @@ export default class NoteController {
 
 	initView(){
 
-		let id = "tmp-"+Lifer.newTmpId();
-		let NewNote = new Note("Frame-Note_"+id,false,id);
-
+		let NewNote = new Note("Frame-Note_"+this.ChildId,false,id);
+		this.ChildId++;
 		//
 		
 	}
