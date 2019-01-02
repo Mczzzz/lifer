@@ -54,7 +54,7 @@ export default class Title extends superViews{
 
 		this.card = new Card('Card', this.path);
 
-		this.card.setId(this.data.id);
+		//this.card.setId(this.data.id);
 		
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");
