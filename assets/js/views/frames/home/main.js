@@ -22,6 +22,7 @@ export default class Main extends superViews{
 		this.setStyle("background" , "white");
 		this.setStyle("flex" , 1);
 		this.setStyle("alignItems" , "center");
+		this.setStyle("overflowY" , "scroll");
 
 
 		//je récupère la liste des notes
