@@ -229,7 +229,7 @@ class NotesController extends Controller
             }
 
            
-            $Note->setUpdateAPP($ndt);
+            $Note->setUpdateAPP($ndt->format("Y-m-d H:i:s.u"));
 
              $this->em->persist($Note);
              $this->em->flush();
