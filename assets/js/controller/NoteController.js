@@ -47,10 +47,18 @@ export default class NoteController {
 	}
 
 
+	setTitle(title){
+
+		this.title = title;
+		this.dataToStore();
+
+	}
 
 
-	dataToStore(data){
 
+	dataToStore(data=false){
+
+		if(!data) data = {};
 		console.log('in dataStore');
 		console.log(data);
 
