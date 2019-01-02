@@ -44,17 +44,29 @@ export default class Main extends superViews{
 
 	addCards(datas){
 
-		console.log(datas);
 
-		let card = "";
-		let Elt = "";
-		let item = "";
-		let id = "";
+		
 		let len = datas.rows.length, i;
 		  for (i = 0; i < len; i++) {
 
 
-		  	card = new Card('Card', this.path);
+		  	this.createCard(datas.rows[i]);
+
+
+		  }
+
+
+
+
+
+	}
+
+
+	createCard(datas){
+
+		let id = datas.item_id;
+
+			let card = new Card('Card'+id, this.path);
 	
 		    card.setStyle("borderWidth", "0px");
 		    card.setStyle("borderRadius", "0px");
@@ -63,22 +75,17 @@ export default class Main extends superViews{
 		    card.setStyle("background", "transparent");
 
 
-			Elt = card.setElement("Element");
+			let Elt = card.setElement("Element"+id);
 			Elt.setStyle("justifyContent","flex-start");
 
 
-			id = datas.rows[i].item_id;
-				item = card.push("TextButton", Elt,"view_Note"+id,id);
+			
+			let 	item = card.push("TextButton", Elt,"view_Note"+id,id);
 				item.getContainer().addEventListener("click",()=>this.openNote(id));
 
 					//item.setData(datas.rows[i].item_id);
 
 					//item.getContainer().addEventListener("click",()=>this.StartNote());
-
-
-		  }
-
-
 
 
 
