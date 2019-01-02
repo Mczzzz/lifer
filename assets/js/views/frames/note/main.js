@@ -35,11 +35,11 @@ export default class Main extends superViews{
 
 	initChilds(){
 
-		if(this.parentThis.note.guid == false){
+/*		if(this.parentThis.note.guid == false){
 
 			this.Title     = new Title("Title",this.path);
 		
-		}
+		}*/
 
 			
 
