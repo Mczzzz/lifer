@@ -103,6 +103,7 @@ export default class Note extends superViews{
 
 	setTitle(title){
 
+		console.log("in note.js !!!!!!!!!!!!!!!!!!");
 		this.note.Title(title);
 
 		//inform controller
