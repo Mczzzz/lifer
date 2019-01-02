@@ -35,7 +35,7 @@ export default class Main extends superViews{
 
 	initChilds(){
 
-		if(this.parentThis.container.indexOf("tmp-") == 0){
+		if(this.parentThis.container.id.indexOf("tmp-") == 0){
 
 			this.Title     = new Title("Title",this.path);
 		
