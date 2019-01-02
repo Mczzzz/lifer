@@ -63,7 +63,7 @@ Moment.locale('fr');
 
 
 
-		//auto creation des ids
+/*		//auto creation des ids
 		let arrayId = this.MyClass.split("_");
 
 		if(typeof arrayId[1] === 'undefined') {
@@ -73,7 +73,7 @@ Moment.locale('fr');
 		else {
 			this.ClassId = arrayId[1];
 //			console.log(this.ClassId);
-		}
+		}*/
 
 
 
