@@ -105,22 +105,31 @@ export default class HeaderButtons extends superViews{
 
 	let DeviceWidth = this.Lifer.getData("User-Device","Screen").width;
 
-	console.log("DeviceWidth:"+DeviceWidth);
+	let time = 300;
+
 
 		this.parentThis.parentThis.getContainer().animate([
-  // keyframes
-  { transform: 'translateX(0px)' }, 
-  { transform: 'translateX('+DeviceWidth+'px)' }
-], { 
-  // timing options
-  duration: 500,
-  easing : 'ease-in-out',
-  iterations: 1
-});
+		  // keyframes
+		  { transform: 'translateX(0px)' }, 
+		  { transform: 'translateX('+DeviceWidth+'px)' }
+		], { 
+		  // timing options
+		  duration: time,
+		  easing : 'ease-in-out',
+		  iterations: 1
+		});
+
+		setTimeout(()=>this.changeRoute(), time);
 
 
-/*		let LinkEvent = new CustomEvent('changeRoute', {'detail' : {'frame' : 'NoteRemove'}});
-		window.dispatchEvent(LinkEvent);*/
+	}
+
+
+
+	changeRoute(){
+
+		let LinkEvent = new CustomEvent('changeRoute', {'detail' : {'frame' : 'NoteRemove'}});
+		window.dispatchEvent(LinkEvent);
 
 	}
 
