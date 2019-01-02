@@ -65,6 +65,7 @@ export default class Router {
 
 		let note = Lifer.getData("Frame-Note","This");
 		note.destroyMe();
+		this.Home();
 
 	}
 
