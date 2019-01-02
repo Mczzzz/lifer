@@ -48,7 +48,7 @@ class DatasSynchronizing {
 	fillQueue(){
 
 		////le service fill queue doit référencer l'ensemble des collection et c'est  lui qui se charge de la synchro montante vers le serveur
-		this.NoteCollection.synchroToServer();
+	//	this.NoteCollection.synchroToServer();
 
 	}
 
