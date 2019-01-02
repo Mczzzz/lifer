@@ -103,14 +103,19 @@ export default class HeaderButtons extends superViews{
 
 	CloseMe(){
 
+	let DeviceWidth = this.lifer.getData("User-Device","Screen").width,
+
+	console.log("DeviceWidth:"+DeviceWidth);
+
 		this.parentThis.parentThis.getContainer().animate([
   // keyframes
   { transform: 'translateY(0px)' }, 
-  { transform: 'translateY(-300px)' }
+  { transform: 'translateY('+DeviceWidth+'px)' }
 ], { 
   // timing options
-  duration: 1000,
-  iterations: Infinity
+  duration: 500,
+  easing : 'ease-in-out'
+  iterations: 1
 });
 
 
