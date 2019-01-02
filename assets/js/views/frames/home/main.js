@@ -18,7 +18,8 @@ export default class Main extends superViews{
 
 	init(){
 
-		this.setStyle("background" , "linear-gradient(45deg, rgb(199, 28, 28) 0%, rgb(216, 216, 216) 100%)");
+		//this.setStyle("background" , "linear-gradient(45deg, rgb(199, 28, 28) 0%, rgb(216, 216, 216) 100%)");
+		this.setStyle("background" , "white");
 		this.setStyle("flex" , 1);
 		this.setStyle("alignItems" , "center");
 
@@ -72,7 +73,7 @@ export default class Main extends superViews{
 		    card.setStyle("borderRadius", "3px");
 		    card.setStyle("margin", "0px");
 		    card.setStyle("padding", "10px");
-		    card.setStyle("background", "transparent");
+		    card.setStyle("background", "navajowhite");
 
 
 			let Elt = card.setElement("Element"+id);
