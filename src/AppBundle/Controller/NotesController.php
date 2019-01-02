@@ -228,6 +228,8 @@ class NotesController extends Controller
                 $ndt = new \Datetime($NoteElement->timestamp);
             }
 
+            var_dump($ndt);
+            die();
             
             $Note->setUpdateAPP($ndt->format("Y-m-d H:i:s.u"));
 
