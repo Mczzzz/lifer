@@ -46,7 +46,7 @@ export default class Note extends superViews{
 		this.setStyle("display" , "flex");
 		this.setStyle("flexDirection" , "column");
 		this.setStyle("background" , "white");
-		this.setStyle("boxShadow" , "0px 0px 10px 10px green");
+		//this.setStyle("boxShadow" , "0px 0px 10px 10px green");
 
 /*		this.setStyle("display" , "flex");
 		this.setStyle("flexDirection" , "column");
