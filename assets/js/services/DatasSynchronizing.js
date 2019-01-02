@@ -24,6 +24,10 @@ class DatasSynchronizing {
 		this.NoteCollection.init();
 
 
+		this.NotesCollection = new LoaderCollection('Notes');
+		this.NotesCollection.init();
+
+
 		//this.playQuery(this.NoteCollection.tables);
 
 
