@@ -62,10 +62,10 @@ export default class Router {
 
 
 	NoteRemove(){
-
+		this.Home();
 		let note = Lifer.getData("Frame-Note","This");
 		note.destroyMe();
-		this.Home();
+		
 
 	}
 
