@@ -56,7 +56,7 @@ class Notes
     /**
      * @var datetime
      *
-     * @ORM\Column(name="updateAPP", type="datetime(3)")
+     * @ORM\Column(name="updateAPP", type="datetime")
      */
     private $updateAPP;
 
