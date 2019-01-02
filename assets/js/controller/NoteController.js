@@ -19,9 +19,6 @@ export default class NoteController {
 
 		Lifer.addData(this.path,[{"This" : this}]);
 
-		this.guid = guid;
-
-		this.title = "";
 
 		this.init();
 	}
@@ -40,19 +37,13 @@ export default class NoteController {
 
 	initView(){
 
-		this.Note = new Note("Frame-Note",false,this.guid);
+		let id = "tmp-"+Lifer.newTmpId();
+		let Note = new Note("Frame-Note_"+id,false,id);
 
-		if(this.guid) this.updateNote();
+		//
 		
 	}
 
-
-	setTitle(title){
-
-		this.title = title;
-		this.dataToStore();
-
-	}
 
 
 
@@ -78,21 +69,6 @@ export default class NoteController {
 
 
 
-	updateNote(){
-
-
-		//je recherche ce que j'ai en local
-			//je load ma collection locale
-			this.NoteCollection = new LoaderCollection('Note');
-			
-
-		//je fais une demande serveur
-
-		//Je match les mises à jour et s'il y en a je les appliques en update à ma note
-
-
-
-	}
 
 
 
