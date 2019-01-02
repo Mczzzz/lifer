@@ -73,7 +73,7 @@ export default class Title extends superViews{
 
 
 
-			let HeaderElement = this.card.setElement("header");
+/*			let HeaderElement = this.card.setElement("header");
 			HeaderElement.setStyle("justifyContent","flex-end");
 
 					this.updateNote = this.card.push("Text", HeaderElement,"update",this.data.update);
@@ -81,16 +81,16 @@ export default class Title extends superViews{
 					this.updateNote.setStyle("fontSize","9px");
 					this.updateNote.setStyle("color","grey");
 					this.updateNote.setStyle("margin","0px 5px 2px 0px");
-					this.updateNote.setStyle("fontWeight","normal");
+					this.updateNote.setStyle("fontWeight","normal");*/
 
 
 
 			let MainElement   = this.card.setElement("main");
 			MainElement.setStyle("justifyContent","flex-start");
 
-					let TheTitle = this.card.push("Text", MainElement,"title", this.data.name);
+					let TheTitle = this.card.push("Text", MainElement,"title", "");
 
-					TheTitle.setAttribute("placeholder","Titre Note...");
+					TheTitle.setAttribute("placeholder","Titre");
 
 					TheTitle.setStyle("fontSize","20px");
 					TheTitle.setStyle("color","black","property");
