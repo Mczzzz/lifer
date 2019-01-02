@@ -10,7 +10,7 @@ export default class DBLocalCollection {
 	getcacheData(){
 
 		let DBcacheData   = {};
-		DBcacheData.name        = "syncData";
+		DBcacheData.name        = "cacheData";
 		DBcacheData.version     = "1.0";
 		DBcacheData.description = "synchro locale";
 		DBcacheData.size = 2 * 1024 * 1024;
