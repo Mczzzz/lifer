@@ -76,7 +76,7 @@ export default class NotesCollection {
 																	   status,
 																	   note_id,
 																	   note_tmpId,
-																	   note_title																   
+																	   note_title,																   
 						    UNIQUE ( note_id)
                    			ON CONFLICT REPLACE
 
