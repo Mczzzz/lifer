@@ -115,7 +115,7 @@ export default class HeaderButtons extends superViews{
 		], { 
 		  // timing options
 		  duration: time+100,
-		  easing : 'ease-out-in',
+		  easing : 'ease-in-out',
 		  iterations: 1
 		});
 
