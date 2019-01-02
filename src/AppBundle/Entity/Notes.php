@@ -56,7 +56,7 @@ class Notes
     /**
      * @var datetime
      *
-     * @ORM\Column(name="updateAPP", type="datetime")
+     * @ORM\Column(name="updateAPP", type="datetime", precision=3)
      */
     private $updateAPP;
 
