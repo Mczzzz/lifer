@@ -103,7 +103,7 @@ export default class HeaderButtons extends superViews{
 
 	CloseMe(){
 
-	let DeviceWidth = this.lifer.getData("User-Device","Screen").width;
+	let DeviceWidth = this.Lifer.getData("User-Device","Screen").width;
 
 	console.log("DeviceWidth:"+DeviceWidth);
 
