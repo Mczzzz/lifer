@@ -54,7 +54,7 @@ class Notes
 
 
     /**
-     * @var datetime
+     * @var string
      *
      * @ORM\Column(name="updateAPP", columnDefinition="DATETIME(3)")
      */
@@ -163,7 +163,7 @@ class Notes
     }
 
     /**
-     * @return datetime
+     * @return string
      */
     public function getUpdateAPP()
     {
@@ -171,7 +171,7 @@ class Notes
     }
 
     /**
-     * @param datetime $updateAPP
+     * @param string $updateAPP
      *
      * @return self
      */
