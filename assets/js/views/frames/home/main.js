@@ -71,7 +71,7 @@ export default class Main extends superViews{
 	
 		    card.setStyle("borderWidth", "1px");
 		    card.setStyle("borderRadius", "3px");
-		    card.setStyle("margin", "0px");
+		    card.setStyle("margin", "5px");
 		    card.setStyle("padding", "10px");
 		    card.setStyle("background", "navajowhite");
 
