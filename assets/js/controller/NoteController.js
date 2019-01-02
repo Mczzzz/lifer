@@ -38,7 +38,7 @@ export default class NoteController {
 
 	initView(){
 
-		let NewNote = new Note("Frame-Note_"+this.ChildId,false,id);
+		let NewNote = new Note("Frame-Note_"+this.ChildId,false);
 		this.ChildId++;
 		//
 		
