@@ -65,12 +65,12 @@ export default class HeaderButtons extends superViews{
 
 
 
-				if(this.Lifer.getData('Frame-Note',"This").note.guid != false){
+/*				if(this.Lifer.getData('Frame-Note',"This").note.guid != false){
 
 					this.showTitle();
 
 
-				}
+				}*/
 
 
 
