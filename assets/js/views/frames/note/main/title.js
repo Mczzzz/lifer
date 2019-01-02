@@ -19,7 +19,7 @@ export default class Title extends superViews{
 
 
 
-		this.TheNote = this.getObjectThisfromPath("Frame-Note");
+		//this.TheNote = this.getObjectThisfromPath("Frame-Note");
 		
 
 
@@ -104,9 +104,9 @@ export default class Title extends superViews{
 
 
 
-		if(this.TheNote.note.guid === false){
+/*		if(this.TheNote.note.guid === false){
 			TheTitle.getContainer().focus();
-		}
+		}*/
 
 
 	}
