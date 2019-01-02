@@ -109,8 +109,8 @@ export default class HeaderButtons extends superViews{
 
 		this.parentThis.parentThis.getContainer().animate([
   // keyframes
-  { transform: 'translateY(0px)' }, 
-  { transform: 'translateY('+DeviceWidth+'px)' }
+  { transform: 'translateX(0px)' }, 
+  { transform: 'translateX('+DeviceWidth+'px)' }
 ], { 
   // timing options
   duration: 500,
