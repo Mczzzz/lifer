@@ -38,7 +38,7 @@ export default class NoteController {
 	initView(){
 
 		let id = "tmp-"+Lifer.newTmpId();
-		let Note = new Note("Frame-Note_"+id,false,id);
+		let NewNote = new Note("Frame-Note_"+id,false,id);
 
 		//
 		
