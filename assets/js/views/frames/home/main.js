@@ -68,7 +68,7 @@ export default class Main extends superViews{
 
 
 			id = datas.rows[i].item_id;
-				item = card.push("TextButton", Elt,"view_Note",datas.rows[i].item_id);
+				item = card.push("TextButton", Elt,"view_Note"+id,id);
 				item.getContainer().addEventListener("click",()=>this.openNote(id));
 
 					//item.setData(datas.rows[i].item_id);
