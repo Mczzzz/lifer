@@ -103,8 +103,19 @@ export default class HeaderButtons extends superViews{
 
 	CloseMe(){
 
-		let LinkEvent = new CustomEvent('changeRoute', {'detail' : {'frame' : 'NoteRemove'}});
-		window.dispatchEvent(LinkEvent);
+		this.parentThis.parentThis.getContainer().animate([
+  // keyframes
+  { transform: 'translateY(0px)' }, 
+  { transform: 'translateY(-300px)' }
+], { 
+  // timing options
+  duration: 1000,
+  iterations: Infinity
+});
+
+
+/*		let LinkEvent = new CustomEvent('changeRoute', {'detail' : {'frame' : 'NoteRemove'}});
+		window.dispatchEvent(LinkEvent);*/
 
 	}
 
