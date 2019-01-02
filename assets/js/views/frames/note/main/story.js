@@ -30,11 +30,11 @@ export default class Story extends superViews{
 		
 		this.TheNote = this.getObjectThisfromPath("Frame-Note");
 		
-		if(this.TheNote.note.guid === false){
+/*		if(this.TheNote.note.guid === false){
 
 			this.setStyle("flex" , 0);
 			return false;
-		} 
+		} */
 
 
 

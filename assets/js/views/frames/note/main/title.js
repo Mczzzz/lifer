@@ -23,7 +23,7 @@ export default class Title extends superViews{
 		
 
 
-		if(this.TheNote.note.guid === false){
+/*		if(this.TheNote.note.guid === false){
 
 			this.data = {};
 			this.data.update = this.Moment().format('Do MMMM YYYY, HH:mm:ss');
@@ -37,7 +37,7 @@ export default class Title extends superViews{
 
 			this.data = this.Lifer.getData(this.path,"Title",2);
 
-		}
+		}*/
 
 
 		
