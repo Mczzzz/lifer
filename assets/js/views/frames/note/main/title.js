@@ -96,9 +96,9 @@ export default class Title extends superViews{
 					TheTitle.setStyle("margin","0px 5px 5px 5px");
 					TheTitle.setStyle("fontWeight","bold");
 					TheTitle.setStyle("width","100%");
+					TheTitle.setCallBack("keyup",this.path, 'changeFocus');
 
-
-					TheTitle.getContainer().addEventListener("keyup", (e)=>this.changeFocus(e,TheTitle.getContainer()));
+					//TheTitle.getContainer().addEventListener("keyup", (e)=>this.changeFocus(e,TheTitle.getContainer()));
 
 
 
