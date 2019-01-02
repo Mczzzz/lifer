@@ -65,7 +65,7 @@ export default class Main extends superViews{
 
 	createCard(datas){
 
-		let id = datas.item_id;
+		let id = datas.note_id;
 
 			let card = new Card('Card'+id, this.path);
 	
