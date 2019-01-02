@@ -19,13 +19,10 @@ export default class Note extends superViews{
 
 		super( MyClass , path);
 
-		console.log(id);
-
 
 		this.container.id = "tmp-"+this.Lifer.newTmpId();
 
 		this.Title = "";
-		this.note.Ts = this.Moment().format('YYYY-MM-DD HH:mm:ss');
 		
 		this.orders = [];
 
