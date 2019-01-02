@@ -76,7 +76,7 @@ export default class NotesCollection {
 																	   status,
 																	   note_id,
 																	   note_tmpId,
-																	   note_title,																   
+																	   note_title																   
 						    UNIQUE ( note_id)
                    			ON CONFLICT REPLACE
 
@@ -94,8 +94,9 @@ export default class NotesCollection {
 		TblNoteUp.db = "syncUp";
 		TblNoteUp.create = `CREATE TABLE IF NOT EXISTS `+TblNoteUp.name+` (timestamp,
 																	   status,
+																	   note_id,
 																	   note_tmpId,
-																	   note_title,
+																	   note_title
 																	   );
 																	   `;
 
