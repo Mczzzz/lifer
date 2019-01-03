@@ -55,7 +55,8 @@ export default class Router {
 
 
 	Note(e){
-
+		console.log("router Note");
+		console.log(e);
 		let guid = (e.detail.guid)? e.detail.guid : false;
 		//this.cleanBody();
 		this.NoteController.initView(guid);
