@@ -16,7 +16,7 @@ export default class ActionButtons extends superViews{
 		this.init();
 
 		
-//		this.Empty = this.getObjectThisfromPath("Frame-Note-Main-Empty");
+		this.Empty = this.parentThis.parentThis.Main.Empty;
 
 	}
 
