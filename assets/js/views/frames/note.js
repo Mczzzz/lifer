@@ -114,7 +114,7 @@ export default class Note extends superViews{
 		console.log('in dataStore');
 		console.log(data);
 
-		data.collection = "Note"; 
+		data.collection = "Notes"; 
 		
 		data.NoteId = this.container.id;
 		data.NoteTitle = this.Title;
