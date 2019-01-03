@@ -24,29 +24,30 @@ export default class Empty extends superViews{
 		this.Ressource = new Ressource('Ressource' , this.path);
 		this.Ressource.setTargetData("Controller-Note","dataToStore");
 
-		this.initialSet = 1;
+	//	this.initialSet = 1;
 
 	}
 
 
-
+/*
 	addRessource(ressourceTmpId=false,title=false){
 
 		this.Ressource.destroyMe();
 		this.Ressource = new Ressource('Ressource' , this.path,ressourceTmpId);
 		this.initialSet = 1;
 
-	}
+	}*/
 
-	setTitle(title){
+/*	setTitle(title){
 
 		this.Ressource.setTitle(title);
 		
-	}
+	}*/
 
 
 	show(type){
 
+		this.setStyle("display","block");
 		this.addItem(type);
 
 	}
@@ -54,10 +55,10 @@ export default class Empty extends superViews{
 	addItem(type, ItemId = false, data=false, pict=false,margin = false){
 
 		console.log("in add item empty");
-		if(this.initialSet){
+/*		if(this.initialSet){
 	   		 this.Ressource.setTarget(this.parentThis.parentThis.Main.Story.path);
  	   		this.initialSet = 0;
-	   	}
+	   	}*/
 	  
 	   this.Ressource.addItem(type,ItemId, data, pict, margin);
 	   
