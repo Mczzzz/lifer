@@ -25,6 +25,8 @@ export default class HeaderButtons extends superViews{
 		this.card.setStyle("padding", "10px");
 		this.card.setStyle("background", "transparent");
 
+//Peut etre a revoir car c'est la card qui me renvoi ça pour le moment
+		this.card.setCallBack("keyup",this.path, 'updateTitle');
 
 			this.HeaderElement   = this.card.setElement("Header");
 			this.HeaderElement.setStyle("justifyContent","space-between");
@@ -43,6 +45,8 @@ export default class HeaderButtons extends superViews{
 					//		console.log('in show title');
 
 					this.TheTitle = this.card.push("Text", this.HeaderElement,"Title", "");
+
+
 
 					this.TheTitle.setAttribute("placeholder","Titre Note...");
 
@@ -96,6 +100,10 @@ export default class HeaderButtons extends superViews{
 	}
 
 
+	updateTitle(e,title){
+
+    	this.parentThis.parentThis.setTitle(title.text);
+	}
 
 
 
