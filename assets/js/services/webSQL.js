@@ -24,7 +24,7 @@ export default class webSQL{
 
 	if(!args) args = [];
 	//	console.log(query);
-		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results,callbackObj,callbackMethod),(tx,errors)=>this.webSQLerror(tx,errors));
+		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results,callbackObj,callbackMethod),(tx,errors)=>this.webSQLerror(tx,errors,query));
 	}
 
 
@@ -40,11 +40,12 @@ export default class webSQL{
 	}
 
 
-	webSQLerror(tx,errors){
+	webSQLerror(tx,errors,query){
 
 		console.log("webSQLerror");
 		console.log(tx);
 		console.log(errors);
+		console.log(query);
 
 	}
 
