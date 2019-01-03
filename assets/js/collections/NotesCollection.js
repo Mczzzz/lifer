@@ -99,7 +99,7 @@ export default class NotesCollection {
 																	   `;
 
 
-		
+		console.log('on passe ici');
 		this.webSQL.playQuery(TblNoteUp.db,TblNoteUp.create);
 
 
