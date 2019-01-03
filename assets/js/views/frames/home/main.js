@@ -7,7 +7,7 @@ import LoaderCollection from '../../../services/LoaderCollection.js';
 export default class Main extends superViews{
 	
 
-	constructor( MyClass , path){
+	constructor(MyClass , path){
 
 		super( MyClass , path)
 

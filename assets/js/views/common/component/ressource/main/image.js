@@ -7,11 +7,17 @@ import { LoaderImage } from '../../../../../services/LoaderImage.js';
 export default class Image extends superViews{
 	
 
-	constructor( MyClass , path,prepend = false,callback = false){
+	constructor( MyClass , path,prepend = false,callback = false,id){
 
 		super( MyClass , path, prepend);
 
 		this.ExtcallBack = callback;
+
+		  if(id){
+
+            this.container.id = id;
+
+           }
 
 
 		this.response = {};
@@ -32,7 +38,7 @@ export default class Image extends superViews{
 	form(){
 
 		this.card = new Card('Card', this.path);
-		this.card.setId(this.ClassId);
+		this.card.setId(this.container.id);
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "12px 0px 6px 12px");
 		this.card.setStyle("margin", "0px");

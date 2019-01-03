@@ -133,6 +133,7 @@ export default class MainRessource extends superViews{
 		callBack.method = "callBackDataTo";
 
 		let text = new Text("Text_"+itemId, this.path,false,callBack);
+		text
 		let textElt = text.getTextElement();
 		text.draggable(this.path,"onChildMove");
 
@@ -141,12 +142,12 @@ export default class MainRessource extends superViews{
 		this.resizeMoveTo = text.getContainer().offsetTop;
 
 		text.focus();
-		console.log('textElt');
+		/*console.log('textElt');
 		console.log(textElt);
 		let res = {};
 		res.bloc = text;
 		res.text = textElt;
-		return res;
+		return res;*/
 
 	}
 
@@ -178,14 +179,14 @@ export default class MainRessource extends superViews{
 		let textElt = image.getTextElement();
 		image.draggable(this.path,"onChildMove");
 
-		console.log('textElt');
+		/*console.log('textElt');
 		console.log(textElt);
 		let res = {};
 		res.bloc = image;
 		res.pict = image;
 		res.text = textElt;
 		//res.image = 
-		return res;
+		return res;*/
 
 
 	}

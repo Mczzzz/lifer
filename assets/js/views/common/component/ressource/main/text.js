@@ -6,11 +6,18 @@ import Card from "../../../ui/card.js";
 export default class Text extends superViews{
 	
 
-	constructor( MyClass , path,prepend = false, callback = false){
+	constructor( MyClass , path,prepend = false, callback = false,id){
 
 		super( MyClass , path, prepend);
 
 		
+		  if(id){
+
+            this.container.id = id;
+
+           }
+
+
 
 		this.ExtcallBack = callback;
 
@@ -32,7 +39,7 @@ export default class Text extends superViews{
 
 		this.card = new Card('Card', this.path);
 
-		this.card.setId(this.ClassId);
+		this.card.setId(this.container.id);
 		console.log("this.callBack in text ressource");
 		console.log(this.ExtcallBack);
 		this.card.setCallBack("keyup",this.ExtcallBack.path, this.ExtcallBack.method);
