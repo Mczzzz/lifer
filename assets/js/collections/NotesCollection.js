@@ -53,7 +53,7 @@ export default class NotesCollection {
 			                          "LOCAL",
 			                          "`+data.NoteId+`",
 			                          "`+data.NoteTitle+`",
-			                          "`+data.NoteTitle+`",
+			                          "`+data.NoteId+`"
 			                          )
 
 			                 `);
