@@ -21,8 +21,6 @@ export default class Title extends superViews{
 		
 		this.addCard();		
 
-		if(this.parentThis.parentThis.isTmpId) TheTitle.getContainer().focus();	
-
 	}
 
 
@@ -64,6 +62,10 @@ export default class Title extends superViews{
 					TheTitle.setStyle("fontWeight","bold");
 					TheTitle.setStyle("width","100%");
 					
+
+
+		if(this.parentThis.parentThis.isTmpId) TheTitle.getContainer().focus();	
+
 
 	}
 
