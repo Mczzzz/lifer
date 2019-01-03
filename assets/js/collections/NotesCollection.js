@@ -552,7 +552,7 @@ export default class NotesCollection {
 
 	get(guid,callBackObj,callBackMethod){
 
-		let qry = "SELECT * FROM Notes WHERE note_id = "+guid;
+		let qry = "SELECT * FROM Notes WHERE note_id = '"+guid+"'";
 		this.webSQL.playQuery('cacheData',qry,callBackObj,callBackMethod);
 
 	}
