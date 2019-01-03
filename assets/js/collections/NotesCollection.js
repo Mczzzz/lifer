@@ -68,8 +68,8 @@ export default class NotesCollection {
 	_initLocalStorage(){
 
 	//localStorage
-		//file d'attente de sauvegarde
 
+//BASE DE CACHE USUEL
 		let TblNote = {};
 		TblNote.name = "Notes";
 		TblNote.db = "cacheData";
@@ -106,6 +106,29 @@ export default class NotesCollection {
 
 
 
+		let TblItems= {};
+		TblItems.name = "Items";
+		TblItems.db = "cacheData";
+		TblItems.create = `CREATE TABLE IF NOT EXISTS `+TblItems.name+` (timestamp,
+																	   status,
+																	   ressource_id,
+																	   item_id,
+																	   item_type,
+																	   item_text,
+																	   item_value INTEGER DEFAULT 0,
+																	   item_path TEXT DEFAULT "",
+																	   item_unit INTEGER DEFAULT 0,
+																	   state TEXT DEFAULT "WAITING",
+						    UNIQUE ( ressource_id,
+                   			         item_id,
+                   			         item_type
+                   			       )
+                   			ON CONFLICT REPLACE
+
+																	   );
+																	   `;
+
+		this.webSQL.playQuery(TblItems.db,TblItems.create);
 
 
 
@@ -114,6 +137,9 @@ export default class NotesCollection {
 
 
 
+
+
+//EN ATTENTE DE REMONTE AU SERVEUR
 
 
 		let TblNoteUp = {};
