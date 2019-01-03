@@ -115,10 +115,8 @@ export default class Note extends superViews{
 		console.log(data);
 
 		data.collection = "Note"; 
-
-		if (!this.guid) this.guid = "tmp-"+Lifer.newTmpId();
-			
-		data.NoteId = this.guid;
+		
+		data.NoteId = this.container.id;
 		data.NoteTitle = this.title;
 		
 
