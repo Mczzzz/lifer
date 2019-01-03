@@ -37,11 +37,11 @@ export default class DBLocalCollection {
 
 	getsyncUp(){
 
-		let DBSyncData   = {};
-		DBSyncData.name        = "syncUp";
-		DBSyncData.version     = "1.0";
-		DBSyncData.description = "Buffer de syncho vers le serveur localStorage";
-		DBSyncData.size = 2 * 1024 * 1024;
+		let DBSyncUp   = {};
+		DBSyncUp.name        = "syncUp";
+		DBSyncUp.version     = "1.0";
+		DBSyncUp.description = "Buffer de syncho vers le serveur localStorage";
+		DBSyncUp.size = 2 * 1024 * 1024;
 
 		return DBSyncData;
 
