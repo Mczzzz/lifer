@@ -28,7 +28,7 @@ export default class DBLocalCollection {
 		let DBSyncData   = {};
 		DBSyncData.name        = "syncData";
 		DBSyncData.version     = "1.0";
-		DBSyncData.description = "synchro locale";
+		DBSyncData.description = "synchro locale obsolete";
 		DBSyncData.size = 2 * 1024 * 1024;
 
 		return DBSyncData;

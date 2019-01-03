@@ -88,7 +88,7 @@ export default class NotesCollection {
 
 
 		let TblNoteUp = {};
-		TblNoteUp.name = "Notes";
+		TblNoteUp.name = "Notes2";
 		TblNoteUp.db = "syncUp";
 		TblNoteUp.create = `CREATE TABLE IF NOT EXISTS `+TblNoteUp.name+` (timestamp,
 																	       status,
