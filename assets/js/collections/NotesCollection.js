@@ -69,7 +69,8 @@ export default class NotesCollection {
 
 	//localStorage
 		//file d'attente de sauvegarde
-		let TblNote = {};
+		
+/*		let TblNote = {};
 		TblNote.name = "Notes";
 		TblNote.db = "cacheData";
 		TblNote.create = `CREATE TABLE IF NOT EXISTS `+TblNote.name+` (timestamp,
@@ -83,7 +84,7 @@ export default class NotesCollection {
 
 
 
-		this.webSQL.playQuery(TblNote.db,TblNote.create);
+		this.webSQL.playQuery(TblNote.db,TblNote.create);*/
 
 
 
