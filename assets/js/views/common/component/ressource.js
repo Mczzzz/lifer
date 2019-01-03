@@ -59,7 +59,10 @@ export default class Ressource extends superViews{
      }
 
 
-     callBackDataTo(path,data){
+     callBackDataTo(path,data=false){
+
+
+      if(!data) data = {};
 
       data.RessourceId = this.container.id;
       data.RessourceTitle = this.title;
@@ -96,9 +99,10 @@ export default class Ressource extends superViews{
 
      setTitle(title,store = false){
 
+      this.Title = title;
 
       if(store){
-       this.store();
+       this.callBackDataTo(false,false);
       }else{
         this.Header.setTitle(title);
       }
