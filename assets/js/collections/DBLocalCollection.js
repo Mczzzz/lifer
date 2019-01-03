@@ -43,7 +43,7 @@ export default class DBLocalCollection {
 		DBSyncUp.description = "Buffer de syncho vers le serveur localStorage";
 		DBSyncUp.size = 2 * 1024 * 1024;
 
-		return DBSyncData;
+		return DBSyncUp;
 
 	}
 
