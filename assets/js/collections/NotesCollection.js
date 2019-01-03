@@ -82,26 +82,26 @@ export default class NotesCollection {
 																	   `;
 
 
-		console.log('before cache data init');
-		this.webSQL.playQuery(TblNote.db,TblNote.create);
-		console.log('after cache data init');
 
-/*
+		this.webSQL.playQuery(TblNote.db,TblNote.create);
+
+
+
 		let TblNoteUp = {};
 		TblNoteUp.name = "Notes";
 		TblNoteUp.db = "syncUp";
 		TblNoteUp.create = `CREATE TABLE IF NOT EXISTS `+TblNoteUp.name+` (timestamp,
-																	   status,
-																	   note_id,
-																	   note_tmpId,
-																	   note_title
-																	   );
+																	       status,
+																	       note_id,
+																	       note_tmpId,
+																	       note_title
+																	      );
 																	   `;
 
 
 		
 		this.webSQL.playQuery(TblNoteUp.db,TblNoteUp.create);
-*/
+
 
 
 
