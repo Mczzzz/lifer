@@ -18,31 +18,10 @@ export default class Title extends superViews{
 	init(){
 
 		this.TheNote = this.parentThis.parentThis;
-
-		//this.TheNote = this.getObjectThisfromPath("Frame-Note");
 		
+		this.addCard();		
 
-
-/*		if(this.TheNote.note.guid === false){
-
-			this.data = {};
-			this.data.update = this.Moment().format('Do MMMM YYYY, HH:mm:ss');
-			this.data.name = "";
-
-			this.setStyle("display" , "flex");
-			this.setStyle("alignItems" , "flex-end");
-			this.setStyle("flex", 1);
-
-		}else{
-
-			this.data = this.Lifer.getData(this.path,"Title",2);
-
-		}*/
-
-
-		
-		this.addCard();			
-
+		if(this.parentThis.parentThis.isTmpId) TheTitle.getContainer().focus();	
 
 	}
 
@@ -68,7 +47,7 @@ export default class Title extends superViews{
     	this.card.setStyle("transitionTimingFunction", "cubic-bezier(0.15, -0.35, 0.98, 1.27)");
     	this.card.setStyle("transitionProperty", "width height background-color font-size left top color");
 
-		this.card.setCallBack("keyup",this.path, 'changeFocus');
+		this.card.setCallBack("keyup",this.path, 'updateTitle');
 
 
 
@@ -86,47 +65,13 @@ export default class Title extends superViews{
 					TheTitle.setStyle("width","100%");
 					
 
-
-
-
-
-
-		if(this.parentThis.parentThis.isTmpId){
-			TheTitle.getContainer().focus();
-		}
-
-
 	}
 
 
 
-	changeFocus(e,title){
-
-		console.log("in change focus");
-
-
-		//TheTitle.innerHTML = TheTitle.innerHTML.replace(/<div><br><\/div>/i, '');
-
-		//if (e.key === "Enter") {
-
-			
-			//this.title = "";
-			//let toFocus = this.getObjectThisfromPath("Note/mainNote/noteMainEmpty/NoteEmptyCardText/cardElementEmpty/noteEltTextmainNewInput");
-
-			//toFocus.getContainer().focus();
-			//this.setStyle("display" , "");
-
-			
-    	//}
-
+	updateTitle(e,title){
 
     	this.TheNote.setTitle = title.text;
-    	//let updateTs = this.Moment();
-    	//this.updateNote.getContainer().innerHTML = updateTs.format('Do MMMM YYYY, HH:mm:ss');
-		//this.TheNote.note.Ts = updateTs.format('YYYY-MM-DD HH:mm:ss');
-    	//this.TheNote.Push();
-
-
 	}
 
 
