@@ -9,7 +9,7 @@ import Note           from '../views/frames/note.js';
 export default class NoteController {
 
 
-	constructor(guid=false){
+	constructor(){
 
 		let Me = 'Note';
 
@@ -37,7 +37,8 @@ export default class NoteController {
 
 	initView(guid=false){
 
-		let NewNote = new Note("Frame-Note_"+this.ChildId,guid);
+		console.log(guid);
+		let NewNote = new Note("Frame-Note_"+this.ChildId,false,guid);
 		this.ChildId++;
 		
 		
