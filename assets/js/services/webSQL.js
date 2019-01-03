@@ -13,8 +13,8 @@ export default class webSQL{
 
 
 	playQuery(base,query,callbackObj = false, callbackMethod = false){
-		console.log('in play Query');
-		console.log(query);
+/*		console.log('in play Query');
+		console.log(query);*/
 
 		let Bdd = this.DBLocalCollection.getDBConnection(base);
 		console.log(Bdd);
@@ -27,8 +27,8 @@ export default class webSQL{
 
 	if(!args) args = [];
 	//	console.log(query);
-			console.log('exec Query');
-		console.log(query);
+/*			console.log('exec Query');
+		console.log(query);*/
 
 
 		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results,query,callbackObj,callbackMethod),(tx,errors)=>this.webSQLerror(tx,errors,query));
@@ -37,10 +37,10 @@ export default class webSQL{
 
 	webSQLsucess(tx,results,query,callbackObj = false, callbackMethod = false){
 
-		console.log("webSQLsuccess");
+		//console.log("webSQLsuccess");
 /*		console.log(tx);
 		console.log(results);*/
-		console.log(query);
+		//console.log(query);
 		if(callbackObj && callbackMethod){
 			callbackObj[callbackMethod](results);
 		}
