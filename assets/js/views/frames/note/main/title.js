@@ -54,7 +54,6 @@ export default class Title extends superViews{
 
 		this.card = new Card('Card', this.path);
 
-		//this.card.setId(this.data.id);
 		
 		this.card.setStyle("borderWidth", "0px");
 		this.card.setStyle("borderRadius", "0px");
@@ -73,18 +72,6 @@ export default class Title extends superViews{
 
 
 
-/*			let HeaderElement = this.card.setElement("header");
-			HeaderElement.setStyle("justifyContent","flex-end");
-
-					this.updateNote = this.card.push("Text", HeaderElement,"update",this.data.update);
-
-					this.updateNote.setStyle("fontSize","9px");
-					this.updateNote.setStyle("color","grey");
-					this.updateNote.setStyle("margin","0px 5px 2px 0px");
-					this.updateNote.setStyle("fontWeight","normal");*/
-
-
-
 			let MainElement   = this.card.setElement("main");
 			MainElement.setStyle("justifyContent","flex-start");
 
@@ -99,7 +86,7 @@ export default class Title extends superViews{
 					TheTitle.setStyle("width","100%");
 					
 
-					//TheTitle.getContainer().addEventListener("keyup", (e)=>this.changeFocus(e,TheTitle.getContainer()));
+
 
 
 
@@ -113,13 +100,16 @@ export default class Title extends superViews{
 
 
 
-	changeFocus(e,TheTitle){
+	changeFocus(e,title){
 
 		console.log("in change focus");
 
-		if (e.key === "Enter") {
 
-			TheTitle.innerHTML = TheTitle.innerHTML.replace(/<div><br><\/div>/i, '');
+		//TheTitle.innerHTML = TheTitle.innerHTML.replace(/<div><br><\/div>/i, '');
+
+		//if (e.key === "Enter") {
+
+			
 			//this.title = "";
 			//let toFocus = this.getObjectThisfromPath("Note/mainNote/noteMainEmpty/NoteEmptyCardText/cardElementEmpty/noteEltTextmainNewInput");
 
@@ -127,10 +117,10 @@ export default class Title extends superViews{
 			//this.setStyle("display" , "");
 
 			
-    	}
+    	//}
 
 
-    	this.TheNote.setTitle = TheTitle.innerHTML;
+    	this.TheNote.setTitle = title.text;
     	//let updateTs = this.Moment();
     	//this.updateNote.getContainer().innerHTML = updateTs.format('Do MMMM YYYY, HH:mm:ss');
 		//this.TheNote.note.Ts = updateTs.format('YYYY-MM-DD HH:mm:ss');
