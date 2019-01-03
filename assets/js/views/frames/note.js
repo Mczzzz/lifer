@@ -108,8 +108,7 @@ export default class Note extends superViews{
 
 	populate(datas){
 
-		console.log(datas);
-		console.log('in populate');
+		this.setTitle(datas.rows[0].note_title);
 
 	}
 
@@ -122,10 +121,10 @@ export default class Note extends superViews{
 
 	setTitle(title){
 
-		console.log("in note.js !!!!!!!!!!!!!!!!!!");
 		this.Title = title;
-
-		this.store();
+		this.Header.HeaderButton.showTitle(title);
+		//set header
+		//this.store();
 
 	}
 
