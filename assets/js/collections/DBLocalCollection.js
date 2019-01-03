@@ -53,7 +53,7 @@ export default class DBLocalCollection {
 
 
 		let Base = this["get"+db]();
-
+		console.log(Base);
 		return openDatabase(Base.name, Base.version, Base.description, Base.size);
 
 	}
