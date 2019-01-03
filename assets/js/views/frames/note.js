@@ -117,7 +117,7 @@ export default class Note extends superViews{
 		data.collection = "Note"; 
 		
 		data.NoteId = this.container.id;
-		data.NoteTitle = this.title;
+		data.NoteTitle = this.Title;
 		
 
 				//inform controller
