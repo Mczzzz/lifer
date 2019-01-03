@@ -43,6 +43,7 @@ export default class Main extends superViews{
 
 		if(this.parentThis.container.id.indexOf("tmp-") == 0){
 
+			this.Story.setStyle("flex" , 1);
 			this.Title     = new Title("Title",this.path);
 		
 		}
