@@ -34,18 +34,18 @@ export default class Main extends superViews{
 
 
 	initChilds(){
+	
+
+		this.Story = new Story("Story",this.path);
+
+		this.Empty     = new Empty("Empty",this.path);
+
 
 		if(this.parentThis.container.id.indexOf("tmp-") == 0){
 
 			this.Title     = new Title("Title",this.path);
 		
 		}
-
-			
-
-		this.Story = new Story("Story",this.path);
-
-		this.Empty     = new Empty("Empty",this.path);
 
 	}
 
