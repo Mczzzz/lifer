@@ -25,7 +25,8 @@ export default class Story extends superViews{
 		this.setStyle("overflowY" , "scroll");
 		this.setStyle("overflowX", "hidden");
 		this.setStyle("overscrollBehavior","none");
-		
+		this.setStyle("flex","1");
+
 		this.setStyleOut();
 		
 //		this.TheNote = this.getObjectThisfromPath("Frame-Note");
