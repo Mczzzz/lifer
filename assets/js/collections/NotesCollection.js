@@ -550,9 +550,10 @@ export default class NotesCollection {
 
 //app component
 
-	getLocalStorage(guid){
+	get(guid,callBackObj,callBackMethod){
 
-	//	let query = "SELECT * FROM " 
+		let qry = "SELECT * FROM Notes WHERE note_id = "+guid;
+		this.webSQL.playQuery('cacheData',qry,callBackObj,callBackMethod);
 
 	}
 

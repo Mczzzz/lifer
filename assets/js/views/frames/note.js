@@ -60,8 +60,13 @@ export default class Note extends superViews{
 
 
 
-		this.NoteCollection = new LoaderCollection("Notes");
+		this.NotesCollection = new LoaderCollection("Notes");
 
+		if(!this.new){
+
+			this.NotesCollection.get(this.container.id,this,'populate');
+
+		}
 /*		if(this.note.id !== false){
 
 
@@ -101,9 +106,17 @@ export default class Note extends superViews{
 	}
 
 
+	populate(datas){
+
+		console.log(datas);
+		console.log('in populate');
+
+	}
+
+
 
 	setNoteGuid(id){
-		this.note.guid = id;
+		this.container.id = id;
 	}
 
 
