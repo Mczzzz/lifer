@@ -91,7 +91,7 @@ export default class NotesCollection {
 		let TblRessource = {};
 		TblRessource.name = "Ressources";
 		TblRessource.db = "cacheData";
-		TblRessource.create = `CREATE TABLE IF NOT EXISTS `+TblNote.name+` (timestamp,
+		TblRessource.create = `CREATE TABLE IF NOT EXISTS `+TblRessource.name+` (timestamp,
 																	   status,
 																	   note_id,
 																	   ressoure_id,
