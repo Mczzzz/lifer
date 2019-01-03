@@ -21,6 +21,20 @@ export default class DBLocalCollection {
 
 
 
+	getsyncUP(){
+
+		let DBcacheData   = {};
+		DBcacheData.name        = "syncUP";
+		DBcacheData.version     = "1.0";
+		DBcacheData.description = "synchro locale";
+		DBcacheData.size = 2 * 1024 * 1024;
+
+		return DBcacheData;
+
+	}
+
+
+
 
 
 	getsyncData(){
@@ -35,6 +49,12 @@ export default class DBLocalCollection {
 
 	}
 
+
+
+
+
+
+/*
 	getsyncUp(){
 
 		let DBSyncUp   = {};
@@ -45,7 +65,7 @@ export default class DBLocalCollection {
 
 		return DBSyncUp;
 
-	}
+	}*/
 
 
 
