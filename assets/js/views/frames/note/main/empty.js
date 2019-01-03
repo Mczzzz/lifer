@@ -48,7 +48,9 @@ export default class Empty extends superViews{
 	show(type){
 
 		this.setStyle("display","block");
-		this.parentThis.Title.setStyle("display","none");
+		
+		if(this.parentThis.Title) this.parentThis.Title.setStyle("display","none");
+		
 		this.addItem(type);
 
 	}
