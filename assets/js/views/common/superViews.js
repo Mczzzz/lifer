@@ -12,7 +12,6 @@ export default class views {
 
 
 		this.Lifer = Lifer;
-		//this.DBLocal = DBLocal;
 
 Moment.locale('fr');
 
