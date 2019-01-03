@@ -132,7 +132,7 @@ export default class Ressource extends superViews{
       }else{
         //relink observer on 
 
-        this.target.setObserver(elt,this.RessourceId,itemId);
+     //   this.target.setObserver(elt,this.RessourceId,itemId);
       } 
 
      }
