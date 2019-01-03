@@ -65,7 +65,7 @@ export default class Ressource extends superViews{
       if(!data) data = {};
 
       data.RessourceId = this.container.id;
-      data.RessourceTitle = this.title;
+      data.RessourceTitle = this.Title;
       this.targetData.obj[this.targetData.method](data);
     
      }
