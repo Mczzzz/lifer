@@ -48,8 +48,14 @@ export default class NoteController {
 
 
 	dataToStore(data=false){
+
 	
-		if(data) DatasSynchronizing.store(data);
+		if(data){
+
+			data.collection = "Notes";
+			DatasSynchronizing.store(data);
+			
+		} 
 
 	}
 

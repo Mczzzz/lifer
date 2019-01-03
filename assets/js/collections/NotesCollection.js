@@ -77,18 +77,16 @@ export default class NotesCollection {
 																	   note_id,
 																	   note_tmpId,
 																	   note_title,																   
-						    UNIQUE ( note_id)
-                   			ON CONFLICT REPLACE
-
+						    										   UNIQUE (note_id) ON CONFLICT REPLACE
 																	   );
 																	   `;
 
 
-		
+		console.log('before cache data init');
 		this.webSQL.playQuery(TblNote.db,TblNote.create);
+		console.log('after cache data init');
 
-
-
+/*
 		let TblNoteUp = {};
 		TblNoteUp.name = "Notes";
 		TblNoteUp.db = "syncUp";
@@ -103,7 +101,7 @@ export default class NotesCollection {
 
 		
 		this.webSQL.playQuery(TblNoteUp.db,TblNoteUp.create);
-
+*/
 
 
 
