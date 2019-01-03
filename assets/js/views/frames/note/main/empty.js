@@ -55,13 +55,13 @@ export default class Empty extends superViews{
 
 		console.log("in add item empty");
 		if(this.initialSet){
-			let TitleCard = this.Lifer.getData('Frame-Note-Main-Title-Card',"This");
+/*			let TitleCard = this.Lifer.getData('Frame-Note-Main-Title-Card',"This");
 				TitleCard.getContainer().remove();
 				this.Lifer.getData('Frame-Note-Header-Action',"This").showTitle(this.Lifer.getData('Frame-Note',"This").note.Title);
-				this.setStyle("display","");
+				this.setStyle("display","");*/
 		//		console.log("animation finish");
 	   		 //this.Ressource.setTarget("Frame-Note-Main-Story");
-	   		 this.Ressource.setTarget("Frame-Note-Main-Story");
+	   		 this.Ressource.setTarget(this.parentThis.parentThis.Main.Story);
 	   		this.initialSet = 0;
 	   	}
 	  
