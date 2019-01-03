@@ -210,6 +210,14 @@ Moment.locale('fr');
      }
 
 
+    isTmpId(){
+
+    	if(this.container.id.indexOf("tmp-") == 0 ) return true;
+
+    	return false; 
+    }
+
+
     getId(){
 
     	return this.container.id;
