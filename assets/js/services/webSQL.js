@@ -26,6 +26,10 @@ export default class webSQL{
 
 	if(!args) args = [];
 	//	console.log(query);
+			console.log('exec Query');
+		console.log(query);
+
+
 		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results,query,callbackObj,callbackMethod),(tx,errors)=>this.webSQLerror(tx,errors,query));
 	}
 
