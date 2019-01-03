@@ -13,6 +13,8 @@ export default class webSQL{
 
 
 	playQuery(base,query,callbackObj = false, callbackMethod = false){
+		console.log('in play Query');
+		console.log(query);
 
 		let Bdd = this.DBLocalCollection.getDBConnection(base);
 		Bdd.transaction((db)=>this.execQuery(db,query,false,callbackObj,callbackMethod));
