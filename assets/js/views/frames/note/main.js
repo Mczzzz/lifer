@@ -41,7 +41,7 @@ export default class Main extends superViews{
 		this.Empty     = new Empty("Empty",this.path);
 
 
-		if(this.parentThis.isTmpId){
+		if(this.parentThis.new){
 
 			this.Story.setStyle("flex" , 1);
 			this.Title     = new Title("Title",this.path);

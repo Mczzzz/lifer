@@ -29,16 +29,15 @@ export default class NoteController {
 	init(){
 
 		this.ChildId = 0;
-		this.initView();
 
 	}
 
 
 
 
-	initView(){
+	initView(guid=false){
 
-		let NewNote = new Note("Frame-Note_"+this.ChildId,false);
+		let NewNote = new Note("Frame-Note_"+this.ChildId,guid);
 		this.ChildId++;
 		
 		
@@ -54,7 +53,7 @@ export default class NoteController {
 
 			data.collection = "Notes";
 			DatasSynchronizing.store(data);
-			
+
 		} 
 
 	}

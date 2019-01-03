@@ -14,6 +14,8 @@ export default class Router {
 
 		this.init();
 
+		this.NoteController = new Note();
+
 		window.addEventListener('changeRoute', (e) => this[e.detail.frame](e));
 
 	}
@@ -56,7 +58,7 @@ export default class Router {
 
 		let guid = (e.detail.guid)? e.detail.guid : false;
 		//this.cleanBody();
-		let note = new Note(guid);
+		this.NoteController.initView(guid);
 
 	}
 

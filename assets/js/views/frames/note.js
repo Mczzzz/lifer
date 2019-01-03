@@ -20,13 +20,21 @@ export default class Note extends superViews{
 		super( MyClass , path);
 
 
-		this.container.id = "tmp-"+this.Lifer.newTmpId();
+
+		 if(id){
+
+		 	this.container.id = id;
+		 	this.new = false;
+
+		 }else{
+
+		 	this.container.id = "tmp-"+this.Lifer.newTmpId();
+		 	this.new = true;
+		 }	
+
 
 		this.Title = "";
 		
-		this.orders = [];
-
-
 		this.init();
 
 	}
@@ -51,7 +59,7 @@ export default class Note extends superViews{
 
 
 
-		this.NoteCollection = new LoaderCollection("Note");
+		this.NoteCollection = new LoaderCollection("Notes");
 
 /*		if(this.note.id !== false){
 
@@ -73,7 +81,7 @@ export default class Note extends superViews{
 
 		}*/
 
-		this.Lifer.dumpMe();
+	//	this.Lifer.dumpMe();
 
 		this.initChilds();
 
