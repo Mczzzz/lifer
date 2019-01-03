@@ -127,7 +127,7 @@ export default class Ressource extends superViews{
      
       if(!newItem){
 
-        this.target.addItem(this.RessourceId,type,itemId,elt);
+   //     this.target.addItem(this.RessourceId,type,itemId,elt);
 
       }else{
         //relink observer on 
