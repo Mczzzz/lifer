@@ -83,13 +83,12 @@ export default class NotesCollection {
 																	   `;
 
 
-
 		this.webSQL.playQuery(TblNote.db,TblNote.create);
 
 
 
 		let TblNoteUp = {};
-		TblNoteUp.name = "Notes2";
+		TblNoteUp.name = "Notes";
 		TblNoteUp.db = "syncUP";
 		TblNoteUp.create = `CREATE TABLE IF NOT EXISTS `+TblNoteUp.name+` (timestamp,
 																	       status,
@@ -100,7 +99,6 @@ export default class NotesCollection {
 																	   `;
 
 
-		console.log('on passe ici');
 		this.webSQL.playQuery(TblNoteUp.db,TblNoteUp.create);
 
 
