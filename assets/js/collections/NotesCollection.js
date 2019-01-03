@@ -87,6 +87,35 @@ export default class NotesCollection {
 
 
 
+
+		let TblRessource = {};
+		TblRessource.name = "Ressources";
+		TblRessource.db = "cacheData";
+		TblRessource.create = `CREATE TABLE IF NOT EXISTS `+TblNote.name+` (timestamp,
+																	   status,
+																	   note_id,
+																	   ressoure_id,
+																	   ressoure_tmpId,
+																	   ressoure_title,																   
+						    										   UNIQUE (ressoure_id) ON CONFLICT REPLACE
+																	   );
+																	   `;
+
+
+		this.webSQL.playQuery(TblRessource.db,TblRessource.create);
+
+
+
+
+
+
+
+
+
+
+
+
+
 		let TblNoteUp = {};
 		TblNoteUp.name = "Notes";
 		TblNoteUp.db = "syncUP";
