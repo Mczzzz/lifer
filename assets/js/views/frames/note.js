@@ -123,7 +123,7 @@ export default class Note extends superViews{
 				//inform controller
 		let Notecontroller = this.getObjectThisfromPath("Controller-Note");
 
-		Notecontroller.setTitle(title);
+		Notecontroller.dataToStore(data);
 
 	}
 
