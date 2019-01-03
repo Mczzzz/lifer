@@ -128,6 +128,9 @@ export default class MainRessource extends superViews{
 
 	text(itemId){
 
+		console.log("itemId");
+		console.log(itemId);
+
 		let callBack = {};
 		callBack.path = this.parentThis.path;
 		callBack.method = "callBackDataTo";
