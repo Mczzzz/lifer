@@ -559,19 +559,11 @@ export default class NotesCollection {
 
 
 
-		initwebSQLTables(){
-
-		for (let table of this.table){
-
-			return table.create;
-
-
-		}
 
 
 
 	
-	}
+	
 
 
 /*	queuePrepareSend(){
@@ -588,17 +580,6 @@ export default class NotesCollection {
 
 
 
-
-
-
-//server Component
-
-
-	getServerStorage(){
-
-
-		
-	}
 
 
 
