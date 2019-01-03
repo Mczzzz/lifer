@@ -99,7 +99,7 @@ export default class Title extends superViews{
 					TheTitle.setStyle("width","100%");
 					
 
-					TheTitle.getContainer().addEventListener("keyup", (e)=>this.changeFocus(e,TheTitle.getContainer()));
+					//TheTitle.getContainer().addEventListener("keyup", (e)=>this.changeFocus(e,TheTitle.getContainer()));
 
 
 
@@ -115,7 +115,7 @@ export default class Title extends superViews{
 
 	changeFocus(e,TheTitle){
 
-
+		console.log("in change focus");
 
 		if (e.key === "Enter") {
 

@@ -101,7 +101,7 @@ export default class Note extends superViews{
 	setTitle(title){
 
 		console.log("in note.js !!!!!!!!!!!!!!!!!!");
-		this.note.Title(title);
+		this.Title = title;
 
 		//inform controller
 		let Notecontroller = this.getObjectThisfromPath("Controller-Note");
