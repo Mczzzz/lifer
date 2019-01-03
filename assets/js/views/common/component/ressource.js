@@ -114,11 +114,7 @@ export default class Ressource extends superViews{
 
       let newItem = itemId;
 
-      if(this.target && !itemId){
-
-          itemId =  "tmp-"+this.Lifer.newTmpId();     
-
-      }
+      if(!itemId) itemId =  "tmp-"+this.Lifer.newTmpId(); 
 
 
       this.ItemList[itemId];
@@ -130,13 +126,9 @@ export default class Ressource extends superViews{
       let elt = this.Main.addItem(type,itemId,anew);
 
      
-      if(type == 'image' && pict){
-          elt.bloc.addThumb(pict);
-       }
+      if(type == 'image' && pict) elt.bloc.addThumb(pict);
 
-      if(data){
-         elt.bloc.setData(data);
-      } 
+      if(data) elt.bloc.setData(data);
 
 
       if(margin){
