@@ -24,15 +24,16 @@ export default class webSQL{
 
 	if(!args) args = [];
 	//	console.log(query);
-		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results,callbackObj,callbackMethod),(tx,errors)=>this.webSQLerror(tx,errors,query));
+		db.executeSql(query,args,(tx,results)=>this.webSQLsucess(tx,results,query,callbackObj,callbackMethod),(tx,errors)=>this.webSQLerror(tx,errors,query));
 	}
 
 
-	webSQLsucess(tx,results,callbackObj = false, callbackMethod = false){
+	webSQLsucess(tx,results,query,callbackObj = false, callbackMethod = false){
 
-/*		console.log("webSQLsuccess");
-		console.log(tx);
+		console.log("webSQLsuccess");
+/*		console.log(tx);
 		console.log(results);*/
+		console.log(query);
 		if(callbackObj && callbackMethod){
 			callbackObj[callbackMethod](results);
 		}
