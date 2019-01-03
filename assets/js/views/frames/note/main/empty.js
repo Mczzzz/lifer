@@ -22,7 +22,7 @@ export default class Empty extends superViews{
 		//this.setStyle("maxHeight","70%");
 		//this.active = false;
 		this.Ressource = new Ressource('Ressource' , this.path);
-		this.Ressource.setTargetData("Controller-Note","dataToStore");
+		this.Ressource.setTargetData(this.parentThis.parentThis.path,"store");
 
 	//	this.initialSet = 1;
 

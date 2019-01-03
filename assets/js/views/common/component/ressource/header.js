@@ -41,6 +41,7 @@ export default class HeaderRessource extends superViews{
 		this.card.setStyle("padding", "0px");
 		this.card.setStyle("background", "linear-gradient(45deg, rgb(73, 50, 144) 0%, rgb(43, 46, 144) 100%)");
 
+    this.card.setCallBack("keyup",this.path, 'updateTitle');
 
 
 
@@ -108,9 +109,20 @@ export default class HeaderRessource extends superViews{
 
      }
 
+
+      updateTitle(e,title){
+
+          this.parentThis.setTitle(title.text, true);
+          
+      }
+
+
+
+
      setTitle(title){
 
       this.Title.setData(title);
+
      }
 
 

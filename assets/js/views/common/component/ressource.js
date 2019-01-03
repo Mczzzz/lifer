@@ -82,9 +82,16 @@ export default class Ressource extends superViews{
     }
 
 
-     setTitle(title){
+     setTitle(title,store = false){
 
-      this.Header.setTitle(title);
+
+      if(store){
+       this.store();
+      }else{
+        this.Header.setTitle(title);
+      }
+
+
 
      }
 
