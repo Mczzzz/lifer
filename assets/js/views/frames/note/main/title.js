@@ -99,14 +99,14 @@ export default class Title extends superViews{
 					TheTitle.setStyle("width","100%");
 					
 
-					//TheTitle.getContainer().addEventListener("keyup", (e)=>this.changeFocus(e,TheTitle.getContainer()));
+					TheTitle.getContainer().addEventListener("keyup", (e)=>this.changeFocus(e,TheTitle.getContainer()));
 
 
 
 
-/*		if(this.TheNote.note.guid === false){
+		if(this.parentThis.parentThis.isTmpId){
 			TheTitle.getContainer().focus();
-		}*/
+		}
 
 
 	}
@@ -131,9 +131,9 @@ export default class Title extends superViews{
 
 
     	this.TheNote.setTitle = TheTitle.innerHTML;
-    	let updateTs = this.Moment();
-    	this.updateNote.getContainer().innerHTML = updateTs.format('Do MMMM YYYY, HH:mm:ss');
-		this.TheNote.note.Ts = updateTs.format('YYYY-MM-DD HH:mm:ss');
+    	//let updateTs = this.Moment();
+    	//this.updateNote.getContainer().innerHTML = updateTs.format('Do MMMM YYYY, HH:mm:ss');
+		//this.TheNote.note.Ts = updateTs.format('YYYY-MM-DD HH:mm:ss');
     	//this.TheNote.Push();
 
 
