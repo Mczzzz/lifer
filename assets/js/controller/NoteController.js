@@ -40,7 +40,7 @@ export default class NoteController {
 
 		let NewNote = new Note("Frame-Note_"+this.ChildId,false);
 		this.ChildId++;
-		//
+		
 		
 	}
 
@@ -48,21 +48,8 @@ export default class NoteController {
 
 
 	dataToStore(data=false){
-
-		if(!data) data = {};
-		console.log('in dataStore');
-		console.log(data);
-
-		data.collection = "Note"; 
-
-		if (!this.guid) this.guid = "tmp-"+Lifer.newTmpId();
-			
-		data.NoteId = this.guid;
-		data.NoteTitle = this.title;
-		
-
-		DatasSynchronizing.store(data);
-
+	
+		if(data) DatasSynchronizing.store(data);
 
 	}
 
