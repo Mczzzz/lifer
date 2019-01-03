@@ -30,7 +30,7 @@ export default class NotesCollection {
 
 		let qry = "SELECT * FROM Notes GROUP BY note_id";
 		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
-		this.webSQL.playQuery('syncData',qry,callBackObj,callBackMethod);
+		this.webSQL.playQuery('cacheData',qry,callBackObj,callBackMethod);
 
 
 	}
