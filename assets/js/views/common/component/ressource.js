@@ -17,9 +17,21 @@ export default class Ressource extends superViews{
 
           this.targetData = {};
 
-          this.title = "";
+           if(ressourceId){
 
-          this.RessourceId = ressourceId;
+            this.container.id = ressourceId;
+            this.new = false;
+
+           }else{
+
+            this.container.id = "tmp-"+this.Lifer.newTmpId();
+            this.new = true;
+           }  
+
+
+          this.Title = "";
+
+        //  this.RessourceId = ressourceId;
           this.ItemList = false;
 
 
@@ -49,7 +61,7 @@ export default class Ressource extends superViews{
 
      callBackDataTo(path,data){
 
-      data.RessourceId = this.RessourceId;
+      data.RessourceId = this.container.id;
       data.RessourceTitle = this.title;
       this.targetData.obj[this.targetData.method](data);
     
@@ -63,12 +75,12 @@ export default class Ressource extends superViews{
 
       console.log("in set Target");
       this.target = this.getObjectThisfromPath(path);
-      this.initResource();
+ //     this.initResource();
   //    console.log(this.target);
      }
 
 
-    initResource(){
+/*    initResource(){
 
       if(this.target){
 
@@ -79,7 +91,7 @@ export default class Ressource extends superViews{
         
       }
 
-    }
+    }*/
 
 
      setTitle(title,store = false){
@@ -149,7 +161,7 @@ export default class Ressource extends superViews{
 
     reorder(){
 
-      this.target.reorder(this.RessourceId);
+      this.target.reorder(this.container.id);
 
     }
 
