@@ -263,7 +263,7 @@ export default class NotesCollection {
 
 
 		let TblItemDataUp = {};
-		TblItemDataUp.name = "ItemssDatas";
+		TblItemDataUp.name = "ItemsDatas";
 		TblItemDataUp.db = "syncUP";
 		TblItemDataUp.create = `CREATE TABLE IF NOT EXISTS `+TblItemDataUp.name+` (timestamp,
 																	   status,
