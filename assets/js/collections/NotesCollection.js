@@ -267,7 +267,7 @@ export default class NotesCollection {
 	//////PRE TRAITEMENT
 		//je regarde dans mon sync data ce qui a plus d'une seconde d'enregistrement et qui a un status LOCAL order by croissant timestamp (pour gérer les plus vieux en priorité)
 		let qry = "UPDATE Notes SET state = 'RESERVEDUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds') AND state = 'WAITING' ";
-		this.webSQL.playQuery('syncData',qry);
+		this.webSQL.playQuery('cacheData',qry);
 
 		this._syncEntities();
 
@@ -282,10 +282,10 @@ export default class NotesCollection {
 
 		let qry2 = "SELECT * FROM Notes WHERE state = 'RESERVEDUP' ";
 		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
-		this.webSQL.playQuery('syncData',qry2,this,'_pushInSyncUp');
+		this.webSQL.playQuery('cacheData',qry2,this,'_pushInSyncUp');
 
 	//////COMPOSITION DE l'ENVOI
-		let qry3 = "SELECT * FROM Notes WHERE status = 'BEFOREUP' ";
+		let qry3 = "SELECT * FROM Items WHERE status = 'BEFOREUP' ";
 		this.webSQL.playQuery('syncUp',qry3,this,'_createRequestToServer');
 		// j'envoi en auserveru et attedns un retour positif
 
@@ -302,7 +302,7 @@ export default class NotesCollection {
 
 
 		//onverifie qu'il n'y a rien en cours d'upload
-		let qry = "SELECT * FROM NotesDatas WHERE status = 'UPLOADING' LIMIT 1";
+		let qry = "SELECT * FROM ItemsDatas WHERE status = 'UPLOADING' LIMIT 1";
 		this.webSQL.playQuery('syncUp',qry,this,'_canExecuteNewDataSynchro');
 
 
@@ -319,7 +319,7 @@ export default class NotesCollection {
 
 		if(results.rows.length == 0){
 
-			let qry = "SELECT * FROM NotesDatas WHERE status = 'BEFOREUP' ORDER BY timestamp ASC LIMIT 1";
+			let qry = "SELECT * FROM ItemssDatas WHERE status = 'BEFOREUP' ORDER BY timestamp ASC LIMIT 1";
 			this.webSQL.playQuery('syncUp',qry,this,'_createRequestToServerDatas');
 
 
@@ -341,7 +341,7 @@ export default class NotesCollection {
 		  for (i = 0; i < len; i++) {
 		    
 		    this.webSQL.playQuery('syncUp',
-			                  `insert into Notes ( timestamp,
+			                  `insert into Items ( timestamp,
 			                                       status,
 			                                       note_id,
 												   note_title,
@@ -375,7 +375,7 @@ export default class NotesCollection {
 
 		 if(results.rows.length){
 
-			let qry = "UPDATE Notes SET state = 'PREUP' WHERE state = 'RESERVEDUP' ";
+			let qry = "UPDATE Items SET state = 'PREUP' WHERE state = 'RESERVEDUP' ";
 			this.webSQL.playQuery('syncData',qry);
 
 		 }
@@ -406,7 +406,7 @@ export default class NotesCollection {
 
 			this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'push',this,"_updateAfterRequest",arrayToSend);
 
-			let qry = "UPDATE Notes SET status = 'UPLOADING' WHERE status = 'BEFOREUP' ";
+			let qry = "UPDATE Items SET status = 'UPLOADING' WHERE status = 'BEFOREUP' ";
 			this.webSQL.playQuery('syncUp',qry);
 
 
@@ -447,7 +447,7 @@ export default class NotesCollection {
 //TODO : A ne pas mettre en dur		
 		this.DatasToSend.item_type = "image";
 		this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'pushDatas',this,"_updateAfterRequestData",this.DatasToSend);
-		let qry = `UPDATE NotesDatas
+		let qry = `UPDATE ItemsDatas
 		           SET status = 'UPLOADING'
 		           WHERE status = 'BEFOREUP'
 		           AND timestamp = '`+this.DatasToSend.timestamp+`'
@@ -462,7 +462,7 @@ export default class NotesCollection {
 
 			
 					//je supprime la ligne de sync up
-			let qry = `DELETE FROM Notes 
+			let qry = `DELETE FROM Items 
 			           WHERE timestamp = "`+datas.data.timestamp+`"
 			           AND  note_id = "`+datas.data.note_id+`" 
 			           AND  ressource_id = "`+datas.data.ressource_id+`" 
@@ -472,7 +472,7 @@ export default class NotesCollection {
 
 
 					//je supprime la ligne de sync up
-			let qry2 = `DELETE FROM NotesDatas 
+			let qry2 = `DELETE FROM ItemsDatas 
 			           WHERE timestamp = "`+datas.data.timestamp+`"
 			           AND  item_id = "`+datas.data.item_id+`" 
 			           AND  item_path = "`+datas.data.item_path+`"
@@ -481,6 +481,7 @@ export default class NotesCollection {
 			this.webSQL.playQuery('syncUp',qry2);
 
 
+//A REVOIR CAR EN 3 TABLES
 
 			//je regarde si en base syncdata je retrouve ma ligne
 			let qryTestLine = `UPDATE Notes
@@ -495,9 +496,10 @@ export default class NotesCollection {
 					           AND STATE = "PARTIAL"
 							  `;
 
-			this.webSQL.playQuery('syncData',qryTestLine);
+			this.webSQL.playQuery('cacheData',qryTestLine);
 
 
+/////////////////////////////////
 			
 			//j'enregistre dans le temporaire
 			//data:image/jpeg;base64,

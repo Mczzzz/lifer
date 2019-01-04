@@ -74,27 +74,14 @@ export default class Ressource extends superViews{
 
 
 
-     setTarget(path){
+/*     setTarget(path){
 
       console.log("in set Target");
       this.target = this.getObjectThisfromPath(path);
- //     this.initResource();
-  //    console.log(this.target);
-     }
+
+     }*/
 
 
-/*    initResource(){
-
-      if(this.target){
-
-        if(!this.RessourceId){
-
-          this.RessourceId = "tmp-"+this.Lifer.newTmpId();
-        }
-        
-      }
-
-    }*/
 
 
      setTitle(title,store = false){

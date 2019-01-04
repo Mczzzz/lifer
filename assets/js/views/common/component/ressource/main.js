@@ -25,6 +25,8 @@ export default class MainRessource extends superViews{
 		this.resizeMoveTo = 0;
 
 		this.skipResizeFirst = 0;
+
+		this.ChildId = 0;
 	}
 
 
@@ -128,14 +130,11 @@ export default class MainRessource extends superViews{
 
 	text(itemId){
 
-		console.log("itemId");
-		console.log(itemId);
-
 		let callBack = {};
 		callBack.path = this.parentThis.path;
 		callBack.method = "callBackDataTo";
 
-		let text = new Text("Text_"+itemId, this.path,false,callBack,itemId);
+		let text = new Text("Text_"+this.ChildId, this.path,false,callBack,itemId);
 		let textElt = text.getTextElement();
 		text.draggable(this.path,"onChildMove");
 
@@ -144,6 +143,8 @@ export default class MainRessource extends superViews{
 		this.resizeMoveTo = text.getContainer().offsetTop;
 
 		text.focus();
+
+		this.ChildId++;
 
 		return text;
 
@@ -167,7 +168,7 @@ export default class MainRessource extends superViews{
 		callBack.method = "callBackDataTo";
 
 
-		let image = new Image("Image_"+itemId, this.path,false,callBack,itemId);
+		let image = new Image("Image_"+this.ChildId, this.path,false,callBack,itemId);
 		
 		//console.log("anew"+anew);
 		if(anew){
@@ -176,6 +177,8 @@ export default class MainRessource extends superViews{
 		
 		let textElt = image.getTextElement();
 		image.draggable(this.path,"onChildMove");
+
+		this.ChildId++;
 
 		return image;
 
