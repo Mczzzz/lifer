@@ -14,9 +14,11 @@ export default class Story extends superViews{
 
 		super( MyClass , path);
 
+		this.NotesCollection = new LoaderCollection("Notes");
+
 		this.init();
 
-		this.NotesCollection = new LoaderCollection("Notes");
+		
 
 		this.RessourceList = [];
 		//this.ItemList = [];
