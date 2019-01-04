@@ -120,7 +120,7 @@ export default class Story extends superViews{
 		editRessource.setStylePicto("color","white");
 		editRessource.setStylePicto("alignItems","center");
 
-		editRessource.getContainer().addEventListener("click",()=>this.loadRessource(ressourceTmpId));
+		editRessource.getContainer().addEventListener("click",()=>this.loadRessource(data.ressource_id));
 
 		this.RessourceList[data.ressource_id].TitleElt = this.RessourceList[data.ressource_id].Card.push("Text", HeaderElement,"Title", data.ressource_title);
 		
