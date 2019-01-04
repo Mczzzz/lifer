@@ -350,7 +350,7 @@ export default class NotesCollection {
 
 		if(results.rows.length == 0){
 
-			let qry = "SELECT * FROM ItemssDatas WHERE status = 'BEFOREUP' ORDER BY timestamp ASC LIMIT 1";
+			let qry = "SELECT * FROM ItemsDatas WHERE status = 'BEFOREUP' ORDER BY timestamp ASC LIMIT 1";
 			this.webSQL.playQuery('syncUP',qry,this,'_createRequestToServerDatas');
 
 
