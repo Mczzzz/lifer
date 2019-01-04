@@ -85,7 +85,7 @@ export default class Story extends superViews{
 		
 		for (i = 0; i < len; i++) {
 
-			this.createRessource(datas.rows[i]);
+			this.addItem(datas.rows[i]);
 
 		}
 
