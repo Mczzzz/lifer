@@ -19,6 +19,7 @@ export default class Story extends superViews{
 		this.init();
 
 		this.ChildId = 0;
+		this.ChildItemId = 0;
 
 
 		this.RessourceList = [];
@@ -307,7 +308,8 @@ export default class Story extends superViews{
 		//ressourceTmpId,type,itemTmpId, 
 		//elt
 
-		let ItemElement = this.RessourceList[datas.ressource_id].Card.setElement("Item_"+datas.item_id);
+		let ItemElement = this.RessourceList[datas.ressource_id].Card.setElement("Item_"+this.ChildItemId);
+		this.ChildItemId++;
 		//ItemElement.setStyle("height","50px");
 		ItemElement.setStyle("background","yellow");
 		ItemElement.setStyle("justifyContent","flex-start");
