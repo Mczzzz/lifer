@@ -75,7 +75,7 @@ export default class Empty extends superViews{
 	FrameFocus(){
 
 		let res = "";
-		if(this.getContainer().style.display == "block"){
+		if(this.Ressource.Main.getContainer().style.display == "block"){
 
 			this.Ressource.Main.setStyle("display","none");
 
