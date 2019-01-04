@@ -407,7 +407,7 @@ export default class NotesCollection {
 		 if(results.rows.length){
 
 			let qry = "UPDATE Items SET state = 'PREUP' WHERE state = 'RESERVEDUP' ";
-			this.webSQL.playQuery('syncData',qry);
+			this.webSQL.playQuery('cacheData',qry);
 
 		 }
 
