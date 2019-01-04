@@ -303,7 +303,7 @@ export default class Story extends superViews{
 		//ressourceTmpId,type,itemTmpId, 
 		//elt
 		let RessourcePathId = document.getElementById(datas.ressource_id).className;
-		
+		let ItemPathId = this.path+"-"+'Item_'+this.ChildItemId;
 		let ItemElement = this.RessourceList[RessourcePathId].Card.setElement("Item_"+this.ChildItemId);
 		this.ChildItemId++;
 		ItemElement.setId(datas.item_id);
@@ -311,18 +311,18 @@ export default class Story extends superViews{
 		ItemElement.setStyle("background","yellow");
 		ItemElement.setStyle("justifyContent","flex-start");
 
-		this.RessourceList[RessourcePathId].Items[datas.item_id] = {};
+		this.RessourceList[RessourcePathId].Items[ItemPathId] = {};
 
 		switch (datas.item_type){
 
 			case 'text':
 
-				this.RessourceList[RessourcePathId].Items[datas.item_id].type = datas.item_type;
+				this.RessourceList[RessourcePathId].Items[ItemPathId].type = datas.item_type;
 				let MyText = this.RessourceList[RessourcePathId].Card.push("Text",ItemElement,"text",datas.item_text);
 				MyText.setStyle("color","black");
 				MyText.setStyle("fontSize","14px");
 				MyText.removeAttribute("contentEditable");
-				this.RessourceList[RessourcePathId].Items[datas.item_id].object = MyText;
+				this.RessourceList[RessourcePathId].Items[ItemPathId].object = MyText;
 
 			//	this.setObserver(elt,ressourceTmpId,itemTmpId);
 
@@ -336,7 +336,7 @@ export default class Story extends superViews{
 
 			case 'image':
 
-				this.RessourceList[RessourcePathId].Items[datas.item_id].type = datas.item_type;
+				this.RessourceList[RessourcePathId].Items[ItemPathId].type = datas.item_type;
 
 				//j'ajoute mon thumb vide
 				//et je lui pousserai sa data après
@@ -362,7 +362,7 @@ export default class Story extends superViews{
 				MyLegend.setStyle("color","black");
 				MyLegend.setStyle("fontSize","14px");
 				MyLegend.removeAttribute("contentEditable");
-				this.RessourceList[RessourcePathId].Items[datas.item_id].object = MyLegend;
+				this.RessourceList[RessourcePathId].Items[ItemPathId].object = MyLegend;
 
 /*				let MyLegendconfig = { attributes: true, characterData: true, childList: true, subtree: true};
 
