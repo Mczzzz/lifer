@@ -414,7 +414,7 @@ export default class Story extends superViews{
 		let TheRessource = this.Lifer.getData(this.parentThis.Empty.path,"This");
 		TheRessource.addRessource(ressourceTmpId);
 
-		}
+		
 		
 
 
