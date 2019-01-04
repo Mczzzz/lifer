@@ -80,6 +80,10 @@ export default class Empty extends superViews{
 			this.Ressource.Main.setStyle("display","none");
 
 			this.parentThis.Story.setStyle('filter',"");
+			
+			//reload des ressourceq dans la story
+			this.parentThis.Story.reload();
+
 			res = false;
 
 		}else{
