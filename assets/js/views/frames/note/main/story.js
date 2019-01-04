@@ -402,7 +402,7 @@ export default class Story extends superViews{
 		TheRessource.addRessource(ressourceTmpId);
 		TheRessource.setTitle(this.RessourceList[ressourceTmpId].title);
 		console.log("loadRessource setObserverTitle");
-		this.setObserverTitle(ressourceTmpId);
+		//this.setObserverTitle(ressourceTmpId);
 /*	
 		console.log(this.RessourceList[ressourceTmpId].Items);
 		console.log(Object.keys(this.RessourceList[ressourceTmpId].Items));*/
