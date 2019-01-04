@@ -307,7 +307,7 @@ export default class NotesCollection {
 	_syncEntities(){
 
 
-		let qry2 = `SELECT * 
+		let qry2 = `SELECT *,Items.timestamp AS item_timestamp 
 		            FROM Items
 		            LEFT JOIN Ressources ON Items.ressource_id = Ressources.ressource_id
 		            LEFT JOIN Notes ON Ressources.note_id = Notes.note_id
@@ -385,7 +385,7 @@ export default class NotesCollection {
 												   item_path,
 												   item_unit
 			                                      )
-			                   values ("`+results.rows.item(i).timestamp+`",
+			                   values ("`+results.rows.item(i).item_timestamp+`",
 			                          "BEFOREUP",
 			                          "`+results.rows.item(i).note_id+`",
 			                          "`+results.rows.item(i).note_title+`",
@@ -578,7 +578,7 @@ export default class NotesCollection {
 
 					//je supprime la ligne de sync up
 
-			this.webSQL.playQuery('syncUP',`DELETE FROM Notes 
+			this.webSQL.playQuery('syncUP',`DELETE FROM Items 
 								           WHERE timestamp = "`+datas.data[i].timestamp+`"
 								           AND  note_id = "`+NoteId+`" 
 								           AND  ressource_id = "`+ResourceId+`" 
@@ -586,21 +586,34 @@ export default class NotesCollection {
 								           `);
 
 			//je regarde si en base syncdata je retrouve ma ligne
-			this.webSQL.playQuery('syncData',`UPDATE Notes
-	                           SET note_id =  "`+datas.data[i].note_id+`"   ,
-								ressource_id =  "`+datas.data[i].ressource_id+`"  ,
+			this.webSQL.playQuery('cacheData',`UPDATE Iems
+	                           SET ressource_id =  "`+datas.data[i].ressource_id+`"  ,
 								item_id =  "`+datas.data[i].item_id+`"   ,
 								status = "SYNC",
 								state  = "CLEAN" 
 	 
 							   WHERE timestamp = "`+datas.data[i].timestamp+`" 
-					           AND  note_id = "`+NoteId+`" 
 					           AND  ressource_id = "`+ResourceId+`" 
 					           AND  item_id = "`+ItemId+`" 
 					           AND STATE = "PREUP"
 							  `);
 
 			//il faut mettre a jour les id
+			this.webSQL.playQuery('cacheData',`UPDATE Ressources
+	                            SET ressource_id =  "`+datas.data[i].ressource_id+`"  ,
+								note_id =  "`+datas.data[i].item_id+`"   ,
+								status = "SYNC"
+	 
+							   WHERE timestamp = "`+datas.data[i].timestamp+`" 
+					           AND  ressource_id = "`+ResourceId+`" 
+					           AND  item_id = "`+ItemId+`" 
+					           AND STATE = "PREUP"
+							  `);			
+
+
+
+
+
 
 		}else if(datas.data[i].type == 'image'){
 
