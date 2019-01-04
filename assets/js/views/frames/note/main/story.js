@@ -131,8 +131,6 @@ export default class Story extends superViews{
 
 	createRessource(data){
 
-		console.log('createRessssssources');
-		console.log(data);
 
 		let RessourcePathId = this.path+"-"+'Card_'+this.ChildId;
 
@@ -298,11 +296,6 @@ export default class Story extends superViews{
 
 
 
-/*	newTmpId(){
-
-		return uuid().replace(/-/gi, '.');
-
-	}*/
 
 
 	addItem(datas){
@@ -378,6 +371,9 @@ export default class Story extends superViews{
 
 
 			break;
+			console.log("this.RessourceList");
+			console.log(this.RessourceList);
+
 
 		}
 //TODO: je set mon element, j'ay ajoute le composant, j'enregistre mon composant dans this.RessourceList pour pouvoir le modifier à la mise à jour
@@ -391,7 +387,7 @@ export default class Story extends superViews{
 
 
 
-	setObserver(elt,ressourceTmpId,itemTmpId){
+/*	setObserver(elt,ressourceTmpId,itemTmpId){
 
 		let MyText = this.RessourceList[ressourceTmpId].Items[itemTmpId].object;
 
@@ -401,7 +397,7 @@ export default class Story extends superViews{
 		observer.observe(elt.bloc.getContainer(), config);
 		observer.observe(elt.text.getContainer(), config);
 
-	}
+	}*/
 
 
 //TODO a Factoriser avec ce qu'il y a directement dans image
@@ -440,19 +436,19 @@ export default class Story extends superViews{
 	}
 
 
-	update(data){
+//	update(data){
 /*			console.log("IIIIIIIIIIINNN UPDATE");
 			console.log(data);*/
-			//on set le texte
+	/*		//on set le texte
 			this.RessourceList[data.RessourceId].Items[data.id].data = data.data.container.innerHTML;
 
 			this.RessourceList[data.RessourceId].Items[data.id].object.setData(data.data.container.innerHTML);
 			//on set la marge
 
 			this.RessourceList[data.RessourceId].Items[data.id].object.setStyle("marginLeft", data.data.parentThis.parentThis.parentThis.container.style.marginLeft); 
-			//this.Save(Ressource, item );
+	*/		//this.Save(Ressource, item );
 			
-	}
+//	}
 
 
 /*	save(ressourceTmpId,itemId = false,type, element,value){
