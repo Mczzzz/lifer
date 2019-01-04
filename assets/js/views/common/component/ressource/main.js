@@ -154,8 +154,13 @@ export default class MainRessource extends superViews{
 
 	number(itemId){
 
-		let number = new Number("Number_"+itemId, this.path);
+		let number = new Number("Number_"+this.ChildId, this.path);
 		number.draggable(this.path,"onChildMove");
+
+
+		this.ChildId++;
+
+		return number;
 
 
 	}

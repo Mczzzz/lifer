@@ -18,7 +18,8 @@ export default class Story extends superViews{
 
 		this.init();
 
-		
+		this.ChildId = 0;
+
 
 		this.RessourceList = [];
 		//this.ItemList = [];
@@ -117,14 +118,14 @@ export default class Story extends superViews{
 
 
 
-	addRessource(){
+/*	addRessource(){
 
 		let ressourceTmpId = "TmpResourceId-"+uuid().replace(/-/gi, '.');
 //		console.log(ressourceTmpId);
 		this.createRessource(ressourceTmpId);
 		this.setStyle("flex" , "");
 		return ressourceTmpId;
-	}
+	}*/
 
 
 	createRessource(data){
@@ -136,10 +137,10 @@ export default class Story extends superViews{
 		this.RessourceList[data.ressource_id].Items = [];
 
 
-		this.RessourceList[data.ressource_id].Card = new Card('Card_'+data.ressource_id, this.path);
+		this.RessourceList[data.ressource_id].Card = new Card('Card_'+this.ChildId, this.path);
 		//card.setStyle("display","flex");
 
-		let HeaderElement = this.RessourceList[data.ressource_id].Card.setElement("header_"+data.ressource_id);
+		let HeaderElement = this.RessourceList[data.ressource_id].Card.setElement("header");
 		HeaderElement.setStyle("justifyContent", "stretch");
 
 		let editRessource = this.RessourceList[data.ressource_id].Card.push("Button", HeaderElement,"edit", "editc");
@@ -163,6 +164,8 @@ export default class Story extends superViews{
 
 		//on rajoute les items;
 		this.NotesCollection.getRessourcesItems(data.ressource_id,this,'populateItems');
+
+		this.ChildId++;
 
 	}
 
