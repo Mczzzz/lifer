@@ -293,7 +293,7 @@ export default class NotesCollection {
 
 	//////PRE TRAITEMENT
 		//je regarde dans mon sync data ce qui a plus d'une seconde d'enregistrement et qui a un status LOCAL order by croissant timestamp (pour gérer les plus vieux en priorité)
-		let qry = "UPDATE Notes SET state = 'RESERVEDUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds') AND state = 'WAITING' ";
+		let qry = "UPDATE Items SET state = 'RESERVEDUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds') AND state = 'WAITING' ";
 		this.webSQL.playQuery('cacheData',qry);
 
 		this._syncEntities();
@@ -307,7 +307,11 @@ export default class NotesCollection {
 	_syncEntities(){
 
 
-		let qry2 = "SELECT * FROM Notes WHERE state = 'RESERVEDUP' ";
+		let qry2 = `SELECT * 
+		            FROM Items
+		            LEFT JOIN Ressources ON Items.ressource_id = Ressources.ressource_id
+		            LEFT JOIN Notes ON Ressources.note_id = Notes.note_id
+		            WHERE state = 'RESERVEDUP' `;
 		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
 		this.webSQL.playQuery('cacheData',qry2,this,'_pushInSyncUp');
 
