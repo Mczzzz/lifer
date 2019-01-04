@@ -276,7 +276,7 @@ class NotesController extends Controller
             
             }
 
-
+            $Resource->setTitle($NoteElement->ressource_title);
             $Resource->setNote($Note);
             $Resource->setCreator($this->user);
 
