@@ -30,7 +30,7 @@ export default class Story extends superViews{
 		this.setStyle("overscrollBehavior","none");
 		this.setStyle("flex","1");
 
-		this.setStyleOut();
+		//this.setStyleOut();
 		
 //TODO: Here
 		if(this.parentThis.parentThis.new == false){
@@ -66,7 +66,7 @@ export default class Story extends superViews{
 		
 		for (i = 0; i < len; i++) {
 
-			this.createRessource(datas.rows[i].ressource_id);
+			this.createRessource(datas.rows[i]);
 
 		}
 
@@ -98,31 +98,31 @@ export default class Story extends superViews{
 	}
 
 
-	createRessource(ressourceTmpId){
+	createRessource(data){
 
-		this.RessourceList[ressourceTmpId] = {};
-		this.RessourceList[ressourceTmpId].Items = [];
+		this.RessourceList[data.ressource_id] = {};
+		this.RessourceList[data.ressource_id].Items = [];
 
 
-		this.RessourceList[ressourceTmpId].Card = new Card('Card_'+ressourceTmpId, this.path);
+		this.RessourceList[data.ressource_id].Card = new Card('Card_'+data.ressource_id, this.path);
 		//card.setStyle("display","flex");
 
-		let HeaderElement = this.RessourceList[ressourceTmpId].Card.setElement("header_"+ressourceTmpId);
+		let HeaderElement = this.RessourceList[data.ressource_id].Card.setElement("header_"+data.ressource_id);
 		HeaderElement.setStyle("justifyContent", "stretch");
 
-		let editRessource = this.RessourceList[ressourceTmpId].Card.push("Button", HeaderElement,"edit", "editc");
+		let editRessource = this.RessourceList[data.ressource_id].Card.push("Button", HeaderElement,"edit", "editc");
 		editRessource.setStylePicto("fontSize","20px");
 		editRessource.setStylePicto("margin","0px");
 		editRessource.setStylePicto("marginLeft","5px");
 		editRessource.setStylePicto("color","white");
 		editRessource.setStylePicto("alignItems","center");
 
-		editRessource.getContainer().addEventListener("click",()=>this.loadRessource(ressourceTmpId));
+		//editRessource.getContainer().addEventListener("click",()=>this.loadRessource(ressourceTmpId));
 
-		this.RessourceList[ressourceTmpId].TitleElt = this.RessourceList[ressourceTmpId].Card.push("Text", HeaderElement,"Title", "");
+		this.RessourceList[data.ressource_id].TitleElt = this.RessourceList[data.ressource_id].Card.push("Text", HeaderElement,"Title", "");
 		
-		this.RessourceList[ressourceTmpId].TitleElt.setStyle("fontSize","22px");
-		this.RessourceList[ressourceTmpId].TitleElt.removeAttribute("contentEditable");
+		this.RessourceList[data.ressource_id].TitleElt.setStyle("fontSize","22px");
+		this.RessourceList[data.ressource_id].TitleElt.removeAttribute("contentEditable");
 
 		//HeaderElement.setStyle("height","50px");
 		HeaderElement.setStyle("background","purple");
