@@ -239,7 +239,7 @@ export default class NotesCollection {
 
 	let TblItemUp = {};
 		TblItemUp.name = "Items";
-		TblItemUp.db = "syncUp";
+		TblItemUp.db = "syncUP";
 		TblItemUp.create = `CREATE TABLE IF NOT EXISTS `+TblItemUp.name+` (timestamp,
 																	   status,
 																	   note_id,
@@ -264,7 +264,7 @@ export default class NotesCollection {
 
 		let TblItemDataUp = {};
 		TblItemDataUp.name = "ItemssDatas";
-		TblItemDataUp.db = "syncUp";
+		TblItemDataUp.db = "syncUP";
 		TblItemDataUp.create = `CREATE TABLE IF NOT EXISTS `+TblItemDataUp.name+` (timestamp,
 																	   status,
 																	   note_id,
