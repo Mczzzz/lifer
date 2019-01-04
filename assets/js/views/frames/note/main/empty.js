@@ -67,6 +67,7 @@ export default class Empty extends superViews{
 		}
 
 		this.setStyle("display","block");		
+		this.parentThis.Story.setStyleOut();
 
 	}
 

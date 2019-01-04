@@ -34,7 +34,7 @@ export default class Story extends superViews{
 		this.setStyle("overscrollBehavior","none");
 		this.setStyle("flex","1");
 
-		//this.setStyleOut();
+		//
 		
 //TODO: Here
 		if(this.parentThis.parentThis.new == false){
@@ -96,7 +96,8 @@ export default class Story extends superViews{
 
 	setStyleOut(){
 
-		this.setStyle("filter", "blur(2px) sepia(100%)");
+		//this.setStyle("filter", "blur(2px) sepia(100%)");
+		this.setStyle("filter", "opacity(0.2) grayscale(70%)");
 
 	}
 
