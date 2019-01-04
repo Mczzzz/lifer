@@ -1,5 +1,7 @@
 import superViews from "../../../common/superViews.js";
 
+import LoaderCollection from '../../../../services/LoaderCollection.js';
+
 import Ressource from "../../../common/component/ressource.js";
 
 
@@ -9,6 +11,8 @@ export default class Empty extends superViews{
 	constructor( MyClass , path, ressource = false){
 
 		super( MyClass , path);
+
+		this.NotesCollection = new LoaderCollection("Notes");
 
 		this.init();
 		
@@ -30,13 +34,41 @@ export default class Empty extends superViews{
 
 
 
-	addRessource(ressourceTmpId=false,title=false){
+	addRessource(ressourceTmpId=false){
 
 		this.Ressource.destroyMe();
 		this.Ressource = new Ressource('Ressource' , this.path,ressourceTmpId);
-	//	this.initialSet = 1;
+
+		//je recherche en base mes infos
+		this.NotesCollection.getRessource(ressourceTmpId,this,'setFromBase');
+		//je recherche mon arbre d'item
+
 
 	}
+
+	setRessourceFromBase(datas){
+
+		this.setTitle(datas.rows[0].ressource_title);
+		this.NotesCollection.getRessourcesItems(datas.rows[0].ressource_id,this,'setRessourceItemsFromBase');
+
+	}
+
+
+	setRessourceItemsFromBase(datas){
+
+		let len = datas.rows.length, i;
+		
+		for (i = 0; i < len; i++) {
+
+			//this.createRessource(datas.rows[i]);
+			 this.Ressource.addItem(datas.rows[i].item_type,datas.rows[i].item_id, datas.rows[i].item_text, datas.rows[i].item_path , 0);
+
+
+		}
+
+	}
+
+
 
 	setTitle(title){
 

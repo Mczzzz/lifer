@@ -43,6 +43,15 @@ export default class NotesCollection {
 
 	}
 
+	getRessource(ressourceId,callBackObj,callBackMethod){
+
+		let qry = "SELECT * FROM Ressources WHERE ressource_id = '"+ressourceId+"'";
+		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
+		this.webSQL.playQuery('cacheData',qry,callBackObj,callBackMethod);
+
+	}
+
+
 	getRessourcesItems(ressourceId,callBackObj,callBackMethod){
 
 		let qry = "SELECT * FROM Items WHERE ressource_id = '"+ressourceId+"'";

@@ -413,30 +413,6 @@ export default class Story extends superViews{
 //		console.log("loadRessource");
 		let TheRessource = this.Lifer.getData(this.parentThis.Empty.path,"This");
 		TheRessource.addRessource(ressourceTmpId);
-		TheRessource.setTitle(this.RessourceList[ressourceTmpId].title);
-		console.log("loadRessource setObserverTitle");
-		//this.setObserverTitle(ressourceTmpId);
-/*	
-		console.log(this.RessourceList[ressourceTmpId].Items);
-		console.log(Object.keys(this.RessourceList[ressourceTmpId].Items));*/
-
-		for (let Item of Object.keys(this.RessourceList[ressourceTmpId].Items)){
-
-//			console.log(this.RessourceList[ressourceTmpId].Items[Item]);
-			let It = this.RessourceList[ressourceTmpId].Items[Item];
-
-			let pict = false;
-
-			if(It.type == 'image'){
-				pict = It.pict;
-			}
-			let	data = It.data;
-
-
-			 
-			
-
-            TheRessource.addItem(It.type, Item, data,pict,It.margin);
 
 		}
 		
