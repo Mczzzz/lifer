@@ -611,7 +611,7 @@ export default class NotesCollection {
 
 
 			this.webSQL.playQuery('cacheData',`UPDATE Notes
-	                            SET note_id =  "`+datas.data[i].note_id+`"
+	                            SET note_id =  "`+datas.data[i].note_id+`",
 								status = "SYNC"
 	 
 							   WHERE note_id = "`+NoteId+`" 
