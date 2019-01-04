@@ -134,17 +134,19 @@ export default class Story extends superViews{
 		console.log('createRessssssources');
 		console.log(data);
 
-		this.RessourceList[data.ressource_id] = {};
-		this.RessourceList[data.ressource_id].Items = [];
+		let RessourcePathId = this.path+"-"+'Card_'+this.ChildId;
+
+		this.RessourceList[RessourcePathId] = {};
+		this.RessourceList[RessourcePathId].Items = [];
 
 
-		this.RessourceList[data.ressource_id].Card = new Card('Card_'+this.ChildId, this.path);
-		this.RessourceList[data.ressource_id].Card.setId(data.ressource_id);
+		this.RessourceList[RessourcePathId].Card = new Card('Card_'+this.ChildId, this.path);
+		this.RessourceList[RessourcePathId].Card.setId(data.ressource_id);
 
-		let HeaderElement = this.RessourceList[data.ressource_id].Card.setElement("header");
+		let HeaderElement = this.RessourceList[RessourcePathId].Card.setElement("header");
 		HeaderElement.setStyle("justifyContent", "stretch");
 
-		let editRessource = this.RessourceList[data.ressource_id].Card.push("Button", HeaderElement,"edit", "editc");
+		let editRessource = this.RessourceList[RessourcePathId].Card.push("Button", HeaderElement,"edit", "editc");
 		editRessource.setStylePicto("fontSize","20px");
 		editRessource.setStylePicto("margin","0px");
 		editRessource.setStylePicto("marginLeft","5px");
@@ -153,10 +155,10 @@ export default class Story extends superViews{
 
 		editRessource.getContainer().addEventListener("click",()=>this.loadRessource(data.ressource_id));
 
-		this.RessourceList[data.ressource_id].TitleElt = this.RessourceList[data.ressource_id].Card.push("Text", HeaderElement,"Title", data.ressource_title);
+		this.RessourceList[RessourcePathId].TitleElt = this.RessourceList[RessourcePathId].Card.push("Text", HeaderElement,"Title", data.ressource_title);
 		
-		this.RessourceList[data.ressource_id].TitleElt.setStyle("fontSize","22px");
-		this.RessourceList[data.ressource_id].TitleElt.removeAttribute("contentEditable");
+		this.RessourceList[RessourcePathId].TitleElt.setStyle("fontSize","22px");
+		this.RessourceList[RessourcePathId].TitleElt.removeAttribute("contentEditable");
 
 		//HeaderElement.setStyle("height","50px");
 		HeaderElement.setStyle("background","purple");
