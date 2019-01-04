@@ -42,6 +42,7 @@ export default class NotesCollection {
 		console.log(data);
 
 
+
 		this.webSQL.playQuery('cacheData',
 			                  `insert into Notes ( timestamp,
 			                                       status,
@@ -57,6 +58,73 @@ export default class NotesCollection {
 			                          )
 
 			                 `);
+
+		if(data.RessourceId){
+
+
+					this.webSQL.playQuery('cacheData',
+			                  `insert into Ressources ( timestamp,
+			                                       status,
+			                                       note_id,
+												   ressoure_id,
+												   ressoure_tmpId,
+												   ressoure_title
+			                                      )
+			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
+			                          "LOCAL",
+			                          "`+data.NoteId+`",
+			                          "`+data.RessourceId+`",
+			                          "`+data.RessourceId+`",
+			                          "`+data.RessourceTitle+`"
+			                          )
+
+			                 `);
+
+
+		}
+
+
+
+
+		if(data.id){
+
+
+			data.value = (data.value)? data.value : 0;
+			data.path = (data.path)? data.path : "";
+			data.unit = (data.unit)? data.unit : 0;
+
+
+			this.webSQL.playQuery('cacheData',
+				                  `insert into Items ( timestamp,
+													   status,
+													   ressource_id,
+													   item_id,
+													   item_type,
+													   item_text,
+													   item_value,
+													   item_path,
+													   item_unit,
+				                                      )
+				                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
+				                          "LOCAL",
+				                          "`+data.RessourceId+`",
+				                          "`+data.id+`",
+				                          "`+data.type+`",
+				                          "`+data.value+`",
+				                          "`+data.path+`",
+				                          "`+data.unit+`"
+				                          )
+
+				                 `);
+
+
+
+			}
+
+
+		
+
+
 
 	}
 
