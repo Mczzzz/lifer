@@ -61,6 +61,7 @@ export default class NotesCollection {
 
 		if(data.RessourceId){
 
+			console.log("in if data ressourcesId");
 
 					this.webSQL.playQuery('cacheData',
 			                  `insert into Ressources ( timestamp,
@@ -88,6 +89,7 @@ export default class NotesCollection {
 
 		if(data.id){
 
+			console.log("in if data Id");
 
 			data.value = (data.value)? data.value : 0;
 			data.path = (data.path)? data.path : "";
@@ -103,7 +105,7 @@ export default class NotesCollection {
 													   item_text,
 													   item_value,
 													   item_path,
-													   item_unit,
+													   item_unit
 				                                      )
 				                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 				                          "LOCAL",
