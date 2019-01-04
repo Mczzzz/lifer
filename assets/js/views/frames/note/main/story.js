@@ -302,7 +302,7 @@ export default class Story extends superViews{
 
 		//ressourceTmpId,type,itemTmpId, 
 		//elt
-		console.log(document.getElementById(datas.ressource_id));
+		console.log(document.getElementById(datas.ressource_id).className);
 		let ItemElement = this.RessourceList[datas.ressource_id].Card.setElement("Item_"+this.ChildItemId);
 		this.ChildItemId++;
 		ItemElement.setId(datas.item_id);
