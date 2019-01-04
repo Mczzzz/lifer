@@ -16,6 +16,8 @@ export default class Story extends superViews{
 
 		this.init();
 
+		this.NotesCollection = new LoaderCollection("Notes");
+
 		this.RessourceList = [];
 		//this.ItemList = [];
 		this.observerTitle = false;
@@ -36,7 +38,6 @@ export default class Story extends superViews{
 		if(this.parentThis.parentThis.new == false){
 
 			//on retrouve toutes les ressources de cet id
-			this.NotesCollection = new LoaderCollection("Notes");
 			this.NotesCollection.getRessources(this.parentThis.parentThis.container.id,this,'populate');
 		}
 
@@ -72,6 +73,21 @@ export default class Story extends superViews{
 
 	}
 
+
+	populateItems(datas){
+
+		console.log('in populate ressourceItems');
+		console.log(datas);
+
+		let len = datas.rows.length, i;
+		
+		for (i = 0; i < len; i++) {
+
+			this.createRessource(datas.rows[i]);
+
+		}
+
+	}
 
 
 
@@ -133,15 +149,7 @@ export default class Story extends superViews{
 
 
 		//on rajoute les items;
-
-
-
-
-
-
-
-
-
+		this.NotesCollection.getRessourcesItems(data.ressource_id,this,'populateItems');
 
 	}
 
@@ -278,29 +286,30 @@ export default class Story extends superViews{
 	}*/
 
 
-	addItem(ressourceTmpId,type,itemTmpId, elt){
+	addItem(datas){
 
+		//ressourceTmpId,type,itemTmpId, 
+		//elt
 
-
-		let ItemElement = this.RessourceList[ressourceTmpId].Card.setElement("Item_"+itemTmpId);
+		let ItemElement = this.RessourceList[datas.ressource_id].Card.setElement("Item_"+datas.item_id);
 		//ItemElement.setStyle("height","50px");
 		ItemElement.setStyle("background","yellow");
 		ItemElement.setStyle("justifyContent","flex-start");
 
-		this.RessourceList[ressourceTmpId].Items[itemTmpId] = {};
+		this.RessourceList[datas.ressource_id].Items[datas.item_id] = {};
 
-		switch (type){
+		switch (datas.item_type){
 
 			case 'text':
 
-				this.RessourceList[ressourceTmpId].Items[itemTmpId].type = type;
-				let MyText = this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","...");
+				this.RessourceList[datas.ressource_id].Items[datas.item_id].type = datas.item_type;
+				let MyText = this.RessourceList[datas.ressource_id].Card.push("Text",ItemElement,"text","...");
 				MyText.setStyle("color","black");
 				MyText.setStyle("fontSize","14px");
 				MyText.removeAttribute("contentEditable");
-				this.RessourceList[ressourceTmpId].Items[itemTmpId].object = MyText;
+				this.RessourceList[datas.ressource_id].Items[datas.item_id].object = MyText;
 
-				this.setObserver(elt,ressourceTmpId,itemTmpId);
+			//	this.setObserver(elt,ressourceTmpId,itemTmpId);
 
 /*				let config = { attributes: true, characterData: true, childList: true, subtree: true};
 
@@ -312,38 +321,38 @@ export default class Story extends superViews{
 
 			case 'image':
 
-				this.RessourceList[ressourceTmpId].Items[itemTmpId].type = type;
+				this.RessourceList[datas.ressource_id].Items[datas.item_id].type = datas.item_type;
 
 				//j'ajoute mon thumb vide
 				//et je lui pousserai sa data après
-				let MyThumb= this.RessourceList[ressourceTmpId].Card.push("Thumb",ItemElement,"pict",);
+				let MyThumb= this.RessourceList[datas.ressource_id].Card.push("Thumb",ItemElement,"pict",);
 				MyThumb.setStyle("marginLeft" , "5px");
 				MyThumb.setStyle("marginRight" , "10px");
 				MyThumb.setStyle("display" , "flex");
 				MyThumb.setStyle("alignItems" , "center");
 
-				MyThumb.getContainer().addEventListener("click",()=>this.ImageViewer(elt.pict.data.pict));
+			//	MyThumb.getContainer().addEventListener("click",()=>this.ImageViewer(elt.pict.data.pict));
 
 
-				let MyPictConfig = { attributes: true, subtree: true};
+			//	let MyPictConfig = { attributes: true, subtree: true};
 
-				let PictObserver = new MutationObserver(()=>this.updateImagePict(MyThumb,elt,ressourceTmpId,itemTmpId));
-				PictObserver.observe(elt.pict.ImageElt.getContainer(), MyPictConfig);
-
-
+			//	let PictObserver = new MutationObserver(()=>this.updateImagePict(MyThumb,elt,ressourceTmpId,itemTmpId));
+			//	PictObserver.observe(elt.pict.ImageElt.getContainer(), MyPictConfig);
 
 
 
-				let MyLegend= this.RessourceList[ressourceTmpId].Card.push("Text",ItemElement,"text","...");
+
+
+				let MyLegend= this.RessourceList[datas.ressource_id].Card.push("Text",ItemElement,"text","...");
 				MyLegend.setStyle("color","black");
 				MyLegend.setStyle("fontSize","14px");
 				MyLegend.removeAttribute("contentEditable");
-				this.RessourceList[ressourceTmpId].Items[itemTmpId].object = MyLegend;
+				this.RessourceList[datas.ressource_id].Items[datas.item_id].object = MyLegend;
 
-				let MyLegendconfig = { attributes: true, characterData: true, childList: true, subtree: true};
+/*				let MyLegendconfig = { attributes: true, characterData: true, childList: true, subtree: true};
 
 				let LegendObserver = new MutationObserver(()=>this.updateImageLegend(MyLegend,elt,ressourceTmpId,itemTmpId));
-				LegendObserver.observe(elt.text.getContainer(), MyLegendconfig);
+				LegendObserver.observe(elt.text.getContainer(), MyLegendconfig);*/
 
 
 
@@ -354,9 +363,11 @@ export default class Story extends superViews{
 
 		//this.RessourceList[ressourceTmpId].ItemsList.push(ItemElement);
 		//this.ItemList.push({"RessourceId"})
-		console.log(this.RessourceList);
+//		console.log(this.RessourceList);
 
 	}
+
+
 
 
 	setObserver(elt,ressourceTmpId,itemTmpId){
