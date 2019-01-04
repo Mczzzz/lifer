@@ -85,11 +85,10 @@ export default class Main extends superViews{
 
 			
 			let 	item = card.push("TextButton", Elt,"view_Note"+id,datas.note_title);
-				item.getContainer().addEventListener("click",()=>this.openNote(id));
+				
+			card.getContainer().addEventListener("click",()=>this.openNote(id));	
 
-					//item.setData(datas.rows[i].item_id);
 
-					//item.getContainer().addEventListener("click",()=>this.StartNote());
 
 
 
