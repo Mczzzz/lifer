@@ -120,7 +120,7 @@ export default class Story extends superViews{
 		editRessource.setStylePicto("color","white");
 		editRessource.setStylePicto("alignItems","center");
 
-		//editRessource.getContainer().addEventListener("click",()=>this.loadRessource(ressourceTmpId));
+		editRessource.getContainer().addEventListener("click",()=>this.loadRessource(ressourceTmpId));
 
 		this.RessourceList[data.ressource_id].TitleElt = this.RessourceList[data.ressource_id].Card.push("Text", HeaderElement,"Title", data.ressource_title);
 		
@@ -129,6 +129,21 @@ export default class Story extends superViews{
 
 		//HeaderElement.setStyle("height","50px");
 		HeaderElement.setStyle("background","purple");
+
+
+
+		//on rajoute les items;
+
+
+
+
+
+
+
+
+
+
+	}
 
 		//get resourcecommmune
 
@@ -143,7 +158,7 @@ export default class Story extends superViews{
 			observer.observe(eltTitle.getContainer(), config);*/
 
 
-	}
+
 
 /*	setObserverTitle(ressourceTmpId){
 
@@ -256,11 +271,11 @@ export default class Story extends superViews{
 
 
 
-	newTmpId(){
+/*	newTmpId(){
 
 		return uuid().replace(/-/gi, '.');
 
-	}
+	}*/
 
 
 	addItem(ressourceTmpId,type,itemTmpId, elt){
@@ -383,7 +398,7 @@ export default class Story extends superViews{
 	loadRessource(ressourceTmpId){
 
 //		console.log("loadRessource");
-		let TheRessource = this.Lifer.getData('Note-Main-Empty',"This");
+		let TheRessource = this.Lifer.getData(this.parentThis.Empty.path,"This");
 		TheRessource.addRessource(ressourceTmpId);
 		TheRessource.setTitle(this.RessourceList[ressourceTmpId].title);
 		console.log("loadRessource setObserverTitle");
