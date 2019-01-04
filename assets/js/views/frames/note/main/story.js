@@ -100,6 +100,9 @@ export default class Story extends superViews{
 
 	createRessource(data){
 
+		console.log('createRessssssources');
+		console.log(data);
+
 		this.RessourceList[data.ressource_id] = {};
 		this.RessourceList[data.ressource_id].Items = [];
 
