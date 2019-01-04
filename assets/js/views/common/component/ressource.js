@@ -130,14 +130,14 @@ export default class Ressource extends superViews{
       let elt = this.Main.addItem(type,itemId,anew);
 
      
-      if(type == 'image' && pict) elt.bloc.addThumb(pict);
+      if(type == 'image' && pict) elt.addThumb(pict);
 
-      if(data) elt.bloc.setData(data);
+      if(data) elt.setData(data);
 
 
       if(margin){
 
-        elt.bloc.setStyle("marginLeft", margin);        
+        elt.setStyle("marginLeft", margin);        
       }
      
       if(!newItem){
