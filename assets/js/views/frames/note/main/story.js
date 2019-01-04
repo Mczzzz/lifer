@@ -310,6 +310,7 @@ export default class Story extends superViews{
 
 		let ItemElement = this.RessourceList[datas.ressource_id].Card.setElement("Item_"+this.ChildItemId);
 		this.ChildItemId++;
+		ItemElement.setId(datas.item_id);
 		//ItemElement.setStyle("height","50px");
 		ItemElement.setStyle("background","yellow");
 		ItemElement.setStyle("justifyContent","flex-start");
