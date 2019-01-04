@@ -112,6 +112,7 @@ export default class NotesCollection {
 				                          "`+data.RessourceId+`",
 				                          "`+data.id+`",
 				                          "`+data.type+`",
+				                          "`+data.text+`",
 				                          "`+data.value+`",
 				                          "`+data.path+`",
 				                          "`+data.unit+`"
