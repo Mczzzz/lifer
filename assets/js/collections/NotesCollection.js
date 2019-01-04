@@ -74,9 +74,9 @@ export default class NotesCollection {
 			                  `insert into Ressources ( timestamp,
 			                                       status,
 			                                       note_id,
-												   ressoure_id,
-												   ressoure_tmpId,
-												   ressoure_title
+												   ressource_id,
+												   ressource_tmpId,
+												   ressource_title
 			                                      )
 			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "LOCAL",
@@ -172,9 +172,9 @@ export default class NotesCollection {
 		TblRessource.create = `CREATE TABLE IF NOT EXISTS `+TblRessource.name+` (timestamp,
 																	   status,
 																	   note_id,
-																	   ressoure_id,
-																	   ressoure_tmpId,
-																	   ressoure_title,																   
+																	   ressource_id,
+																	   ressource_tmpId,
+																	   ressource_title,																   
 						    										   UNIQUE (ressoure_id) ON CONFLICT REPLACE
 																	   );
 																	   `;
