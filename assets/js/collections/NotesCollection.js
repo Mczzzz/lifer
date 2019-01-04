@@ -237,20 +237,47 @@ export default class NotesCollection {
 //EN ATTENTE DE REMONTE AU SERVEUR
 
 
-		let TblNoteUp = {};
-		TblNoteUp.name = "Notes";
-		TblNoteUp.db = "syncUP";
-		TblNoteUp.create = `CREATE TABLE IF NOT EXISTS `+TblNoteUp.name+` (timestamp,
-																	       status,
-																	       note_id,
-																	       note_tmpId,
-																	       note_title
-																	      );
+	let TblItemUp = {};
+		TblItemUp.name = "Items";
+		TblItemUp.db = "syncUp";
+		TblItemUp.create = `CREATE TABLE IF NOT EXISTS `+TblItemUp.name+` (timestamp,
+																	   status,
+																	   note_id,
+																	   note_title,
+																	   ressource_id,
+																	   ressource_title,
+																	   item_id,
+																	   item_type,
+																	   item_text,
+																	   item_value INTEGER DEFAULT 0,
+																	   item_path  TEXT DEFAULT "",
+																	   item_unit  INTEGER DEFAULT 0
+																	   );
 																	   `;
 
 
-		this.webSQL.playQuery(TblNoteUp.db,TblNoteUp.create);
+		
+		this.webSQL.playQuery(TblItemUp.db,TblItemUp.create);
 
+
+
+
+		let TblItemDataUp = {};
+		TblItemDataUp.name = "ItemssDatas";
+		TblItemDataUp.db = "syncUp";
+		TblItemDataUp.create = `CREATE TABLE IF NOT EXISTS `+TblItemDataUp.name+` (timestamp,
+																	   status,
+																	   note_id,
+																	   ressource_id,
+																	   item_id,
+																	   item_type TEXT DEFAULT "PERSISTENT",
+																	   item_path  TEXT DEFAULT ""
+																	   );
+																	   `;
+
+
+		
+		this.webSQL.playQuery(TblItemDataUp.db,TblItemDataUp.create);
 
 
 
