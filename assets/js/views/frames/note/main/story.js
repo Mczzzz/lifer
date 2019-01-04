@@ -62,6 +62,13 @@ export default class Story extends superViews{
 		console.log('in populate ressource');
 		console.log(datas);
 
+		let len = datas.rows.length, i;
+		
+		for (i = 0; i < len; i++) {
+
+			this.createRessource(datas.rows[i].ressource_id);
+
+		}
 
 	}
 
@@ -122,7 +129,7 @@ export default class Story extends superViews{
 
 		//get resourcecommmune
 
-		this.setObserverTitle(ressourceTmpId);
+		//this.setObserverTitle(ressourceTmpId);
 
 /*		
 		SAUVEGARDE A DETRUIRE
@@ -135,7 +142,7 @@ export default class Story extends superViews{
 
 	}
 
-	setObserverTitle(ressourceTmpId){
+/*	setObserverTitle(ressourceTmpId){
 
 		if(this.observerTitle){
 			this.observerTitle.disconnect();
@@ -186,7 +193,7 @@ export default class Story extends superViews{
 		let newPict = elt.pict.data.pict;
 
 /*		console.log("elt");
-		console.log(elt);*/
+		console.log(elt);
 		this.RessourceList[ressourceTmpId].Items[itemTmpId].pict = newPict;
 	    //console.log("Image Update")
 		MyPict.setData(newPict);
@@ -210,7 +217,7 @@ export default class Story extends superViews{
 
 		this.reorder(ressourceTmpId);
 
-	}
+	}*/
 
 
 	reorder(ressourceTmpId){
@@ -256,9 +263,6 @@ export default class Story extends superViews{
 	addItem(ressourceTmpId,type,itemTmpId, elt){
 
 
-	//	console.log("in addItem !Resoure !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-	//	console.log(ressourceTmpId);
-		//let itemTmpId = uuid().replace(/-/gi, '.');
 
 		let ItemElement = this.RessourceList[ressourceTmpId].Card.setElement("Item_"+itemTmpId);
 		//ItemElement.setStyle("height","50px");
