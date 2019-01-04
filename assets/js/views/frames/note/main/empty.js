@@ -77,14 +77,14 @@ export default class Empty extends superViews{
 		let res = "";
 		if(this.getContainer().style.display == "block"){
 
-			this.Ressource.Main.collapseAll();
+			this.Ressource.Main.setStyle("display","none");
 
 			this.parentThis.Story.setStyle('filter',"");
 			res = false;
 
 		}else{
 
-			this.setStyle("display","block");		
+			this.Ressource.Main.setStyle("display","block");		
 		   this.parentThis.Story.setStyleOut();
 		   res = true;
 
