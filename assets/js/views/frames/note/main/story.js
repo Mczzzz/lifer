@@ -305,7 +305,7 @@ export default class Story extends superViews{
 			case 'text':
 
 				this.RessourceList[datas.ressource_id].Items[datas.item_id].type = datas.item_type;
-				let MyText = this.RessourceList[datas.ressource_id].Card.push("Text",ItemElement,"text","...");
+				let MyText = this.RessourceList[datas.ressource_id].Card.push("Text",ItemElement,"text",datas.item_text);
 				MyText.setStyle("color","black");
 				MyText.setStyle("fontSize","14px");
 				MyText.removeAttribute("contentEditable");
@@ -327,7 +327,7 @@ export default class Story extends superViews{
 
 				//j'ajoute mon thumb vide
 				//et je lui pousserai sa data après
-				let MyThumb= this.RessourceList[datas.ressource_id].Card.push("Thumb",ItemElement,"pict",);
+				let MyThumb= this.RessourceList[datas.ressource_id].Card.push("Thumb",ItemElement,"pict",false);
 				MyThumb.setStyle("marginLeft" , "5px");
 				MyThumb.setStyle("marginRight" , "10px");
 				MyThumb.setStyle("display" , "flex");
