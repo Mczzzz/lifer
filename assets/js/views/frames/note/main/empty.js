@@ -38,7 +38,7 @@ export default class Empty extends superViews{
 
 		this.Ressource.destroyMe();
 		this.Ressource = new Ressource('Ressource' , this.path,ressourceTmpId);
-
+		this.Ressource.setTargetData(this.parentThis.parentThis.path,"store");
 		//je recherche en base mes infos
 		this.NotesCollection.getRessource(ressourceTmpId,this,'setRessourceFromBase');
 		//je recherche mon arbre d'item
