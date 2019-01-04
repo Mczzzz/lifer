@@ -302,26 +302,27 @@ export default class Story extends superViews{
 
 		//ressourceTmpId,type,itemTmpId, 
 		//elt
-		console.log(document.getElementById(datas.ressource_id).className);
-		let ItemElement = this.RessourceList[datas.ressource_id].Card.setElement("Item_"+this.ChildItemId);
+		let RessourcePathId = document.getElementById(datas.ressource_id).className;
+		
+		let ItemElement = this.RessourceList[RessourcePathId].Card.setElement("Item_"+this.ChildItemId);
 		this.ChildItemId++;
 		ItemElement.setId(datas.item_id);
 		//ItemElement.setStyle("height","50px");
 		ItemElement.setStyle("background","yellow");
 		ItemElement.setStyle("justifyContent","flex-start");
 
-		this.RessourceList[datas.ressource_id].Items[datas.item_id] = {};
+		this.RessourceList[RessourcePathId].Items[datas.item_id] = {};
 
 		switch (datas.item_type){
 
 			case 'text':
 
-				this.RessourceList[datas.ressource_id].Items[datas.item_id].type = datas.item_type;
-				let MyText = this.RessourceList[datas.ressource_id].Card.push("Text",ItemElement,"text",datas.item_text);
+				this.RessourceList[RessourcePathId].Items[datas.item_id].type = datas.item_type;
+				let MyText = this.RessourceList[RessourcePathId].Card.push("Text",ItemElement,"text",datas.item_text);
 				MyText.setStyle("color","black");
 				MyText.setStyle("fontSize","14px");
 				MyText.removeAttribute("contentEditable");
-				this.RessourceList[datas.ressource_id].Items[datas.item_id].object = MyText;
+				this.RessourceList[RessourcePathId].Items[datas.item_id].object = MyText;
 
 			//	this.setObserver(elt,ressourceTmpId,itemTmpId);
 
@@ -335,11 +336,11 @@ export default class Story extends superViews{
 
 			case 'image':
 
-				this.RessourceList[datas.ressource_id].Items[datas.item_id].type = datas.item_type;
+				this.RessourceList[RessourcePathId].Items[datas.item_id].type = datas.item_type;
 
 				//j'ajoute mon thumb vide
 				//et je lui pousserai sa data après
-				let MyThumb= this.RessourceList[datas.ressource_id].Card.push("Thumb",ItemElement,"pict",false);
+				let MyThumb= this.RessourceList[RessourcePathId].Card.push("Thumb",ItemElement,"pict",false);
 				MyThumb.setStyle("marginLeft" , "5px");
 				MyThumb.setStyle("marginRight" , "10px");
 				MyThumb.setStyle("display" , "flex");
@@ -357,11 +358,11 @@ export default class Story extends superViews{
 
 
 
-				let MyLegend= this.RessourceList[datas.ressource_id].Card.push("Text",ItemElement,"text","...");
+				let MyLegend= this.RessourceList[RessourcePathId].Card.push("Text",ItemElement,"text","...");
 				MyLegend.setStyle("color","black");
 				MyLegend.setStyle("fontSize","14px");
 				MyLegend.removeAttribute("contentEditable");
-				this.RessourceList[datas.ressource_id].Items[datas.item_id].object = MyLegend;
+				this.RessourceList[RessourcePathId].Items[datas.item_id].object = MyLegend;
 
 /*				let MyLegendconfig = { attributes: true, characterData: true, childList: true, subtree: true};
 
