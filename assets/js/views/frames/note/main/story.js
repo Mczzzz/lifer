@@ -37,7 +37,7 @@ export default class Story extends superViews{
 
 			//on retrouve toutes les ressources de cet id
 			this.NotesCollection = new LoaderCollection("Notes");
-			this.NotesCollection.get(this.container.id,this,'populate');
+			this.NotesCollection.getRessources(this.parentThis.parentThis.container.id,this,'populate');
 		}
 
 
