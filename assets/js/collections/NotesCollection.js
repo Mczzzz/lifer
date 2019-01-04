@@ -29,7 +29,7 @@ export default class NotesCollection {
 	getAllNotes(callBackObj,callBackMethod){
 
 		let qry = "SELECT * FROM Notes GROUP BY note_id";
-		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
+		// je copie dans ma base de remonté syncUP les LOCAL de plus d'une seconde
 		this.webSQL.playQuery('cacheData',qry,callBackObj,callBackMethod);
 
 
@@ -38,7 +38,7 @@ export default class NotesCollection {
 	getRessources(noteId,callBackObj,callBackMethod){
 
 		let qry = "SELECT * FROM Ressources WHERE note_id = '"+noteId+"' ORDER BY timestamp DESC";
-		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
+		// je copie dans ma base de remonté syncUP les LOCAL de plus d'une seconde
 		this.webSQL.playQuery('cacheData',qry,callBackObj,callBackMethod);
 
 	}
@@ -46,7 +46,7 @@ export default class NotesCollection {
 	getRessource(ressourceId,callBackObj,callBackMethod){
 
 		let qry = "SELECT * FROM Ressources WHERE ressource_id = '"+ressourceId+"'";
-		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
+		// je copie dans ma base de remonté syncUP les LOCAL de plus d'une seconde
 		this.webSQL.playQuery('cacheData',qry,callBackObj,callBackMethod);
 
 	}
@@ -55,7 +55,7 @@ export default class NotesCollection {
 	getRessourcesItems(ressourceId,callBackObj,callBackMethod){
 
 		let qry = "SELECT * FROM Items WHERE ressource_id = '"+ressourceId+"'";
-		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
+		// je copie dans ma base de remonté syncUP les LOCAL de plus d'une seconde
 		this.webSQL.playQuery('cacheData',qry,callBackObj,callBackMethod);
 
 	}
@@ -312,12 +312,12 @@ export default class NotesCollection {
 		            LEFT JOIN Ressources ON Items.ressource_id = Ressources.ressource_id
 		            LEFT JOIN Notes ON Ressources.note_id = Notes.note_id
 		            WHERE state = 'RESERVEDUP' `;
-		// je copie dans ma base de remonté syncUp les LOCAL de plus d'une seconde
+		// je copie dans ma base de remonté syncUP les LOCAL de plus d'une seconde
 		this.webSQL.playQuery('cacheData',qry2,this,'_pushInSyncUp');
 
 	//////COMPOSITION DE l'ENVOI
 		let qry3 = "SELECT * FROM Items WHERE status = 'BEFOREUP' ";
-		this.webSQL.playQuery('syncUp',qry3,this,'_createRequestToServer');
+		this.webSQL.playQuery('syncUP',qry3,this,'_createRequestToServer');
 		// j'envoi en auserveru et attedns un retour positif
 
 		//si oui, je regarde dans syncdata si mon timestamp est le même dans ce cas la je flag SYNCHRO
@@ -334,12 +334,12 @@ export default class NotesCollection {
 
 		//onverifie qu'il n'y a rien en cours d'upload
 		let qry = "SELECT * FROM ItemsDatas WHERE status = 'UPLOADING' LIMIT 1";
-		this.webSQL.playQuery('syncUp',qry,this,'_canExecuteNewDataSynchro');
+		this.webSQL.playQuery('syncUP',qry,this,'_canExecuteNewDataSynchro');
 
 
 	//////COMPOSITION DE l'ENVOI
 		/*let qry = "SELECT * FROM NotesDatas WHERE status = 'BEFOREUP' ORDER BY timestamp ASC LIMIT 1";
-		this.webSQL.playQuery('syncUp',qry,this,'_createRequestToServerDatas');
+		this.webSQL.playQuery('syncUP',qry,this,'_createRequestToServerDatas');
 */
 
 
@@ -351,7 +351,7 @@ export default class NotesCollection {
 		if(results.rows.length == 0){
 
 			let qry = "SELECT * FROM ItemssDatas WHERE status = 'BEFOREUP' ORDER BY timestamp ASC LIMIT 1";
-			this.webSQL.playQuery('syncUp',qry,this,'_createRequestToServerDatas');
+			this.webSQL.playQuery('syncUP',qry,this,'_createRequestToServerDatas');
 
 
 		}else{
@@ -371,7 +371,7 @@ export default class NotesCollection {
 		let len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
 		    
-		    this.webSQL.playQuery('syncUp',
+		    this.webSQL.playQuery('syncUP',
 			                  `insert into Items ( timestamp,
 			                                       status,
 			                                       note_id,
@@ -438,7 +438,7 @@ export default class NotesCollection {
 			this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'push',this,"_updateAfterRequest",arrayToSend);
 
 			let qry = "UPDATE Items SET status = 'UPLOADING' WHERE status = 'BEFOREUP' ";
-			this.webSQL.playQuery('syncUp',qry);
+			this.webSQL.playQuery('syncUP',qry);
 
 
 		}
@@ -483,7 +483,7 @@ export default class NotesCollection {
 		           WHERE status = 'BEFOREUP'
 		           AND timestamp = '`+this.DatasToSend.timestamp+`'
 		           AND item_path = '`+this.DatasToSend.item_path+`'`;
-		this.webSQL.playQuery('syncUp',qry);
+		this.webSQL.playQuery('syncUP',qry);
 
 	}
 
@@ -499,7 +499,7 @@ export default class NotesCollection {
 			           AND  ressource_id = "`+datas.data.ressource_id+`" 
 			           AND  item_id = "`+datas.data.item_id+`" 
 			           `;
-			this.webSQL.playQuery('syncUp',qry);
+			this.webSQL.playQuery('syncUP',qry);
 
 
 					//je supprime la ligne de sync up
@@ -509,7 +509,7 @@ export default class NotesCollection {
 			           AND  item_path = "`+datas.data.item_path+`"
 			           AND  status = "UPLOADING"   
 			           `;
-			this.webSQL.playQuery('syncUp',qry2);
+			this.webSQL.playQuery('syncUP',qry2);
 
 
 //A REVOIR CAR EN 3 TABLES
@@ -578,7 +578,7 @@ export default class NotesCollection {
 
 					//je supprime la ligne de sync up
 
-			this.webSQL.playQuery('syncUp',`DELETE FROM Notes 
+			this.webSQL.playQuery('syncUP',`DELETE FROM Notes 
 								           WHERE timestamp = "`+datas.data[i].timestamp+`"
 								           AND  note_id = "`+NoteId+`" 
 								           AND  ressource_id = "`+ResourceId+`" 
@@ -605,7 +605,7 @@ export default class NotesCollection {
 		}else if(datas.data[i].type == 'image'){
 
 
-				this.webSQL.playQuery('syncUp',`UPDATE Notes 
+				this.webSQL.playQuery('syncUP',`UPDATE Notes 
 												SET note_id =  "`+datas.data[i].note_id+`"   ,
 												ressource_id =  "`+datas.data[i].ressource_id+`"  ,
 												item_id =  "`+datas.data[i].item_id+`"   ,
@@ -617,7 +617,7 @@ export default class NotesCollection {
 										           `);
 
 
-		    	this.webSQL.playQuery('syncUp',
+		    	this.webSQL.playQuery('syncUP',
 			                  `insert into NotesDatas ( timestamp,
 			                                       status,
 			                                       note_id,
