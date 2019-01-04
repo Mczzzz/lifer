@@ -1,5 +1,8 @@
 import uuid from "uuid/v1"
 
+import LoaderCollection from '../../../../services/LoaderCollection.js';
+
+
 import superViews from "../../../common/superViews.js";
 
 import Card from "../../../common/ui/card.js";
@@ -29,6 +32,17 @@ export default class Story extends superViews{
 
 		this.setStyleOut();
 		
+//TODO: Here
+		if(this.parentThis.parentThis.new == false){
+
+			//on retrouve toutes les ressources de cet id
+			this.NotesCollection = new LoaderCollection("Notes");
+			this.NotesCollection.get(this.container.id,this,'populate');
+		}
+
+
+
+
 //		this.TheNote = this.getObjectThisfromPath("Frame-Note");
 		
 /*		if(this.TheNote.note.guid === false){
@@ -41,6 +55,17 @@ export default class Story extends superViews{
 
 
 	}
+
+
+	populate(datas){
+
+		console.log('in populate ressource');
+		console.log(datas);
+
+
+	}
+
+
 
 
 
@@ -400,7 +425,7 @@ export default class Story extends superViews{
 	}
 
 
-	save(ressourceTmpId,itemId = false,type, element,value){
+/*	save(ressourceTmpId,itemId = false,type, element,value){
 
 		let updateTs = this.Moment();
 
@@ -415,7 +440,7 @@ export default class Story extends superViews{
 		
     	this.TheNote.Push(resp);
 
-	}
+	}*/
 
 
 
@@ -424,7 +449,7 @@ export default class Story extends superViews{
 //////////////////////////////////////////////////////////////////////////////////////////
 
 
-
+/*
 	_OldSave(Card, Resource, updateTs = false){
 
 		let card = this.getObjectThisfromPath(Card);
@@ -444,7 +469,7 @@ export default class Story extends superViews{
 
     	this.TheNote.Push(resp);
 
-	}
+	}*/
 
 
 
