@@ -63,6 +63,7 @@ export default class Story extends superViews{
 	reload(){
 
 		this.RessourceList = [];
+		this.container.innerHTML = "";
 		this.NotesCollection.getRessources(this.parentThis.parentThis.container.id,this,'populate');
 
 
