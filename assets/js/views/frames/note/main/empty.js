@@ -72,6 +72,28 @@ export default class Empty extends superViews{
 	}
 
 
+	FrameFocus(){
+
+		let res = "";
+		if(this.getContainer().style.display == "block"){
+
+			this.setStyle("display","none");
+
+			this.parentThis.Story.setStyle('filter',"");
+			res = false;
+
+		}else{
+
+			this.setStyle("display","block");		
+		   this.parentThis.Story.setStyleOut();
+		   res = true;
+
+		}
+
+		return res;
+	}
+
+
 
 	setTitle(title){
 

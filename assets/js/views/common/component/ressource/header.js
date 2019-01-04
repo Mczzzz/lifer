@@ -113,7 +113,7 @@ export default class HeaderRessource extends superViews{
       updateTitle(e,title){
 
           this.parentThis.setTitle(title.text, true);
-          
+
       }
 
 
@@ -200,30 +200,17 @@ export default class HeaderRessource extends superViews{
 
 
   //TODO : PAS PROPRE DU TOUT DU TOUT
-    	let Main = this.getObjectThisfromPath("Frame-Note-Main-Empty-Ressource-Main");
+    	let Empty = this.getObjectThisfromPath(this.parentThis.parentThis.path);
 
-  //TODO : PAS PROPRE DU TOUT DU TOUT
-      let Story = this.getObjectThisfromPath("Frame-Note-Main-Story");
-
-
-  //    let ActionTools = this.getObjectThisfromPath("Note-Footer");
-
-//   	console.log(Main);
-    	if(Main.getContainer().style.display == "none"){
+    	if(Empty.FrameFocus()){
 
     		colButton.setData("keyboard_arrow_down");
-    		Main.setStyle("display","");
-   //     ActionTools.setStyle("display","");
         this.collapseButton.setStyle("display", "");
-        Story.setStyleOut();
 
     	}else{
 
     		colButton.setData("keyboard_arrow_up");
-    		Main.setStyle("display","none");
-    //    ActionTools.setStyle("display","none");
-         this.collapseButton.setStyle("display", "none");
-         Story.setStyleIn();
+        this.collapseButton.setStyle("display", "none");
 
     	}
     	
