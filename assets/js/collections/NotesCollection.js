@@ -175,7 +175,7 @@ export default class NotesCollection {
 																	   ressource_id,
 																	   ressource_tmpId,
 																	   ressource_title,																   
-						    										   UNIQUE (ressoure_id) ON CONFLICT REPLACE
+						    										   UNIQUE (ressource_id) ON CONFLICT REPLACE
 																	   );
 																	   `;
 
