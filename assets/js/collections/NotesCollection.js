@@ -586,7 +586,7 @@ export default class NotesCollection {
 								           `);
 
 			//je regarde si en base syncdata je retrouve ma ligne
-			this.webSQL.playQuery('cacheData',`UPDATE Iems
+			this.webSQL.playQuery('cacheData',`UPDATE Items
 	                           SET ressource_id =  "`+datas.data[i].ressource_id+`"  ,
 								item_id =  "`+datas.data[i].item_id+`"   ,
 								status = "SYNC",
@@ -601,17 +601,22 @@ export default class NotesCollection {
 			//il faut mettre a jour les id
 			this.webSQL.playQuery('cacheData',`UPDATE Ressources
 	                            SET ressource_id =  "`+datas.data[i].ressource_id+`"  ,
-								note_id =  "`+datas.data[i].item_id+`"   ,
+								note_id =  "`+datas.data[i].note_id+`"   ,
 								status = "SYNC"
 	 
-							   WHERE timestamp = "`+datas.data[i].timestamp+`" 
-					           AND  ressource_id = "`+ResourceId+`" 
-					           AND  item_id = "`+ItemId+`" 
-					           AND STATE = "PREUP"
+							   WHERE ressource_id = "`+ResourceId+`" 
+					           AND  note_id = "`+NoteId+`" 
+					           AND status = "LOCAL"
 							  `);			
 
 
-
+			this.webSQL.playQuery('cacheData',`UPDATE Notes
+	                            SET note_id =  "`+datas.data[i].note_id+`"
+								status = "SYNC"
+	 
+							   WHERE note_id = "`+NoteId+`" 
+					           AND status = "LOCAL"
+							  `);	
 
 
 
