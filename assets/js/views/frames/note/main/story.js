@@ -122,7 +122,7 @@ export default class Story extends superViews{
 
 		//editRessource.getContainer().addEventListener("click",()=>this.loadRessource(ressourceTmpId));
 
-		this.RessourceList[data.ressource_id].TitleElt = this.RessourceList[data.ressource_id].Card.push("Text", HeaderElement,"Title", "");
+		this.RessourceList[data.ressource_id].TitleElt = this.RessourceList[data.ressource_id].Card.push("Text", HeaderElement,"Title", data.ressource_title);
 		
 		this.RessourceList[data.ressource_id].TitleElt.setStyle("fontSize","22px");
 		this.RessourceList[data.ressource_id].TitleElt.removeAttribute("contentEditable");
