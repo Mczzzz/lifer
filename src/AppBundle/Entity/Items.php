@@ -107,9 +107,9 @@ class Items
 
 
     /**
-     * @var datetime
+     * @var string
      *
-     * @ORM\Column(name="updateAPP", type="datetime")
+     * @ORM\Column(name="updateAPP", columnDefinition="DATETIME(3)")
      */
     private $updateAPP;
 
@@ -328,7 +328,7 @@ class Items
     }
 
     /**
-     * @return datetime
+     * @return string
      */
     public function getUpdateAPP()
     {
@@ -336,7 +336,7 @@ class Items
     }
 
     /**
-     * @param datetime $updateAPP
+     * @param string $updateAPP
      *
      * @return self
      */

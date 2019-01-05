@@ -253,7 +253,7 @@ class NotesController extends Controller
                 $ndt = new \Datetime('now');
             
             }else{
-                $ndt = new \Datetime($NoteElement->timestamp);
+                $ndt = new \Datetime($NoteElement->note_timestamp);
             }
 
            
@@ -304,14 +304,26 @@ class NotesController extends Controller
             
             }
 
+
+
+
+
+
             $Resource->setTitle($NoteElement->ressource_title);
             $Resource->setNote($Note);
             $Resource->setCreator($this->user);
 
             $Resource->setTmpId($NoteElement->ressource_id);
             
-            //$ndtR = new \Datetime($datas->Resource->update);
-            //$Resource->setUpdateAPP($ndtR);
+            if(0){
+                $ndt = new \Datetime('now');
+            
+            }else{
+                $ndt = new \Datetime($NoteElement->ressource_timestamp);
+            }
+
+           
+            $Resource->setUpdateAPP($ndt->format("Y-m-d H:i:s.u"));
 
             $this->em->persist($Resource);
             $this->em->flush();
@@ -385,8 +397,15 @@ class NotesController extends Controller
 
             $Item->setText($NoteElement->item_text);
 
-            $ndtR = new \Datetime('now');
-            $Item->setUpdateAPP($ndtR);
+            if(0){
+                $ndt = new \Datetime('now');
+            
+            }else{
+                $ndt = new \Datetime($NoteElement->item_timestamp);
+            }
+
+           
+            $Item->setUpdateAPP($ndt->format("Y-m-d H:i:s.u"));
 
 
             $this->em->persist($Item);

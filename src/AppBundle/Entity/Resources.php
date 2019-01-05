@@ -56,12 +56,11 @@ class Resources
 
 
     /**
-     * @var datetime
+     * @var string
      *
-     * @ORM\Column(name="updateAPP", type="datetime")
+     * @ORM\Column(name="updateAPP", columnDefinition="DATETIME(3)")
      */
     private $updateAPP;
-
 
 
     /**
@@ -177,7 +176,7 @@ class Resources
     }
 
     /**
-     * @return datetime
+     * @return string
      */
     public function getUpdateAPP()
     {
@@ -185,7 +184,7 @@ class Resources
     }
 
     /**
-     * @param datetime $updateAPP
+     * @param string $updateAPP
      *
      * @return self
      */
