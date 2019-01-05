@@ -305,6 +305,10 @@ export default class NotesCollection {
 		let qry2 = "UPDATE Ressources SET state = 'RESERVEDUP' WHERE ressource_id IN (SELECT ressource_id FROM Items WHERE state = 'RESERVEDUP')";
 		this.webSQL.playQuery('cacheData',qry2);
 
+		//j'update aussi le status de ressources et des notes
+		let qry3 = "UPDATE Notes SET state = 'RESERVEDUP' WHERE note_id IN (SELECT note_id FROM Ressources WHERE state = 'RESERVEDUP')";
+		this.webSQL.playQuery('cacheData',qry2);
+
 
 		this._syncEntities();
 
