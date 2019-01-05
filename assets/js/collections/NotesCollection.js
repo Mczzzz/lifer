@@ -411,7 +411,7 @@ export default class NotesCollection {
 			                          "`+results.rows.item(i).ressource_title+`",
 			                          "`+results.rows.item(i).ressource_timestamp+`",
 			                          "`+results.rows.item(i).item_id+`",
-			                          "`+results.rows.item(i).ressource_timestamp+`",
+			                          "`+results.rows.item(i).item_timestamp+`",
 			                          "`+results.rows.item(i).item_type+`",
 			                          "`+results.rows.item(i).item_text+`",
 			                          "`+results.rows.item(i).item_value+`",
