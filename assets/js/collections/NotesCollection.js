@@ -446,7 +446,8 @@ export default class NotesCollection {
 		 //j'update aussi le status de ressources et des notes
 		let qry4a = `UPDATE Ressources
 		             SET state = 'RESERVEDUPR'
-		  			 WHERE state = 'WAITING' 
+		  			 WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds')
+		  			 AND state = 'WAITING' 
 		  			 AND STATUS = 'LOCAL'`;
 		this.webSQL.playQuery('cacheData',qry4a);
 
@@ -471,7 +472,84 @@ export default class NotesCollection {
 
 
 
+
+
+
+		let qry5 = `UPDATE Notes
+					 SET state = 'RESERVEDUPN'
+		  			 WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds')
+		  			 AND state = 'WAITING' 
+		  			 AND STATUS = 'LOCAL'
+		  			 `;
+		this.webSQL.playQuery('cacheData',qry5);
+
+
+
+		//je fgais un select qui push dans syncUp
+
+		 let qry6 = `SELECT *,Notes.timestamp AS note_timestamp
+		 			 FROM Notes
+		  			 WHERE Ressources.state = 'RESERVEDUPN' 
+		  			 AND Ressources.STATUS = 'LOCAL'`;
+		 this.webSQL.playQuery('cacheData',qry6,this,'_synchroRessources');
+
+
+
+
 	}
+
+
+	_synchroNotes(results){
+
+
+
+		let len = results.rows.length, i;
+		  for (i = 0; i < len; i++) {
+		    
+		    this.webSQL.playQuery('syncUP',
+			                  `insert into Items ( timestamp,
+			                                       status,
+			                                       note_id,
+												   note_title,
+												   note_timestamp
+			                                      )
+			                   values ("`+results.rows.item(i).note_timestamp+`",
+			                          "BEFOREUP",
+			                          "`+results.rows.item(i).note_id+`",
+			                          "`+results.rows.item(i).note_title+`",
+			                          "`+results.rows.item(i).note_timestamp+`"
+			                          )
+
+			                 `);
+
+
+		  }
+
+
+
+		if(results.rows.length){
+
+
+			//j'update aussi le status notes
+			let qry2 = `UPDATE Notes
+					    SET state = 'PREUP'
+					    AND state = 'RESERVEDUPN'
+						`;
+			this.webSQL.playQuery('cacheData',qry2);
+
+
+		 }
+
+
+
+
+
+
+	}
+
+
+
+
 
 
 	_synchroRessources(results){
