@@ -119,16 +119,26 @@ class NotesController extends Controller
             $Itemresponse->note_id    = $StoreResult["Note"]->getId();
             $Itemresponse->note_tmpId = $NoteElement->note_id;
 
-            $Itemresponse->ressource_id    = $StoreResult["Resource"]->getId();
-            $Itemresponse->ressource_tmpId = $NoteElement->ressource_id;
+            if($NoteElement->ressource_id){
 
-            $Itemresponse->item_id = $StoreResult["Item"]->getId();
-            $Itemresponse->item_tmpId = $NoteElement->item_id;
-            $Itemresponse->timestamp = $NoteElement->timestamp;
-            $Itemresponse->type = $NoteElement->item_type;
-            $Itemresponse->item_path = $NoteElement->item_path;
-            $Itemresponse->call = "push";
 
+                $Itemresponse->ressource_id    = $StoreResult["Resource"]->getId();
+                $Itemresponse->ressource_tmpId = $NoteElement->ressource_id;
+
+
+                if($NoteElement->item_id){
+
+                    $Itemresponse->item_id = $StoreResult["Item"]->getId();
+                    $Itemresponse->item_tmpId = $NoteElement->item_id;
+                    $Itemresponse->timestamp = $NoteElement->timestamp;
+                    $Itemresponse->type = $NoteElement->item_type;
+                    $Itemresponse->item_path = $NoteElement->item_path;
+                    $Itemresponse->call = "push";
+
+                }
+
+
+            }
 
             array_push($arrayRes,$Itemresponse);
 
@@ -166,14 +176,28 @@ class NotesController extends Controller
 
         $arrayResponse["Note"] = $MyNote;
 
-        $MyResource = $this->storeResource($NoteElement, $MyNote);
-
-        $arrayResponse["Resource"] = $MyResource;
+        if($NoteElement->ressource_id){
 
 
-        $MyItem = $this->storeItem($NoteElement,$MyResource);
-     
-        $arrayResponse["Item"] = $MyItem;
+
+            $MyResource = $this->storeResource($NoteElement, $MyNote);
+
+            $arrayResponse["Resource"] = $MyResource;
+
+
+            if($NoteElement->item_id){
+
+
+                $MyItem = $this->storeItem($NoteElement,$MyResource);
+         
+                $arrayResponse["Item"] = $MyItem;
+
+            }
+
+
+        }
+
+
 
         return $arrayResponse;      
 
