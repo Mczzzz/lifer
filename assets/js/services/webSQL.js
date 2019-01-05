@@ -17,7 +17,7 @@ export default class webSQL{
 		console.log(query);*/
 
 		let Bdd = this.DBLocalCollection.getDBConnection(base);
-		console.log(Bdd);
+		//console.log(Bdd);
 		Bdd.transaction((db)=>this.execQuery(db,query,false,callbackObj,callbackMethod));
 
 	}
