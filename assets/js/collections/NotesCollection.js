@@ -443,8 +443,71 @@ export default class NotesCollection {
 		 }
 
 
+		 //j'update aussi le status de ressources et des notes
+		let qry4a = `UPDATE Ressources
+		             SET state = 'RESERVEDUPR'
+		  			 WHERE state = 'WAITING' 
+		  			 AND STATUS = 'LOCAL')`;
+		this.webSQL.playQuery('cacheData',qry4a);
+
+		let qry4b = `UPDATE Notes
+					 SET state = 'RESERVEDUPR'
+		  			 WHERE note_id IN (SELECT note_id FROM Ressources WHERE state = 'RESERVEDUPR')
+		  			 `;
+		this.webSQL.playQuery('cacheData',qry4a);
+
+
+		//je fgais un select qui push dans syncUp
+
+		 let qry4 = `SELECT * FROM Ressources
+		 			 LEFT JOIN Notes ON (CASE WHEN SUBSTR(Ressources.note_id,0,3) = "tmp" THEN Ressources.note_id = Notes.note_tmpId ELSE Ressources.note_id = Notes.note_id END)
+		  			 WHERE state = 'RESERVEDUPR' 
+		  			 AND STATUS = 'LOCAL')`;
+		 this.webSQL.playQuery('cacheData',qry4,this,'_synchroRessources');
+
+
+
+
 	}
 
+
+	_synchroRessources(results){
+
+
+
+
+		let len = results.rows.length, i;
+		  for (i = 0; i < len; i++) {
+		    
+		    this.webSQL.playQuery('syncUP',
+			                  `insert into Items ( timestamp,
+			                                       status,
+			                                       note_id,
+												   note_title,
+												   note_timestamp,
+												   ressource_id,
+												   ressource_title,
+												   ressource_timestamp
+			                                      )
+			                   values ("`+results.rows.item(i).item_timestamp+`",
+			                          "BEFOREUP",
+			                          "`+results.rows.item(i).note_id+`",
+			                          "`+results.rows.item(i).note_title+`",
+			                          "`+results.rows.item(i).note_timestamp+`",
+			                          "`+results.rows.item(i).ressource_id+`",
+			                          "`+results.rows.item(i).ressource_title+`",
+			                          "`+results.rows.item(i).ressource_timestamp+`"
+			                          )
+
+			                 `);
+
+
+		  }
+
+
+
+
+	}
 
 
 
