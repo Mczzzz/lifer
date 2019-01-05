@@ -429,8 +429,14 @@ export default class NotesCollection {
 			let qry = "UPDATE Items SET state = 'PREUP' WHERE state = 'RESERVEDUP' ";
 			this.webSQL.playQuery('cacheData',qry);
 
-		 }else{
 
+			//j'update aussi le status de ressources et des notes
+			let qry2 = "UPDATE Ressources SET state = 'PREUP' WHERE ressource_id IN (SELECT ressource_id FROM Items WHERE state = 'PREUP')";
+			this.webSQL.playQuery('cacheData',qry2);
+
+			//j'update aussi le status de ressources et des notes
+			let qry3 = "UPDATE Notes SET state = 'PREUP' WHERE note_id IN (SELECT note_id FROM Ressources WHERE state = 'PREUP')";
+			this.webSQL.playQuery('cacheData',qry3);
 
 
 
@@ -555,6 +561,10 @@ export default class NotesCollection {
 			this.webSQL.playQuery('cacheData',qryTestLine);
 
 
+
+
+
+
 /////////////////////////////////
 			
 			//j'enregistre dans le temporaire
@@ -619,7 +629,8 @@ export default class NotesCollection {
 	 
 							   WHERE timestamp = "`+datas.data[i].timestamp+`" 
 					           AND  ressource_id = "`+ResourceId+`" 
-					           AND  item_id = "`+ItemId+`" 
+					           AND  item_id = "`+ItemId+`"
+					           AND status = "LOCAL" 
 					           AND STATE = "PREUP"
 							  `);
 
@@ -627,20 +638,24 @@ export default class NotesCollection {
 			this.webSQL.playQuery('cacheData',`UPDATE Ressources
 	                            SET ressource_id =  "`+datas.data[i].ressource_id+`"  ,
 								note_id =  "`+datas.data[i].note_id+`"   ,
-								status = "SYNC"
+								status = "SYNC",
+								state  = "CLEAN"
 	 
 							   WHERE ressource_id = "`+ResourceId+`" 
 					           AND  note_id = "`+NoteId+`" 
 					           AND status = "LOCAL"
+					           AND STATE = "PREUP"
 							  `);			
 
 
 			this.webSQL.playQuery('cacheData',`UPDATE Notes
 	                            SET note_id =  "`+datas.data[i].note_id+`",
-								status = "SYNC"
+								status = "SYNC",
+								state  = "CLEAN"
 	 
 							   WHERE note_id = "`+NoteId+`" 
 					           AND status = "LOCAL"
+					           AND STATE = "PREUP"
 							  `);	
 
 
