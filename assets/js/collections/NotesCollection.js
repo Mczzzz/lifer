@@ -172,9 +172,9 @@ export default class NotesCollection {
 																	   status,
 																	   note_id,
 																	   note_tmpId,
-																	   note_title,																   
-						    										   UNIQUE (note_id) ON CONFLICT REPLACE,
-						    										   UNIQUE (note_id, note_title) ON CONFLICT IGNORE
+																	   note_title,	
+																	   UNIQUE (note_id, note_title) ON CONFLICT IGNORE,															   
+						    										   UNIQUE (note_id) ON CONFLICT REPLACE
 																	   );
 																	   `;
 
