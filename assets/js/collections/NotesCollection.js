@@ -74,7 +74,7 @@ export default class NotesCollection {
 												   note_title,
 												   note_tmpId
 			                                      )
-			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
+			                   values (CASE WHEN note_title = "`+data.NoteTitle+`" THEN timestamp ELSE strftime('%Y-%m-%d %H:%M:%f', 'now') END),
 			                          "LOCAL",
 			                          "`+data.NoteId+`",
 			                          "`+data.NoteTitle+`",
