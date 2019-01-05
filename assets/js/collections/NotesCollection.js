@@ -447,7 +447,7 @@ export default class NotesCollection {
 		let qry4a = `UPDATE Ressources
 		             SET state = 'RESERVEDUPR'
 		  			 WHERE state = 'WAITING' 
-		  			 AND STATUS = 'LOCAL')`;
+		  			 AND STATUS = 'LOCAL'`;
 		this.webSQL.playQuery('cacheData',qry4a);
 
 		let qry4b = `UPDATE Notes
@@ -462,7 +462,7 @@ export default class NotesCollection {
 		 let qry4 = `SELECT * FROM Ressources
 		 			 LEFT JOIN Notes ON (CASE WHEN SUBSTR(Ressources.note_id,0,3) = "tmp" THEN Ressources.note_id = Notes.note_tmpId ELSE Ressources.note_id = Notes.note_id END)
 		  			 WHERE state = 'RESERVEDUPR' 
-		  			 AND STATUS = 'LOCAL')`;
+		  			 AND STATUS = 'LOCAL'`;
 		 this.webSQL.playQuery('cacheData',qry4,this,'_synchroRessources');
 
 
