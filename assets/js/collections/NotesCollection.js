@@ -887,7 +887,7 @@ export default class NotesCollection {
 
 
 		    	this.webSQL.playQuery('syncUP',
-			                  `insert into NotesDatas ( timestamp,
+			                  `insert into ItemsDatas ( timestamp,
 			                                       status,
 			                                       note_id,
 												   ressource_id,
