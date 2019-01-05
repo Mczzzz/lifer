@@ -244,11 +244,14 @@ export default class NotesCollection {
 																	   status,
 																	   note_id,
 																	   note_title,
+																	   note_timestamp,
 																	   ressource_id,
 																	   ressource_title,
+																	   ressource_timestamp,
 																	   item_id,
 																	   item_type,
 																	   item_text,
+																	   item_timestamp,
 																	   item_value INTEGER DEFAULT 0,
 																	   item_path  TEXT DEFAULT "",
 																	   item_unit  INTEGER DEFAULT 0
@@ -307,7 +310,7 @@ export default class NotesCollection {
 	_syncEntities(){
 
 
-		let qry2 = `SELECT *,Items.timestamp AS item_timestamp 
+		let qry2 = `SELECT *,Items.timestamp AS item_timestamp,Ressources.timestamp AS ressource_timestamp,Notes.timestamp AS note_timestamp 
 		            FROM Items
 		            LEFT JOIN Ressources ON (CASE WHEN SUBSTR(Items.ressource_id,0,3) = "tmp" THEN Items.ressource_id = Ressources.ressource_tmpId ELSE Items.ressource_id = Ressources.ressource_id END)
 		            LEFT JOIN Notes ON (CASE WHEN SUBSTR(Ressources.note_id,0,3) = "tmp" THEN Ressources.note_id = Notes.note_tmpId ELSE Ressources.note_id = Notes.note_id END)
@@ -376,9 +379,12 @@ export default class NotesCollection {
 			                                       status,
 			                                       note_id,
 												   note_title,
+												   note_timestamp,
 												   ressource_id,
 												   ressource_title,
+												   ressource_timestamp,
 												   item_id,
+												   item_timestamp,
 												   item_type,
 												   item_text,
 												   item_value,
@@ -389,9 +395,12 @@ export default class NotesCollection {
 			                          "BEFOREUP",
 			                          "`+results.rows.item(i).note_id+`",
 			                          "`+results.rows.item(i).note_title+`",
+			                          "`+results.rows.item(i).note_timestamp+`",
 			                          "`+results.rows.item(i).ressource_id+`",
 			                          "`+results.rows.item(i).ressource_title+`",
+			                          "`+results.rows.item(i).ressource_timestamp+`",
 			                          "`+results.rows.item(i).item_id+`",
+			                          "`+results.rows.item(i).note_timestamp+`",
 			                          "`+results.rows.item(i).item_type+`",
 			                          "`+results.rows.item(i).item_text+`",
 			                          "`+results.rows.item(i).item_value+`",
