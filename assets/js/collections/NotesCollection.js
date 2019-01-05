@@ -453,6 +453,8 @@ export default class NotesCollection {
 		let qry4b = `UPDATE Notes
 					 SET state = 'RESERVEDUPR'
 		  			 WHERE note_id IN (SELECT note_id FROM Ressources WHERE state = 'RESERVEDUPR')
+		  			 AND state = 'WAITING' 
+		  			 AND STATUS = 'LOCAL'
 		  			 `;
 		this.webSQL.playQuery('cacheData',qry4b);
 
