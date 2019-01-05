@@ -491,7 +491,7 @@ export default class NotesCollection {
 		 			 FROM Notes
 		  			 WHERE state = 'RESERVEDUPN' 
 		  			 AND STATUS = 'LOCAL'`;
-		 this.webSQL.playQuery('cacheData',qry6,this,'_synchroRessources');
+		 this.webSQL.playQuery('cacheData',qry6,this,'_synchroNotes');
 
 
 
