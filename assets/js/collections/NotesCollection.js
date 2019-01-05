@@ -454,15 +454,15 @@ export default class NotesCollection {
 					 SET state = 'RESERVEDUPR'
 		  			 WHERE note_id IN (SELECT note_id FROM Ressources WHERE state = 'RESERVEDUPR')
 		  			 `;
-		this.webSQL.playQuery('cacheData',qry4a);
+		this.webSQL.playQuery('cacheData',qry4b);
 
 
 		//je fgais un select qui push dans syncUp
 
 		 let qry4 = `SELECT * FROM Ressources
 		 			 LEFT JOIN Notes ON (CASE WHEN SUBSTR(Ressources.note_id,0,3) = "tmp" THEN Ressources.note_id = Notes.note_tmpId ELSE Ressources.note_id = Notes.note_id END)
-		  			 WHERE state = 'RESERVEDUPR' 
-		  			 AND STATUS = 'LOCAL'`;
+		  			 WHERE Ressources.state = 'RESERVEDUPR' 
+		  			 AND Ressources.STATUS = 'LOCAL'`;
 		 this.webSQL.playQuery('cacheData',qry4,this,'_synchroRessources');
 
 
