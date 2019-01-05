@@ -781,6 +781,7 @@ export default class NotesCollection {
 							  `);	
 
 
+
 			if(datas.data[i].ressource_id) {
 
 
@@ -802,6 +803,11 @@ export default class NotesCollection {
 			}
 
 		
+						this.webSQL.playQuery('syncUP',`DELETE FROM Items 
+								           WHERE note_id = "`+NoteId+`" 
+								           AND note_timestamp = "`+datas.data[i].note_timestamp+`"
+								           AND status = 'UPLOADING' 
+								           `);
 
 
 

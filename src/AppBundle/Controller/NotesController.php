@@ -116,21 +116,25 @@ class NotesController extends Controller
 
             $Itemresponse = new \stdClass();
 
+             $Itemresponse->timestamp = $NoteElement->timestamp;
+
             $Itemresponse->note_id    = $StoreResult["Note"]->getId();
             $Itemresponse->note_tmpId = $NoteElement->note_id;
+            $Itemresponse->note_timestamp = $NoteElement->note_timestamp;
 
             if($NoteElement->ressource_id){
 
 
                 $Itemresponse->ressource_id    = $StoreResult["Resource"]->getId();
                 $Itemresponse->ressource_tmpId = $NoteElement->ressource_id;
+                $Itemresponse->ressource_timestamp = $NoteElement->ressource_timestamp;
 
 
                 if($NoteElement->item_id){
 
                     $Itemresponse->item_id = $StoreResult["Item"]->getId();
                     $Itemresponse->item_tmpId = $NoteElement->item_id;
-                    $Itemresponse->timestamp = $NoteElement->timestamp;
+                    $Itemresponse->item_timestamp = $NoteElement->item_timestamp;
                     $Itemresponse->type = $NoteElement->item_type;
                     $Itemresponse->item_path = $NoteElement->item_path;
                     $Itemresponse->call = "push";
