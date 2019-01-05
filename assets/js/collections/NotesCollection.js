@@ -692,19 +692,15 @@ export default class NotesCollection {
 		if(!datas.data[i].type){
 
 
-			//je regarde si en base syncdata je retrouve ma ligne
-			this.webSQL.playQuery('cacheData',`UPDATE Items
-	                           SET ressource_id =  "`+datas.data[i].ressource_id+`"  ,
-								item_id =  "`+datas.data[i].item_id+`"   ,
+						this.webSQL.playQuery('cacheData',`UPDATE Notes
+	                            SET note_id =  "`+datas.data[i].note_id+`",
 								status = "SYNC",
-								state  = "CLEAN" 
+								state  = "CLEAN"
 	 
-							   WHERE timestamp = "`+datas.data[i].timestamp+`" 
-					           AND  ressource_id = "`+ResourceId+`" 
-					           AND  item_id = "`+ItemId+`"
-					           AND status = "LOCAL" 
+							   WHERE note_id = "`+NoteId+`" 
+					           AND status = "LOCAL"
 					           AND STATE = "PREUP"
-							  `);
+							  `);	
 
 
 			if(datas.data[i].ressource_id) {
