@@ -516,7 +516,7 @@ export default class NotesCollection {
 
 
 			//j'update aussi le status notes
-			let qry2 = `UPDATE Items
+			let qry2 = `UPDATE Notes
 					    SET state = 'PREUP'
 					    WHERE note_id IN (SELECT note_id FROM Ressources WHERE state = 'PREUP')
 					    AND state = 'RESERVEDUP'
