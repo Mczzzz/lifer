@@ -874,7 +874,7 @@ export default class NotesCollection {
 		}else if(datas.data[i].type == 'image'){
 
 
-				this.webSQL.playQuery('syncUP',`UPDATE Notes 
+				this.webSQL.playQuery('syncUP',`UPDATE Items 
 												SET note_id =  "`+datas.data[i].note_id+`"   ,
 												ressource_id =  "`+datas.data[i].ressource_id+`"  ,
 												item_id =  "`+datas.data[i].item_id+`"   ,
@@ -907,15 +907,13 @@ export default class NotesCollection {
 			                 `);
 
 
-				this.webSQL.playQuery('syncData',`UPDATE Notes
-		                           SET note_id =  "`+datas.data[i].note_id+`"   ,
-									ressource_id =  "`+datas.data[i].ressource_id+`"  ,
+				this.webSQL.playQuery('cacheData',`UPDATE Items
+		                            SET ressource_id =  "`+datas.data[i].ressource_id+`"  ,
 									item_id =  "`+datas.data[i].item_id+`"   ,
 									status = "WAITUPDATA",
 									state  = "PARTIAL" 
 		 
 								   WHERE timestamp = "`+datas.data[i].timestamp+`" 
-						           AND  note_id = "`+NoteId+`" 
 						           AND  ressource_id = "`+ResourceId+`" 
 						           AND  item_id = "`+ItemId+`" 
 						           AND STATE = "PREUP"
