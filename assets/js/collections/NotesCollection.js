@@ -492,7 +492,7 @@ export default class NotesCollection {
 												   ressource_title,
 												   ressource_timestamp
 			                                      )
-			                   values ("`+results.rows.item(i).item_timestamp+`",
+			                   values ("`+results.rows.item(i).ressource_timestamp+`",
 			                          "BEFOREUP",
 			                          "`+results.rows.item(i).note_id+`",
 			                          "`+results.rows.item(i).note_title+`",
