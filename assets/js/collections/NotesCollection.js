@@ -477,9 +477,6 @@ export default class NotesCollection {
 	_synchroRessources(results){
 
 
-		console.log("_synchroRessources");
-		console.log(results)
-
 		let len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
 		    
@@ -508,7 +505,26 @@ export default class NotesCollection {
 
 		  }
 
-		  console.log('after For');
+
+		if(results.rows.length){
+
+			let qry = `UPDATE Ressources
+			           SET state = 'PREUP'
+			           WHERE state = 'RESERVEDUP' 
+			           `;
+			this.webSQL.playQuery('cacheData',qry);
+
+
+			//j'update aussi le status notes
+			let qry2 = `UPDATE Items
+					    SET state = 'PREUP'
+					    WHERE note_id IN (SELECT note_id FROM Ressources WHERE state = 'PREUP')
+					    AND state = 'RESERVEDUP'
+						`;
+			this.webSQL.playQuery('cacheData',qry2);
+
+
+		 }
 
 
 	}
