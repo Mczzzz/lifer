@@ -533,7 +533,7 @@ export default class NotesCollection {
 			//j'update aussi le status notes
 			let qry2 = `UPDATE Notes
 					    SET state = 'PREUP'
-					    AND state = 'RESERVEDUPN'
+					    WHERE state = 'RESERVEDUPN'
 						`;
 			this.webSQL.playQuery('cacheData',qry2);
 
