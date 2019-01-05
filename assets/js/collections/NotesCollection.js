@@ -74,7 +74,7 @@ export default class NotesCollection {
 												   note_title,
 												   note_tmpId
 			                                      )
-			                   values (CASE WHEN note_title = "`+data.NoteTitle+`" THEN timestamp ELSE strftime('%Y-%m-%d %H:%M:%f', 'now') END),
+			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "LOCAL",
 			                          "`+data.NoteId+`",
 			                          "`+data.NoteTitle+`",
@@ -173,7 +173,8 @@ export default class NotesCollection {
 																	   note_id,
 																	   note_tmpId,
 																	   note_title,																   
-						    										   UNIQUE (note_id) ON CONFLICT REPLACE
+						    										   UNIQUE (note_id) ON CONFLICT REPLACE,
+						    										   UNIQUE (note_id, note_title) ON CONFLICT IGNORE
 																	   );
 																	   `;
 
@@ -400,7 +401,7 @@ export default class NotesCollection {
 			                          "`+results.rows.item(i).ressource_title+`",
 			                          "`+results.rows.item(i).ressource_timestamp+`",
 			                          "`+results.rows.item(i).item_id+`",
-			                          "`+results.rows.item(i).note_timestamp+`",
+			                          "`+results.rows.item(i).ressource_timestamp+`",
 			                          "`+results.rows.item(i).item_type+`",
 			                          "`+results.rows.item(i).item_text+`",
 			                          "`+results.rows.item(i).item_value+`",
