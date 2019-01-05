@@ -506,11 +506,12 @@ export default class NotesCollection {
 		  }
 
 
+
 		if(results.rows.length){
 
 			let qry = `UPDATE Ressources
 			           SET state = 'PREUP'
-			           WHERE state = 'RESERVEDUP' 
+			           WHERE state = 'RESERVEDUPR' 
 			           `;
 			this.webSQL.playQuery('cacheData',qry);
 
@@ -519,7 +520,7 @@ export default class NotesCollection {
 			let qry2 = `UPDATE Notes
 					    SET state = 'PREUP'
 					    WHERE note_id IN (SELECT note_id FROM Ressources WHERE state = 'PREUP')
-					    AND state = 'RESERVEDUP'
+					    AND state = 'RESERVEDUPR'
 						`;
 			this.webSQL.playQuery('cacheData',qry2);
 
