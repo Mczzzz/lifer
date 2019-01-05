@@ -489,8 +489,8 @@ export default class NotesCollection {
 
 		 let qry6 = `SELECT *,Notes.timestamp AS note_timestamp
 		 			 FROM Notes
-		  			 WHERE Ressources.state = 'RESERVEDUPN' 
-		  			 AND Ressources.STATUS = 'LOCAL'`;
+		  			 WHERE state = 'RESERVEDUPN' 
+		  			 AND STATUS = 'LOCAL'`;
 		 this.webSQL.playQuery('cacheData',qry6,this,'_synchroRessources');
 
 
