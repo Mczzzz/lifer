@@ -169,10 +169,10 @@ export default class Text extends superViews{
 		//dragButton.setAttributeComponent(this.EmptyElement,"dragger_"+this.ClassId,"draggable", params);
 
 	}
-
+/*
 	ancestorCallBack(e,type){
 
-/*		if(type == "start"){
+		if(type == "start"){
 
 			this.dragButton.setStyle("display","none");
 		
@@ -180,13 +180,13 @@ export default class Text extends superViews{
 
 			this.dragButton.setStyle("display","");
 
-		}*/
+		}
 		
 
 		let ancestor = this.getObjectThisfromPath(this.dragAncestor.path);
 		ancestor[this.dragAncestor.method](this,e,type);
 
-	}
+	}*/
 
 	select(){
 
