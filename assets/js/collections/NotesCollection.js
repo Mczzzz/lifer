@@ -476,7 +476,8 @@ export default class NotesCollection {
 	_synchroRessources(results){
 
 
-
+		console.log("_synchroRessources");
+		console.log(results)
 
 		let len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
@@ -506,7 +507,7 @@ export default class NotesCollection {
 
 		  }
 
-
+		  console.log('after For');
 
 
 	}
