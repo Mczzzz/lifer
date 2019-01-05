@@ -321,7 +321,7 @@ export default class NotesCollection {
 		            FROM Items
 		            LEFT JOIN Ressources ON (CASE WHEN SUBSTR(Items.ressource_id,0,3) = "tmp" THEN Items.ressource_id = Ressources.ressource_tmpId ELSE Items.ressource_id = Ressources.ressource_id END)
 		            LEFT JOIN Notes ON (CASE WHEN SUBSTR(Ressources.note_id,0,3) = "tmp" THEN Ressources.note_id = Notes.note_tmpId ELSE Ressources.note_id = Notes.note_id END)
-		            WHERE state = 'RESERVEDUP' `;
+		            WHERE Items.state = 'RESERVEDUP' `;
 		// je copie dans ma base de remonté syncUP les LOCAL de plus d'une seconde
 		this.webSQL.playQuery('cacheData',qry2,this,'_pushInSyncUp');
 
