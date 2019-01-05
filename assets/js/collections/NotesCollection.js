@@ -172,7 +172,8 @@ export default class NotesCollection {
 																	   status,
 																	   note_id,
 																	   note_tmpId,
-																	   note_title,																   
+																	   note_title,
+																	   state TEXT DEFAULT "WAITING",																   
 						    										   UNIQUE (note_tmpId) ON CONFLICT REPLACE
 																	   );
 																	   `;
@@ -191,7 +192,8 @@ export default class NotesCollection {
 																	   note_id,
 																	   ressource_id,
 																	   ressource_tmpId,
-																	   ressource_title,																   
+																	   ressource_title,
+																	   state TEXT DEFAULT "WAITING",																   
 						    										   UNIQUE (ressource_tmpId) ON CONFLICT REPLACE
 																	   );
 																	   `;
@@ -245,13 +247,13 @@ export default class NotesCollection {
 																	   note_id,
 																	   note_title,
 																	   note_timestamp,
-																	   ressource_id,
-																	   ressource_title,
-																	   ressource_timestamp,
-																	   item_id,
-																	   item_type,
-																	   item_text,
-																	   item_timestamp,
+																	   ressource_id TEXT DEFAULT "",
+																	   ressource_title TEXT DEFAULT "",
+																	   ressource_timestamp TEXT DEFAULT "",
+																	   item_id TEXT DEFAULT "",
+																	   item_type TEXT DEFAULT "",
+																	   item_text TEXT DEFAULT "",
+																	   item_timestamp TEXT DEFAULT "",
 																	   item_value INTEGER DEFAULT 0,
 																	   item_path  TEXT DEFAULT "",
 																	   item_unit  INTEGER DEFAULT 0
@@ -417,6 +419,11 @@ export default class NotesCollection {
 
 			let qry = "UPDATE Items SET state = 'PREUP' WHERE state = 'RESERVEDUP' ";
 			this.webSQL.playQuery('cacheData',qry);
+
+		 }else{
+
+
+
 
 		 }
 
