@@ -206,7 +206,7 @@ export default class NoteCollection {
 
 
 		//onverifie qu'il n'y a rien en cours d'upload
-		let qry = "SELECT * FROM NotesDatas WHERE status = 'UPLOADING' LIMIT 1";
+		let qry = "SELECT * FROM ItemsDatas WHERE status = 'UPLOADING' LIMIT 1";
 		this.webSQL.playQuery('syncUp',qry,this,'_canExecuteNewDataSynchro');
 
 
