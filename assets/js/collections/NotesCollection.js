@@ -708,13 +708,12 @@ export default class NotesCollection {
 //A REVOIR CAR EN 3 TABLES
 
 			//je regarde si en base syncdata je retrouve ma ligne
-			let qryTestLine = `UPDATE Notes
+			let qryTestLine = `UPDATE Items
 
 	                          SET status = "SYNC",
 								state  = "CLEAN" 
 	 
 							   WHERE timestamp = "`+datas.data.timestamp+`" 
-					           AND  note_id = "`+datas.data.note_id+`" 
 					           AND  ressource_id = "`+datas.data.ressource_id+`" 
 					           AND  item_id = "`+datas.data.item_id+`" 
 					           AND STATE = "PARTIAL"
