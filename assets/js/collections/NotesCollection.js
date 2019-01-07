@@ -398,32 +398,11 @@ export default class NotesCollection {
 
 		console.log("_pushInSyncUp");
 		console.log(results.rows);
-		
+
 		let len = results.rows.length, i;
-		let scope = "";
+
 		  for (i = 0; i < len; i++) {
 		   
-		    scope = "";
-		  	console.log(results.rows.item(i));
-		  	console.log(results.rows.item(i).item_id);
-		  	console.log(results.rows.item(i).ressource_id);
-		  	console.log(results.rows.item(i).note_id);
-
-		  	if(results.rows.item(i).item_id.length > 0){
-
-		  		scope = "item";
-
-		  	}else if(results.rows.item(i).ressource_id.length > 0){
-
-		  		scope = "ressource";
-
-		  	}else if(results.rows.item(i).note_id.length > 0){
-
-
-
-		  		scope = "note";
-		  	}
-
 
 		    this.webSQL.playQuery('syncUP',
 			                  `insert into Items ( timestamp,
@@ -458,7 +437,7 @@ export default class NotesCollection {
 			                          "`+results.rows.item(i).item_value+`",
 			                          "`+results.rows.item(i).item_path+`",
 			                          "`+results.rows.item(i).item_unit+`",
-			                          "`+scope+`"
+			                          "item"
 			                          )
 
 			                 `);
@@ -555,13 +534,15 @@ export default class NotesCollection {
 			                                       status,
 			                                       note_id,
 												   note_title,
-												   note_timestamp
+												   note_timestamp,
+												   scope
 			                                      )
 			                   values ("`+results.rows.item(i).note_timestamp+`",
 			                          "BEFOREUP",
 			                          "`+results.rows.item(i).note_id+`",
 			                          "`+results.rows.item(i).note_title+`",
-			                          "`+results.rows.item(i).note_timestamp+`"
+			                          "`+results.rows.item(i).note_timestamp+`",
+			                          "note"
 			                          )
 
 			                 `);
@@ -610,7 +591,8 @@ export default class NotesCollection {
 												   note_timestamp,
 												   ressource_id,
 												   ressource_title,
-												   ressource_timestamp
+												   ressource_timestamp,
+												   scope
 			                                      )
 			                   values ("`+results.rows.item(i).ressource_timestamp+`",
 			                          "BEFOREUP",
@@ -619,7 +601,8 @@ export default class NotesCollection {
 			                          "`+results.rows.item(i).note_timestamp+`",
 			                          "`+results.rows.item(i).ressource_id+`",
 			                          "`+results.rows.item(i).ressource_title+`",
-			                          "`+results.rows.item(i).ressource_timestamp+`"
+			                          "`+results.rows.item(i).ressource_timestamp+`",
+			                          "ressource"
 			                          )
 
 			                 `);
