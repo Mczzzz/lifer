@@ -26,6 +26,9 @@ export default class NotesCollection {
 	}
 
 
+
+
+
 	getAllNotes(callBackObj,callBackMethod){
 
 		let qry = "SELECT * FROM Notes GROUP BY note_id";
@@ -59,6 +62,14 @@ export default class NotesCollection {
 		this.webSQL.playQuery('cacheData',qry,callBackObj,callBackMethod);
 
 	}
+
+
+
+
+
+
+
+
 
 
 	store(data){
@@ -256,7 +267,8 @@ export default class NotesCollection {
 																	   item_timestamp TEXT DEFAULT "",
 																	   item_value INTEGER DEFAULT 0,
 																	   item_path  TEXT DEFAULT "",
-																	   item_unit  INTEGER DEFAULT 0
+																	   item_unit  INTEGER DEFAULT 0,
+																	   scope TEXT DEFAULT ""
 																	   );
 																	   `;
 
@@ -289,6 +301,8 @@ export default class NotesCollection {
 
 
 	}
+
+
 
 
 
@@ -383,8 +397,25 @@ export default class NotesCollection {
 	_pushInSyncUp(results){
 
 		let len = results.rows.length, i;
+		let scope = "";
 		  for (i = 0; i < len; i++) {
 		    
+		  	if(results.rows.item(i).item_id){
+
+		  		scope = "item";
+
+		  	}else if(results.rows.item(i).ressource_id){
+
+		  		scope = "ressource";
+
+		  	}else if(results.rows.item(i).note_id){
+
+
+
+		  		scope = "note";
+		  	}
+
+
 		    this.webSQL.playQuery('syncUP',
 			                  `insert into Items ( timestamp,
 			                                       status,
@@ -400,7 +431,8 @@ export default class NotesCollection {
 												   item_text,
 												   item_value,
 												   item_path,
-												   item_unit
+												   item_unit,
+												   scope
 			                                      )
 			                   values ("`+results.rows.item(i).item_timestamp+`",
 			                          "BEFOREUP",
@@ -416,12 +448,15 @@ export default class NotesCollection {
 			                          "`+results.rows.item(i).item_text+`",
 			                          "`+results.rows.item(i).item_value+`",
 			                          "`+results.rows.item(i).item_path+`",
-			                          "`+results.rows.item(i).item_unit+`"
+			                          "`+results.rows.item(i).item_unit+`",
+			                          "`+scope+`"
 			                          )
 
 			                 `);
 
 
+
+		    let scope = "";
 		  }
 
 		 if(results.rows.length){
