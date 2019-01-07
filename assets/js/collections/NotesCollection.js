@@ -402,6 +402,9 @@ export default class NotesCollection {
 		   
 		    scope = "";
 		  	console.log(results.rows.item(i));
+		  	console.log(results.rows.item(i).item_id);
+		  	console.log(results.rows.item(i).ressource_id);
+		  	console.log(results.rows.item(i).note_id);
 
 		  	if(results.rows.item(i).item_id.length > 0){
 
