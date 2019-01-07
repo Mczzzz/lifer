@@ -154,6 +154,16 @@ export default class Text extends superViews{
 	}
 
 
+
+
+
+
+
+
+
+
+
+
 	draggable(path,ancestorMethod){
 
 
@@ -169,7 +179,7 @@ export default class Text extends superViews{
 		//dragButton.setAttributeComponent(this.EmptyElement,"dragger_"+this.ClassId,"draggable", params);
 
 	}
-/*
+
 	ancestorCallBack(e,type){
 
 		if(type == "start"){
@@ -186,7 +196,18 @@ export default class Text extends superViews{
 		let ancestor = this.getObjectThisfromPath(this.dragAncestor.path);
 		ancestor[this.dragAncestor.method](this,e,type);
 
-	}*/
+	}
+
+
+
+
+
+
+
+
+
+
+
 
 	select(){
 

@@ -118,6 +118,13 @@ export default class Number extends superViews{
 	}
 
 
+
+
+
+
+
+
+
 	draggable(path,ancestorMethod){
 
 
@@ -134,12 +141,17 @@ export default class Number extends superViews{
 
 	}
 
-/*	ancestorCallBack(e,type){
+	ancestorCallBack(e,type){
 
 		let ancestor = this.getObjectThisfromPath(this.dragAncestor.path);
 		ancestor[this.dragAncestor.method](this,e,type);
 
-	}*/
+	}
+
+
+
+
+
 
 
 

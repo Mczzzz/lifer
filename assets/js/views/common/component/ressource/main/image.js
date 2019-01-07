@@ -213,6 +213,13 @@ export default class Image extends superViews{
 		return this.TheTextElt;
 	}
 
+
+
+
+
+
+
+
 	draggable(path,ancestorMethod){
 
 
@@ -229,12 +236,16 @@ export default class Image extends superViews{
 
 	}
 
-/*	ancestorCallBack(e,type){
+	ancestorCallBack(e,type){
 
 		let ancestor = this.getObjectThisfromPath(this.dragAncestor.path);
 		ancestor[this.dragAncestor.method](this,e,type);
 
-	}*/
+	}
+
+
+
+
 
 
 
