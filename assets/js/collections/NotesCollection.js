@@ -397,7 +397,8 @@ export default class NotesCollection {
 	_pushInSyncUp(results){
 
 		console.log("_pushInSyncUp");
-
+		console.log(results.rows);
+		
 		let len = results.rows.length, i;
 		let scope = "";
 		  for (i = 0; i < len; i++) {
