@@ -400,6 +400,8 @@ export default class NotesCollection {
 		let scope = "";
 		  for (i = 0; i < len; i++) {
 		    
+		  	console.log(results.rows.item(i));
+
 		  	if(results.rows.item(i).item_id.length > 0){
 
 		  		scope = "item";
