@@ -685,7 +685,7 @@ export default class NotesCollection {
 	_updateAfterRequestData(datas){
 
 			
-					//je supprime la ligne de sync up
+/*					//je supprime la ligne de sync up
 			let qry = `DELETE FROM Items 
 			           WHERE timestamp = "`+datas.data.timestamp+`"
 			           AND  note_id = "`+datas.data.note_id+`" 
@@ -719,7 +719,7 @@ export default class NotesCollection {
 					           AND STATE = "PARTIAL"
 							  `;
 
-			this.webSQL.playQuery('cacheData',qryTestLine);
+			this.webSQL.playQuery('cacheData',qryTestLine);*/
 
 
 
@@ -746,26 +746,45 @@ export default class NotesCollection {
 	_updateAfterRequest(datas){
 
 
+		let len = datas.data.length, i;
+
+		for (i = 0; i < len; i++) {
+
+			//Je met à jour mon enregistrement 
+/*			this.webSQL.playQuery('syncUP',`UPDATE Items 
+					           WHERE timestamp = "`+datas.data[i].timestamp+`"
+					           AND  note_id = "`+NoteId+`" 
+					           AND  ressource_id = "`+ResourceId+`" 
+					           AND  item_id = "`+ItemId+`" 
+					           `);
+*/
+
+		}
+
+
 //todo: jE PENSE QU4IL MANQUE UN foR 
 /*
 		console.log("_updateAfterRequest");
 		console.log(datas);*/
 					//on regarde si on a du temporaire pour les id
-
+/*
 		let NoteId = "";
 		let ResourceId = "";
-		let ItemId = "";
+		let ItemId = "";*/
 
-		let len = datas.data.length, i;
-		  for (i = 0; i < len; i++) {
+		/*let len = datas.data.length, i;
+		  for (i = 0; i < len; i++) {*/
 
-
-
-		  	NoteId = (datas.data[i].note_tmpId) ? datas.data[i].note_tmpId : datas.data[i].note_id;
+/*		  	NoteId = (datas.data[i].note_tmpId) ? datas.data[i].note_tmpId : datas.data[i].note_id;
 			ResourceId = (datas.data[i].ressource_tmpId) ? datas.data[i].ressource_tmpId : datas.data[i].ressource_id;
-			ItemId = (datas.data[i].item_tmpId) ? datas.data[i].item_tmpId : datas.data[i].item_id;
+			ItemId = (datas.data[i].item_tmpId) ? datas.data[i].item_tmpId : datas.data[i].item_id;*/
 
 
+
+
+	   /* }*/
+
+/*
 		if(!datas.data[i].type){
 
 
@@ -932,7 +951,7 @@ export default class NotesCollection {
 
 
 
-		}
+		}*/
 
 
 
