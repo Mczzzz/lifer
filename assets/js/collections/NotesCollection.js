@@ -422,7 +422,7 @@ export default class NotesCollection {
 												   item_unit,
 												   scope
 			                                      )
-			                   values ("`+results.rows.item(i).item_timestamp+`",
+			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "BEFOREUP",
 			                          "`+results.rows.item(i).note_id+`",
 			                          "`+results.rows.item(i).note_title+`",
@@ -537,7 +537,7 @@ export default class NotesCollection {
 												   note_timestamp,
 												   scope
 			                                      )
-			                   values ("`+results.rows.item(i).note_timestamp+`",
+			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "BEFOREUP",
 			                          "`+results.rows.item(i).note_id+`",
 			                          "`+results.rows.item(i).note_title+`",
@@ -594,7 +594,7 @@ export default class NotesCollection {
 												   ressource_timestamp,
 												   scope
 			                                      )
-			                   values ("`+results.rows.item(i).ressource_timestamp+`",
+			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "BEFOREUP",
 			                          "`+results.rows.item(i).note_id+`",
 			                          "`+results.rows.item(i).note_title+`",
