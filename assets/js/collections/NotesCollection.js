@@ -399,7 +399,8 @@ export default class NotesCollection {
 		let len = results.rows.length, i;
 		let scope = "";
 		  for (i = 0; i < len; i++) {
-		    
+		   
+		    scope = "";
 		  	console.log(results.rows.item(i));
 
 		  	if(results.rows.item(i).item_id.length > 0){
@@ -458,7 +459,7 @@ export default class NotesCollection {
 
 
 
-		    let scope = "";
+
 		  }
 
 		 if(results.rows.length){
