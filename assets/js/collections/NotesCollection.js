@@ -400,15 +400,15 @@ export default class NotesCollection {
 		let scope = "";
 		  for (i = 0; i < len; i++) {
 		    
-		  	if(results.rows.item(i).item_id){
+		  	if(results.rows.item(i).item_id.length > 0){
 
 		  		scope = "item";
 
-		  	}else if(results.rows.item(i).ressource_id){
+		  	}else if(results.rows.item(i).ressource_id.length > 0){
 
 		  		scope = "ressource";
 
-		  	}else if(results.rows.item(i).note_id){
+		  	}else if(results.rows.item(i).note_id.length > 0){
 
 
 
