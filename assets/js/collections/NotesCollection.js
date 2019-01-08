@@ -511,13 +511,13 @@ export default class NotesCollection {
 
 
 
-/*		let qry5 = `UPDATE Notes
+		let qry5 = `UPDATE Notes
 					 SET state = 'RESERVEDUPN'
 		  			 WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds')
 		  			 AND state = 'WAITING' 
 		  			 AND STATUS = 'LOCAL'
 		  			 `;
-		this.webSQL.playQuery('cacheData',qry5);*/
+		this.webSQL.playQuery('cacheData',qry5);
 
 
 
