@@ -195,9 +195,9 @@ export default class NotesCollection {
 		TblNote.db = "cacheData";
 		TblNote.create = `CREATE TABLE IF NOT EXISTS `+TblNote.name+` (timestamp,
 																	   status,
-																	   note_id,
-																	   note_tmpId,
-																	   note_title,
+																	   note_id TEXT DEFAULT "",
+																	   note_tmpId TEXT DEFAULT "",
+																	   note_title TEXT DEFAULT "",
 																	   state TEXT DEFAULT "WAITING",																   
 						    										   UNIQUE (note_tmpId) ON CONFLICT REPLACE
 																	   );
@@ -214,10 +214,10 @@ export default class NotesCollection {
 		TblRessource.db = "cacheData";
 		TblRessource.create = `CREATE TABLE IF NOT EXISTS `+TblRessource.name+` (timestamp,
 																	   status,
-																	   note_id,
-																	   ressource_id,
-																	   ressource_tmpId,
-																	   ressource_title,
+																	   note_id TEXT DEFAULT "",
+																	   ressource_id TEXT DEFAULT "",
+																	   ressource_tmpId TEXT DEFAULT "",
+																	   ressource_title TEXT DEFAULT "",
 																	   state TEXT DEFAULT "WAITING",																   
 						    										   UNIQUE (ressource_tmpId) ON CONFLICT REPLACE
 																	   );
@@ -228,16 +228,17 @@ export default class NotesCollection {
 
 
 
+
 		let TblItems= {};
 		TblItems.name = "Items";
 		TblItems.db = "cacheData";
 		TblItems.create = `CREATE TABLE IF NOT EXISTS `+TblItems.name+` (timestamp,
-																	   status,
-																	   ressource_id,
-																	   item_id,
-																	   item_tmpId,
-																	   item_type,
-																	   item_text,
+																	   status ,
+																	   ressource_id TEXT DEFAULT "",
+																	   item_id TEXT DEFAULT "",
+																	   item_tmpId TEXT DEFAULT "",
+																	   item_type TEXT DEFAULT "",
+																	   item_text TEXT DEFAULT "",
 																	   item_value INTEGER DEFAULT 0,
 																	   item_path TEXT DEFAULT "",
 																	   item_unit INTEGER DEFAULT 0,
@@ -258,10 +259,6 @@ export default class NotesCollection {
 
 
 
-
-
-
-
 //EN ATTENTE DE REMONTE AU SERVEUR
 
 
@@ -270,9 +267,9 @@ export default class NotesCollection {
 		TblItemUp.db = "syncUP";
 		TblItemUp.create = `CREATE TABLE IF NOT EXISTS `+TblItemUp.name+` (timestamp,
 																	   status,
-																	   note_id,
-																	   note_title,
-																	   note_timestamp,
+																	   note_id TEXT DEFAULT "",
+																	   note_title TEXT DEFAULT "",
+																	   note_timestamp TEXT DEFAULT "",
 																	   ressource_id TEXT DEFAULT "",
 																	   ressource_title TEXT DEFAULT "",
 																	   ressource_timestamp TEXT DEFAULT "",
@@ -515,13 +512,13 @@ export default class NotesCollection {
 
 
 
-		let qry5 = `UPDATE Notes
+/*		let qry5 = `UPDATE Notes
 					 SET state = 'RESERVEDUPN'
 		  			 WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds')
 		  			 AND state = 'WAITING' 
 		  			 AND STATUS = 'LOCAL'
 		  			 `;
-		this.webSQL.playQuery('cacheData',qry5);
+		this.webSQL.playQuery('cacheData',qry5);*/
 
 
 
@@ -631,7 +628,7 @@ export default class NotesCollection {
 		  	}
 
 
-		  	if(results.rows.item(i).ressource_id.length == 0 ){
+		 	if(results.rows.item(i).ressource_id.length == 0 ){
 
 		  		ressource_id = results.rows.item(i).ressource_tmpId;
 
@@ -640,8 +637,6 @@ export default class NotesCollection {
 		  		ressource_id = results.rows.item(i).ressource_id;
 
 		  	}
-
-
 
 
 		    this.webSQL.playQuery('syncUP',
