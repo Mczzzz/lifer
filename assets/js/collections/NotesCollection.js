@@ -611,6 +611,8 @@ export default class NotesCollection {
 		let note_id = "";
 		let ressource_id = "";
 
+		console.log("_synchroRessources");
+		console.log(results);
 
 		let len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
