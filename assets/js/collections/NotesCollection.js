@@ -541,11 +541,23 @@ export default class NotesCollection {
 
 	_synchroNotes(results){
 
-
+		let note_id = "";
 
 		let len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
 		    
+		    note_id = "";
+
+		  	if(results.rows.item(i).note_id.indexOf("tmp-") == 0 ){
+
+		  		note_id = results.rows.item(i).note_tmpId;
+
+		  	} else{
+
+		  		note_id = results.rows.item(i).note_id;
+
+		  	}
+
 		    this.webSQL.playQuery('syncUP',
 			                  `insert into Items ( timestamp,
 			                                       status,
@@ -556,7 +568,7 @@ export default class NotesCollection {
 			                                      )
 			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "BEFOREUP",
-			                          "`+results.rows.item(i).note_id+`",
+			                          "`+note_id+`",
 			                          "`+results.rows.item(i).note_title+`",
 			                          "`+results.rows.item(i).note_timestamp+`",
 			                          "note"
