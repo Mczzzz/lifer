@@ -76,6 +76,10 @@ export default class NotesCollection {
 		console.log('in store collection');
 		console.log(data);
 
+		let note_id = "";
+		if(data.NoteId.indexOf("tmp-") != 0 ) note_id = data.NoteId;
+
+
 
 
 		this.webSQL.playQuery('cacheData',
@@ -87,7 +91,7 @@ export default class NotesCollection {
 			                                      )
 			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "LOCAL",
-			                          "`+data.NoteId+`",
+			                          "`+note_id+`",
 			                          "`+data.NoteTitle+`",
 			                          "`+data.NoteId+`"
 			                          )
@@ -95,6 +99,10 @@ export default class NotesCollection {
 			                 `);
 
 		if(data.RessourceId){
+
+			let ressource_id = "";
+
+			if(data.RessourceId.indexOf("tmp-") != 0 ) ressource_id = data.RessourceId;
 
 			console.log("in if data ressourcesId");
 
@@ -109,7 +117,7 @@ export default class NotesCollection {
 			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "LOCAL",
 			                          "`+data.NoteId+`",
-			                          "`+data.RessourceId+`",
+			                          "`+ressource_id+`",
 			                          "`+data.RessourceId+`",
 			                          "`+data.RessourceTitle+`"
 			                          )
@@ -130,12 +138,17 @@ export default class NotesCollection {
 			data.path = (data.path)? data.path : "";
 			data.unit = (data.unit)? data.unit : 0;
 
+			let item_id = "";
+
+			if(data.id.indexOf("tmp-") != 0 ) item_id = data.id;
+
 
 			this.webSQL.playQuery('cacheData',
 				                  `insert into Items ( timestamp,
 													   status,
 													   ressource_id,
 													   item_id,
+													   item_tmpId,
 													   item_type,
 													   item_text,
 													   item_value,
@@ -145,6 +158,7 @@ export default class NotesCollection {
 				                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 				                          "LOCAL",
 				                          "`+data.RessourceId+`",
+				                          "`+item_id+`",
 				                          "`+data.id+`",
 				                          "`+data.type+`",
 				                          "`+data.text+`",
@@ -221,6 +235,7 @@ export default class NotesCollection {
 																	   status,
 																	   ressource_id,
 																	   item_id,
+																	   item_tmpId,
 																	   item_type,
 																	   item_text,
 																	   item_value INTEGER DEFAULT 0,
