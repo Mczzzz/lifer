@@ -739,12 +739,53 @@ export default class NotesCollection {
 		//console.log('IN _createRequestToServer !!!')
 
 		let arrayToSend = [];
+		let prepareData = {};
 		let len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
 
-		 // 	console.log(results.rows.item(i));
+		  	prepareData = {};
 
-		  	arrayToSend.push(results.rows.item(i));
+		  	prepareData.timestamp = results.rows.item(i).timestamp;
+		  	prepareData.status    = results.rows.item(i).status;
+		  	prepareData.scope     = results.rows.item(i).scope;
+
+		 	prepareData.note_id        = results.rows.item(i).note_id;
+			prepareData.note_timestamp = results.rows.item(i).note_timestamp;
+			prepareData.note_title     = results.rows.item(i).note_title;
+
+		 	if(prepareData.scope != "note"){
+
+
+		 		prepareData.ressource_id        = results.rows.item(i).ressource_id;
+				prepareData.ressource_timestamp = results.rows.item(i).ressource_timestamp;
+				prepareData.ressource_title     = results.rows.item(i).ressource_title;
+
+
+				if(prepareData.scope != "ressource"){
+
+
+					prepareData.item_id         = results.rows.item(i).item_id;
+					prepareData.item_timestamp  = results.rows.item(i).item_timestamp;
+					prepareData.item_type       = results.rows.item(i).item_type;
+					prepareData.item_text       = results.rows.item(i).item_text;
+
+					if(results.rows.item(i).item_type == 'image'){
+
+						prepareData.item_path       = results.rows.item(i).item_path;
+
+					}else if(results.rows.item(i).item_type == 'number'){
+
+						prepareData.item_unit       = results.rows.item(i).item_unit;
+						prepareData.item_value       = results.rows.item(i).item_value;
+
+					}
+
+
+				}
+
+		 	}
+
+		  	arrayToSend.push(prepareData);
 
 
 
