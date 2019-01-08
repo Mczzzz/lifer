@@ -227,7 +227,7 @@ export default class NotesCollection {
 		this.webSQL.playQuery(TblRessource.db,TblRessource.create);
 
 
-/*
+
 		let TblItems= {};
 		TblItems.name = "Items";
 		TblItems.db = "cacheData";
@@ -251,7 +251,7 @@ export default class NotesCollection {
 																	   );
 																	   `;
 
-		this.webSQL.playQuery(TblItems.db,TblItems.create);*/
+		this.webSQL.playQuery(TblItems.db,TblItems.create);
 
 
 
