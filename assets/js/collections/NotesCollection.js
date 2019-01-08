@@ -76,11 +76,10 @@ export default class NotesCollection {
 		console.log('in store collection');
 		console.log(data);
 
-		let note_id = "";
+		let note_id = " ";
+
+
 		if(data.NoteId.indexOf("tmp-") != 0 ) note_id = data.NoteId;
-
-
-
 
 		this.webSQL.playQuery('cacheData',
 			                  `insert into Notes ( timestamp,
