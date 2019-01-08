@@ -410,10 +410,52 @@ export default class NotesCollection {
 		console.log("_pushInSyncUp");
 		console.log(results.rows);
 
+		let note_id = "";
+		let ressource_id = "";
+		let item_id = "";
+
 		let len = results.rows.length, i;
 
 		  for (i = 0; i < len; i++) {
 		   
+
+		    note_id = "";
+		    ressource_id = "";
+		    item_id = "";
+
+		  	if(results.rows.item(i).note_id.length == 0 ){
+
+		  		note_id = results.rows.item(i).note_tmpId;
+
+		  	} else{
+
+		  		note_id = results.rows.item(i).note_id;
+
+		  	}
+
+
+		 	if(results.rows.item(i).ressource_id.length == 0 ){
+
+		  		ressource_id = results.rows.item(i).ressource_tmpId;
+
+		  	} else{
+
+		  		ressource_id = results.rows.item(i).ressource_id;
+
+		  	}
+
+
+
+		 	if(results.rows.item(i).item_id.length == 0 ){
+
+		  		item_id = results.rows.item(i).item_tmpId;
+
+		  	} else{
+
+		  		item_id = results.rows.item(i).item_id;
+
+		  	}
+
 
 		    this.webSQL.playQuery('syncUP',
 			                  `insert into Items ( timestamp,
@@ -435,13 +477,13 @@ export default class NotesCollection {
 			                                      )
 			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "BEFOREUP",
-			                          "`+results.rows.item(i).note_id+`",
+			                          "`+note_id+`",
 			                          "`+results.rows.item(i).note_title+`",
 			                          "`+results.rows.item(i).note_timestamp+`",
-			                          "`+results.rows.item(i).ressource_id+`",
+			                          "`+ressource_id+`",
 			                          "`+results.rows.item(i).ressource_title+`",
 			                          "`+results.rows.item(i).ressource_timestamp+`",
-			                          "`+results.rows.item(i).item_id+`",
+			                          "`+item_id+`",
 			                          "`+results.rows.item(i).item_timestamp+`",
 			                          "`+results.rows.item(i).item_type+`",
 			                          "`+results.rows.item(i).item_text+`",
