@@ -209,7 +209,7 @@ export default class NotesCollection {
 
 
 
-/*		let TblRessource = {};
+		let TblRessource = {};
 		TblRessource.name = "Ressources";
 		TblRessource.db = "cacheData";
 		TblRessource.create = `CREATE TABLE IF NOT EXISTS `+TblRessource.name+` (timestamp,
@@ -227,7 +227,7 @@ export default class NotesCollection {
 		this.webSQL.playQuery(TblRessource.db,TblRessource.create);
 
 
-
+/*
 		let TblItems= {};
 		TblItems.name = "Items";
 		TblItems.db = "cacheData";
