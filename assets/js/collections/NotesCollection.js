@@ -548,7 +548,7 @@ export default class NotesCollection {
 		    
 		    note_id = "";
 
-		  	if(results.rows.item(i).note_id.indexOf("tmp-") == 0 ){
+		  	if(results.rows.item(i).note_id.length == 0 ){
 
 		  		note_id = results.rows.item(i).note_tmpId;
 
