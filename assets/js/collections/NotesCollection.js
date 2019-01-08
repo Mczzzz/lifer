@@ -608,10 +608,38 @@ export default class NotesCollection {
 
 	_synchroRessources(results){
 
+		let note_id = "";
+		let ressource_id = "";
+
 
 		let len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
 		    
+		    note_id = "";
+		    ressource_id = "";
+
+		  	if(results.rows.item(i).note_id.length == 0 ){
+
+		  		note_id = results.rows.item(i).note_tmpId;
+
+		  	} else{
+
+		  		note_id = results.rows.item(i).note_id;
+
+		  	}
+
+
+		  	if(results.rows.item(i).ressource_id.length == 0 ){
+
+		  		ressource_id = results.rows.item(i).ressource_tmpId;
+
+		  	} else{
+
+		  		ressource_id = results.rows.item(i).ressource_id;
+
+		  	}
+
+
 
 
 		    this.webSQL.playQuery('syncUP',
@@ -627,7 +655,7 @@ export default class NotesCollection {
 			                                      )
 			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "BEFOREUP",
-			                          "`+results.rows.item(i).note_id+`",
+			                          "`+note_id+`",
 			                          "`+results.rows.item(i).note_title+`",
 			                          "`+results.rows.item(i).note_timestamp+`",
 			                          "`+results.rows.item(i).ressource_id+`",
