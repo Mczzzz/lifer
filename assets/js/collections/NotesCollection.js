@@ -76,7 +76,7 @@ export default class NotesCollection {
 		console.log('in store collection');
 		console.log(data);
 
-		let note_id = " ";
+		let note_id = "";
 
 
 		if(data.NoteId.indexOf("tmp-") != 0 ) note_id = data.NoteId;
@@ -348,8 +348,8 @@ export default class NotesCollection {
 
 		let qry2 = `SELECT *,Items.timestamp AS item_timestamp,Ressources.timestamp AS ressource_timestamp,Notes.timestamp AS note_timestamp 
 		            FROM Items
-		            LEFT JOIN Ressources ON (CASE WHEN SUBSTR(Items.ressource_id,0,3) = "tmp" THEN Items.ressource_id = Ressources.ressource_tmpId ELSE Items.ressource_id = Ressources.ressource_id END)
-		            LEFT JOIN Notes ON (CASE WHEN SUBSTR(Ressources.note_id,0,3) = "tmp" THEN Ressources.note_id = Notes.note_tmpId ELSE Ressources.note_id = Notes.note_id END)
+		            LEFT JOIN Ressources ON (CASE WHEN SUBSTR(Items.ressource_id,1,3) = "tmp" THEN Items.ressource_id = Ressources.ressource_tmpId ELSE Items.ressource_id = Ressources.ressource_id END)
+		            LEFT JOIN Notes ON (CASE WHEN SUBSTR(Ressources.note_id,1,3) = "tmp" THEN Ressources.note_id = Notes.note_tmpId ELSE Ressources.note_id = Notes.note_id END)
 		            WHERE Items.state = 'RESERVEDUP' `;
 		// je copie dans ma base de remonté syncUP les LOCAL de plus d'une seconde
 		this.webSQL.playQuery('cacheData',qry2,this,'_pushInSyncUp');
@@ -500,7 +500,7 @@ export default class NotesCollection {
 
 		 let qry4 = `SELECT *,Ressources.timestamp AS ressource_timestamp, Notes.timestamp AS note_timestamp
 		 			 FROM Ressources
-		 			 LEFT JOIN Notes ON (CASE WHEN SUBSTR(Ressources.note_id,0,3) = "tmp" THEN Ressources.note_id = Notes.note_tmpId ELSE Ressources.note_id = Notes.note_id END)
+		 			 LEFT JOIN Notes ON (CASE WHEN SUBSTR(Ressources.note_id,1,3) = "tmp" THEN Ressources.note_id = Notes.note_tmpId ELSE Ressources.note_id = Notes.note_id END)
 		  			 WHERE Ressources.state = 'RESERVEDUPR' 
 		  			 AND Ressources.STATUS = 'LOCAL'`;
 		 this.webSQL.playQuery('cacheData',qry4,this,'_synchroRessources');
