@@ -498,6 +498,8 @@ export default class NotesCollection {
 		this.webSQL.playQuery('cacheData',qry4b);
 
 
+
+
 		//je fgais un select qui push dans syncUp
 
 		 let qry4 = `SELECT *,Ressources.timestamp AS ressource_timestamp, Notes.timestamp AS note_timestamp
@@ -598,6 +600,8 @@ export default class NotesCollection {
 		let len = results.rows.length, i;
 		  for (i = 0; i < len; i++) {
 		    
+
+
 		    this.webSQL.playQuery('syncUP',
 			                  `insert into Items ( timestamp,
 			                                       status,
