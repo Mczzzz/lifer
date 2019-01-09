@@ -1035,7 +1035,7 @@ export default class NotesCollection {
 
 				this.webSQL.playQuery('cacheData',`UPDATE Notes
 				   SET note_id = "`+datas.data[i].note_id+`",
-				   state = "INUPDATE",
+				   state = "CLEAN",
 				   status = "SYNC"  
 		           WHERE timestamp = "`+datas.data[i].note_timestamp+`"
 		           AND state = "PREUP"
@@ -1052,6 +1052,12 @@ export default class NotesCollection {
 
 //il faudra prevoir de faire les ressources avantd e faire ça sinon ça va coincer
 
+				this.webSQL.playQuery('cacheData',`UPDATE Ressources
+				   SET note_id = "`+datas.data[i].note_id+`",
+		           WHERE note_id = "`+datas.data[i].note_tmpId+`"
+		           `);	
+
+/*
 
 				this.webSQL.playQuery('cacheData',`UPDATE Notes
 				   SET note_tmpId = "",
@@ -1062,7 +1068,7 @@ export default class NotesCollection {
 				   AND status = "SYNC"
 				   AND note_id = "`+datas.data[i].note_id+`"
 		           `);				
-
+*/
 
 
 
@@ -1070,19 +1076,69 @@ export default class NotesCollection {
 			}
 
 
+			if(datas.data[i].scope == "ressource" && datas.data[i].ressource_tmpId){
+
+
+				//j'update la ma table
+
+				this.webSQL.playQuery('cacheData',`UPDATE Ressources
+				   SET ressource_id = "`+datas.data[i].ressource_id+`",
+				   state = "CLEAN",
+				   status = "SYNC"  
+		           WHERE timestamp = "`+datas.data[i].ressource_timestamp+`"
+		           AND state = "PREUP"
+				   AND status = "LOCAL"
+				   AND ressource_tmpId = "`+datas.data[i].ressource_tmpId+`"
+		           `);
 
 
 
-			//Je met à jour mon enregistrement 
-/*			this.webSQL.playQuery('syncUP',`UPDATE Items 
-					           WHERE timestamp = "`+datas.data[i].timestamp+`"
-					           AND  note_id = "`+NoteId+`" 
-					           AND  ressource_id = "`+ResourceId+`" 
-					           AND  item_id = "`+ItemId+`" 
-					           `);
-*/
+				//je met à jour mon IHM en recherchant si j'ai des id qui traines dans le DOM
+				let elementToUpdate = document.getElementById(datas.data[i].ressource_tmpId);
+				elementToUpdate.id = datas.data[i].ressource_id;
+
+
+
+				this.webSQL.playQuery('cacheData',`UPDATE Items
+				   SET ressource_id = "`+datas.data[i].ressource_id+`",
+		           WHERE ressource_id = "`+datas.data[i].ressource_tmpId+`"
+		           `);	
+
 
 		}
+
+
+
+			if(datas.data[i].scope == "item" && datas.data[i].item_tmpId){
+
+
+				//j'update la ma table
+
+				this.webSQL.playQuery('cacheData',`UPDATE Items
+				   SET item_id = "`+datas.data[i].item_id+`",
+				   state = "CLEAN",
+				   status = "SYNC"  
+		           WHERE timestamp = "`+datas.data[i].item_timestamp+`"
+		           AND state = "PREUP"
+				   AND status = "LOCAL"
+				   AND item_tmpId = "`+datas.data[i].item_tmpId+`"
+		           `);
+
+
+				//je met à jour mon IHM en recherchant si j'ai des id qui traines dans le DOM
+				let elementToUpdate = document.getElementById(datas.data[i].item_tmpId);
+				elementToUpdate.id = datas.data[i].item_id;
+
+
+
+		}
+
+
+
+
+
+
+
 
 
 //todo: jE PENSE QU4IL MANQUE UN foR 
