@@ -1047,9 +1047,22 @@ export default class NotesCollection {
 
 				//je met à jour mon IHM en recherchant si j'ai des id qui traines dans le DOM
 				let elementToUpdate = document.getElementById(datas.data[i].note_tmpId);
+				elementToUpdate.id = datas.data[i].note_id;
 
-				console.log("elementToUpdate");
-				console.log(elementToUpdate);
+
+//il faudra prevoir de faire les ressources avantd e faire ça sinon ça va coincer
+
+
+				this.webSQL.playQuery('cacheData',`UPDATE Notes
+				   SET note_tmpId = "",
+				   state = "CLEAN",
+				   status = "SYNC"  
+		           WHERE timestamp = "`+datas.data[i].note_timestamp+`"
+		           AND state = "INUPDATE"
+				   AND status = "SYNC"
+				   AND note_id = "`+datas.data[i].note_id+`"
+		           `);				
+
 
 
 
