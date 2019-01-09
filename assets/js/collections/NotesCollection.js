@@ -1046,7 +1046,7 @@ export default class NotesCollection {
 
 
 				//je met à jour mon IHM en recherchant si j'ai des id qui traines dans le DOM
-				let elementToUpdate = document.querySelectorAll('#'+datas.data[i].note_timestamp);
+				let elementToUpdate = body.querySelectorAll('#'+datas.data[i].note_timestamp);
 
 				console.log("elementToUpdate");
 				console.log(elementToUpdate);
