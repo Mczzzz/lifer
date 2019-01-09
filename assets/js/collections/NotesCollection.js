@@ -1025,7 +1025,7 @@ export default class NotesCollection {
 
 
 
-			}
+			
 
 
 			//mise a jour des tables cachedata
