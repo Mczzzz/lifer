@@ -1105,7 +1105,7 @@ export default class NotesCollection {
 		           `);	
 
 
-		}
+			}
 
 
 
@@ -1129,7 +1129,7 @@ export default class NotesCollection {
 				let elementToUpdate = document.getElementById(datas.data[i].item_tmpId);
 				elementToUpdate.id = datas.data[i].item_id;
 
-
+			}
 
 		}
 
