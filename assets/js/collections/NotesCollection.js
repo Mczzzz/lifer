@@ -1016,21 +1016,37 @@ export default class NotesCollection {
 									   "`+datas.data[i].item_value+`",         
 									   "`+datas.data[i].item_path+`",          
 									   "`+datas.data[i].item_unit+`",          
-									   "`+datas.data[i].scope +`"             
+									   "`+datas.data[i].scope+`"             
 			                          )
 
 			                 `);
 
-
-
-
-
-			
-
-
 			//mise a jour des tables cachedata
 			//mise a jour de l'ihm via les id html
+			//afin d'avoir le moins d'incoherence possible
 
+
+
+			//je reprends ma ligne et je met a jour cache Data
+			if(datas.data[i].scope == "note" && datas.data[i].note_tmpId){
+
+
+				//j'update la ma table
+
+				this.webSQL.playQuery('cacheData',`UPDATE Notes
+				   SET note_id = "`+datas.data[i].note_id+`"  
+		           WHERE timestamp = "`+datas.data[i].note_timestamp+`"
+		           AND state = "PREUP"
+				   AND status = "LOCAL"
+				   AND note_tmpId = "`+datas.data[i].note_tmpId+`"
+		           `);
+
+
+
+
+
+
+			}
 
 
 
