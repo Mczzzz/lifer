@@ -290,6 +290,51 @@ export default class NotesCollection {
 
 
 
+	let TblItemDown = {};
+		TblItemDown.name = "ItemsUpdata";
+		TblItemDown.db = "syncUP";
+		TblItemDown.create = `CREATE TABLE IF NOT EXISTS `+TblItemUp.name+` (timestamp,
+																		   status,
+																		   note_id             TEXT DEFAULT "",
+																		   note_tmpId          TEXT DEFAULT "",
+																		   note_title          TEXT DEFAULT "",
+																		   note_timestamp      TEXT DEFAULT "",
+																		   ressource_id        TEXT DEFAULT "",
+																		   ressource_tmpId     TEXT DEFAULT "",
+																		   ressource_title     TEXT DEFAULT "",
+																		   ressource_timestamp TEXT DEFAULT "",
+																		   item_id             TEXT DEFAULT "",
+																		   item_tmpId          TEXT DEFAULT "",
+																		   item_type           TEXT DEFAULT "",
+																		   item_text           TEXT DEFAULT "",
+																		   item_timestamp      TEXT DEFAULT "",
+																		   item_value          INTEGER DEFAULT 0,
+																		   item_path           TEXT DEFAULT "",
+																		   item_unit           INTEGER DEFAULT 0,
+																		   scope               TEXT DEFAULT ""
+																		   );
+																	   `;
+
+
+		
+		this.webSQL.playQuery(TblItemDown.db,TblItemDown.create);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		let TblItemDataUp = {};
 		TblItemDataUp.name = "ItemsDatas";
 		TblItemDataUp.db = "syncUP";
@@ -914,6 +959,82 @@ export default class NotesCollection {
 		let len = datas.data.length, i;
 
 		for (i = 0; i < len; i++) {
+
+
+			//je regarde quel type d'enregistrement c'est
+			if(datas.data[i].scope == "note"){
+
+				this.webSQL.playQuery('syncUP',`UPDATE Items
+				   SET status = "DONE"  
+		           WHERE timestamp = "`+datas.data[i].timestamp+`"
+		           AND scope = "`+datas.data[i].scope+`"
+				   AND status = "UPLOADING" 
+		           `);
+
+
+			}
+
+			//j'insere dans la nouvelle table les infos et après je verais ce que j'en fais
+
+
+  				this.webSQL.playQuery('syncUP',
+			                  `insert into ItemsUpdata (timestamp         ,
+													   status             ,
+													   note_id            ,
+													   note_tmpId         ,
+													   note_title         ,
+													   note_timestamp     ,
+													   ressource_id       ,
+													   ressource_tmpId    ,
+													   ressource_title    ,
+													   ressource_timestamp,
+													   item_id            ,
+													   item_tmpId         ,
+													   item_type          ,
+													   item_text          ,
+													   item_timestamp     ,
+													   item_value         ,
+													   item_path          ,
+													   item_unit          ,
+													   scope              
+			                                      )
+			                   values ("`+datas.data[i].timestamp+`",
+			                          "FRESH",
+			                           "`+datas.data[i].note_id+`",            
+									   "`+datas.data[i].note_tmpId+`",         
+									   "`+datas.data[i].note_title+`",         
+									   "`+datas.data[i].note_timestamp+`",     
+									   "`+datas.data[i].ressource_id+`",       
+									   "`+datas.data[i].ressource_tmpId+`",    
+									   "`+datas.data[i].ressource_title+`",    
+									   "`+datas.data[i].ressource_timestamp+`",
+									   "`+datas.data[i].item_id+`",            
+									   "`+datas.data[i].item_tmpId+`",         
+									   "`+datas.data[i].item_type+`",          
+									   "`+datas.data[i].item_text+`",          
+									   "`+datas.data[i].item_timestamp+`",     
+									   "`+datas.data[i].item_value+`",         
+									   "`+datas.data[i].item_path+`",          
+									   "`+datas.data[i].item_unit+`",          
+									   "`+datas.data[i].scope +`"             
+			                          )
+
+			                 `);
+
+
+
+
+
+			}
+
+
+			//mise a jour des tables cachedata
+			//mise a jour de l'ihm via les id html
+
+
+
+
+
 
 			//Je met à jour mon enregistrement 
 /*			this.webSQL.playQuery('syncUP',`UPDATE Items 
