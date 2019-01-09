@@ -293,7 +293,7 @@ export default class NotesCollection {
 	let TblItemDown = {};
 		TblItemDown.name = "ItemsUpdata";
 		TblItemDown.db = "syncUP";
-		TblItemDown.create = `CREATE TABLE IF NOT EXISTS `+TblItemUp.name+` (timestamp,
+		TblItemDown.create = `CREATE TABLE IF NOT EXISTS `+TblItemDown.name+` (timestamp,
 																		   status,
 																		   note_id             TEXT DEFAULT "",
 																		   note_tmpId          TEXT DEFAULT "",
