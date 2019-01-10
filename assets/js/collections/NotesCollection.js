@@ -366,18 +366,23 @@ export default class NotesCollection {
 	synchroToServer(){
 
 
+		let delay = 1;
+
 	//////PRE TRAITEMENT
 		//je regarde dans mon sync data ce qui a plus d'une seconde d'enregistrement et qui a un status LOCAL order by croissant timestamp (pour gérer les plus vieux en priorité)
-		let qry = "UPDATE Items SET state = 'RESERVEDUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-1 seconds') AND state = 'WAITING' ";
+		let qry = "UPDATE Items SET state = 'RESERVEDUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-"+delay+" seconds') AND state = 'WAITING' ";
 		this.webSQL.playQuery('cacheData',qry);
 
 		//j'update aussi le status de ressources et des notes
-		let qry2 = "UPDATE Ressources SET state = 'RESERVEDUP' WHERE ressource_id IN (SELECT ressource_id FROM Items WHERE state = 'RESERVEDUP')";
+		let qry2 = "UPDATE Ressources SET state = 'RESERVEDUP'  WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-"+delay+" seconds')  AND state = 'WAITING'";
 		this.webSQL.playQuery('cacheData',qry2);
 
 		//j'update aussi le status de ressources et des notes
-		let qry3 = "UPDATE Notes SET state = 'RESERVEDUP' WHERE note_id IN (SELECT note_id FROM Ressources WHERE state = 'RESERVEDUP')";
+		let qry3 = "UPDATE Notes SET state = 'RESERVEDUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-"+delay+" seconds')  AND state = 'WAITING'";
 		this.webSQL.playQuery('cacheData',qry3);
+
+
+
 
 
 		this._syncEntities();
@@ -1026,49 +1031,90 @@ export default class NotesCollection {
 			//afin d'avoir le moins d'incoherence possible
 
 
+			//on set deja tous les id définitf qu'on rencontre dans les requetes
+				if(datas.data[i].note_tmpId){
+
+							//deja je set on id si c'est vide
+					this.webSQL.playQuery('cacheData',`UPDATE Notes
+					   SET note_id = "`+datas.data[i].note_id+`"
+					   WHERE note_tmpId = "`+datas.data[i].note_tmpId+`"
+					   AND note_id != "`+datas.data[i].note_id+`"
+					   `);
+
+					//j'update les ressources qui y sont liées
+					this.webSQL.playQuery('cacheData',`UPDATE Ressources
+					   SET note_id = "`+datas.data[i].note_id+`",
+			           WHERE note_id = "`+datas.data[i].note_tmpId+`"
+			           `);	
+
+
+										//je met à jour mon IHM en recherchant si j'ai des id qui traines dans le DOM
+					let elementToUpdate = document.getElementById(datas.data[i].note_tmpId);
+					elementToUpdate.id = datas.data[i].note_id;
+
+				}
+
+
+
+				if(datas.data[i].ressource_tmpId){
+
+										//deja je set on id si c'est vide
+					this.webSQL.playQuery('cacheData',`UPDATE Ressources
+					   SET ressource_id = "`+datas.data[i].ressource_id+`"
+					   WHERE ressource_tmpId = "`+datas.data[i].ressource_tmpId+`"
+					   AND ressource_id != "`+datas.data[i].ressource_id+`"
+					   `);
+
+
+					//j'update les items qui y sont liées
+					this.webSQL.playQuery('cacheData',`UPDATE Items
+					   SET ressource_id = "`+datas.data[i].ressource_id+`",
+			           WHERE ressource_id = "`+datas.data[i].ressource_tmpId+`"
+			           `);	
+
+										//je met à jour mon IHM en recherchant si j'ai des id qui traines dans le DOM
+					let elementToUpdate = document.getElementById(datas.data[i].ressource_tmpId);
+					elementToUpdate.id = datas.data[i].ressource_id;
+
+
+				}
+
+
+
+
+				if(datas.data[i].item_tmpId){
+
+										//deja je set on id si c'est vide
+					this.webSQL.playQuery('cacheData',`UPDATE Items
+					   SET item_id = "`+datas.data[i].item_id+`"
+					   WHERE item_tmpId = "`+datas.data[i].item_tmpId+`"
+					   AND item_id != "`+datas.data[i].item_id+`"
+					   `);
+
+
+					//je met à jour mon IHM en recherchant si j'ai des id qui traines dans le DOM
+					let elementToUpdate = document.getElementById(datas.data[i].item_tmpId);
+					elementToUpdate.id = datas.data[i].item_id;
+
+				}
+
+
+
 
 			//je reprends ma ligne et je met a jour cache Data
-			if(datas.data[i].scope == "note" && datas.data[i].note_tmpId){
+			if(datas.data[i].scope == "note"){
 
 
-				//j'update la ma table
+				//si mon timestamp est <= timestamp requete alors je met à jour sinon je laisse
 
 				this.webSQL.playQuery('cacheData',`UPDATE Notes
-				   SET note_id = "`+datas.data[i].note_id+`",
-				   state = "CLEAN",
+				   SET state = "CLEAN",
 				   status = "SYNC"  
-		           WHERE timestamp = "`+datas.data[i].note_timestamp+`"
+		           WHERE timestamp <= "`+datas.data[i].note_timestamp+`"
 		           AND state = "PREUP"
 				   AND status = "LOCAL"
-				   AND note_tmpId = "`+datas.data[i].note_tmpId+`"
-		           `);
-
-
-
-				//je met à jour mon IHM en recherchant si j'ai des id qui traines dans le DOM
-				let elementToUpdate = document.getElementById(datas.data[i].note_tmpId);
-				elementToUpdate.id = datas.data[i].note_id;
-
-
-//il faudra prevoir de faire les ressources avantd e faire ça sinon ça va coincer
-
-				this.webSQL.playQuery('cacheData',`UPDATE Ressources
-				   SET note_id = "`+datas.data[i].note_id+`",
-		           WHERE note_id = "`+datas.data[i].note_tmpId+`"
-		           `);	
-
-/*
-
-				this.webSQL.playQuery('cacheData',`UPDATE Notes
-				   SET note_tmpId = "",
-				   state = "CLEAN",
-				   status = "SYNC"  
-		           WHERE timestamp = "`+datas.data[i].note_timestamp+`"
-		           AND state = "INUPDATE"
-				   AND status = "SYNC"
 				   AND note_id = "`+datas.data[i].note_id+`"
-		           `);				
-*/
+		           `);
 
 
 
@@ -1076,33 +1122,20 @@ export default class NotesCollection {
 			}
 
 
-			if(datas.data[i].scope == "ressource" && datas.data[i].ressource_tmpId){
 
+			if(datas.data[i].scope == "ressource"){
 
-				//j'update la ma table
 
 				this.webSQL.playQuery('cacheData',`UPDATE Ressources
-				   SET ressource_id = "`+datas.data[i].ressource_id+`",
-				   state = "CLEAN",
+				   SET state = "CLEAN",
 				   status = "SYNC"  
-		           WHERE timestamp = "`+datas.data[i].ressource_timestamp+`"
+		           WHERE timestamp <= "`+datas.data[i].ressource_timestamp+`"
 		           AND state = "PREUP"
 				   AND status = "LOCAL"
-				   AND ressource_tmpId = "`+datas.data[i].ressource_tmpId+`"
+				   AND ressource_id = "`+datas.data[i].ressource_id+`"
 		           `);
 
 
-
-				//je met à jour mon IHM en recherchant si j'ai des id qui traines dans le DOM
-				let elementToUpdate = document.getElementById(datas.data[i].ressource_tmpId);
-				elementToUpdate.id = datas.data[i].ressource_id;
-
-
-
-				this.webSQL.playQuery('cacheData',`UPDATE Items
-				   SET ressource_id = "`+datas.data[i].ressource_id+`",
-		           WHERE ressource_id = "`+datas.data[i].ressource_tmpId+`"
-		           `);	
 
 
 			}
@@ -1115,19 +1148,15 @@ export default class NotesCollection {
 				//j'update la ma table
 
 				this.webSQL.playQuery('cacheData',`UPDATE Items
-				   SET item_id = "`+datas.data[i].item_id+`",
-				   state = "CLEAN",
+				   SET state = "CLEAN",
 				   status = "SYNC"  
-		           WHERE timestamp = "`+datas.data[i].item_timestamp+`"
+		           WHERE timestamp <= "`+datas.data[i].item_timestamp+`"
 		           AND state = "PREUP"
 				   AND status = "LOCAL"
-				   AND item_tmpId = "`+datas.data[i].item_tmpId+`"
+				   AND item_id = "`+datas.data[i].item_id+`"
 		           `);
 
 
-				//je met à jour mon IHM en recherchant si j'ai des id qui traines dans le DOM
-				let elementToUpdate = document.getElementById(datas.data[i].item_tmpId);
-				elementToUpdate.id = datas.data[i].item_id;
 
 			}
 
