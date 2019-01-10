@@ -76,12 +76,8 @@ export default class NotesCollection {
 		console.log('in store collection');
 		console.log(data);
 
-		let note_id = "";
 
-
-		if(data.NoteId.indexOf("tmp-") != 0 ){
-
-			note_id = data.NoteId;
+		if(data.NoteId.indexOf("tmp-") == 0 ){
 
 			this.webSQL.playQuery('cacheData',
 			                  `insert into Notes ( timestamp,
@@ -92,7 +88,7 @@ export default class NotesCollection {
 			                                      )
 			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "LOCAL",
-			                          "`+note_id+`",
+			                          "`+data.NoteId+`",
 			                          "`+data.NoteTitle+`",
 			                          "`+data.NoteId+`"
 			                          )
@@ -126,12 +122,8 @@ export default class NotesCollection {
 
 		if(data.RessourceId){
 
-			let ressource_id = "";
 
-			if(data.RessourceId.indexOf("tmp-") != 0 ){
-
-				ressource_id = data.RessourceId;
-
+			if(data.RessourceId.indexOf("tmp-") == 0 ){
 
 				this.webSQL.playQuery('cacheData',
 			                  `insert into Ressources ( timestamp,
@@ -144,7 +136,7 @@ export default class NotesCollection {
 			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "LOCAL",
 			                          "`+data.NoteId+`",
-			                          "`+ressource_id+`",
+			                          "`+data.RessourceId+`",
 			                          "`+data.RessourceId+`",
 			                          "`+data.RessourceTitle+`"
 			                          )
@@ -192,11 +184,7 @@ export default class NotesCollection {
 			data.path = (data.path)? data.path : "";
 			data.unit = (data.unit)? data.unit : 0;
 
-			let item_id = "";
-
-			if(data.id.indexOf("tmp-") != 0 ){
-
-				item_id = data.id;
+			if(data.id.indexOf("tmp-") == 0 ){
 
 
 				this.webSQL.playQuery('cacheData',
@@ -214,7 +202,7 @@ export default class NotesCollection {
 			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "LOCAL",
 			                          "`+data.RessourceId+`",
-			                          "`+item_id+`",
+			                          "`+data.id+`",
 			                          "`+data.id+`",
 			                          "`+data.type+`",
 			                          "`+data.text+`",
