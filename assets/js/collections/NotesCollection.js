@@ -1043,7 +1043,7 @@ export default class NotesCollection {
 
 					//j'update les ressources qui y sont liées
 					this.webSQL.playQuery('cacheData',`UPDATE Ressources
-					   SET note_id = "`+datas.data[i].note_id+`",
+					   SET note_id = "`+datas.data[i].note_id+`"
 			           WHERE note_id = "`+datas.data[i].note_tmpId+`"
 			           `);	
 
@@ -1068,7 +1068,7 @@ export default class NotesCollection {
 
 					//j'update les items qui y sont liées
 					this.webSQL.playQuery('cacheData',`UPDATE Items
-					   SET ressource_id = "`+datas.data[i].ressource_id+`",
+					   SET ressource_id = "`+datas.data[i].ressource_id+`"
 			           WHERE ressource_id = "`+datas.data[i].ressource_tmpId+`"
 			           `);	
 
