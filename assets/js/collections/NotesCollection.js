@@ -79,9 +79,11 @@ export default class NotesCollection {
 		let note_id = "";
 
 
-		if(data.NoteId.indexOf("tmp-") != 0 ) note_id = data.NoteId;
+		if(data.NoteId.indexOf("tmp-") != 0 ){
 
-		this.webSQL.playQuery('cacheData',
+			note_id = data.NoteId;
+
+			this.webSQL.playQuery('cacheData',
 			                  `insert into Notes ( timestamp,
 			                                       status,
 			                                       note_id,
@@ -97,15 +99,41 @@ export default class NotesCollection {
 
 			                 `);
 
+
+
+		}else{
+
+
+			this.webSQL.playQuery('cacheData',
+				                  `insert into Notes ( timestamp,
+				                                       status,
+				                                       note_id,
+													   note_title
+				                                      )
+				                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
+				                          "LOCAL",
+				                          "`+data.NoteId+`",
+				                          "`+data.NoteTitle+`"
+				                          )
+
+				                 `);
+
+
+
+		} 
+
+
+
 		if(data.RessourceId){
 
 			let ressource_id = "";
 
-			if(data.RessourceId.indexOf("tmp-") != 0 ) ressource_id = data.RessourceId;
+			if(data.RessourceId.indexOf("tmp-") != 0 ){
 
-			console.log("in if data ressourcesId");
+				ressource_id = data.RessourceId;
 
-					this.webSQL.playQuery('cacheData',
+
+				this.webSQL.playQuery('cacheData',
 			                  `insert into Ressources ( timestamp,
 			                                       status,
 			                                       note_id,
@@ -124,6 +152,33 @@ export default class NotesCollection {
 			                 `);
 
 
+
+			}else{
+
+
+				this.webSQL.playQuery('cacheData',
+			                  `insert into Ressources ( timestamp,
+			                                       status,
+			                                       note_id,
+												   ressource_id,
+												   ressource_title
+			                                      )
+			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
+			                          "LOCAL",
+			                          "`+data.NoteId+`",
+			                          "`+data.RessourceId+`",
+			                          "`+data.RessourceTitle+`"
+			                          )
+
+			                 `);
+
+
+
+
+
+
+			}
+
 		}
 
 
@@ -139,38 +194,77 @@ export default class NotesCollection {
 
 			let item_id = "";
 
-			if(data.id.indexOf("tmp-") != 0 ) item_id = data.id;
+			if(data.id.indexOf("tmp-") != 0 ){
+
+				item_id = data.id;
 
 
-			this.webSQL.playQuery('cacheData',
-				                  `insert into Items ( timestamp,
-													   status,
-													   ressource_id,
-													   item_id,
-													   item_tmpId,
-													   item_type,
-													   item_text,
-													   item_value,
-													   item_path,
-													   item_unit
-				                                      )
-				                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
-				                          "LOCAL",
-				                          "`+data.RessourceId+`",
-				                          "`+item_id+`",
-				                          "`+data.id+`",
-				                          "`+data.type+`",
-				                          "`+data.text+`",
-				                          "`+data.value+`",
-				                          "`+data.path+`",
-				                          "`+data.unit+`"
-				                          )
+				this.webSQL.playQuery('cacheData',
+			                  `insert into Items ( timestamp,
+												   status,
+												   ressource_id,
+												   item_id,
+												   item_tmpId,
+												   item_type,
+												   item_text,
+												   item_value,
+												   item_path,
+												   item_unit
+			                                      )
+			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
+			                          "LOCAL",
+			                          "`+data.RessourceId+`",
+			                          "`+item_id+`",
+			                          "`+data.id+`",
+			                          "`+data.type+`",
+			                          "`+data.text+`",
+			                          "`+data.value+`",
+			                          "`+data.path+`",
+			                          "`+data.unit+`"
+			                          )
 
-				                 `);
+			                 `);
+
+
+
+			}else{
+
+
+				this.webSQL.playQuery('cacheData',
+			                  `insert into Items ( timestamp,
+												   status,
+												   ressource_id,
+												   item_id,
+												   item_type,
+												   item_text,
+												   item_value,
+												   item_path,
+												   item_unit
+			                                      )
+			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
+			                          "LOCAL",
+			                          "`+data.RessourceId+`",
+			                          "`+data.id+`",
+			                          "`+data.type+`",
+			                          "`+data.text+`",
+			                          "`+data.value+`",
+			                          "`+data.path+`",
+			                          "`+data.unit+`"
+			                          )
+
+			                 `);
+
 
 
 
 			}
+
+
+		
+
+
+
+		}
 
 
 		
