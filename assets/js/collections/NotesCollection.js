@@ -1218,13 +1218,22 @@ export default class NotesCollection {
 		           `);
 
 
+				this.webSQL.playQuery('cacheData',`UPDATE Notes
+				   SET state = "CLEAN",
+				   status = "SYNC"  
+		           WHERE timestamp <= "`+datas.data[i].note_timestamp+`"
+		           AND state = "PREUP"
+				   AND status = "LOCAL"
+				   AND note_id = "`+datas.data[i].note_id+`"
+		           `);
+
 
 
 			}
 
 
 
-			if(datas.data[i].scope == "item" && datas.data[i].item_tmpId){
+			if(datas.data[i].scope == "item"){
 
 
 				//j'update la ma table
@@ -1237,6 +1246,27 @@ export default class NotesCollection {
 				   AND status = "LOCAL"
 				   AND item_id = "`+datas.data[i].item_id+`"
 		           `);
+
+
+				this.webSQL.playQuery('cacheData',`UPDATE Ressources
+				   SET state = "CLEAN",
+				   status = "SYNC"  
+		           WHERE timestamp <= "`+datas.data[i].ressource_timestamp+`"
+		           AND state = "PREUP"
+				   AND status = "LOCAL"
+				   AND ressource_id = "`+datas.data[i].ressource_id+`"
+		           `);
+
+
+				this.webSQL.playQuery('cacheData',`UPDATE Notes
+				   SET state = "CLEAN",
+				   status = "SYNC"  
+		           WHERE timestamp <= "`+datas.data[i].note_timestamp+`"
+		           AND state = "PREUP"
+				   AND status = "LOCAL"
+				   AND note_id = "`+datas.data[i].note_id+`"
+		           `);
+
 
 
 
