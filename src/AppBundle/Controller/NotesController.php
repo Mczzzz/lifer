@@ -667,7 +667,7 @@ class NotesController extends Controller
             $RAW_QUERY = 'SELECT *
                           FROM Resources
                           LEFT JOIN Notes ON (Resources.note = Notes.id)
-                          WHERE id NOT IN (SELECT resource FROM Items where 1)
+                          WHERE Resources.id NOT IN (SELECT resource FROM Items where 1)
                           ;';
 
             $statement = $this->em->getConnection()->prepare($RAW_QUERY);
