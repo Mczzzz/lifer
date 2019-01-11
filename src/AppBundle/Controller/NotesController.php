@@ -740,29 +740,6 @@ class NotesController extends Controller
             }
 
 
-/*            foreach($resultItems as $ItemsFromBase){
-
-                $Itemresponse->note_id    = $StoreResult["Note"]->getId();
-                $Itemresponse->note_tmpId = $NoteElement->note_id;
-                $Itemresponse->note_timestamp = $NoteElement->note_timestamp;
-
-                $Itemresponse->ressource_id    = $StoreResult["Resource"]->getId();
-                $Itemresponse->ressource_tmpId = $NoteElement->ressource_id;
-                $Itemresponse->ressource_timestamp = $NoteElement->ressource_timestamp;
-                $Itemresponse->scope = "ressource";
-
-                $Itemresponse->item_id = $StoreResult["Item"]->getId();
-                $Itemresponse->item_tmpId = $NoteElement->item_id;
-                $Itemresponse->item_timestamp = $NoteElement->item_timestamp;
-                $Itemresponse->type = $NoteElement->item_type;
-                $Itemresponse->item_path = $NoteElement->item_path;
-                $Itemresponse->call = "push";
-                $Itemresponse->scope = "item";
-
-
-            }*/
-
-
 
         //mise en forme a finir avant de renvoyer
 

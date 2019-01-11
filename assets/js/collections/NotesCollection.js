@@ -569,6 +569,8 @@ export default class NotesCollection {
 		  	}else  if(datas.data[i].scope == 'note'){
 
 
+		  		console.log("IN SCOPE NOTE");
+
 		  		this.webSQL.playQuery('cacheData',
 			                  `insert into Notes ( timestamp,
 			                                       status,
