@@ -682,7 +682,10 @@ class NotesController extends Controller
             $resultItems = $statement->fetchAll();
 
             foreach($resultItems as $eachItem){
+                var_dump($eachItem);
               $eachItem->scope = "item";
+              var_dump($eachItem);
+              die();
               array_push($finalArray,$eachItem);
             }
 
