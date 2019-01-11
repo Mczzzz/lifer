@@ -682,10 +682,7 @@ class NotesController extends Controller
             $resultItems = $statement->fetchAll();
 
             foreach($resultItems as $eachItem){
-                var_dump($eachItem);
               $eachItem['scope'] = "item";
-              var_dump($eachItem);
-              die();
               array_push($finalArray,$eachItem);
             }
 
@@ -714,7 +711,7 @@ class NotesController extends Controller
 
             foreach($resultResources as $eachResource){
             
-              $eachResource->scope = "ressource";
+              $eachResource['scope'] = "ressource";
               array_push($finalArray,$eachResource);
             
             }
@@ -737,7 +734,7 @@ class NotesController extends Controller
 
             foreach($resultNotes as $eachNote){
             
-              $eachNote->scope = "note";
+              $eachNote['scope'] = "note";
               array_push($finalArray,$eachNote);
             
             }
