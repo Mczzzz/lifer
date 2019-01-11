@@ -646,6 +646,8 @@ class NotesController extends Controller
         // j'enregistre en base ma note
         $this->em = $this->getDoctrine()->getManager();
 
+        $finalArray = array();
+
 
         if($datas->scope == 'all'){
 
@@ -679,6 +681,11 @@ class NotesController extends Controller
 
             $resultItems = $statement->fetchAll();
 
+            foreach($resultItems as $eachItem){
+              $eachItem->scope = "item";
+              array_push($finalArray,$eachItem);
+            }
+
 
 
 
@@ -702,6 +709,13 @@ class NotesController extends Controller
 
             $resultResources = $statement->fetchAll();
 
+            foreach($resultResources as $eachResource){
+            
+              $eachResource->scope = "ressource";
+              array_push($finalArray,$eachResource);
+            
+            }
+
 
 
 
@@ -718,9 +732,12 @@ class NotesController extends Controller
 
             $resultNotes = $statement->fetchAll();
 
-            $finalArray = [ $resultItems, $resultResources, $resultNotes];
+            foreach($resultNotes as $eachNote){
             
-            $Itemresponse = new \stdClass();
+              $eachNote->scope = "note";
+              array_push($finalArray,$eachNote);
+            
+            }
 
 
 /*            foreach($resultItems as $ItemsFromBase){
