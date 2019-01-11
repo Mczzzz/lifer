@@ -650,7 +650,7 @@ class NotesController extends Controller
         if($datas->scope == 'all'){
 
 
-        $RAW_QUERY = 'SELECT * FROM Notes where 1;';
+        $RAW_QUERY = 'SELECT * FROM Items where 1;';
 
 
         }else{
@@ -722,12 +722,6 @@ class NotesController extends Controller
 
 
             return new response(json_encode($res));
-
-
-
-
-        return new response(json_encode($res));
-
 
 
 
