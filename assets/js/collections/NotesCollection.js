@@ -572,7 +572,7 @@ export default class NotesCollection {
 			                                       note_id,
 												   note_title
 			                                      )
-			                   values (`+datas.data[i].note_timestamp+`,
+			                   values ("`+datas.data[i].note_timestamp+`",
 			                          "SYNC",
 			                          "CLEAN",
 			                          "`+datas.data[i].note_id+`",
