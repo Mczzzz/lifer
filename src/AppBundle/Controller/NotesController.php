@@ -669,7 +669,7 @@ class NotesController extends Controller
                           LEFT JOIN Notes ON (Resources.note = Notes.id)
                           LEFT JOIN ItemsTypes ON (Items.type = ItemsTypes.id)
                           WHERE Items.creator = "'. $this->user->getId().'"
-                          ;';
+                          ';
 
 
             $statement = $this->em->getConnection()->prepare($RAW_ITEMS);
@@ -690,7 +690,7 @@ class NotesController extends Controller
                               LEFT JOIN Notes ON (Resources.note = Notes.id)
                               WHERE Resources.id NOT IN ('.$RAW_ITEMS.')
                               AND Resources.creator = "'. $this->user->getId().'"
-                              ;';
+                              ';
 
 
             $statement = $this->em->getConnection()->prepare($RAW_RESSOURCES);
@@ -707,7 +707,7 @@ class NotesController extends Controller
                           FROM Notes
                           WHERE id NOT IN ('.$RAW_RESSOURCES.')
                           AND Notes.creator = "'. $this->user->getId().'"
-                          ;';
+                          ';
 
             $statement = $this->em->getConnection()->prepare($RAW_NOTES);
             $statement->execute();
