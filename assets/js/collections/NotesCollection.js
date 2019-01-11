@@ -548,13 +548,50 @@ export default class NotesCollection {
 		  for (i = 0; i < len; i++) {
 
 
-		  	console.log(datas.data[i]);
 
+		  	if(datas.data[i] == 'item'){
+
+
+
+
+
+		  	}else if(datas.data[i] == 'ressource'){
+
+
+
+
+
+
+		  	}else  if(datas.data[i] == 'note'){
+
+
+		  		this.webSQL.playQuery('cacheData',
+			                  `insert into Notes ( timestamp,
+			                                       status,
+			                                       state,
+			                                       note_id,
+												   note_title
+			                                      )
+			                   values (`+datas.data[i].note_timestamp+`,
+			                          "SYNC",
+			                          "CLEAN",
+			                          "`+datas.data[i].note_id+`",
+			                          "`+datas.data[i].note_title+`"
+			                          )
+
+			                 `);
+
+
+		  	}
+		  	
 
 
 
 
 		  }
+
+
+
 	}
 
 
