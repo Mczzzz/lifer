@@ -500,7 +500,7 @@ export default class NotesCollection {
 		// j'envoi en auserveru et attedns un retour positif
 
 		let qry4 = `SELECT * FROM Params
-		            WHERE name = last_synchro`;
+		            WHERE name = "last_synchro"`;
 		this.webSQL.playQuery('cacheData',qry4,this,'_syncOthers');
 
 
