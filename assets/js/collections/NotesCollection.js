@@ -104,6 +104,7 @@ export default class NotesCollection {
 				                  `UPDATE Notes 
 				                   SET timestamp = strftime('%Y-%m-%d %H:%M:%f', 'now'),
 				                   status = "LOCAL",
+				                   state = "WAITING",
 				                   note_title = "`+data.NoteTitle+`"
 				                   WHERE note_id = "`+data.NoteId+`"
 				                 `);
@@ -116,6 +117,8 @@ export default class NotesCollection {
 
 		if(data.RessourceId){
 
+			console.log("in store data ressources");
+			console.log
 
 			if(data.RessourceId.indexOf("tmp-") == 0 ){
 
@@ -146,6 +149,7 @@ export default class NotesCollection {
 			                  `UPDATE Ressources 
 			                   SET timestamp = strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                   status = "LOCAL",
+			                   state = "WAITING",
 			                   note_id = "`+data.NoteId+`",
 			                   ressource_title = "`+data.RessourceTitle+`"
 			                   WHERE ressource_id = "`+data.RessourceId+`"
@@ -171,6 +175,7 @@ export default class NotesCollection {
 
 			if(data.id.indexOf("tmp-") == 0 ){
 
+				console.log("j'insere la ressource car tmp");
 
 				this.webSQL.playQuery('cacheData',
 			                  `insert into Items ( timestamp,
@@ -202,11 +207,13 @@ export default class NotesCollection {
 
 			}else{
 
+				console.log("j'update la ressource");
 
 				this.webSQL.playQuery('cacheData',
 			                  `UPDATE Items 
 			                  SET timestamp = strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                  status = "LOCAL",
+			                  state = "WAITING",
 							  ressource_id = "`+data.RessourceId+`",
 							  item_type = "`+data.type+`",
 							  item_text = "`+data.text+`",
