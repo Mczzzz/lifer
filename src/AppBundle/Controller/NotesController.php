@@ -667,7 +667,7 @@ class NotesController extends Controller
                           FROM Items
                           LEFT JOIN Resources ON (Items.resource = Resources.id)
                           LEFT JOIN Notes ON (Resources.note = Notes.id)
-                          LEFT JOIN ItemsTypes ON (Items.type = ItemsType.id)
+                          LEFT JOIN ItemsTypes ON (Items.type = ItemsTypes.id)
                           WHERE Items.creator = '. $this->user->getId().'
                           ;';
 
