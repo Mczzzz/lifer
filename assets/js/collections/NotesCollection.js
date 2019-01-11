@@ -558,11 +558,83 @@ export default class NotesCollection {
 
 
 
+		  		console.log("ITEM IMPORT");
+
+
+
+				this.webSQL.playQuery('cacheData',
+			                  `insert into Notes ( timestamp,
+			                                       status,
+			                                       state,
+			                                       note_id,
+												   note_title
+			                                      )
+			                   values ("`+datas.data[i].note_timestamp+`",
+			                          "SYNC",
+			                          "CLEAN",
+			                          "`+datas.data[i].note_id+`",
+			                          "`+datas.data[i].note_title+`"
+			                          )
+
+			                 `);
+
+
+		  		this.webSQL.playQuery('cacheData',
+			                  `insert into Ressources ( timestamp,
+			                                       status,
+			                                       state,
+			                                       ressource_id,
+												   ressource_title
+			                                      )
+			                   values ("`+datas.data[i].ressource_timestamp+`",
+			                          "SYNC",
+			                          "CLEAN",
+			                          "`+datas.data[i].ressource_id+`",
+			                          "`+datas.data[i].ressource_title+`"
+			                          )
+
+			                 `);
+
+
+
+
+		  		this.webSQL.playQuery('cacheData',
+			                  `insert into Items ( timestamp,
+			                                       status,
+			                                       state,
+			                                       ressource_id,
+			                                       item_id,
+												   item_type,
+												   item_text,
+												   item_value,
+												   item_path,
+												   item_unit
+			                                      )
+			                   values ("`+datas.data[i].item_timestamp+`",
+			                          "SYNC",
+			                          "CLEAN",
+			                          "`+datas.data[i].ressource_id+`",
+			                          "`+datas.data[i].item_id+`",
+			                          "`+datas.data[i].item_type+`",
+			                          "`+datas.data[i].item_text+`",
+			                          "`+datas.data[i].item_value+`",
+			                          "`+datas.data[i].item_path+`",
+			                          "`+datas.data[i].item_unit+`"
+			                          )
+
+			                 `);
+
+
+
+
+
+
+
 
 
 		  	}else if(datas.data[i].scope == 'ressource'){
 
-
+		  		console.log("RESSOURCE IMPORT");
 
 			this.webSQL.playQuery('cacheData',
 			                  `insert into Notes ( timestamp,
@@ -608,6 +680,8 @@ export default class NotesCollection {
 
 		  	}else  if(datas.data[i].scope == 'note'){
 
+
+		  			  		console.log("NOTE IMPORT");
 
 		  		this.webSQL.playQuery('cacheData',
 			                  `insert into Notes ( timestamp,
