@@ -647,7 +647,7 @@ class NotesController extends Controller
         $this->em = $this->getDoctrine()->getManager();
 
 
-        if(datas->scope == 'all'){
+        if($datas->scope == 'all'){
 
 
         $RAW_QUERY = 'SELECT * FROM Notes where 1;';
