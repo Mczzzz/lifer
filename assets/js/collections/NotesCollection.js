@@ -308,7 +308,7 @@ export default class NotesCollection {
 																	   ressource_tmpId TEXT DEFAULT "",
 																	   ressource_title TEXT DEFAULT "",
 																	   state TEXT DEFAULT "WAITING",																   
-						    										   UNIQUE (ressource_tmpId) ON CONFLICT REPLACE
+						    										   UNIQUE (ressource_tmpId, ressource_id) ON CONFLICT REPLACE
 																	   );
 																	   `;
 
@@ -333,6 +333,7 @@ export default class NotesCollection {
 																	   item_unit INTEGER DEFAULT 0,
 																	   state TEXT DEFAULT "WAITING",
 						    UNIQUE ( item_id,
+						             item_tmpId,
                    			         item_type
                    			       )
                    			ON CONFLICT REPLACE
