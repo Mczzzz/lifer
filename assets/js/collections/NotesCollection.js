@@ -571,6 +571,10 @@ export default class NotesCollection {
 
 		  		console.log("IN SCOPE NOTE");
 
+
+
+
+
 		  		this.webSQL.playQuery('cacheData',
 			                  `insert into Notes ( timestamp,
 			                                       status,
@@ -587,7 +591,7 @@ export default class NotesCollection {
 
 			                 `);
 
-		  		return true;
+		  		
 		  	}
 		  	
 

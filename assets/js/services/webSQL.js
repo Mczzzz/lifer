@@ -38,9 +38,9 @@ export default class webSQL{
 	webSQLsucess(tx,results,query,callbackObj = false, callbackMethod = false){
 
 		//console.log("webSQLsuccess");
-/*		console.log(tx);
-		console.log(results);*/
-		//console.log(query);
+		console.log(tx);
+		console.log(results);
+		console.log(query);
 		if(callbackObj && callbackMethod){
 			callbackObj[callbackMethod](results);
 		}
