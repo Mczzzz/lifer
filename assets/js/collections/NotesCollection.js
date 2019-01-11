@@ -543,12 +543,12 @@ export default class NotesCollection {
 
 		console.log(datas);
 
-		let len = datas.length, i;
+		let len = datas.data.length, i;
 
 		  for (i = 0; i < len; i++) {
 
 
-		  	console.log(datas[i]);
+		  	console.log(datas.data[i]);
 
 
 
