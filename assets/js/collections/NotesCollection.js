@@ -515,7 +515,11 @@ export default class NotesCollection {
 
 			requestData.scope = "all";
 			//getallfrom server
-			
+			//je set une value
+		let qry = "INSERT INTO Params SET last_synchro = strftime('%Y-%m-%d %H:%M:%f', 'now') ";
+		this.webSQL.playQuery('cacheData',qry);
+
+
 
 		}else{
 
