@@ -1040,7 +1040,7 @@ export default class NotesCollection {
 
 
 			//je regarde quel type d'enregistrement c'est
-			if(datas.data[i].scope == "note"){
+
 
 				this.webSQL.playQuery('syncUP',`UPDATE Items
 				   SET status = "DONE"  
@@ -1050,7 +1050,10 @@ export default class NotesCollection {
 		           `);
 
 
-			}
+
+
+
+
 
 			//j'insere dans la nouvelle table les infos et après je verais ce que j'en fais
 
