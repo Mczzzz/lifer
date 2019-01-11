@@ -650,27 +650,29 @@ class NotesController extends Controller
         if($datas->scope == 'all'){
 
 
-            $RAW_ITEMS = 'SELECT Items.id            AS item_id,
-                                 ItemsTypes.name      AS item_type,
-                                 Items.unit          AS item_unit,
-                                 Items.text          AS item_text,
-                                 Items.value         AS item_value,
-                                 Items.path          AS item_path,
-                                 Items.updateApp     AS item_timestamp,
-                                 Resources.id        AS ressource_id,
-                                 Resources.title     AS ressource_title,
-                                 Resources.updateAPP AS ressource_timestamp,
-                                 Notes.id            AS note_id,
-                                 Notes.Name          AS note_title,
-                                 Notes.updateAPP     AS note_timestamp
+            $RAW_ITEMS_SELECT = 'SELECT Items.id            AS item_id,
+                                         ItemsTypes.name      AS item_type,
+                                         Items.unit          AS item_unit,
+                                         Items.text          AS item_text,
+                                         Items.value         AS item_value,
+                                         Items.path          AS item_path,
+                                         Items.updateApp     AS item_timestamp,
+                                         Resources.id        AS ressource_id,
+                                         Resources.title     AS ressource_title,
+                                         Resources.updateAPP AS ressource_timestamp,
+                                         Notes.id            AS note_id,
+                                         Notes.Name          AS note_title,
+                                         Notes.updateAPP     AS note_timestamp
 
-                          FROM Items
-                          LEFT JOIN Resources ON (Items.resource = Resources.id)
-                          LEFT JOIN Notes ON (Resources.note = Notes.id)
-                          LEFT JOIN ItemsTypes ON (Items.type = ItemsTypes.id)
-                          WHERE Items.creator = "'. $this->user->getId().'"
-                          ';
+                                  FROM Items
+                                  LEFT JOIN Resources ON (Items.resource = Resources.id)
+                                  LEFT JOIN Notes ON (Resources.note = Notes.id)
+                                  LEFT JOIN ItemsTypes ON (Items.type = ItemsTypes.id)
+                                  ';
 
+            $RAW_ITEMS_COND = 'WHERE Items.creator = "'. $this->user->getId().'"';
+
+            $RAW_ITEMS =  $RAW_ITEMS_SELECT.$RAW_ITEMS_COND;                  
 
             $statement = $this->em->getConnection()->prepare($RAW_ITEMS);
             $statement->execute();
@@ -680,7 +682,7 @@ class NotesController extends Controller
 
 
 
-            $RAW_RESSOURCES = 'SELECT Resources.id        AS ressource_id,
+            $RAW_RESSOURCES_SELECT = 'SELECT Resources.id        AS ressource_id,
                                      Resources.title     AS ressource_title,
                                      Resources.updateAPP AS ressource_timestamp,
                                      Notes.id            AS note_id,
@@ -688,10 +690,12 @@ class NotesController extends Controller
                                      Notes.updateAPP     AS note_timestamp
                               FROM Resources
                               LEFT JOIN Notes ON (Resources.note = Notes.id)
-                              WHERE Resources.id NOT IN ('.$RAW_ITEMS.')
-                              AND Resources.creator = "'. $this->user->getId().'"
                               ';
 
+            $RAW_RESSOURCES_COND = 'WHERE Resources.id NOT IN (SELECT resource FROM Items '.$RAW_ITEMS_COND.')
+                                    AND Resources.creator = "'. $this->user->getId().'"';
+
+            $RAW_RESSOURCES = $RAW_RESSOURCES_SELECT.$RAW_RESSOURCES_COND;
 
             $statement = $this->em->getConnection()->prepare($RAW_RESSOURCES);
             $statement->execute();
@@ -705,7 +709,7 @@ class NotesController extends Controller
                                  Notes.Name          AS note_title,
                                  Notes.updateAPP     AS note_timestamp
                           FROM Notes
-                          WHERE id NOT IN ('.$RAW_RESSOURCES.')
+                          WHERE id NOT IN (SELECT note FROM Resources '.$RAW_RESSOURCES_COND.')
                           AND Notes.creator = "'. $this->user->getId().'"
                           ';
 
