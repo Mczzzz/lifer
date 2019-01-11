@@ -651,7 +651,7 @@ class NotesController extends Controller
 
 
             $RAW_ITEMS = 'SELECT Items.id            AS item_id,
-                                 ItemsType.name      AS item_type,
+                                 ItemsTypes.name      AS item_type,
                                  Items.unit          AS item_unit,
                                  Items.text          AS item_text,
                                  Items.value         AS item_value,
@@ -667,7 +667,7 @@ class NotesController extends Controller
                           FROM Items
                           LEFT JOIN Resources ON (Items.resource = Resources.id)
                           LEFT JOIN Notes ON (Resources.note = Notes.id)
-                          LEFT JOIN ItemsType ON (Items.type = ItemsType.id)
+                          LEFT JOIN ItemsTypes ON (Items.type = ItemsType.id)
                           WHERE Items.creator = '. $this->user->getId().'
                           ;';
 
