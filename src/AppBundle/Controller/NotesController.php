@@ -650,38 +650,66 @@ class NotesController extends Controller
         if($datas->scope == 'all'){
 
 
-            $RAW_QUERY = 'SELECT *
+            $RAW_ITEMS = 'SELECT Items.id            AS item_id,
+                                 ItemsType.name      AS item_type,
+                                 Items.unit          AS item_unit,
+                                 Items.text          AS item_text,
+                                 Items.value         AS item_value,
+                                 Items.path          AS item_path,
+                                 Items.updateApp     AS item_timestamp,
+                                 Resources.id        AS ressource_id,
+                                 Resources.title     AS ressource_title,
+                                 Resources.updateAPP AS ressource_timestamp,
+                                 Notes.id            AS note_id,
+                                 Notes.Name          AS note_title,
+                                 Notes.updateAPP     AS note_timestamp
+
                           FROM Items
                           LEFT JOIN Resources ON (Items.resource = Resources.id)
                           LEFT JOIN Notes ON (Resources.note = Notes.id)
-                          WHERE 1
+                          LEFT JOIN ItemsType ON (Items.type = ItemsType.id)
+                          WHERE Items.creator = '. $this->user->getId().'
                           ;';
 
 
-            $statement = $this->em->getConnection()->prepare($RAW_QUERY);
+            $statement = $this->em->getConnection()->prepare($RAW_ITEMS);
             $statement->execute();
 
             $resultItems = $statement->fetchAll();
 
 
-            $RAW_QUERY = 'SELECT *
-                          FROM Resources
-                          LEFT JOIN Notes ON (Resources.note = Notes.id)
-                          WHERE Resources.id NOT IN (SELECT resource FROM Items where 1)
-                          ;';
 
-            $statement = $this->em->getConnection()->prepare($RAW_QUERY);
+
+            $RAW_RESSOURCES = 'SELECT Resources.id        AS ressource_id,
+                                     Resources.title     AS ressource_title,
+                                     Resources.updateAPP AS ressource_timestamp,
+                                     Notes.id            AS note_id,
+                                     Notes.Name          AS note_title,
+                                     Notes.updateAPP     AS note_timestamp
+                              FROM Resources
+                              LEFT JOIN Notes ON (Resources.note = Notes.id)
+                              WHERE Resources.id NOT IN ('.$RAW_ITEMS.')
+                              AND Resources.creator = '. $this->user->getId().'
+                              ;';
+
+
+            $statement = $this->em->getConnection()->prepare($RAW_RESSOURCES);
             $statement->execute();
 
             $resultResources = $statement->fetchAll();
 
 
-            $RAW_QUERY = 'SELECT *
+
+
+            $RAW_NOTES = 'SELECT Notes.id            AS note_id,
+                                 Notes.Name          AS note_title,
+                                 Notes.updateAPP     AS note_timestamp
                           FROM Notes
-                          WHERE id NOT IN (SELECT note FROM Resources where 1)
+                          WHERE id NOT IN ('.$RAW_RESSOURCES.')
+                          AND Notes.creator = '. $this->user->getId().'
                           ;';
 
-            $statement = $this->em->getConnection()->prepare($RAW_QUERY);
+            $statement = $this->em->getConnection()->prepare($RAW_NOTES);
             $statement->execute();
 
             $resultNotes = $statement->fetchAll();
