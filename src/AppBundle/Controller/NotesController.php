@@ -662,7 +662,10 @@ class NotesController extends Controller
         $statement = $this->em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
 
-        $result = $statement->fetchAll();
+        $resultItems = $statement->fetchAll();
+
+
+
 
 
 
@@ -715,7 +718,7 @@ class NotesController extends Controller
 
             $res->error = "0";
             $res->msg   = "SUCCESS";
-            $res->data  = $result;
+            $res->data  = $resultItems;
 
 
             return new response(json_encode($res));
