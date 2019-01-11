@@ -549,20 +549,20 @@ export default class NotesCollection {
 
 
 
-		  	if(datas.data[i] == 'item'){
+		  	if(datas.data[i].scope == 'item'){
 
 
 
 
 
-		  	}else if(datas.data[i] == 'ressource'){
+		  	}else if(datas.data[i].scope == 'ressource'){
 
 
 
 
 
 
-		  	}else  if(datas.data[i] == 'note'){
+		  	}else  if(datas.data[i].scope == 'note'){
 
 
 		  		this.webSQL.playQuery('cacheData',
