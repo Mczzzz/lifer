@@ -683,7 +683,7 @@ class NotesController extends Controller
 
             foreach($resultItems as $eachItem){
                 var_dump($eachItem);
-              $eachItem->scope = "item";
+              $eachItem['scope'] = "item";
               var_dump($eachItem);
               die();
               array_push($finalArray,$eachItem);
