@@ -587,7 +587,7 @@ export default class NotesCollection {
 
 			                 `);
 
-
+		  		return true;
 		  	}
 		  	
 
