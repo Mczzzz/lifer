@@ -110,7 +110,7 @@ export default class NotesCollection {
 				                   state = "WAITING",
 				                   note_title = "`+data.NoteTitle+`"
 				                   WHERE note_id = "`+data.NoteId+`"
-				                   AND note_title = "`+data.NoteTitle+`"
+				                   AND note_title != "`+data.NoteTitle+`"
 				                 `);
 
 
