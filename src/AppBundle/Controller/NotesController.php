@@ -655,7 +655,7 @@ class NotesController extends Controller
 
         }else{
 
-        $RAW_QUERY = 'SELECT * FROM Notes where updateAPP > datas->scope;';
+        $RAW_QUERY = 'SELECT * FROM Items where updateAPP > "'.$datas->scope.'";';
 
         }
                 
