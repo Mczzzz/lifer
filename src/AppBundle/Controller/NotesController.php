@@ -655,7 +655,7 @@ class NotesController extends Controller
 
         }else{
 
-        $RAW_QUERY = 'SELECT * FROM Items where updateAPP > "'.$datas->scope.'";';
+     //   $RAW_QUERY = 'SELECT * FROM Items where updateAPP > "'.$datas->scope.'";';
 
         }
                 
@@ -665,10 +665,23 @@ class NotesController extends Controller
         $resultItems = $statement->fetchAll();
 
 
+        $RAW_QUERY = 'SELECT * FROM Resources where id NOT IN (SELECT * FROM Items where 1);';
+
+        $statement = $this->em->getConnection()->prepare($RAW_QUERY);
+        $statement->execute();
+
+        $resultResources = $statement->fetchAll();
 
 
+        $RAW_QUERY = 'SELECT * FROM Notes where id NOT IN (SELECT * FROM Resources where 1);';
+
+        $statement = $this->em->getConnection()->prepare($RAW_QUERY);
+        $statement->execute();
+
+        $resultNotes = $statement->fetchAll();
 
 
+        $finalArray = [ $resultItems, $resultResources, $resultNotes];
         //c'est la que ca commence
 
 /*        $arrayRes = array();
@@ -718,7 +731,7 @@ class NotesController extends Controller
 
             $res->error = "0";
             $res->msg   = "SUCCESS";
-            $res->data  = $resultItems;
+            $res->data  = $finalArray;
 
 
             return new response(json_encode($res));
