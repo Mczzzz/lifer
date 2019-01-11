@@ -150,7 +150,7 @@ export default class NotesCollection {
 
 			}else{
 
-			console.log("in store data ressources UPDATE);
+			console.log("in store data ressources UPDATE");
 
 				this.webSQL.playQuery('cacheData',
 			                  `UPDATE Ressources 
