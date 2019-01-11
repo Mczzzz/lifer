@@ -79,6 +79,8 @@ export default class NotesCollection {
 
 		if(data.NoteId.indexOf("tmp-") == 0 ){
 
+			console.log('note insert');
+
 			this.webSQL.playQuery('cacheData',
 			                  `insert into Notes ( timestamp,
 			                                       status,
@@ -99,6 +101,7 @@ export default class NotesCollection {
 
 		}else{
 
+			console.log('note UPDATE');
 
 			this.webSQL.playQuery('cacheData',
 				                  `UPDATE Notes 
@@ -117,10 +120,13 @@ export default class NotesCollection {
 
 		if(data.RessourceId){
 
-			console.log("in store data ressources");
-			console.log
+
+
 
 			if(data.RessourceId.indexOf("tmp-") == 0 ){
+
+
+			console.log("in store data ressources INSERT");
 
 				this.webSQL.playQuery('cacheData',
 			                  `insert into Ressources ( timestamp,
@@ -144,6 +150,7 @@ export default class NotesCollection {
 
 			}else{
 
+			console.log("in store data ressources UPDATE);
 
 				this.webSQL.playQuery('cacheData',
 			                  `UPDATE Ressources 
@@ -175,7 +182,7 @@ export default class NotesCollection {
 
 			if(data.id.indexOf("tmp-") == 0 ){
 
-				console.log("j'insere la ressource car tmp");
+				console.log("item INSERT");
 
 				this.webSQL.playQuery('cacheData',
 			                  `insert into Items ( timestamp,
@@ -207,7 +214,7 @@ export default class NotesCollection {
 
 			}else{
 
-				console.log("j'update la ressource");
+				console.log("item UPDATE");
 
 				this.webSQL.playQuery('cacheData',
 			                  `UPDATE Items 
