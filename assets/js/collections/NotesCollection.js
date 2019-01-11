@@ -332,8 +332,7 @@ export default class NotesCollection {
 																	   item_path TEXT DEFAULT "",
 																	   item_unit INTEGER DEFAULT 0,
 																	   state TEXT DEFAULT "WAITING",
-						    UNIQUE ( ressource_id,
-                   			         item_id,
+						    UNIQUE ( item_id,
                    			         item_type
                    			       )
                    			ON CONFLICT REPLACE
@@ -544,6 +543,18 @@ export default class NotesCollection {
 
 		console.log(datas);
 
+		let len = datas.length, i;
+
+		  for (i = 0; i < len; i++) {
+
+
+		  	console.log(datas[i]);
+
+
+
+
+
+		  }
 	}
 
 
