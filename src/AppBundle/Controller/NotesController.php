@@ -659,7 +659,7 @@ class NotesController extends Controller
 
         }
                 
-        $statement = $em->getConnection()->prepare($RAW_QUERY);
+        $statement = $this->em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
 
         $result = $statement->fetchAll();
