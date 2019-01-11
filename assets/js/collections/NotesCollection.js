@@ -524,7 +524,7 @@ export default class NotesCollection {
 
 		}
 
-		this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'getSync',this,"_updateSynchroRequest",requestData);
+		this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'get-sync',this,"_updateSynchroRequest",requestData);
 
 //a faire a la fin
 /*			let qry = `UPDATE Params
