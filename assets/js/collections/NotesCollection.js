@@ -288,7 +288,7 @@ export default class NotesCollection {
 																	   note_tmpId TEXT DEFAULT "",
 																	   note_title TEXT DEFAULT "",
 																	   state TEXT DEFAULT "WAITING",																   
-						    										   UNIQUE (note_tmpId) ON CONFLICT REPLACE
+						    										   UNIQUE (note_tmpId, note_id) ON CONFLICT REPLACE
 																	   );
 																	   `;
 
