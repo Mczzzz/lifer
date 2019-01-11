@@ -446,13 +446,13 @@ export default class NotesCollection {
 		let qry = "UPDATE Items SET state = 'RESERVEDUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-"+delay+" seconds') AND state = 'WAITING' ";
 		this.webSQL.playQuery('cacheData',qry);
 
-		//j'update aussi le status de ressources et des notes
+/*		//j'update aussi le status de ressources et des notes
 		let qry2 = "UPDATE Ressources SET state = 'RESERVEDUP'  WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-"+delay+" seconds')  AND state = 'WAITING'";
 		this.webSQL.playQuery('cacheData',qry2);
 
 		//j'update aussi le status de ressources et des notes
 		let qry3 = "UPDATE Notes SET state = 'RESERVEDUP' WHERE timestamp < strftime('%Y-%m-%d %H:%M:%f', 'now','-"+delay+" seconds')  AND state = 'WAITING'";
-		this.webSQL.playQuery('cacheData',qry3);
+		this.webSQL.playQuery('cacheData',qry3);*/
 
 
 
