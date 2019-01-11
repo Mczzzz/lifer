@@ -661,12 +661,14 @@ export default class NotesCollection {
 			                  `insert into Ressources ( timestamp,
 			                                       status,
 			                                       state,
+			                                       note_id,
 			                                       ressource_id,
 												   ressource_title
 			                                      )
 			                   values ("`+datas.data[i].ressource_timestamp+`",
 			                          "SYNC",
 			                          "CLEAN",
+			                          "`+datas.data[i].note_id+`",
 			                          "`+datas.data[i].ressource_id+`",
 			                          "`+datas.data[i].ressource_title+`"
 			                          )
