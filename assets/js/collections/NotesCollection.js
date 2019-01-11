@@ -262,6 +262,23 @@ export default class NotesCollection {
 	//localStorage
 
 //BASE DE CACHE USUEL
+
+		let TblParams = {};
+		TblParams.name = "Params";
+		TblParams.db = "cacheData";
+		TblParams.create = `CREATE TABLE IF NOT EXISTS `+TblParams.name+` (name,
+																	       value,																   
+						    										   UNIQUE (name) ON CONFLICT IGNORE
+																	   );
+																	   `;
+
+
+		this.webSQL.playQuery(TblParams.db,TblParams.create);
+
+
+
+
+
 		let TblNote = {};
 		TblNote.name = "Notes";
 		TblNote.db = "cacheData";
@@ -482,13 +499,55 @@ export default class NotesCollection {
 		this.webSQL.playQuery('syncUP',qry3,this,'_createRequestToServer');
 		// j'envoi en auserveru et attedns un retour positif
 
-		//si oui, je regarde dans syncdata si mon timestamp est le même dans ce cas la je flag SYNCHRO
-					//sinon je supprime seulement ma ligne dans syncup
-		//si non, je resset pour l'envoi suite à échec
+		let qry4 = `SELECT * FROM Params
+		            WHERE name = last_synchro`;
+		this.webSQL.playQuery('cacheData',qry4,this,'_syncOthers');
 
 
 
 	}
+
+
+	_syncOthers(datas){
+
+		let requestData = {};
+		//le regarde en base ce que j'ai et si je n'ai rien j'update et j'envoi la requête
+		if(datas.rows.length == 0){
+
+			requestData.scope = "all";
+			//getallfrom server
+			
+
+		}else{
+
+			requestData.scope = datas.rows.item(0).value;
+
+		}
+
+		this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'getSync',this,"_updateSynchroRequest",requestData);
+
+//a faire a la fin
+/*			let qry = `UPDATE Params
+			           SET name = "last_synchro",
+			           value = strftime('%Y-%m-%d %H:%M:%f', 'now')
+                        `;
+			this.webSQL.playQuery('cacheData',qry);*/
+
+
+
+
+
+	}
+
+
+	_updateSynchroRequest(datas){
+
+		console.log(datas);
+
+	}
+
+
+
 
 
 	_syncData(){
