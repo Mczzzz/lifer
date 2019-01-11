@@ -564,16 +564,49 @@ export default class NotesCollection {
 
 
 
+			this.webSQL.playQuery('cacheData',
+			                  `insert into Notes ( timestamp,
+			                                       status,
+			                                       state,
+			                                       note_id,
+												   note_title
+			                                      )
+			                   values ("`+datas.data[i].note_timestamp+`",
+			                          "SYNC",
+			                          "CLEAN",
+			                          "`+datas.data[i].note_id+`",
+			                          "`+datas.data[i].note_title+`"
+			                          )
+
+			                 `);
+
+
+
+
+
+
+		  		this.webSQL.playQuery('cacheData',
+			                  `insert into Ressources ( timestamp,
+			                                       status,
+			                                       state,
+			                                       note_id,
+												   note_title
+			                                      )
+			                   values ("`+datas.data[i].ressource_timestamp+`",
+			                          "SYNC",
+			                          "CLEAN",
+			                          "`+datas.data[i].ressource_id+`",
+			                          "`+datas.data[i].ressource_title+`"
+			                          )
+
+			                 `);
+
+
+
 
 
 
 		  	}else  if(datas.data[i].scope == 'note'){
-
-
-		  		console.log("IN SCOPE NOTE");
-
-
-
 
 
 		  		this.webSQL.playQuery('cacheData',
