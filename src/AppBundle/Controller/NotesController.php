@@ -668,7 +668,7 @@ class NotesController extends Controller
                           LEFT JOIN Resources ON (Items.resource = Resources.id)
                           LEFT JOIN Notes ON (Resources.note = Notes.id)
                           LEFT JOIN ItemsTypes ON (Items.type = ItemsTypes.id)
-                          WHERE Items.creator = '. $this->user->getId().'
+                          WHERE Items.creator = "'. $this->user->getId().'"
                           ;';
 
 
@@ -689,7 +689,7 @@ class NotesController extends Controller
                               FROM Resources
                               LEFT JOIN Notes ON (Resources.note = Notes.id)
                               WHERE Resources.id NOT IN ('.$RAW_ITEMS.')
-                              AND Resources.creator = '. $this->user->getId().'
+                              AND Resources.creator = "'. $this->user->getId().'"
                               ;';
 
 
@@ -706,7 +706,7 @@ class NotesController extends Controller
                                  Notes.updateAPP     AS note_timestamp
                           FROM Notes
                           WHERE id NOT IN ('.$RAW_RESSOURCES.')
-                          AND Notes.creator = '. $this->user->getId().'
+                          AND Notes.creator = "'. $this->user->getId().'"
                           ;';
 
             $statement = $this->em->getConnection()->prepare($RAW_NOTES);
