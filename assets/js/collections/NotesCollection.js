@@ -110,6 +110,7 @@ export default class NotesCollection {
 				                   state = "WAITING",
 				                   note_title = "`+data.NoteTitle+`"
 				                   WHERE note_id = "`+data.NoteId+`"
+				                   AND note_title = "`+data.NoteTitle+`"
 				                 `);
 
 
@@ -160,6 +161,7 @@ export default class NotesCollection {
 			                   note_id = "`+data.NoteId+`",
 			                   ressource_title = "`+data.RessourceTitle+`"
 			                   WHERE ressource_id = "`+data.RessourceId+`"
+			                   AND ressource_title != "`+data.RessourceTitle+`"
 
 			                 `);
 
