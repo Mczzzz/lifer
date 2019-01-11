@@ -665,7 +665,7 @@ class NotesController extends Controller
         $resultItems = $statement->fetchAll();
 
 
-        $RAW_QUERY = 'SELECT * FROM Resources where id NOT IN (SELECT * FROM Items where 1);';
+        $RAW_QUERY = 'SELECT * FROM Resources where id NOT IN (SELECT resource FROM Items where 1);';
 
         $statement = $this->em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
@@ -673,7 +673,7 @@ class NotesController extends Controller
         $resultResources = $statement->fetchAll();
 
 
-        $RAW_QUERY = 'SELECT * FROM Notes where id NOT IN (SELECT * FROM Resources where 1);';
+        $RAW_QUERY = 'SELECT * FROM Notes where id NOT IN (SELECT note FROM Resources where 1);';
 
         $statement = $this->em->getConnection()->prepare($RAW_QUERY);
         $statement->execute();
