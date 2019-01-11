@@ -101,17 +101,11 @@ export default class NotesCollection {
 
 
 			this.webSQL.playQuery('cacheData',
-				                  `insert into Notes ( timestamp,
-				                                       status,
-				                                       note_id,
-													   note_title
-				                                      )
-				                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
-				                          "LOCAL",
-				                          "`+data.NoteId+`",
-				                          "`+data.NoteTitle+`"
-				                          )
-
+				                  `UPDATE Notes 
+				                   SET timestamp = strftime('%Y-%m-%d %H:%M:%f', 'now'),
+				                   status = "LOCAL",
+				                   note_title = "`+data.NoteTitle+`"
+				                   WHERE note_id = "`+data.NoteId+`"
 				                 `);
 
 
@@ -149,27 +143,18 @@ export default class NotesCollection {
 
 
 				this.webSQL.playQuery('cacheData',
-			                  `insert into Ressources ( timestamp,
-			                                       status,
-			                                       note_id,
-												   ressource_id,
-												   ressource_title
-			                                      )
-			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
-			                          "LOCAL",
-			                          "`+data.NoteId+`",
-			                          "`+data.RessourceId+`",
-			                          "`+data.RessourceTitle+`"
-			                          )
+			                  `UPDATE Ressources 
+			                   SET timestamp = strftime('%Y-%m-%d %H:%M:%f', 'now'),
+			                   status = "LOCAL",
+			                   note_id = "`+data.NoteId+`",
+			                   ressource_title = "`+data.RessourceTitle+`"
+			                   WHERE ressource_id = "`+data.RessourceId+`"
 
 			                 `);
 
 
-
-
-
-
 			}
+
 
 		}
 
@@ -219,26 +204,16 @@ export default class NotesCollection {
 
 
 				this.webSQL.playQuery('cacheData',
-			                  `insert into Items ( timestamp,
-												   status,
-												   ressource_id,
-												   item_id,
-												   item_type,
-												   item_text,
-												   item_value,
-												   item_path,
-												   item_unit
-			                                      )
-			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
-			                          "LOCAL",
-			                          "`+data.RessourceId+`",
-			                          "`+data.id+`",
-			                          "`+data.type+`",
-			                          "`+data.text+`",
-			                          "`+data.value+`",
-			                          "`+data.path+`",
-			                          "`+data.unit+`"
-			                          )
+			                  `UPDATE Items 
+			                  SET timestamp = strftime('%Y-%m-%d %H:%M:%f', 'now'),
+			                  status = "LOCAL",
+							  ressource_id = "`+data.RessourceId+`",
+							  item_type = "`+data.type+`",
+							  item_text = "`+data.text+`",
+							  item_value = "`+data.value+`",
+							  item_path = "`+data.path+`",
+							  item_unit = "`+data.unit+`"  
+							  WHERE item_id = "`+data.id+`" 
 
 			                 `);
 
