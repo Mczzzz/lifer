@@ -23,7 +23,7 @@ class PictureController extends Controller
 {
 
     /**
-     * @Route("/pict/{file}", name="api_get_pict")
+     * @Route("/{file}", name="api_get_pict")
      * @Method("GET")
     */
 
