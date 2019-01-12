@@ -233,29 +233,13 @@ export default class NotesCollection {
 
 			                 `);
 
-
-
-
 			}
 
-
-		
-
-
-
 		}
-
-
-		
-
-
 
 	}
 
 
-
-//SELECT timestamp,status, note_id, ressource_title,item_id,item_type,item_text,item_value,item_path,item_unit,note_title FROM Notes
-//SELECT timestamp,status, note_id, note_title,ressource_id,ressource_title,item_id,item_type,item_text,item_value FROM Notes
 
 	_initLocalStorage(){
 
@@ -408,17 +392,6 @@ export default class NotesCollection {
 
 		
 		this.webSQL.playQuery(TblItemDown.db,TblItemDown.create);
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1494,6 +1467,39 @@ export default class NotesCollection {
 				   AND status = "LOCAL"
 				   AND note_id = "`+datas.data[i].note_id+`"
 		           `);
+
+
+
+				//si il y a une image à remonter
+				if(datas.data[i].item_type == 'image' && datas.data[i].item_path){
+
+
+						this.webSQL.playQuery('syncUP',
+			                  `insert into ItemsDatas ( timestamp,
+			                                       status,
+			                                       note_id,
+												   ressource_id,
+												   item_id,
+												   item_type,
+												   item_path
+			                                      )
+			                   values ("`+datas.data[i].item_timestamp+`",
+			                          "BEFOREUP",
+			                          "`+datas.data[i].note_id+`",
+			                          "`+datas.data[i].ressource_id+`",
+			                          "`+datas.data[i].item_id+`",
+			                          "PERSISTENT",
+			                          "`+datas.data[i].item_path+`"
+			                          )
+
+			                 `);
+
+
+
+
+
+				}
+
 
 
 
