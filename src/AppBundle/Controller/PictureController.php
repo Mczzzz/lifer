@@ -80,6 +80,9 @@ class PictureController extends Controller
         $manager = new ImageManager();
         $IMimage = $manager->make($completePath)->resize(300, 200);
 
+        var_dump($IMimage);
+        die();
+
     //    $headers = array('Content-Type'     => 'image/jpeg',
     //                     'Content-Disposition' => 'inline; filename="'.$file.'"');
 
