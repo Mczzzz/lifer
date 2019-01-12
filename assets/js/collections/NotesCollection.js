@@ -530,15 +530,6 @@ export default class NotesCollection {
 
 		this.SvcBackEndComm.ajaxSend('POST',this.serverStorage.apiPrefixe + 'get-sync',this,"_updateSynchroRequest",requestData);
 
-//a faire a la fin
-/*			let qry = `UPDATE Params
-			           SET name = "last_synchro",
-			           value = strftime('%Y-%m-%d %H:%M:%f', 'now')
-                        `;
-			this.webSQL.playQuery('cacheData',qry);*/
-
-
-
 
 
 	}
@@ -549,6 +540,14 @@ export default class NotesCollection {
 		console.log(datas);
 
 		let len = datas.data.length, i;
+
+//TODO: a revoir ca il peu y avoir des trous dans la raquete je pense
+		let qry = `UPDATE Params
+		           SET value = strftime('%Y-%m-%d %H:%M:%f', 'now')
+		           WHERE name = 'last_synchro'
+		           `;
+		this.webSQL.playQuery('cacheData',qry);
+
 
 		  for (i = 0; i < len; i++) {
 

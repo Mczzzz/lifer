@@ -847,57 +847,6 @@ class NotesController extends Controller
 
 
 
-
-
-
-
-        //c'est la que ca commence
-
-/*        $arrayRes = array();
-
-        foreach ($datas as $NoteElement) {
-
-        $StoreResult = $this->storeElement($NoteElement);
-
-
-            $Itemresponse = new \stdClass();
-
-             $Itemresponse->timestamp = $NoteElement->timestamp;
-
-            $Itemresponse->note_id    = $StoreResult["Note"]->getId();
-            $Itemresponse->note_tmpId = $NoteElement->note_id;
-            $Itemresponse->note_timestamp = $NoteElement->note_timestamp;
-            $Itemresponse->scope = "note";
-
-            if($NoteElement->ressource_id){
-
-
-                $Itemresponse->ressource_id    = $StoreResult["Resource"]->getId();
-                $Itemresponse->ressource_tmpId = $NoteElement->ressource_id;
-                $Itemresponse->ressource_timestamp = $NoteElement->ressource_timestamp;
-                $Itemresponse->scope = "ressource";
-
-
-                if($NoteElement->item_id){
-
-                    $Itemresponse->item_id = $StoreResult["Item"]->getId();
-                    $Itemresponse->item_tmpId = $NoteElement->item_id;
-                    $Itemresponse->item_timestamp = $NoteElement->item_timestamp;
-                    $Itemresponse->type = $NoteElement->item_type;
-                    $Itemresponse->item_path = $NoteElement->item_path;
-                    $Itemresponse->call = "push";
-                    $Itemresponse->scope = "item";
-
-                }
-
-
-            }
-
-            array_push($arrayRes,$Itemresponse);
-
-        }*/
-
-
             $res->error = "0";
             $res->msg   = "SUCCESS";
             $res->data  = $finalArray;
