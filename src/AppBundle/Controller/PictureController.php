@@ -78,7 +78,7 @@ class PictureController extends Controller
 
      
         $manager = new ImageManager();
-        $IMimage = $manager->make($completePath)->resize(500, 200);
+        $IMimage = $manager->make($completePath)->resize(300, 200)->orientate();
 
 
 
