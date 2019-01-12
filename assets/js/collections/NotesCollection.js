@@ -1469,6 +1469,8 @@ export default class NotesCollection {
 		           `);
 
 
+				console.log("before if for alimetatiopn image");
+				console.log(datas.data[i]);
 
 				//si il y a une image à remonter
 				if(datas.data[i].item_type == 'image' && datas.data[i].item_path){
