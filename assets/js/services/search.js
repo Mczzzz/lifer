@@ -8,6 +8,10 @@ class search {
 	}
 
 
+
+
+
+	//PUBLICS
 	addTarget(elMethode){
 
 		this.targets.push(elMethode);
@@ -18,7 +22,7 @@ class search {
 	addInput(el){
 
 		this.inputs.push(el);	
-		el.element.addEventListener("keyup", (e)=> this.match(e,el.element));
+		el.addEventListener("keyup", (e)=> this.match(e,el));
 
 	}
 
@@ -53,10 +57,10 @@ class search {
 
 	match(e,el){
 
+
 		for(let target of this.targets){
 
-
-			target.element[target.methode](el.value);
+			target.element[target.methode](el.innerHTML);
 
 		}
 

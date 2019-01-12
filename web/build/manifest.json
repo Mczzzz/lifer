@@ -1,3 +1,5 @@
 {
-  "build/app.js": "/build/app.js"
+  "build/app.js": "/build/app.js",
+  "build/ws.js": "/build/ws.js",
+  "build/ww.js": "/build/ww.js"
 }

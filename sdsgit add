@@ -1,0 +1,390 @@
+[33mcommit 2b0d07df49539f202aadaa3147b4683bca2d317b[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 13 17:11:58 2018 +0200
+
+    MAJ Header note Title
+
+[33mcommit af2b63d3b33f3b61fc992872e99d967aef1da526[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 13 14:12:08 2018 +0200
+
+    Mise a jour gitlab
+
+[33mcommit c55325fc2191280d74a3acfb9cea621a90de0790[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 13 14:02:18 2018 +0200
+
+    Mise a jour gitlab
+
+[33mcommit eba455f1fcc6dae7df57a310d8abae1389375cc3[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 13 13:15:35 2018 +0200
+
+    Mise a jour gitlab
+
+[33mcommit 22b0f094f373bbac0f5e96f4c3dc4ee2f6bd6d3e[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 13 13:06:43 2018 +0200
+
+    intégration gitlab
+
+[33mcommit 47e5da0cbbc6d2989e21b7f5ae769a6524bd83c6[m
+Merge: d25ed08 885d12d
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 13 12:19:59 2018 +0200
+
+    ajustement du titre de la note cote IHM
+
+[33mcommit d25ed082c7a73b9a920ebe30ac23de869c5dcd67[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 13 12:17:39 2018 +0200
+
+    ajustement du titre de la note cote IHM
+
+[33mcommit 885d12dd6571ce18e419c674408a663357f97b88[m
+Author: Guillaume Bailly <g.bailly@immanens.com>
+Date:   Wed Sep 12 20:55:00 2018 +0200
+
+    Mise à jour size note
+
+[33mcommit bb57c80706dce51a9c08a8b55a8f788aac3336fb[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 12 18:00:51 2018 +0200
+
+    rajout de la granularité items en plus de resource
+
+[33mcommit 043deba104e4186a9cc4bfe17f8a30aeb3c20d2e[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 12 17:59:41 2018 +0200
+
+    rajout de la granularité items en plus de resource
+
+[33mcommit 1e9a3bec75bdeba4bc0ba155581bf7ef81c0f683[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 12 16:54:46 2018 +0200
+
+    rajout de la granularité items en plus de resource
+
+[33mcommit 0f24effb1597f4b9e04c996960c6e46e774f4c6f[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 12 14:04:41 2018 +0200
+
+    rajout de la granularité items en plus de resource
+
+[33mcommit 5dea39b6321b05b3d04f0a8fa2d5009016193c13[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 12 14:03:48 2018 +0200
+
+    rajout de la granularité items en plus de resource
+
+[33mcommit 42d33f7f3800180bd5e5dfe73675c339e467b688[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 12 14:01:39 2018 +0200
+
+    rajout de la granularité items en plus de resource
+
+[33mcommit d5fb404e4da8608b10239ebe264f1cc13c9ee45d[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 12 13:58:07 2018 +0200
+
+    rajout de la granularité items en plus de resource
+
+[33mcommit e33fe7e81508a82944a8a0bcc29669ce1f6f8621[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Sun Sep 9 15:43:18 2018 +0200
+
+    ajout de la classe number
+
+[33mcommit 021d86b12a587d982c77fd269b012a26a1bc8b4e[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Fri Sep 7 12:53:04 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 4b804531a703c0e369688b5cedc62489017d2866[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Fri Sep 7 12:48:03 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 76923eed669a1eeaa22739d09a4356707910805d[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Fri Sep 7 12:47:14 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 15ffda6c6662c1496482fba92e171f44def84a89[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Fri Sep 7 12:45:54 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit a891cc950bc359ec92ef7181c4b8beaa38986c3a[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Fri Sep 7 12:44:02 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 2fc55070be6e128aea9283af13b5cff5e6d09ce4[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Fri Sep 7 12:37:22 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 9913c32b4f8c4f051abfeac453e0875385afbce6[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Fri Sep 7 12:35:51 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 2c4595e2f8257ab59f053861e5e152663c6e3a8b[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Fri Sep 7 12:24:44 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 1e677459309e837d4a267e5131661f58dea95c3a[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Fri Sep 7 10:10:47 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit ccc9b4c4e8ac8acb83bbc46831097e7dbdde0535[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Fri Sep 7 09:59:27 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 65ac28c81f4d8a8055a8b5560bcc074867986544[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Fri Sep 7 09:57:50 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 83c631191ad3f92656719978d24ecb036423f8e5[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Fri Sep 7 09:55:48 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit ad4bac644adc0f94e3f61e0d482688dc344b0bd8[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Fri Sep 7 09:54:08 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 76c8fdda79608e3454d4c2c9a08baf4f17ac5306[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 16:57:23 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit ca244c7592dc1584371548b140404a1ff060b2a5[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 16:56:34 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 76965bc43a53770744661bd52af51b65a4328fef[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 16:50:19 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 1b2bfdaaea7e375ae094a366ee1c16d4acd90929[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 16:47:20 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 697e3caf1f5414751c3ca8cba0a33263f8c30112[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 16:45:22 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit b5227e3a003b2c98c218f96d1bc566d40416203e[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 16:36:20 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 5b8757db43e66f6668d96f0b87fcaafd4a975a5c[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 16:34:01 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 75e6abe7455a61d032af739df19cf514e45d3748[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 14:10:38 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 6a9c4d285dc8ef2c677888ffe208246c2db81b04[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 14:07:53 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 41b79f6e71854f0f732220a5f9ac8381d0e2d20e[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 13:47:24 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 92d5c0c966ac246a6bb2d88f69e8466f97937174[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 13:08:56 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 824bfb954b1e7bfcf917d46416b87cf519675d40[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 12:51:38 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit e6664e8dae8f4ca8c8d2256c7735ca4e61b0cfe9[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 12:44:25 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit f4bf34d36c11309191320598908eaf2f5dfe2eae[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 12:37:37 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit c9e7bcab2e3e9239f4eea686b86ae0287a2e7273[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 12:24:03 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 76c2bd8c5355489011f746850da6ab7707ff69af[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 12:22:45 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 5408db8b9d58fc80913f11aa8879e74e9f95b7f7[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 12:09:47 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 13c481e69107d47575ba1b57b336e51bdf5a5ab5[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 09:46:44 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 7c30c46f9d14833469503196a7d64fae3da8dffc[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Thu Sep 6 09:40:54 2018 +0200
+
+    Test de les getBoundingClientrect
+
+[33mcommit 93dfa3267146ff017736bb45b5223bf86fef6af0[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 5 14:13:20 2018 +0200
+
+    roll back
+
+[33mcommit a77de936c5f9a8c39e65e3fa91ebc535a54d7cf3[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 5 14:10:32 2018 +0200
+
+    roll back
+
+[33mcommit b0edd146211427639cd196e5a8e06c0ce0088d88[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 5 14:06:33 2018 +0200
+
+    roll back
+
+[33mcommit 65dbd034f57d341e49e1bec5ef9a0035936514a3[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 5 14:04:08 2018 +0200
+
+    roll back
+
+[33mcommit c4187f66239c963476c1d05a6531de264549939f[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 5 13:59:55 2018 +0200
+
+    roll back
+
+[33mcommit 8dfe6b680a0dfead2ba96b7b095142b537507b3f[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 5 13:55:34 2018 +0200
+
+    roll back
+
+[33mcommit 50e1f965355f972afb48bf8fdc1bc234976244be[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 5 13:36:37 2018 +0200
+
+    roll back
+
+[33mcommit 45a4ba6a7fde957c85e7a658957a2bb6f1245b41[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 5 12:03:48 2018 +0200
+
+    roll back
+
+[33mcommit 93ae97866f49fbd4538bc029b6c0074896b50641[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 5 12:01:11 2018 +0200
+
+    roll back
+
+[33mcommit 7767da410973faaccb14b052d48332709eba74b2[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 5 11:55:18 2018 +0200
+
+    roll back
+
+[33mcommit f77d02e12a5f9ff63a819b2bf91bdb4625162649[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 5 11:49:50 2018 +0200
+
+    roll back
+
+[33mcommit 514e100c3cbc26370ca52399b3b9ecc5a7d00303[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 5 11:41:38 2018 +0200
+
+    roll back
+
+[33mcommit ad8228c639d08d0761c2cf10f07d4233a0970b5f[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Wed Sep 5 11:29:05 2018 +0200
+
+    roll back
+
+[33mcommit 2beb2240aecd4b66a87657b00f38aa43777774ae[m
+Author: g.bailly <g.bailly@immanens.com>
+Date:   Tue Sep 4 23:47:08 2018 +0200
+
+    Test full size for chrome
+
+[33mcommit 609b31166efaf52f696f60666bc83655215f3d57[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Mon Sep 3 18:19:19 2018 +0200
+
+    test de remontée callback
+
+[33mcommit aef43c322df944014fcb74ad093a6475998bef0a[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Mon Sep 3 17:40:49 2018 +0200
+
+    test de remontée callback
+
+[33mcommit 87f1893923354b3c3d860f16af6c31b3388aa034[m
+Author: g.bailly <g.bailly@immanens.coms>
+Date:   Mon Sep 3 17:26:25 2018 +0200
+
+    test de remontée callback

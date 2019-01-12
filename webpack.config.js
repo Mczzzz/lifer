@@ -11,7 +11,8 @@ Encore
 
     // will create web/build/app.js and web/build/app.css
     .addEntry('app', './assets/js/app.js')
-
+    .addEntry('ws', './assets/js/workers/ws.js')
+    .addEntry('ww', './assets/js/workers/ww.js')
     // allow sass/scss files to be processed
     //.enableSassLoader()
 

@@ -1,3 +1,5 @@
+import uuid from "uuid/v1"
+
 class Brain {
 	
 
@@ -22,44 +24,84 @@ class Brain {
 
 	}
 
+destroy(path){
+
+//formater le path
+	let arrayPath = path.split("-");
+
+	let dataRepresentation = this.dataCenter;
+
+	let dataRepresentationMe;
+
+	let TerminaisonPath;
+
+	for(let myPath of arrayPath ){
+
+		TerminaisonPath = myPath;
+		dataRepresentationMe = dataRepresentation;
+		dataRepresentation = dataRepresentation[myPath];
+	}
+
+	delete dataRepresentationMe[TerminaisonPath];
+
+}
+
 
 
 addMe(path){
 
-		if(path.length > 0){
+		if(path.length > 0 ){
 
-			let arrayPath = path.split("/");
+			let level = 0;
+
+			let arrayPath = path.split("-");
 
 			let dataRepresentation = this.dataCenter;
 
 			for(let myPath of arrayPath ){
 
+				if (myPath == "null") continue; 
+
+				/*let realName = myPath.split("-");
+
+				if(realName.length > 1){
+					myPath = realName[realName.length - 1];
+				}*/
+
+
 				if(!(dataRepresentation[myPath] instanceof Object)){
 					dataRepresentation[myPath] = {};
+					dataRepresentation[myPath]._datas = {};
+					dataRepresentation[myPath]._datas.level = level + 1;
+				}else{
+
+					level = dataRepresentation[myPath]._datas.level;
+
 				}
 
 				dataRepresentation = dataRepresentation[myPath];
 
 			}
 
-
 		}
 
-
+		//this.dumpMe();
 	}
 
 
 	addData(path,dataArray){
 
-
 		if(path.length == 0) return false;
 
-		let arrayPath = path.split("/");
+		let arrayPath = path.split("-");
 
 		let dataRepresentation = this.dataCenter;
 
 
 		for(let myPath of arrayPath ){
+
+			if (myPath == "null") continue;
+
 
 			if(!(dataRepresentation[myPath] instanceof Object)){
 				console.log('aie '+myPath+' not exist');
@@ -77,20 +119,22 @@ addMe(path){
 
 		}			
 
-
+	//	console.log(dataArray);
+		
 		for(let myData of dataArray ){
+//			console.log(myData);
+			
+				dataRepresentation._datas[Object.keys(myData)[0]] = myData[Object.keys(myData)[0]];
 
-			dataRepresentation._datas[Object.keys(myData)[0]] = myData[Object.keys(myData)[0]];
 
+			
 		}
 
-
+/*
 		if((dataRepresentation._trigger instanceof Object)){
 
 //TODO : il faut controller s'il y a des objets a prevenirs
-
-
-		}	
+		}*/	
 
 
 
@@ -98,17 +142,34 @@ addMe(path){
 
 
 
-	getData(path,Key){
+	getData(path,Key, level = 0){
 
-
+	//	console.log(path);
 		if(path.length == 0) return false;
 
-		let arrayPath = path.split("/");
+		let arrayPath = path.split("-");
+
+		if(level > 0){
+
+			arrayPath.splice(arrayPath.length - level, level);
+
+		}
 
 		let dataRepresentation = this.dataCenter;
 
 
 		for(let myPath of arrayPath ){
+
+
+/*			let realName = myPath.split("-");
+			console.log("realName");
+			console.log(realName);
+			console.log(realName.length);
+
+			if(realName.length > 1){
+				myPath = realName[realName.length - 1];
+			}*/
+
 
 			if(!(dataRepresentation[myPath] instanceof Object)){
 				console.log('aie '+myPath+' not exist');
@@ -142,38 +203,9 @@ addMe(path){
 
 
 
-	addTrigger(path,data,callBack){
-
-
-
-
-	}
-
-
-
-/*	removeTarget(el){
-
-		let it = 0;
-		for(let target of this.targets){
-			console.log(it);
-			console.log(el);
-			if(target.me == el){
-
-				this.targets.splice(it,1);
-
-			}
-
-			break;
-			it++;
-			
-		}
-
-		console.log(it);
-		console.log(this.targets);
+/*	addTrigger(path,data,callBack){
 
 	}*/
-
-
 
 
 
@@ -185,6 +217,35 @@ addMe(path){
 			target.element[target.methode](el.value);
 
 		}
+
+	}
+
+
+
+	getScreenSize(){
+
+		let w = window,
+	    d = document,
+	    e = d.documentElement,
+	    g = d.getElementsByTagName('body')[0],
+	    x = w.innerWidth || e.clientWidth || g.clientWidth,
+	    y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+	    let screen = {};
+
+		screen.width  = x;
+		screen.height = y;
+
+		return screen;
+
+
+	}
+
+
+
+	newTmpId(){
+
+		return uuid().replace(/-/gi, '.');
 
 	}
 

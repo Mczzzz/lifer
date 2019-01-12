@@ -1,68 +1,46 @@
-import { Lifer } from '../../services/Lifer.js';
-import layout from '../layout/layout.js';
+import superViews from "../common/superViews.js";
 
-import Header from '../elements/objects/header/header.js';
-import Main   from '../elements/objects/main/main.js'; 
-import Footer from '../elements/objects/footer/footer.js';
-
-
-export default class Objects extends layout{
+import Header from './objects/header.js';
+import Main   from './objects/main.js'; 
+import Footer from './objects/footer.js';
 
 
-	constructor(path){
+export default class Objects extends superViews{
 
 
-    super(); 
+  constructor(MyClass,path){
 
-    let Me = 'objects';
-    this.path = path+"/"+Me;
-    Lifer.addMe(this.path);
-
-
-    this.container = document.getElementsByClassName("container")[0];
+    super(MyClass,path);
     
-    this.headerInit();
-    this.mainInit();
-    this.footerInit();
-
-
-/*
-    this.in = "Container";
-
-    this.breadcrumb();
-    this.mainTopUp();
-    this.mainTopBottom();
-    this.mainBottomTools();
-    this.elementAnimation();*/
+    this.init();
 
 	}
 
 
-  headerInit(){
+  init(){
 
-    this.Header = new Header(this.container,"header",this.path);
+    this.setStyle("display" , "flex");
+    this.setStyle("flexDirection" , "column");
+    this.setStyle("height" , "100vh");
+
+    this.initChilds();
+
+  }
+
+  initChilds(){
+
+   this.Header = new Header("Header",this.path);
+
+   this.Main = new Main("Main",this.path);
+
+   this.Footer = new Footer("Footer",this.path);
     
   }
 
-  mainInit(){
-
-    this.Main = new Main(this.container,"main",this.path);
-    
-  }
-
-
-  footerInit(){
-
-    this.Footer = new Footer(this.container,"footer",this.path);
-    
-  }
 
 
 
-
-
-
-  breadcrumb(){
+/*  breadcrumb(){
 
     this.ObjBreadcrumb = new Breadcrumb();
 
@@ -269,7 +247,7 @@ export default class Objects extends layout{
        
 
     }
-
+*/
  
 
 
