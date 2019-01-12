@@ -81,7 +81,7 @@ class PictureController extends Controller
         $IMimage = $manager->make($completePath)->resize(300, 200);
 
     //    $headers = array('Content-Type'     => 'image/jpeg',
-                         'Content-Disposition' => 'inline; filename="'.$file.'"');
+    //                     'Content-Disposition' => 'inline; filename="'.$file.'"');
 
             return new Response($IMimage, 200);
       //  return new Response($IMimage, 200, $headers);
