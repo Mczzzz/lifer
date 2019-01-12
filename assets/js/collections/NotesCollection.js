@@ -542,11 +542,17 @@ export default class NotesCollection {
 		let len = datas.data.length, i;
 
 //TODO: a revoir ca il peu y avoir des trous dans la raquete je pense
-		let qry = `UPDATE Params
-		           SET value = strftime('%Y-%m-%d %H:%M:%f', 'now')
-		           WHERE name = 'last_synchro'
-		           `;
-		this.webSQL.playQuery('cacheData',qry);
+		if(datas.data.length > 0){
+
+			let qry = `UPDATE Params
+			           SET value = strftime('%Y-%m-%d %H:%M:%f', 'now')
+			           WHERE name = 'last_synchro'
+			           `;
+			this.webSQL.playQuery('cacheData',qry);
+			
+		}
+
+
 
 
 		  for (i = 0; i < len; i++) {
