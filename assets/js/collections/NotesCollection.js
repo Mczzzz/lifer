@@ -1473,7 +1473,7 @@ export default class NotesCollection {
 				console.log(datas.data[i]);
 
 				//si il y a une image à remonter
-				if(datas.data[i].item_type == 'image' && datas.data[i].item_path){
+				if(datas.data[i].type == 'image' && datas.data[i].item_path){
 
 
 						this.webSQL.playQuery('syncUP',
