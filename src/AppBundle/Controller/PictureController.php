@@ -71,10 +71,11 @@ class PictureController extends Controller
 
         $data_path = $this->container->getParameter('data_path');
 
-        $completePath = $data_path.$this->user->getId()."/".$file;
+        $finalFile = str_replace("_","/",$file);
 
-        var_dump($completePath);
-        die();
+        $completePath = $data_path.$this->user->getId()."/".$finalFile;
+
+
      
         $manager = new ImageManager();
         $IMimage = $manager->make($completePath)->resize(300, 200);
