@@ -79,6 +79,7 @@ class LoaderImage {
 
 		let itemResource = Lifer.getData(target, "This");
 //TODO: je sasi pas si c'est encore un peux moche oupas
+//  maintenant je sais que c'est moche
 		itemResource.addThumb(res);
 
 	}
