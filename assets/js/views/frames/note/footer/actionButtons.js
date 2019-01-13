@@ -61,6 +61,15 @@ export default class ActionButtons extends superViews{
 					//camera.getContainer().addEventListener("click",()=>this.StartCamera("image",true));
 
 
+					let sep0 = this.card.push("Button", Elt,"sep1", "more_vert");
+
+					sep0.setStylePicto("fontSize","25px");
+					sep0.setStylePicto("margin","5px");
+					sep0.setStylePicto("color","#cfcfcf");
+					sep0.setStylePicto("alignItems","center");
+
+
+
 
 					let Ressource = this.card.push("Button", Elt,"addRessource", "playlist_add");
 
@@ -74,18 +83,18 @@ export default class ActionButtons extends superViews{
 
 
 
-					let videocam = this.card.push("Button", Elt,"Videocam", "videocam");
+				/*	let videocam = this.card.push("Button", Elt,"Videocam", "videocam");
 
 					videocam.setStylePicto("fontSize","25px");
 					videocam.setStylePicto("color","green");
 					videocam.setStylePicto("alignItems","center");
 
 					videocam.getContainer().addEventListener("click",()=>this.StartCamera("video",true));
+*/
 
 
 
-
-					let micro = this.card.push("Button", Elt,"Mic", "mic");
+				/*	let micro = this.card.push("Button", Elt,"Mic", "mic");
 
 					micro.setStylePicto("fontSize","25px");
 					micro.setStylePicto("color","green");
@@ -93,7 +102,7 @@ export default class ActionButtons extends superViews{
 					micro.setStylePicto("marginRight","0px");
 
 					micro.getContainer().addEventListener("click",()=>this.StartCamera("audio",true));
-
+*/
 
 					////////////
 					let sep1 = this.card.push("Button", Elt,"sep1", "more_vert");
@@ -116,25 +125,25 @@ export default class ActionButtons extends superViews{
 
 
 
-					let video = this.card.push("Button", Elt,"Video", "movie");
+		/*			let video = this.card.push("Button", Elt,"Video", "movie");
 
 					video.setStylePicto("fontSize","25px");
 					video.setStylePicto("color","orange");
 					video.setStylePicto("alignItems","center");
 
 					video.getContainer().addEventListener("click",()=>this.StartCamera("video"));
+*/
 
 
 
-
-					let musique = this.card.push("Button", Elt,"Musique", "music_video");
+				/*	let musique = this.card.push("Button", Elt,"Musique", "music_video");
 
 					musique.setStylePicto("fontSize","25px");
 					musique.setStylePicto("color","orange");
 					musique.setStylePicto("alignItems","center");
 					musique.setStylePicto("marginRight","0px");
 
-					musique.getContainer().addEventListener("click",()=>this.StartCamera("audio"));
+					musique.getContainer().addEventListener("click",()=>this.StartCamera("audio"));*/
 
 
 

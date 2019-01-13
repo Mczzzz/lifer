@@ -34,7 +34,7 @@ class LoaderImage {
 		let name = Lifer.newTmpId()+".jpg";
 		PersistLocalStore.push(name,pict);
 
-		setTimeout(()=>this.testread(name), 1000);
+	//	setTimeout(()=>this.testread(name), 1000);
 		
 
 
@@ -50,13 +50,13 @@ class LoaderImage {
 	}
 
 //TODO : ne sert a rien juste un test a supprimer mais pas le temps de regarder
-	testread(name){
+/*	testread(name){
 
 		let PersistLocalStore = new LocalStorage();
 		PersistLocalStore.get(name);
 
 	}
-
+*/
 
 	getOrientation(pict,target){
 
