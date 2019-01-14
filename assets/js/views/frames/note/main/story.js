@@ -302,6 +302,9 @@ export default class Story extends superViews{
 
 	addItem(datas){
 
+		console.log("IN STORY ADD ITEM");
+		console.log(datas);
+
 		//ressourceTmpId,type,itemTmpId, 
 		//elt
 		let RessourcePathId = document.getElementById(datas.ressource_id).className;
