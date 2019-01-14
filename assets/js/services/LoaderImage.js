@@ -58,10 +58,18 @@ class LoaderImage {
 	testread(name){
 		console.log('in test read');
 		let PersistLocalStore = new LocalStorage();
-		console.log(PersistLocalStore.get(name));
+		console.log(PersistLocalStore.get(name, this,'consaule'));
 
 		let TemporaryLocalStore = new LocalStorage('TEMPORARY');
-		console.log(TemporaryLocalStore.get(name));
+		console.log(TemporaryLocalStore.get(name,this,'consaule'));
+
+	}
+
+
+	consaule(datas){
+
+		console.log(datas);
+
 
 	}
 
