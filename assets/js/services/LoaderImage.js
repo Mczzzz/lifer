@@ -43,38 +43,21 @@ class LoaderImage {
 		let TemporaryLocalStore = new LocalStorage('TEMPORARY');
 		TemporaryLocalStore.push(name,pict);
 
-	//    setTimeout(()=>this.testread(name), 1000);
 		
 
 		this.imgObj = new Image();
 
 		this.imgObj.src = pict;
+
 		this.imgObj.PersistName = name;
 
-		this.imgObj.addEventListener('load',()=>this.getOrientation(pict);
+		this.imgObj.addEventListener('load',()=>this.getOrientation(pict));
 
 
 
 	}
 
-//TODO : ne sert a rien juste un test a supprimer mais pas le temps de regarder
-/*	testread(name){
-		console.log('in test read');
-		let PersistLocalStore = new LocalStorage();
-		console.log(PersistLocalStore.get(name, this,'consaule'));
 
-		let TemporaryLocalStore = new LocalStorage('TEMPORARY');
-		console.log(TemporaryLocalStore.get(name,this,'consaule'));
-
-	}*/
-
-
-/*	consaule(datas){
-
-		console.log(datas);
-
-
-	}*/
 
 
 	getOrientation(pict){
@@ -96,13 +79,7 @@ class LoaderImage {
 		res.capture = true;
 
 
-	//	let itemResource = Lifer.getData(target, "This");
-//TODO: je sasi pas si c'est encore un peux moche oupas
-//  maintenant je sais que c'est moche
-	//	itemResource.addThumb(res);
-
 		this.target.Object[this.target.Method](res);
-
 
 	}
 
