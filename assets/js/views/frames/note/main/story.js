@@ -352,7 +352,7 @@ export default class Story extends superViews{
 				MyThumb.setStyle("alignItems" , "center");
 
 
-				LoaderImage.get(datas.item_path);
+				LoaderImage.get(datas.item_path, this);
 
 				//this.updateImagePict(MyThumb,elt,ressourceTmpId,itemTmpId)
 
