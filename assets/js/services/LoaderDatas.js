@@ -39,7 +39,7 @@ export default class LoaderDatas {
 		console.log(datas.name);
 		console.log(typeof datas);
 
-		if(datas == "DOMException"){
+		if(datas.name == "TypeMismatchError"){
 
 			console.log('IN DOMExeptions !!!!!!!!!!!!!');
 
