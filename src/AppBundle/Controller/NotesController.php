@@ -552,7 +552,7 @@ class NotesController extends Controller
             $response->note_id = $datas->note_id;
             $response->ressource_id = $datas->ressource_id;
             $response->file_exist = file_exists ($completePath."/".$datas->item_path);
-            $response->picture = base64_encode($IMimage->response('jpg', 70));
+            //$response->picture = base64_encode($IMimage->response('jpg', 70));
 
 
             $res->error = "0";
