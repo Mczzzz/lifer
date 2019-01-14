@@ -44,7 +44,7 @@ export default class LoaderDatas {
 			console.log('IN DOMExeptions !!!!!!!!!!!!!');
 
 			//on va chercher l'image sur le serveur
-			this.NotesCollection.getPictureFromServer(this.itemId+"_"+this.name,this,'synchoApp');
+			this.NotesCollection.getPictureFromServer(this.itemId+"_"+this.name,this.path,'synchoApp');
 
 
 		}else{
