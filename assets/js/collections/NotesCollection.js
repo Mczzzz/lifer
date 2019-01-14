@@ -1138,6 +1138,9 @@ export default class NotesCollection {
 
 	_updateAfterRequestData(datas){
 
+		console.log('_updateAfterRequestData');
+		console.log(datas);
+
 	//je supprime la ligne de sync up
 			let qry2 = `UPDATE ItemsDatas 
 					SET status = 'DONE'
