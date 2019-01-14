@@ -36,8 +36,11 @@ export default class LoaderDatas {
 	loadIn(datas, fromServer = false){
 
 		console.log('In Load IN');
+		console.log(datas);
+		console.log(fromServer);
 
 		if(datas == "DOMException" && fromServer == false){
+
 
 			//on va chercher l'image sur le serveur
 			this.NotesCollection.getPictureFromServer(this.itemId+"_"+this.name,this,'synchoApp');
