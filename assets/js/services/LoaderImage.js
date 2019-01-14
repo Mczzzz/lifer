@@ -86,6 +86,7 @@ class LoaderImage {
 
 	get(name, targetToLoadImg ){
 
+		console.log('LoaderImage GET')
 
 		let TemporaryLocalStore = new LocalStorage('TEMPORARY');
 		TemporaryLocalStore.get(name,this,'loadIn');
