@@ -3,7 +3,7 @@ import EXIF             from 'exif-orientation';
 import { Lifer } from './Lifer.js';
 import LocalStorage from './LocalStorage.js';
 
-class LoaderImage {
+class LoaderDatas {
 	
 
 	constructor(){
@@ -29,8 +29,6 @@ class LoaderImage {
 
 	loadPict(pict,target){
 
-
-
 		let name = Lifer.newTmpId()+".jpg";
 
 		let PersistLocalStore = new LocalStorage();
@@ -39,7 +37,8 @@ class LoaderImage {
 		let TemporaryLocalStore = new LocalStorage('TEMPORARY');
 		TemporaryLocalStore.push(name,pict);
 
-	    setTimeout(()=>this.testread(name), 1000);
+
+	//	setTimeout(()=>this.testread(name), 1000);
 		
 
 
@@ -55,14 +54,13 @@ class LoaderImage {
 	}
 
 //TODO : ne sert a rien juste un test a supprimer mais pas le temps de regarder
-	testread(name){
-		console.log('in test read');
-		let TemporaryLocalStore = new LocalStorage('TEMPORARY');
-		
-		console.log(TemporaryLocalStore.get(name));
+/*	testread(name){
+
+		let PersistLocalStore = new LocalStorage();
+		PersistLocalStore.get(name);
 
 	}
-
+*/
 
 	getOrientation(pict,target){
 
