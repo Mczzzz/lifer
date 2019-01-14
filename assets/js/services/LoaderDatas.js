@@ -36,7 +36,7 @@ export default class LoaderDatas {
 	loadIn(datas){
 
 		console.log('In Load IN');
-		console.log(datas);
+		console.log(datas.name);
 		console.log(typeof datas);
 
 		if(datas == "DOMException"){
