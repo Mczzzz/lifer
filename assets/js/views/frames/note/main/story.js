@@ -322,6 +322,8 @@ export default class Story extends superViews{
 
 			case 'text':
 
+
+				console.log('IN TEXT');
 				this.RessourceList[RessourcePathId].Items[ItemPathId].type = datas.item_type;
 				let MyText = this.RessourceList[RessourcePathId].Card.push("Text",ItemElement,"text",datas.item_text);
 				MyText.setStyle("color","black");
@@ -341,6 +343,7 @@ export default class Story extends superViews{
 
 			case 'image':
 
+				console.log('IN IMAGE');
 				this.RessourceList[RessourcePathId].Items[ItemPathId].type = datas.item_type;
 
 				//j'ajoute mon thumb vide
