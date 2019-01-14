@@ -18,8 +18,8 @@ export default class BackendComm {
 			}).then(function(json){
 
 
-/*				console.log("return from ajax");
-				console.log(json);*/
+			console.log("return from ajax");
+				console.log(json);
 				
 				if(callBackObj !== false && callBackMethod !== false){
 
