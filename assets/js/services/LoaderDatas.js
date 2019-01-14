@@ -62,6 +62,8 @@ export default class LoaderDatas {
 
 	synchoApp(datas, datas2 = false){
 
+		console.log('IN SYNCHO APP FROM IMAGE SERVER');
+
 		console.log(datas);
 		console.log(datas2);
 
