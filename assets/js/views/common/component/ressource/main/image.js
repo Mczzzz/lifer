@@ -104,7 +104,13 @@ export default class Image extends superViews{
 	    //setTimeout( ()=>, 2000);
 	    this.camLauncher.click();
 //		console.log("this.camLauncher.click()");
-		this.camLauncher.addEventListener("change", ()=>LoaderImage.importPict(this.camLauncher.files[0],this.path));
+
+		this.target = {};
+		this.target.Object = this;
+		this.target.Method = "showImage";
+
+
+		this.camLauncher.addEventListener("change", ()=>LoaderImage.importPict(this.camLauncher.files[0],this.target));
 
 	}
 
@@ -129,6 +135,14 @@ export default class Image extends superViews{
 
 	
 	}
+
+
+	showImage(res){
+
+		this.addThumb(res);
+
+	}
+
 
 
     addThumb(data){

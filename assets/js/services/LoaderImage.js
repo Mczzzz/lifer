@@ -8,6 +8,9 @@ class LoaderImage {
 
 	constructor(){
 
+
+
+
 	}
 
 
@@ -15,19 +18,20 @@ class LoaderImage {
 	importPict(elt,target){
 
 
+		this.target = target;
 
 		this.elt = elt;
 
 		let reader = new FileReader();
 		reader.readAsDataURL(elt);
 
-		reader.onloadend = ()=> this.loadPict(reader.result,target);
+		reader.onloadend = ()=> this.loadPict(reader.result);
 
 	}
 
 
 
-	loadPict(pict,target){
+	loadPict(pict){
 
 
 
@@ -39,23 +43,22 @@ class LoaderImage {
 		let TemporaryLocalStore = new LocalStorage('TEMPORARY');
 		TemporaryLocalStore.push(name,pict);
 
-	    setTimeout(()=>this.testread(name), 1000);
+	//    setTimeout(()=>this.testread(name), 1000);
 		
-
 
 		this.imgObj = new Image();
 
 		this.imgObj.src = pict;
 		this.imgObj.PersistName = name;
 
-		this.imgObj.addEventListener('load',()=>this.getOrientation(pict,target));
+		this.imgObj.addEventListener('load',()=>this.getOrientation(pict);
 
 
 
 	}
 
 //TODO : ne sert a rien juste un test a supprimer mais pas le temps de regarder
-	testread(name){
+/*	testread(name){
 		console.log('in test read');
 		let PersistLocalStore = new LocalStorage();
 		console.log(PersistLocalStore.get(name, this,'consaule'));
@@ -63,26 +66,26 @@ class LoaderImage {
 		let TemporaryLocalStore = new LocalStorage('TEMPORARY');
 		console.log(TemporaryLocalStore.get(name,this,'consaule'));
 
-	}
+	}*/
 
 
-	consaule(datas){
+/*	consaule(datas){
 
 		console.log(datas);
 
 
+	}*/
+
+
+	getOrientation(pict){
+
+		EXIF(this.elt,(err,orientation) => this.sendImg(err,orientation,pict));
+
 	}
 
 
-	getOrientation(pict,target){
 
-		EXIF(this.elt,(err,orientation) => this.sendImg(err,orientation,pict,target));
-
-	}
-
-
-
-	sendImg(err,orientation,pict,target){
+	sendImg(err,orientation,pict){
 
 		let res = {};
 		res.data = {};
@@ -93,10 +96,13 @@ class LoaderImage {
 		res.capture = true;
 
 
-		let itemResource = Lifer.getData(target, "This");
+	//	let itemResource = Lifer.getData(target, "This");
 //TODO: je sasi pas si c'est encore un peux moche oupas
 //  maintenant je sais que c'est moche
-		itemResource.addThumb(res);
+	//	itemResource.addThumb(res);
+
+		this.target.Object[this.target.Method](res);
+
 
 	}
 
