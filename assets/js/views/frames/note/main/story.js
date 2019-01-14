@@ -1,7 +1,7 @@
 import uuid from "uuid/v1"
 
 import LoaderCollection from '../../../../services/LoaderCollection.js';
-import { LoaderImage } from '../../../../services/LoaderImage.js';
+import LoaderDatas      from '../../../../services/LoaderDatas.js';
 
 import superViews from "../../../common/superViews.js";
 
@@ -358,7 +358,7 @@ export default class Story extends superViews{
 				MyThumb.setStyle("alignItems" , "center");
 
 
-				LoaderImage.get(datas.item_path, this,'updateImagePict');
+				let MyLoadData = new LoaderDatas(datas.item_path,datas.item_id, MyThumb);
 
 				//this.updateImagePict(MyThumb,elt,ressourceTmpId,itemTmpId)
 

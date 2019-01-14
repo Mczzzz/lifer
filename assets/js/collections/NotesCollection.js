@@ -64,7 +64,12 @@ export default class NotesCollection {
 	}
 
 
+	getPictureFromServer(completeName,callBackObject,callBackMethod){
 
+		console.log("in getPictureFromServer");
+		this.SvcBackEndComm.ajaxSend('GET',"api_v1/pict/" + completeName,callBackObject,callBackMethod);
+
+	}
 
 
 

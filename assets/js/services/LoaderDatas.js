@@ -3,96 +3,66 @@ import EXIF             from 'exif-orientation';
 import { Lifer } from './Lifer.js';
 import LocalStorage from './LocalStorage.js';
 
-class LoaderDatas {
+import LoaderCollection from './LoaderCollection.js';
+
+export default class LoaderDatas {
 	
 
-	constructor(){
+	constructor(name,itemID,targetToLoadData){
 
+		this.name = name;
+		this.elt = targetToLoadData;
+		this.itemId = itemID;
+
+		this.NotesCollection = new LoaderCollection("Notes");
+
+
+		this.init();
 	}
 
 
+	init(){
 
-	importPict(elt,target){
-
-
-
-		this.elt = elt;
-
-		let reader = new FileReader();
-		reader.readAsDataURL(elt);
-
-		reader.onloadend = ()=> this.loadPict(reader.result,target);
-
-	}
-
-
-
-	loadPict(pict,target){
-
-		let name = Lifer.newTmpId()+".jpg";
-
-		let PersistLocalStore = new LocalStorage();
-        PersistLocalStore.push(name,pict);
-
+		//je tente de lire le temporary pour voir
 		let TemporaryLocalStore = new LocalStorage('TEMPORARY');
-		TemporaryLocalStore.push(name,pict);
-
-
-	//	setTimeout(()=>this.testread(name), 1000);
-		
-
-
-		this.imgObj = new Image();
-
-		this.imgObj.src = pict;
-		this.imgObj.PersistName = name;
-
-		this.imgObj.addEventListener('load',()=>this.getOrientation(pict,target));
+		TemporaryLocalStore.get(name,this,'loadIn');
 
 
 
 	}
 
-//TODO : ne sert a rien juste un test a supprimer mais pas le temps de regarder
-/*	testread(name){
-
-		let PersistLocalStore = new LocalStorage();
-		PersistLocalStore.get(name);
-
-	}
-*/
-
-	getOrientation(pict,target){
-
-		EXIF(this.elt,(err,orientation) => this.sendImg(err,orientation,pict,target));
-
-	}
 
 
+	loadIn(datas, fromServer = false){
 
-	sendImg(err,orientation,pict,target){
+		console.log('In Load IN');
 
-		let res = {};
-		res.data = {};
-		res.data.pict = pict;
-		res.data.ObjImg = this.imgObj;
-		res.data.orientation = orientation;
-		res.type = 3;
-		res.capture = true;
+		if(datas == "DOMException" && fromServer == false){
+
+			//on va chercher l'image sur le serveur
+			this.NotesCollection.getPictureFromServer(this.itemId+"_"+this.name,this,'synchoApp');
 
 
-		let itemResource = Lifer.getData(target, "This");
-//TODO: je sasi pas si c'est encore un peux moche oupas
-//  maintenant je sais que c'est moche
-		itemResource.addThumb(res);
+		}else{
+
+
+
+
+		}
+
+
+
 
 	}
 
 
+	synchoApp(datas, datas2 = false){
 
+		console.log(datas);
+		console.log(datas2);
+
+	}
 
 
 }
 
-const instance = new LoaderImage();
-export { instance as LoaderImage };
