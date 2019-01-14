@@ -58,8 +58,6 @@ class LoaderImage {
 	}
 
 
-
-
 	getOrientation(pict){
 
 		EXIF(this.elt,(err,orientation) => this.sendImg(err,orientation,pict));
@@ -86,6 +84,28 @@ class LoaderImage {
 
 
 
+	get(name, targetToLoadImg ){
+
+
+		let TemporaryLocalStore = new LocalStorage('TEMPORARY');
+		TemporaryLocalStore.get(name,this,'loadIn');
+
+		//je tente de lire le temporary pour voir
+		//si ce n'est pas bon je reconstruit l'url,
+		//fais l'appel, l'enregistre dans le temporary
+		//et rend l'image
+
+	}
+
+
+	loadIn(datas){
+
+		console.log('In Load IN');
+
+		console.log(datas);
+
+
+	}
 
 }
 

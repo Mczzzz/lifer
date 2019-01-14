@@ -1,7 +1,7 @@
 import uuid from "uuid/v1"
 
 import LoaderCollection from '../../../../services/LoaderCollection.js';
-
+import { LoaderImage } from '../../../../services/LoaderImage.js';
 
 import superViews from "../../../common/superViews.js";
 
@@ -231,11 +231,12 @@ export default class Story extends superViews{
 		
 	}
 
+*/
+
 	updateImagePict(MyPict,elt,ressourceTmpId,itemTmpId){
 
 		let newPict = elt.pict.data.pict;
-
-/*		console.log("elt");
+		console.log("elt");
 		console.log(elt);
 		this.RessourceList[ressourceTmpId].Items[itemTmpId].pict = newPict;
 	    //console.log("Image Update")
@@ -248,6 +249,7 @@ export default class Story extends superViews{
 
 	}
 
+/*
 	updateImageLegend(MyText,elt,ressourceTmpId,itemTmpId){
 
 		let newLegend = elt.text.getText();
@@ -345,6 +347,11 @@ export default class Story extends superViews{
 				MyThumb.setStyle("marginRight" , "10px");
 				MyThumb.setStyle("display" , "flex");
 				MyThumb.setStyle("alignItems" , "center");
+
+
+				LoaderImage.get(datas.item_path);
+
+				//this.updateImagePict(MyThumb,elt,ressourceTmpId,itemTmpId)
 
 			//	MyThumb.getContainer().addEventListener("click",()=>this.ImageViewer(elt.pict.data.pict));
 
