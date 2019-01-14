@@ -40,7 +40,15 @@ export default class Thumb extends superViews{
           console.log(data)
           if(!data.capture){
 
-               img.src = data.data.pict +  "/" + this.parent.offsetWidth;
+//TODO: A REFAIRE O PROPRE QUAND MEME
+               if(data.data){
+                    img.src = data.data.pict +  "/" + this.parent.offsetWidth;
+               }else{
+
+                     img.src = data;
+
+               }
+               
 
           }else{
 
