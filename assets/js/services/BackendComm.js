@@ -15,53 +15,27 @@ export default class BackendComm {
 
 				let contentType = response.headers.get("content-type");
 
-				  if(contentType && contentType.indexOf("application/json") !== -1) {
+				if(contentType && contentType.indexOf("application/json") !== -1) {
 
-				    return response.json();
+					return response.json();
 				  
-				  } else {
+				}else{
 				  
-				    return response.blob();
+					return response.blob();
 				  
-				  }
+				}
 
 
 			}).then(function(datas){
 
-
-				console.log("return from ajax");
-				console.log(datas);
 				
 				if(callBackObj !== false && callBackMethod !== false){
 
-
 					callBackObj[callBackMethod](datas);
-
-
-/*						if(eventToDispatch.This == 'Lifer' && eventToDispatch.method == 'addData'){
-
-							//dispatchResponseTo.push({ "This" : "Lifer" , "method" : "addData", "path" : "User"});
-							let formatArrayResponse = [json.data];
-							Lifer[eventToDispatch.method](eventToDispatch.path,formatArrayResponse);
-
-
-						}else{
-
-/*							let Myclass = Lifer.getData(eventToDispatch.This,"This");
-
-							Myclass[eventToDispatch.method](json,dataCallback);*/
-
-					
-
-
-
-
-						
 
 				} 
 				
 				
-
 			}, function(error) {
 
 			  error.message //=> String
