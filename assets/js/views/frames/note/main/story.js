@@ -233,9 +233,12 @@ export default class Story extends superViews{
 
 */
 
-	updateImagePict(MyPict,elt,ressourceTmpId,itemTmpId){
+	updateImagePict(datas){
 
-		let newPict = elt.pict.data.pict;
+		console.log('updateImagePict');
+		console.log(datas)
+
+/*		let newPict = elt.pict.data.pict;
 		console.log("elt");
 		console.log(elt);
 		this.RessourceList[ressourceTmpId].Items[itemTmpId].pict = newPict;
@@ -244,7 +247,7 @@ export default class Story extends superViews{
 
 		//MyPict.setStyle("marginLeft", elt.bloc.getContainer().style.marginLeft);
 
-		this.reorder(ressourceTmpId);
+		this.reorder(ressourceTmpId);*/
 
 
 	}
@@ -355,7 +358,7 @@ export default class Story extends superViews{
 				MyThumb.setStyle("alignItems" , "center");
 
 
-				LoaderImage.get(datas.item_path, this);
+				LoaderImage.get(datas.item_path, this,'updateImagePict');
 
 				//this.updateImagePict(MyThumb,elt,ressourceTmpId,itemTmpId)
 
