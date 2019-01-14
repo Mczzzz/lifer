@@ -13,21 +13,29 @@ export default class BackendComm {
 
 			fetch(url, params).then(function(response) {
 
-				console.log('fetch response');
-				console.log(response);
+				let contentType = response.headers.get("content-type");
 
-			   	return response.json();
+				  if(contentType && contentType.indexOf("application/json") !== -1) {
 
-			}).then(function(json){
+				    return response.json();
+				  
+				  } else {
+				  
+				    return response.blob();
+				  
+				  }
 
 
-			console.log("return from ajax");
-				console.log(json);
+			}).then(function(datas){
+
+
+				console.log("return from ajax");
+				console.log(datas);
 				
 				if(callBackObj !== false && callBackMethod !== false){
 
 
-					callBackObj[callBackMethod](json);
+					callBackObj[callBackMethod](datas);
 
 
 /*						if(eventToDispatch.This == 'Lifer' && eventToDispatch.method == 'addData'){
