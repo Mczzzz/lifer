@@ -157,7 +157,10 @@ class NotesController extends Controller
             $res->data  = $arrayRes;
 
 
-            return new response(json_encode($res));
+            $MyResponse = new response(json_encode($res));
+            $MyResponse->headers->set('Content-Type', 'application/json');
+
+            return $MyResponse;
 
 
 /*
@@ -555,7 +558,10 @@ class NotesController extends Controller
             $res->error = "0";
             $res->data = $response;
 
-            return new response(json_encode($res));
+             $MyResponse = new response(json_encode($res));
+            $MyResponse->headers->set('Content-Type', 'application/json');
+
+            return $MyResponse;
 
 
     }
@@ -852,7 +858,10 @@ class NotesController extends Controller
             $res->data  = $finalArray;
 
 
-            return new response(json_encode($res));
+            $MyResponse = new response(json_encode($res));
+            $MyResponse->headers->set('Content-Type', 'application/json');
+
+            return $MyResponse;
 
 
 
