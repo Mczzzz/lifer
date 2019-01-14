@@ -64,7 +64,9 @@ export default class LoaderDatas {
 
 		console.log('IN SYNCHO APP FROM IMAGE SERVER');
 
-		this.elt.setData("data:image/jpeg;base64,"+datas);
+		let objectURL = URL.createObjectURL(datas);
+
+		this.elt.setData(objectURL);
 		//console.log(datas);
 
 
