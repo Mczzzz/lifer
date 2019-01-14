@@ -66,6 +66,7 @@ export default class LocalStorage {
 			function errorHandler(e){
 
 				console.log(e);
+				that.toCallBack(e);
 			}
 
 			function file(file){
