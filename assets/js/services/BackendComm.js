@@ -13,6 +13,9 @@ export default class BackendComm {
 
 			fetch(url, params).then(function(response) {
 
+				console.log('fetch response');
+				console.log(response);
+
 			   	return response.json();
 
 			}).then(function(json){
