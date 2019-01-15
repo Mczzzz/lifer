@@ -1331,8 +1331,14 @@ export default class NotesCollection {
 			           `);	
 
 										//je met à jour mon IHM en recherchant si j'ai des id qui traines dans le DOM
-					let elementToUpdate = document.getElementById(datas.data[i].ressource_tmpId);
-					elementToUpdate.id = datas.data[i].ressource_id;
+					while(document.getElementById(datas.data[i].ressource_tmpId)){
+
+						document.getElementById(datas.data[i].ressource_tmpId).id = datas.data[i].ressource_id;
+					}
+
+
+					//let elementToUpdate = document.getElementById(datas.data[i].ressource_tmpId);
+					//elementToUpdate.id = datas.data[i].ressource_id;
 
 
 				}
@@ -1351,8 +1357,15 @@ export default class NotesCollection {
 
 
 					//je met à jour mon IHM en recherchant si j'ai des id qui traines dans le DOM
-					let elementToUpdate = document.getElementById(datas.data[i].item_tmpId);
-					elementToUpdate.id = datas.data[i].item_id;
+
+					while(document.getElementById(datas.data[i].item_tmpId)){
+
+						document.getElementById(datas.data[i].item_tmpId).id = datas.data[i].item_id;
+					}
+
+
+				//	let elementToUpdate = document.getElementById(datas.data[i].item_tmpId);
+				//	elementToUpdate.id = datas.data[i].item_id;
 
 				}
 
