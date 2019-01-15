@@ -609,7 +609,7 @@ export default class NotesCollection {
 					                                       state,
 					                                       note_id,
 														   note_title,
-														   note_tmpId,
+														   note_tmpId
 					                                      )
 					                   values `+NotesValues);
 
