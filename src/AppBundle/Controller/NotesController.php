@@ -765,12 +765,15 @@ class NotesController extends Controller
                                          Items.value         AS item_value,
                                          Items.path          AS item_path,
                                          Items.updateApp     AS item_timestamp,
+                                         Items.tmpId         AS item_tmpId,
                                          Resources.id        AS ressource_id,
                                          Resources.title     AS ressource_title,
                                          Resources.updateAPP AS ressource_timestamp,
+                                         Resources.tmpId     AS ressource_tmpId,
                                          Notes.id            AS note_id,
                                          Notes.Name          AS note_title,
-                                         Notes.updateAPP     AS note_timestamp
+                                         Notes.updateAPP     AS note_timestamp,
+                                         Notes.tmpId         AS note_tmpId
 
                                   FROM Items
                                   LEFT JOIN Resources ON (Items.resource = Resources.id)
@@ -800,9 +803,11 @@ class NotesController extends Controller
             $RAW_RESSOURCES_SELECT = 'SELECT Resources.id        AS ressource_id,
                                      Resources.title     AS ressource_title,
                                      Resources.updateAPP AS ressource_timestamp,
+                                     Resources.tmpId     AS ressource_tmpId,
                                      Notes.id            AS note_id,
                                      Notes.Name          AS note_title,
-                                     Notes.updateAPP     AS note_timestamp
+                                     Notes.updateAPP     AS note_timestamp,
+                                     Notes.tmpId         AS note_tmpId
                               FROM Resources
                               LEFT JOIN Notes ON (Resources.note = Notes.id)
                               ';
@@ -831,7 +836,8 @@ class NotesController extends Controller
 
             $RAW_NOTES = 'SELECT Notes.id            AS note_id,
                                  Notes.Name          AS note_title,
-                                 Notes.updateAPP     AS note_timestamp
+                                 Notes.updateAPP     AS note_timestamp,
+                                 Notes.tmpId         AS note_tmpId
                           FROM Notes
                           WHERE id NOT IN (SELECT note FROM Resources '.$RAW_RESSOURCES_COND.')
                           AND Notes.creator = "'. $this->user->getId().'"
