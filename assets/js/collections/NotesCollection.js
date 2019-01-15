@@ -546,7 +546,8 @@ export default class NotesCollection {
 	                          "SYNC",
 	                          "CLEAN",
 	                          "`+datas.data[i].note_id+`",
-	                          "`+datas.data[i].note_title+`"
+	                          "`+datas.data[i].note_title+`",
+	                          "`+datas.data[i].note_tmpId+`"
 	                          )`;
 
 
@@ -562,7 +563,8 @@ export default class NotesCollection {
 			                          "CLEAN",
 			                          "`+datas.data[i].note_id+`",
 			                          "`+datas.data[i].ressource_id+`",
-			                          "`+datas.data[i].ressource_title+`"
+			                          "`+datas.data[i].ressource_title+`",
+			                          "`+datas.data[i].ressource_tmpId+`"
 			                          )`;
 
 
@@ -585,7 +587,8 @@ export default class NotesCollection {
 		                          "`+datas.data[i].item_text+`",
 		                          "`+datas.data[i].item_value+`",
 		                          "`+datas.data[i].item_path+`",
-		                          "`+datas.data[i].item_unit+`"
+		                          "`+datas.data[i].item_unit+`",
+		                          "`+datas.data[i].item_tmpId+`"
 		                          )`;
 
 			}
@@ -605,7 +608,8 @@ export default class NotesCollection {
 					                                       status,
 					                                       state,
 					                                       note_id,
-														   note_title
+														   note_title,
+														   note_tmpId,
 					                                      )
 					                   values `+NotesValues);
 
@@ -622,7 +626,8 @@ export default class NotesCollection {
 			                                       state,
 			                                       note_id,
 			                                       ressource_id,
-												   ressource_title
+												   ressource_title,
+												   ressource_tmpId
 			                                      )
 			                   values `+RessourcesValues);
 
@@ -643,7 +648,8 @@ export default class NotesCollection {
 												   item_text,
 												   item_value,
 												   item_path,
-												   item_unit
+												   item_unit,
+												   item_tmpId
 			                                      )
 			                   values `+ItemValues);
 
