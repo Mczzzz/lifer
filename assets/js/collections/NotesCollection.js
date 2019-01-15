@@ -139,11 +139,13 @@ export default class NotesCollection {
 			                                       status,
 			                                       note_id,
 												   ressource_id,
+												   ressource_tmpId,
 												   ressource_title
 			                                      )
 			                   values (strftime('%Y-%m-%d %H:%M:%f', 'now'),
 			                          "LOCAL",
 			                          "`+data.NoteId+`",
+			                          "`+data.RessourceId+`",
 			                          "`+data.RessourceId+`",
 			                          "`+data.RessourceTitle+`"
 			                          )
