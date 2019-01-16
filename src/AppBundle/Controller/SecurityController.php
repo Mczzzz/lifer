@@ -11,9 +11,9 @@ class SecurityController extends Controller
     /**
      * @Route("/login", name="login")
      */
-    public function loginAction(Request $request)
+    public function loginAction(Request $request){
 
     	return true;
-    {
+   
     }
 }
