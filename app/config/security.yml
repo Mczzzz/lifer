@@ -19,7 +19,6 @@ security:
             security: false
 
         main:
-            entry_point: AppBundle\Security\AccessDeniedHandler
             pattern: ^/
             json_login:
                 check_path: /login
@@ -28,10 +27,10 @@ security:
                 csrf_token_generator: security.csrf.token_manager # Use form.csrf_provider instead for Symfony <2.4
             logout: true
             anonymous: true
-            access_denied_handler: AppBundle\Security\AccessDeniedHandler
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api_v1/, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
