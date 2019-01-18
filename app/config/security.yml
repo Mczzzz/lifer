@@ -22,7 +22,7 @@ security:
             pattern: ^/
             json_login:
                 check_path: /login
-                entry_point: authentication_entry_point
+                access_denied_handler: AppBundle\Security\AccessDeniedHandler
             form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager # Use form.csrf_provider instead for Symfony <2.4
