@@ -64,7 +64,10 @@ class PictureController extends Controller
             $res->error = "1.2";
             $res->msg = "User Unknown";
 
-            return new response(json_encode($res));
+            $response = new response(json_encode($res));
+            $response->setStatusCode(401);
+
+            return $response;
 
         }
 
