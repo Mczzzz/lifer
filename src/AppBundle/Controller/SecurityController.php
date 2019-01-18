@@ -16,15 +16,7 @@ class SecurityController extends Controller
     public function loginAction(Request $request){
 
 
-		 $user = $this->getUser();
-
-		$res =  $this->json([
-		            'username' => $user->getUsername(),
-		            'roles' => $user->getRoles(),
-		        ]);
-
-
-    	return new response(json_encode($res));
+    	return new response('OK');
    
     }
 }
