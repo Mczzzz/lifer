@@ -4,7 +4,7 @@ namespace AppBundle\Security;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Security\Http\Authorization\AuthenticationEntryPointInterface;
+use Symfony\Component\Security\Http\EntryPoint\AuthenticationEntryPointInterface;
 
 class AccessDeniedHandler implements AuthenticationEntryPointInterface
 {
