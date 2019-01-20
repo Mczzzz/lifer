@@ -16,7 +16,8 @@ class SecurityController extends Controller
     public function loginAction(Request $request){
 
 
-        return new response('OK');
-
+    	return new response('OK');
+   
     }
 }
+

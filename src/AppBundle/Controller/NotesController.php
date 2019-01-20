@@ -81,7 +81,10 @@ class NotesController extends Controller
             $res->error = "1.2";
             $res->msg = "User Unknown";
 
-            return new response(json_encode($res));
+            $response = new response(json_encode($res));
+            $response->setStatusCode(401);
+
+            return $response;
 
         }
 
@@ -157,7 +160,10 @@ class NotesController extends Controller
             $res->data  = $arrayRes;
 
 
-            return new response(json_encode($res));
+            $MyResponse = new response(json_encode($res));
+            $MyResponse->headers->set('Content-Type', 'application/json');
+
+            return $MyResponse;
 
 
 /*
@@ -475,7 +481,10 @@ class NotesController extends Controller
             $res->error = "1.2";
             $res->msg = "User Unknown";
 
-            return new response(json_encode($res));
+            $response = new response(json_encode($res));
+            $response->setStatusCode(401);
+
+            return $response;
 
         }
 
@@ -549,13 +558,16 @@ class NotesController extends Controller
             $response->note_id = $datas->note_id;
             $response->ressource_id = $datas->ressource_id;
             $response->file_exist = file_exists ($completePath."/".$datas->item_path);
-            $response->picture = base64_encode($IMimage->response('jpg', 70));
+            //$response->picture = base64_encode($IMimage->response('jpg', 70));
 
 
             $res->error = "0";
             $res->data = $response;
 
-            return new response(json_encode($res));
+             $MyResponse = new response(json_encode($res));
+            $MyResponse->headers->set('Content-Type', 'application/json');
+
+            return $MyResponse;
 
 
     }
@@ -621,7 +633,10 @@ class NotesController extends Controller
             $res->error = "1.2";
             $res->msg = "User Unknown";
 
-            return new response(json_encode($res));
+            $response = new response(json_encode($res));
+            $response->setStatusCode(401);
+
+            return $response;
 
         }
 
@@ -658,13 +673,16 @@ class NotesController extends Controller
                                          Items.text          AS item_text,
                                          Items.value         AS item_value,
                                          Items.path          AS item_path,
+                                         Items.tmpId         AS item_tmpId,
                                          Items.updateApp     AS item_timestamp,
                                          Resources.id        AS ressource_id,
                                          Resources.title     AS ressource_title,
                                          Resources.updateAPP AS ressource_timestamp,
+                                         Resources.tmpId     AS ressource_tmpId,
                                          Notes.id            AS note_id,
                                          Notes.Name          AS note_title,
-                                         Notes.updateAPP     AS note_timestamp
+                                         Notes.updateAPP     AS note_timestamp,
+                                         Notes.tmpId         AS note_tmpId
 
                                   FROM Items
                                   LEFT JOIN Resources ON (Items.resource = Resources.id)
@@ -692,9 +710,11 @@ class NotesController extends Controller
             $RAW_RESSOURCES_SELECT = 'SELECT Resources.id        AS ressource_id,
                                      Resources.title     AS ressource_title,
                                      Resources.updateAPP AS ressource_timestamp,
+                                     Resources.tmpId     AS ressource_tmpId,
                                      Notes.id            AS note_id,
                                      Notes.Name          AS note_title,
-                                     Notes.updateAPP     AS note_timestamp
+                                     Notes.updateAPP     AS note_timestamp,
+                                     Notes.tmpId         AS note_tmpId
                               FROM Resources
                               LEFT JOIN Notes ON (Resources.note = Notes.id)
                               ';
@@ -721,7 +741,8 @@ class NotesController extends Controller
 
             $RAW_NOTES = 'SELECT Notes.id            AS note_id,
                                  Notes.Name          AS note_title,
-                                 Notes.updateAPP     AS note_timestamp
+                                 Notes.updateAPP     AS note_timestamp,
+                                 Notes.tmpId         AS note_tmpId
                           FROM Notes
                           WHERE id NOT IN (SELECT note FROM Resources '.$RAW_RESSOURCES_COND.')
                           AND Notes.creator = "'. $this->user->getId().'"
@@ -753,12 +774,15 @@ class NotesController extends Controller
                                          Items.value         AS item_value,
                                          Items.path          AS item_path,
                                          Items.updateApp     AS item_timestamp,
+                                         Items.tmpId         AS item_tmpId,
                                          Resources.id        AS ressource_id,
                                          Resources.title     AS ressource_title,
                                          Resources.updateAPP AS ressource_timestamp,
+                                         Resources.tmpId     AS ressource_tmpId,
                                          Notes.id            AS note_id,
                                          Notes.Name          AS note_title,
-                                         Notes.updateAPP     AS note_timestamp
+                                         Notes.updateAPP     AS note_timestamp,
+                                         Notes.tmpId         AS note_tmpId
 
                                   FROM Items
                                   LEFT JOIN Resources ON (Items.resource = Resources.id)
@@ -788,9 +812,11 @@ class NotesController extends Controller
             $RAW_RESSOURCES_SELECT = 'SELECT Resources.id        AS ressource_id,
                                      Resources.title     AS ressource_title,
                                      Resources.updateAPP AS ressource_timestamp,
+                                     Resources.tmpId     AS ressource_tmpId,
                                      Notes.id            AS note_id,
                                      Notes.Name          AS note_title,
-                                     Notes.updateAPP     AS note_timestamp
+                                     Notes.updateAPP     AS note_timestamp,
+                                     Notes.tmpId         AS note_tmpId
                               FROM Resources
                               LEFT JOIN Notes ON (Resources.note = Notes.id)
                               ';
@@ -819,7 +845,8 @@ class NotesController extends Controller
 
             $RAW_NOTES = 'SELECT Notes.id            AS note_id,
                                  Notes.Name          AS note_title,
-                                 Notes.updateAPP     AS note_timestamp
+                                 Notes.updateAPP     AS note_timestamp,
+                                 Notes.tmpId         AS note_tmpId
                           FROM Notes
                           WHERE id NOT IN (SELECT note FROM Resources '.$RAW_RESSOURCES_COND.')
                           AND Notes.creator = "'. $this->user->getId().'"
@@ -852,7 +879,10 @@ class NotesController extends Controller
             $res->data  = $finalArray;
 
 
-            return new response(json_encode($res));
+            $MyResponse = new response(json_encode($res));
+            $MyResponse->headers->set('Content-Type', 'application/json');
+
+            return $MyResponse;
 
 
 
