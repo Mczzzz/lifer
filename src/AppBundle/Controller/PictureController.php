@@ -81,7 +81,7 @@ class PictureController extends Controller
         var_dump($completePath);
         die();
 
-        if(!file_exists($completePath)){
+        if(!is_file($completePath)){
 
 
                 $res->error = "1.2";
@@ -99,14 +99,8 @@ class PictureController extends Controller
      
         $manager = new ImageManager();
 
-        try{
 
                 $IMimage = $manager->make($completePath)->resize(300, 200)->orientate();
-
-        } catch (Exception $e) {
-            echo 'Exception reçue : ',  $e->getMessage(), "\n";
-            die();
-        }
 
 
         $headers = array('Content-Type'     => 'image/jpeg',
