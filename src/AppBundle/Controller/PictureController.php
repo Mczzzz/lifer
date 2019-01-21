@@ -78,6 +78,20 @@ class PictureController extends Controller
 
         $completePath = $data_path.$this->user->getId()."/".$finalFile;
 
+        if(!file_exists($completePath)){
+
+
+                $res->error = "1.2";
+                $res->msg = "User Unknown";
+                $res->path = $completePath;
+
+                $response = new response(json_encode($res));
+                $response->setStatusCode(404);
+
+                return $response;
+
+
+        }
 
      
         $manager = new ImageManager();
