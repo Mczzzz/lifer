@@ -16,7 +16,53 @@ class SecurityController extends Controller
     public function loginAction(Request $request){
 
 
-    	return new response('OK');
+    	 $user = $this->getUser();
+
+    	 if(!$user){
+
+    	 	$res->error = "1";
+        	$res->msg   = "FAILED";
+        	$MyResponse = new response(json_encode($res));
+            $MyResponse->headers->set('Content-Type', 'application/json');
+			$MyResponse->setStatusCode(401);
+
+            return $MyResponse;
+
+
+
+    	 }else{
+
+
+    	 	
+	    	$res->error = "0";
+	        $res->msg   = "SUCCESS";
+	        
+	        $res->data = array();
+
+	        $dataList = new \stdClass();
+	        $dataList->id        = $user->getId();
+	        $dataList->username  = $user->getUsername();
+	        $dataList->email     = $user->getEmail();
+	        $dataList->birthDate = $user->getBirthDate();
+
+	        $dataList->infos = new \stdClass();
+	        $dataList->infos->lastLogin = $user->getLastLogin();
+
+	        $res->data["User"] = $dataList;
+
+        
+            $MyResponse = new response(json_encode($res));
+            $MyResponse->headers->set('Content-Type', 'application/json');
+
+            return $MyResponse;
+
+
+
+
+
+    	 }
+
    
     }
 }
+

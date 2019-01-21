@@ -75,7 +75,10 @@ class UserController extends Controller
 
         $res->data["User"] = $dataList;
 
-        return new response(json_encode($res));
+            $MyResponse = new response(json_encode($res));
+            $MyResponse->headers->set('Content-Type', 'application/json');
+
+            return $MyResponse;
 
 
     }
