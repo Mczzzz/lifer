@@ -95,8 +95,15 @@ class PictureController extends Controller
 
      
         $manager = new ImageManager();
-        $IMimage = $manager->make($completePath)->resize(300, 200)->orientate();
 
+        try{
+
+                $IMimage = $manager->make($completePath)->resize(300, 200)->orientate();
+
+        } catch (Exception $e) {
+            echo 'Exception reçue : ',  $e->getMessage(), "\n";
+            die();
+        }
 
 
         $headers = array('Content-Type'     => 'image/jpeg',
