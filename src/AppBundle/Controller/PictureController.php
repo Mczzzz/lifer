@@ -78,6 +78,9 @@ class PictureController extends Controller
 
         $completePath = $data_path.$this->user->getId()."/".$finalFile;
 
+        var_dump($completePath);
+        die();
+
         if(!file_exists($completePath)){
 
 
