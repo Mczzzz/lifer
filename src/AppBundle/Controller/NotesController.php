@@ -401,7 +401,7 @@ class NotesController extends Controller
             if($NoteElement->item_type == "image"){
 
 
-                $Item->setPath($NoteElement->item_path;
+                $Item->setPath($NoteElement->item_path);
             
             }
 
