@@ -544,8 +544,8 @@ class NotesController extends Controller
 
         file_put_contents($completePath."/".$finalName[1], $Mydata);
 
-        $manager = new ImageManager();
-        $IMimage = $manager->make($completePath."/".$datas->item_path)->resize(300, 200);
+      //  $manager = new ImageManager();
+      //  $IMimage = $manager->make($completePath."/".$datas->item_path)->resize(300, 200);
 
 
 
