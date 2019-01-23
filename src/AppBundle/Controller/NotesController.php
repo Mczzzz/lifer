@@ -515,6 +515,8 @@ class NotesController extends Controller
 
         $finalName = explode("_",$datas->item_path);
 
+        var_dump($finalName);
+        die();
         //on recherche siça concorde bien au niveau des id Notes / Resources / Items
         $Item = $this->em->getRepository('AppBundle:Items')->findOneBy(array('path' => $finalName[1]));
 
