@@ -141,7 +141,8 @@ class NotesController extends Controller
                     $Itemresponse->item_tmpId = $NoteElement->item_id;
                     $Itemresponse->item_timestamp = $NoteElement->item_timestamp;
                     $Itemresponse->type = $NoteElement->item_type;
-                    $Itemresponse->item_path = $NoteElement->item_path;
+                     $finalName = explode("_",$NoteElement->item_path);
+                    $Itemresponse->item_path = $finalName[1];
                     $Itemresponse->call = "push";
                     $Itemresponse->scope = "item";
 
@@ -400,7 +401,9 @@ class NotesController extends Controller
 
             if($NoteElement->item_type == "image"){
 
-                $Item->setPath($NoteElement->item_path);
+                 $finalName = explode("_",$NoteElement->item_path);
+
+                $Item->setPath($finalName[1]);
             
             }
 
@@ -510,8 +513,10 @@ class NotesController extends Controller
         $this->em = $this->getDoctrine()->getManager();
 
 
+        $finalName = explode("_",$datas->item_path);
+
         //on recherche siça concorde bien au niveau des id Notes / Resources / Items
-        $Item = $this->em->getRepository('AppBundle:Items')->findOneBy(array('path' => $datas->item_path));
+        $Item = $this->em->getRepository('AppBundle:Items')->findOneBy(array('path' => $finalName[1]));
 
 
         if(!$Item){
@@ -540,7 +545,7 @@ class NotesController extends Controller
         // the 2nd item in the base_to_php array contains the content of the image
         $Mydata = base64_decode($base_to_php[1]);
 
-        $finalName = explode("_",$datas->item_path);
+        
 
         file_put_contents($completePath."/".$finalName[1], $Mydata);
 
@@ -572,6 +577,16 @@ class NotesController extends Controller
 
 
     }
+
+
+
+
+
+
+
+
+
+
 
 
 
