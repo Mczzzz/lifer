@@ -540,8 +540,9 @@ class NotesController extends Controller
         // the 2nd item in the base_to_php array contains the content of the image
         $Mydata = base64_decode($base_to_php[1]);
 
+        $finalName = explode("_",$datas->item_path);
 
-        file_put_contents($completePath."/".$datas->item_path, $Mydata);
+        file_put_contents($completePath."/".$finalName[1], $Mydata);
 
         $manager = new ImageManager();
         $IMimage = $manager->make($completePath."/".$datas->item_path)->resize(300, 200);
