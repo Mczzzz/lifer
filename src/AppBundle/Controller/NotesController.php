@@ -141,8 +141,7 @@ class NotesController extends Controller
                     $Itemresponse->item_tmpId = $NoteElement->item_id;
                     $Itemresponse->item_timestamp = $NoteElement->item_timestamp;
                     $Itemresponse->type = $NoteElement->item_type;
-                     $finalName = explode("_",$NoteElement->item_path);
-                    $Itemresponse->item_path = $finalName[1];
+                    $Itemresponse->item_path = $NoteElement->item_path;
                     $Itemresponse->call = "push";
                     $Itemresponse->scope = "item";
 
@@ -401,9 +400,8 @@ class NotesController extends Controller
 
             if($NoteElement->item_type == "image"){
 
-                 $finalName = explode("_",$NoteElement->item_path);
 
-                $Item->setPath($finalName[1]);
+                $Item->setPath($NoteElement->item_path;
             
             }
 
@@ -561,7 +559,7 @@ class NotesController extends Controller
             $response->call = "pushDatas";
             $response->note_id = $datas->note_id;
             $response->ressource_id = $datas->ressource_id;
-            $response->file_exist = file_exists ($completePath."/".$finalName[1]);
+            $response->file_exist = file_exists ($completePath."/".$datas->item_path);
             //$response->picture = base64_encode($IMimage->response('jpg', 70));
 
 
