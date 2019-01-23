@@ -552,13 +552,13 @@ class NotesController extends Controller
             $response = new \stdClass();
             $response->item_id = $Item->getId();
             $response->item_tmpId = $datas->item_id;
-            $response->item_path = $datas->item_path;
+            $response->item_path = $finalName[1];
             $response->timestamp = $datas->timestamp;
             $response->type = $datas->item_type;
             $response->call = "pushDatas";
             $response->note_id = $datas->note_id;
             $response->ressource_id = $datas->ressource_id;
-            $response->file_exist = file_exists ($completePath."/".$datas->item_path);
+            $response->file_exist = file_exists ($completePath."/".$finalName[1]);
             //$response->picture = base64_encode($IMimage->response('jpg', 70));
 
 
