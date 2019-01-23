@@ -513,12 +513,8 @@ class NotesController extends Controller
         $this->em = $this->getDoctrine()->getManager();
 
 
-        $finalName = explode("_",$datas->item_path);
-
-        var_dump($finalName);
-        die();
         //on recherche siça concorde bien au niveau des id Notes / Resources / Items
-        $Item = $this->em->getRepository('AppBundle:Items')->findOneBy(array('path' => $finalName[1]));
+        $Item = $this->em->getRepository('AppBundle:Items')->findOneBy(array('path' => $datas->item_path));
 
 
         if(!$Item){
@@ -549,7 +545,7 @@ class NotesController extends Controller
 
         
 
-        file_put_contents($completePath."/".$finalName[1], $Mydata);
+        file_put_contents($completePath."/".$datas->item_path, $Mydata);
 
       //  $manager = new ImageManager();
       //  $IMimage = $manager->make($completePath."/".$datas->item_path)->resize(300, 200);
@@ -559,7 +555,7 @@ class NotesController extends Controller
             $response = new \stdClass();
             $response->item_id = $Item->getId();
             $response->item_tmpId = $datas->item_id;
-            $response->item_path = $finalName[1];
+            $response->item_path = $datas->item_path;
             $response->timestamp = $datas->timestamp;
             $response->type = $datas->item_type;
             $response->call = "pushDatas";
