@@ -317,8 +317,6 @@ class NotesController extends Controller
 
 
 
-            var_dump($NoteElement->ressource_title);
-            die();
             $Resource->setTitle($NoteElement->ressource_title);
             $Resource->setNote($Note);
             $Resource->setCreator($this->user);
