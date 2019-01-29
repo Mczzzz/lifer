@@ -100,7 +100,7 @@ class PictureController extends Controller
 
                 $IMimage = $manager->make($completePath)->resize(600, null, function ($constraint) {
                     $constraint->aspectRatio();
-                    }))->orientate();
+                    })->orientate();
 
 
         $headers = array('Content-Type'     => 'image/jpeg',
