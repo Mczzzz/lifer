@@ -317,7 +317,8 @@ class NotesController extends Controller
 
 
 
-
+            var_dump($NoteElement->ressource_title);
+            die();
             $Resource->setTitle($NoteElement->ressource_title);
             $Resource->setNote($Note);
             $Resource->setCreator($this->user);
@@ -401,7 +402,7 @@ class NotesController extends Controller
             if($NoteElement->item_type == "image"){
 
                 if(strlen($NoteElement->item_path) > 0){
-                    
+
                     $Item->setPath($NoteElement->item_path);
 
                 }
